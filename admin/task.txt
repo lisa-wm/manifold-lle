@@ -1,0 +1,16 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TASK
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+4. Local Linear Embeddings
+Local Linear Embeddings (LLE) are another graph-based spectral method that is able to obtain highly nonlinear embeddings and is robust to local minima. It 
+is based on a neighborhood-graph, a weight matrix that is used to describe each data point based on its closest neighbors and then solves an 
+eigenvalue-problem based on this weight matrix.
+For this topic you are expected to familiarize yourself with the details of LLE and grasp the pros and cons of LLE compared to other graph-based approaches. 
+Further you are asked to describe two extensions of LLE: 1) the Hessian LLE and 2) a semi-supervised variant of LLE which is able to leverage information 
+from some labelled data points. Apply at least the standard LLE on the provided toy datasets.
+* Roweis, Sam T., and Lawrence K. Saul. "Nonlinear dimensionality reduction by locally linear embedding." science 290.5500 (2000): 2323-2326.
+* Donoho, David L., and Carrie Grimes. "Hessian eigenmaps: Locally linear embedding techniques for high-dimensional data." Proceedings of the National 
+  Academy of Sciences 100.10 (2003): 5591-5596.
+* Yang, Xin, et al. "Semi-supervised nonlinear dimensionality reduction." Proceedings of the 23rd international conference on Machine learning. 2006.
+* NeurIPS 2005 Tutorial on “Spectral Methods for Dimensionality Reduction”: https://www.robots.ox.ac.uk/~cvrg/michaelmas2007/nips05_nldr.pdf

@@ -1,0 +1,53 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ROUGH OUTLINE - DRAFT
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1 Intro blabla (motivation of dimensionality reduction)
+
+2 Non-linear dimensionality reduction
+  2.1 Goal of (non-linear) dimensionality reduction
+      - We want to learn the coordinates of the original points in the d-dimensional space (Euclidean, again!)
+      - How we construct the mapping from m-dim to d-dim coordinates depends on the type of projection
+      - Projection can happen in a linear (flatten the Swiss roll acc to direction of highest variance) or nonlinear (unroll it) manner
+  2.2 Embedded manifolds
+      - Topologies
+      - Manifolds
+      - Dimensionality of manifolds, maps, charts
+      - Local homeomorphism to Euclidean space
+  2.3 Methods of non-linear dimensionality reduction
+     - Rough overview on methods (only to list what is out there)
+       - Linear
+         - PCA
+         - MDS
+       - Non-linear
+         - Spectral graph-based --> central idea: capture intrinsic notion of neighborhood on manifold that shall be preserved in projection
+         - Kernel-based
+         - NN-based
+         - Semi-definite programming
+
+3 Locally Linear Embedding
+  3.1 Conceptual framework
+      3.1.1 Locally linear neighborhoods
+            - k-/epsilon-neighborhoods
+            - Neighborhood graphs
+      3.1.2 Laplace-Beltrami operator
+      3.1.3 Laplacian eigenmaps
+            - Graph Laplacian as discrete approx of d-dim manifold
+            - Neighborhood-preserving projection via generalized eigenproblem
+            - Convergence to Laplace-Beltrami
+  3.2 Original LLE
+      - Functionality
+      - Pro's & con's
+      - Challenges: finding k/epsilon and d (plus neighborhood construction in general???)
+  3.3 Extensions
+      3.3.1 Hessian LLE
+      3.3.2 Semi-supervised LLE
+
+4 Application of LLE methods to toy data
+  4.1 Data sets
+  4.2 Implementation
+  4.3 Results & discussion (incl computational aspects?)
+
+5 Conclusion
+
+

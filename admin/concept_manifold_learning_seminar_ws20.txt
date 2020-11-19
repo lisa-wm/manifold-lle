@@ -1,0 +1,154 @@
+﻿Seminar Description, WS20/21
+Manifold Learning: Modern Approaches for Dimensionality Reduction
+
+
+Moritz Herrmann, Jann Goschenhofer, Katharina Rath, Fabian Scheipl
+Course Description
+One of the most challenging aspects of dealing with the ongoing “big data” explosion is the development of methods that can identify suitable low-dimensional representations of very high dimensional data sets. The unifying assumption of all such approaches is that high-dimensional data are concentrated in a lower-dimensional subspace (a “manifold”, more generally) embedded in the original data space. 
+
+
+In this seminar, we will introduce the mathematical basics of manifolds and embeddings and will discuss both foundational papers on popular dimensionality reduction methods and papers on current research problems in this setting.
+General Information
+* Kickoff and Introduction: 30 October 2020, 9.00-11.00am
+* Submission of topic preferences: 6 November 2020 11.00am 
+* Distribution of topics: 9 November 2020
+* General runtime of the seminar: winter semester 2020/21
+* Participation tl;dr: Every presenter will be assigned a discussant. Consequently, for every topic there is an author and a reviewer and you as a participant will take on both roles which is also reflected in the grading. The format is intended to move the focus from the essay to the presentation and the interaction within the group. 
+* We also want you to apply the method you selected on 3 datasets and visualize the resulting embeddings in a comparable way and to include these results in your presentation and paper. You will find the accompanying code repository here: https://github.com/Goschjann/seminar_manil_lmu
+
+
+
+
+Overview deliverables and [deadlines] by role:
+
+
+* Presenter:
+   * Extended Abstract (max. 2 pages) [Upload to moodle until 21.12.2020]
+   * Slides for the Presentation [2 weeks before the presentation date]
+   * Presentation video  (~40 minutes) [1 week before the presentation date]
+   * Final essay [3 weeks after the presentation]
+* Discussant:
+   * Review for the Extended Abstract [Upload to moodle until 15.1.2021]
+   * Being a general sparring partner for the creation of the final presentation and paper
+   * Hosting the discussion: preparing 2 questions, very briefly summarizing content of the video, keeping time and managing the discussion.
+* Participant:
+   * Active participation in group discussions
+   * Preparation of at least two questions per video, we/ the discussant will make sure that everybody is actively engaging in the discussion. 
+
+
+Grading & Attendance
+
+
+At the kickoff event, we will provide a high-level overview of some mathematical background and introduce the topics we will cover. We will then assign a topic to every one of you, trying to accommodate your preferences. The seminar will be organized in two blocks. In every block a number of presentations will be held, followed by a general critique of the presentation and a discussion of the scientific content. Grades are determined by four components:
+
+
+1. The scientific presentation (40%)
+The goal of your presentation is to teach your topic to your fellow students. The style of the presentation is up to you, e.g., you can use slides, do a white-board presentation, etc. The duration of the presentation should be 40 minutes, followed by about 30 minutes of discussion. The presentation will be graded along three dimensions:
+   * Clarity (40%)
+   * Correctness (40%)
+   * Presentation style (20%)
+Because of the COVID-19 situation we will not meet in person. The presentations will therefore be pre-recorded and uploaded by the participants for the other students to watch before(!) the discussion meeting. Overlong videos will be cut at 45 minutes sharp. You will also include the results from your experiments with the datasets provided for the seminar as a basis for comparison with the other methods. 
+
+   2. An Essay (30%)
+The goal of the essay is to write a review of the topic you have been assigned to. This essay has to be submitted as PDF to your supervisor. The length of your essay depends on the number of ECTS points you receive for this seminar. If you are a Data/Computer Science student (6 ECTS points), your essay should be at least 10k characters long. If you are a Statistics student (9 ECTS), your essay should be at least 15k characters long. In both cases the extended abstract is included in the character count.
+
+   3. Extended abstract and first draft (10%)
+The goal of the extended abstract is to summarize motivation, key arguments and if applicable results of the paper/ topic you were assigned to. The extended abstracts will be published on moodle and thus be visible to all participants upon arrival.   The respective reviewer will give feedback on this extended abstract.
+The extended abstract shall be between 300 and 1200 words long.
+First draft: Submitting the draft to your reviewer will give you the chance to get feedback on your final essay. It should roughly have the structure and contents of your final submission and can still consist of bullet points. So it does not need to be fully fleshed out, but must be understandable by the discussant.
+
+      4. Discussant, Moderator and Active Participation (20%)
+The reviews should be given in time and provide constructive critical feedback on the respective document.  The reviewer will give timely and constructive feedback on the assigned extended abstract (i.e., whether motivation and content are clear and correct and how they could be improved) and moderate the discussion after the talk.
+The review will be uploaded to moodle and thus be visible to the author, the supervisors and the other participants of the seminar.
+We expect the discussant to have understood important concepts enough to shape a discussion of the topic at hand. When moderating the group discussion he/she will quickly summarize the contents of the talk, manage time and guide the discussion for the respective session.
+
+
+Attendance is mandatory for all discussion dates. If you miss a date or the discussion of your own presentation, you need to provide a medical certificate (and reschedule, if you miss your own discussion date). If you fail to do either of the two, you fail the seminar. You also fail the seminar if you drop out later than one week after the kickoff.
+
+
+Topics
+1. Classical Spectral Embedding Methods: PCA, MDS
+PCA and MDS are among the earliest methods used for dimension reduction, both being considered spectral embedding methods. However, they follow rather distinct principles and were originally developed for different purposes.  
+Describe and explain these two methods in detail and well-founded  based on thorough geometrical, algebraical and practical considerations. Discuss why they are called linear embedding methods and discuss differences and similarities to lay ground for the broader class of spectral embedding methods. Apply the methods yourself to the example data.
+
+
+         * Vidal, R., Ma, Y., & Sastry. S. S. Generalized Principal Component Analysis. Spinger, 2016. Chapter 2.1
+         * John A. Lee and Michel Verleysen. Nonlinear Dimensionality Reduction. Springer, 2007. Chapter 2.4
+         * Ma, Y., & Fu, Y. (Eds.). Manifold learning theory and applications. CRC press, 2011. Chapter 1.4
+         * Hastie, T., Tibshirani, R., & Friedman J. The Elements of Statistical Learning. Data Mining, Inference, and Prediction. Springer, 2009. Chapter 14.5.1 & 14.8
+2. Evaluating Manifold Embeddings 
+Evaluating manifold learning results, often called embeddings, is an important aspect of manifold learning, for example to be able to compare results of different methods or to tune a method's hyper-parameters. However, usually there is not a clear objective to optimize against. 
+Describe the reconstruction error and discuss why it is usually not available. Provide an overview of alternative measures proposed to circumvent this problem and explain the principles behind them, thoroughly discussing their strengths and weaknesses. Apply at least two of these measures to a method of your choice and compare them practically. Implement a basic framework allowing the other participants to evaluate their methods.
+
+
+         * Chen, L., Buja, A.: Local Multidimensional Scaling for Nonlinear Di-mension Reduction, Graph Drawing, and Proximity Analysis. Journal of the American Statistical Association 104(485), 209–219 (2009)
+         * Lee, J.A., Verleysen, M.: Quality assessment of dimensionality reduction: Rank-based criteria. Neurocomputing 72(7-9), 1431–1443 (2009)
+         * Kraemer, G., Reichstein, M., Mahecha, D., M.: dimRed and coRanking -Unifying Dimensionality Reduction in R. The R Journal 10(1), 342 (2018)
+         * Liang, J., Chenouri, S., & Small, C. G. (2020). A new method for performance analysis in nonlinear dimensionality reduction. Statistical Analysis and Data Mining: The ASA Data Science Journal, 13(1), 98-108.
+3. Graphs & Graph Laplacians, Spectral embeddings and Isomap
+
+
+Several graph-based algorithms have been developed relying on the idea of building a graph whose nodes are data points and edges represent similarities between points. 
+Provide a thorough introduction to graphs and graph laplacians, show its connection to statistical concepts such as Markov Chains and Random Walks, show applications in spectral clustering methods, introduce Laplacian eigenmaps and Isomap and apply the method yourself to the example data sets.  
+
+
+         * Yunqian Ma and Yun Fu. 2011. Manifold Learning Theory and Applications (1st. ed.). CRC Press, Inc., USA. Chapter 2
+         * U. von Luxburg. A Tutorial on Spectral Clustering. Statistics and Computing, 17(4), 395–416 (2007).
+         * John A. Lee and Michel Verleysen. Nonlinear Dimensionality Reduction. Springer, 2007. Chapter 5.3.2
+         * Tenenbaum, J.B., Silva, V. D., Langford, J.C.: A Global Geometric Framework for Nonlinear Dimensionality Reduction. Science 290(5500), 2319–2323 (2000)
+         * M. Belkin and P. Niyogi. Laplacian Eigenmaps for Dimensionality Reduction and Data Representation. Neural Computation, 15, 1373–1396 (2003).
+         * Slides from Justin Solomon from MLSS 2019 on Geometric Methods and Laplacians: https://github.com/mlss-skoltech/lectures/tree/master/geometric_techniques_in_ML
+4. Local Linear Embeddings
+Local Linear Embeddings (LLE) are another graph-based spectral method that is able to obtain highly nonlinear embeddings and is robust to local minima. It is based on a neighborhood-graph, a weight matrix that is used to describe each data point based on its closest neighbors and then solves an eigenvalue-problem based on this weight matrix.
+For this topic you are expected to familiarize yourself with the details of LLE and grasp the pros and cons of LLE compared to other graph-based approaches. Further you are asked to describe two extensions of LLE: 1) the Hessian LLE and 2) a semi-supervised variant of LLE which is able to leverage information from some labelled data points. Apply at least the standard LLE on the provided toy datasets.
+
+
+         * Roweis, Sam T., and Lawrence K. Saul. "Nonlinear dimensionality reduction by locally linear embedding." science 290.5500 (2000): 2323-2326.
+         * Donoho, David L., and Carrie Grimes. "Hessian eigenmaps: Locally linear embedding techniques for high-dimensional data." Proceedings of the National Academy of Sciences 100.10 (2003): 5591-5596.
+         * Yang, Xin, et al. "Semi-supervised nonlinear dimensionality reduction." Proceedings of the 23rd international conference on Machine learning. 2006.
+         * NeurIPS 2005 Tutorial on “Spectral Methods for Dimensionality Reduction”: https://www.robots.ox.ac.uk/~cvrg/michaelmas2007/nips05_nldr.pdf
+5. Diffusion Maps
+Diffusion Maps are a robust and computationally cheap method for non-linear dimensionality reduction based on Markov-Processes and so called ‘diffusion kernels’ to create said Markov Transition Matrix. You are asked to familiarize yourself with Diffusion Maps and their strengths and weaknesses compared to other dimensionality reduction techniques and apply diffusion maps to the provided toy datasets. As an extension, you will guide the audience through the usage of Diffusion Maps for the embedding of time series data as a special application example. 
+
+
+         * Coifman, Ronald R., and Stéphane Lafon. "Diffusion maps." Applied and computational harmonic analysis 21.1 (2006): 5-30.
+         * De la Porte, J., et al. "An introduction to diffusion maps." Proceedings of the 19th Symposium of the Pattern Recognition Association of South Africa (PRASA 2008), Cape Town, South Africa. 2008.
+         * Rodrigues, Pedro Luiz Coelho, Marco Congedo, and Christian Jutten. "Multivariate time-series analysis via manifold learning." In 2018 IEEE Statistical Signal Processing Workshop (SSP), pp. 573-577. IEEE, 2018.
+6. Generalized PCA
+Three important ways to generalize PCA have been developed: Sparse PCA for better interpretability, robust PCA with regard to contaminated or missing data, and kernel PCA which turns PCA into a non-linear embedding method. 
+Pick one or two of those for your presentation, explain their development based on a solid understanding of conventional PCA, point out connections and similarities to other methods, give a brief overview over available algorithms,  summarize results from a real-world application (to be determined once the scope of the presentation is fixed) and apply the method(s) yourself to the example data sets.
+
+
+         * Vidal, Rene, Yi Ma, & Shankar Sastry. Generalized principal component analysis. Springer, 2005. Ch. 3 (Sparse/Robust), Ch. 4.1 (Kernel)
+         * John A. Lee and Michel Verleysen. Nonlinear Dimensionality Reduction. Springer, 2007.  Ch. 4.4 (Kernel)
+         * Hui Zou; Lingzhou Xue (2018). "A Selective Overview of Sparse Principal Component Analysis". Proceedings of the IEEE. 106 (8): 1311–1320. doi:10.1109/jproc.2018.2846588
+         * Ning-min, S., & Jing, L. (2015). A Literature Survey on High-Dimensional Sparse Principal Component Analysis. International journal of database theory and application, 8, 57-74.
+7. Probabilistic PCA 
+Reformulating PCA within a maximum-likelihood framework - known as Probabilistic PCA (PPCA) - brings several advantages compared with conventional PCA. The association of a probability model with PCA allows the generalization from one to multiple subspaces to form a mixture of local PCA models (MPPCA).
+Based on a solid understanding of conventional PCA, explain PPCA and its generalization, and apply the method yourself to the example data sets.   
+
+
+         * Christopher M. Bishop. 2006. Pattern Recognition and Machine Learning (Information Science and Statistics). Springer-Verlag, Berlin, Heidelberg. Chapter 12.2
+         * Tipping ME, Bishop CM. Mixtures of probabilistic principal component analyzers. Neural Comput. 1999 Feb 15;11(2):443-82. doi: 10.1162/089976699300016728. PMID: 9950739.
+         * Tipping, M. E., & Bishop, C. M. (1999). Probabilistic principal component analysis. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 61(3), 611–622.
+8. t-SNE
+t-SNE’s (t-distributed Stochastic Neighbor Embedding) claim to fame is mostly as the source of pretty visualizations in deep learning, but it’s an important and interesting embedding or dimension reduction method very much in a class of its own that has found wide-spread adoption in genomics and other fields as well. 
+Give an overview over the basic idea of the tSNE algorithm and the improvements that were developed later,  summarize results from a real-world application in light of tSNE’s tuning and initialization sensititvity and apply the method yourself to the example data sets.
+
+
+         * van der Maaten, L.J.P.; Hinton, G.E. (2008). "Visualizing Data Using t-SNE". Journal of Machine Learning Research. 9: 2579–2605. https://jmlr.csail.mit.edu/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
+         * Wattenberg, Martin; Viégas, Fernanda; Johnson, Ian (2016-10-13). "How to Use t-SNE Effectively". Distill.  https://distill.pub/2016/misread-tsne/
+         * Van Der Maaten, L. (2014). Accelerating t-SNE using tree-based algorithms. Journal of Machine Learning Research, 15(1), 3221-3245.
+https://www.jmlr.org/papers/volume15/vandermaaten14a/vandermaaten14a.pdf
+         * Linderman, G. C., Rachh, M., Hoskins, J. G., Steinerberger, S., & Kluger, Y. (2017). Efficient algorithms for t-distributed stochastic neighborhood embedding. arXiv:1712.09005. https://arxiv.org/pdf/1712.09005.pdf
+         * Kobak, D., Berens, P. The art of using t-SNE for single-cell transcriptomics. Nature Communications 10, 5416 (2019). https://doi.org/10.1038/s41467-019-13056-x
+9. UMAP
+UMAP (Uniform Manifold Approximation and Projection) is another manifold learning method combining ideas from both differential geometry (Riemannian manifolds) and topology (simplicial complexes). Despite its novelty, it has already found wide-spread adoption in many areas of application.   
+Give an overview over the mathematical background and basic idea of the UMAP algorithm,  compare & contrast its properties to other manifold learning approaches discussed in the seminar, summarize results from a real-world application and apply the method yourself to the example data sets.
+
+
+            * McInnes, L., Healy, J., & Melville, J. (2018). Umap: Uniform manifold approximation and projection for dimension reduction. arXiv preprint arXiv:1802.03426.
+            * More accessible explanations and examples: https://umap-learn.readthedocs.io/en/latest/
+https://pair-code.github.io/understanding-umap/
+https://towardsdatascience.com/how-exactly-umap-works-13e3040e1668
+            * Becht, E., McInnes, L., Healy, J. et al. Dimensionality reduction for visualizing single-cell data using UMAP. Nat Biotechnol 37, 38–44 (2019). https://doi.org/10.1038/nbt.4314
