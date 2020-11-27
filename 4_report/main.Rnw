@@ -1,0 +1,185 @@
+% ------------------------------------------------------------------------------
+% SETUP ------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,width = 150mm, top = 25mm, bottom = 25mm, 
+bindingoffset = 6mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[round, comma]{natbib}
+\usepackage{url}
+\usepackage[font = footnotesize]{caption}
+\usepackage{subcaption}
+\usepackage{csquotes} \MakeOuterQuote{"}
+\usepackage{ragged2e}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm }
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+  \usetikzlibrary{trees, arrows, decorations.pathmorphing, backgrounds, 
+  positioning, fit, petri, shapes}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor, listings}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\newcommand{\changefont}{%
+    \fontsize{8}{11}\selectfont
+}
+\usepackage{refcount}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{\changefont{Fun with LLE}}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\setlength{\headheight}{14.5pt}
+\interfootnotelinepenalty = 10000
+
+% ------------------------------------------------------------------------------
+% MAIN -------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+% FRONT PAGE -------------------------------------------------------------------
+ 
+\begin{titlepage}
+\begin{center}
+    
+\LARGE
+Seminar Report
+    
+\vspace{0.5cm}
+      
+\rule{\textwidth}{1.5pt}
+\LARGE 
+\textbf{Fun with LLE}
+\rule{\textwidth}{1.5pt}
+   
+\vspace{0.5cm}
+      
+\large
+Department of Statistics \\
+Ludwig-Maximilians-Universität München
+      
+\vspace{3.5cm}
+
+\includegraphics[width = 0.4\textwidth]{sigillum.png}
+
+\vspace{3.5cm}
+
+\large
+By Lisa Wimmer \\
+Under the supervision of Jann Goschenhofer, PhD \\
+Munich, month day\textsuperscript{th}, 2021
+
+\end{center}
+\end{titlepage}
+
+% CONTENTS ---------------------------------------------------------------------
+
+\pagenumbering{Roman}
+\newpage
+
+\Large
+\noindent
+\textbf{Abstract}
+\vspace{0.5cm} \\
+\noindent
+\normalsize
+    
+\input{chapters/introduction.Rnw}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+% CHAPTERS ---------------------------------------------------------------------
+
+\pagenumbering{arabic}
+    
+\section{Introduction}
+\label{intro}
+\input{chapters/introduction.Rnw}
+
+\newpage
+
+\section{Foo}
+\label{foo}
+\input{chapters/introduction.Rnw}
+
+\newpage
+
+\section{Conclusion}
+\label{concl}
+\input{chapters/introduction.Rnw}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% APPENDIX ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+    
+\pagenumbering{Roman}
+
+% FIXME make page numbering dynamic (picking up from list of tables page)
+% \getpagerefnumber{listoftables} does not work
+\setcounter{page}{\getpagerefnumber{5}}
+
+\appendix
+
+\section{Appendix}
+\label{app}
+\input{chapters/introduction.Rnw}
+\newpage
+
+\section{Electronic Appendix}
+\label{el_app}
+\input{chapters/introduction.Rnw}
+\newpage
+    
+% ------------------------------------------------------------------------------
+% BIBLIOGRAPHY -----------------------------------------------------------------
+% ------------------------------------------------------------------------------
+
+\RaggedRight
+\bibliography{Bib}
+\bibliographystyle{dcu}
+\newpage
+
+% ------------------------------------------------------------------------------
+% DECLARATION OF AUTHORSHIP-----------------------------------------------------
+% ------------------------------------------------------------------------------
+
+\Large
+\noindent
+\textbf{Declaration of Authorship} 
+\vspace{0.5cm}
+\noindent
+\normalsize
+
+I hereby declare that the Thesis submitted is my own unaided work. All direct or 
+indirect sources used are acknowledged as references. I am aware that the Thesis 
+in digital form can be examined for the use of unauthorized aid and in order to 
+determine whether the Thesis as a whole or parts incorporated in it may be 
+deemed as plagiarism. For the comparison of my work with existing sources I 
+agree that it shall be entered in a database where it shall also remain after 
+examination, to enable comparison with future Theses submitted. Further rights 
+of reproduction and usage, however, are not granted here. This paper was not 
+previously presented to another examination board and has not been published. 
+
+% ------------------------------------------------------------------------------
+
+\end{document}
