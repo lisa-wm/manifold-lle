@@ -36,7 +36,7 @@ bindingoffset = 6mm]{geometry}
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[R]{\changefont{Fun with LLE}}
+\fancyhead[R]{\changefont{Semi-Supervised Locally Linear Embedding}}
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{14.5pt}
@@ -62,7 +62,7 @@ Seminar Report
       
 \rule{\textwidth}{1.5pt}
 \LARGE 
-\textbf{Fun with LLE}
+\textbf{Semi-Supervised Locally Linear Embedding}
 \rule{\textwidth}{1.5pt}
    
 \vspace{0.5cm}
@@ -115,17 +115,37 @@ Munich, month day\textsuperscript{th}, 2021
 \label{intro}
 \input{chapters/introduction.Rnw}
 
-\newpage
+% IDEA neighborhoods in high-dim space
+% cover difficulty of finding neighborhoods in high-dim space
+% (maybe plus distance measures)
+% IDEA weighted reconstruction error in lle
+% uniformly weighted across x_i in original paper - could it make sense to
+% assign more weight to points whose neighbor hood lies more closely? So as not
+% to put too much effort into points who are badly represented anyway 
 
-\section{Foo}
-\label{foo}
-\input{chapters/introduction.Rnw}
+\section{Non-Linear Dimensionality Reduction}
+\label{nonlin-dim-red}
+\input{chapters/nonlin-dim-red.Rnw}
 
-\newpage
+\section{Mathematical Framework}
+\label{math}
+\input{chapters/math.Rnw}
+
+\section{Locally Linear Embedding (LLE)}
+\label{lle}
+\input{chapters/lle.Rnw}
+
+\section{Semi-Supervised Locally Linear Embedding (SS-LLE)}
+\label{sslle}
+\input{chapters/sslle.Rnw}
+
+\section{Experiment Results}
+\label{experiment}
+\input{chapters/experiment.Rnw}
 
 \section{Conclusion}
 \label{concl}
-\input{chapters/introduction.Rnw}
+\input{chapters/conclusion.Rnw}
 
 \newpage
 
@@ -137,7 +157,8 @@ Munich, month day\textsuperscript{th}, 2021
 
 % FIXME make page numbering dynamic (picking up from list of tables page)
 % \getpagerefnumber{listoftables} does not work
-\setcounter{page}{\getpagerefnumber{5}}
+
+\setcounter{page}{5}
 
 \appendix
 

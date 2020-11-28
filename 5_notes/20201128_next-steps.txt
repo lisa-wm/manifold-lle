@@ -21,6 +21,7 @@ NEXT STEPS
 2. Implement LLE & SS-LLE
 
 - Master evaluation & visualization as provided in github repo
+- Find out about packages etc.
 - Perform LLE & SS-LLE on toy data + imperfect tyre
 
 3. Refine mathematical understanding
