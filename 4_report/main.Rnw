@@ -114,6 +114,14 @@ Munich, month day\textsuperscript{th}, 2021
 \label{intro}
 \input{chapters/introduction.Rnw}
 
+% IDEA neighborhoods in high-dim space
+% cover difficulty of finding neighborhoods in high-dim space
+% (maybe plus distance measures)
+% IDEA weighted reconstruction error in lle
+% uniformly weighted across x_i in original paper - could it make sense to
+% assign more weight to points whose neighbor hood lies more closely? So as not
+% to put too much effort into points who are badly represented anyway 
+
 \newpage
 
 \section{Foo}
