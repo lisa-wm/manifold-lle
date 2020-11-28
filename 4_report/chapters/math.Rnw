@@ -1,0 +1,11 @@
+\subsection{Spectral Decomposition}
+\label{spect-decomp}
+
+\subsection{Locally Linear Neighborhoods}
+\label{loc-lin-neigh}
+
+\subsection{Spectral Graph Theory}
+\label{graph-theory}
+
+\subsection{Laplacian Eigenmaps}
+\label{lapl-eigenmaps}

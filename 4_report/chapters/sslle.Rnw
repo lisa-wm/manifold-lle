@@ -1,0 +1,8 @@
+\subsection{Employment of Prior Information}
+\label{prior-info}
+
+\subsection{SS-LLE Algorithm}
+\label{algo-sslle}
+
+\subsection{Choice of Prior Points}
+\label{prior-points}

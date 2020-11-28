@@ -1,0 +1,11 @@
+\subsection{Desirability of Dimensionality Reduction}
+\label{why-dim-red}
+
+\subsection{Non-Linear Manifold Embeddings}
+\label{mani-embed}
+
+\subsection{Methods of Non-Linear Dimensionality Reduction}
+\label{methods-nonlin-dim-red}
+
+\subsection{Evaluation of Manifold Learning}
+\label{eval-mani}

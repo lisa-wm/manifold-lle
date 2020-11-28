@@ -1,0 +1,8 @@
+\subsection{Original LLE Algorithm}
+\label{algo-lle}
+
+\subsection{Strengths and Weaknesses}
+\label{pro-con}
+
+\subsection{Extensions to LLE}
+\label{ext-lle}
