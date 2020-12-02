@@ -1,8 +1,22 @@
 \subsection{Employment of Prior Information}
 \label{prior-info}
 
+\begin{itemize}
+  \item Why use labels in the first place?
+  \item How will that help?
+\end{itemize}
+
 \subsection{SS-LLE Algorithm}
 \label{algo-sslle}
 
+\begin{itemize}
+  \item What is different wrt standard LLE?
+\end{itemize}
+
 \subsection{Choice of Prior Points}
 \label{prior-points}
+
+\begin{itemize}
+  \item How can we find prior points (if not by domain knowledge)?
+  \item How many are considered necessary to yield tangible benefits?
+\end{itemize}

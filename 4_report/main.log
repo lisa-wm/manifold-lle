@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  28 NOV 2020 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  2 DEC 2020 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,7 +809,11 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count319
 \l__pdf_internal_box=\box92
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `math-obj' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -944,7 +948,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--99
 
  []
 
-(./chapters/introduction.Rnw) [1] (./main.toc)
+(./chapters/introduction.Rnw
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 2
+.
+ (c:/R/R-4.0.2/share/texmf/tex/latex/ts1aer.fd
+File: ts1aer.fd 
+)
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 2.
+)
+[1] (./main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -956,29 +969,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--99
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [4] (./chapters/introduction.Rnw) (./chapters/nonlin-dim-red.Rnw)
-(./chapters/math.Rnw) (./chapters/lle.Rnw) (./chapters/sslle.Rnw)
-(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [1] [2]
-(./chapters/introduction.Rnw) [5] (./chapters/introduction.Rnw) [6]
+ [4]
+(./chapters/introduction.Rnw) (./chapters/math.Rnw [1]) (./chapters/lle.Rnw)
+(./chapters/sslle.Rnw) (./chapters/experiment.Rnw) (./chapters/conclusion.Rnw)
+[2] (./chapters/appendix.Rnw) [5] [6]
 No file main.bbl.
-[7] (./main.aux) ) 
+[7] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 23093 strings out of 479485
- 456121 string characters out of 5875915
- 750178 words of memory out of 5000000
- 39560 multiletter control sequences out of 15000+600000
- 567725 words of font info for 99 fonts, out of 8000000 for 9000
+ 23108 strings out of 479485
+ 456275 string characters out of 5875915
+ 750183 words of memory out of 5000000
+ 39576 multiletter control sequences out of 15000+600000
+ 568062 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,85p,456b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-b10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c
-:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/
-2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on main.pdf (10 pages, 373583 bytes).
+ 80i,11n,85p,456b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sf
+rm1200.pfb>
+Output written on main.pdf (10 pages, 384953 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  22 words of extra memory for PDF output out of 10000 (max. 10000000)
 
