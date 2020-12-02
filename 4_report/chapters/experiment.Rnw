@@ -4,5 +4,11 @@
 \subsection{Experimental Design}
 \label{design}
 
+\begin{itemize}
+  \item Implementation details
+  \item Hyperparameters
+  \item Evaluation criteria
+\end{itemize}
+
 \subsection{Results and Discussion}
 \label{results}

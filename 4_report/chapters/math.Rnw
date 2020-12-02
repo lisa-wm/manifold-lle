@@ -1,57 +1,19 @@
-\subsection{Basic Concepts in Manifold Learning}
-\label{basic-conc}
-
-\textcolor{red}{AS BRIEF AS POSSIBLE, but concepts and corresponding notation
-should be introduced properly}
-
-\subsubsection{"Mathematical Objects" (find proper title)}
+\subsection{"Mathematical Objects" (\textcolor{red}{find proper title})}
 \label{math-obj}
 
 \begin{itemize}
   \item Topologies
+  \item Geodesics
   \item Manifolds
   \item Tangent spaces
 \end{itemize}
 
-\subsubsection{Spectral Decomposition}
-\label{math-obj}
+\subsection{Spectral Decomposition}
+\label{spect-dec}
 
 \begin{itemize}
   \item Eigenvalues/eigenvectors 
   \item Spectral decomposition
 \end{itemize}
 
-\subsubsection{Evaluation of Manifold Learning}
-\label{eval-mani}
 
-\begin{itemize}
-  \item How can we evaluate manifold learning?
-  \item No details, but some foundation to base evaluation of experiments on
-\end{itemize}
-
-\subsection{Neighborhoods and Basics of Spectral Graph Theory}
-\label{neigh-graph}
-
-\begin{itemize}
-  \item Neighborhoods and neighborhood graphs
-  \item Linear reconstruction and reconstruction error
-  \item Degree and adjacency matrices
-\end{itemize}
-
-\subsection{Laplacian Eigenmaps}
-\label{laplace}
-
-\begin{itemize}
-  \item Laplacian-Beltrami operator
-  \item Laplacian eigenmaps
-\end{itemize}
-
-\textcolor{red}{Can be interpreted as framework for both LLE and HLLE; only to
-the extent where it helps to frame LLE}
-
-% Explanation found: "In practical terms, the computations required by Hessian LLE 
-% have more in common with LLE, but Laplacian eigenmaps provide a
-% clearer framework for understanding how the method works. In the same way that 
-% Laplacian eigenmaps uses a graph-based approximation to the Laplace-Beltrami operator on the
-% data manifold, Hessian LLE relies on a numerical approximation to the Hessian matrix of a
-% function defined on the data manifold."

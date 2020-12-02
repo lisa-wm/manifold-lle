@@ -8,9 +8,9 @@
   \item This mapping can be constructed linearly or non-linearly (slapping the 
   roll flat vs unrolling it), thereby defining the complexity of the manifolds 
   we are able to learn
-  \item Give brief intuition to manifold learning: what do we mean by 
-  topologies, manifolds, maps, charts?
-  \item What methods are already out there? 
+  \item Brief intuition to manifold learning with simple example (e.g., rotated
+  letters A)
+  \item Different methods out there (linear, non-linear, ...)
 \end{itemize}
 
 

@@ -1,0 +1,70 @@
+\subsection{Concept of Isometry}
+\label{isometry}
+
+\begin{itemize}
+  \item Notion of distance
+  \item Preserving distances in manifold learning
+  \item MDS (very brief)
+\end{itemize}
+
+\subsection{Graph-Based Models}
+\label{graph-models}
+
+\subsubsection{Neighborhoods}
+\label{neighbor}
+
+\begin{itemize}
+  \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs
+  \item Linear reconstruction and reconstruction error
+\end{itemize}
+
+\subsubsection{Basics of Spectral Graph Theory}
+\label{graph-theory}
+
+\begin{itemize}
+  \item Degree and adjacency matrices
+  \item Laplacian operators
+\end{itemize}
+
+\subsubsection{General Structure of Graph-Based Models}
+\label{gb-model-structure}
+
+\begin{itemize}
+  \item Neighborhood graph
+  \item Weight matrix
+  \item Eigenwert problem
+\end{itemize}
+
+\subsubsection{ISOMAP}
+\label{isomap}
+
+\begin{itemize}
+  \item (One of the) earliest, simplest variant(s)
+  \item MDS with geodesics
+\end{itemize}
+
+\subsection{Laplacian Eigenmaps}
+\label{laplace}
+
+\begin{itemize}
+  \item Notion of locality
+  \item Laplacian eigenmaps
+\end{itemize}
+
+\subsection{Locally Linear Embedding (LLE)}
+\label{lle}
+
+\begin{itemize}
+  \item Notion of local linearity
+  \item Approximation of graph Laplacian
+\end{itemize}
+
+% TODO Regularized version???
+
+\subsection{Hessian Locally Linear Embedding (HLLE)}
+\label{hlle}
+
+\begin{itemize}
+  \item Hessian instead of Laplacian (eigenmaps)
+  \item Hessian instead of LS fit (LLE)
+\end{itemize}
