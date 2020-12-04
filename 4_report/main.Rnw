@@ -4,6 +4,10 @@
 
 \documentclass[12pt]{article}
 
+\renewcommand{\labelitemi}{$\circ$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\circ$}
+
 \usepackage[a4paper,width = 150mm, top = 25mm, bottom = 25mm, 
 bindingoffset = 6mm]{geometry}
 \usepackage[utf8]{inputenc}
@@ -36,7 +40,7 @@ bindingoffset = 6mm]{geometry}
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[R]{\changefont{Semi-Supervised Locally Linear Embedding}}
+\fancyhead[R]{\changefont{Applying Semi-Supervised Locally Linear Embedding}}
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{14.5pt}
@@ -61,7 +65,7 @@ Seminar Report
       
 \rule{\textwidth}{1.5pt}
 \LARGE 
-\textbf{Semi-Supervised Locally Linear Embedding}
+\textbf{Applying Semi-Supervised Locally Linear Embedding}
 \rule{\textwidth}{1.5pt}
    
 \vspace{0.5cm}
@@ -78,7 +82,7 @@ Ludwig-Maximilians-Universität München
 
 \large
 By Lisa Wimmer \\
-Under the supervision of Jann Goschenhofer, PhD \\
+Under the supervision of Jann Goschenhofer, Ph.D. \\
 Munich, month day\textsuperscript{th}, 2021
 
 \end{center}
@@ -96,7 +100,7 @@ Munich, month day\textsuperscript{th}, 2021
 \noindent
 \normalsize
     
-\input{chapters/introduction.Rnw}
+\input{chapters/abstract.Rnw}
 
 \newpage
 \tableofcontents
@@ -122,13 +126,13 @@ Munich, month day\textsuperscript{th}, 2021
 % assign more weight to points whose neighbor hood lies more closely? So as not
 % to put too much effort into points who are badly represented anyway 
 
-\section{Theoretical Framework}
+\section{Mathematical Framework}
 \label{math}
 \input{chapters/math.Rnw}
 
-\section{Locally Linear Embedding (LLE)}
-\label{lle}
-\input{chapters/lle.Rnw}
+\section{Local Graph-Based Manifold Learning}
+\label{lgb-mani-learn}
+\input{chapters/graph-based-models.Rnw}
 
 \section{Semi-Supervised Locally Linear Embedding (SS-LLE)}
 \label{sslle}

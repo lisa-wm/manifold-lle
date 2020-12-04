@@ -1,23 +1,25 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
-\contentsline {section}{\numberline {2}Theoretical Framework}{1}{}%
-\contentsline {subsection}{\numberline {2.1}Basic Concepts in Manifold Learning}{1}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}\csqQQ {34}Mathematical Objects\csqQQ {34} (find proper title)}{1}{}%
-\contentsline {subsubsection}{\numberline {2.1.2}Spectral Decomposition}{1}{}%
-\contentsline {subsubsection}{\numberline {2.1.3}Evaluation of Manifold Learning}{1}{}%
-\contentsline {subsection}{\numberline {2.2}Neighborhoods and Basics of Spectral Graph Theory}{1}{}%
-\contentsline {subsection}{\numberline {2.3}Laplacian Eigenmaps}{2}{}%
-\contentsline {section}{\numberline {3}Locally Linear Embedding (LLE)}{2}{}%
-\contentsline {subsection}{\numberline {3.1}Original LLE Algorithm}{2}{}%
-\contentsline {subsection}{\numberline {3.2}Strengths and Drawbacks}{2}{}%
-\contentsline {subsection}{\numberline {3.3}Extensions to LLE}{2}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{2}{}%
-\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{2}{}%
-\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{2}{}%
-\contentsline {subsection}{\numberline {4.3}Choice of Prior Points}{2}{}%
-\contentsline {section}{\numberline {5}Experiment Results}{2}{}%
-\contentsline {subsection}{\numberline {5.1}Data}{2}{}%
-\contentsline {subsection}{\numberline {5.2}Experimental Design}{2}{}%
-\contentsline {subsection}{\numberline {5.3}Results and Discussion}{2}{}%
-\contentsline {section}{\numberline {6}Conclusion}{2}{}%
+\contentsline {section}{\numberline {2}Mathematical Framework}{1}{}%
+\contentsline {subsection}{\numberline {2.1}\csqQQ {34}Mathematical Objects\csqQQ {34} (\leavevmode {\color {red}find proper title})}{1}{}%
+\contentsline {subsection}{\numberline {2.2}Spectral Decomposition}{1}{}%
+\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{1}{}%
+\contentsline {subsection}{\numberline {3.1}Concept of Isometry}{1}{}%
+\contentsline {subsection}{\numberline {3.2}Graph-Based Models}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Neighborhoods}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Basics of Spectral Graph Theory}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}General Structure of Graph-Based Models}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}ISOMAP}{2}{}%
+\contentsline {subsection}{\numberline {3.3}Laplacian Eigenmaps}{2}{}%
+\contentsline {subsection}{\numberline {3.4}Locally Linear Embedding (LLE)}{2}{}%
+\contentsline {subsection}{\numberline {3.5}Hessian Locally Linear Embedding (HLLE)}{2}{}%
+\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{3}{}%
+\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{3}{}%
+\contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{3}{}%
+\contentsline {section}{\numberline {5}Experiment Results}{3}{}%
+\contentsline {subsection}{\numberline {5.1}Data}{3}{}%
+\contentsline {subsection}{\numberline {5.2}Experimental Design}{3}{}%
+\contentsline {subsection}{\numberline {5.3}Results and Discussion}{3}{}%
+\contentsline {section}{\numberline {6}Conclusion}{3}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%

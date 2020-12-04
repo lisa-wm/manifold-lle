@@ -17,3 +17,6 @@
 
 \subsection{Strengths and Drawbacks of SS-LLE}
 \label{pro-con}
+
+Potential shortcoming: what if manifold is not well-sampled? Not a problem with
+synthetic data, but IRL. But probably problematic with all manifold approaches
