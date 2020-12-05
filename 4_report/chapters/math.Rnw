@@ -1,11 +1,13 @@
-\subsection{"Mathematical Objects" (\textcolor{red}{find proper title})}
+\subsection{Basic Topological Concepts}
 \label{math-obj}
 
 \begin{itemize}
-  \item Topological spaces
-  \item Topological manifols
-  \item Curves/geodesics
-  \item Tangent spaces
+  \item Topology
+  \item Topological space
+  \item Topological manifold
+  \item Riemannian manifold
+  \item Curve/geodesic
+  \item Tangent space
 \end{itemize}
 
 \subsection{Spectral Decomposition}
