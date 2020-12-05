@@ -1,9 +1,9 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
 \contentsline {section}{\numberline {2}Mathematical Framework}{1}{}%
-\contentsline {subsection}{\numberline {2.1}\csqQQ {34}Mathematical Objects\csqQQ {34} (\leavevmode {\color {red}find proper title})}{1}{}%
+\contentsline {subsection}{\numberline {2.1}Basic Topological Concepts}{1}{}%
 \contentsline {subsection}{\numberline {2.2}Spectral Decomposition}{1}{}%
-\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{1}{}%
-\contentsline {subsection}{\numberline {3.1}Concept of Isometry}{1}{}%
+\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Concept of Isometry}{2}{}%
 \contentsline {subsection}{\numberline {3.2}Graph-Based Models}{2}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Neighborhoods}{2}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Basics of Spectral Graph Theory}{2}{}%

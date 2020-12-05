@@ -1,5 +1,18 @@
-Will surely cite a lot from LLE paper \citep{roweissaul2000} and SS-LLE paper
-\citep{yangetal2006}
+Machine learning problems increasingly employ data of high dimensionality. While
+a large amount of samples is beneficial to learning, the same is typically not 
+true for the number of features: complex feature spaces with many dimensions 
+pose serious obstacles to the performance and convergence of most algorithms 
+\citep{cayton2005}. This issue is more generally addressed in the context of the 
+\textit{curse of dimensionality}, a term referring to various phenomena of 
+high-dimensional spaces. Crucially, the rapidly rising volume of space induces
+sparsity in the data. Consequences of this behavior are, among others, a sharp
+incline in the number of points required to sample the feature space and a loss 
+in meaningfulness of distances. It is not straightforward to infer
+properties of objects in high dimensions, as geometric intuition developed in 
+two or three dimensions is frequently misleading and does not generalize well to
+more complex spaces \citep{verleysenfrancois2005}.
+
+
 
 \begin{itemize}
   \item Why is dimensionality reduction desirable? Not only because it's easier 
