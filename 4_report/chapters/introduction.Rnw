@@ -1,3 +1,6 @@
+Will surely cite a lot from LLE paper \citep{roweissaul2000} and SS-LLE paper
+\citep{yangetal2006}
+
 \begin{itemize}
   \item Why is dimensionality reduction desirable? Not only because it's easier 
   to handle and visualize lower-dimensional data but because data-generating 

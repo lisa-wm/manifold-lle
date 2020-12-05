@@ -2,9 +2,9 @@
 \label{math-obj}
 
 \begin{itemize}
-  \item Topologies
-  \item Geodesics
-  \item Manifolds
+  \item Topological spaces
+  \item Topological manifols
+  \item Curves/geodesics
   \item Tangent spaces
 \end{itemize}
 

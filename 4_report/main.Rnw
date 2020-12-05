@@ -178,7 +178,7 @@ Data, code and figures are provided in electronic form.
 % ------------------------------------------------------------------------------
 
 \RaggedRight
-\bibliography{Bib}
+\bibliography{bibliography}
 \bibliographystyle{dcu}
 \newpage
 

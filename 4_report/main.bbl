@@ -1,0 +1,17 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
+Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
+  .
+\newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
+  Science} {\bf 290}:~2323--2326.
+
+\harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
+  Barlow}{2006}{yangetal2006}
+Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
+  2006\harvardyearright .
+\newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
+  of the 23rd International Conference on Machine Learning}, Pittsburgh, PA,
+  USA.
+
+\end{thebibliography}
