@@ -26,9 +26,9 @@ Consequences of this behavior are, among others, a sharp incline in the number
 of points required to sample the feature space and a loss in meaningfulness of 
 distances. 
 Many learners, however, rely on these 
-concepts\footnote{For instance, consider (linear) support vector machines and
-$k$-nearest neighbors, both of which rely on distances, or hyperparameter 
-tuning, which requires extensive sampling of the hyperparameter space.} and see 
+concepts\footnote{For instance, consider support vector machines and
+$k$-nearest neighbors, both of which rely on distances, or tuning, which 
+requires extensive sampling of the hyperparameter space.} and see 
 their functionality deteriorate \citep{verleysenfrancois2005}. 
 
 These challenges make the case for the endeavor of \textit{dimensionality 
@@ -40,7 +40,7 @@ dimension than is observed.
 More formally, the data are assumed to lie on a $d$-dimensional, potentially 
 non-linear \textit{manifold} with $d \ll D$.
 The goal is thus to reveal the structure of this manifold in an unsupervised
-manner. \\
+manner \citep{cayton2005}. \\
 
 Various manifold learning techniques have been proposed to learn points' 
 coordinates so they can be mapped to the corresponding $d$-dimensional Euclidean 
@@ -55,13 +55,12 @@ Among these spectral methods, some are confined to learning linear
 embeddings (such as \textit{principal component analysis (PCA)} or
 \textit{multi-dimensional scaling (MDS)}).
 Since linearity is a strong assumption that will generally not hold, non-linear 
-techniques are more widely applicable to complex data situations and thus quite
-popular. 
+techniques are more widely applicable and thus quite popular. 
 They can be further divided along the scope of the structure they 
 attempt to preserve: full spectral methods (for instance, \textit{ISOMAP}) 
-retain global pairwise distances, whereas sparse spectral approaches preserve
-local properties only. Sparse methods are therefore better suited to learning
-non-convex manifolds \citep{vandermaatenetal2009}.
+retain global pairwise distances, whereas sparse approaches preserve local 
+properties only. 
+Sparse methods are therefore better suited to learning non-convex manifolds \citep{vandermaatenetal2009}. \\
 
 One such technique is \textit{locally linear embedding (LLE)}, proposed by
 \citet{roweissaul2000}. It is based on the idea that points on the manifold lie 
