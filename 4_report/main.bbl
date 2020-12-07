@@ -5,11 +5,45 @@ Cayton, L.  \harvardyearleft 2005\harvardyearright .
 \newblock Algorithms for manifold learning, {\em Technical Report CS2008-0923},
   University of California, San Diego (UCSD).
 
+\harvarditem{Doshi-Velez \harvardand\ Kim}{2017}{doshivelezkim2017}
+Doshi-Velez, F. \harvardand\ Kim, B.  \harvardyearleft 2017\harvardyearright .
+\newblock Towards a rigorous science of interpretable machine learning, {\em
+  arXiv: Machine Learning} .
+
+\harvarditem[Leist et~al.]{Leist, Playne \harvardand\
+  Hawick}{2009}{leistetal2009}
+Leist, A., Playne, D.~P. \harvardand\ Hawick, K.~A.  \harvardyearleft
+  2009\harvardyearright .
+\newblock Exploiting graphical processing units for data‐parallel scientific
+  applications, {\em Concurrency and Computation. Practice and Experience} {\bf
+  21}(18):~2400--2437.
+
+\harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
+Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
+  .
+\newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
+  Science} {\bf 290}(5500):~2323--2326.
+
+\harvarditem[van~der Maaten et~al.]{van~der Maaten, Postma \harvardand\ van~den
+  Herik}{2009}{vandermaatenetal2009}
+van~der Maaten, L., Postma, E. \harvardand\ van~den Herik, J.  \harvardyearleft
+  2009\harvardyearright .
+\newblock Dimensionality reduction: A comparative review, {\em Technical Report
+  TiCC TR 2009-005}, Tilburg University.
+
 \harvarditem{Verleysen \harvardand\ Francois}{2005}{verleysenfrancois2005}
 Verleysen, M. \harvardand\ Francois, D.  \harvardyearleft 2005\harvardyearright
   .
 \newblock The curse of dimensionality in data mining and time series
   prediction, {\em in} J.~Cabestany, A.~Prieto \harvardand\ F.~Sandoval (eds),
   {\em Computational Intelligence and Bioinspired Systems}, Springer.
+
+\harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
+  Barlow}{2006}{yangetal2006}
+Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
+  2006\harvardyearright .
+\newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
+  of the 23rd International Conference on Machine Learning}, Pittsburgh, PA,
+  USA.
 
 \end{thebibliography}

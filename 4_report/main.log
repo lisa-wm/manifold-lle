@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  5 DEC 2020 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  7 DEC 2020 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -957,30 +957,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--103
 \openout7 = `main.lot'.
 
 
-[4] (./chapters/introduction.Rnw) (./chapters/math.Rnw)
-(./chapters/graph-based-models.Rnw [1]) (./chapters/sslle.Rnw [2])
-(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [3]
-(./chapters/appendix.Rnw) [5] [6] (./main.bbl) [7] [8] (./main.aux) ) 
+[4] (./chapters/introduction.Rnw
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
+
+ []
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
+
+ []
+
+) (./chapters/math.Rnw) (./chapters/graph-based-models.Rnw [2])
+(./chapters/sslle.Rnw [3]) (./chapters/experiment.Rnw)
+(./chapters/conclusion.Rnw) [4] (./chapters/appendix.Rnw) [5] [6] (./main.bbl)
+[7] [8] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 23098 strings out of 479485
- 456197 string characters out of 5875915
- 751264 words of memory out of 5000000
- 39567 multiletter control sequences out of 15000+600000
- 570202 words of font info for 102 fonts, out of 8000000 for 9000
+ 23122 strings out of 479485
+ 456617 string characters out of 5875915
+ 753525 words of memory out of 5000000
+ 39586 multiletter control sequences out of 15000+600000
+ 573002 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,85p,456b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texlive/2020/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (12 pages, 410709 bytes).
+ 80i,11n,85p,456b,293s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
+fb>
+Output written on main.pdf (13 pages, 445407 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  22 words of extra memory for PDF output out of 10000 (max. 10000000)
 
