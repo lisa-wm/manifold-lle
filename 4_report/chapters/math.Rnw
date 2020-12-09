@@ -1,14 +1,72 @@
-\subsection{Basic Topological Concepts}
+\subsection{Basic Geometric Concepts}
 \label{math-obj}
 
-\begin{itemize}
-  \item Topology
-  \item Topological space
-  \item Topological manifold
-  \item Riemannian manifold
-  \item Curve/geodesic
-  \item Tangent space
-\end{itemize}
+This chapter introduces the main geometric concepts considered necessary to
+provide a solid understanding of SS-LLE\footnote{
+Obviously, the list of concepts discussed is by no means extensive. Theory is
+presented much more in detail (and mathematical rigor) in, for example, 
+\textcolor{red}{good book}.
+}.
+It must be noted that everything discussed here is presented through the lens of
+machine learning, deliberately forsaking the generality inherent to topology.
+Therefore, assuming features can be represented by coordinates in 
+$D$-dimensional Euclidean space, all concepts are examined with regard to their
+meaning in $\RD$.
+\\
+
+% FIXME Make enumeration more compact 
+
+\textbf{Topological spaces.} A \textit{topological space} is constituted by a 
+set $X$ equipped with a \textit{topology} $\topo$. 
+A topology is a general way of describing relations between elements in $X$.
+Consider a function $\topo: X \rightarrow 2^X, x \mapsto \topo(x)$, which 
+assigns to $x \in X$ a set of subsets of $X$ called a \textit{neighborhood}.
+For $\topo$ to be a topology\footnote{
+Alternative definitions employ open subsets of $X$, see for example 
+\citet{waldmann2014}.
+}
+on $X$, the following properties must hold \citep{brown2006}:
+\begin{enumerate}
+  \item If $\topo$ is a neighborhood of $x$, then $x \in \topo$.
+  \item If $\topo$ is a subset of $X$ containing a neighborhood of $x$, then 
+  $\topo$ is a neighborhood of $x$.
+  \item The intersection of two neighborhoods of $x$ is again a neighborhood to
+  $x$.
+  \item Any neighborhood $\topo$ of $x$ contains a neighborhood $\topo^{\prime}$ 
+  of $x$ such that $\topo$ is a neighborhood of each element in 
+  $\topo^{\prime}$.
+\end{enumerate}
+
+Note that, in this general definition, neighborhoods are based on an abstract
+notion of "nearness". Learning the structure of a topological space boils down 
+to learning neighborhood relations.
+In Euclidean space, which is a topological space, these they are directly 
+based on \textit{distances}: neighborhoods are constructed by $\epsilon$-balls 
+containing all elements within a distance of at most $\epsilon$ to $x$.
+As the ultimate goal is the interpretation of data in a Euclidean space, 
+albeit one with lower dimensionality, it is necessary to study how topological 
+spaces relate to each other.
+\\
+
+\textbf{Homeomorphisms.} A homeomorphism is a bijective, continuous and
+continuously invertible function that maps point from one topological space
+A to another, B.
+A and B are thus homeomorphic if a bidirectional mapping exists that preserves
+topological properties (which???).
+If A is homeomorphic to a subspace of B, it is said to be embedded in B.
+If arbitrary local neighborhoods on A are homeomorphic to an open subset of
+Rd, A is embedded in Rd (true???) and called locally Euclidean.
+The idea is thus: we can deal with any crazily shaped topological space (plus
+some requirements) if it is embedded in Rd because it behaves like Rd on local 
+patches.
+
+% S-curve here
+
+\textbf{Manifold.} If A is a topological space, second-countable, Hausdorff and
+locally Euclidean, it is called a Manifold. If it is Riemann-condition (???)
+and connected, it is a Riemannian manifold and we can define a metric.
+
+\textbf{Geodesic}
 
 \subsection{Spectral Decomposition}
 \label{spect-dec}

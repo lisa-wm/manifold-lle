@@ -1,5 +1,10 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Brown}{2006}{brown2006}
+Brown, R.  \harvardyearleft 2006\harvardyearright .
+\newblock {\em Topology and Groupoids. A Geometric Account of General Topology,
+  Homotopy Types and the Fundamental Groupoid}, 2 edn, Createspace.
+
 \harvarditem{Cayton}{2005}{cayton2005}
 Cayton, L.  \harvardyearleft 2005\harvardyearright .
 \newblock Algorithms for manifold learning, {\em Technical Report CS2008-0923},
@@ -37,6 +42,10 @@ Verleysen, M. \harvardand\ Francois, D.  \harvardyearleft 2005\harvardyearright
 \newblock The curse of dimensionality in data mining and time series
   prediction, {\em in} J.~Cabestany, A.~Prieto \harvardand\ F.~Sandoval (eds),
   {\em Computational Intelligence and Bioinspired Systems}, Springer.
+
+\harvarditem{Waldmann}{2014}{waldmann2014}
+Waldmann, S.  \harvardyearleft 2014\harvardyearright .
+\newblock {\em Topology. An Introduction}, Springer.
 
 \harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
   Barlow}{2006}{yangetal2006}
