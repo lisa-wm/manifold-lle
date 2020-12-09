@@ -1,27 +1,23 @@
 Machine learning problems increasingly employ data of high dimensionality. 
-While a large amount of samples is beneficial to learning, the same is typically 
-not true for the number of features (denoted by $D$): high-dimensional feature 
-spaces, such as in speech recognition or gene processing, pose serious obstacles 
-to the performance and convergence of most algorithms \citep{cayton2005}. 
+While a large amount of samples is beneficial to learning, high-dimensional 
+feature spaces, such as in speech recognition or gene processing, pose serious 
+obstacles to the performance and convergence of most algorithms 
+\citep{cayton2005}. 
 
 Three aspects strike as particularly problematic: computational operations, 
 interpretation of results, and geometrical idiosyncrasies.
 Computational cost must be considered but is becoming less of an issue with the 
-evolution of technology (for instance, graphic processing units 
-\citep{leistetal2009}).
-By contrast, the demand for interpretability is rather intensified by the 
-advance of complex methods. 
-Many applications require explainable results for the sake of, say, safety or 
-ethical conformity. 
-When interpretation involves more than a few dimensions it becomes virtually
-inaccessible to humans \citep{doshivelezkim2017}. 
-The geometric aspect is often addressed in the context of the \textit{curse of 
-dimensionality}, a term referring to various phenomena of high-dimensional 
-spaces. 
-It is generally not straightforward to infer properties of objects in high 
-dimensions as geometric intuition developed in two or three dimensions is 
-frequently misleading.
-Crucially, the rapidly rising volume of space induces sparsity. 
+evolution of technology \citep{leistetal2009}.
+By contrast, the demand for explainable results (for reasons of, say, safety or
+ethics) is rather intensified by the advance of complex methods. 
+Alas, interpretation in more than a few dimensions is virtually inaccessible to 
+humans \citep{doshivelezkim2017}. 
+The geometric aspect is often addressed as \textit{curse of dimensionality}, a 
+term subsuming various phenomena of high-dimensional spaces. 
+It is generally not straightforward to infer properties of objects in complex 
+spaces as geometric intuition developed in two or three dimensions can be 
+misleading.
+Crucially, the exponential increase of spatial volume induces sparsity. 
 Consequences of this behavior are, among others, a sharp incline in the number 
 of points required to sample the feature space and a loss in meaningfulness of 
 distances. 
@@ -31,56 +27,61 @@ $k$-nearest neighbors, both of which rely on distances, or tuning, which
 requires extensive sampling of the hyperparameter space.} and see 
 their functionality deteriorate \citep{verleysenfrancois2005}. 
 
-These challenges make the case for the endeavor of \textit{dimensionality 
-reduction}, that is, the attempt to compress problem dimensionality to a 
-manageable size. 
-Far from unduly simplifying complex situations, dimensionality reduction relies 
-on the idea that the latent data-generating process is indeed of much lower 
-dimension than is observed.
-More formally, the data are assumed to lie on a $d$-dimensional, potentially 
-non-linear \textit{manifold} with $d \ll D$.
-The goal is thus to reveal the structure of this manifold in an unsupervised
+These challenges make the case for \textit{dimensionality reduction}, that is, 
+the endeavor of compressing problem dimensionality to a manageable size. 
+Far from undue simplification, dimensionality reduction relies on the idea that 
+the latent data-generating process is indeed of much lower dimension than is 
+observed.
+More formally, the data are assumed to lie on a $d$-dimensional 
+\textit{manifold} embedded in the $D$-dimensional observation space, with 
+$d \ll D$.
+The goal is thus to uncover the structure of this manifold in an unsupervised
 manner \citep{cayton2005}. \\
 
-Various manifold learning techniques have been proposed to learn points' 
-coordinates so they can be mapped to the corresponding $d$-dimensional Euclidean 
+Various approaches have been proposed to learn points' manifold coordinates so 
+they can be mapped to the corresponding $d$-dimensional Euclidean 
 space\footnote{The most intuitive example of this is probably the representation 
 of the Earth, which is a two-dimensional manifold enclosed in three-dimensional 
 space, on two-dimensional maps.}.
-\citet{vandermaatenetal2009} distinguish between convex and non-convex methods, 
-the former of which rely on finding a matrix representation of the data whose 
-principal eigenvectors are used to span a $d$-dimensional subspace.
-
-Among these spectral methods, some are confined to learning linear
+A taxonomy can for example be found in \citet{vandermaatenetal2009}. Many 
+methods rely on spectral techniques, trying to find a matrix representation of 
+the data whose principal eigenvectors are used to span a $d$-dimensional 
+subspace.
+Among these spectral methods some are confined to learning linear
 embeddings (such as \textit{principal component analysis (PCA)} or
 \textit{multi-dimensional scaling (MDS)}).
-Since linearity is a strong assumption that will generally not hold, non-linear 
-techniques are more widely applicable and thus quite popular. 
+Since linearity is a strong assumption that will not hold for general manifolds, 
+non-linear techniques are more widely applicable. 
 They can be further divided along the scope of the structure they 
 attempt to preserve: full spectral methods (for instance, \textit{ISOMAP}) 
-retain global pairwise distances, whereas sparse approaches preserve local 
-properties only. 
-Sparse methods are therefore better suited to learning non-convex manifolds \citep{vandermaatenetal2009}. \\
+retain a global notion of distance, whereas sparse approaches focus on local 
+properties. 
+Locality allows sparse methods to better capture non-convex structures, where
+global isometry is not appropriate \citep{vandermaatenetal2009}. 
+\\
+\newpage
 
 One such technique is \textit{locally linear embedding (LLE)}, proposed by
 \citet{roweissaul2000}. It is based on the idea that points on the manifold lie 
-within locally linear neighborhoods reflecting intrinsic, dimension-independent
-geometric properties. 
-The weights that linearly reconstruct a point from its neighbors in the 
-$D$-dimensional original space are assumed to equally reconstruct its
-$d$-dimensional embedded manifold coordinates. LLE first solves the 
-least-squares problem of minimizing reconstruction error, using neighborhood
-graphs, and then the sparse eigenvalue problem of minimizing embedding cost.
+within locally linear neighborhoods reflecting intrinsic geometric properties.
+Consequently, weights of linear reconstruction from neighboring points in the 
+$D$-dimensional original space should be the same as for the $d$-dimensional 
+manifold coordinates.
+LLE thus maps vicinity structures, characterized by neighborhood graphs, to the 
+$d$-dimensional subspace and finds the coordinates that preserve them best.
+This requires solving the least-squares problem of minimizing reconstruction 
+error and then the sparse eigenvalue problem of minimizing embedding cost. 
+Convexity of the latter guarantees globality of any local optimum.
 
-LLE uses no prior information.
+The original LLE algorithm uses no prior information.
 As \citet{yangetal2006} argue, however, prior knowledge can improve performance 
-substantially by anchoring the unsupervised task to a few known coordinates. 
+by anchoring the unsupervised task to some known coordinates. 
 The results presented in their work indicate considerable success of 
 \textit{semi-supervised locally linear embedding (SS-LLE)}. \\
 
 It is the aim of this report to (1) reproduce these results, thereby creating
-an open-source implementation, and (2) to apply SS-LLE to further manifold 
-learning tasks. 
+an open-source implementation of SS-LLE, and (2) to apply SS-LLE to further 
+manifold learning tasks for a more thorough assessment of its performance. 
 The rest of the report is organized as follows: chapter \ref{math} 
 provides a mathematical framework where fundamental concepts are briefly 
 introduced; chapter \ref{lgb-mani-learn} explains the idea of local graph-based
