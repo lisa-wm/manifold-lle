@@ -1,25 +1,25 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
 \contentsline {section}{\numberline {2}Mathematical Framework}{2}{}%
 \contentsline {subsection}{\numberline {2.1}Basic Geometric Concepts}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Spectral Decomposition}{3}{}%
-\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{3}{}%
-\contentsline {subsection}{\numberline {3.1}Concept of Isometry}{3}{}%
-\contentsline {subsection}{\numberline {3.2}Graph-Based Models}{3}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Neighborhoods}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Spectral Decomposition}{4}{}%
+\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Concept of Isometry}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Graph-Based Models}{4}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Neighborhoods}{4}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Basics of Spectral Graph Theory}{4}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}General Structure of Graph-Based Models}{4}{}%
 \contentsline {subsubsection}{\numberline {3.2.4}ISOMAP}{4}{}%
-\contentsline {subsection}{\numberline {3.3}Laplacian Eigenmaps}{4}{}%
-\contentsline {subsection}{\numberline {3.4}Locally Linear Embedding (LLE)}{4}{}%
-\contentsline {subsection}{\numberline {3.5}Hessian Locally Linear Embedding (HLLE)}{4}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{4}{}%
-\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{4}{}%
-\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Laplacian Eigenmaps}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Locally Linear Embedding (LLE)}{5}{}%
+\contentsline {subsection}{\numberline {3.5}Hessian Locally Linear Embedding (HLLE)}{5}{}%
+\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{5}{}%
+\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{5}{}%
 \contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{5}{}%
 \contentsline {section}{\numberline {5}Experiment Results}{5}{}%
 \contentsline {subsection}{\numberline {5.1}Data}{5}{}%
 \contentsline {subsection}{\numberline {5.2}Experimental Design}{5}{}%
-\contentsline {subsection}{\numberline {5.3}Results and Discussion}{5}{}%
-\contentsline {section}{\numberline {6}Conclusion}{5}{}%
+\contentsline {subsection}{\numberline {5.3}Results and Discussion}{6}{}%
+\contentsline {section}{\numberline {6}Conclusion}{6}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%

@@ -12,6 +12,9 @@ machine learning, deliberately forsaking the generality inherent to topology.
 Therefore, assuming features can be represented by coordinates in 
 $D$-dimensional Euclidean space, all concepts are examined with regard to their
 meaning in $\RD$.
+Dimensionality reduction techniques take the data observed in $\RD$ to actually
+lie in a $d$-dimensional topological space that is not necessarily Euclidean but
+exhibits some specific properties.
 \\
 
 % FIXME Make enumeration more compact 
@@ -40,31 +43,73 @@ on $X$, the following properties must hold \citep{brown2006}:
 Note that, in this general definition, neighborhoods are based on an abstract
 notion of "nearness". Learning the structure of a topological space boils down 
 to learning neighborhood relations.
-In Euclidean space, which is a topological space, these they are directly 
-based on \textit{distances}: neighborhoods are constructed by $\epsilon$-balls 
-containing all elements within a distance of at most $\epsilon$ to $x$.
-As the ultimate goal is the interpretation of data in a Euclidean space, 
-albeit one with lower dimensionality, it is necessary to study how topological 
-spaces relate to each other.
+In Euclidean topological space these are directly based on 
+\textit{distance metrics}: neighborhoods are constructed by $\epsilon$-balls 
+containing all elements within a Euclidean distance of at most $\epsilon$ from
+$x$. 
+The resulting topology is also called the \textit{metric topology} 
+\citep{mccleary2006}.
 \\
 
-\textbf{Homeomorphisms.} A homeomorphism is a bijective, continuous and
-continuously invertible function that maps point from one topological space
-A to another, B.
-A and B are thus homeomorphic if a bidirectional mapping exists that preserves
-topological properties (which???).
-If A is homeomorphic to a subspace of B, it is said to be embedded in B.
-If arbitrary local neighborhoods on A are homeomorphic to an open subset of
-Rd, A is embedded in Rd (true???) and called locally Euclidean.
-The idea is thus: we can deal with any crazily shaped topological space (plus
-some requirements) if it is embedded in Rd because it behaves like Rd on local 
-patches.
+Topological spaces in general are not accessible via distances.
+The ultimate goal is again the interpretation of the data in a Euclidean space, 
+albeit one with lower dimensionality, where such concepts are meaningful.
+The next step is thus to study how a (potentially highly non-linear and
+complicated) topological space might relate to $\Rd$.
+\\
+
+\textbf{Homeomorphisms.} Consider two topological spaces $(X, \topo_X)$, 
+$(Y, \topo_Y)$ (denoted by the respective shorthands $X$, $Y$ from here) and a 
+mapping function $f: X \rightarrow Y$. 
+If $f$ is bijective and continuous and $f^{-^1}: Y \rightarrow X$ is also 
+continuous, $f$ is called a \textit{homeomorphism}.
+Intuitively, this is equivalent to $f(\topo)$ being a neighborhood of $f(x)$ if
+$\topo$ is neighborhood of $x$ \citep{brown2006}.
+Topological spaces for which such a mapping exists are \textit{homeomorphic} to
+each other. 
+Any properties of $X$ that $Y$ shares when it is homeomorphic to $X$ are 
+referred to as topological properties. 
+Two homeomorphic spaces are thus equivalent from a topological perspective 
+\citep{mccleary2006}.
+\\
+
+If there exists a non-negative integer $d$ such that for every $x$ in a 
+topological space $X$ a local neighborhood is homeomorphic to an open subset of 
+$\Rd$, $X$ is \textit{locally Euclidean}.
+In local neighborhoods $X$ then behaves like $\Rd$, which is conceivably a 
+desirable property \citep{mafu2011}.
+\\
+
+\textbf{Manifolds.} With the above concepts the definition of a 
+\textit{manifold} can eventually be derived. 
+Topological manifolds are but topological spaces locally resembling an open 
+subset of $\Rd$. 
+Therefore, it is now reasonable to speak of points rather than general elements.
+For $\mani$ to be a $d$-dimensional topological manifold it must have the 
+following properties \citep{waldmann2014}:
+
+\begin{enumerate}
+  \item $\mani$ is Hausdorff.
+  \item $\mani$ is second-countable.
+  \item $\mani$ is locally homeomorphic to $\Rd$.
+\end{enumerate}
+
+The Hausdorff property ensures that for two distinct points from $\mani$ 
+disjoint neighborhoods can be found \citep{brown2006}.
+Second-countability prevents manifolds from getting "too large" by restricting
+the number of open sets $\mani$ can possess \citep{waldmann2014}.
+
+With this, any $d$-dimensional manifold can be \textit{embedded} in Euclidean
+space of at most $2d + 1$ dimensions, while being homeomorphic to $\Rd$ 
+\citep{mafu2011}.
+This is now precisely the idea at the heart of manifold learning: the data are
+assumed to lie on a manifold embedded in $\RD$ and locally homeomorphic to 
+\citep{mafu2011}$\Rd$.
+
+The following figure ....
+\\
 
 % S-curve here
-
-\textbf{Manifold.} If A is a topological space, second-countable, Hausdorff and
-locally Euclidean, it is called a Manifold. If it is Riemann-condition (???)
-and connected, it is a Riemannian manifold and we can define a metric.
 
 \textbf{Geodesic}
 
