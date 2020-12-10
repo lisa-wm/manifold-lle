@@ -32,6 +32,11 @@ the endeavor of compressing problem dimensionality to a manageable size.
 Far from undue simplification, dimensionality reduction relies on the idea that 
 the latent data-generating process is indeed of much lower dimension than is 
 observed.
+Consider, for example, textual data that are often represented in 
+high-dimensional document-term matrices counting the frequency of single terms 
+across documents.
+It is reasonable to suppose the texts are in fact characterized by much 
+lower-dimensional semantic features, or topics \citep{roweissaul2000}.
 More formally, the data are assumed to lie on a $d$-dimensional 
 \textit{manifold} embedded in the $D$-dimensional observation space, with 
 $d \ll D$.
@@ -59,7 +64,7 @@ properties.
 Locality allows sparse methods to better capture non-convex structures, where
 global isometry is not appropriate \citep{vandermaatenetal2009}. 
 \\
-\newpage
+% \newpage
 
 One such technique is \textit{locally linear embedding (LLE)}, proposed by
 \citet{roweissaul2000}. It is based on the idea that points on the manifold lie 

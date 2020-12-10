@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  9 DEC 2020 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  10 DEC 2020 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -775,16 +775,30 @@ Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 (c:/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 ))
+(c:/texlive/2020/texmf-dist/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks51
+\footnotemargin=\dimen299
+\c@pp@next@reset=\count316
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
+.
+)
 (c:/R/R-4.0.2/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
 
 (c:/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count316
+\FV@CodeLineNo=\count317
 \FV@InFile=\read3
 \FV@TabBox=\box91
-\c@FancyVerbLine=\count317
-\FV@StepNumber=\count318
+\c@FancyVerbLine=\count318
+\FV@StepNumber=\count319
 \FV@OutFile=\write4
 )
 (c:/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
@@ -798,7 +812,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 59
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 70
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aer.fd
@@ -806,26 +820,26 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )
 (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count319
+\l__kernel_color_stack_int=\count320
 \l__pdf_internal_box=\box92
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -866,23 +880,23 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package csquotes Info: Making character " active on input line 59.
+Package csquotes Info: Making character " active on input line 70.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 59.
+LaTeX Info: Redefining \selectfont on input line 70.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
-\scratchdimen=\dimen299
+\scratchcounter=\count321
+\scratchdimen=\dimen300
 \scratchbox=\box93
-\nofMPsegments=\count321
-\nofMParguments=\count322
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count323
-\MPscratchDim=\dimen300
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
-\everyMPtoPDFconversion=\toks52
+\nofMPsegments=\count322
+\nofMParguments=\count323
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count324
+\MPscratchDim=\dimen301
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
+\everyMPtoPDFconversion=\toks53
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -916,31 +930,32 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count326
+\c@lstlisting=\count327
 
 (./main-concordance.tex)
-<sigillum.png, id=5, 2946.00626pt x 2991.175pt>
-File: sigillum.png Graphic file (type png)
-<use sigillum.png>
-Package pdftex.def Info: sigillum.png  used on input line 85.
+<figures/sigillum.png, id=5, 2946.00626pt x 2991.175pt>
+File: figures/sigillum.png Graphic file (type png)
+<use figures/sigillum.png>
+Package pdftex.def Info: figures/sigillum.png  used on input line 96.
 (pdftex.def)             Requested size: 170.71393pt x 173.30113pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 103
+.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 103
+.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./sigillum.png
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/sigil
+lum.png
 
-pdfTeX warning: pdflatex.exe (file ./sigillum.png): large interlaced PNG might 
-cause out of memory (use non-interlaced PNG to fix this)
+pdfTeX warning: pdflatex.exe (file ./figures/sigillum.png): large interlaced PN
+G might cause out of memory (use non-interlaced PNG to fix this)
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 103--108
+Underfull \hbox (badness 10000) in paragraph at lines 114--119
 
  []
 
@@ -958,17 +973,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--108
 
 
 [4] (./chapters/introduction.Rnw
-Underfull \hbox (badness 10000) in paragraph at lines 30--40
+Underfull \hbox (badness 10000) in paragraph at lines 30--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--62
+Underfull \hbox (badness 10000) in paragraph at lines 46--68
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 76--81
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
 
  []
 
@@ -978,68 +993,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--19
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 43--53
+Underfull \hbox (badness 10000) in paragraph at lines 53--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--60
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--82
+Underfull \hbox (badness 10000) in paragraph at lines 73--82
 
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
 
-! LaTeX Error: There's no line here to end.
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111 
-      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-) (./chapters/graph-based-models.Rnw [4]) (./chapters/sslle.Rnw)
-(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [5] [6]
-(./chapters/appendix.Rnw) [5] [6] (./main.bbl) [7] [8] (./main.aux) ) 
+<figures/s-curve-screenshot.png, id=49, 118.94438pt x 72.27pt>
+File: figures/s-curve-screenshot.png Graphic file (type png)
+<use figures/s-curve-screenshot.png>
+Package pdftex.def Info: figures/s-curve-screenshot.png  used on input line 142
+.
+(pdftex.def)             Requested size: 341.43436pt x 207.4647pt.
+[4 <./figures/s-curve-screenshot.PNG>]) (./chapters/graph-based-models.Rnw
+[5]) (./chapters/sslle.Rnw) [6] (./chapters/experiment.Rnw)
+(./chapters/conclusion.Rnw) [7] (./chapters/appendix.Rnw) [5] [6] (./main.bbl)
+[7] [8] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 23138 strings out of 479485
- 456848 string characters out of 5875915
- 753661 words of memory out of 5000000
- 39602 multiletter control sequences out of 15000+600000
- 573002 words of font info for 108 fonts, out of 8000000 for 9000
+ 23269 strings out of 479485
+ 459055 string characters out of 5875915
+ 757542 words of memory out of 5000000
+ 39724 multiletter control sequences out of 15000+600000
+ 573930 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,11n,85p,456b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texlive/2020/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
-><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
-Output written on main.pdf (15 pages, 484016 bytes).
+ 80i,12n,85p,456b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on main.pdf (16 pages, 561978 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 27 words of extra memory for PDF output out of 10000 (max. 10000000)
 
