@@ -145,7 +145,7 @@ and map these to $\R^2$, which, in this case, can be imagined as a
   \label{fig:scurve}
 \end{figure}
 
-\textbf{Geodesic.} One last aspect remains open, namely how to handle distances 
+\textbf{Geodesics.} One last aspect remains open, namely how to handle distances 
 on manifolds.
 Figure \ref{fig:scurve} illustrates that standard Euclidean distances are not
 meaningful here: rather than measuring "shortcuts" between points across 
@@ -155,9 +155,11 @@ distances to the manifold surface.
 In order to enable the construction of such a metric, manifolds must fulfill
 two additional properties: being \textit{Riemannian} and being 
 \textit{connected} \citep{mafu2011}.
-
-\textcolor{red}{Riemannian manifolds are differentiable}
-
+The Riemannian property is based on differentiability and ensures that concepts 
+of curvature, length and angle are meaningful \citep{mafu2011}.\footnote{
+A detailed derivation is beyond the scope of this report and may be found, for
+example, in \citet{mukherjee2015}.
+}
 Connectedness means that no separation $\{ U, V\}$ of a manifold $\mani$
 exists with open, non-empty and disjoint $U, V \subset \mani$, 
 $\mani = U \cup V$.
@@ -170,31 +172,33 @@ connected manifold can be linked by a path
 
 For connected Riemannian manifolds it is now possible to define a distance 
 metric, or \textit{geodesic distance}.
-Geodesic distance is the length of the shortest curve (\textit{geodesic}) 
-between two points $\pv, \qv \in \mani$ (such a curve must exist due to 
-connectedness).
-
-A curve $c$ in $\mani$ is a smooth mapping from an open interval 
-$\Lambda \subset \R$ into $\mani$. 
-$c$ is parametrized by a point $\lambda \in \Lambda$, such that 
-$c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T$ (all $c_j, j = 1, ..., d$,
-having a sufficient number of continuous derivatives) is a curve in $\Rd$.
-Component-wise differentiation with respect to $\lambda$ yields the 
-\textit{velocity} of $c$ in $\lambda$, $c^{\prime}(\lambda) =
-(c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T$.
-The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
-$\| \cdot \|^2_2$ denotes the square norm.
-Then, distance along this curve is measured by the arc-length 
-$L(c) = \int_{\pv}^{\qv} \| c^{\prime}(\lambda) \|^2_2 d\lambda$.
-
-Finally, geodesic distance can be derived as the length of the shortest such
-curve, out of the set of differentiable curves in $\mani$ that connect $\pv$ and 
-$\qv$, $\mathcal{C}(\pv, \qv)$: \\
-$d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c)$ 
-\citep{mafu2011}. 
-
+Geodesic distance is the length of the shortest curve (\textit{geodesic}) on
+$\mani$ between two points $\pv, \qv \in \mani$, as measured by arc-length (such 
+a curve must exist due to connectedness)\footnote{
+Geodesics are but a peripheral note here; for a precise definition see for 
+example \citet{mafu2011}.
+}.
 Intuitively, geodesic distance can be identified with Euclidean distance in
-Euclidean spaces where shortest curves are but straight lines.
+Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
+
+% A curve $c$ in $\mani$ is a smooth mapping from an open interval 
+% $\Lambda \subset \R$ into $\mani$. 
+% $c$ is parametrized by a point $\lambda \in \Lambda$, such that 
+% $c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T$ (all $c_j, j = 1, ..., d$,
+% having a sufficient number of continuous derivatives) is a curve in $\Rd$.
+% Component-wise differentiation with respect to $\lambda$ yields the 
+% \textit{velocity} of $c$ in $\lambda$, $c^{\prime}(\lambda) =
+% (c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T$.
+% The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
+% $\| \cdot \|^2_2$ denotes the square norm.
+% Then, distance along this curve is measured by the arc-length 
+% $L(c) = \int_{\pv}^{\qv} \| c^{\prime}(\lambda) \|^2_2 d\lambda$.
+% 
+% Finally, geodesic distance can be derived as the length of the shortest such
+% curve, out of the set of differentiable curves in $\mani$ that connect $\pv$ and 
+% $\qv$, $\mathcal{C}(\pv, \qv)$: \\
+% $d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c)$ 
+% \citep{mafu2011}. 
 
 \subsection{Spectral Decomposition}
 \label{spect-dec}
