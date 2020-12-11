@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  10 DEC 2020 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  11 DEC 2020 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -954,25 +954,21 @@ lum.png
 
 pdfTeX warning: pdflatex.exe (file ./figures/sigillum.png): large interlaced PN
 G might cause out of memory (use non-interlaced PNG to fix this)
->]
-Underfull \hbox (badness 10000) in paragraph at lines 114--119
-
- []
-
-(./chapters/abstract.Rnw) [1] (./main.toc)
+>] (./chapters/abstract.Rnw) [1] (./chapters/extended-abstract.Rnw [2])
+[3] (./main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2] (./main.lof)
+ [4] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [3] (./main.lot)
+ [5] (./main.lot)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
-
-[4] (./chapters/introduction.Rnw
+ [6]
+(./chapters/introduction.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 30--45
 
  []
@@ -988,29 +984,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--86
  []
 
 ) (./chapters/math.Rnw
-Underfull \hbox (badness 10000) in paragraph at lines 4--19
+Underfull \hbox (badness 10000) in paragraph at lines 4--20
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 53--59
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--82
+Underfull \hbox (badness 10000) in paragraph at lines 74--83
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 121--125
+Underfull \hbox (badness 10000) in paragraph at lines 122--126
 
  []
 
-<figures/s-curve-screenshot.png, id=49, 118.94438pt x 72.27pt>
+<figures/s-curve-screenshot.png, id=55, 118.94438pt x 72.27pt>
 File: figures/s-curve-screenshot.png Graphic file (type png)
 <use figures/s-curve-screenshot.png>
-Package pdftex.def Info: figures/s-curve-screenshot.png  used on input line 142
+Package pdftex.def Info: figures/s-curve-screenshot.png  used on input line 145
 .
 (pdftex.def)             Requested size: 341.43436pt x 207.4647pt.
 [4 <./figures/s-curve-screenshot.PNG>]) (./chapters/graph-based-models.Rnw
@@ -1018,32 +1014,31 @@ Package pdftex.def Info: figures/s-curve-screenshot.png  used on input line 142
 (./chapters/conclusion.Rnw) [7] (./chapters/appendix.Rnw) [5] [6] (./main.bbl)
 [7] [8] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 23278 strings out of 479485
- 459177 string characters out of 5875915
+ 23270 strings out of 479485
+ 459168 string characters out of 5875915
  757571 words of memory out of 5000000
- 39730 multiletter control sequences out of 15000+600000
- 574857 words of font info for 114 fonts, out of 8000000 for 9000
+ 39725 multiletter control sequences out of 15000+600000
+ 573002 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,11n,85p,456b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (16 pages, 545865 bytes).
+m/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (18 pages, 545359 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  27 words of extra memory for PDF output out of 10000 (max. 10000000)
 
