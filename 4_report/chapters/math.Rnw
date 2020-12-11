@@ -5,6 +5,7 @@ This chapter introduces the main geometric concepts considered necessary to
 provide a solid understanding of SS-LLE\footnote{
 Obviously, the list of concepts discussed is by no means extensive. Theory is
 presented much more in detail (and mathematical rigor) in, for example, 
+% FIXME Put in source
 \textcolor{red}{good book}.
 }.
 It must be noted that everything discussed here is presented through the lens of
@@ -137,6 +138,8 @@ Instead, manifold learning must capture the intrinsic neighborhood structures
 and map these to $\R^2$, which, in this case, can be imagined as a 
 "flattening-out" of the S-curve.
 
+% TODO Put proper plot in here
+
 \begin{figure}[H]
   \centering
   \includegraphics[width = 0.8\textwidth]{figures/s-curve-screenshot}
@@ -173,7 +176,7 @@ connected manifold can be linked by a path
 For connected Riemannian manifolds it is now possible to define a distance 
 metric, or \textit{geodesic distance}.
 Geodesic distance is the length of the shortest curve (\textit{geodesic}) on
-$\mani$ between two points $\pv, \qv \in \mani$, as measured by arc-length (such 
+$\mani$ between two points on $\mani$, as measured by arc-length (such 
 a curve must exist due to connectedness)\footnote{
 Geodesics are but a peripheral note here; for a precise definition see for 
 example \citet{mafu2011}.
