@@ -1,3 +1,5 @@
+% TODO: Find evidence for success of original LLE, and cases where it fails
+
 \subsection{Employment of Prior Information}
 \label{prior-info}
 
