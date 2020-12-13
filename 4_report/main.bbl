@@ -1,5 +1,10 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Belkin \harvardand\ Niyogi}{2003}{belkinniyogi2003}
+Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2003\harvardyearright .
+\newblock Laplacian eigenmaps for dimensionality reduction and data
+  representation, {\em Neural Computation} {\bf 15}:~1373--1396.
+
 \harvarditem{Brown}{2006}{brown2006}
 Brown, R.  \harvardyearleft 2006\harvardyearright .
 \newblock {\em Topology and Groupoids. A Geometric Account of General Topology,
@@ -35,6 +40,11 @@ McCleary, J.  \harvardyearleft 2006\harvardyearright .
 \harvarditem{Mukherjee}{2015}{mukherjee2015}
 Mukherjee, A.  \harvardyearleft 2015\harvardyearright .
 \newblock {\em Differential Topology}, 2 edn, Springer.
+
+\harvarditem{Ross}{2008}{dissross2008}
+Ross, I.  \harvardyearleft 2008\harvardyearright .
+\newblock {\em Nonlinear Dimensionality Reduction Methods in Climate Data
+  Analysis}, PhD thesis, University of Bristol.
 
 \harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
 Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
