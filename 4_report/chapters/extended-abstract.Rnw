@@ -30,13 +30,13 @@ projection onto the $d$-dimensional coordinate hyperplanes.
 Instead, models must learn the intrinsic neighborhood structure of the manifold
 to establish a notion of "nearness" between points.
 As the sphere example demonstrates, standard distance metrics do not apply here 
-as points on general manifolds are connected by curved paths rather 
+since points on general manifolds are connected by curved paths rather 
 than straight lines.
 
 Some manifold learning techniques try to retain global isometry by mapping
 pairwise distances to $\Rd$.
 For instance, \textit{multi-dimensional scaling (MDS)} does so using Euclidean
-distances, thus limiting the manifolds it can learn to linear ones, while 
+distances, thereby limiting the manifolds it can learn to linear ones, while 
 \textit{ISOMAP} generalizes this approach to non-linear manifolds by applying 
 geodesic distances.
 Research indicates, however, that for non-convex manifolds it is more effective 
@@ -65,7 +65,7 @@ The original LLE approximates the Laplacian by a weight matrix obtained through
 linearly reconstructing points from their neighbors.
 Since these weights are believed to reflect the intrinsic geometry of the 
 manifold, they are topological properties and as such invariant to rotations, 
-rescalings, and translations.
+rescalings and translations.
 By consequence, the same weights that reconstruct an individual point in $D$
 dimensions should do so in $d$ dimensions.
 LLE first computes the optimal weights for reconstructing points in $\RD$ by
@@ -74,7 +74,7 @@ preserve these weights by solving a sparse eigenvalue problem.
 Convexity of both sub-problems ensures globality of local optima.
 
 This approach has been shown to successfully retrieve manifold structures in
-different applications (\textcolor{red}{evidence!!!}).
+different applications.
 However, its fully unsupervised functionality offers a drawback: it may fail
 to find a low-dimensional embedding that has an actual reflection in the 
 real-life setting.
