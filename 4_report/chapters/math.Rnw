@@ -1,6 +1,3 @@
-\subsection{Basic Geometric Concepts}
-\label{math-obj}
-
 This chapter introduces the main geometric concepts considered necessary to
 provide a solid understanding of SS-LLE\footnote{
 Obviously, the list of concepts discussed is by no means extensive. Theory is
@@ -203,12 +200,5 @@ Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
 % $d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c)$ 
 % \citep{mafu2011}. 
 
-\subsection{Spectral Decomposition}
-\label{spect-dec}
-
-\begin{itemize}
-  \item Eigenvalues/eigenvectors 
-  \item Spectral decomposition
-\end{itemize}
 
 

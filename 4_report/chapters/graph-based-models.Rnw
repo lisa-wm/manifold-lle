@@ -1,49 +1,57 @@
-\subsection{Concept of Isometry}
-\label{isometry}
+\subsection{Principles of Local Graph-Based Manifold Learning}
+\label{lgb-principles}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{General Concept}
+\label{gb-tech-structure}
 
 \begin{itemize}
-  \item Notion of distance
-  \item Preserving distances in manifold learning
-  \item MDS (very brief)
+  \item Neighborhood graph
+  \item Weight matrix
+  \item Eigenwert problem
+  \item Mention that global spectral techniques use pairwise dist matrix rather
+  than neighborhood graphs but share step 2 and 3
+  \item Maybe present ISOMAP briefly
 \end{itemize}
 
-\subsection{Graph-Based Models}
-\label{graph-models}
+% ------------------------------------------------------------------------------
 
-\subsubsection{Neighborhoods}
-\label{neighbor}
+\subsubsection{Neighborhood Graphs}
+\label{neighbor-graph}
 
 \begin{itemize}
   \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs
-  \item Linear reconstruction and reconstruction error
 \end{itemize}
 
-\subsubsection{Basics of Spectral Graph Theory}
-\label{graph-theory}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Matrix Representation of Neighborhood Graphs}
+\label{matrix-repr}
 
 \begin{itemize}
   \item Degree and adjacency matrices
   \item Laplacian operators
 \end{itemize}
 
-\subsubsection{General Structure of Graph-Based Models}
-\label{gb-model-structure}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Solving Eigenwertproblems}
+\label{eigenwert}
 
 \begin{itemize}
-  \item Neighborhood graph
-  \item Weight matrix
-  \item Eigenwert problem
+  \item Eigenvectors, eigenvalues
+  \item Spectral decomposition
 \end{itemize}
 
-\subsubsection{ISOMAP}
-\label{isomap}
+% ------------------------------------------------------------------------------
 
-\begin{itemize}
-  \item (One of the) earliest, simplest variant(s)
-  \item MDS with geodesics
-\end{itemize}
+\subsection{Techniques of Local Graph-Based Manifold Learning}
+\label{lgb-tech}
 
-\subsection{Laplacian Eigenmaps}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Laplacian Eigenmaps}
 \label{laplace}
 
 \begin{itemize}
@@ -51,7 +59,9 @@
   \item Laplacian eigenmaps
 \end{itemize}
 
-\subsection{Locally Linear Embedding (LLE)}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Locally Linear Embedding (LLE)}
 \label{lle}
 
 \begin{itemize}
@@ -61,7 +71,9 @@
 
 % TODO Regularized version???
 
-\subsection{Hessian Locally Linear Embedding (HLLE)}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Hessian Locally Linear Embedding (H-LLE)}
 \label{hlle}
 
 \begin{itemize}

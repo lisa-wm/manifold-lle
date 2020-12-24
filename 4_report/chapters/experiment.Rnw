@@ -1,14 +1,39 @@
-\subsection{Data}
-\label{data}
-
 \subsection{Experimental Design}
 \label{design}
 
-\begin{itemize}
-  \item Implementation details
-  \item Hyperparameters
-  \item Evaluation criteria
-\end{itemize}
+% ------------------------------------------------------------------------------
+
+\subsubsection{Software Implementation}
+\label{software}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Evaluation Framework}
+\label{eval}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Replication of Original Results on the Incomplete Tire}
+\label{replic}
+
+\subsubsection{Incomplete Tire Data}
+\label{data-tire}
+
+\subsubsection{Choice of Hyperparameter and Prior Point Configuration}
+\label{hp-pp-config-orig}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Application on Swiss Roll and Guglhupf Data}
+\label{applic-new}
+
+\subsubsection{Swiss Roll and Guglhupf Data}
+\label{data-swiss}
+
+\subsubsection{Choice of Hyperparameter and Prior Point Configuration}
+\label{hp-pp-config-new}
+
+% ------------------------------------------------------------------------------
 
 \subsection{Results and Discussion}
 \label{results}
