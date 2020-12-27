@@ -77,9 +77,13 @@ with minimum distance, around a vector $\bm{x}_i \in \RD$.
 Let $\mathcal{N}: \RD \rightarrow (\RD)^{\ell}, \bm{x}_i \mapsto \mathcal{N}
 (\bm{x}_i)$ denote the constructor that assigns a set of nearest neighbors 
 to $\bm{x}_i$.
-HOW BIG IS K FOR EPSILON NEIGHBORS???
 The first possibility is to restrict the size of the neighborhood to the $k$ 
-points with minimum but unbounded distance to $\bm{x}_i$:
+points with minimum but unbounded distance to $\bm{x}_i$, such that
+$\ell = k$ and $\mathcal{N}(\bm{x}_i) = \{\bm{x}_j: d(\bm{x}_i, \bm{x}_j) \leq
+\gamma\}$, with $\gamma$ being the $k$-percentile of ordered pairwise distances 
+$d(\bm{x}_i, \bm{x}_j)$.
+NONSENSE, ALSO N MUST MAP FROM X NOT FROM ENTIRE R TO THE D
+
 $|\mathcal{N}(\bm{x}_i)| \leq k$, and $k = \ell$.
 Alternatively, the neighborhood can be constructed by collecting all points that
 have a maximum distance of $\epsilon$ to $\bm{x}_i$, no matter how many 
