@@ -18,23 +18,23 @@ exhibits some specific properties.
 % FIXME Make enumeration more compact 
 
 \textbf{Topological spaces.} A \textit{topological space} is constituted by a 
-set $X$ equipped with a \textit{topology} $\topo$. 
-A topology is a general way of describing relations between elements in $X$.
-Consider a function $\topo: X \rightarrow 2^X, x \mapsto \topo(x)$, which 
-assigns to $x \in X$ a set of subsets of $X$ called a \textit{neighborhood}.
+set $T$ equipped with a \textit{topology} $\topo$. 
+A topology is a general way of describing relations between elements in $T$.
+Consider a function $\topo: T \rightarrow 2^T, t \mapsto \topo(t)$, which 
+assigns to $t \in T$ a set of subsets of $T$ called a \textit{neighborhood}.
 For $\topo$ to be a topology\footnote{
-Alternative definitions employ open subsets of $X$, see for example 
+Alternative definitions employ open subsets of $T$, see for example 
 \citet{waldmann2014}.
 }
-on $X$, the following properties must hold \citep{brown2006}:
+on $T$, the following properties must hold \citep{brown2006}:
 \begin{tight_enumerate}
-  \item If $\topo$ is a neighborhood of $x$, then $x \in \topo$.
-  \item If $\topo$ is a subset of $X$ containing a neighborhood of $x$, then 
-  $\topo$ is a neighborhood of $x$.
-  \item The intersection of two neighborhoods of $x$ is again a neighborhood of
-  $x$.
-  \item Any neighborhood $\topo$ of $x$ contains a neighborhood $\topo^{\prime}$ 
-  of $x$ such that $\topo$ is a neighborhood of each element in 
+  \item If $\topo$ is a neighborhood of $t$, then $t \in \topo$.
+  \item If $\topo$ is a subset of $T$ containing a neighborhood of $t$, then 
+  $\topo$ is a neighborhood of $t$.
+  \item The intersection of two neighborhoods of $t$ is again a neighborhood of
+  $t$.
+  \item Any neighborhood $\topo$ of $t$ contains a neighborhood $\topo^{\prime}$ 
+  of $t$ such that $\topo$ is a neighborhood of each element in 
   $\topo^{\prime}$.
 \end{tight_enumerate}
 
@@ -43,8 +43,8 @@ notion of "nearness".
 Learning the structure of a topological space effectively boils down to learning 
 neighborhood relations.
 In Euclidean topological space these are directly based on distance: 
-neighborhoods are constructed by $\epsilon$-balls containing all elements within 
-a Euclidean distance of $\epsilon$ from $x$. 
+neighborhoods around $t$ are constructed by $\epsilon$-balls containing all 
+elements within a Euclidean distance of $\epsilon$ from $t$. 
 The resulting topology is also called the \textit{metric topology} 
 \citep{mccleary2006}.
 
@@ -55,32 +55,30 @@ The next step is thus to study how a (potentially highly non-linear) topological
 space might relate to $\Rd$.
 \\
 
-\textbf{Homeomorphisms.} Consider two topological spaces $(X, \topo_X)$, 
-$(Y, \topo_Y)$ (denoted by the respective shorthands $X$, $Y$ from here) and a 
-mapping function $f: X \rightarrow Y$. 
-If $f$ is bijective and continuous and $f^{-^1}: Y \rightarrow X$ is also 
-continuous, $f$ is called a \textit{homeomorphism}.
-Intuitively, this is equivalent to $f(\topo)$ being a neighborhood of $f(x)$ if
-$\topo$ is a neighborhood of $x$ \citep{brown2006}.
+\textbf{Homeomorphisms.} Consider two topological spaces $(S, \topo_S)$, 
+$(T, \topo_T)$ (denoted by the respective shorthands $S$, $T$ from here) and a 
+mapping function $f: S \rightarrow T$. 
+If $f$ is bijective and continuous and $f^{-^1}: T \rightarrow S$ is also 
+continuous, $f$ is called a \textit{homeomorphism} \citep{brown2006}.
 Topological spaces for which such a mapping exists are \textit{homeomorphic} to
 each other. 
-Any properties of $X$ that $Y$ shares when it is homeomorphic to $X$ are 
+Any properties of $S$ that $T$ shares when it is homeomorphic to $S$ are 
 referred to as topological properties. 
 Two homeomorphic spaces are thus topologically equivalent \citep{mccleary2006}.
 
-If there exists a non-negative integer $d$ such that for every $x$ in a 
-topological space $X$ a local neighborhood is homeomorphic to an open subset of 
-$\Rd$, $X$ is \textit{locally Euclidean}\footnote{
+If there exists a non-negative integer $d$ such that for every $s$ in a 
+topological space $S$ a local neighborhood is homeomorphic to an open subset of 
+$\Rd$, $S$ is \textit{locally Euclidean}\footnote{
 For locally Euclidean topological spaces it is thus meaningful to speak of
 elements as points.
 }.
-In local neighborhoods $X$ then behaves like $\Rd$, which is conceivably a 
+In local neighborhoods $S$ then behaves like $\Rd$, which is conceivably a 
 desirable property in the context of manifold learning \citep{mafu2011}.
 \\
 
 \textbf{Manifolds.} \textit{Manifolds} are now precisely such locally Euclidean
 topological spaces, with some additional properties.
-For $\mani$ to be a $d$-dimensional manifold\footnote{
+For a topological space $\mani$ to be a $d$-dimensional manifold\footnote{
 $\mani$ is again a shorthand, omitting the explicit notation of the 
 corresponding topology. 
 } (also: $d$-manifold) it must meet 
@@ -121,9 +119,9 @@ $d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as
 $D$-dimensional points but may locally be treated like points from $\Rd$.
 \\
 
-\begin{minipage}{0.5\textwidth}
-  Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold embedded 
-  in $\R^3$.
+\begin{minipage}[b]{0.5\textwidth}
+  Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold 
+  embedded in $\R^3$.
   Clearly, the S-curve as a whole is far from linear, but local patches on its
   surface behave like planes from $\R^2$.
   So the S-curve is two-dimensional and feature dimensionality can in effect be 
@@ -135,13 +133,14 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
   and map these to $\R^2$, which, in this case, can be imagined as a 
   "flattening-out" of the S-curve.
 \end{minipage}
-\begin{minipage}{0.1\textwidth}
-  \phantom{space}
+\begin{minipage}[b]{0.1\textwidth}
+  \phantom{xxx}
 \end{minipage}
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}[b]{0.4\textwidth}
   \begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{figures/s-curve}
+    \includegraphics[trim = 100 20 70 30, clip, % left bottom right top
+      width = 0.65\textwidth]{figures/s-curve}
     \caption[S-curve manifold]{10,000 points sampled from the S-curve manifold 
     as implemented in \texttt{Python}'s \texttt{scikit-learn} library 
     \citep{scikit-learn}.}

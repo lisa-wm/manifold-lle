@@ -10,6 +10,7 @@
 
 \newcommand{\topo}{\mathcal{T}}
 \newcommand{\mani}{\mathcal{M}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\RD}{\mathbb{R}^D}
 \newcommand{\Rd}{\mathbb{R}^d}
@@ -26,6 +27,7 @@ bindingoffset = 6mm]{geometry}
 \usepackage{csquotes} \MakeOuterQuote{"}
 \usepackage{ragged2e}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm }
@@ -33,9 +35,9 @@ bindingoffset = 6mm]{geometry}
 \usepackage{float}
 \usepackage[export]{adjustbox}
 \usepackage[table]{xcolor}
-\usepackage{tikz}
-  \usetikzlibrary{trees, arrows, decorations.pathmorphing, backgrounds, 
-  positioning, fit, petri, shapes}
+% \usepackage{tikz}
+%   \usetikzlibrary{trees, arrows, decorations.pathmorphing, backgrounds, 
+%   positioning, fit, petri, shapes}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{xcolor, listings}
@@ -129,6 +131,29 @@ Munich, month day\textsuperscript{th}, 2021
 
 \tableofcontents
 \newpage
+
+\Large
+\noindent
+\textbf{List of Symbols}
+\vspace{0.5cm} \\
+\noindent
+\normalsize
+
+\begin{tabularx}{\textwidth}{ 
+  >{\raggedleft\arraybackslash}X 
+  >{\raggedright\arraybackslash}X}
+  $D \in \N$ & Number of observed dimensions \\
+  $d \in \N$ & Number of dimensions of embedded manifold \\
+  $N \in \N$ & Number of observed data points \\
+  $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
+  $X = (X_1, X_2, ..., X_N) \in (\RD)^N$ & Observed coordinates of data sampled 
+  from $\mani$ \\
+  $Y = (Y_1, Y_2, ..., Y_N) \in (\Rd)^N$ & Learned coordinates of low-dimensional
+  representation of data
+\end{tabularx}
+
+\newpage
+
 \listoffigures
 \newpage
 \listoftables

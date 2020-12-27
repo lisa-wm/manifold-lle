@@ -6,14 +6,18 @@
 \subsubsection{General Concept}
 \label{gb-tech-structure}
 
-\begin{itemize}
-  \item Neighborhood graph
-  \item Weight matrix
-  \item Eigenwert problem
-  \item Mention that global spectral techniques use pairwise dist matrix rather
-  than neighborhood graphs but share step 2 and 3
-  \item Maybe present ISOMAP briefly
-\end{itemize}
+% \begin{itemize}
+%   \item Neighborhood graph
+%   \item Weight matrix
+%   \item Eigenwert problem
+%   \item Mention that global spectral techniques use pairwise dist matrix rather
+%   than neighborhood graphs but share step 2 and 3
+%   \item Maybe present ISOMAP briefly
+% \end{itemize}
+
+For the remainder of this report, the observed data will be denoted by $X$ and 
+taken to consist of $N$ real-valued vectors of $D$ dimensions each, such that 
+$X = (X_1, X_2, ..., X_N)$ with $X_i \in \RD$ $\forall i = 1, 2, ..., N$. 
 
 % ------------------------------------------------------------------------------
 

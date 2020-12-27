@@ -5,7 +5,7 @@
 \contentsline {subsubsection}{\numberline {3.1.1}General Concept}{5}{}%
 \contentsline {subsubsection}{\numberline {3.1.2}Neighborhood Graphs}{5}{}%
 \contentsline {subsubsection}{\numberline {3.1.3}Matrix Representation of Neighborhood Graphs}{5}{}%
-\contentsline {subsubsection}{\numberline {3.1.4}Solving Eigenwertproblems}{6}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}Solving Eigenwertproblems}{5}{}%
 \contentsline {subsection}{\numberline {3.2}Techniques of Local Graph-Based Manifold Learning}{6}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Laplacian Eigenmaps}{6}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Locally Linear Embedding (LLE)}{6}{}%
