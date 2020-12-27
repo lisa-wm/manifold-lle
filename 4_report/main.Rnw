@@ -14,8 +14,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\RD}{\mathbb{R}^D}
 \newcommand{\Rd}{\mathbb{R}^d}
-\newcommand{\pv}{\mathbf{p}}
-\newcommand{\qv}{\mathbf{q}}
+\newcommand{\setN}{\{1, 2, ..., N\}}
 
 \usepackage[a4paper,width = 150mm, top = 25mm, bottom = 25mm, 
 bindingoffset = 6mm]{geometry}
@@ -144,12 +143,13 @@ Munich, month day\textsuperscript{th}, 2021
   >{\raggedright\arraybackslash}X}
   $D \in \N$ & Number of observed dimensions \\
   $d \in \N$ & Number of dimensions of embedded manifold \\
+  $m \in \N$ & Number of dimensions of low-dimensional representation \\
   $N \in \N$ & Number of observed data points \\
   $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
   $X = (X_1, X_2, ..., X_N) \in (\RD)^N$ & Observed coordinates of data sampled 
   from $\mani$ \\
-  $Y = (Y_1, Y_2, ..., Y_N) \in (\Rd)^N$ & Learned coordinates of low-dimensional
-  representation of data
+  $Y = (Y_1, Y_2, ..., Y_N) \in (\R^m)^N$ & Learned coordinates of 
+  low-dimensional representation of data
 \end{tabularx}
 
 \newpage

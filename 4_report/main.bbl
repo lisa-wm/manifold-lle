@@ -62,6 +62,14 @@ Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
 
+\harvarditem[Saul et~al.]{Saul, Weinberger, Sha, Ham \harvardand\
+  Lee}{2006}{sauletal2006}
+Saul, L.~K., Weinberger, K.~Q., Sha, F., Ham, J. \harvardand\ Lee, D.~D.
+  \harvardyearleft 2006\harvardyearright .
+\newblock Spectral methods for dimensionality reduction, {\em in} O.~Chapelle,
+  B.~Scholkopf \harvardand\ A.~Zien (eds), {\em Semi-Supervised Learning}, MIT
+  Press Scholarship Online, chapter~1.
+
 \harvarditem[van~der Maaten et~al.]{van~der Maaten, Postma \harvardand\ van~den
   Herik}{2009}{vandermaatenetal2009}
 van~der Maaten, L., Postma, E. \harvardand\ van~den Herik, J.  \harvardyearleft
