@@ -41,6 +41,16 @@ McCleary, J.  \harvardyearleft 2006\harvardyearright .
 Mukherjee, A.  \harvardyearleft 2015\harvardyearright .
 \newblock {\em Differential Topology}, 2 edn, Springer.
 
+\harvarditem[Pedregosa et~al.]{Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot \harvardand\ Duchesnay}{2011}{scikit-learn}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J.,
+  Passos, A., Cournapeau, D., Brucher, M., Perrot, M. \harvardand\ Duchesnay,
+  E.  \harvardyearleft 2011\harvardyearright .
+\newblock Scikit-learn: Machine learning in {P}ython, {\em Journal of Machine
+  Learning Research} {\bf 12}:~2825--2830.
+
 \harvarditem{Ross}{2008}{dissross2008}
 Ross, I.  \harvardyearleft 2008\harvardyearright .
 \newblock {\em Nonlinear Dimensionality Reduction Methods in Climate Data

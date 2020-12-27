@@ -121,36 +121,43 @@ $d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as
 $D$-dimensional points but may locally be treated like points from $\Rd$.
 \\
 
-Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold embedded 
-in $\R^3$.
-Clearly, the S-curve as a whole is far from linear, but local patches on its
-surface behave like planes from $\R^2$.
-So the S-curve is two-dimensional and feature dimensionality can in effect be 
-compressed from $\R^3$ to $\R^2$.
-The challenge is now to unravel the manifold in a way that preserves its 
-structure to maximum extent.
-Obviously, a simple projection to $\R^2$ will not accomplish this task.
-Instead, manifold learning must capture the intrinsic neighborhood structures
-and map these to $\R^2$, which, in this case, can be imagined as a 
-"flattening-out" of the S-curve.
+\begin{minipage}{0.5\textwidth}
+  Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold embedded 
+  in $\R^3$.
+  Clearly, the S-curve as a whole is far from linear, but local patches on its
+  surface behave like planes from $\R^2$.
+  So the S-curve is two-dimensional and feature dimensionality can in effect be 
+  compressed from $\R^3$ to $\R^2$.
+  The challenge is now to unravel the manifold in a way that preserves its 
+  structure to maximum extent.
+  Obviously, a simple projection to $\R^2$ will not accomplish this task.
+  Instead, manifold learning must capture the intrinsic neighborhood structures
+  and map these to $\R^2$, which, in this case, can be imagined as a 
+  "flattening-out" of the S-curve.
+\end{minipage}
+\begin{minipage}{0.1\textwidth}
+  \phantom{space}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width = \textwidth]{figures/s-curve}
+    \caption[S-curve manifold]{10,000 points sampled from the S-curve manifold 
+    as implemented in \texttt{Python}'s \texttt{scikit-learn} library 
+    \citep{scikit-learn}.}
+    \label{fig:scurve}
+  \end{figure}
+\end{minipage}
 
-% TODO Put proper plot in here
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 0.5\textwidth]{figures/s-curve}
-  \caption[S-curve manifold]{XY points sampled from the S-curve manifold,
-  obtained by bla.}
-  \label{fig:scurve}
-\end{figure}
+\vspace{0.5cm}
 
 \textbf{Geodesics.} One last aspect remains open, namely how to handle distances 
 on manifolds.
 Figure \ref{fig:scurve} illustrates that standard Euclidean distances are not
 meaningful here: rather than measuring "shortcuts" between points across 
-$\R^3$ (where, for instance, points in the upper blue area would be considered
-quite close to points in the red area), it makes intuitive sense to constrain 
-distances to the manifold surface.
+$\R^3$ (where, for instance, points in the red upper area would be considered
+quite close to points in the cyan mid area), it makes intuitive sense to 
+constrain distances to the manifold surface.
 In order to enable the construction of such a metric, manifolds must fulfill
 two additional properties: being \textit{Riemannian} and being 
 \textit{connected} \citep{mafu2011}.
