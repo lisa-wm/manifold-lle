@@ -230,7 +230,7 @@ connected manifold: $X \sim \mani \subset \RD$.
 i.e., compute $Y = (Y_1, Y_2, ..., Y_N)$, with $Y_i \in \R^d$  
 $\forall i \in \setN$.
 Appropriateness of $Y$ is determined by the extent to which the $d$-dimensional 
-representation preserves intrinsic neighborhood structures on $\mani$.
+representation preserves intrinsic structures on $\mani$.
 \\
 
 Note that, while $D$ is specified a priori, the \textit{intrinsic 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  27 DEC 2020 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  27 DEC 2020 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,12 +661,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--235
 
  []
 
-) (./chapters/graph-based-models.Rnw [5]) (./chapters/sslle.Rnw [6])
-(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [7]
+) (./chapters/graph-based-models.Rnw [5] [6]) (./chapters/sslle.Rnw)
+(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [7] [8]
 (./chapters/appendix.Rnw) [5] [6] (./main.bbl) [7] [8] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  10494 strings out of 479485
- 154865 string characters out of 5875915
+ 154859 string characters out of 5875915
  465438 words of memory out of 5000000
  27222 multiletter control sequences out of 15000+600000
  573849 words of font info for 111 fonts, out of 8000000 for 9000
@@ -687,10 +687,10 @@ blic/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 722864 bytes).
+Output written on main.pdf (20 pages, 726361 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,7 +4,78 @@
 % ------------------------------------------------------------------------------
 
 \subsubsection{General Concept}
-\label{gb-tech-structure}
+\label{lgb-concept}
+
+% As stated above, many methods of manifold learning rely on spectral techniques:
+% they construct a special matrix from the observed data and use its eigenvectors 
+% to compute the sought-after low-dimensional coordinates $Y$ (spectral 
+% decomposition will be covered in somewhat more detail in chapter 
+% \ref{eigenwert}.
+% The nature of this matrix depends on the type of intrinsic structure the
+% mapping shall preserve.
+% \textit{Principal component analysis (PCA)} and \textit{multi-dimensional 
+% scaling (MDS)} both retain global covariance structure
+% 
+% Linear methods, such as \textit{principal component analysis (PCA)} and 
+% \textit{multi-dimensional scaling (MDS)}, implicitly assume the data to lie on a
+% linear subspace of $\RD$.
+% Both PCA and MDS achieve dimensionality reduction through representation of the 
+% data along the axes of maximum variance.
+
+(Local) graph-based techniques of manifold learning arise from varying geometric 
+intuitions and computational approaches.
+Interestingly, they still share a common structure that allows for 
+interpretation in a general framework.
+The first main block of this framework produces a matrix representation of the
+$D$-dimensional data which is then mapped to $d$ dimensions in a subsequent step 
+by means of spectral decomposition, such that the data are expressed via 
+coordinates on the principal eigenvectors of the matrix \citep{sauletal2006}.
+In fact, this procedure is not unique to graph-based methods but characterizes
+all spectral methods \citep{cayton2005}.
+Precisely how the matrix is constructed, however, determines the kind of 
+intrinsic structure that can be learned and preserved.
+As argued before, non-linearity is a desirable property that techniques based on
+linear data structures\footnote{
+For instance, principal component analysis (PCA) decomposes the covariance 
+matrix, whereas multi-dimensional scaling (MDS) is based on the Gram matrix.
+Both approaches essentially perform a rotation of the data and a linear 
+projection to the subspace of maximum variance, yielding the same results 
+\citep{cayton2005}.
+} fail to achieve.
+Graph-based methods derive their matrix from weighted neighborhood graphs which 
+are able to capture highly non-linear structures.
+To this end, they find vicinities and express them via graph representations, 
+where inputs form vertices and edges indicate neighborhood relations 
+\citep{sauletal2006}.
+Local graph-based methods additionally restrict neighborhoods to local ones and
+thereby avoid shortcuts: for manifolds with strongly non-convex surfaces, global 
+solutions often prove too coarse.
+The consequence of such locality is sparsity of graph matrices 
+\citep{belkinniyogi2003}.
+
+Summing up the above, local graph-based manifold learning can be schematized as
+follows:
+
+\begin{tight_enumerate}
+  \item Compute neighborhoods of input data.
+  \item Construct a sparse weighted graph from these neighborhood relations.
+  \item Condense the graph information in a matrix.
+  \item Learn an embedding from the eigenvectors of this matrix.
+\end{tight_enumerate}
+
+Crucially, the complex manifold learning problem can be addressed by a sequence 
+of tractable optimization steps \citep{sauletal2006}.
+The following chapters explain these steps in some more detail. 
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Neighborhood Graphs}
+\label{neighbor-graph}
+
+
+% \begin{itemize}
+%   \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs
+% \end{itemize}
 
 % \begin{itemize}
 %   \item Neighborhood graph
@@ -14,15 +85,6 @@
 %   than neighborhood graphs but share step 2 and 3
 %   \item Maybe present ISOMAP briefly
 % \end{itemize}
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Neighborhood Graphs}
-\label{neighbor-graph}
-
-\begin{itemize}
-  \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs
-\end{itemize}
 
 % ------------------------------------------------------------------------------
 
