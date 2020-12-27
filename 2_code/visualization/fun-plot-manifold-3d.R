@@ -14,9 +14,22 @@ plot_manifold_3d <- function(data, n_colors = 10) {
   
   # Perform basic input checks
   
-  assert_data_table(data)
-  assert_count(n_colors)
+  checkmate::assert_data_table(data)
+  checkmate::assert_count(n_colors)
   stopifnot(names(data) %in% c("x", "y", "z", "t"))
+  
+  # Define camera perspective and axis titles
+  
+  scene <- list(
+    camera = list(eye = list(
+      x = 1.5, 
+      y = -1.5, 
+      z = 0.75)
+    ),
+    xaxis = list(title = ""),
+    yaxis = list(title = ""),
+    zaxis = list(title = "")
+  )
   
   # Create rainbow color palette, granularity depending on n_colors
   
@@ -24,7 +37,8 @@ plot_manifold_3d <- function(data, n_colors = 10) {
   
   # Make 3D scatterplot
   
-  plot_ly(data, x = ~ x, y = ~ y, z = ~ z, color = ~ t) %>% 
-    add_markers(colors = my_palette)
+  plotly::plot_ly(data, x = ~ x, y = ~ y, z = ~ z, color = ~ t) %>% 
+    add_markers(colors = my_palette) %>% 
+    layout(scene = scene)
   
 }
