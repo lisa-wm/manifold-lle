@@ -15,8 +15,8 @@ make_incomplete_tire <- function(seed = 123L, n_points) {
   
   # Perform basic input checks
   
-  assert_number(seed)
-  assert_count(n_points)
+  checkmate::assert_number(seed)
+  checkmate::assert_count(n_points)
   
   # Compute incomplete tire coordinates as proposed in Yang et al. (2006)
   
@@ -45,8 +45,8 @@ make_swiss_roll <- function(seed = 123L, n_points) {
   
   # Perform basic input checks
 
-  assert_number(seed)
-  assert_count(n_points)
+  checkmate::assert_number(seed)
+  checkmate::assert_count(n_points)
   
   # Compute Swiss roll coordinates as implemented in Python's sklearn
   
@@ -59,6 +59,35 @@ make_swiss_roll <- function(seed = 123L, n_points) {
   
   data.table(x, y, z, t)
   
+}
+
+# S-CURVE ----------------------------------------------------------------------
+
+#' Create Swiss roll data
+#'
+#' @param seed Single numeric value for creating an RNG seed
+#' @param n_points Number of points to sample from manifold
+#' @return Data table object containing R3 coordinates (columns x, y, z) and
+#' main manifold dimension (column t)
+
+make_s_curve <- function(seed = 123L, n_points) {
+  
+  # Perform basic input checks
+  
+  checkmate::assert_number(seed)
+  checkmate::assert_count(n_points)
+  
+  # Compute S-curve coordinates as implemented in Python's sklearn
+  
+  set.seed(seed)
+  t <- 3 * pi * (runif(0, 1, n = n_points) - 0.5)
+  x <- sin(t)
+  set.seed(seed + 1L)
+  y <- 2 * runif(0, 1, n = n_points)
+  z <- (sign(t) * (cos(t) - 1))
+  
+  data.table(x, y, z, t)
+
 }
 
 # CIRCLE DATA ------------------------------------------------------------------

@@ -31,7 +31,7 @@ on $X$, the following properties must hold \citep{brown2006}:
   \item If $\topo$ is a neighborhood of $x$, then $x \in \topo$.
   \item If $\topo$ is a subset of $X$ containing a neighborhood of $x$, then 
   $\topo$ is a neighborhood of $x$.
-  \item The intersection of two neighborhoods of $x$ is again a neighborhood to
+  \item The intersection of two neighborhoods of $x$ is again a neighborhood of
   $x$.
   \item Any neighborhood $\topo$ of $x$ contains a neighborhood $\topo^{\prime}$ 
   of $x$ such that $\topo$ is a neighborhood of each element in 
@@ -51,8 +51,8 @@ The resulting topology is also called the \textit{metric topology}
 Topological spaces in general are not accessible via distances.
 The ultimate goal is again the interpretation of the data in a Euclidean space, 
 albeit one with lower dimensionality, where such concepts are meaningful.
-The next step is thus to study how a (potentially highly non-linear and
-complicated) topological space might relate to $\Rd$.
+The next step is thus to study how a (potentially highly non-linear) topological 
+space might relate to $\Rd$.
 \\
 
 \textbf{Homeomorphisms.} Consider two topological spaces $(X, \topo_X)$, 
@@ -75,15 +75,15 @@ For locally Euclidean topological spaces it is thus meaningful to speak of
 elements as points.
 }.
 In local neighborhoods $X$ then behaves like $\Rd$, which is conceivably a 
-desirable property in this context \citep{mafu2011}.
+desirable property in the context of manifold learning \citep{mafu2011}.
 \\
 
 \textbf{Manifolds.} \textit{Manifolds} are now precisely such locally Euclidean
 topological spaces, with some additional properties.
-For $\mani$\footnote{
-This is again a shorthand, omitting the explicit notation of the corresponding
-topology to enhance readability. 
-} to be a $d$-dimensional manifold (also: $d$-manifold) it must meet 
+For $\mani$ to be a $d$-dimensional manifold\footnote{
+$\mani$ is again a shorthand, omitting the explicit notation of the 
+corresponding topology. 
+} (also: $d$-manifold) it must meet 
 the following conditions \citep{waldmann2014}:
 
 \begin{tight_enumerate}
@@ -110,27 +110,26 @@ $\Rd$ is endowed with the so-called \textit{subspace topology} that results
 from intersecting open subsets of $\R^k$ with $\Rd$ (for $\R^2$, these are
 $\epsilon$-circles obtained by intersecting $\R^3$-$\epsilon$-balls with the 
 coordinate planes).
-For a manifold $\mani$ to be embedded in $\R^k$ means that $\mani$ is enclosed
+For a manifold $\mani$, to be embedded in $\R^k$ means that $\mani$ is enclosed
 by $\R^k$ but locally homeomorphic to $\Rd$, thereby inheriting the metric
 subspace topology from $\Rd$ \citep{waldmann2014}.
 It can be shown that $k = 2d + 1$ is sufficient to create an embedding, but $k$
 may be smaller \citep{mafu2011}.
 
 This now has important consequences for manifold learning: data lying on a 
-$d$-dimensional manifold $\mani$ embedded in $\mathbb{R}^k$ are observed as 
-$k$-dimensional points but may locally be treated like points from $\Rd$.
+$d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as 
+$D$-dimensional points but may locally be treated like points from $\Rd$.
 \\
 
 Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold embedded 
 in $\R^3$.
 Clearly, the S-curve as a whole is far from linear, but local patches on its
-surface behave like flat surfaces from $\R^2$.
+surface behave like planes from $\R^2$.
 So the S-curve is two-dimensional and feature dimensionality can in effect be 
 compressed from $\R^3$ to $\R^2$.
 The challenge is now to unravel the manifold in a way that preserves its 
 structure to maximum extent.
-Obviously, a simple projection to $\R^2$ (onto any coordinate plane) will not
-accomplish this task.
+Obviously, a simple projection to $\R^2$ will not accomplish this task.
 Instead, manifold learning must capture the intrinsic neighborhood structures
 and map these to $\R^2$, which, in this case, can be imagined as a 
 "flattening-out" of the S-curve.
@@ -139,7 +138,7 @@ and map these to $\R^2$, which, in this case, can be imagined as a
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 0.8\textwidth]{figures/s-curve-screenshot}
+  \includegraphics[width = 0.5\textwidth]{figures/s-curve}
   \caption[S-curve manifold]{XY points sampled from the S-curve manifold,
   obtained by bla.}
   \label{fig:scurve}
@@ -156,16 +155,16 @@ In order to enable the construction of such a metric, manifolds must fulfill
 two additional properties: being \textit{Riemannian} and being 
 \textit{connected} \citep{mafu2011}.
 The Riemannian property is based on differentiability and ensures that concepts 
-of curvature, length and angle are meaningful \citep{mafu2011}.\footnote{
+of curvature, length and angle remain meaningful \citep{mafu2011}.\footnote{
 A detailed derivation is beyond the scope of this report and may be found, for
 example, in \citet{mukherjee2015}.
 }
 Connectedness means that no separation $\{ U, V\}$ of a manifold $\mani$
 exists with open, non-empty and disjoint $U, V \subset \mani$, 
 $\mani = U \cup V$.
-For manifolds, connectedness is immediately equivalent with path-connectedness,
-which is perhaps more intuitive: informally stated, any two points on a 
-connected manifold can be linked by a path
+For manifolds, connectedness is immediately equivalent to path-connectedness.
+Informally stated, any two points on a connected manifold can be linked by a 
+path
 % Such a path is a continuous function $\lambda: [0, 1] \rightarrow \mani$ with
 % $\lambda(x) = 0$ and $\lambda(y) = 1$ for any two points $x, y \in \mani$
 \citep{mccleary2006}.
@@ -173,11 +172,11 @@ connected manifold can be linked by a path
 For connected Riemannian manifolds it is now possible to define a distance 
 metric, or \textit{geodesic distance}.
 Geodesic distance is the length of the shortest curve (\textit{geodesic}) on
-$\mani$ between two points on $\mani$, as measured by arc-length (such 
-a curve must exist due to connectedness)\footnote{
+$\mani$ between two points on $\mani$, as measured by arc-length\footnote{
 Geodesics are but a peripheral note here; for a precise definition see for 
 example \citet{mafu2011}.
-}.
+} (such 
+a curve must exist due to connectedness).
 Intuitively, geodesic distance can be identified with Euclidean distance in
 Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
 

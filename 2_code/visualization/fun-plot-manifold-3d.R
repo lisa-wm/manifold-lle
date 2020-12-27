@@ -10,6 +10,9 @@
 #' @param n_colors Number of rainbow columns to be displayed
 #' @return Plotly object
 
+# TODO Check whether internal call of plotly to arrange_, which is deprecated
+# as of dplyr 0.7, can be avoided
+
 plot_manifold_3d <- function(data, n_colors = 10) {
   
   # Perform basic input checks
