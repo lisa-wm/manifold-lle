@@ -72,6 +72,25 @@ The following chapters explain these steps in some more detail.
 \subsubsection{Neighborhood Graphs}
 \label{neighbor-graph}
 
+There are two principal ways to construct a neighborhood, i.e., a set of points 
+with minimum distance, around a vector $\bm{x}_i \in \RD$.
+Let $\mathcal{N}: \RD \rightarrow (\RD)^{\ell}, \bm{x}_i \mapsto \mathcal{N}
+(\bm{x}_i)$ denote the constructor that assigns a set of nearest neighbors 
+to $\bm{x}_i$.
+HOW BIG IS K FOR EPSILON NEIGHBORS???
+The first possibility is to restrict the size of the neighborhood to the $k$ 
+points with minimum but unbounded distance to $\bm{x}_i$:
+$|\mathcal{N}(\bm{x}_i)| \leq k$, and $k = \ell$.
+Alternatively, the neighborhood can be constructed by collecting all points that
+have a maximum distance of $\epsilon$ to $\bm{x}_i$, no matter how many 
+neighbors this will result in.
+This yields $\ell = inf ...$.
+Note that both approaches are based on distances between $\bm{x}_i$ and 
+potentially neighboring points.
+In principle, arbitrary distance metrics may be used here.
+Local graph-based manifold learning exploits the fact that manifolds are locally
+Euclidean, meaning neighborhood relations can be obtained by computing Euclidean
+distances.
 
 % \begin{itemize}
 %   \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs

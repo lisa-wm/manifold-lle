@@ -218,19 +218,20 @@ formalized in a way that will be referenced throughout the remainder of this
 report and is inspired by \citet{sauletal2006}.
 \\
 
-\textbf{Given.} Data $X = (X_1, X_2, ..., X_N)$, with $X_i \in \RD$ 
-$\forall i \in \setN$ and $N, D \in \N$. 
-$X$ thus consists of $N$ real-valued data vectors observed in $D$ dimensions.
+\textbf{Given.} Data $\bm{X} = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N)$, with 
+$\bm{x}_i \in \RD$ $\forall i \in \setN$ and $N, D \in \N$. 
+$\bm{X}$ thus consists of $N$ real-valued data vectors observed in $D$ 
+dimensions.
 The true data-generating process is taken to have dimensionality $d \in \N$, 
-such that $X$ is in fact a sample from a $d$-dimensional, Riemannian and 
-connected manifold: $X \sim \mani \subset \RD$.
+such that $\bm{X}$ is in fact a sample from a $d$-dimensional, Riemannian and 
+connected manifold: $\bm{X} \sim \mani \subset \RD$.
 \\
 
 \textbf{Goal.} Find an appropriate $d$-dimensional representation of the data, 
-i.e., compute $Y = (Y_1, Y_2, ..., Y_N)$, with $Y_i \in \R^d$  
-$\forall i \in \setN$.
-Appropriateness of $Y$ is determined by the extent to which the $d$-dimensional 
-representation preserves intrinsic structures on $\mani$.
+i.e., compute $\bm{Y} = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N)$, with 
+$\bm{y}_i \in \R^d$ $\forall i \in \setN$.
+Appropriateness of $\bm{Y}$ is determined by the extent to which the 
+$d$-dimensional representation preserves intrinsic structures on $\mani$.
 \\
 
 Note that, while $D$ is specified a priori, the \textit{intrinsic 
@@ -239,7 +240,7 @@ Since there are not always (finite-sample) guarantees for finding the true value
 of $d$, it must be assumed that the estimation may differ from $d$.
 In order to emphasize this potential gap, the dimensionality of the 
 low-dimensional representation will henceforth be denoted by $m \in \N$, such
-that $Y \in (\R^m)^N$. 
+that $\bm{Y} \in (\R^m)^N$. 
 
 
 
