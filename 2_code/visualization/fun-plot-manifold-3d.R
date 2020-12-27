@@ -26,9 +26,9 @@ plot_manifold_3d <- function(data, n_colors = 10) {
       y = -1.5, 
       z = 0.75)
     ),
-    xaxis = list(title = ""),
-    yaxis = list(title = ""),
-    zaxis = list(title = "")
+    xaxis = list(visible = FALSE),
+    yaxis = list(visible = FALSE),
+    zaxis = list(visible = FALSE)
   )
   
   # Create rainbow color palette, granularity depending on n_colors
@@ -38,7 +38,12 @@ plot_manifold_3d <- function(data, n_colors = 10) {
   # Make 3D scatterplot
   
   plotly::plot_ly(data, x = ~ x, y = ~ y, z = ~ z, color = ~ t) %>% 
-    add_markers(colors = my_palette) %>% 
+    add_trace(
+      type = "scatter3d",
+      mode = "markers",
+      colors = my_palette
+    ) %>% 
+    hide_colorbar() %>% 
     layout(scene = scene)
   
 }
