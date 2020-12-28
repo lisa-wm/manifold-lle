@@ -135,14 +135,14 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
   and map these to $\R^2$, which, in this case, can be imagined as a 
   "flattening-out" of the S-curve.
 \end{minipage}
-\begin{minipage}[b]{0.1\textwidth}
+\begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
 \end{minipage}
-\begin{minipage}[b]{0.4\textwidth}
+\begin{minipage}[b]{0.45\textwidth}
   \begin{figure}[H]
     \centering
     \includegraphics[trim = 100 20 70 30, clip, % left bottom right top
-      width = 0.6\textwidth]{figures/s-curve}
+      width = 0.55\textwidth]{figures/s-curve}
     \caption[S-curve manifold]{10,000 points sampled from the S-curve manifold. 
     \textit{Source:} own representation, inspired by implementation in 
     \texttt{Python}'s \texttt{scikit-learn} library \citep{scikit-learn}.}

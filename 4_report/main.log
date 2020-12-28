@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  28 DEC 2020 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  28 DEC 2020 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,12 +636,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--81
 File: figures/s-curve.pdf Graphic file (type pdf)
 <use figures/s-curve.pdf>
 Package pdftex.def Info: figures/s-curve.pdf  used on input line 145.
-(pdftex.def)             Requested size: 102.4294pt x 151.31241pt.
+(pdftex.def)             Requested size: 105.63072pt x 156.04056pt.
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
 48.
  (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
+Underfull \hbox (badness 1448) in paragraph at lines 148--148
+\T1/aer/m/n/10 S-curve man-i-fold. \T1/aer/m/it/10 Source: \T1/aer/m/n/10 own r
+ep-re-
+ []
+
+
 Overfull \hbox (5.23216pt too wide) in paragraph at lines 124--152
 [][] [] [] 
  []
@@ -666,23 +672,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--237
  []
 
 ) (./chapters/graph-based-models.Rnw [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 89--107
-
- []
-
 <figures/neighborhood-graph.pdf, id=76, 578.16pt x 578.16pt>
 File: figures/neighborhood-graph.pdf Graphic file (type pdf)
 <use figures/neighborhood-graph.pdf>
 Package pdftex.def Info: figures/neighborhood-graph.pdf  used on input line 131
 .
-(pdftex.def)             Requested size: 136.57166pt x 159.00691pt.
+(pdftex.def)             Requested size: 172.84813pt x 201.24467pt.
 
-Underfull \hbox (badness 1648) in paragraph at lines 134--134
-[]\T1/aer/m/n/10 Figure 2: |Ex-em-plary neigh-bor-hood
- []
-
-
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 108--138
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 107--138
 [][] [] [] 
  []
 
@@ -714,7 +711,7 @@ ype1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 .pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2
 020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 757217 bytes).
+Output written on main.pdf (22 pages, 757240 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
