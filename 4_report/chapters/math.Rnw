@@ -120,7 +120,6 @@ may be smaller \citep{mafu2011}.
 This now has important consequences for manifold learning: data lying on a 
 $d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as 
 $D$-dimensional points but may locally be treated like points from $\Rd$.
-\\
 
 \begin{minipage}[b]{0.5\textwidth}
   Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold 
@@ -143,10 +142,10 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
   \begin{figure}[H]
     \centering
     \includegraphics[trim = 100 20 70 30, clip, % left bottom right top
-      width = 0.65\textwidth]{figures/s-curve}
-    \caption[S-curve manifold]{10,000 points sampled from the S-curve manifold 
-    as implemented in \texttt{Python}'s \texttt{scikit-learn} library 
-    \citep{scikit-learn}.}
+      width = 0.6\textwidth]{figures/s-curve}
+    \caption[S-curve manifold]{10,000 points sampled from the S-curve manifold. 
+    \textit{Source:} own representation, inspired by implementation in 
+    \texttt{Python}'s \texttt{scikit-learn} library \citep{scikit-learn}.}
     \label{fig:scurve}
   \end{figure}
 \end{minipage}

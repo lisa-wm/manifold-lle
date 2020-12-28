@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  28 DEC 2020 10:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  28 DEC 2020 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -632,21 +632,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--81
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 120--124
-
- []
-
 <figures/s-curve.pdf, id=56, 343.2825pt x 305.22029pt>
 File: figures/s-curve.pdf Graphic file (type pdf)
 <use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 146.
-(pdftex.def)             Requested size: 110.963pt x 163.91692pt.
+Package pdftex.def Info: figures/s-curve.pdf  used on input line 145.
+(pdftex.def)             Requested size: 102.4294pt x 151.31241pt.
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
-49.
-(c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
+48.
+ (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 125--153
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 124--152
 [][] [] [] 
  []
 
@@ -655,31 +651,52 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 125--153
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 216--220
+Underfull \hbox (badness 10000) in paragraph at lines 215--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--231
+Underfull \hbox (badness 10000) in paragraph at lines 220--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--238
+Underfull \hbox (badness 10000) in paragraph at lines 231--237
 
  []
 
-) (./chapters/graph-based-models.Rnw [5] [6]) (./chapters/sslle.Rnw [7])
-(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [8]
+) (./chapters/graph-based-models.Rnw [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 89--107
+
+ []
+
+<figures/neighborhood-graph.pdf, id=76, 578.16pt x 578.16pt>
+File: figures/neighborhood-graph.pdf Graphic file (type pdf)
+<use figures/neighborhood-graph.pdf>
+Package pdftex.def Info: figures/neighborhood-graph.pdf  used on input line 131
+.
+(pdftex.def)             Requested size: 136.57166pt x 159.00691pt.
+
+Underfull \hbox (badness 1648) in paragraph at lines 134--134
+[]\T1/aer/m/n/10 Figure 2: |Ex-em-plary neigh-bor-hood
+ []
+
+
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 108--138
+[][] [] [] 
+ []
+
+[7 <./figures/neighborhood-graph.pdf>]) (./chapters/sslle.Rnw)
+(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [8] [9]
 (./chapters/appendix.Rnw) [5] [6] (./main.bbl [7]) [8] [9] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10597 strings out of 479485
- 156012 string characters out of 5875915
- 466923 words of memory out of 5000000
- 27310 multiletter control sequences out of 15000+600000
- 579069 words of font info for 128 fonts, out of 8000000 for 9000
+ 10609 strings out of 479485
+ 156305 string characters out of 5875915
+ 466931 words of memory out of 5000000
+ 27318 multiletter control sequences out of 15000+600000
+ 581553 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,76p,369b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,12n,76p,369b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/te
 xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-di
@@ -693,13 +710,14 @@ s/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 ist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
-.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (21 pages, 740099 bytes).
+/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
+.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (22 pages, 757217 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 167 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 32 words of extra memory for PDF output out of 10000 (max. 10000000)
 

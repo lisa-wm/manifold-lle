@@ -9,6 +9,7 @@ packages_required <-  c(
   "checkmate", # input checking
   "data.table", # data wrangling
   "here", # path management
+  "igraph", # graph visualizations
   "plotly", # 3d plots
   "tidyverse" # data wrangling
 

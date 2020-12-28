@@ -46,8 +46,7 @@ Graph-based methods derive their matrix from weighted neighborhood graphs.
 In effect, these graphs are a discretized approximation of the underlying 
 manifold $\mani$ (still assuming $\mani$ is sampled well by $\bm{X}$), and as 
 such able to capture highly non-linear structures.
-To this end, vicinities are expressed via graph representations, where inputs 
-form vertices and edges indicate neighborhood relations 
+To this end, vicinities are expressed via graph representations 
 \citep{sauletal2006}.
 Local graph-based methods additionally restrict neighborhoods to local ones and
 thereby avoid shortcuts: for manifolds with strongly non-convex surfaces, global 
@@ -85,8 +84,7 @@ translate to open balls around each point \citep{waldmann2014}.
 This distance-based construction now locally applies to manifolds as a direct 
 consequence of their locally Euclidean behavior \citep{mafu2011}.
 Neighborhood relations in local graph-based manifold learning may therefore 
-established in the Euclidean space $\bm{X}$ has been observed in and are as such 
-of linear nature.
+established in the Euclidean observation space and are as such of linear nature.
 
 There are two principal ways to build a neighborhood around $\bm{x} \in \bm{X}$, 
 both of which usually employ squared Euclidean distances\footnote{
@@ -105,20 +103,38 @@ have a maximum distance of $\epsilon \in \R$ to $\bm{x}$, no matter how many
 neighbors this will result in, yielding $\mathcal{N}_{\epsilon} (\bm{x}) = 
 \{\bm{x}_j \in \bm{X}: \| \bm{x} - \bm{x}_j \|^2 \leq \epsilon\}$ and 
 $\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
+\\
 
-
-% \begin{itemize}
-%   \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs
-% \end{itemize}
-
-% \begin{itemize}
-%   \item Neighborhood graph
-%   \item Weight matrix
-%   \item Eigenwert problem
-%   \item Mention that global spectral techniques use pairwise dist matrix rather
-%   than neighborhood graphs but share step 2 and 3
-%   \item Maybe present ISOMAP briefly
-% \end{itemize}
+\begin{minipage}[b]{0.5\textwidth}
+  The thus defined neighborhoods can now be described by a \textit{neighborhood 
+  graph} $\mathcal{G}$, where input points form vertices and edges indicate 
+  neighborhood relations.
+  Each vertex is connected to its $k$ nearest neighbors or all points 
+  within $\epsilon$-radius, depending on the neighborhood definition.
+  It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
+  point to be among another's $k$ nearest neighbors the reverse need not be 
+  true.
+  Building upon $k$-neighborhoods therefore leads to directed graphs.
+  An example for such a directed graph is given by figure 
+  \ref{fig:neighbor-graph}, showing 2-neighborhoods for seven fictional data 
+  points.
+  Conversely, the $\epsilon$-distance boundary holds in both directions and 
+  produces undirected graphs \citep{heetal2005}.
+\end{minipage}
+\begin{minipage}[b]{0.1\textwidth}
+  \phantom{xxx}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[trim = 90 50 60 30, clip, % left bottom right top
+      width = 0.9\textwidth]{figures/neighborhood-graph}
+    \caption[Exemplary neighborhood graph]{Exemplary neighborhood graph for 
+    seven points where outward arrows point to members of the vertex's 
+    respective $k$-neighborhood, $k = 2$. \textit{Source:} own representation.}
+    \label{fig:neighbor-graph}
+  \end{figure}
+\end{minipage}
 
 % ------------------------------------------------------------------------------
 
