@@ -24,7 +24,7 @@ exhibits some specific properties.
 set $T$ equipped with a \textit{topology} $\topo$. 
 A topology is a general way of describing relations between elements in $T$.
 Consider a function $\topo: T \rightarrow 2^T, t \mapsto \topo(t)$, which 
-assigns to $t \in T$ a set of subsets of $T$ called a \textit{neighborhood}.
+assigns to $t \in T$ a set of subsets of $T$ called \textit{neighborhoods}.
 For $\topo$ to be a topology\footnote{
 Alternative definitions employ open subsets of $T$, see for example 
 \citet{waldmann2014}.
@@ -225,6 +225,8 @@ dimensions.
 The true data-generating process is taken to have dimensionality $d \in \N$, 
 such that $\bm{X}$ is in fact a sample from a $d$-dimensional, Riemannian and 
 connected manifold: $\bm{X} \sim \mani \subset \RD$.
+For manifold learning methods to yield satisfying results, $\mani$ is always 
+assumed to be sampled well by $\bm{X}$.
 \\
 
 \textbf{Goal.} Find an appropriate $d$-dimensional representation of the data, 

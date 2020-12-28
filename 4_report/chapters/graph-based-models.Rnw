@@ -42,10 +42,12 @@ Both approaches essentially perform a rotation of the data and a linear
 projection to the subspace of maximum variance, yielding the same results 
 \citep{cayton2005}.
 } fail to achieve.
-Graph-based methods derive their matrix from weighted neighborhood graphs which 
-are able to capture highly non-linear structures.
-To this end, they find vicinities and express them via graph representations, 
-where inputs form vertices and edges indicate neighborhood relations 
+Graph-based methods derive their matrix from weighted neighborhood graphs.
+In effect, these graphs are a discretized approximation of the underlying 
+manifold $\mani$ (still assuming $\mani$ is sampled well by $\bm{X}$), and as 
+such able to capture highly non-linear structures.
+To this end, vicinities are expressed via graph representations, where inputs 
+form vertices and edges indicate neighborhood relations 
 \citep{sauletal2006}.
 Local graph-based methods additionally restrict neighborhoods to local ones and
 thereby avoid shortcuts: for manifolds with strongly non-convex surfaces, global 
@@ -72,29 +74,38 @@ The following chapters explain these steps in some more detail.
 \subsubsection{Neighborhood Graphs}
 \label{neighbor-graph}
 
-There are two principal ways to construct a neighborhood, i.e., a set of points 
-with minimum distance, around a vector $\bm{x}_i \in \RD$.
-Let $\mathcal{N}: \RD \rightarrow (\RD)^{\ell}, \bm{x}_i \mapsto \mathcal{N}
-(\bm{x}_i)$ denote the constructor that assigns a set of nearest neighbors 
-to $\bm{x}_i$.
-The first possibility is to restrict the size of the neighborhood to the $k$ 
-points with minimum but unbounded distance to $\bm{x}_i$, such that
-$\ell = k$ and $\mathcal{N}(\bm{x}_i) = \{\bm{x}_j: d(\bm{x}_i, \bm{x}_j) \leq
-\gamma\}$, with $\gamma$ being the $k$-percentile of ordered pairwise distances 
-$d(\bm{x}_i, \bm{x}_j)$.
-NONSENSE, ALSO N MUST MAP FROM X NOT FROM ENTIRE R TO THE D
+Approximating the intrinsic structure of $\mani$ by a neighborhood graph 
+requires the determination of a \textit{neighborhood} around each 
+$\bm{x} \in \bm{X}$.
+A neighborhood of $\bm{x}$ is but a subset of $\bm{X}$ containing
+another, open subset of $\bm{X}$ of which $\bm{x}$ is an element.
+Members of the neighborhood are called neighbors of $\bm{x}$.
+In metric spaces neighborhoods are defined via distances and therefore 
+translate to open balls around each point \citep{waldmann2014}.
+This distance-based construction now locally applies to manifolds as a direct 
+consequence of their locally Euclidean behavior \citep{mafu2011}.
+Neighborhood relations in local graph-based manifold learning may therefore 
+established in the Euclidean space $\bm{X}$ has been observed in and are as such 
+of linear nature.
 
-$|\mathcal{N}(\bm{x}_i)| \leq k$, and $k = \ell$.
-Alternatively, the neighborhood can be constructed by collecting all points that
-have a maximum distance of $\epsilon$ to $\bm{x}_i$, no matter how many 
-neighbors this will result in.
-This yields $\ell = inf ...$.
-Note that both approaches are based on distances between $\bm{x}_i$ and 
-potentially neighboring points.
-In principle, arbitrary distance metrics may be used here.
-Local graph-based manifold learning exploits the fact that manifolds are locally
-Euclidean, meaning neighborhood relations can be obtained by computing Euclidean
+There are two principal ways to build a neighborhood around $\bm{x} \in \bm{X}$, 
+both of which usually employ squared Euclidean distances\footnote{
+In principle, alternative distance measures are equally applicable.
+}, denoted by $\| \cdot \|^2$.
+Let $\mathcal{N}: \bm{X} \rightarrow \bm{X}^{\ell}, \bm{x} \mapsto \mathcal{N}
+(\bm{x})$ be a constructor that assigns a set of neighbors to $\bm{x}$.
+The first possibility is to restrict the size of the neighborhood to the $k$ 
+points with the smallest distance to $\bm{x}$, such that
+$\ell = k$ and $\mathcal{N}_k(\bm{x}) = \{\bm{x}_j \in \bm{X}: 
+\| \bm{x} - \bm{x}_j \|^2 \leq
+\gamma\}$, with $\gamma \in \R$ being the $k$-percentile of ordered pairwise 
 distances.
+Alternatively, the neighborhood may be constructed by collecting all points that
+have a maximum distance of $\epsilon \in \R$ to $\bm{x}$, no matter how many 
+neighbors this will result in, yielding $\mathcal{N}_{\epsilon} (\bm{x}) = 
+\{\bm{x}_j \in \bm{X}: \| \bm{x} - \bm{x}_j \|^2 \leq \epsilon\}$ and 
+$\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
+
 
 % \begin{itemize}
 %   \item $k$-/$\epsilon$-neighborhoods and neighborhood graphs

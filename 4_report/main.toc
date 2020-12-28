@@ -12,9 +12,9 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Laplacian Eigenmaps}{7}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Locally Linear Embedding (LLE)}{7}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Hessian Locally Linear Embedding (H-LLE)}{7}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{7}{}%
-\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{7}{}%
-\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{7}{}%
+\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{8}{}%
+\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{8}{}%
+\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{8}{}%
 \contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{8}{}%
 \contentsline {section}{\numberline {5}Experiment Results}{8}{}%
 \contentsline {subsection}{\numberline {5.1}Experimental Design}{8}{}%
