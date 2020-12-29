@@ -1,4 +1,4 @@
-\subsection{Principles of Local Graph-Based Manifold Learning}
+\subsection{Principles of Locally Linear Graph-Based Manifold Learning}
 \label{lgb-principles}
 
 % ------------------------------------------------------------------------------
@@ -22,39 +22,80 @@
 % Both PCA and MDS achieve dimensionality reduction through representation of the 
 % data along the axes of maximum variance.
 
-(Local) graph-based techniques of manifold learning arise from varying geometric 
+Local graph-based techniques of manifold learning arise from varying geometric 
 intuitions and computational approaches.
 Interestingly, they still share a common structure that allows for 
-interpretation in a general framework.
-The first main block of this framework produces a matrix representation of the
-$D$-dimensional data which is then mapped to $d$ dimensions in a subsequent step 
-by means of spectral decomposition, such that the data are expressed via 
-coordinates on the principal eigenvectors of the matrix \citep{sauletal2006}.
-In fact, this procedure is not unique to graph-based methods but characterizes
-all spectral methods \citep{cayton2005}.
-Precisely how the matrix is constructed, however, determines the kind of 
-intrinsic structure that can be learned and preserved.
-As argued before, non-linearity is a desirable property that techniques based on
-linear data structures\footnote{
-For instance, principal component analysis (PCA) decomposes the covariance 
-matrix, whereas multi-dimensional scaling (MDS) is based on the Gram matrix.
-Both approaches essentially perform a rotation of the data and a linear 
-projection to the subspace of maximum variance, yielding the same results 
-\citep{cayton2005}.
-} fail to achieve.
-Graph-based methods derive their matrix from weighted neighborhood graphs.
-In effect, these graphs are a discretized approximation of the underlying 
-manifold $\mani$ (still assuming $\mani$ is sampled well by $\bm{X}$), and as 
-such able to capture highly non-linear structures.
-To this end, vicinities are expressed via graph representations 
+interpretation in a framework applicable to general spectral methods.
+First, find a matrix representation for the $D$-dimensional data.
+Second, perform a spectral decomposition of this matrix such that the data can 
+be expressed via coordinates on the principal (top or bottom) eigenvectors
 \citep{sauletal2006}.
-Local graph-based methods additionally restrict neighborhoods to local ones and
-thereby avoid shortcuts: for manifolds with strongly non-convex surfaces, global 
-solutions often prove too coarse.
-The consequence of such locality is sparsity of graph matrices 
-\citep{belkinniyogi2003}.
+Precisely how the matrix is constructed determines the kind of intrinsic 
+structure that can be learned and preserved \citep{cayton2005}.
+\\
 
-Summing up the above, local graph-based manifold learning can be schematized as
+\textbf{Non-linearity}. Early methods of manifold learning attempted to preserve 
+linear structures observed in $\RD$.
+The two most prominent of these are probably \textit{principal component 
+analysis (PCA)} and \textit{multi-dimensional scaling (MDS)}.
+Both eventually arrive at the same result; while PCA retains the global 
+covariance structure, decomposing the covariance matrix, MDS keeps global 
+pairwise Euclidean distances by decomposition of the Gram matrix 
+\citep{cayton2005}.
+The central drawback of this approach is the confinement to learning linear 
+mappings.
+Graph-based methods acknowledge the fact that, in general, data will rather lie 
+on non-linear manifolds.
+They model the intrinsic structure through neighborhood relations, 
+mapping points that lie close on the manifold surface to nearby locations.
+Neighborhoods are characterized via weighted graphs which are then coerced 
+to numerical matrix representations.
+In effect, these graphs are a discretized approximation of the underlying 
+manifold $\mani$, still assuming $\mani$ is sampled well by $\bm{X}$ 
+\citep{sauletal2006}.
+\textit{ISOMAP} is one such graph-based technique that extends the approach of 
+MDS to geodesic distances, meaning "nearness" between points is expressed by 
+distance on the manifold surface rather than in the ambient Euclidean space 
+\citep{tenenbaumdesilvalangford2000}.
+\\
+
+\textbf{Local isometry}. ISOMAP relies on a central assumption\footnote{
+In fact, there is a second assumption of convex parameter spaces that is omitted 
+here, see \citet{tenenbaumdesilvalangford2000}.
+} that turns out 
+to be too restrictive for many settings, namely global isometry: for an 
+arbitrary pair of points on $\mani$, their geodesic distance is preserved 
+in the mapping to $\Rd$ \citep{donohogrimes2003}.
+This assumption is violated when $\mani$ is geodesically non-convex, i.e., it is 
+not isometric to a convex subset of Euclidean space\footnote{
+Intuitively, this can be imagined as the manifold containing "holes".
+} \citep{sauletal2006}.
+Local graph-based methods relax the isometry assumption to a local one.
+Rather than for arbitrary pairs of points, it need only hold for neighboring 
+ones \citep{donohogrimes2003}.
+Where global solutions are sometimes too coarse, local methods thus allow for 
+tracing non-convex behavior.
+In doing so, they produce sparse matrix representations \citep{cayton2005}.
+A prominent example of local graph-based techniques is given by 
+\textit{Laplacian eigenmaps} \citep{belkinniyogi2001}.
+Laplacian eigenmaps finds the eigenvectors of the graph Laplacian, achieving 
+locality by employment of the heat kernel.
+This approach will be studied in some more detail in chapter \ref{laplace}.
+\\
+
+\textcolor{red}{Maybe skip this!! Might not hold at all}
+\textbf{Local linearity}. An further desideratum in learning Riemannian 
+manifolds is the preservation of local linearity.
+This is achieved by \textit{locally linear embedding (LLE)}.
+As will be explained in chapter \ref{lle}, LLE \citep{roweissaul2000} 
+basically performs a discrete approximation of the graph Laplacian by minimizing 
+the error of linearly reconstructing points from their neighbors 
+\citep{donohogrimes2003}.
+A later proposition by \citet{donohogrimes2003}, \textit{Hessian LLE (H-LLE)}, 
+may be viewed as an algorithmic variant of LLE and a conceptual variant of 
+Laplacian eigenmaps using the Hessian en lieu of the Laplacian.
+
+Summing up the above, local graph-based manifold learning may be schematized as
 follows:
 
 \begin{tight_enumerate}
@@ -64,7 +105,7 @@ follows:
   \item Learn an embedding from the eigenvectors of this matrix.
 \end{tight_enumerate}
 
-Crucially, the complex manifold learning problem can be addressed by a sequence 
+Crucially, the complex manifold learning problem is decomposed into a sequence 
 of tractable optimization steps \citep{sauletal2006}.
 The following chapters explain these steps in some more detail. 
 
@@ -73,19 +114,16 @@ The following chapters explain these steps in some more detail.
 \subsubsection{Neighborhood Graphs}
 \label{neighbor-graph}
 
-Approximating the intrinsic structure of $\mani$ by a neighborhood graph 
-requires the determination of a \textit{neighborhood} around each 
-$\bm{x} \in \bm{X}$.
-A neighborhood of $\bm{x}$ is but a subset of $\bm{X}$ containing
+Approximating the intrinsic structure of $\mani$ by a graph representation 
+requires the determination of a \textit{neighborhood} around point.
+A neighborhood of $\bm{x} \in \bm{X}$ is but a subset of $\bm{X}$ containing
 another, open subset of $\bm{X}$ of which $\bm{x}$ is an element.
 Members of the neighborhood are called neighbors of $\bm{x}$.
 In metric spaces neighborhoods are defined via distances and therefore 
 translate to open balls around each point \citep{waldmann2014}.
 This distance-based construction now locally applies to manifolds as a direct 
-consequence of their locally Euclidean behavior \citep{mafu2011}.
-Neighborhood relations in local graph-based manifold learning may therefore 
-established in the Euclidean observation space and are as such of linear nature.
-
+consequence of their local isometry to the Euclidean observation space 
+\citep{mafu2011}.
 There are two principal ways to build a neighborhood around $\bm{x} \in \bm{X}$, 
 both of which usually employ squared Euclidean distances\footnote{
 In principle, alternative metrics are equally applicable, for instance such 
@@ -97,11 +135,11 @@ The first possibility is to restrict the size of the neighborhood to the $k$
 points with the smallest distance to $\bm{x}$, such that
 $\ell = k$ and $\mathcal{N}_k(\bm{x}) = \{\bm{x}_j \in \bm{X}: 
 \| \bm{x} - \bm{x}_j \|^2 \leq
-\gamma\}$, with $\gamma \in \R$ being the $k$-percentile of ordered pairwise 
+\gamma\}$, with $\gamma \in \R$ being the $k$-th instance of ordered pairwise 
 distances.
 Alternatively, the neighborhood may be constructed by collecting all points that
-have a maximum distance of $\epsilon \in \R$ to $\bm{x}$, no matter how many 
-neighbors this will result in, yielding $\mathcal{N}_{\epsilon} (\bm{x}) = 
+have a maximum distance of $\epsilon \in \R$ to $\bm{x}$, yielding 
+$\mathcal{N}_{\epsilon} (\bm{x}) = 
 \{\bm{x}_j \in \bm{X}: \| \bm{x} - \bm{x}_j \|^2 \leq \epsilon\}$ and 
 $\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
 
@@ -110,7 +148,7 @@ $\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
 \begin{minipage}[b]{0.5\textwidth}
   The thus defined neighborhoods can now be described by a \textit{neighborhood 
   graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where input points form 
-  vertices and edges indicate neighborhood relations \citep{belkinniyogi2003}.
+  vertices and edges indicate neighborhood relations \citep{belkinniyogi2001}.
   Each vertex is connected to its $k$ nearest neighbors or all points 
   within $\epsilon$-radius, depending on the neighborhood definition.
   It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
@@ -152,14 +190,10 @@ $k$-neighborhoods tend to yield connected graphs more often than
 $\epsilon$-neighborhoods.
 If the connectedness assumption does not hold globally, each connected sub-graph 
 must be considered separately \citep{belkinniyogi2001}.
-} to be used for finding a low-dimensional embedding, they must be weighted and 
-translated into a matrix representation.
-
-
-% \begin{itemize}
-%   \item Degree and adjacency matrices
-%   \item Laplacian operators
-% \end{itemize}
+} to translate into a low-dimensional embedding, the information they hold must 
+be converted to a numerical representation.
+This is achieved by assigning weights to graph edges and constructing a matrix 
+from these \citep{belkinniyogi2001}.
 
 % ------------------------------------------------------------------------------
 

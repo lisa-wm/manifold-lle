@@ -123,7 +123,7 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
 
 \vspace{0.5cm}
 
-% TODO Mark 2 points on S-curve and connect via Euclidean distance vector
+% TODO Mark 2 points on S-curve and connect via Euclidean distance
 
 \begin{minipage}[b]{0.5\textwidth}
   Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold 
@@ -232,9 +232,9 @@ For manifold learning methods to yield satisfying results, $\mani$ is always
 assumed to be sampled well by $\bm{X}$.
 \\
 
-\textbf{Goal.} Find an appropriate $d$-dimensional representation of the data, 
+\textbf{Goal.} Find an appropriate $m$-dimensional representation of the data, 
 i.e., compute $\bm{Y} = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N)$, with 
-$\bm{y}_i \in \R^d$ $\forall i \in \setN$.
+$\bm{y}_i \in \R^m$ $\forall i \in \setN$.
 Appropriateness of $\bm{Y}$ is determined by the extent to which the 
 $d$-dimensional representation preserves intrinsic structures on $\mani$.
 \\
@@ -244,8 +244,8 @@ dimensionality} $d$ is typically unknown and must be estimated during learning.
 Since there are not always (finite-sample) guarantees for finding the true value 
 of $d$, it must be assumed that the estimation may differ from $d$.
 In order to emphasize this potential gap, the dimensionality of the 
-low-dimensional representation will henceforth be denoted by $m \in \N$, such
-that $\bm{Y} \in (\R^m)^N$. 
+low-dimensional representation is denoted by $m \in \N$, such that 
+$\bm{Y} \in (\R^m)^N$. 
 
 
 
