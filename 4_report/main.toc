@@ -8,8 +8,8 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Neighborhood Graphs}{6}{}%
 \contentsline {subsubsection}{\numberline {3.1.3}Matrix Representation of Neighborhood Graphs}{7}{}%
 \contentsline {subsubsection}{\numberline {3.1.4}Solving Eigenwertproblems}{7}{}%
-\contentsline {subsection}{\numberline {3.2}Techniques of Local Graph-Based Manifold Learning}{7}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Laplacian Eigenmaps}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Techniques of Local Graph-Based Manifold Learning}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Laplacian Eigenmaps}{8}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Locally Linear Embedding (LLE)}{8}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Hessian Locally Linear Embedding (H-LLE)}{8}{}%
 \contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{8}{}%

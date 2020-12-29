@@ -121,6 +121,8 @@ This now has important consequences for manifold learning: data lying on a
 $d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as 
 $D$-dimensional points but may locally be treated like points from $\Rd$.
 
+\vspace{0.5cm}
+
 \begin{minipage}[b]{0.5\textwidth}
   Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold 
   embedded in $\R^3$.

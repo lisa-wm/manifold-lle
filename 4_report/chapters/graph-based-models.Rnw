@@ -88,7 +88,8 @@ established in the Euclidean observation space and are as such of linear nature.
 
 There are two principal ways to build a neighborhood around $\bm{x} \in \bm{X}$, 
 both of which usually employ squared Euclidean distances\footnote{
-In principle, alternative distance measures are equally applicable.
+In principle, alternative metrics are equally applicable, for instance such 
+that measure angles \citep{belkinniyogi2004}.
 }, denoted by $\| \cdot \|^2$.
 Let $\mathcal{N}: \bm{X} \rightarrow \bm{X}^{\ell}, \bm{x} \mapsto \mathcal{N}
 (\bm{x})$ be a constructor that assigns a set of neighbors to $\bm{x}$.
@@ -104,10 +105,12 @@ neighbors this will result in, yielding $\mathcal{N}_{\epsilon} (\bm{x}) =
 \{\bm{x}_j \in \bm{X}: \| \bm{x} - \bm{x}_j \|^2 \leq \epsilon\}$ and 
 $\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
 
+\vspace{0.5cm}
+
 \begin{minipage}[b]{0.5\textwidth}
   The thus defined neighborhoods can now be described by a \textit{neighborhood 
-  graph} $\mathcal{G}$, where input points form vertices and edges indicate 
-  neighborhood relations.
+  graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where input points form 
+  vertices and edges indicate neighborhood relations \citep{belkinniyogi2003}.
   Each vertex is connected to its $k$ nearest neighbors or all points 
   within $\epsilon$-radius, depending on the neighborhood definition.
   It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
@@ -142,10 +145,21 @@ $\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
 \subsubsection{Matrix Representation of Neighborhood Graphs}
 \label{matrix-repr}
 
-\begin{itemize}
-  \item Degree and adjacency matrices
-  \item Laplacian operators
-\end{itemize}
+In order for neighborhood graphs\footnote{
+Graphs are assumed to be connected, i.e., no vertex is left without at least one 
+edge linking it to another vertex.
+$k$-neighborhoods tend to yield connected graphs more often than 
+$\epsilon$-neighborhoods.
+If the connectedness assumption does not hold globally, each connected sub-graph 
+must be considered separately \citep{belkinniyogi2001}.
+} to be used for finding a low-dimensional embedding, they must be weighted and 
+translated into a matrix representation.
+
+
+% \begin{itemize}
+%   \item Degree and adjacency matrices
+%   \item Laplacian operators
+% \end{itemize}
 
 % ------------------------------------------------------------------------------
 

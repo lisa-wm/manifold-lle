@@ -5,6 +5,11 @@ Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2003\harvardyearright .
 \newblock Laplacian eigenmaps for dimensionality reduction and data
   representation, {\em Neural Computation} {\bf 15}:~1373--1396.
 
+\harvarditem{Belkin \harvardand\ Niyogi}{2004}{belkinniyogi2004}
+Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2004\harvardyearright .
+\newblock Semi-supervised learning on riemannian manifolds, {\em Machine
+  Learning} {\bf 56}:~209--239.
+
 \harvarditem{Brown}{2006}{brown2006}
 Brown, R.  \harvardyearleft 2006\harvardyearright .
 \newblock {\em Topology and Groupoids. A Geometric Account of General Topology,

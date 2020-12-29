@@ -3,6 +3,8 @@
 \subsection{Employment of Prior Information}
 \label{prior-info}
 
+% Read belkinniyogi2004 paper on this
+
 \begin{itemize}
   \item Why use labels in the first place?
   \item How will that help?
