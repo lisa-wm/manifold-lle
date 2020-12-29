@@ -123,6 +123,8 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
 
 \vspace{0.5cm}
 
+% TODO Mark 2 points on S-curve and connect via Euclidean distance vector
+
 \begin{minipage}[b]{0.5\textwidth}
   Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold 
   embedded in $\R^3$.
@@ -159,7 +161,7 @@ on manifolds.
 Figure \ref{fig:scurve} illustrates that standard Euclidean distances are not
 meaningful here: rather than measuring "shortcuts" between points across 
 $\R^3$ (where, for instance, points in the red upper area would be considered
-quite close to points in the cyan mid area), it makes intuitive sense to 
+deceptively close to points in the cyan mid area), it makes intuitive sense to 
 constrain distances to the manifold surface.
 In order to enable the construction of such a metric, manifolds must fulfill
 two additional properties: being \textit{Riemannian} and being 

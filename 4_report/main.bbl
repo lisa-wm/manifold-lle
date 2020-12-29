@@ -1,5 +1,11 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Belkin \harvardand\ Niyogi}{2001}{belkinniyogi2001}
+Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2001\harvardyearright .
+\newblock Laplacian eigenmaps and spectral technique for embedding and
+  clustering, {\em Proceedings of the 14th International Conference on Neural
+  Information Processing Systems: Natural and Synthetic}, p.~585–591.
+
 \harvarditem{Belkin \harvardand\ Niyogi}{2003}{belkinniyogi2003}
 Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2003\harvardyearright .
 \newblock Laplacian eigenmaps for dimensionality reduction and data
@@ -20,6 +26,12 @@ Cayton, L.  \harvardyearleft 2005\harvardyearright .
 \newblock Algorithms for manifold learning, {\em Technical Report CS2008-0923},
   University of California, San Diego (UCSD).
 
+\harvarditem{Donoho \harvardand\ Grimes}{2003}{donohogrimes2003}
+Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
+\newblock Hessian eigenmaps: Locally linear embedding techniques for
+  high-dimensional data, {\em Proceedings of the National Academy of Sciences
+  of the United States of America} {\bf 100}(10):~5591--5596.
+
 \harvarditem{Doshi-Velez \harvardand\ Kim}{2017}{doshivelezkim2017}
 Doshi-Velez, F. \harvardand\ Kim, B.  \harvardyearleft 2017\harvardyearright .
 \newblock Towards a rigorous science of interpretable machine learning, {\em
@@ -29,7 +41,7 @@ Doshi-Velez, F. \harvardand\ Kim, B.  \harvardyearleft 2017\harvardyearright .
 He, X., Cai, D., Yan, S. \harvardand\ Zhang, H.-J.  \harvardyearleft
   2005\harvardyearright .
 \newblock Neighborhood preserving embedding, {\em Proceedings of the Tenth IEEE
-  International Conference on Computer Vision}, Beijing, China.
+  International Conference on Computer Vision}.
 
 \harvarditem[Leist et~al.]{Leist, Playne \harvardand\
   Hawick}{2009}{leistetal2009}
@@ -81,6 +93,13 @@ Saul, L.~K., Weinberger, K.~Q., Sha, F., Ham, J. \harvardand\ Lee, D.~D.
   B.~Scholkopf \harvardand\ A.~Zien (eds), {\em Semi-Supervised Learning}, MIT
   Press Scholarship Online, chapter~1.
 
+\harvarditem[Tenenbaum et~al.]{Tenenbaum, de~Silva \harvardand\
+  Langford}{2000}{tenenbaumdesilvalangford2000}
+Tenenbaum, J.~B., de~Silva, V. \harvardand\ Langford, J.~C.  \harvardyearleft
+  2000\harvardyearright .
+\newblock A global geometric framework for nonlinear dimensionality reduction,
+  {\em Science} {\bf 290}(5500):~2319--2322.
+
 \harvarditem[van~der Maaten et~al.]{van~der Maaten, Postma \harvardand\ van~den
   Herik}{2009}{vandermaatenetal2009}
 van~der Maaten, L., Postma, E. \harvardand\ van~den Herik, J.  \harvardyearleft
@@ -104,7 +123,6 @@ Waldmann, S.  \harvardyearleft 2014\harvardyearright .
 Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
   2006\harvardyearright .
 \newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
-  of the 23rd International Conference on Machine Learning}, Pittsburgh, PA,
-  USA.
+  of the 23rd International Conference on Machine Learning}.
 
 \end{thebibliography}
