@@ -1,3 +1,5 @@
+\textcolor{red}{CHECK AGAINST INTRODUCTION}
+
 The goal of this report is to lay out the theoretical framework behind the 
 manifold learning technique of \textit{semi-supervised locally linear embedding 
 (SS-LLE)}, as proposed by \citet{yangetal2006}, and to put it to implementation 

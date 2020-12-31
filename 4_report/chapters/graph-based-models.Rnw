@@ -1,4 +1,4 @@
-\subsection{Principles of Locally Linear Graph-Based Manifold Learning}
+\subsection{Principles of Local Graph-Based Manifold Learning}
 \label{lgb-principles}
 
 % ------------------------------------------------------------------------------
@@ -6,32 +6,52 @@
 \subsubsection{General Concept}
 \label{lgb-concept}
 
-% As stated above, many methods of manifold learning rely on spectral techniques:
-% they construct a special matrix from the observed data and use its eigenvectors 
-% to compute the sought-after low-dimensional coordinates $Y$ (spectral 
-% decomposition will be covered in somewhat more detail in chapter 
-% \ref{eigenwert}.
-% The nature of this matrix depends on the type of intrinsic structure the
-% mapping shall preserve.
-% \textit{Principal component analysis (PCA)} and \textit{multi-dimensional 
-% scaling (MDS)} both retain global covariance structure
-% 
-% Linear methods, such as \textit{principal component analysis (PCA)} and 
-% \textit{multi-dimensional scaling (MDS)}, implicitly assume the data to lie on a
-% linear subspace of $\RD$.
-% Both PCA and MDS achieve dimensionality reduction through representation of the 
-% data along the axes of maximum variance.
-
-Local graph-based techniques of manifold learning arise from varying geometric 
-intuitions and computational approaches.
+After the goal of manifold learning has been formalized, it shall now be laid 
+out how LLE as the conceptual parent of SS-LLE approaches the problem. 
+In order to provide a solid background, this chapter will first sketch the 
+fundamental idea of local linear graph-based techniques.
+Methods subsumed under this term arise from a variety of geometric intuitions 
+and computational implementations.
 Interestingly, they still share a common structure that allows for 
-interpretation in a framework applicable to general spectral methods.
-First, find a matrix representation for the $D$-dimensional data.
-Second, perform a spectral decomposition of this matrix such that the data can 
+interpretation in a framework applicable to general spectral methods 
+\citep{bengioetal2003}.
+
+It must be noted that, while the algorithmic similarity is obvious, it is less 
+clear whether the established theoretical connection holds as well.
+\citet{belkinniyogi2001} derived their argumentation for using the Laplacian in 
+combination with the heat kernel for Laplacian eigenmaps from the analogy of the 
+graph Laplacian and the Laplace-Beltrami operator on manifolds.
+In subsequent studies they confirmed the legitimacy of this approach by 
+providing proofs of convergence \citep{belkinniyogi2008}.
+It is widely assumed that LLE may be cast into the same framework by 
+considering the eigenvalue problem it solves as an approximation to the graph 
+Laplacian (\citet{belkinniyogi2003}, \citet{donohogrimes2003}).
+H-LLE neatly fits the idea as it bears strong algorithmic resemblance to LLE, 
+hence the name, and can be viewed as a conceptual variant of Laplacian eigenmaps, 
+substituting the Laplacian for the Hessian \citep{donohogrimes2003}.
+Recent studies, however, indicate that the asymptotic convergence of LLE to the 
+Laplace-Beltrami operator might be subject to rather specific regularization 
+assumptions \citep{wuwu2018}.
+The report therefore abstains from a direct translation of both LLE and H-LLE 
+to variations of Laplacian eigenmaps.
+Still, the three methods have a triangular relationship at least, where H-LLE 
+borrows from the theory behind Laplacian eigenmaps and employs an algorithm 
+strongly reminiscent of LLE \citep{donohogrimes2003}.
+For the sake of a more integrated picture, the following explanations will 
+therefore be made in the shared framework, with an emphasis on the algorithmic 
+commonalities.
+\\
+
+To begin with, all spectral methods of manifold learning perform two central 
+tasks: first, find a matrix representation for the $D$-dimensional data; second, 
+perform a spectral decomposition of this matrix such that the data can 
 be expressed via coordinates on the principal (top or bottom) eigenvectors
 \citep{sauletal2006}.
 Precisely how the matrix is constructed determines the kind of intrinsic 
 structure that can be learned and preserved \citep{cayton2005}.
+Local-graph based methods find theirs in a way that allows for two general 
+desiderata in manifold learning: non-linearity of detectable manifolds, and 
+locality of preserved structures. 
 \\
 
 \textbf{Non-linearity}. Early methods of manifold learning attempted to preserve 
@@ -53,10 +73,10 @@ to numerical matrix representations.
 In effect, these graphs are a discretized approximation of the underlying 
 manifold $\mani$, still assuming $\mani$ is sampled well by $\bm{X}$ 
 \citep{sauletal2006}.
-\textit{ISOMAP} is one such graph-based technique that extends the approach of 
-MDS to geodesic distances, meaning "nearness" between points is expressed by 
-distance on the manifold surface rather than in the ambient Euclidean space 
-\citep{tenenbaumdesilvalangford2000}.
+\textit{ISOMAP} is one of the first graph-based techniques that extends the 
+approach of MDS to geodesic distances, meaning "nearness" between points is 
+expressed by distance on the manifold surface rather than in the ambient 
+Euclidean space \citep{tenenbaumdesilvalangford2000}.
 \\
 
 \textbf{Local isometry}. ISOMAP relies on a central assumption\footnote{
@@ -76,26 +96,10 @@ ones \citep{donohogrimes2003}.
 Where global solutions are sometimes too coarse, local methods thus allow for 
 tracing non-convex behavior.
 In doing so, they produce sparse matrix representations \citep{cayton2005}.
-A prominent example of local graph-based techniques is given by 
-\textit{Laplacian eigenmaps} \citep{belkinniyogi2001}.
-Laplacian eigenmaps finds the eigenvectors of the graph Laplacian, achieving 
-locality by employment of the heat kernel.
-This approach will be studied in some more detail in chapter \ref{laplace}.
 \\
 
-\textcolor{red}{Maybe skip this!! Might not hold at all}
-\textbf{Local linearity}. An further desideratum in learning Riemannian 
-manifolds is the preservation of local linearity.
-This is achieved by \textit{locally linear embedding (LLE)}.
-As will be explained in chapter \ref{lle}, LLE \citep{roweissaul2000} 
-basically performs a discrete approximation of the graph Laplacian by minimizing 
-the error of linearly reconstructing points from their neighbors 
-\citep{donohogrimes2003}.
-A later proposition by \citet{donohogrimes2003}, \textit{Hessian LLE (H-LLE)}, 
-may be viewed as an algorithmic variant of LLE and a conceptual variant of 
-Laplacian eigenmaps using the Hessian en lieu of the Laplacian.
-
-Summing up the above, local graph-based manifold learning may be schematized as
+Laplacian eigenmaps, LLE and H-LLE all belong to the family 
+of local graph-based techniques whose functionality may be summarized as 
 follows:
 
 \begin{tight_enumerate}
@@ -107,7 +111,9 @@ follows:
 
 Crucially, the complex manifold learning problem is decomposed into a sequence 
 of tractable optimization steps \citep{sauletal2006}.
-The following chapters explain these steps in some more detail. 
+The subsequent chapters will explain these steps in some more detail and 
+afterwards lay out how they are operationalized in Laplacian eigenmaps, LLE and 
+H-LLE.
 
 % ------------------------------------------------------------------------------
 
