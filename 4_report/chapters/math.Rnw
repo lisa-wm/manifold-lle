@@ -117,7 +117,7 @@ subspace topology from $\Rd$ \citep{waldmann2014}.
 It can be shown that $K = 2d + 1$ is sufficient to create an embedding, but $K$
 may be smaller \citep{mafu2011}.
 
-This now has important consequences for manifold learning: data lying on a 
+This has important consequences for manifold learning: data lying on a 
 $d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as 
 $D$-dimensional points but may locally be treated like points from $\Rd$.
 
@@ -237,6 +237,8 @@ i.e., compute $\Y = (\y_1, \y_2, ..., \y_N)$, with
 $\y_i \in \R^m$ $\forall i \in \setN$.
 Appropriateness of $\Y$ is determined by the extent to which the 
 $d$-dimensional representation preserves intrinsic structures on $\mani$.
+The underlying assumption is that of a smooth mapping $\rho: \Y \rightarrow \RD$ 
+with $\rho(\Y) = \X$ \citep{sudderth2002}.
 \\
 
 Note that, while $D$ is specified a priori, the \textit{intrinsic 

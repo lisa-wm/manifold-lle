@@ -68,11 +68,11 @@ Graph-based methods acknowledge the fact that, in general, data will rather lie
 on non-linear manifolds.
 They model the intrinsic structure through neighborhood relations, 
 mapping points that lie close on the manifold surface to nearby locations.
-Neighborhoods are characterized via weighted graphs which are then coerced 
-to numerical matrix representations.
+Neighborhoods are characterized via weighted graphs.
 In effect, these graphs are a discretized approximation of the underlying 
 manifold $\mani$, still assuming $\mani$ is sampled well by $\X$ 
 \citep{sauletal2006}.
+They are used to find a numerical matrix representation of the data by approximating certain functionals on the manifold.
 \textit{ISOMAP} is one of the first graph-based techniques that extends the 
 approach of MDS to geodesic distances, meaning "nearness" between points is 
 expressed by distance on the manifold surface rather than in the ambient 
@@ -147,6 +147,11 @@ have a maximum distance of $\epsilon \in \R$ to $\x$, yielding
 $\mathcal{N}_{\epsilon} (\x) = 
 \{\x_j \in \X: \| \x - \x_j \|^2 \leq \epsilon\}$ and 
 $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
+Both $k$ and $\epsilon$ are hyperparameters that must be specified up-front.
+The choice of neighborhood size reflects beliefs about the extent to which 
+$\mani$ is locally linear, smaller neighborhoods corresponding to a higher 
+degree of non-linearity, and may affect strongly 
+performance \citep{sudderth2002}.
 
 \vspace{0.5cm}
 
@@ -183,11 +188,6 @@ $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
   \end{figure}
 \end{minipage}
 
-% ------------------------------------------------------------------------------
-
-\subsubsection{Matrix Representation of Neighborhood Graphs}
-\label{matrix-repr}
-
 In order for neighborhood graphs\footnote{
 Graphs are assumed to be connected, i.e., no vertex is left without at least one 
 edge linking it to another vertex.
@@ -198,7 +198,14 @@ must be considered separately \citep{belkinniyogi2001}.
 } to translate into a low-dimensional embedding, the information they hold must 
 be converted to a numerical representation.
 This is achieved by assigning weights to graph edges and constructing a matrix 
-from these \citep{belkinniyogi2001}.
+from these \citep{belkinniyogi2003}.
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Matrix Representation of Neighborhood Graphs}
+\label{matrix-repr}
+
+
 
 % ------------------------------------------------------------------------------
 
