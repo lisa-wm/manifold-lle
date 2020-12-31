@@ -15,6 +15,10 @@
 \newcommand{\RD}{\mathbb{R}^D}
 \newcommand{\Rd}{\mathbb{R}^d}
 \newcommand{\setN}{\{1, 2, ..., N\}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\x}{\bm{x}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\y}{\bm{y}}
 
 \usepackage[a4paper,width = 150mm, top = 25mm, bottom = 25mm, 
 bindingoffset = 6mm]{geometry}

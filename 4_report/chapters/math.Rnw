@@ -221,21 +221,21 @@ formalized in a way that will be referenced throughout the remainder of this
 report and is inspired by \citet{sauletal2006}.
 \\
 
-\textbf{Given.} Data $\bm{X} = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N)$, with 
-$\bm{x}_i \in \RD$ $\forall i \in \setN$ and $N, D \in \N$. 
-$\bm{X}$ thus consists of $N$ real-valued data vectors observed in $D$ 
+\textbf{Given.} Data $\X = (\x_1, \x_2, ..., \x_N)$, with 
+$\x_i \in \RD$ $\forall i \in \setN$ and $N, D \in \N$. 
+$\X$ thus consists of $N$ real-valued data vectors observed in $D$ 
 dimensions.
 The true data-generating process is taken to have dimensionality $d \in \N$, 
-such that $\bm{X}$ is in fact a sample from a $d$-dimensional, Riemannian and 
-connected manifold: $\bm{X} \sim \mani \subset \RD$.
+such that $\X$ is in fact a sample from a $d$-dimensional, Riemannian and 
+connected manifold: $\X \sim \mani \subset \RD$.
 For manifold learning methods to yield satisfying results, $\mani$ is always 
-assumed to be sampled well by $\bm{X}$.
+assumed to be sampled well by $\X$.
 \\
 
 \textbf{Goal.} Find an appropriate $m$-dimensional representation of the data, 
-i.e., compute $\bm{Y} = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N)$, with 
-$\bm{y}_i \in \R^m$ $\forall i \in \setN$.
-Appropriateness of $\bm{Y}$ is determined by the extent to which the 
+i.e., compute $\Y = (\y_1, \y_2, ..., \y_N)$, with 
+$\y_i \in \R^m$ $\forall i \in \setN$.
+Appropriateness of $\Y$ is determined by the extent to which the 
 $d$-dimensional representation preserves intrinsic structures on $\mani$.
 \\
 
@@ -245,7 +245,7 @@ Since there are not always (finite-sample) guarantees for finding the true value
 of $d$, it must be assumed that the estimation may differ from $d$.
 In order to emphasize this potential gap, the dimensionality of the 
 low-dimensional representation is denoted by $m \in \N$, such that 
-$\bm{Y} \in (\R^m)^N$. 
+$\Y \in (\R^m)^N$. 
 
 
 

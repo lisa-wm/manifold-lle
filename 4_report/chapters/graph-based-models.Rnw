@@ -71,7 +71,7 @@ mapping points that lie close on the manifold surface to nearby locations.
 Neighborhoods are characterized via weighted graphs which are then coerced 
 to numerical matrix representations.
 In effect, these graphs are a discretized approximation of the underlying 
-manifold $\mani$, still assuming $\mani$ is sampled well by $\bm{X}$ 
+manifold $\mani$, still assuming $\mani$ is sampled well by $\X$ 
 \citep{sauletal2006}.
 \textit{ISOMAP} is one of the first graph-based techniques that extends the 
 approach of MDS to geodesic distances, meaning "nearness" between points is 
@@ -122,32 +122,31 @@ H-LLE.
 
 Approximating the intrinsic structure of $\mani$ by a graph representation 
 requires the determination of a \textit{neighborhood} around point.
-A neighborhood of $\bm{x} \in \bm{X}$ is but a subset of $\bm{X}$ containing
-another, open subset of $\bm{X}$ of which $\bm{x}$ is an element.
-Members of the neighborhood are called neighbors of $\bm{x}$.
+A neighborhood of $\x \in \X$ is but a subset of $\X$ containing
+another, open subset of $\X$ of which $\X$ is an element.
+Members of the neighborhood are called neighbors of $\X$.
 In metric spaces neighborhoods are defined via distances and therefore 
 translate to open balls around each point \citep{waldmann2014}.
 This distance-based construction now locally applies to manifolds as a direct 
 consequence of their local isometry to the Euclidean observation space 
 \citep{mafu2011}.
-There are two principal ways to build a neighborhood around $\bm{x} \in \bm{X}$, 
+There are two principal ways to build a neighborhood around $\x \in \X$, 
 both of which usually employ squared Euclidean distances\footnote{
 In principle, alternative metrics are equally applicable, for instance such 
 that measure angles \citep{belkinniyogi2004}.
 }, denoted by $\| \cdot \|^2$.
-Let $\mathcal{N}: \bm{X} \rightarrow \bm{X}^{\ell}, \bm{x} \mapsto \mathcal{N}
-(\bm{x})$ be a constructor that assigns a set of neighbors to $\bm{x}$.
+Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
+constructor that assigns a set of neighbors to $\x$.
 The first possibility is to restrict the size of the neighborhood to the $k$ 
-points with the smallest distance to $\bm{x}$, such that
-$\ell = k$ and $\mathcal{N}_k(\bm{x}) = \{\bm{x}_j \in \bm{X}: 
-\| \bm{x} - \bm{x}_j \|^2 \leq
-\gamma\}$, with $\gamma \in \R$ being the $k$-th instance of ordered pairwise 
-distances.
+points with the smallest distance to $\x$, such that
+$\ell = k$ and $\mathcal{N}_k(\x) = \{\x_j \in \X: 
+\| \x - \x_j \|^2 \leq \gamma\}$, with $\gamma \in \R$ being the $k$-th instance 
+of ordered pairwise distances.
 Alternatively, the neighborhood may be constructed by collecting all points that
-have a maximum distance of $\epsilon \in \R$ to $\bm{x}$, yielding 
-$\mathcal{N}_{\epsilon} (\bm{x}) = 
-\{\bm{x}_j \in \bm{X}: \| \bm{x} - \bm{x}_j \|^2 \leq \epsilon\}$ and 
-$\ell = |\mathcal{N}_{\epsilon} (\bm{x})|$ \citep{heetal2005}.
+have a maximum distance of $\epsilon \in \R$ to $\x$, yielding 
+$\mathcal{N}_{\epsilon} (\x) = 
+\{\x_j \in \X: \| \x - \x_j \|^2 \leq \epsilon\}$ and 
+$\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
 
 \vspace{0.5cm}
 
