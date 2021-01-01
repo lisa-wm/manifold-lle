@@ -73,7 +73,8 @@ Two homeomorphic spaces are thus topologically equivalent \citep{mccleary2006}.
 
 If there exists a non-negative integer $d$ such that for every $s$ in a 
 topological space $S$ a local neighborhood $U \ni s$, $U \subset S$, is 
-homeomorphic to an open subset of $\Rd$, $S$ is \textit{locally 
+homeomorphic to an open subset of $\Rd$ (sometimes called \textit{parameter 
+space}), $S$ is \textit{locally 
 Euclidean}\footnote{
 For locally Euclidean topological spaces it is thus meaningful to speak of
 elements as points.

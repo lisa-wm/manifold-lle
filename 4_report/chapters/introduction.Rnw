@@ -73,7 +73,7 @@ learning linear embeddings (such as \textit{principal component analysis (PCA)}
 or \textit{multi-dimensional scaling (MDS)}).
 Since linearity is a strong assumption that will not hold for general manifolds, 
 non-linear techniques are more widely applicable \citep{vandermaatenetal2009}.
-For example, \textit{ISOMAP} achieves non-linearity by applying geodesic 
+For example, \textit{Isomap} achieves non-linearity by applying geodesic 
 distances in the MDS setup \citep{tenenbaumdesilvalangford2000}.
 Research indicates, however, that for non-convex manifolds it is more effective 
 to preserve local structures only.

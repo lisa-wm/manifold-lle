@@ -7,51 +7,47 @@
 \label{lgb-concept}
 
 After the goal of manifold learning has been formalized, it shall now be laid 
-out how LLE, as the conceptual parent of SS-LLE, approaches the problem. 
-In order to provide some background, this chapter will first sketch the 
-fundamental idea of local graph-based techniques.
+out how LLE -- as the conceptual parent of SS-LLE -- approaches the problem. 
+This chapter will first sketch the fundamental idea of local graph-based 
+techniques to provide some background.
 Methods subsumed under this term arise from a variety of geometric intuitions 
-and computational implementations.
-Interestingly, they still share a common structure that allows for 
-interpretation in a framework applicable to general spectral methods 
+and computational implementations but share a common structure that allows for 
+interpretation in a framework generally applicable to spectral methods 
 \citep{bengioetal2003}.
 
 It must be noted that, while the algorithmic similarity is obvious, it is less 
 clear whether the established theoretical connection holds as well.
-\citet{belkinniyogi2001} derived their argumentation for using the Laplacian in 
-combination with the heat kernel for Laplacian eigenmaps from the analogy of the 
-graph Laplacian and the Laplace-Beltrami operator on manifolds.
+\citet{belkinniyogi2001} derived their argumentation for using the graph 
+Laplacian in Laplacian eigenmaps from its analogy to the Laplace-Beltrami 
+operator on manifolds.
 In subsequent studies they confirmed the legitimacy of this approach by 
 providing proofs of convergence \citep{belkinniyogi2008}.
-It is widely assumed that LLE may also be cast into this framework by 
-considering the eigenvalue problem it solves as an approximation to the graph 
-Laplacian (\citet{belkinniyogi2003}, \citet{donohogrimes2003}).
-H-LLE neatly fits the same idea as it bears strong algorithmic resemblance to 
+It has been widely assumed that LLE may be cast into this framework considering 
+the inscribed eigenvalue problem as an approximation to the graph Laplacian 
+(\citet{belkinniyogi2003}, \citet{donohogrimes2003}).
+H-LLE neatly fits the scheme as it bears strong algorithmic resemblance to 
 LLE, hence the name, and can be viewed as a conceptual variant of Laplacian 
 eigenmaps, substituting the Laplacian for the Hessian \citep{donohogrimes2003}.
 Recent studies, however, indicate that the asymptotic convergence of LLE to the 
-Laplace-Beltrami operator might be subject to additional regularization 
-assumptions \citep{wuwu2018}.
-The report therefore abstains from a direct translation of both LLE and H-LLE 
-to variations of Laplacian eigenmaps.
-Still, the three methods have a triangular relationship at least, where H-LLE 
+Laplace-Beltrami operator might be subject to additional assumptions that might 
+not always hold \citep{wuwu2018}.
+Still, the three methods have at least a triangular relationship where H-LLE 
 borrows from the theory behind Laplacian eigenmaps and employs an algorithm 
 strongly reminiscent of LLE \citep{donohogrimes2003}.
 For the sake of a more integrated picture, the following explanations will 
-therefore be made in the shared framework, with an emphasis on the algorithmic 
-commonalities.
+therefore be made in a shared framework \citep{bengioetal2003} with an emphasis 
+on the algorithmic commonalities.
 \\
 
 To begin with, all spectral methods of manifold learning perform two central 
-tasks: first, find a matrix representation for the $D$-dimensional data; second, 
-perform a spectral decomposition of this matrix such that the data can 
-be expressed via coordinates on the principal (top or bottom) eigenvectors
+tasks: first, find a matrix representation for the intrinsic data structure; 
+second, perform a spectral decomposition of this matrix such that the data can 
+be expressed via coordinates on the principal eigenvectors
 \citep{sauletal2006}.
 Precisely how the matrix is constructed determines the kind of intrinsic 
 structure that can be learned and preserved \citep{cayton2005}.
 Local-graph based methods find theirs in a way that allows for two general 
-desiderata in manifold learning: non-linearity of detectable manifolds, and 
-locality of preserved structures. 
+desiderata in manifold learning. 
 \\
 
 \textbf{Non-linearity}. Early methods of manifold learning attempted to preserve 
@@ -62,62 +58,67 @@ Both eventually arrive at the same result; while PCA retains the global
 covariance structure, decomposing the covariance matrix, MDS keeps global 
 pairwise Euclidean distances by decomposition of the Gram matrix 
 \citep{cayton2005}.
-The central drawback of this approach is the confinement to learning linear 
+The central drawback of these approaches is the confinement to learning linear 
 mappings.
-Graph-based methods acknowledge the fact that, in general, data will rather lie 
-on non-linear manifolds.
-The techniques studied here define functionals over smooth mappings from the 
-manifold to Euclidean space and use these functionals to find optimal 
-embeddings.
 
-They model the intrinsic structure through neighborhood relations, 
-mapping points that lie close on the manifold surface to nearby locations.
-Neighborhoods are characterized via weighted graphs.
-In effect, these graphs are a discretized approximation of the underlying 
-manifold $\mani$, still assuming $\mani$ is sampled well by $\X$ 
-\citep{sauletal2006}.
-They are used to find a numerical matrix representation of the data by approximating certain functionals on the manifold.
-\textit{ISOMAP} is one of the first graph-based techniques that extends the 
-approach of MDS to geodesic distances, meaning "nearness" between points is 
-expressed by distance on the manifold surface rather than in the ambient 
-Euclidean space \citep{tenenbaumdesilvalangford2000}.
+Graph-based methods acknowledge the fact that, in general, data will lie 
+on non-linear manifolds.
+The techniques studied here (explicitly or implicitly) revolve around 
+functionals that capture the intrinsic manifold structure and whose top or 
+bottom eigenvectors span the $d$-dimensional embedding space.
+In order to retrieve the sought-after coordinates, the manifold is approximated 
+by a discretized graph representation\footnote{
+Graphs are assumed to be connected, i.e., no vertex is left without at least 
+one edge linking it to another vertex.
+If the connectedness assumption does not hold globally, each connected 
+sub-graph must be considered separately \citep{belkinniyogi2001}.
+} of the finite data $\X$, which may be imagined as a skeletal model of $\mani$.
+The functional, defined with respect to the local tangent spaces of $\mani$, is 
+then estimated from the neighborhood graph.
+Eigenanalysis of the resulting matrix eventually yields the low-dimensional 
+representation (\citet{belkinniyogi2001}, \citet{donohogrimes2003}).
+
+\textit{Isomap} is one of the earliest graph-based techniques.
+Like MDS, Isomap preserves pairwise distances between points, but does so for 
+distances on the manifold surface (approximated by non-linear geodesics along 
+graph edges) rather than in the ambient Euclidean space 
+\citep{tenenbaumdesilvalangford2000}.
 \\
 
-\textbf{Local isometry}. ISOMAP relies on a central assumption\footnote{
-In fact, there is a second assumption of convex parameter spaces that is omitted 
-here, see \citet{tenenbaumdesilvalangford2000}.
-} that turns out 
-to be too restrictive for many settings, namely global isometry: for an 
-arbitrary pair of points on $\mani$, their geodesic distance is preserved 
-in the mapping to $\Rd$ \citep{donohogrimes2003}.
-This assumption is violated when $\mani$ is geodesically non-convex, i.e., it is 
-not isometric to a convex subset of Euclidean space\footnote{
+\textbf{Locality}. Isomap relies on two central assumptions that turn out 
+to be too restrictive for some settings.
+The first is global isometry: for an arbitrary pair of points on $\mani$, their 
+geodesic distance is preserved in the mapping to $\Rd$ \citep{donohogrimes2003}.
+The second assumption states that the parameter space, i.e., the subset of 
+$\Rd$ to which $\mani$ is locally homeomorphic, must be convex.
+\citet{donohogrimes2003} show that many parameter spaces only obey the 
+weaker conditions of being open and connected.
+Isomap provides a global solution that proves too coarse when $\mani$ is 
+geodesically non-convex, i.e., when it is not isometric to a convex subset of 
+Euclidean space\footnote{
 Intuitively, this can be imagined as the manifold containing "holes".
 } \citep{sauletal2006}.
-Local graph-based methods relax the isometry assumption to a local one.
-Rather than for arbitrary pairs of points, it need only hold for neighboring 
-ones \citep{donohogrimes2003}.
-Where global solutions are sometimes too coarse, local methods thus allow for 
-tracing non-convex behavior.
+Local graph-based methods focus solely on preserving local properties to avoid 
+this drawback and are thus able to trace highly non-convex manifold structures.
 In doing so, they produce sparse matrix representations \citep{cayton2005}.
 \\
 
 Laplacian eigenmaps, LLE and H-LLE all belong to the family 
-of local graph-based techniques whose functionality may be summarized as 
-follows:
+of local graph-based techniques.
+Summing up the above, their functionality may be schematized as follows:
 
 \begin{tight_enumerate}
-  \item Compute neighborhoods of input data.
-  \item Construct a sparse weighted graph from these neighborhood relations.
-  \item Condense the graph information in a matrix.
-  \item Learn an embedding from the eigenvectors of this matrix.
+  \item Approximate the manifold structure by a sparse neighborhood graph.
+  \item Construct a functional on the manifold that is associated with the 
+  intrinsic data structure and estimate the functional from the graph.
+  \item Learn the low-dimensional coordinates by eigenanalysis of the estimated 
+  matrix.
 \end{tight_enumerate}
 
-Crucially, the complex manifold learning problem is decomposed into a sequence 
-of tractable optimization steps \citep{sauletal2006}.
-The subsequent chapters will explain these steps in some more detail and 
-afterwards lay out how they are operationalized in Laplacian eigenmaps, LLE and 
-H-LLE.
+With this, the manifold learning problem is decomposed into a sequence of 
+tractable optimization steps \citep{sauletal2006}.
+The central concepts employed in all algorithms are briefly explained in the 
+subsequent chapters.
 
 % ------------------------------------------------------------------------------
 
@@ -125,20 +126,20 @@ H-LLE.
 \label{neighbor-graph}
 
 Approximating the intrinsic structure of $\mani$ by a graph representation 
-requires the determination of a \textit{neighborhood} around point.
-A neighborhood of $\x \in \X$ is but a subset of $\X$ containing
-another, open subset of $\X$ of which $\X$ is an element.
-Members of the neighborhood are called neighbors of $\X$.
+requires the determination of \textit{neighborhoods}.
+A neighborhood of $\x \in \X$ is a subset of $\X$ containing another, open 
+subset of $\X$ of which $\x$ is an element.
+Members of the neighborhood are called neighbors of $\x$.
 In metric spaces neighborhoods are defined via distances and therefore 
 translate to open balls around each point \citep{waldmann2014}.
-This distance-based construction now locally applies to manifolds as a direct 
+This distance-based construction locally applies to manifolds as a direct 
 consequence of their local isometry to the Euclidean observation space 
 \citep{mafu2011}.
 There are two principal ways to build a neighborhood around $\x \in \X$, 
-both of which usually employ squared Euclidean distances\footnote{
+both of which usually employ the squared Euclidean norm\footnote{
 In principle, alternative metrics are equally applicable, for instance such 
 that measure angles \citep{belkinniyogi2004}.
-}, denoted by $\| \cdot \|^2$.
+} $\| \cdot \|^2$.
 Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
 constructor that assigns a set of neighbors to $\x$.
 The first possibility is to restrict the size of the neighborhood to the $k$ 
@@ -152,29 +153,27 @@ $\mathcal{N}_{\epsilon} (\x) =
 \{\x_j \in \X: \| \x - \x_j \|^2 \leq \epsilon\}$ and 
 $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
 Both $k$ and $\epsilon$ are hyperparameters that must be specified up-front.
-The choice of neighborhood size reflects beliefs about the extent to which 
-$\mani$ is locally linear, smaller neighborhoods corresponding to a higher 
-degree of non-linearity, and may affect strongly 
-performance \citep{sudderth2002}.
-
-\vspace{0.5cm}
+Their choice reflects beliefs about the topological structure of $\mani$ -- 
+smaller neighborhoods corresponding to a higher degree of non-linearity -- and 
+may affect performance rather strongly \citep{sudderth2002}.
 
 \begin{minipage}[b]{0.5\textwidth}
-  The thus defined neighborhoods can now be described by a \textit{neighborhood 
-  graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where input points form 
-  vertices and edges indicate neighborhood relations \citep{belkinniyogi2001}.
+  $\mani$ may now be characterized by a \textit{neighborhood 
+  graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, still assuming it is 
+  sampled well by $\X$. 
+  Inputs $\x \in \X$ form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
+  indicate neighborhood relations \citep{belkinniyogi2001}.
   Each vertex is connected to its $k$ nearest neighbors or all points 
   within $\epsilon$-radius, depending on the neighborhood definition.
   It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
   point to be among another's $k$ nearest neighbors the reverse need not be 
   true.
-  Building upon $k$-neighborhoods therefore leads to directed graphs 
-  \citep{heetal2005}.
-  An example for such a directed graph is given by figure 
-  \ref{fig:neighbor-graph}, showing 2-neighborhoods for seven fictional data 
-  points.
+  $k$-neighborhoods therefore lead to directed graphs.
   Conversely, the $\epsilon$-distance boundary holds in both directions and 
   produces undirected graphs \citep{heetal2005}.
+  A fictional example for a directed graph is given by figure 
+  \ref{fig:neighbor-graph}, showing $k$-neighborhoods for seven data points 
+  ($k = 2$).
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -192,39 +191,23 @@ performance \citep{sudderth2002}.
   \end{figure}
 \end{minipage}
 
-In order for neighborhood graphs\footnote{
-Graphs are assumed to be connected, i.e., no vertex is left without at least one 
-edge linking it to another vertex.
-$k$-neighborhoods tend to yield connected graphs more often than 
-$\epsilon$-neighborhoods.
-If the connectedness assumption does not hold globally, each connected sub-graph 
-must be considered separately \citep{belkinniyogi2001}.
-} to translate into a low-dimensional embedding, the information they hold must 
-be converted to a numerical representation.
-This is achieved by assigning weights to graph edges and constructing a matrix 
-from these \citep{belkinniyogi2003}.
-In fact, the
-
 % ------------------------------------------------------------------------------
 
-\subsubsection{Matrix Representation of Neighborhood Graphs}
-\label{matrix-repr}
-
-
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Solving Eigenwertproblems}
+\subsubsection{Local Tangent Spaces}
 \label{eigenwert}
 
-\begin{itemize}
-  \item Eigenvectors, eigenvalues
-  \item Spectral decomposition
-\end{itemize}
+Laplacian
 
 % ------------------------------------------------------------------------------
 
-\subsection{Techniques of Local Graph-Based Manifold Learning}
+\subsubsection{Eigenanalysis}
+\label{eigenwert}
+
+Laplacian eigenmaps, LLE and H-LLE each h
+
+% ------------------------------------------------------------------------------
+
+\subsection{Unsupervised Techniques of Local Graph-Based Manifold Learning}
 \label{lgb-tech}
 
 % ------------------------------------------------------------------------------

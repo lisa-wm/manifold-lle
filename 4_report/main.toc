@@ -5,17 +5,17 @@
 \contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{6}{}%
 \contentsline {subsection}{\numberline {3.1}Principles of Local Graph-Based Manifold Learning}{6}{}%
 \contentsline {subsubsection}{\numberline {3.1.1}General Concept}{6}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Neighborhood Graphs}{7}{}%
-\contentsline {subsubsection}{\numberline {3.1.3}Matrix Representation of Neighborhood Graphs}{9}{}%
-\contentsline {subsubsection}{\numberline {3.1.4}Solving Eigenwertproblems}{9}{}%
-\contentsline {subsection}{\numberline {3.2}Techniques of Local Graph-Based Manifold Learning}{9}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Neighborhood Graphs}{8}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Local Tangent Spaces}{9}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}Eigenanalysis}{9}{}%
+\contentsline {subsection}{\numberline {3.2}Unsupervised Techniques of Local Graph-Based Manifold Learning}{9}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Laplacian Eigenmaps}{9}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Locally Linear Embedding (LLE)}{9}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Hessian Locally Linear Embedding (H-LLE)}{9}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{9}{}%
-\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{9}{}%
-\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{9}{}%
-\contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{9}{}%
+\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{10}{}%
+\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{10}{}%
+\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{10}{}%
+\contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{10}{}%
 \contentsline {section}{\numberline {5}Experiment Results}{10}{}%
 \contentsline {subsection}{\numberline {5.1}Experimental Design}{10}{}%
 \contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{10}{}%
