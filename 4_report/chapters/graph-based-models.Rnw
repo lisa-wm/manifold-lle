@@ -7,9 +7,9 @@
 \label{lgb-concept}
 
 After the goal of manifold learning has been formalized, it shall now be laid 
-out how LLE as the conceptual parent of SS-LLE approaches the problem. 
-In order to provide a solid background, this chapter will first sketch the 
-fundamental idea of local linear graph-based techniques.
+out how LLE, as the conceptual parent of SS-LLE, approaches the problem. 
+In order to provide some background, this chapter will first sketch the 
+fundamental idea of local graph-based techniques.
 Methods subsumed under this term arise from a variety of geometric intuitions 
 and computational implementations.
 Interestingly, they still share a common structure that allows for 
@@ -23,14 +23,14 @@ combination with the heat kernel for Laplacian eigenmaps from the analogy of the
 graph Laplacian and the Laplace-Beltrami operator on manifolds.
 In subsequent studies they confirmed the legitimacy of this approach by 
 providing proofs of convergence \citep{belkinniyogi2008}.
-It is widely assumed that LLE may be cast into the same framework by 
+It is widely assumed that LLE may also be cast into this framework by 
 considering the eigenvalue problem it solves as an approximation to the graph 
 Laplacian (\citet{belkinniyogi2003}, \citet{donohogrimes2003}).
-H-LLE neatly fits the idea as it bears strong algorithmic resemblance to LLE, 
-hence the name, and can be viewed as a conceptual variant of Laplacian eigenmaps, 
-substituting the Laplacian for the Hessian \citep{donohogrimes2003}.
+H-LLE neatly fits the same idea as it bears strong algorithmic resemblance to 
+LLE, hence the name, and can be viewed as a conceptual variant of Laplacian 
+eigenmaps, substituting the Laplacian for the Hessian \citep{donohogrimes2003}.
 Recent studies, however, indicate that the asymptotic convergence of LLE to the 
-Laplace-Beltrami operator might be subject to rather specific regularization 
+Laplace-Beltrami operator might be subject to additional regularization 
 assumptions \citep{wuwu2018}.
 The report therefore abstains from a direct translation of both LLE and H-LLE 
 to variations of Laplacian eigenmaps.
@@ -66,6 +66,10 @@ The central drawback of this approach is the confinement to learning linear
 mappings.
 Graph-based methods acknowledge the fact that, in general, data will rather lie 
 on non-linear manifolds.
+The techniques studied here define functionals over smooth mappings from the 
+manifold to Euclidean space and use these functionals to find optimal 
+embeddings.
+
 They model the intrinsic structure through neighborhood relations, 
 mapping points that lie close on the manifold surface to nearby locations.
 Neighborhoods are characterized via weighted graphs.
@@ -199,6 +203,7 @@ must be considered separately \citep{belkinniyogi2001}.
 be converted to a numerical representation.
 This is achieved by assigning weights to graph edges and constructing a matrix 
 from these \citep{belkinniyogi2003}.
+In fact, the
 
 % ------------------------------------------------------------------------------
 

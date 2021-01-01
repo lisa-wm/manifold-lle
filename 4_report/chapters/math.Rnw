@@ -51,11 +51,13 @@ elements within a Euclidean distance of $\epsilon$ from $t$.
 The resulting topology is also called the \textit{metric topology} 
 \citep{mccleary2006}.
 
-Topological spaces in general are not accessible via distances.
-The ultimate goal is again the interpretation of the data in a Euclidean space, 
-albeit one with lower dimensionality, where such concepts are meaningful.
-The next step is thus to study how a (potentially highly non-linear) topological 
-space might relate to $\Rd$.
+Topological spaces in general are not accessible via distances (or angles, for 
+that matter) known from Euclidean spaces.
+The ultimate goal therefore is the interpretation of the data in a space that is 
+again Euclidean, albeit of lower dimensionality, where such concepts are 
+meaningful.
+The next step is then to study how (potentially highly non-linear) topological 
+spaces relate to $\Rd$.
 \\
 
 \textbf{Homeomorphisms.} Consider two topological spaces $(S, \topo_S)$, 
@@ -70,13 +72,18 @@ referred to as topological properties.
 Two homeomorphic spaces are thus topologically equivalent \citep{mccleary2006}.
 
 If there exists a non-negative integer $d$ such that for every $s$ in a 
-topological space $S$ a local neighborhood is homeomorphic to an open subset of 
-$\Rd$, $S$ is \textit{locally Euclidean}\footnote{
+topological space $S$ a local neighborhood $U \ni s$, $U \subset S$, is 
+homeomorphic to an open subset of $\Rd$, $S$ is \textit{locally 
+Euclidean}\footnote{
 For locally Euclidean topological spaces it is thus meaningful to speak of
 elements as points.
-}.
-In local neighborhoods $S$ then behaves like $\Rd$, which is conceivably a 
-desirable property in the context of manifold learning \citep{mafu2011}.
+} \citep{mafu2011}.
+In other words, there is a homeomorphism $f: U \rightarrow \Rd$ for every 
+element in $S$.
+The neighborhoods $U$ are also referred to as  \textit{coordinate patches} and 
+the associated maps $f$ are called \textit{coordinate charts} 
+\citep{cayton2005}.
+In local neighborhoods $S$ then behaves like $\Rd$ \citep{mafu2011}.
 \\
 
 \textbf{Manifolds.} \textit{Manifolds} are now precisely such locally Euclidean
@@ -98,46 +105,28 @@ distinct points from $\mani$ disjoint neighborhoods can be found
 \citep{brown2006}.
 Second-countability restricts the manifold's size via the number of open sets 
 it may possess \citep{waldmann2014}.
-
-Manifolds can now be \textit{embedded} in Euclidean space.
-Consider $\R^K \supset \Rd$\footnote{
-Here, $K$ is used to denote a general higher-dimensional space (a manifold
-embedded in $\R^K$ is also embedded in $\R^{K + 1}$, and so on, as 
-homeomorphisms are transitive \citep{waldmann2014}). 
-This is deliberate to distinguish it from the more specific notation $D$ 
-indicating the number of observed features.
-}.
-$\Rd$ is endowed with the so-called \textit{subspace topology} that results
-from intersecting open subsets of $\R^K$ with $\Rd$ (for $\R^2$, these are
-$\epsilon$-circles obtained by intersecting $\R^3$-$\epsilon$-balls with the 
-coordinate planes).
-For a manifold $\mani$, to be embedded in $\R^K$ means that $\mani$ is enclosed
-by $\R^K$ but locally homeomorphic to $\Rd$, thereby inheriting the metric
-subspace topology from $\Rd$ \citep{waldmann2014}.
-It can be shown that $K = 2d + 1$ is sufficient to create an embedding, but $K$
-may be smaller \citep{mafu2011}.
-
-This has important consequences for manifold learning: data lying on a 
-$d$-dimensional manifold $\mani$ embedded in $\RD$ are observed as 
-$D$-dimensional points but may locally be treated like points from $\Rd$.
+\\
 
 \vspace{0.5cm}
 
 % TODO Mark 2 points on S-curve and connect via Euclidean distance
 
 \begin{minipage}[b]{0.5\textwidth}
-  Figure \ref{fig:scurve} shows the well-known \textit{S-curve} manifold 
+  \textbf{Embeddings.} Recall that the data are observed in $\RD$ but taken to 
+  lie on $\mani$, locally homeomorphic to $\Rd$.
+  This implies the assumption $\mani \subset \RD$ and $\mani$ is said to be 
+  \textit{embedded} in the ambient $D$-dimensional Euclidean space 
+  \citep{cayton2005}.
+  The associated \textit{embedding} is but a map $f: \mani \rightarrow \RD$ 
+  whose restriction to $\mani$ is a homeomorphism \citep{brown2006}, or, more 
+  specifically, the canonical inclusion map identifying points on the manifold 
+  as particular points of $\RD$ \citep{waldmann2014}.
+  It can be shown that $K = 2d + 1$ is sufficient to create an embedding 
+  \citep{mafu2011}.
+  Figure \ref{fig:scurve} shows the so-called \textit{S-curve} manifold 
   embedded in $\R^3$.
-  Clearly, the S-curve as a whole is far from linear, but local patches on its
-  surface behave like planes from $\R^2$.
-  So the S-curve is two-dimensional and feature dimensionality can in effect be 
-  compressed from $\R^3$ to $\R^2$.
-  The challenge is now to unravel the manifold in a way that preserves its 
-  structure to maximum extent.
-  Obviously, a simple projection to $\R^2$ will not accomplish this task.
-  Instead, manifold learning must capture the intrinsic neighborhood structures
-  and map these to $\R^2$, which, in this case, can be imagined as a 
-  "flattening-out" of the S-curve.
+  Clearly, the S-curve as a whole is far from linear, but locally homeomorphic 
+  to $\R^2$ and thus intrinsically two-dimensional.
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -146,7 +135,7 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
   \begin{figure}[H]
     \centering
     \includegraphics[trim = 100 20 70 30, clip, % left bottom right top
-      width = 0.55\textwidth]{figures/s-curve}
+      width = 0.65\textwidth]{figures/s-curve}
     \caption[S-curve manifold]{10,000 points sampled from the S-curve manifold. 
     \textit{Source:} own representation, inspired by implementation in 
     \texttt{Python}'s \texttt{scikit-learn} library \citep{scikit-learn}.}
@@ -156,41 +145,34 @@ $D$-dimensional points but may locally be treated like points from $\Rd$.
 
 \vspace{0.5cm}
 
-\textbf{Geodesics.} One last aspect remains open, namely how to handle distances 
-on manifolds.
-Figure \ref{fig:scurve} illustrates that standard Euclidean distances are not
-meaningful here: rather than measuring "shortcuts" between points across 
-$\R^3$ (where, for instance, points in the red upper area would be considered
-deceptively close to points in the cyan mid area), it makes intuitive sense to 
-constrain distances to the manifold surface.
+\textbf{Geodesics.} One last aspect remains open and shall be briefly touched 
+here, namely how to handle distances on manifolds where Euclidean metrics are 
+not meaningful.
+Rather than measuring "shortcuts" between points across $\RD$ (where, for 
+instance, points in the red upper area of figure \ref{fig:scurve} would be 
+considered deceptively close to points in the cyan mid area), it makes intuitive 
+sense to constrain distances to the manifold surface.
 In order to enable the construction of such a metric, manifolds must fulfill
-two additional properties: being \textit{Riemannian} and being 
-\textit{connected} \citep{mafu2011}.
-The Riemannian property is based on differentiability and ensures that concepts 
-of curvature, length and angle remain meaningful \citep{mafu2011}.\footnote{
-A detailed derivation is beyond the scope of this report and may be found, for
-example, in \citet{mukherjee2015}.
-}
-Connectedness means that no separation $\{ U, V\}$ of a manifold $\mani$
-exists with open, non-empty and disjoint $U, V \subset \mani$, 
+two additional properties: \textit{smoothness}\footnote{
+The smoothness property is based on differentiability of coordinate charts and 
+ensures that concepts of curvature, length and angle remain meaningful 
+\citep{mafu2011}.
+A detailed derivation may be found, for example, in \citet{mukherjee2015}.
+} and \textit{connectedness}\footnote{
+Connectedness means that no separation $\{ U, V\}$ of a manifold 
+$\mani$ exists with open, non-empty and disjoint $U, V \subset \mani$, 
 $\mani = U \cup V$.
-For manifolds, connectedness is immediately equivalent to path-connectedness.
-Informally stated, any two points on a connected manifold can be linked by a 
-path
-% Such a path is a continuous function $\lambda: [0, 1] \rightarrow \mani$ with
-% $\lambda(x) = 0$ and $\lambda(y) = 1$ for any two points $x, y \in \mani$
+This may be loosely put as paths linking arbitrary pairs of manifold points 
 \citep{mccleary2006}.
-
-For connected Riemannian manifolds it is now possible to define a distance 
-metric, or \textit{geodesic distance}.
-Geodesic distance is the length of the shortest curve (\textit{geodesic}) on
-$\mani$ between two points on $\mani$, as measured by arc-length\footnote{
-Geodesics are but a peripheral note here; for a precise definition see for 
-example \citet{mafu2011}.
-} (such 
-a curve must exist due to connectedness).
+} \citep{mafu2011}.
+For smooth, connected manifolds, \textit{geodesic distance} is the length of the 
+shortest curve (\textit{geodesic}) on $\mani$ between two points on $\mani$ as 
+measured by arc-length\footnote{
+Geodesics are but a peripheral note here; for a precise definition see 
+\citet{mafu2011}.
+}.
 Intuitively, geodesic distance can be identified with Euclidean distance in
-Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
+Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
 
 % A curve $c$ in $\mani$ is a smooth mapping from an open interval 
 % $\Lambda \subset \R$ into $\mani$. 
@@ -216,9 +198,16 @@ Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
 \subsection{Formal Goal of Manifold Learning}
 \label{mani-goal}
 
-Building on the above concepts, the goal of manifold learning shall be 
-formalized in a way that will be referenced throughout the remainder of this 
-report and is inspired by \citet{sauletal2006}.
+Building on the above concepts, the data situation in manifold learning 
+might be summarized as follows: data are observed in $\RD$ but assumed to 
+be really samples from a $d$-manifold $\mani$ embedded in $\RD$, meaning they 
+can be analyzed in $\Rd$ if a faithful translation between respective 
+coordinates in $\RD$ and $\Rd$ is found.
+The challenge is thus to unravel the manifold in a way that preserves its 
+intrinsic structure to maximum extent \citep{sauletal2006}.
+This goal shall be formalized in a way that will be referenced throughout the 
+remainder of this report and that is inspired by the works of \citet{cayton2005} 
+and \citet{sauletal2006}.
 \\
 
 \textbf{Given.} Data $\X = (\x_1, \x_2, ..., \x_N)$, with 
@@ -226,28 +215,28 @@ $\x_i \in \RD$ $\forall i \in \setN$ and $N, D \in \N$.
 $\X$ thus consists of $N$ real-valued data vectors observed in $D$ 
 dimensions.
 The true data-generating process is taken to have dimensionality $d \in \N$, 
-such that $\X$ is in fact a sample from a $d$-dimensional, Riemannian and 
-connected manifold: $\X \sim \mani \subset \RD$.
+such that $\X$ is in fact a sample from a smooth, connected $d$-manifold with
+$\X \sim \mani \subset \RD$.
+$\mani$ may be described by a single coordinate chart\footnote{
+This is possible for any smooth, compact manifold \citep{cayton2005}.
+} $\psi: \mani \rightarrow \Rd$.
 For manifold learning methods to yield satisfying results, $\mani$ is always 
 assumed to be sampled well by $\X$.
 \\
 
-\textbf{Goal.} Find an appropriate $m$-dimensional representation of the data, 
-i.e., compute $\Y = (\y_1, \y_2, ..., \y_N)$, with 
-$\y_i \in \R^m$ $\forall i \in \setN$.
-Appropriateness of $\Y$ is determined by the extent to which the 
-$d$-dimensional representation preserves intrinsic structures on $\mani$.
-The underlying assumption is that of a smooth mapping $\rho: \Y \rightarrow \RD$ 
-with $\rho(\Y) = \X$ \citep{sudderth2002}.
+\textbf{Goal.} Find the $d$-dimensional representation of the data, 
+i.e., compute \\$\Y = (\y_1, \y_2, ..., \y_N)$, where 
+$\y_i = \psi(\x_i) \in \R^d$ $\forall i \in \setN$.
+The map $\psi$ itself is not always explicitly retrieved.
 \\
 
-Note that, while $D$ is specified a priori, the \textit{intrinsic 
-dimensionality} $d$ is typically unknown and must be estimated during learning.
-Since there are not always (finite-sample) guarantees for finding the true value 
-of $d$, it must be assumed that the estimation may differ from $d$.
-In order to emphasize this potential gap, the dimensionality of the 
-low-dimensional representation is denoted by $m \in \N$, such that 
-$\Y \in (\R^m)^N$. 
-
-
-
+Note that, while $D$ is given a priori, the intrinsic dimensionality $d$ is 
+often unknown in real-life applications.
+Due to the lack of (finite-sample) convergence guarantees for many methods 
+dimensionality estimations may not always be equal to $d$.
+$\Y$ as found by manifold learning techniques must therefore be expected to 
+differ from the true coordinates and, in particular, to even have incorrect 
+dimension \citep{sauletal2006}.
+Notwithstanding this potential gap, solutions of the subsequently presented 
+methods will be denoted by $\Y \in (\Rd)^N$ to avoid overly complicated 
+notation.
