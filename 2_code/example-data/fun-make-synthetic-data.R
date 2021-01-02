@@ -90,6 +90,57 @@ make_s_curve <- function(seed = 123L, n_points) {
 
 }
 
+# UNIT SPHERE ------------------------------------------------------------------
+
+#' Create unit sphere embeddedin R3
+#'
+#' @param seed Single numeric value for creating an RNG seed
+#' @param n_points Number of points to sample from manifold
+#' @return Data table object containing R3 coordinates (columns x, y, z) and
+#' main manifold dimension (column t)
+
+make_unit_sphere <- function(seed = 123L, n_points) {
+  
+  # Perform basic input checks
+  
+  checkmate::assert_number(seed)
+  checkmate::assert_count(n_points)
+  
+  # Source: https://github.com/rrrlw/TDAstats/blob/master/data-raw/sphere3d.R
+  
+  res <- data.table(
+    x = rep(0, n_points),
+    y = rep(0, n_points),
+    z = rep(0, n_points),
+    t = rep(0, n_points)
+  )
+  
+  for (i in seq_len(n_points)) {
+    
+    # Pick appropriate pair of x, y within unit sphere
+    
+    x <- y <- 1L
+    
+    while(x^2 + y^2 > 1) {
+
+      x <- runif(1L, -1L, 1L)
+      y <- runif(1L, -1L, 1L)
+      
+    }
+    
+    # Compute coordinates
+    
+    res[i, "x"] <- 2 * x * sqrt(1 - x^2 - y^2)
+    res[i, "y"] <- 2 * y * sqrt(1 - x^2 - y^2)
+    res[i, "z"] <- 1 - 2 * (x^2 + y^2)
+    res[i, "t"] <- 1 - 2 * (x^2 + y^2)
+    
+  }
+
+  res
+  
+}
+
 # CIRCLE DATA ------------------------------------------------------------------
 
 

@@ -43,7 +43,6 @@ set.seed(1)
 
 plot(
   neighborhood_data,
-  # edge.arrow.size = .5, 
   vertex.color = "gray", 
   vertex.size = 15, 
   vertex.frame.color = "gray", 
@@ -56,3 +55,28 @@ ggsave(
   width = 8, 
   height = 8)
 dev.off()
+
+# SPHERE WITH TANGENT PLANE ----------------------------------------------------
+
+sphere_tangent_plane <- plot_manifold_3d(make_unit_sphere(n_points = 3000)) %>% 
+  add_trace(
+    z = matrix(rep(1, 100), ncol = 10),
+    x = seq(-1, 1, length.out = 10),
+    y = seq(-1, 1, length.out = 10),
+    type = "surface",
+    color = "gray",
+    showlegend = FALSE) %>% 
+  hide_colorbar() %>% 
+  layout(scene = list(
+    camera = list(eye = list(
+      x = 2, 
+      y = -1.25, 
+      z = -0.5)
+    )))
+
+orca(
+  sphere_tangent_plane, 
+  "4_report/figures/sphere-tangent.pdf",
+  height = 400,
+  width = 450
+)

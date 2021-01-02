@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  1 JAN 2021 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  2 JAN 2021 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,7 +665,7 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 115--146
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 202--213
+Underfull \hbox (badness 10000) in paragraph at lines 202--217
 
  []
 
@@ -674,12 +674,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--213
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 214--227
+Underfull \hbox (badness 10000) in paragraph at lines 218--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--233
+Underfull \hbox (badness 10000) in paragraph at lines 232--237
 
  []
 
@@ -716,14 +716,24 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 160--193
  []
 
 [8]
-Overfull \hbox (6.12463pt too wide) in paragraph at lines 210--210
-[]\T1/aer/b/n/14.4 Unsupervised Tech-niques of Lo-cal Graph-Based Man-i-fold Le
-arn-
+<figures/sphere-tangent.pdf, id=83, 343.2825pt x 305.22029pt>
+File: figures/sphere-tangent.pdf Graphic file (type pdf)
+<use figures/sphere-tangent.pdf>
+Package pdftex.def Info: figures/sphere-tangent.pdf  used on input line 226.
+(pdftex.def)             Requested size: 153.64441pt x 163.3105pt.
+
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 207--233
+[][] [] [] 
  []
 
-) (./chapters/sslle.Rnw [9 <./figures/neighborhood-graph.pdf>])
-(./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [10]
-(./chapters/appendix.Rnw) [5] [6] (./main.bbl
+[9 <./figures/neighborhood-graph.pdf> <./figures/sphere-tangent.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/sphere-tangent.pdf): PDF inclusion
+: invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
+ed.
+>]) (./chapters/sslle.Rnw) (./chapters/experiment.Rnw)
+(./chapters/conclusion.Rnw) [10] [11] (./chapters/appendix.Rnw) [5] [6]
+(./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 20--24
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
 foun-da-tion for 
@@ -735,13 +745,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10628 strings out of 479485
- 156800 string characters out of 5875915
- 466333 words of memory out of 5000000
- 27338 multiletter control sequences out of 15000+600000
+ 10636 strings out of 479485
+ 157033 string characters out of 5875915
+ 466345 words of memory out of 5000000
+ 27345 multiletter control sequences out of 15000+600000
  581553 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,11n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dis
@@ -758,10 +768,10 @@ amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on main.pdf (23 pages, 758537 bytes).
+Output written on main.pdf (24 pages, 850664 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 176 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 32 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

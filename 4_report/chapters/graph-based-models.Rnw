@@ -108,11 +108,11 @@ of local graph-based techniques.
 Summing up the above, their functionality may be schematized as follows:
 
 \begin{tight_enumerate}
-  \item Approximate the manifold structure by a sparse neighborhood graph.
-  \item Construct a functional on the manifold that is associated with the 
-  intrinsic data structure and estimate the functional from the graph.
-  \item Learn the low-dimensional coordinates by eigenanalysis of the estimated 
-  matrix.
+  \item Approximate the manifold structure by a sparse neighborhood graph 
+  $\mathcal{G}$.
+  \item Construct a functional on $\mani$ that is associated with the 
+  intrinsic data structure and estimate the functional from $\mathcal{G}$.
+  \item Learn the $\Y$ by eigenanalysis of the estimated matrix.
 \end{tight_enumerate}
 
 With this, the manifold learning problem is decomposed into a sequence of 
@@ -158,7 +158,7 @@ smaller neighborhoods corresponding to a higher degree of non-linearity -- and
 may affect performance rather strongly \citep{sudderth2002}.
 
 \begin{minipage}[b]{0.5\textwidth}
-  $\mani$ may now be characterized by a \textit{neighborhood 
+  $\mani$ can now be characterized by a \textit{neighborhood 
   graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, still assuming it is 
   sampled well by $\X$. 
   Inputs $\x \in \X$ form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
@@ -196,7 +196,40 @@ may affect performance rather strongly \citep{sudderth2002}.
 \subsubsection{Local Tangent Spaces}
 \label{eigenwert}
 
-Laplacian
+Both Laplacian eigenmaps and H-LLE employ \textit{local tangent spaces} to 
+construct their manifold functional, and as it may under certain assumptions 
+also be regarded as an approximation to the Laplace-Beltrami operator, so does 
+LLE (if only implicitly). 
+The tangent space $T_m(\mani)$ at some point $m \in \mani$ is spanned by vectors 
+tangent to $\mani$ at $m$. 
+Smoothness of $\mani$ ensures well-definedness of $T_m(\mani)$.
+
+\begin{minipage}[b]{0.5\textwidth}
+  As $\mani$ is embedded in $\RD$, its tangent spaces are again Euclidean and of 
+  dimension $d$, that is, $d$-dimensional hyperplanes.
+  They may therefore be viewed as linear approximations to the manifold surface 
+  \citep{sudderth2002}.
+  If $m \in \mani$ is identified with the origin of $T_m(\mani)$, then every 
+  point in the neighborhood of $m$ has a unique closest point 
+  $m^{\prime} \in T_m(\mani)$, with a smooth mapping $m \mapsto m^{\prime}$.
+  The tangent space therefore inherits a (non-unique) orthonormal coordinate 
+  system obtained from endowing $T_m(\mani)$ with the inner product from $\RD$ 
+  \citep{donohogrimes2003}.
+\end{minipage}
+\begin{minipage}[b]{0.05\textwidth}
+  \phantom{xxx}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[trim = 90 70 60 30, clip, % left bottom right top
+      width = 0.8\textwidth]{figures/sphere-tangent}
+    \caption[Tangent hyperplane for two-dimensional unit sphere]{Tangent 
+    hyperplane for exemplary point on the two-dimensional unit sphere, embedded 
+    in $\R^3$. \textit{Source:} own representation.}
+    \label{fig:sphere-tangent}
+  \end{figure}
+\end{minipage}
 
 % ------------------------------------------------------------------------------
 
@@ -207,7 +240,7 @@ Laplacian eigenmaps, LLE and H-LLE each h
 
 % ------------------------------------------------------------------------------
 
-\subsection{Unsupervised Techniques of Local Graph-Based Manifold Learning}
+\subsection{Unsupervised Techniques of Local Graph-Based Manifold \\Learning}
 \label{lgb-tech}
 
 % ------------------------------------------------------------------------------

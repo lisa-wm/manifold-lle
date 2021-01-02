@@ -14,7 +14,7 @@ Therefore, assuming features can be represented by coordinates in
 $D$-dimensional Euclidean space, all concepts are examined with regard to their
 meaning in $\RD$.
 Dimensionality reduction techniques take the data observed in $\RD$ to actually
-lie in a $d$-dimensional topological space that is not necessarily Euclidean but
+lie on a $d$-dimensional topological space that is not necessarily Euclidean but
 exhibits some specific properties.
 \\
 
@@ -203,7 +203,11 @@ Building on the above concepts, the data situation in manifold learning
 might be summarized as follows: data are observed in $\RD$ but assumed to 
 be really samples from a $d$-manifold $\mani$ embedded in $\RD$, meaning they 
 can be analyzed in $\Rd$ if a faithful translation between respective 
-coordinates in $\RD$ and $\Rd$ is found.
+coordinates in $\RD$ and $\Rd$ is found\footnote{
+It is actually a simplification to assume all data to lie \textit{exactly} on 
+$\mani$, but the more general case of data lying \textit{near} $\mani$ is rarely 
+considered explicitly.
+}.
 The challenge is thus to unravel the manifold in a way that preserves its 
 intrinsic structure to maximum extent \citep{sauletal2006}.
 This goal shall be formalized in a way that will be referenced throughout the 
