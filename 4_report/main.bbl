@@ -22,6 +22,13 @@ Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2008\harvardyearright .
   methods, {\em Journal of Computer and System Sciences} {\bf
   74}(8):~1289--1308.
 
+\harvarditem[Bengio et~al.]{Bengio, Delalleau, Roux, Paiement, Vincent
+  \harvardand\ Ouimet}{2004}{bengioetal2004}
+Bengio, Y., Delalleau, O., Roux, N.~L., Paiement, J.-F., Vincent, P.
+  \harvardand\ Ouimet, M.  \harvardyearleft 2004\harvardyearright .
+\newblock Learning eigenfunction links spectral embedding and kernel pca, {\em
+  Neural Computation} {\bf 16}:~2197--2219.
+
 \harvarditem[Bengio et~al.]{Bengio, Paiement, Vincent, Delalleau, Roux
   \harvardand\ Ouimet}{2003}{bengioetal2003}
 Bengio, Y., Paiement, J.-F., Vincent, P., Delalleau, O., Roux, N.~L.

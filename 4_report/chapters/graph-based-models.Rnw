@@ -3,17 +3,32 @@
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{General Concept}
-\label{lgb-concept}
+\subsubsection{General Idea}
+\label{lgb-idea}
 
 After the goal of manifold learning has been formalized, it shall now be laid 
 out how LLE -- as the conceptual parent of SS-LLE -- approaches the problem. 
-This chapter will first sketch the fundamental idea of local graph-based 
-techniques to provide some background.
-Methods subsumed under this term arise from a variety of geometric intuitions 
-and computational implementations but share a common structure that allows for 
-interpretation in a framework generally applicable to spectral methods 
-\citep{bengioetal2003}.
+This chapter will first sketch fundamental ideas of local graph-based 
+techniques, including also Laplacian eigenmaps and H-LLE, to provide some 
+background.
+Local graph-based manifold learning techniques arise from a variety 
+of geometric intuitions and computational implementations but share a common 
+structure that allows for interpretation in a more general framework 
+(\citet{bengioetal2003}, \citet{bengioetal2004}).
+
+Such a framework might be established from several perspectives; after all, the 
+different methods attempt to solve the same problem and can thus often be 
+translated into one another.
+This report will first present local graph-based manifold learning in the light 
+of \textit{kernel principal component analysis (kernel PCA)}.
+The reasoning behind this choice is that kernel PCA provides a useful intuition 
+to manifold learning and subsumes the other methods in a way that proves 
+fruitful for out-of-sample extension \citep{bengioetal2004}.
+Beyond this general introduction, however, the emphasis will lie on geometrical 
+and algorithmic commonalities that characterize how local-graph based methods in 
+particular approach the manifold learning problem.
+
+
 
 It must be noted that, while the algorithmic similarity is obvious, it is less 
 clear whether the established theoretical connection holds as well.
@@ -66,15 +81,17 @@ on non-linear manifolds.
 The techniques studied here (explicitly or implicitly) revolve around 
 functionals that capture the intrinsic manifold structure and whose top or 
 bottom eigenvectors span the $d$-dimensional embedding space.
-In order to retrieve the sought-after coordinates, the manifold is approximated 
+These functionals are defined by differential operators on the manifold 
+\citep{vandermaatenetal2009}.
+In order to retrieve the sought-after coordinates, $\mani$ is approximated 
 by a discretized graph representation\footnote{
 Graphs are assumed to be connected, i.e., no vertex is left without at least 
 one edge linking it to another vertex.
 If the connectedness assumption does not hold globally, each connected 
 sub-graph must be considered separately \citep{belkinniyogi2001}.
 } of the finite data $\X$, which may be imagined as a skeletal model of $\mani$.
-The functional, defined with respect to the local tangent spaces of $\mani$, is 
-then estimated from the neighborhood graph.
+The differential operator, defined with respect to the local tangent spaces of 
+$\mani$, is then estimated from the neighborhood graph.
 Eigenanalysis of the resulting matrix eventually yields the low-dimensional 
 representation (\citet{belkinniyogi2001}, \citet{donohogrimes2003}).
 
@@ -206,7 +223,8 @@ Smoothness of $\mani$ ensures well-definedness of $T_m(\mani)$.
 
 \begin{minipage}[b]{0.5\textwidth}
   As $\mani$ is embedded in $\RD$, its tangent spaces are again Euclidean and of 
-  dimension $d$, that is, $d$-dimensional hyperplanes.
+  dimension $d$, that is, $d$-dimensional hyperplanes as depicted in figure 
+  \ref{sphere-tangent}.
   They may therefore be viewed as linear approximations to the manifold surface 
   \citep{sudderth2002}.
   If $m \in \mani$ is identified with the origin of $T_m(\mani)$, then every 
@@ -225,8 +243,8 @@ Smoothness of $\mani$ ensures well-definedness of $T_m(\mani)$.
     \includegraphics[trim = 90 70 60 30, clip, % left bottom right top
       width = 0.8\textwidth]{figures/sphere-tangent}
     \caption[Tangent hyperplane for two-dimensional unit sphere]{Tangent 
-    hyperplane for exemplary point on the two-dimensional unit sphere, embedded 
-    in $\R^3$. \textit{Source:} own representation.}
+    hyperplane for exemplary point on the two-dimensional unit sphere manifold, 
+    embedded in $\R^3$. \textit{Source:} own representation.}
     \label{fig:sphere-tangent}
   \end{figure}
 \end{minipage}
@@ -236,7 +254,8 @@ Smoothness of $\mani$ ensures well-definedness of $T_m(\mani)$.
 \subsubsection{Eigenanalysis}
 \label{eigenwert}
 
-Laplacian eigenmaps, LLE and H-LLE each h
+Eventually, all spectral manifold learning methods boil down to finding 
+eigenvectors of some matrix associated with the intrinsic manifold structure.
 
 % ------------------------------------------------------------------------------
 
