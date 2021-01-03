@@ -16,12 +16,6 @@ Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2004\harvardyearright .
 \newblock Semi-supervised learning on riemannian manifolds, {\em Machine
   Learning} {\bf 56}:~209--239.
 
-\harvarditem{Belkin \harvardand\ Niyogi}{2008}{belkinniyogi2008}
-Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2008\harvardyearright .
-\newblock Towards a theoretical foundation for laplacian-based manifold
-  methods, {\em Journal of Computer and System Sciences} {\bf
-  74}(8):~1289--1308.
-
 \harvarditem[Bengio et~al.]{Bengio, Delalleau, Roux, Paiement, Vincent
   \harvardand\ Ouimet}{2004}{bengioetal2004}
 Bengio, Y., Delalleau, O., Roux, N.~L., Paiement, J.-F., Vincent, P.
@@ -57,6 +51,13 @@ Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
 Doshi-Velez, F. \harvardand\ Kim, B.  \harvardyearleft 2017\harvardyearright .
 \newblock Towards a rigorous science of interpretable machine learning, {\em
   arXiv: Machine Learning} .
+
+\harvarditem[Ham et~al.]{Ham, Lee, Mika \harvardand\
+  Schölkopf}{2003}{hametal2003}
+Ham, J., Lee, D.~D., Mika, S. \harvardand\ Schölkopf, B.  \harvardyearleft
+  2003\harvardyearright .
+\newblock A kernel view of the dimensionality reduction of manifolds, {\em
+  Technical Report TR-110}, Max-Planck-Institute for Biological Cybernetics.
 
 \harvarditem[He et~al.]{He, Cai, Yan \harvardand\ Zhang}{2005}{heetal2005}
 He, X., Cai, D., Yan, S. \harvardand\ Zhang, H.-J.  \harvardyearleft
@@ -109,6 +110,13 @@ Saul, L.~K., Weinberger, K.~Q., Sha, F., Ham, J. \harvardand\ Lee, D.~D.
   B.~Scholkopf \harvardand\ A.~Zien (eds), {\em Semi-Supervised Learning}, MIT
   Press Scholarship Online, chapter~1.
 
+\harvarditem[Schölkopf et~al.]{Schölkopf, Smola \harvardand\
+  Müller}{1998}{schoelkopfetal1998}
+Schölkopf, B., Smola, A. \harvardand\ Müller, K.-R.  \harvardyearleft
+  1998\harvardyearright .
+\newblock Nonlinear component analysis as a kernel eigenvalue problem, {\em
+  Neural Computation} {\bf 10}:~1299--1319.
+
 \harvarditem{Sudderth}{2002}{sudderth2002}
 Sudderth, E.~B.  \harvardyearleft 2002\harvardyearright .
 \newblock Nonlinear manifold learning part ii 6.454 summary.
@@ -137,6 +145,13 @@ Verleysen, M. \harvardand\ Francois, D.  \harvardyearleft 2005\harvardyearright
 \harvarditem{Waldmann}{2014}{waldmann2014}
 Waldmann, S.  \harvardyearleft 2014\harvardyearright .
 \newblock {\em Topology. An Introduction}, Springer.
+
+\harvarditem[Weinberger et~al.]{Weinberger, Sha \harvardand\
+  Saul}{2004}{weinbergeretal2004}
+Weinberger, K.~Q., Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft
+  2004\harvardyearright .
+\newblock Learning a kernel matrix for nonlinear dimensionality reduction, {\em
+  Proceedings of the 21rd International Conference on Machine Learning}.
 
 \harvarditem{Wu \harvardand\ Wu}{2018}{wuwu2018}
 Wu, H.-T. \harvardand\ Wu, N.  \harvardyearleft 2018\harvardyearright .

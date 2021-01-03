@@ -1,141 +1,150 @@
 \subsection{Principles of Local Graph-Based Manifold Learning}
 \label{lgb-principles}
 
-% ------------------------------------------------------------------------------
-
-\subsubsection{General Idea}
-\label{lgb-idea}
-
 After the goal of manifold learning has been formalized, it shall now be laid 
-out how LLE -- as the conceptual parent of SS-LLE -- approaches the problem. 
-This chapter will first sketch fundamental ideas of local graph-based 
-techniques, including also Laplacian eigenmaps and H-LLE, to provide some 
-background.
-Local graph-based manifold learning techniques arise from a variety 
-of geometric intuitions and computational implementations but share a common 
-structure that allows for interpretation in a more general framework 
-(\citet{bengioetal2003}, \citet{bengioetal2004}).
+out how the problem is approached by LLE as the conceptual parent of SS-LLE 
+The incorporation of prior information is a rather different matter that will be 
+addressed in chapter \ref{sslle}. 
+Much of the theoretical foundation for LLE has been discussed only in later 
+work.
+In order to provide a more integrated background, explanations will therefore be 
+given in a broader context of local graph-based manifold learning which also 
+comprises Laplacian eigenmaps and H-LLE.
+The particular relationship of the three methods shall be made clear along the 
+way.
 
-Such a framework might be established from several perspectives; after all, the 
-different methods attempt to solve the same problem and can thus often be 
-translated into one another.
-This report will first present local graph-based manifold learning in the light 
-of \textit{kernel principal component analysis (kernel PCA)}.
-The reasoning behind this choice is that kernel PCA provides a useful intuition 
-to manifold learning and subsumes the other methods in a way that proves 
-fruitful for out-of-sample extension \citep{bengioetal2004}.
-Beyond this general introduction, however, the emphasis will lie on geometrical 
-and algorithmic commonalities that characterize how local-graph based methods in 
-particular approach the manifold learning problem.
-
-
-
-It must be noted that, while the algorithmic similarity is obvious, it is less 
-clear whether the established theoretical connection holds as well.
-\citet{belkinniyogi2001} derived their argumentation for using the graph 
-Laplacian in Laplacian eigenmaps from its analogy to the Laplace-Beltrami 
-operator on manifolds.
-In subsequent studies they confirmed the legitimacy of this approach by 
-providing proofs of convergence \citep{belkinniyogi2008}.
-It has been widely assumed that LLE may be cast into this framework considering 
-the inscribed eigenvalue problem as an approximation to the graph Laplacian 
-(\citet{belkinniyogi2003}, \citet{donohogrimes2003}).
-H-LLE neatly fits the scheme as it bears strong algorithmic resemblance to 
-LLE, hence the name, and can be viewed as a conceptual variant of Laplacian 
-eigenmaps, substituting the Laplacian for the Hessian \citep{donohogrimes2003}.
-Recent studies, however, indicate that the asymptotic convergence of LLE to the 
-Laplace-Beltrami operator might be subject to additional assumptions that might 
-not always hold \citep{wuwu2018}.
-Still, the three methods have at least a triangular relationship where H-LLE 
-borrows from the theory behind Laplacian eigenmaps and employs an algorithm 
-strongly reminiscent of LLE \citep{donohogrimes2003}.
-For the sake of a more integrated picture, the following explanations will 
-therefore be made in a shared framework \citep{bengioetal2003} with an emphasis 
-on the algorithmic commonalities.
+Local graph-based manifold learning generally arises from a variety 
+of geometric intuitions and computational implementations.
+Nonetheless, methods share common structures that allow for interpretation in a 
+more abstract framework (\citet{bengioetal2003}, \citet{bengioetal2004}).
+It should be noted that such a framework might be established from several 
+perspectives; after all, the different methods attempt to solve the same problem 
+and can thus often be translated into one another.
+This report will sketch the idea behind local graph-based manifold learning in 
+the light of \textit{kernel principal component analysis (kernel PCA)}.
+The reasoning behind this choice is that kernel PCA provides a useful 
+intuition to manifold learning and subsumes the other methods in a way that 
+proves beneficial for out-of-sample extension \citep{bengioetal2004}.
+Kernel PCA was actually proposed first and later shown to link the others by a 
+unified idea (\citet{hametal2003}, \citet{bengioetal2004}). 
 \\
 
-To begin with, all spectral methods of manifold learning perform two central 
-tasks: first, find a matrix representation for the intrinsic data structure; 
-second, perform a spectral decomposition of this matrix such that the data can 
-be expressed via coordinates on the principal eigenvectors
-\citep{sauletal2006}.
-Precisely how the matrix is constructed determines the kind of intrinsic 
-structure that can be learned and preserved \citep{cayton2005}.
-Local-graph based methods find theirs in a way that allows for two general 
-desiderata in manifold learning. 
+\textbf{Conceptual framework.} Kernel PCA builds upon two fundamental concepts 
+in machine learning: it performs \textit{principal component analysis (PCA)} on 
+data transformed by the \textit{kernel trick} \citep{schoelkopfetal1998}.
+PCA is a quite powerful technique by itself already.
+It finds the directions of maximum variance along with their respective 
+degree of importance through eigenanalysis of the empirical covariance 
+matrix (chapter \ref{eigenanalysis} will treat eigenanalysis in more detail).
+The data are projected into the linear subspace spanned by the $d$ 
+principal eigenvectors as determined by ordering of their associated 
+eigenvalues.
+In this, PCA is an orthogonal transformation of the input coordinates that 
+allows for representation by a smaller number of axes carrying most of the 
+inherent variability \citep{cayton2005}.
+
+Its central drawback is the confinement to linear subspaces.
+In general applications, data must be expected to lie on non-linear manifolds 
+and PCA will fail to retrieve their latent structure.
+Kernel PCA now applies a trick otherwise known from support vector machines.
+By kernelization, i.e., mapping the data to a space $\mathcal{F}$ of arbitrarily 
+high dimension, it obtains features that relate to the input in a possibly 
+complicated non-linear way\footnote{
+Support vector machines use the kernel trick to achieve linear separability. 
+An intuitive example may be given by data observed in two classes that form 
+concentric circles in $\R^2$. 
+While such data are not linearly separable in two dimensions, they are in three: 
+mapping the classes to different heights enables separation by a horizontal 
+hyperplane.
+This example also hints at the idea of (spectral) clustering to which kernel 
+PCA is indeed intimately related \citep{bengioetal2004}.
+}.
+Crucially, the feature map $\phi: \RD \rightarrow \mathcal{F}$ need never be 
+explicitly computed (this might prove prohibitively expensive).
+Kernel PCA instead solely relies on inner products $\langle \phi(\x_i), 
+\phi(\x_j) \rangle$ of the transformed inputs.
+Employing Mercer's theorem of functional analysis, these inner products may 
+be interpreted as performed by a continuous kernel 
+$\kappa: \RD \rightarrow \mathcal{F}, (\x_i, \x_j) \mapsto \kappa(\x_i, \x_j)$, 
+in some corresponding Hilbert space.
+Appropriate choice of $\kappa$ then allows for the data to be represented by a 
+matrix $K \in \R^{N \times N}, K_{ij} = \kappa(\x_i, \x_j)$.
+Diagonalization of $K$ via PCA eventually yields the sought-for 
+$d$-dimensional coordinates \citep{schoelkopfetal1998}.
+The data are thus still projected into a linear subspace, but one of features 
+that are able to capture non-linear intrinsic structures \citep{hametal2003}.
 \\
 
-\textbf{Non-linearity}. Early methods of manifold learning attempted to preserve 
-linear structures observed in $\RD$.
-The two most prominent of these are probably \textit{principal component 
-analysis (PCA)} and \textit{multi-dimensional scaling (MDS)}.
-Both eventually arrive at the same result; while PCA retains the global 
-covariance structure, decomposing the covariance matrix, MDS keeps global 
-pairwise Euclidean distances by decomposition of the Gram matrix 
-\citep{cayton2005}.
-The central drawback of these approaches is the confinement to learning linear 
-mappings.
+\textbf{Particular achievements.} The interesting part is now how manifold 
+learning methods arrive at a matrix representation of the data.
+All approaches considered here are variations of kernel PCA and might
+as such be characterized by their different kernel functions.
+For a deeper understanding it is, however, more illustrative to outline their 
+respective intuitions and emphasize algorithmic similarities\footnote{
+For an explicit interpretation of kernels in LLE, Laplacian eigenmaps and H-LLE 
+see for example \citet{bengioetal2004} and \citet{weinbergeretal2004}.
+}.
+These revolve around two desiderata of manifold learning that shall first be 
+made clear. 
 
-Graph-based methods acknowledge the fact that, in general, data will lie 
-on non-linear manifolds.
-The techniques studied here (explicitly or implicitly) revolve around 
-functionals that capture the intrinsic manifold structure and whose top or 
-bottom eigenvectors span the $d$-dimensional embedding space.
-These functionals are defined by differential operators on the manifold 
-\citep{vandermaatenetal2009}.
-In order to retrieve the sought-after coordinates, $\mani$ is approximated 
-by a discretized graph representation\footnote{
-Graphs are assumed to be connected, i.e., no vertex is left without at least 
-one edge linking it to another vertex.
-If the connectedness assumption does not hold globally, each connected 
-sub-graph must be considered separately \citep{belkinniyogi2001}.
-} of the finite data $\X$, which may be imagined as a skeletal model of $\mani$.
-The differential operator, defined with respect to the local tangent spaces of 
-$\mani$, is then estimated from the neighborhood graph.
-Eigenanalysis of the resulting matrix eventually yields the low-dimensional 
-representation (\citet{belkinniyogi2001}, \citet{donohogrimes2003}).
+\begin{itemize}
+  \item[] \textbf{Non-linearity.} As extensively discussed above, $\X$ must be 
+  assumed to lie on a non-linear manifold $\mani \subset \RD$, which is 
+  precisely why kernel-PCA-based methods apply the kernel trick\footnote{
+  By contrast, standard PCA, and the related method of \textit{multi-dimensional 
+  scaling (MDS)}, may be viewed as special instances of kernel PCA with linear 
+  kernels \citep{hametal2003}.
+  }.
+  Graph-based methods implicitly define their respective kernels via non-linear 
+  functionals that seek to capture the intrinsic manifold structure.
+  To this end, they construct a discretized approximation of the manifold 
+  surface with a finite neighborhood graph and use this to obtain a matrix of 
+  non-linear features \citep{sauletal2006}.
+  \item[] \textbf{Locality.} A second important property of $\mani$ is its 
+  potential non-convexity, which may be imagined as the manifold containing 
+  "holes" \citep{sauletal2006}.
+  Non-convexity occurs when $\mani$ is isometric to a non-convex subset of 
+  Euclidean space \citep{donohogrimes2003}. 
+  Intuitively, such behavior requires careful tracing of the manifold surface.
+  Local graph-based methods therefore focus on solely local manifold properties, 
+  and, in doing so, produce sparse matrix representations \citep{cayton2005}.
+  They are frequently contrasted to \textit{Isomap}, one of the 
+  earliest and most prominent examples of global manifold learning.
+  Isomap retains pairwise distances between points on the manifold surface as 
+  measured along graph edges via geodesic curves\footnote{
+  It is thus a non-linear variant of MDS which uses standard Euclidean distances 
+  \citep{tenenbaumdesilvalangford2000}.
+  } \citep{tenenbaumdesilvalangford2000}.
+  While it yields good results in many applications, Isomap does not 
+  sufficiently account for the curvature of highly non-convex manifolds.
+  In order to avoid this drawback, local methods therefore narrow down isometry 
+  to only hold between neighboring points and relax the parameter space 
+  condition to open, connected subspaces \citep{donohogrimes2003}.
+\end{itemize}
 
-\textit{Isomap} is one of the earliest graph-based techniques.
-Like MDS, Isomap preserves pairwise distances between points, but does so for 
-distances on the manifold surface (approximated by non-linear geodesics along 
-graph edges) rather than in the ambient Euclidean space 
-\citep{tenenbaumdesilvalangford2000}.
-\\
-
-\textbf{Locality}. Isomap relies on two central assumptions that turn out 
-to be too restrictive for some settings.
-The first is global isometry: for an arbitrary pair of points on $\mani$, their 
-geodesic distance is preserved in the mapping to $\Rd$ \citep{donohogrimes2003}.
-The second assumption states that the parameter space, i.e., the subset of 
-$\Rd$ to which $\mani$ is locally homeomorphic, must be convex.
-\citet{donohogrimes2003} show that many parameter spaces only obey the 
-weaker conditions of being open and connected.
-Isomap provides a global solution that proves too coarse when $\mani$ is 
-geodesically non-convex, i.e., when it is not isometric to a convex subset of 
-Euclidean space\footnote{
-Intuitively, this can be imagined as the manifold containing "holes".
-} \citep{sauletal2006}.
-Local graph-based methods focus solely on preserving local properties to avoid 
-this drawback and are thus able to trace highly non-convex manifold structures.
-In doing so, they produce sparse matrix representations \citep{cayton2005}.
-\\
-
-Laplacian eigenmaps, LLE and H-LLE all belong to the family 
-of local graph-based techniques.
-Summing up the above, their functionality may be schematized as follows:
+\textbf{Algorithmic structure.} Despite rather different geometrical intuitions, 
+which are discussed in chapter \ref{lgb-tech}, their common link to kernel PCA 
+leads to an interesting algorithmic similarity of Laplacian eigenmaps, LLE and 
+H-LLE.
+They all operationalize local-graph based manifold learning as follows 
+\citep{bengioetal2004}:
 
 \begin{tight_enumerate}
   \item Approximate the manifold structure by a sparse neighborhood graph 
   $\mathcal{G}$.
-  \item Construct a functional on $\mani$ that is associated with the 
-  intrinsic data structure and estimate the functional from $\mathcal{G}$.
-  \item Learn the $\Y$ by eigenanalysis of the estimated matrix.
+  \item Estimate a functional on $\mani$, associated with the intrinsic 
+  structure and directly related to a data-dependent kernel, from $\mathcal{G}$.
+  \item Perform an eigenanalysis of the estimated matrix and learn $\Y$ from 
+  coordinates of the $d$ principal (top or bottom) eigenvectors.
 \end{tight_enumerate}
 
-With this, the manifold learning problem is decomposed into a sequence of 
-tractable optimization steps \citep{sauletal2006}.
-The central concepts employed in all algorithms are briefly explained in the 
-subsequent chapters.
+The following chapter will provide some details on the central concepts employed 
+in this operationalization.
+
+% ------------------------------------------------------------------------------
+
+\subsection{Concepts in Operationalization}
+\label{concepts-op}
 
 % ------------------------------------------------------------------------------
 
@@ -211,21 +220,23 @@ may affect performance rather strongly \citep{sudderth2002}.
 % ------------------------------------------------------------------------------
 
 \subsubsection{Local Tangent Spaces}
-\label{eigenwert}
+\label{tangent-spaces}
 
-Both Laplacian eigenmaps and H-LLE employ \textit{local tangent spaces} to 
-construct their manifold functional, and as it may under certain assumptions 
-also be regarded as an approximation to the Laplace-Beltrami operator, so does 
-LLE (if only implicitly). 
-The tangent space $T_m(\mani)$ at some point $m \in \mani$ is spanned by vectors 
-tangent to $\mani$ at $m$. 
-Smoothness of $\mani$ ensures well-definedness of $T_m(\mani)$.
+Both Laplacian eigenmaps and H-LLE construct their manifold functional as a 
+differential operator with respect to \textit{local tangent spaces}.
+LLE can be shown to approximate the Laplacian-Beltrami operator used in 
+Laplacian eigenmaps under certain assumptions and thus also bears an implicit 
+relation to these tangent spaces (\citet{belkinniyogi2001}, 
+\citet{donohogrimes2003}).
+The local tangent space $T_m(\mani)$ at a point $m \in \mani$ is spanned by 
+vectors tangent to $\mani$ at $m$. 
+Smoothness of $\mani$ thereby ensures $T_m(\mani)$ is well-defined.
 
 \begin{minipage}[b]{0.5\textwidth}
   As $\mani$ is embedded in $\RD$, its tangent spaces are again Euclidean and of 
   dimension $d$, that is, $d$-dimensional hyperplanes as depicted in figure 
-  \ref{sphere-tangent}.
-  They may therefore be viewed as linear approximations to the manifold surface 
+  \ref{fig:sphere-tangent}.
+  They may be viewed as linear approximations to the manifold surface 
   \citep{sudderth2002}.
   If $m \in \mani$ is identified with the origin of $T_m(\mani)$, then every 
   point in the neighborhood of $m$ has a unique closest point 
@@ -252,14 +263,14 @@ Smoothness of $\mani$ ensures well-definedness of $T_m(\mani)$.
 % ------------------------------------------------------------------------------
 
 \subsubsection{Eigenanalysis}
-\label{eigenwert}
+\label{eigenanalysis}
 
 Eventually, all spectral manifold learning methods boil down to finding 
 eigenvectors of some matrix associated with the intrinsic manifold structure.
 
 % ------------------------------------------------------------------------------
 
-\subsection{Unsupervised Techniques of Local Graph-Based Manifold \\Learning}
+\subsection{Unsupervised Techniques}
 \label{lgb-tech}
 
 % ------------------------------------------------------------------------------
