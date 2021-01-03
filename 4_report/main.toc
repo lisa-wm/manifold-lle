@@ -4,29 +4,29 @@
 \contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{5}{}%
 \contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{6}{}%
 \contentsline {subsection}{\numberline {3.1}Principles of Local Graph-Based Manifold Learning}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Concepts in Operationalization}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Neighborhood Graphs}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Local Tangent Spaces}{9}{}%
+\contentsline {subsection}{\numberline {3.2}Concepts in Operationalization}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Neighborhood Graphs}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Local Tangent Spaces}{10}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Eigenanalysis}{10}{}%
 \contentsline {subsection}{\numberline {3.3}Unsupervised Techniques}{10}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}Laplacian Eigenmaps}{10}{}%
 \contentsline {subsubsection}{\numberline {3.3.2}Locally Linear Embedding (LLE)}{10}{}%
 \contentsline {subsubsection}{\numberline {3.3.3}Hessian Locally Linear Embedding (H-LLE)}{10}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{10}{}%
-\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{10}{}%
+\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{11}{}%
 \contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{11}{}%
 \contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{11}{}%
-\contentsline {section}{\numberline {5}Experiment Results}{11}{}%
-\contentsline {subsection}{\numberline {5.1}Experimental Design}{11}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{11}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{11}{}%
-\contentsline {subsection}{\numberline {5.2}Replication of Original Results on the Incomplete Tire}{11}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Incomplete Tire Data}{11}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Choice of Hyperparameter and Prior Point Configuration}{11}{}%
-\contentsline {subsection}{\numberline {5.3}Application on Swiss Roll and Guglhupf Data}{11}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Swiss Roll and Guglhupf Data}{11}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Choice of Hyperparameter and Prior Point Configuration}{11}{}%
-\contentsline {subsection}{\numberline {5.4}Results and Discussion}{11}{}%
-\contentsline {section}{\numberline {6}Conclusion}{11}{}%
+\contentsline {section}{\numberline {5}Experiment Results}{12}{}%
+\contentsline {subsection}{\numberline {5.1}Experimental Design}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Replication of Original Results on the Incomplete Tire}{12}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Incomplete Tire Data}{12}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Choice of Hyperparameter and Prior Point Configuration}{12}{}%
+\contentsline {subsection}{\numberline {5.3}Application on Swiss Roll and Guglhupf Data}{12}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Swiss Roll and Guglhupf Data}{12}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Choice of Hyperparameter and Prior Point Configuration}{12}{}%
+\contentsline {subsection}{\numberline {5.4}Results and Discussion}{12}{}%
+\contentsline {section}{\numberline {6}Conclusion}{12}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  3 JAN 2021 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  3 JAN 2021 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -685,45 +685,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--31
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 46--77
-
- []
-
-[7] [8]
-<figures/neighborhood-graph.pdf, id=81, 578.16pt x 578.16pt>
+<figures/spirals.png, id=75, 463.7325pt x 134.00063pt>
+File: figures/spirals.png Graphic file (type png)
+<use figures/spirals.png>
+Package pdftex.def Info: figures/spirals.png  used on input line 79.
+(pdftex.def)             Requested size: 426.79134pt x 123.32907pt.
+ [7 <./figures/spirals.PNG>] [8]
+<figures/neighborhood-graph.pdf, id=83, 578.16pt x 578.16pt>
 File: figures/neighborhood-graph.pdf Graphic file (type pdf)
 <use figures/neighborhood-graph.pdf>
-Package pdftex.def Info: figures/neighborhood-graph.pdf  used on input line 211
+Package pdftex.def Info: figures/neighborhood-graph.pdf  used on input line 227
 .
 (pdftex.def)             Requested size: 172.84813pt x 201.24467pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 186--219
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 202--235
 [][] [] [] 
  []
 
-<figures/sphere-tangent.pdf, id=83, 343.2825pt x 305.22029pt>
+[9 <./figures/neighborhood-graph.pdf>]
+<figures/sphere-tangent.pdf, id=94, 343.2825pt x 305.22029pt>
 File: figures/sphere-tangent.pdf Graphic file (type pdf)
 <use figures/sphere-tangent.pdf>
-Package pdftex.def Info: figures/sphere-tangent.pdf  used on input line 255.
+Package pdftex.def Info: figures/sphere-tangent.pdf  used on input line 271.
 (pdftex.def)             Requested size: 153.64441pt x 163.3105pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 235--262
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 251--278
 [][] [] [] 
  []
 
-[9 <./figures/neighborhood-graph.pdf>]) (./chapters/sslle.Rnw [10 <./figures/sp
-here-tangent.pdf
+) (./chapters/sslle.Rnw [10 <./figures/sphere-tangent.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/sphere-tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
->]) (./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [11]
+>]) (./chapters/experiment.Rnw) (./chapters/conclusion.Rnw) [11] [12]
 (./chapters/appendix.Rnw) [5] [6] (./main.bbl [7]) [8] [9] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10646 strings out of 479485
- 157260 string characters out of 5875915
- 467553 words of memory out of 5000000
- 27355 multiletter control sequences out of 15000+600000
+ 10655 strings out of 479485
+ 157432 string characters out of 5875915
+ 467562 words of memory out of 5000000
+ 27363 multiletter control sequences out of 15000+600000
  581553 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -743,10 +744,10 @@ c/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 2.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:
 /texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (24 pages, 857829 bytes).
+Output written on main.pdf (25 pages, 882660 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 182 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

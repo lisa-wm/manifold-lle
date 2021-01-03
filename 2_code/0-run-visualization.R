@@ -56,6 +56,46 @@ ggsave(
   height = 8)
 dev.off()
 
+# ILLUSTRATION KERNEL PCA ------------------------------------------------------
+
+spirals_data <- mlbench::mlbench.spirals(
+  n = 100L, 
+  cycles = 1, 
+  sd = 0) %>% 
+  as.data.table()
+spirals_data <- spirals_data[
+  classes == 1 & x.1 < 0.4
+  ][, classes := seq(0, 1, length.out = length(.I))
+    ][, t := seq(0, 1, length.out = length(.I))]
+setnames(spirals_data, c("x", "y", "z", "t"))
+
+n_colors <- nrow(spirals_data)
+
+# FIXME Save via orca w/ correct angles
+
+spirals_1d <- plot_manifold_1d(spirals_data[, .(t)], n_colors)
+spirals_2d <- plot_manifold_2d(spirals_data[, .(x, y, t)], n_colors)
+spirals_3d <- plot_manifold_3d(spirals_data, n_colors)
+
+orca(
+  spirals_1d, 
+  "4_report/figures/spirals-1d.pdf",
+  height = 400,
+  width = 400
+)
+orca(
+  spirals_2d, 
+  "4_report/figures/spirals-2d.pdf",
+  height = 400,
+  width = 300
+)
+orca(
+  spirals_3d, 
+  "4_report/figures/spirals-3d.pdf",
+  height = 400,
+  width = 300
+)
+
 # SPHERE WITH TANGENT PLANE ----------------------------------------------------
 
 sphere_tangent_plane <- plot_manifold_3d(make_unit_sphere(n_points = 3000)) %>% 

@@ -10,6 +10,7 @@ packages_required <-  c(
   "data.table", # data wrangling
   "here", # path management
   "igraph", # graph visualizations
+  "mlbench", # artifical data sets for benchmarking
   "plotly", # 3d plots
   "tidyverse" # data wrangling
 

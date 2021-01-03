@@ -73,7 +73,23 @@ Diagonalization of $K$ via PCA eventually yields the sought-for
 $d$-dimensional coordinates \citep{schoelkopfetal1998}.
 The data are thus still projected into a linear subspace, but one of features 
 that are able to capture non-linear intrinsic structures \citep{hametal2003}.
-\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{figures/spirals}
+  \caption[Schematic functionality of kernel PCA]{Schematic functionality of 
+  kernel PCA: the original data (\textit{left}) are observed in two dimensions 
+  but clearly intrinsically one-dimensional, where the intrinsic manifold 
+  feature is expressed by coloring. The kernel trick creates a non-linear 
+  map, visualized here as mapping the intrinsic feature to a third coordinate 
+  axis (\textit{middle}). Projecting the data into the subspace of the intrinsic 
+  feature yields the desired one-dimensional representation (\textit{right}). 
+  \textit{Source:} own representation, using a subset of \texttt{mlbench}'s 
+  noise-free \texttt{spirals} data. Note that this is but a schematic depiction 
+  where the mid and right representation have not been created by an actual 
+  implementation of kernel PCA.}
+  \label{fig:spirals}
+\end{figure}
 
 \textbf{Particular achievements.} The interesting part is now how manifold 
 learning methods arrive at a matrix representation of the data.
