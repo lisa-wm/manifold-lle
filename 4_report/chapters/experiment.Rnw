@@ -24,10 +24,10 @@
 
 % ------------------------------------------------------------------------------
 
-\subsection{Application on Swiss Roll and Guglhupf Data}
+\subsection{Application on XXX Data}
 \label{applic-new}
 
-\subsubsection{Swiss Roll and Guglhupf Data}
+\subsubsection{XXX Data}
 \label{data-swiss}
 
 \subsubsection{Choice of Hyperparameter and Prior Point Configuration}

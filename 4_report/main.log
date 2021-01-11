@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  3 JAN 2021 20:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  10 JAN 2021 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -733,6 +733,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 316--327
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--348
+
+ []
+
 [11]) (./chapters/sslle.Rnw) (./chapters/experiment.Rnw)
 (./chapters/conclusion.Rnw) [12] [13] (./chapters/appendix.Rnw) [5] [6]
 (./main.bbl [7]) [8] [9] (./main.aux) ) 
@@ -762,7 +767,7 @@ dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 903377 bytes).
+Output written on main.pdf (26 pages, 903652 bytes).
 PDF statistics:
  193 PDF objects out of 1000 (max. 8388607)
  128 compressed objects within 2 object streams
