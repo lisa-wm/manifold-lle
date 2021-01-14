@@ -1,0 +1,30 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Bishop}{2006}{bishop2006}
+Bishop, C.~M.  \harvardyearleft 2006\harvardyearright .
+\newblock {\em Pattern Recognition and Machine Learning}, Springer.
+
+\harvarditem[Bouveyron et~al.]{Bouveyron, Celeux \harvardand\
+  Girard}{2011}{bouveyronetal2011}
+Bouveyron, C., Celeux, G. \harvardand\ Girard, S.  \harvardyearleft
+  2011\harvardyearright .
+\newblock Intrinsic dimension estimation by maximum likelihood in isotropic
+  probabilistic pca, {\em Pattern Recognition Letters} {\bf
+  32}(14):~1706--1713.
+
+\harvarditem{Burges}{2004}{burges2004}
+Burges, C. J.~C.  \harvardyearleft 2004\harvardyearright .
+\newblock Geometric methods for feature extraction and dimensional reduction: A
+  guided tour, {\em Technical Report MSR-TR-2004-55}, Microsoft Research.
+
+\harvarditem{Shlens}{2005}{shlens2005}
+Shlens, J.  \harvardyearleft 2005\harvardyearright .
+\newblock A tutorial on principal component analysis, {\em Technical report}.
+
+\harvarditem{Tipping \harvardand\ Bishop}{1999}{tippingbishop1999}
+Tipping, M.~E. \harvardand\ Bishop, C.~M.  \harvardyearleft
+  1999\harvardyearright .
+\newblock Mixtures of probabilistic principal component analysers, {\em Neural
+  Computation} {\bf 11}(2):~443--482.
+
+\end{thebibliography}
