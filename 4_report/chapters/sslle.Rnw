@@ -19,7 +19,7 @@
   \item What is different wrt standard LLE?
 \end{itemize}
 
-\subsection{Strengths and Drawbacks of SS-LLE}
+\subsection{Strengths and Drawbacks}
 \label{pro-con}
 
 See \citep{vandermaatenetal2009} for extensive discussion of manifold learning
