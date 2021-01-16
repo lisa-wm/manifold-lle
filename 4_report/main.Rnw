@@ -188,7 +188,7 @@ Munich, month day\textsuperscript{th}, 2021
 
 \section{Local Graph-Based Manifold Learning}
 \label{lgb-mani-learn}
-\input{chapters/graph-based-models-new.Rnw}
+\input{chapters/graph-based-models.Rnw}
 
 \section{Semi-Supervised Locally Linear Embedding (SSLLE)}
 \label{sslle}

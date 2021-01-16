@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 JAN 2021 13:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 JAN 2021 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,7 +713,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--242
 
  []
 
-) (./chapters/graph-based-models-new.Rnw [6]
+) (./chapters/graph-based-models.Rnw [6]
 <figures/models-overview.png, id=83, 339.2675pt x 252.945pt>
 File: figures/models-overview.png Graphic file (type png)
 <use figures/models-overview.png>
@@ -749,11 +749,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--261
 <figures/s-curve-connected.pdf, id=101, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 303.
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 293.
 
-(pdftex.def)             Requested size: 144.04109pt x 191.30197pt.
+(pdftex.def)             Requested size: 172.84813pt x 229.56143pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 269--310
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 269--300
 [][] [] [] 
  []
 
@@ -793,7 +793,7 @@ LaTeX Warning: There were undefined references.
  ) 
 Here is how much of TeX's memory you used:
  10668 strings out of 479485
- 157589 string characters out of 5875915
+ 157573 string characters out of 5875915
  466629 words of memory out of 5000000
  27373 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
@@ -817,7 +817,7 @@ cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 1219242 bytes).
+Output written on main.pdf (26 pages, 1219239 bytes).
 PDF statistics:
  199 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams
