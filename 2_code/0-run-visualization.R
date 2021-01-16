@@ -6,7 +6,7 @@
 
 # S-CURVE ----------------------------------------------------------------------
 
-s_curve <- plot_manifold_3d(make_s_curve(n_points = 10000))
+s_curve <- plot_manifold_3d(make_s_curve(n_points = 10000L))
 
 # FIXME Check out how orca can be used with here()
 
@@ -55,6 +55,19 @@ ggsave(
   width = 8, 
   height = 8)
 dev.off()
+
+# EXAMPLE NEIGHBORHOOD GRAPH 3D ------------------------------------------------
+
+s_curve_connected <- plot_manifold_3d_connected(
+  make_s_curve(n_points = 1000L),
+  k = 3L) 
+
+orca(
+  s_curve_connected, 
+  "4_report/figures/s-curve-connected.pdf",
+  height = 800,
+  width = 900
+)
 
 # ILLUSTRATION KERNEL PCA ------------------------------------------------------
 

@@ -10,7 +10,8 @@ packages_required <-  c(
   "data.table", # data wrangling
   "here", # path management
   "igraph", # graph visualizations
-  "mlbench", # artifical data sets for benchmarking
+  "kknn", # k-nearest neighbor search
+  "mlbench", # artificial data sets for benchmarking
   "plotly", # 3d plots
   "tidyverse" # data wrangling
 
@@ -44,3 +45,13 @@ set_up_packages <- function(pkg) {
 }
 
 invisible(set_up_packages(packages_required))
+
+# Find and source all files containing functions
+
+files_required <- list.files(
+  here("2_code"), 
+  pattern = "^fun_.*\\.R$", 
+  recursive = TRUE,
+  full.names = TRUE)
+
+invisible(sapply(files_required, source, .GlobalEnv))
