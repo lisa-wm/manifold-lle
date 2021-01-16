@@ -287,16 +287,6 @@ indicate neighborhood relations \citep{belkinniyogi2001}.
   \phantom{xxx}
 \end{minipage}
 \begin{minipage}[b]{0.45\textwidth}
-  % \begin{figure}[H]
-  %   \centering
-  %   \includegraphics[trim = 90 50 60 30, clip, % left bottom right top
-  %     width = 0.9\textwidth]{figures/neighborhood-graph}
-  %   \caption[Exemplary neighborhood graph]{Exemplary neighborhood graph for 
-  %   seven fictional data points where outgoing arrows point to members of the 
-  %   vertex's respective $k$-neighborhood, $k = 2$. \textit{Source:} own 
-  %   representation.}
-  %   \label{fig:neighbor-graph}
-  % \end{figure}
   \begin{figure}[H]
     \centering
     \includegraphics[trim = 250 170 200 130, clip, % left bottom right top

@@ -11,7 +11,7 @@ packages_required <-  c(
   "here", # path management
   "igraph", # graph visualizations
   "kknn", # k-nearest neighbor search
-  "mlbench", # artifical data sets for benchmarking
+  "mlbench", # artificial data sets for benchmarking
   "plotly", # 3d plots
   "tidyverse" # data wrangling
 
