@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 JAN 2021 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 JAN 2021 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,7 +714,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--242
  []
 
 ) (./chapters/graph-based-models-new.Rnw [6]
-<figures/models-overview.png, id=77, 339.2675pt x 252.945pt>
+<figures/models-overview.png, id=83, 339.2675pt x 252.945pt>
 File: figures/models-overview.png Graphic file (type png)
 <use figures/models-overview.png>
 Package pdftex.def Info: figures/models-overview.png  used on input line 33.
@@ -725,7 +725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--52
  []
 
 [7 <./figures/models-overview.PNG>]
-<figures/spirals.png, id=84, 463.7325pt x 134.00063pt>
+<figures/spirals.png, id=90, 463.7325pt x 134.00063pt>
 File: figures/spirals.png Graphic file (type png)
 <use figures/spirals.png>
 Package pdftex.def Info: figures/spirals.png  used on input line 125.
@@ -740,19 +740,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--188
 
  []
 
-[9 <./figures/spirals.PNG>] [10]
-Underfull \hbox (badness 1389) in paragraph at lines 262--279
-\T1/aer/m/n/12 char-ac-ter-ized by a \T1/aer/m/it/12 neigh-bor-hood graph
+[9 <./figures/spirals.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 229--261
+
  []
 
-<figures/s-curve-connected.pdf, id=95, 681.50606pt x 606.34526pt>
+[10]
+<figures/s-curve-connected.pdf, id=101, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 297.
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 303.
 
 (pdftex.def)             Requested size: 144.04109pt x 191.30197pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 261--306
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 269--310
 [][] [] [] 
  []
 
@@ -816,10 +817,10 @@ cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 1145505 bytes).
+Output written on main.pdf (26 pages, 1219242 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 199 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

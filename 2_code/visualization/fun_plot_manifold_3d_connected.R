@@ -7,38 +7,33 @@
 #' @param data Data table object containing three columns representing points'
 #' coordinates in R3 (named x, y, z) and one column representing points' main
 #' dimension on the manifold (named t; used for coloring)
-#' @param n_colors Number of rainbow columns to be displayed
+#' @param k Number of nearest neighbors to be found
 #' @return Plotly object
 
 # FIXME Make available for k > 1
 # FIXME Avoid large jump in the end
 
-plot_manifold_3d_connected <- function(data, n_colors = 10) {
+plot_manifold_3d_connected <- function(data, k = 2L) {
   
   # Perform basic input checks
   
   checkmate::assert_data_table(data)
-  checkmate::assert_count(n_colors)
   stopifnot(names(data) %in% c("x", "y", "z", "t"))
   
-  data_ordered_t <- setorder(copy(data), t)
-  data_ordered_t[, id := .I]
-  dist_mat <- dist(data_ordered_t[, .(x, y, z)], method = "euclidean")
-  x <- data_ordered_t[id == 1L]
-  used_points <- c(x$id)
+  k_neighborhoods <- kknn::kknn(
+    t ~ .,
+    data, # train
+    data, # test
+    k = k + 1
+  )$C
   
-  while (length(used_points) < nrow(data)) {
-    
-    dist_vec_x <- as.matrix(dist_mat)[x$id, ]
-    neighbors_x <- (order(dist_vec_x)[1:nrow(data)])[-1]
-    new_neighbors_x <- setdiff(neighbors_x, used_points)
-    next_id <- new_neighbors_x[1]
-    used_points <- c(used_points, next_id)
-    x <- data_ordered_t[next_id, ]
-    
-  }
+  k_neighborhoods <- as.data.table(k_neighborhoods)
+  setnames(k_neighborhoods, c("x", paste0("neighbor_", c(1:k))))
   
-  data_ordered_eucl <- data_ordered_t[match(used_points, data_ordered_t$id), ]
+  neighborhood_data <- lapply(
+    seq_len(nrow(data)), 
+    function(i) {
+      bind_rows(data[i, ], data[as.numeric(k_neighborhoods[i, 2:(k + 1)]), ])})
   
   scene <- list(
     camera = list(eye = list(
@@ -52,21 +47,38 @@ plot_manifold_3d_connected <- function(data, n_colors = 10) {
   )
   
   # Make 3D scatterplot
-
-  plotly::plot_ly(
-    data_ordered_eucl, 
+  
+  neighborhood_graph <- plotly::plot_ly(
+    data, 
     x = ~ x, 
     y = ~ y, 
-    z = ~ z,
-    marker = list(size = 3L, color = "gray"),
-    line = list(size = 3L, color = "gray")) %>% 
+    z = ~ z) %>% 
     add_trace(
       type = "scatter3d",
-      mode = "lines+markers"
-    ) %>%
+      mode = "markers",
+      marker = list(size = 3L, color = "gray")
+    )  %>% 
     hide_colorbar() %>% 
+    hide_guides() %>% 
     layout(scene = scene)
   
-}
+  # Add edges in a sequential manner (necessary so that no connections between 
+  # neigborhoods are established, only within)
+  
+  for (i in seq_len(nrow(data))) {
 
-plot_manifold_3d_connected(make_s_curve(n_points = 100L)) 
+    neighborhood_graph <- neighborhood_graph %>%
+      add_trace(
+        x = neighborhood_data[[i]]$x,
+        y = neighborhood_data[[i]]$y,
+        z = neighborhood_data[[i]]$z,
+        type = "scatter3d",
+        mode = "segments",
+        line = list(size = 3L, color = "gray")
+      )
+
+  }
+  
+  neighborhood_graph
+  
+}

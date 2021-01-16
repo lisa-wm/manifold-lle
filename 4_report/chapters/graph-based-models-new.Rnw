@@ -257,14 +257,16 @@ Both $k$ and $\epsilon$ are hyperparameters that must be specified up-front.
 Their choice reflects beliefs about the topological structure of $\mani$ -- 
 smaller neighborhoods corresponding to a higher degree of non-linearity -- and 
 may affect performance rather strongly \citep{sudderth2002}.
+\\
+
+\textbf{Neighborhood graphs.}
+$\mani$ can now be characterized by a \textit{neighborhood 
+graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, still assuming it is 
+sampled well by $\X$. 
+Inputs $\x \in \X$ form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
+indicate neighborhood relations \citep{belkinniyogi2001}.
 
 \begin{minipage}[b]{0.5\textwidth}
-  \textbf{Neighborhood graphs.}
-  $\mani$ can now be characterized by a \textit{neighborhood 
-  graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, still assuming it is 
-  sampled well by $\X$. 
-  Inputs $\x \in \X$ form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
-  indicate neighborhood relations \citep{belkinniyogi2001}.
   Each vertex is connected to its $k$ nearest neighbors or all points 
   within $\epsilon$-radius, depending on the neighborhood definition.
   It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
@@ -273,9 +275,13 @@ may affect performance rather strongly \citep{sudderth2002}.
   $k$-neighborhoods therefore lead to directed graphs.
   Conversely, the $\epsilon$-distance boundary holds in both directions and 
   produces undirected graphs \citep{heetal2005}.
-  A fictional example for a directed graph is given by figure 
-  \ref{fig:neighbor-graph}, showing $k$-neighborhoods for seven data points 
-  ($k = 2$).
+  % A fictional example for a directed graph is given by figure 
+  % \ref{fig:neighbor-graph}, showing $k$-neighborhoods for seven data points 
+  % ($k = 2$).
+  Figure \ref{fig:neighbor-graph} shows how a neighborhood graph may be used as 
+  an approximation for the example of the S-curve manifold.
+  It was built using $k$-neighborhoods with $k = 3$.
+  Note that no information on the latent manifold coordinates is required.
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -294,11 +300,9 @@ may affect performance rather strongly \citep{sudderth2002}.
   \begin{figure}[H]
     \centering
     \includegraphics[trim = 250 170 200 130, clip, % left bottom right top
-      width = 0.75\textwidth]{figures/s-curve-connected}
-    \caption[Exemplary neighborhood graph]{Exemplary neighborhood graph for 
-    300 points sampled from the S-curve manifold. The graph is computed using 
-    $k$-neighborhoods, $k = 1$, in a sequential manner: from a starting point, 
-    the respective nearest neighbor is found among the previously unused points.
+      width = 0.9\textwidth]{figures/s-curve-connected}
+    \caption[S-curve neighborhood graph]{$k$-neighborhood graph for 1000 points 
+    sampled from the S-curve with $k = 5$.
     \textit{Source:} own representation.}
     \label{fig:neighbor-graph}
   \end{figure}

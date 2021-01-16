@@ -58,7 +58,9 @@ dev.off()
 
 # EXAMPLE NEIGHBORHOOD GRAPH 3D ------------------------------------------------
 
-s_curve_connected <- plot_manifold_3d_connected(make_s_curve(n_points = 300L)) 
+s_curve_connected <- plot_manifold_3d_connected(
+  make_s_curve(n_points = 1000L),
+  k = 3L) 
 
 orca(
   s_curve_connected, 
