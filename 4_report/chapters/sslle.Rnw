@@ -12,6 +12,17 @@
   \item Exact vs inexact knowledge
 \end{itemize}
 
+test $\mathbf{x}$
+
+Prior points: take minmax approach from sparse MDS (Sparse multidimensional 
+scaling using landmark points Vin de Silva and Joshua B. Tenenbaum 2004). 
+Easy and deterministic after choosing seed value.
+Instead Euclidean distances, though, take geodesics as estimated in isomap.
+
+can we view the prior info as some kind of active learning? like we choose 
+some points to label in a hopefully cleverish way and then hand them to you 
+(e.g., to look at some pictures instead of all droelf thousand)
+
 \subsection{SS-LLE Algorithm}
 \label{algo-sslle}
 

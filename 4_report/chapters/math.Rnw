@@ -167,32 +167,37 @@ This may be loosely put as paths linking arbitrary pairs of manifold points
 \citep{mccleary2006}.
 } \citep{mafu2011}.
 For smooth, connected manifolds, \textit{geodesic distance} is the length of the 
-shortest curve (\textit{geodesic}) on $\mani$ between two points on $\mani$ as 
-measured by arc-length\footnote{
-Geodesics are but a peripheral note here; for a precise definition see 
-\citet{mafu2011}.
-}.
+shortest curve (\textit{geodesic}) on $\mani$ between two points on $\mani$.
+A curve $c$ in $\mani$ is a smooth mapping from an open interval $\Lambda 
+\subset \R$ into $\mani$.
+$c$ is parametrized by a point $\lambda \in \Lambda$, such that
+$c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T$ (all $c_j, j = 1, ..., d$,
+having a sufficient number of continuous derivatives) is a curve in $\Rd$.
+Component-wise differentiation with respect to $\lambda$ yields the
+\textit{velocity} of $c$ in $\lambda$, $c^{\prime}(\lambda) =
+(c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T$.
+The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
+$\| \cdot \|^2$ denotes the square norm.
+Distance along this curve is measured by the arc-length
+$L(c) = \int_{\pv}^{\qv} \| c^{\prime}(\lambda) \|^2 d\lambda$.
+Eventually, geodesic distance can be derived as the length of the shortest such
+curve, out of the set of differentiable curves in $\mani$ that connect $\pv$ and
+$\qv$, $\mathcal{C}(\pv, \qv)$: \\
+$d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c)$
+\citep{mafu2011}.
 Intuitively, geodesic distance can be identified with Euclidean distance in
 Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
 
-% A curve $c$ in $\mani$ is a smooth mapping from an open interval 
-% $\Lambda \subset \R$ into $\mani$. 
-% $c$ is parametrized by a point $\lambda \in \Lambda$, such that 
-% $c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T$ (all $c_j, j = 1, ..., d$,
-% having a sufficient number of continuous derivatives) is a curve in $\Rd$.
-% Component-wise differentiation with respect to $\lambda$ yields the 
-% \textit{velocity} of $c$ in $\lambda$, $c^{\prime}(\lambda) =
-% (c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T$.
-% The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
-% $\| \cdot \|^2_2$ denotes the square norm.
-% Then, distance along this curve is measured by the arc-length 
-% $L(c) = \int_{\pv}^{\qv} \| c^{\prime}(\lambda) \|^2_2 d\lambda$.
-% 
-% Finally, geodesic distance can be derived as the length of the shortest such
-% curve, out of the set of differentiable curves in $\mani$ that connect $\pv$ and 
-% $\qv$, $\mathcal{C}(\pv, \qv)$: \\
-% $d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c)$ 
-% \citep{mafu2011}. 
+% as 
+% measured by arc-length\footnote{
+% Geodesics are but a peripheral note here; for a precise definition see 
+% \citet{mafu2011}.
+% }.
+
+
+
+
+
 
 % ------------------------------------------------------------------------------
 

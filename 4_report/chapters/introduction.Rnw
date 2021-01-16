@@ -3,7 +3,9 @@ While a large amount of samples is beneficial to learning, high-dimensional
 feature spaces, such as in speech recognition or gene processing, pose serious 
 obstacles to the performance and convergence of most algorithms 
 \citep{cayton2005}. 
+\\
 
+\textbf{High dimensionality.}
 Three aspects strike as particularly problematic: computational operations, 
 interpretation of results, and geometric idiosyncrasies.
 Computational cost must be considered but is becoming less of an issue with 
@@ -26,7 +28,9 @@ concepts\footnote{For instance, consider support vector machines and
 $k$-nearest neighbors, both of which rely on distances, or tuning, which often
 requires extensive sampling of the hyperparameter space.} and see 
 their functionality deteriorate \citep{verleysenfrancois2005}. 
+\\
 
+\textbf{Manifold learning.}
 These challenges make the case for \textit{dimensionality reduction}, that is, 
 the endeavor of compressing problem dimensionality to a manageable size. 
 Far from undue simplification, dimensionality reduction is justified by the 
@@ -39,7 +43,6 @@ small number of latent features.
 More formally, the data are assumed to lie on a $d$-dimensional 
 \textit{manifold} embedded in the $D$-dimensional observation space, with 
 $d \ll D$ \citep{cayton2005}.
-
 A crucial property of $d$-manifolds, i.e., the $d$-dimensional generalization of
 a curved surface, embedded in $\RD$, is their local topological equivalence to 
 $\Rd$ \citep{mafu2011}.
@@ -59,7 +62,11 @@ Instead, models must learn the intrinsic neighborhood structure of the manifold
 to establish a notion of "nearness" between points.
 Standard distance metrics do not apply (globally) as points on general manifolds 
 are connected by curved paths rather than straight lines \citep{mafu2011}.
+\\
 
+\textcolor{red}{Adapt to structure of chapter 3}
+
+\textbf{Local graph-based techniques.}
 Various approaches have been proposed to retrieve points' manifold coordinates.
 A taxonomy may, for example, be found in \citet{vandermaatenetal2009}. 
 Many rely on spectral techniques, trying to find a matrix representation of the 
@@ -85,9 +92,11 @@ local neighborhood structures, modeled through weighted graph representations.
 The information from these graphs is then condensed into a sparse matrix. 
 Eventually, the principal eigenvectors of this matrix yield the desired 
 low-dimensional coordinates \citep{vandermaatenetal2009}.
+\\
 
+\textbf{Locally linear embedding.}
 One such local graph-based technique is \textit{locally linear embedding (LLE)}, 
-the unsupervised algorithm SS-LLE builds upon \citep{roweissaul2000}.
+the unsupervised algorithm SSLLE builds upon \citep{roweissaul2000}.
 LLE is based on the idea that the embedded manifold may be approximated by 
 locally linear neighborhoods in $\RD$.
 Weights for the resulting graph are obtained by linear reconstruction of points 
@@ -100,48 +109,44 @@ Euclidean coordinates that preserve them best by means of spectral decomposition
 
 Much of the theoretical foundation for LLE has been discussed only in later 
 work.
-In particular, \citet{belkinniyogi2001} proposed \textit{Laplacian eigenmaps}, 
-a method which employs the graph Laplacian, and provided evidence for the fact 
-that, under certain assumptions, LLE may be generalized to the same framework 
-\citep{belkinniyogi2003}.
-A later proposition by \citet{donohogrimes2003}, \textit{Hessian LLE (H-LLE)}, 
+In particular, \citet{belkinniyogi2001} proposed \textit{Laplacian eigenmaps 
+(LEM)}, a method which employs the graph Laplacian, and provided evidence for 
+the fact that, under certain assumptions, LLE may be generalized to the same 
+framework \citep{belkinniyogi2003}.
+A later proposition by \citet{donohogrimes2003}, \textit{Hessian LLE (HLLE)}, 
 may be viewed as an algorithmic variant of LLE and a conceptual variant of 
-Laplacian eigenmaps (using the Hessian en lieu of the Laplacian).
-The theoretical link between LLE and Laplacian eigenmaps, centered around 
-the Laplace-Beltrami operator, has recently been found to hold less generally 
-than previously assumed \citep{wuwu2018}. 
+LEM (using the Hessian en lieu of the Laplacian).
+The theoretical link between LLE and LEM, centered around the Laplace-Beltrami 
+operator, has recently been found to hold less generally than previously assumed \citep{wuwu2018}. 
 It still appears beneficial to interpret all methods in this common framework 
 also found by \citet{bengioetal2003}; a more thorough study of convergence 
 guarantees is left to future research.
+\\
 
+\textbf{Semi-supervised extension.}
 The above approaches have been shown to successfully retrieve manifold 
 structures in different applications \citep{wuwu2018}.
 However, their fully unsupervised functionality offers a drawback: they may fail
 to find a low-dimensional embedding that has an actual reflection in the 
 real-life setting.
 Such situations might require the specification of some pre-labeled instances.
-Also, it may simply be the case that manual analysis of a subset of the data 
-is available at low cost \citep{yangetal2006}.
+Also, it may simply be the case that some observations already come with labels, 
+or that annotation of a subset of the data is available at low cost 
+\citep{yangetal2006}.
 When prior knowledge is at hand it is only natural to use it.
 Therefore, \citet{yangetal2006} proposed \textit{semi-supervised locally linear 
-embedding (SS-LLE)}, an extension to LLE that is able to harvest prior 
+embedding (SSLLE)}, an extension to LLE that is able to harvest prior 
 information.
 \\
 
+\textbf{Outline.}
 Indeed, the presented results indicate considerable success of their technique.
 It is the aim of this report to (1) reproduce these results, thereby creating
-an open-source implementation of SS-LLE, and (2) to apply SS-LLE to further 
+an open-source implementation of SSLLE, and (2) to apply SSLLE to further 
 manifold learning tasks for a more thorough assessment of its performance. 
 The rest of the report is organized as follows: chapter \ref{math} 
 provides a mathematical framework where fundamental concepts are briefly 
-introduced; chapter \ref{lgb-mani-learn} explains the framework of local 
-graph-based manifold learning; chapter \ref{sslle} presents SS-LLE in detail; 
+introduced; chapter \ref{lgb-mani-learn} explains the idea of local 
+graph-based manifold learning; chapter \ref{sslle} presents SSLLE in detail; 
 chapter \ref{experiment} discusses the results of the conducted experiments; and 
 chapter \ref{concl} draws final conclusions.
-
-
-
-
-
-
-
