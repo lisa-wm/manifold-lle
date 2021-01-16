@@ -1,21 +1,20 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
 \contentsline {section}{\numberline {2}Basic Manifold Theory}{3}{}%
 \contentsline {subsection}{\numberline {2.1}Concepts in Manifold Learning}{3}{}%
-\contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{6}{}%
 \contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning}{6}{}%
-\contentsline {subsection}{\numberline {3.1}Principles of Local Graph-Based Manifold Learning}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Concepts in Operationalization}{9}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Neighborhood Graphs}{9}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Local Tangent Spaces}{10}{}%
-\contentsline {subsubsection}{\numberline {3.2.3}Eigenanalysis}{11}{}%
-\contentsline {subsection}{\numberline {3.3}Unsupervised Techniques}{12}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Laplacian Eigenmaps}{12}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Locally Linear Embedding (LLE)}{12}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Hessian Locally Linear Embedding (H-LLE)}{12}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SS-LLE)}{12}{}%
+\contentsline {subsection}{\numberline {3.1}Overview and Conceptual Framework}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Aspects of Local Graph-Based Techniques}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Non-Linearity and Locality}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Neighborhood Graphs}{10}{}%
+\contentsline {subsection}{\numberline {3.3}Unsupervised Techniques}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Laplacian Eigenmaps (LEM)}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Locally Linear Embedding (LLE)}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Hessian Locally Linear Embedding (HLLE)}{11}{}%
+\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SSLLE)}{12}{}%
 \contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{12}{}%
 \contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{12}{}%
-\contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks of SS-LLE}{12}{}%
+\contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks}{12}{}%
 \contentsline {section}{\numberline {5}Experiment Results}{13}{}%
 \contentsline {subsection}{\numberline {5.1}Experimental Design}{13}{}%
 \contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{13}{}%
@@ -29,4 +28,5 @@
 \contentsline {subsection}{\numberline {5.4}Results and Discussion}{13}{}%
 \contentsline {section}{\numberline {6}Conclusion}{13}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
+\contentsline {subsection}{\numberline {A.1}Eigenanalysis}{V}{}%
 \contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%

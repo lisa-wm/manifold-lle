@@ -44,3 +44,13 @@ set_up_packages <- function(pkg) {
 }
 
 invisible(set_up_packages(packages_required))
+
+# Find and source all files containing functions
+
+files_required <- list.files(
+  here("2_code"), 
+  pattern = "^fun_.*\\.R$", 
+  recursive = TRUE,
+  full.names = TRUE)
+
+invisible(sapply(files_required, source, .GlobalEnv))
