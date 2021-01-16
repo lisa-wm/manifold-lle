@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 JAN 2021 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 JAN 2021 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,7 +678,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--110
 File: figures/s-curve.pdf Graphic file (type pdf)
 <use figures/s-curve.pdf>
 Package pdftex.def Info: figures/s-curve.pdf  used on input line 139.
-(pdftex.def)             Requested size: 124.83444pt x 184.40945pt.
+(pdftex.def)             Requested size: 124.83444pt x 157.02121pt.
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
 42.
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
@@ -714,46 +714,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--242
  []
 
 ) (./chapters/graph-based-models.Rnw [6]
-<figures/models-overview.png, id=83, 339.2675pt x 252.945pt>
-File: figures/models-overview.png Graphic file (type png)
-<use figures/models-overview.png>
-Package pdftex.def Info: figures/models-overview.png  used on input line 33.
-(pdftex.def)             Requested size: 277.41176pt x 206.8373pt.
+<figures/models-overview.jpg, id=83, 903.375pt x 533.995pt>
+File: figures/models-overview.jpg Graphic file (type jpg)
+<use figures/models-overview.jpg>
+Package pdftex.def Info: figures/models-overview.jpg  used on input line 34.
+(pdftex.def)             Requested size: 426.79134pt x 252.28137pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--52
+Underfull \hbox (badness 10000) in paragraph at lines 44--53
 
  []
 
-[7 <./figures/models-overview.PNG>]
-<figures/spirals.png, id=90, 463.7325pt x 134.00063pt>
+[7 <./figures/models-overview.jpg>]
+<figures/spirals.png, id=89, 463.7325pt x 134.00063pt>
 File: figures/spirals.png Graphic file (type png)
 <use figures/spirals.png>
-Package pdftex.def Info: figures/spirals.png  used on input line 125.
+Package pdftex.def Info: figures/spirals.png  used on input line 126.
 (pdftex.def)             Requested size: 426.79134pt x 123.32907pt.
  [8]
-Underfull \hbox (badness 10000) in paragraph at lines 148--163
+Underfull \hbox (badness 10000) in paragraph at lines 149--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--188
+Underfull \hbox (badness 10000) in paragraph at lines 165--189
 
  []
 
 [9 <./figures/spirals.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 229--261
+Underfull \hbox (badness 10000) in paragraph at lines 230--262
 
  []
 
 [10]
-<figures/s-curve-connected.pdf, id=101, 681.50606pt x 606.34526pt>
+<figures/s-curve-connected.pdf, id=100, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
 Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 293.
 
-(pdftex.def)             Requested size: 172.84813pt x 229.56143pt.
+(pdftex.def)             Requested size: 153.64441pt x 197.34752pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 269--300
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 272--300
 [][] [] [] 
  []
 
@@ -792,10 +792,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10668 strings out of 479485
- 157573 string characters out of 5875915
+ 10670 strings out of 479485
+ 157604 string characters out of 5875915
  466629 words of memory out of 5000000
- 27373 multiletter control sequences out of 15000+600000
+ 27374 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,11n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -817,9 +817,9 @@ cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 1219239 bytes).
+Output written on main.pdf (26 pages, 1054848 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
+ 198 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)

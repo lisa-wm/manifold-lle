@@ -214,9 +214,9 @@ condition to open, connected subspaces \citep{donohogrimes2003}.
 \subsubsection{Neighborhood Graphs}
 \label{algo-common}
 
-Besides the joint framework, LLE, LEM and HLLE also share algorithmic 
-commonalities, which extend to SSLLE.
-The generic algorithm might be summarized as follows \citep{bengioetal2003}:
+Besides the common theoretical framework, LLE, LEM and HLLE also share a general 
+algorithmic structure.
+It might be summarized as follows \citep{bengioetal2003}:
 
 \begin{tight_enumerate}
   \item Construct a neighborhood graph $\mathcal{G}$ from the observed data.
@@ -266,22 +266,23 @@ graph} $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, still assuming it is
 sampled well by $\X$. 
 Inputs $\x \in \X$ form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
 indicate neighborhood relations \citep{belkinniyogi2001}.
-Each vertex is connected to its $k$ nearest neighbors or all points 
-within $\epsilon$-radius, depending on the neighborhood definition.
 
 \begin{minipage}[b]{0.5\textwidth}
+  Each vertex is connected to its $k$ nearest neighbors or all points 
+  within $\epsilon$-radius, depending on the neighborhood definition.
   It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
   point to be among another's $k$ nearest neighbors the reverse need not be 
   true.
   $k$-neighborhoods therefore lead to directed graphs.
   Conversely, the $\epsilon$-distance boundary holds in both directions and 
   produces undirected graphs \citep{heetal2005}.
+  % A fictional example for a directed graph is given by figure 
+  % \ref{fig:neighbor-graph}, showing $k$-neighborhoods for seven data points 
+  % ($k = 2$).
   Figure \ref{fig:neighbor-graph} shows how a neighborhood graph may be used as 
   an approximation for the example of the S-curve manifold.
   It was built using $k$-neighborhoods with $k = 3$.
   Note that no information on the latent manifold coordinates is required.
-  For a densely sampled set of points, the graph representation yields a fairly
-  good approximation of the manifold surface.
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -289,7 +290,7 @@ within $\epsilon$-radius, depending on the neighborhood definition.
 \begin{minipage}[b]{0.45\textwidth}
   \begin{figure}[H]
     \centering
-    \includegraphics[trim = 250 170 200 140, clip, % left bottom right top
+    \includegraphics[trim = 250 170 200 100, clip, % left bottom right top
       width = 0.8\textwidth]{figures/s-curve-connected}
     \caption[S-curve neighborhood graph]{$k$-neighborhood graph for 300 points 
     sampled from the S-curve with $k = 5$.
