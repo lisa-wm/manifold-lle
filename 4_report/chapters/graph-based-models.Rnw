@@ -298,6 +298,12 @@ within $\epsilon$-radius, depending on the neighborhood definition.
   \end{figure}
 \end{minipage}
 
+\textcolor{red}{Comment on difficulty of finding neighbors in high dimensions}
+\\
+\textcolor{red}{What about using RF proximities for neighbor search? 
+Unsupervised RF works with simulating new data from the estimated dist of the 
+present ones, see e.g. https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering/RandomForestHorvath.pdf, https://arxiv.org/pdf/2004.02121.pdf}
+
 % ------------------------------------------------------------------------------
 
 \subsection{Unsupervised Techniques}
