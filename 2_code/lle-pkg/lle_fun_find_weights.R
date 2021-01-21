@@ -35,21 +35,13 @@ lle_find_weights <- function (nns, X, m, reg = 2, ss = FALSE, p = 0.5,
     if (all(e == 0)) 
       next
     
-    # Regu var 1
+    # Regu var 
     
     if (reg == 1) {
       r <- delta * sum(head(e, n - m))/(n - m)
-    }
-    
-    # Regu var 2
-    
-    else if (reg == 2) {
+    } else if (reg == 2) {
       r <- delta^2/k * sum(diag(G))
-    }
-    
-    # Regu var 3
-    
-    else r <- 3 * 10^-3
+    } else r <- 3 * 10^-3
     
     if (id) {
       tmp <- 1
@@ -57,9 +49,9 @@ lle_find_weights <- function (nns, X, m, reg = 2, ss = FALSE, p = 0.5,
       intr_dim <- c(intr_dim, tmp)
     }
     s <- c(s, sum(head(e, n - m))/(n - m))
-    if (k > n) 
+    if (k > n) {
       alpha <- r
-    else alpha <- 0
+      } else alpha <- 0
     G <- G + alpha * diag(1, k)
     if (k >= 2) 
       wgts[i, nns[i, ]] <- t(ginv(G) %*% rep(1, k))
