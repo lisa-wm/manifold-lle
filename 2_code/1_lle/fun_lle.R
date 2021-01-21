@@ -18,12 +18,22 @@ compute_lle <- function(data,
   
   # Compute reconstruction weights in input space
   
-  reconstruction_weights <- compute_weights(data, neighborhood_matrix)
+  reconstruction_weights <- compute_reconstruction_weights(
+    data, 
+    neighborhood_matrix,
+    intrinsic_dim)
+  
+  if (!all.equal(
+    apply(reconstruction_weights, 1, sum), 
+    rep(1, nrow(reconstruction_weights)))) {
+    stop("something went wrong during weight computation")
+  }
   
   # Compute coordinates in embedding space
   
   embedding_coordinates <- find_embedding_coordinates(
-    reconstruction_weights, neighborhood_matrix
+    reconstruction_weights, 
+    intrinsic_dim
   )
   
   # Return output
