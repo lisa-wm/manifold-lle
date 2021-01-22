@@ -65,6 +65,6 @@ find_landmarks <- function(data,
     
   }
   
-  unname(landmarks)
+  sort(unname(landmarks))
   
 }

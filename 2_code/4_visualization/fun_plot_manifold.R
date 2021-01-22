@@ -10,10 +10,10 @@ plot_manifold <- function(data, dim, n_colors = 10) {
   checkmate::assert_int(dim, lower = 1L, upper = 3L)
   checkmate::assert_count(n_colors)
   
-  if (ncol(data) != dim + 1L) 
-    {stop(sprintf("data must contain %d columns plus one for coloring", dim))}
+  if (ncol(data) != dim + 2L) 
+    {stop(sprintf("data must contain %d columns plus two for coloring", dim))}
   
-  colnames <- c(c("x", "y", "z")[1:dim], "t")
+  colnames <- c(c("x", "y", "z")[1:dim], "t", "s")
   setnames(data, colnames)
 
   # Create rainbow color palette, granularity depending on n_colors

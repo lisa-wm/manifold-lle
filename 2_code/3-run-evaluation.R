@@ -1,22 +1,27 @@
 # ------------------------------------------------------------------------------
-# MAIN SCRIPT
+# EVALUATION
 # ------------------------------------------------------------------------------
 
-# find landmark points
-# to be used as for landmark lle or as prior points in sslle
+# VISUAL INSPECTION ------------------------------------------------------------
 
-# find neighbors
+load_rdata_files(data_sets, folder = "2_code/1_data")
+load_rdata_files(result_lle, folder = "2_code")
 
-# compute reconstruction weights
+result_lle_original_coordinates <- lapply(
+  result_lle,
+  function(i) data.table(i$Y, data_sets$i[, .(t, s)]))
 
-# compute embedding matrix
-# from entire data or landmarks
-# w/ specific forms of regu (the one currently in use is also in the ghojogh
-# tutorial)
-# or from unlabeled points only
+lapply(
+  result_lle_original_coordinates,
+  plot_manifold,
+  dim = 2L)
 
-# compute embedding coordinates
-
-# evaluate
-
-# plot
+# result_lle_original_coordinates <- lapply(
+#   list(swiss_roll = swiss_roll_sslle),
+#   function(i) data.table(i$Y, data_sets$i[, .(t)]))
+# 
+# plot_manifold(
+#   data.table(
+#     incomplete_tire_sslle$Y, 
+#     data_sets$incomplete_tire[, .(t)]), 
+#   dim = 2L)

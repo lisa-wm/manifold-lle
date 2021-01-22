@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
-# PERFORMING SSLLE
+# PERFORMING LLE
 # ------------------------------------------------------------------------------
 
-# Purpose: perform sslle
+# Purpose: perform lle
 
-compute_lle <- function(data,
-                        prior_points,
+perform_lle <- function(data,
+                        intrinsic_dim = 2L,
                         neighborhood_method = c("knn", "epsilon"),
                         neighborhood_size,
                         landmark = FALSE) {
@@ -16,21 +16,15 @@ compute_lle <- function(data,
   
   # Check data
   
-  invisible(sapply(list(data, prior_points), function(i) {
-    check_data(i)
-    assign(deparse(substitute(i)), as.data.table(i))
-    }))
+  check_data(data)
+  data <- as.data.table(data)
   
   # Check argument validity
   
-  if (nrow(data) <= nrow(prior_points)) {
-    stop("sslle only makes sense if not all points are known yet")
-  }
-  intrinsic_dim <- ncol(prior_points)
   check_inputs(data, intrinsic_dim, neighborhood_method, neighborhood_size)
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
-  
+
   reconstruction_weights <- compute_reconstruction_weights(
     data, 
     neighborhood_method, 
@@ -43,7 +37,7 @@ compute_lle <- function(data,
   
   embedding_coordinates <- find_embedding_coordinates(
     reconstruction_weights, 
-    prior_points
+    intrinsic_dim
   )
   
   # RETURN ---------------------------------------------------------------------

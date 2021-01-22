@@ -7,12 +7,15 @@
 # In:  -
 # Out: data sets to run sslle on
 
-# GENERATE INCOMPLETE TIRE -----------------------------------------------------
+# GENERATE AND SAVE DATA SETS --------------------------------------------------
 
 data_incomplete_tire <- make_incomplete_tire(n_points = 1000L)
-save_rdata_files(data_incomplete_tire, folder = "2_code/1_data")
+data_swiss_roll <- make_swiss_roll(n_points = 3000L)
+data_scurve <- make_s_curve(n_points = 3000L)
 
-# GENERATE SWISS ROLL ----------------------------------------------------------
+data_sets <- list(
+  incomplete_tire = data_incomplete_tire, 
+  swiss_roll = data_swiss_roll,
+  scurve = data_scurve)
 
-data_swiss_roll <- make_swiss_roll(n_points = 1000L)
-save_rdata_files(data_swiss_roll, folder = "2_code/1_data")
+save_rdata_files(data_sets, folder = "2_code/1_data")

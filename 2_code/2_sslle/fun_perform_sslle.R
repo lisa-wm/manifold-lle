@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-# PERFORMING LLE
+# PERFORMING SSLLE
 # ------------------------------------------------------------------------------
 
-# Purpose: perform lle
+# Purpose: perform sslle
 
-compute_lle <- function(data,
-                        intrinsic_dim = 2L,
-                        neighborhood_method = c("knn", "epsilon"),
-                        neighborhood_size,
-                        landmark = FALSE) {
+perform_sslle <- function(data,
+                          prior_points,
+                          neighborhood_method = c("knn", "epsilon"),
+                          neighborhood_size,
+                          landmark = FALSE) {
   
   # TODO do regularization properly
   
@@ -16,15 +16,21 @@ compute_lle <- function(data,
   
   # Check data
   
-  check_data(data)
-  data <- as.data.table(data)
+  invisible(sapply(list(data, prior_points), function(i) {
+    check_data(i)
+    assign(deparse(substitute(i)), as.data.table(i))
+    }))
   
   # Check argument validity
   
+  if (nrow(data) <= nrow(prior_points)) {
+    stop("sslle only makes sense if not all points are known yet")
+  }
+  intrinsic_dim <- ncol(prior_points)
   check_inputs(data, intrinsic_dim, neighborhood_method, neighborhood_size)
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
-
+  
   reconstruction_weights <- compute_reconstruction_weights(
     data, 
     neighborhood_method, 
@@ -35,16 +41,23 @@ compute_lle <- function(data,
   
   cat("finding embedding coordinates...\n")
   
-  embedding_coordinates <- find_embedding_coordinates(
+  embedding_coordinates <- find_embedding_coordinates_ss(
     reconstruction_weights, 
-    intrinsic_dim
+    prior_points
+  )
+  
+  data.table::setnames(prior_points, names(embedding_coordinates))
+  
+  all_embedding_coordinates <- rbind(
+    prior_points,
+    embedding_coordinates
   )
   
   # RETURN ---------------------------------------------------------------------
   
   list(
     X = data,
-    Y = embedding_coordinates
+    Y = abs(all_embedding_coordinates)
   )
   
 }

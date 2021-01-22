@@ -21,14 +21,19 @@ find_embedding_coordinates_ss <- function(reconstruction_weights,
   embedding_matrix_12 <- embedding_matrix[(m + 1):n, 1:m]
   embedding_matrix_22 <- embedding_matrix[(m + 1):n, (m + 1):n]
   
+  embedding_matrix_22_inv <- MASS::ginv(embedding_matrix_22)
+  
   # SOLVE LES ------------------------------------------------------------------
   
   intrinsic_dim <- ncol(prior_points)
   
   embedding_coordinates <- as.data.table(
-    embedding_matrix_22 %*% embedding_matrix_12 %*% as.matrix(prior_points))
+    embedding_matrix_22_inv %*% embedding_matrix_12 %*% 
+      as.matrix(prior_points))
 
-  setnames(embedding_coordinates, sprintf("y_%d", seq_len(intrinsic_dim)))
+  data.table::setnames(
+    embedding_coordinates, 
+    sprintf("y_%d", seq_len(intrinsic_dim)))
   
   # RETURN ---------------------------------------------------------------------
   

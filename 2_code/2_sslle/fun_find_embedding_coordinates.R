@@ -21,9 +21,11 @@ find_embedding_coordinates <- function(reconstruction_weights, intrinsic_dim) {
     
   # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   
-  embedding_coordinates <- as.data.table(
-    eigenanalysis$vectors[, idx_bottom_eigenvectors] * sqrt(n))
-  setnames(embedding_coordinates, sprintf("y_%d", seq_len(intrinsic_dim)))
+  embedding_coordinates <- rev(as.data.table(
+      eigenanalysis$vectors[, idx_bottom_eigenvectors] * sqrt(n)))
+  data.table::setnames(
+    embedding_coordinates, 
+    sprintf("y_%d", seq_len(intrinsic_dim)))
   
   # RETURN ---------------------------------------------------------------------
   

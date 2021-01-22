@@ -2,14 +2,9 @@
 # CREATING EXAMPLE MANIFOLDS
 # ------------------------------------------------------------------------------
 
-# INCOMPLETE TIRE --------------------------------------------------------------
+# Purpose: create various synthetic data sets for testing
 
-#' Create incomplete tire data
-#'
-#' @param seed Single numeric value for creating an RNG seed
-#' @param n_points Number of points to sample from manifold
-#' @return Data table object containing R3 coordinates (columns x, y, z) and
-#' main manifold dimensions (columns s, t)
+# INCOMPLETE TIRE --------------------------------------------------------------
 
 make_incomplete_tire <- function(n_points, seed = 123L) {
   
@@ -34,13 +29,6 @@ make_incomplete_tire <- function(n_points, seed = 123L) {
 
 # SWISS ROLL -------------------------------------------------------------------
 
-#' Create Swiss roll data
-#'
-#' @param seed Single numeric value for creating an RNG seed
-#' @param n_points Number of points to sample from manifold
-#' @return Data table object containing R3 coordinates (columns x, y, z) and
-#' main manifold dimension (column t)
-
 make_swiss_roll <- function(n_points, seed = 123L) {
   
   # Perform basic input checks
@@ -56,19 +44,13 @@ make_swiss_roll <- function(n_points, seed = 123L) {
   set.seed(seed + 1L)
   y <- 21 * runif(0, 1, n = n_points)
   z <- t * sin(t)
+  s <- t
   
-  data.table(x, y, z, t)
+  data.table(x, y, z, t, s)
   
 }
 
 # S-CURVE ----------------------------------------------------------------------
-
-#' Create Swiss roll data
-#'
-#' @param seed Single numeric value for creating an RNG seed
-#' @param n_points Number of points to sample from manifold
-#' @return Data table object containing R3 coordinates (columns x, y, z) and
-#' main manifold dimension (column t)
 
 make_s_curve <- function(n_points, seed = 123L) {
   
@@ -85,19 +67,14 @@ make_s_curve <- function(n_points, seed = 123L) {
   set.seed(seed + 1L)
   y <- 2 * runif(0, 1, n = n_points)
   z <- (sign(t) * (cos(t) - 1))
+  s <- t
   
-  data.table(x, y, z, t)
+  data.table(x, y, z, t, s)
 
 }
 
 # UNIT SPHERE ------------------------------------------------------------------
 
-#' Create unit sphere embeddedin R3
-#'
-#' @param seed Single numeric value for creating an RNG seed
-#' @param n_points Number of points to sample from manifold
-#' @return Data table object containing R3 coordinates (columns x, y, z) and
-#' main manifold dimension (column t)
 
 make_unit_sphere <- function(n_points, seed = 123L) {
   
