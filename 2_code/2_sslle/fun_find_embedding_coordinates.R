@@ -1,24 +1,31 @@
 # ------------------------------------------------------------------------------
-# LLE IMPLEMENTATION: FINDING EMBEDDING COORDINATES
+# FINDING EMBEDDING COORDINATES
 # ------------------------------------------------------------------------------
+
+# Purpose: find embedding coordinates (unsupervised case)
 
 find_embedding_coordinates <- function(reconstruction_weights, intrinsic_dim) {
   
-  # compute embedding matrix
+  # COMPUTE EMBEDDING MATRIX ---------------------------------------------------
   
   n <- nrow(reconstruction_weights)
   embedding_matrix <- crossprod(diag(1L, n) - reconstruction_weights)
   
-  # find bottom d + 1 eigenvectors
+  # DIAGONALIZE EMBEDDING MATRIX -----------------------------------------------
   
   eigenanalysis <- eigen(embedding_matrix, symmetric = TRUE)
+  
+  # Find bottom intrinsic_dim + 1 eigenvectors 
+  
   idx_bottom_eigenvectors <- seq(n - intrinsic_dim, n - 1L, by = 1L)
     
-  # compute low-dimensional coordinates
+  # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   
   embedding_coordinates <- as.data.table(
     eigenanalysis$vectors[, idx_bottom_eigenvectors] * sqrt(n))
   setnames(embedding_coordinates, sprintf("y_%d", seq_len(intrinsic_dim)))
+  
+  # RETURN ---------------------------------------------------------------------
   
   embedding_coordinates
   

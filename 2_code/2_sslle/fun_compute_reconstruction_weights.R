@@ -3,39 +3,52 @@
 # ------------------------------------------------------------------------------
 
 compute_reconstruction_weights <- function(data, 
-                                           neighborhood_matrix, 
+                                           neighborhood_method, 
+                                           neighborhood_size, 
                                            intrinsic_dim) {
   
-  # TODO read up on regularization methods for inverting gram matrix
+  # COMPUTE NEIGHBORHOOD MATRIX ------------------------------------------------
   
-  # weight_matrix_init <- diag(0, nrow = nrow(data))
+  cat("finding neighbors...\n")
+  
+  neighborhood_matrix <- find_neighbors(
+    data,
+    neighborhood_method,
+    neighborhood_size
+  )
+  
+  # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
+  
+  # TODO read up on regularization methods for inverting gram matrix
+
+  cat("computing reconstruction weights...\n")
   
   weight_matrix <- t(sapply(
     
     data[, .I],
     function(i) {
 
-      # dimensions
+      # Define dimensions
       
       n <- nrow(data)
       p <- ncol(data)
       k <- sum(neighborhood_matrix[i, ])
       
-      # center data wrt i-th obs
+      # Center data wrt i-th observation
       
       data_centered <- sweep(data, 2L, c(t(data[i, ])))
       
-      # filter for neighbors of i-th obs
+      # Filter for neighbors of i-th observation
       
       data_nn <- as.matrix(
         data_centered[neighborhood_matrix[i, ], ], 
         ncol = p)
       
-      # compute local covariance matrix
+      # Compute gram matrix
       
       gram <- tcrossprod(data_nn)
       
-      # apply regularization
+      # Apply regularization
       # TODO find out about this delta and regu
       
       if (k > p) {
@@ -46,15 +59,15 @@ compute_reconstruction_weights <- function(data,
         
       }
       
-      # reconstruct weights from les
+      # Reconstruct weights from les
       
       weights <- t(MASS::ginv(gram)) %*% rep(1, k)
       
-      # enforce sum-1 constraint
+      # Enforce sum-1 constraint
       
       weights_normed <- weights / sum(weights)
       
-      # pad with zeroes for weight matrix
+      # Pad with zeroes for weight matrix
       
       weights_row <- rep(0, n)
       weights_row[neighborhood_matrix[i, ]] <- weights_normed
@@ -63,5 +76,15 @@ compute_reconstruction_weights <- function(data,
       
     }
   ))
+  
+  # MAKE FINAL CHECK -----------------------------------------------------------
+  
+  if (any(round(apply(weight_matrix, 1, sum)) != 1L)) {
+    stop("something went wrong during weight computation")
+  }
+  
+  # RETURN ---------------------------------------------------------------------
 
+  weight_matrix
+  
 }

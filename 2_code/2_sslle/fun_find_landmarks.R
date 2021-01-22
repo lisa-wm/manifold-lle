@@ -33,6 +33,8 @@ find_landmarks <- function(data,
     
     # TODO make sure this does the right thing!!
     
+    cat("computing geodesics...\n")
+    
     distances_geodesic <- invisible(dimRed::embed(
       data,
       "Isomap",
@@ -40,30 +42,27 @@ find_landmarks <- function(data,
       knn = nrow(data) - 1L,
       get_geod = TRUE)@other.data$geod)
     
+    cat("finding landmarks...\n")
+    
     distance_matrix_geodesic <- as.matrix(distances_geodesic, nrow = nrow(data))
-    
-    distance_ranking <- t(apply(
-      -distance_matrix_geodesic, 
-      1, 
-      data.table::frank, 
-      ties.method = "random"))
-    
-    set.seed(seed)
-    id <- sample(indices, 1L)
-    landmarks <- id
 
+    set.seed(seed)
+    landmarks <- sample(indices, 1L)
+    
     while (length(landmarks) < n_landmarks) {
       
-      dist_vecs <- as.matrix(
-        distance_matrix_geodesic[, landmarks],
+      # Restrict search to interesting area to make as fast as possible
+      
+      search_area <- as.matrix(
+        distance_matrix_geodesic[-landmarks, landmarks],
         ncol = length(landmarks))
-      min_distance <- apply(dist_vecs, 1, min)
-      next_landmark <- which.max(min_distance)
+      min_distance <- apply(search_area, 1, min)
+      next_landmark <- as.integer(names(which.max(min_distance)))
       
       landmarks <- c(landmarks, next_landmark)
       
     }
-
+    
   }
   
   unname(landmarks)

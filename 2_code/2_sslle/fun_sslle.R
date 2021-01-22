@@ -1,50 +1,52 @@
 # ------------------------------------------------------------------------------
-# SSLLE IMPLEMENTATION: MAIN FUNCION
+# PERFORMING SSLLE
 # ------------------------------------------------------------------------------
 
-compute_sslle <- function(data_labeled,
-                          data_unlabeled,
-                          intrinsic_dim = 2L,
-                          is_knn = TRUE,
-                          nighborhood_size) {
+# Purpose: perform sslle
+
+compute_lle <- function(data,
+                        prior_points,
+                        neighborhood_method = c("knn", "epsilon"),
+                        neighborhood_size,
+                        landmark = FALSE) {
   
   # TODO do regularization properly
   
-  # Perform input checks and harmonization
-  # TODO adapt to sslle case
+  # CHECK INPUTS ---------------------------------------------------------------
   
-  check_inputs(data_unlabeled, intrinsic_dim, is_knn, neighborhood_size)
-  data <- as.data.table(data)
+  # Check data
   
-  # Find nearest neighbors
+  invisible(sapply(list(data, prior_points), function(i) {
+    check_data(i)
+    assign(deparse(substitute(i)), as.data.table(i))
+    }))
   
-  cat("finding neighbors...\n")
+  # Check argument validity
   
-  neighborhood_matrix <- find_neighbors(data, is_knn, neighborhood_size)
+  if (nrow(data) <= nrow(prior_points)) {
+    stop("sslle only makes sense if not all points are known yet")
+  }
+  intrinsic_dim <- ncol(prior_points)
+  check_inputs(data, intrinsic_dim, neighborhood_method, neighborhood_size)
   
-  # Compute reconstruction weights in input space
-  
-  cat("computing reconstruction weights...\n")
+  # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
   
   reconstruction_weights <- compute_reconstruction_weights(
     data, 
-    neighborhood_matrix,
+    neighborhood_method, 
+    neighborhood_size,
     intrinsic_dim)
   
-  if (!all.equal(
-    apply(reconstruction_weights, 1, sum), 
-    rep(1, nrow(reconstruction_weights)))) {
-    stop("something went wrong during weight computation")
-  }
-  
-  # Compute embedding matrix
+  # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   
   cat("finding embedding coordinates...\n")
   
-  n <- nrow(reconstruction_weights)
-  embedding_matrix <- crossprod(diag(1L, n) - reconstruction_weights)
+  embedding_coordinates <- find_embedding_coordinates(
+    reconstruction_weights, 
+    prior_points
+  )
   
-  # Return output
+  # RETURN ---------------------------------------------------------------------
   
   list(
     X = data,

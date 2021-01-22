@@ -17,12 +17,6 @@ check_data <- function(data) {
     
   }
   
-  # Check for feature dimensionality
-  
-  if (ncol(data) < 2) {
-    stop("dimensionality reduction only makes sense with at least two features")
-  }
-  
   # Check whether inputs are numeric
   
   if (!checkmate::test_numeric(unlist(data))) {

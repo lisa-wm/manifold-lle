@@ -4,11 +4,9 @@
 
 # Purpose: find nearest neighbors to construct neighborhood graph
 
-# TODO Handle case where too few or too many neighbors are selected
-
 find_neighbors <- function(data, neighborhood_method, neighborhood_size) {
   
-  # Compute matrix of euclidean distances
+  # COMPUTE DISTANCE RANK MATRIX -----------------------------------------------
   
   dist_matrix <- as.matrix(dist(data), nrow = nrow(data))
   
@@ -31,6 +29,8 @@ find_neighbors <- function(data, neighborhood_method, neighborhood_size) {
       neighbors_logical <- (dist_matrix > 0 & dist_matrix <= neighborhood_size)  
       
     }
+  
+  # RETURN ---------------------------------------------------------------------
   
   neighbors_logical
 
