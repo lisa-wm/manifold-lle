@@ -2,15 +2,6 @@
 # 3D MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
-#' Plot rainbow-colored manifolds in 3D
-#'
-#' @param data Data table object containing three columns representing points'
-#' coordinates in R3 (named x, y, z) and one column representing points' main
-#' dimension on the manifold (named t; used for coloring)
-#' @param k Number of nearest neighbors to be found
-#' @return Plotly object
-
-# FIXME Make available for k > 1
 # FIXME Avoid large jump in the end
 
 plot_manifold_3d_connected <- function(data, k = 2L) {
@@ -63,7 +54,7 @@ plot_manifold_3d_connected <- function(data, k = 2L) {
     layout(scene = scene)
   
   # Add edges in a sequential manner (necessary so that no connections between 
-  # neigborhoods are established, only within)
+  # neighborhoods are established, only within)
   
   for (i in seq_len(nrow(data))) {
 

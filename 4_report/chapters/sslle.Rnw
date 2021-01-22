@@ -8,11 +8,13 @@
 \begin{itemize}
   \item Why use labels in the first place?
   \item How will that help?
-  \item How do we even find prior points?
   \item Exact vs inexact knowledge
 \end{itemize}
 
-test $\mathbf{x}$
+% ------------------------------------------------------------------------------
+
+\subsection{Finding Prior Points}
+\label{prior-points}
 
 Prior points: take minmax approach from sparse MDS (Sparse multidimensional 
 scaling using landmark points Vin de Silva and Joshua B. Tenenbaum 2004). 
@@ -23,28 +25,11 @@ can we view the prior info as some kind of active learning? like we choose
 some points to label in a hopefully cleverish way and then hand them to you 
 (e.g., to look at some pictures instead of all droelf thousand)
 
+% ------------------------------------------------------------------------------
+
 \subsection{SS-LLE Algorithm}
 \label{algo-sslle}
 
 \begin{itemize}
   \item What is different wrt standard LLE?
 \end{itemize}
-
-\subsection{Strengths and Drawbacks}
-\label{pro-con}
-
-See \citep{vandermaatenetal2009} for extensive discussion of manifold learning
-
-Theoretical convergence? (e.g., ISOMAP has this)
-
-Determination of d: actually requires to know d, right? Must be automatically
-known if prior points are known
-
-Potential shortcoming: what if manifold is not well-sampled? Not a problem with
-synthetic data, but IRL. But probably problematic with all manifold approaches
-
-This is directly related to the COD -- local methods require dense sampling 
-\citep{vandermaatenetal2009}
-
-Also: generalization to new points (w/o recomputing everything)
-neighborhood-preserving propositions

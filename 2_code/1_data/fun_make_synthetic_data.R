@@ -11,7 +11,7 @@
 #' @return Data table object containing R3 coordinates (columns x, y, z) and
 #' main manifold dimensions (columns s, t)
 
-make_incomplete_tire <- function(seed = 123L, n_points) {
+make_incomplete_tire <- function(n_points, seed = 123L) {
   
   # Perform basic input checks
   
@@ -41,7 +41,7 @@ make_incomplete_tire <- function(seed = 123L, n_points) {
 #' @return Data table object containing R3 coordinates (columns x, y, z) and
 #' main manifold dimension (column t)
 
-make_swiss_roll <- function(seed = 123L, n_points) {
+make_swiss_roll <- function(n_points, seed = 123L) {
   
   # Perform basic input checks
 
@@ -70,7 +70,7 @@ make_swiss_roll <- function(seed = 123L, n_points) {
 #' @return Data table object containing R3 coordinates (columns x, y, z) and
 #' main manifold dimension (column t)
 
-make_s_curve <- function(seed = 123L, n_points) {
+make_s_curve <- function(n_points, seed = 123L) {
   
   # Perform basic input checks
   
@@ -99,7 +99,7 @@ make_s_curve <- function(seed = 123L, n_points) {
 #' @return Data table object containing R3 coordinates (columns x, y, z) and
 #' main manifold dimension (column t)
 
-make_unit_sphere <- function(seed = 123L, n_points) {
+make_unit_sphere <- function(n_points, seed = 123L) {
   
   # Perform basic input checks
   

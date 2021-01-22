@@ -174,14 +174,6 @@ Munich, month day\textsuperscript{th}, 2021
 \label{intro}
 \input{chapters/introduction.Rnw}
 
-% IDEA neighborhoods in high-dim space
-% cover difficulty of finding neighborhoods in high-dim space
-% (maybe plus distance measures)
-% IDEA weighted reconstruction error in lle
-% uniformly weighted across x_i in original paper - could it make sense to
-% assign more weight to points whose neighbor hood lies more closely? So as not
-% to put too much effort into points who are badly represented anyway 
-
 \section{Basic Manifold Theory}
 \label{math}
 \input{chapters/math.Rnw}
@@ -190,6 +182,10 @@ Munich, month day\textsuperscript{th}, 2021
 \label{lgb-mani-learn}
 \input{chapters/graph-based-models.Rnw}
 
+\section{Unsupervised Locally Linear Embedding (LLE) and Related Techniques}
+\label{unsupervised-techniques}
+\input{chapters/unsupervised-techniques.Rnw}
+
 \section{Semi-Supervised Locally Linear Embedding (SSLLE)}
 \label{sslle}
 \input{chapters/sslle.Rnw}
@@ -197,6 +193,10 @@ Munich, month day\textsuperscript{th}, 2021
 \section{Experiment Results}
 \label{experiment}
 \input{chapters/experiment.Rnw}
+
+\section{Discussion}
+\label{discussion}
+\input{chapters/discussion.Rnw}
 
 \section{Conclusion}
 \label{concl}

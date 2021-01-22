@@ -1,14 +1,21 @@
 # ------------------------------------------------------------------------------
-# LLE IMPLEMENTATION: NEIGHBORHOOD COMPUTATION
+# FIND NEAREST NEIGHBORS
 # ------------------------------------------------------------------------------
+
+# Purpose: find nearest neighbors to construct neighborhood graph
 
 # TODO Handle case where too few or too many neighbors are selected
 
-find_neighbors <- function(data, is_knn, neighborhood_size) {
+find_neighbors <- function(data, neighborhood_method, neighborhood_size) {
+  
+  # Compute matrix of euclidean distances
   
   dist_matrix <- as.matrix(dist(data), nrow = nrow(data))
   
-  if (is_knn) {
+  if (neighborhood_method == "knn") {
+    
+    # In case of ties, random selection is performed to keep number of 
+    # neighbors constant)
     
     neighbors_ranking <- t(apply(
       dist_matrix, 
@@ -20,9 +27,8 @@ find_neighbors <- function(data, is_knn, neighborhood_size) {
       neighbors_ranking > 1 & neighbors_ranking <= neighborhood_size + 1)
     
     } else {
-    
-      neighbors_logical <- (
-        dist_matrix > 0 & dist_matrix <= neighborhood_size)  
+      
+      neighbors_logical <- (dist_matrix > 0 & dist_matrix <= neighborhood_size)  
       
     }
   

@@ -19,8 +19,8 @@
 \subsubsection{Incomplete Tire Data}
 \label{data-tire}
 
-\subsubsection{Choice of Hyperparameter and Prior Point Configuration}
-\label{hp-pp-config-orig}
+\subsubsection{Results}
+\label{results-orig}
 
 % ------------------------------------------------------------------------------
 
@@ -30,10 +30,5 @@
 \subsubsection{XXX Data}
 \label{data-swiss}
 
-\subsubsection{Choice of Hyperparameter and Prior Point Configuration}
-\label{hp-pp-config-new}
-
-% ------------------------------------------------------------------------------
-
-\subsection{Results and Discussion}
-\label{results}
+\subsubsection{Results}
+\label{results-new}

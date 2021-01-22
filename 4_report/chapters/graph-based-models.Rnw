@@ -306,37 +306,12 @@ present ones, see e.g. https://horvath.genetics.ucla.edu/html/RFclustering/RFclu
 
 % ------------------------------------------------------------------------------
 
-\subsection{Unsupervised Techniques}
-\label{techniques}
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Laplacian Eigenmaps (LEM)}
-\label{laplace}
+\subsection{Challenges in Local Graph-Based Manifold Learning}
+\label{challenges}
 
 \begin{itemize}
-  \item Notion of locality
-  \item Laplacian eigenmaps
-\end{itemize}
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Locally Linear Embedding (LLE)}
-\label{lle}
-
-\begin{itemize}
-  \item Notion of local linearity
-  \item Approximation of graph Laplacian
-\end{itemize}
-
-% TODO Regularized version???
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Hessian Locally Linear Embedding (HLLE)}
-\label{hlle}
-
-\begin{itemize}
-  \item Hessian instead of Laplacian (eigenmaps)
-  \item Hessian instead of LS fit (LLE)
+  \item Number of neighbors
+  \item Intrinsic dimensionality
+  \item Singularity of gram matrix (LLE-specific?!)
+  \item Large data (landmarks)
 \end{itemize}

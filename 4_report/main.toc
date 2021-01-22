@@ -7,26 +7,28 @@
 \contentsline {subsection}{\numberline {3.2}Aspects of Local Graph-Based Techniques}{9}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Non-Linearity and Locality}{9}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Neighborhood Graphs}{10}{}%
-\contentsline {subsection}{\numberline {3.3}Unsupervised Techniques}{11}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Laplacian Eigenmaps (LEM)}{11}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Locally Linear Embedding (LLE)}{11}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Hessian Locally Linear Embedding (HLLE)}{11}{}%
-\contentsline {section}{\numberline {4}Semi-Supervised Locally Linear Embedding (SSLLE)}{12}{}%
-\contentsline {subsection}{\numberline {4.1}Employment of Prior Information}{12}{}%
-\contentsline {subsection}{\numberline {4.2}SS-LLE Algorithm}{12}{}%
-\contentsline {subsection}{\numberline {4.3}Strengths and Drawbacks}{12}{}%
-\contentsline {section}{\numberline {5}Experiment Results}{13}{}%
-\contentsline {subsection}{\numberline {5.1}Experimental Design}{13}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{13}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{13}{}%
-\contentsline {subsection}{\numberline {5.2}Replication of Original Results on the Incomplete Tire}{13}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Incomplete Tire Data}{13}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Choice of Hyperparameter and Prior Point Configuration}{13}{}%
-\contentsline {subsection}{\numberline {5.3}Application on XXX Data}{13}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}XXX Data}{13}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Choice of Hyperparameter and Prior Point Configuration}{13}{}%
-\contentsline {subsection}{\numberline {5.4}Results and Discussion}{13}{}%
-\contentsline {section}{\numberline {6}Conclusion}{13}{}%
+\contentsline {subsection}{\numberline {3.3}Challenges in Local Graph-Based Manifold Learning}{11}{}%
+\contentsline {section}{\numberline {4}Unsupervised Locally Linear Embedding (LLE) and Related Techniques}{12}{}%
+\contentsline {subsection}{\numberline {4.1}Laplacian Eigenmaps (LEM)}{12}{}%
+\contentsline {subsection}{\numberline {4.2}Locally Linear Embedding (LLE)}{12}{}%
+\contentsline {subsection}{\numberline {4.3}Hessian Locally Linear Embedding (HLLE)}{12}{}%
+\contentsline {section}{\numberline {5}Semi-Supervised Locally Linear Embedding (SSLLE)}{12}{}%
+\contentsline {subsection}{\numberline {5.1}Employment of Prior Information}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Finding Prior Points}{12}{}%
+\contentsline {subsection}{\numberline {5.3}SS-LLE Algorithm}{12}{}%
+\contentsline {subsection}{\numberline {5.4}Strengths and Drawbacks}{13}{}%
+\contentsline {section}{\numberline {6}Experiment Results}{13}{}%
+\contentsline {subsection}{\numberline {6.1}Experimental Design}{13}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Software Implementation}{13}{}%
+\contentsline {subsubsection}{\numberline {6.1.2}Evaluation Framework}{13}{}%
+\contentsline {subsection}{\numberline {6.2}Replication of Original Results on the Incomplete Tire}{13}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Incomplete Tire Data}{13}{}%
+\contentsline {subsubsection}{\numberline {6.2.2}Results}{13}{}%
+\contentsline {subsection}{\numberline {6.3}Application on XXX Data}{13}{}%
+\contentsline {subsubsection}{\numberline {6.3.1}XXX Data}{13}{}%
+\contentsline {subsubsection}{\numberline {6.3.2}Results}{13}{}%
+\contentsline {section}{\numberline {7}Discussion}{13}{}%
+\contentsline {section}{\numberline {8}Conclusion}{13}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {subsection}{\numberline {A.1}Eigenanalysis}{V}{}%
 \contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%

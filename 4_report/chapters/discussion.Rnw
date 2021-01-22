@@ -1,0 +1,20 @@
+Pros and Cons
+
+Various extensions
+
+
+See \citep{vandermaatenetal2009} for extensive discussion of manifold learning
+
+Theoretical convergence? (e.g., ISOMAP has this)
+
+Determination of d: actually requires to know d, right? Must be automatically
+known if prior points are known
+
+Potential shortcoming: what if manifold is not well-sampled? Not a problem with
+synthetic data, but IRL. But probably problematic with all manifold approaches
+
+This is directly related to the COD -- local methods require dense sampling 
+\citep{vandermaatenetal2009}
+
+Also: generalization to new points (w/o recomputing everything)
+neighborhood-preserving propositions

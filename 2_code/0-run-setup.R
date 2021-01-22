@@ -2,12 +2,18 @@
 # SET-UP
 # ------------------------------------------------------------------------------
 
-# Install, if necessary, and load required packages
+# Purpose: install, if necessary, and load packages, source required files
+
+# In:  -
+# Out: -
+
+# INSTALL AND LOAD PACKAGES ----------------------------------------------------
 
 packages_required <-  c(
   
   "checkmate", # input checking
   "data.table", # data wrangling
+  "dimRed", # dimensionality reduction, in particluar, isomap
   "here", # path management
   "igraph", # graph visualizations
   "kknn", # k-nearest neighbor search
@@ -46,6 +52,8 @@ set_up_packages <- function(pkg) {
 }
 
 invisible(set_up_packages(packages_required))
+
+# SOURCE FILES -----------------------------------------------------------------
 
 # Find and source all files containing functions
 

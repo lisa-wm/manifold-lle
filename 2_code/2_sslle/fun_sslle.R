@@ -1,22 +1,30 @@
 # ------------------------------------------------------------------------------
-# LLE IMPLEMENTATION: MAIN FUNCION
+# SSLLE IMPLEMENTATION: MAIN FUNCION
 # ------------------------------------------------------------------------------
 
-compute_lle <- function(data,
-                        intrinsic_dim = 2L,
-                        is_knn = TRUE,
-                        neighborhood_size) {
+compute_sslle <- function(data_labeled,
+                          data_unlabeled,
+                          intrinsic_dim = 2L,
+                          is_knn = TRUE,
+                          nighborhood_size) {
+  
+  # TODO do regularization properly
   
   # Perform input checks and harmonization
+  # TODO adapt to sslle case
   
-  check_inputs(data, intrinsic_dim, is_knn, neighborhood_size)
+  check_inputs(data_unlabeled, intrinsic_dim, is_knn, neighborhood_size)
   data <- as.data.table(data)
   
   # Find nearest neighbors
   
+  cat("finding neighbors...\n")
+  
   neighborhood_matrix <- find_neighbors(data, is_knn, neighborhood_size)
   
   # Compute reconstruction weights in input space
+  
+  cat("computing reconstruction weights...\n")
   
   reconstruction_weights <- compute_reconstruction_weights(
     data, 
@@ -29,12 +37,12 @@ compute_lle <- function(data,
     stop("something went wrong during weight computation")
   }
   
-  # Compute coordinates in embedding space
+  # Compute embedding matrix
   
-  embedding_coordinates <- find_embedding_coordinates(
-    reconstruction_weights, 
-    intrinsic_dim
-  )
+  cat("finding embedding coordinates...\n")
+  
+  n <- nrow(reconstruction_weights)
+  embedding_matrix <- crossprod(diag(1L, n) - reconstruction_weights)
   
   # Return output
   

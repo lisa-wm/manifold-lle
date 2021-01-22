@@ -6,7 +6,7 @@
 
 # S-CURVE ----------------------------------------------------------------------
 
-s_curve <- plot_manifold_3d(make_s_curve(n_points = 10000L))
+s_curve <- plot_manifold(make_s_curve(n_points = 10000L), dim = 3L)
 
 # FIXME Check out how orca can be used with here()
 
@@ -86,9 +86,9 @@ n_colors <- nrow(spirals_data)
 
 # FIXME Save via orca w/ correct angles
 
-spirals_1d <- plot_manifold_1d(spirals_data[, .(t)], n_colors)
-spirals_2d <- plot_manifold_2d(spirals_data[, .(x, y, t)], n_colors)
-spirals_3d <- plot_manifold_3d(spirals_data, n_colors)
+spirals_1d <- plot_manifold(spirals_data[, .(x, t)], dim = 1L, n_colors)
+spirals_2d <- plot_manifold(spirals_data[, .(x, y, t)], dim = 2L, n_colors)
+spirals_3d <- plot_manifold(spirals_data, dim = 3L, n_colors)
 
 orca(
   spirals_1d, 
@@ -111,7 +111,9 @@ orca(
 
 # SPHERE WITH TANGENT PLANE ----------------------------------------------------
 
-sphere_tangent_plane <- plot_manifold_3d(make_unit_sphere(n_points = 3000)) %>% 
+sphere_tangent_plane <- plot_manifold(
+  make_unit_sphere(n_points = 3000), 
+  dim = 3L) %>% 
   add_trace(
     z = matrix(rep(1, 100), ncol = 10),
     x = seq(-1, 1, length.out = 10),
