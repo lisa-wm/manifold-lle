@@ -30,7 +30,7 @@ scurve_lle <- perform_lle(
   data_unlabeled$scurve,
   intrinsic_dim = 2L,
   neighborhood_method = "knn",
-  neighborhood_size = 18L,
+  choices_k = 12:16
 )
 
 scurve_lle_plot <- data.table(scurve_lle$Y, data_sets$scurve[, .(t, s)])

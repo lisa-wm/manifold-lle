@@ -7,7 +7,7 @@
 perform_lle <- function(data,
                         intrinsic_dim = 2L,
                         neighborhood_method = c("knn", "epsilon"),
-                        neighborhood_size,
+                        choices_k,
                         regularization = TRUE,
                         regularization_param = 1e-4,
                         landmark = FALSE) {
@@ -32,13 +32,17 @@ perform_lle <- function(data,
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
 
-  reconstruction_weights <- compute_reconstruction_weights(
+  reconstruction <- compute_reconstruction_weights(
     data, 
     neighborhood_method, 
-    neighborhood_size,
-    intrinsic_dim,
+    choices_k,
     regularization,
     regularization_param)
+  
+  reconstruction_weights <- reconstruction$weight_matrix
+  optimal_k <- reconstruction$neighborhood_size
+  
+  cat(sprintf("chose %d neighbors\n", optimal_k))
   
   # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   
@@ -53,6 +57,7 @@ perform_lle <- function(data,
   
   list(
     X = data,
+    k = optimal_k,
     Y = embedding_coordinates
   )
   
