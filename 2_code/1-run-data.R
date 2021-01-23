@@ -10,8 +10,8 @@
 # GENERATE AND SAVE DATA SETS --------------------------------------------------
 
 data_incomplete_tire <- make_incomplete_tire(n_points = 1000L)
-data_swiss_roll <- make_swiss_roll(n_points = 1500L)
-data_scurve <- make_s_curve(n_points = 1500L)
+data_swiss_roll <- make_swiss_roll(n_points = 1000L)
+data_scurve <- make_s_curve(n_points = 1000L)
 
 data_sets <- list(
   incomplete_tire = data_incomplete_tire, 

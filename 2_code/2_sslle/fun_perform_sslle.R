@@ -9,11 +9,12 @@ perform_sslle <- function(data,
                           is_exact = TRUE,
                           confidence_param = NULL,
                           neighborhood_method = c("knn", "epsilon"),
-                          neighborhood_size,
+                          choices_k,
                           regularization = TRUE,
                           regularization_param = 1e-4) {
   
-  # TODO do regularization properly
+  # FIXME do neighborhood search properly
+  # TODO adjust input checks
   
   # CHECK INPUTS ---------------------------------------------------------------
   
@@ -32,12 +33,12 @@ perform_sslle <- function(data,
   
   intrinsic_dim <- ncol(prior_points)
   
-  check_inputs(
-    data, 
-    intrinsic_dim, 
-    neighborhood_method, 
-    neighborhood_size,
-    regularization_param)
+  # check_inputs(
+  #   data, 
+  #   intrinsic_dim, 
+  #   neighborhood_method, 
+  #   neighborhood_size,
+  #   regularization_param)
   
   if (!is_exact & is.null(confidence_param)) {
     stop("please specify a confidence parameter")
@@ -52,13 +53,17 @@ perform_sslle <- function(data,
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
   
-  reconstruction_weights <- compute_reconstruction_weights(
+  reconstruction <- compute_reconstruction_weights(
     data, 
     neighborhood_method, 
-    neighborhood_size,
-    intrinsic_dim,
+    choices_k,
     regularization,
     regularization_param)
+  
+  reconstruction_weights <- reconstruction$weight_matrix
+  optimal_k <- reconstruction$neighborhood_size
+  
+  cat(sprintf("chose %d neighbors\n", optimal_k))
   
   # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   

@@ -12,7 +12,8 @@ perform_lle <- function(data,
                         regularization_param = 1e-4,
                         landmark = FALSE) {
   
-  # TODO do regularization properly
+  # FIXME do neighborhood search properly
+  # TODO adjust input checks
   
   # CHECK INPUTS ---------------------------------------------------------------
   
@@ -23,12 +24,12 @@ perform_lle <- function(data,
   
   # Check argument validity
   
-  check_inputs(
-    data, 
-    intrinsic_dim, 
-    neighborhood_method, 
-    neighborhood_size,
-    regularization_param)
+  # check_inputs(
+  #   data, 
+  #   intrinsic_dim, 
+  #   neighborhood_method, 
+  #   neighborhood_size,
+  #   regularization_param)
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
 

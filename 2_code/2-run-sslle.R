@@ -42,7 +42,7 @@ swiss_roll_lle <- perform_lle(
   data_unlabeled$swiss_roll,
   intrinsic_dim = 2L,
   neighborhood_method = "knn",
-  neighborhood_size = 14L
+  choices_k = 12:16
 )
 
 swiss_roll_lle_plot <- data.table(
@@ -74,7 +74,7 @@ incomplete_tire_sslle <- perform_sslle(
   data = incomplete_tire[new_order],
   prior_points = prior_points,
   neighborhood_method = "knn",
-  neighborhood_size = 10L,
+  choices_k = 8:9,
   regularization_param = 0.001
 )
 
@@ -93,7 +93,7 @@ incomplete_tire_sslle_noisy <- perform_sslle(
   data = incomplete_tire[new_order],
   prior_points = prior_points_noisy,
   neighborhood_method = "knn",
-  neighborhood_size = 10L,
+  choices_k = 8:9,
   regularization_param = 0.001,
   is_exact = FALSE,
   confidence_param = 0.001
