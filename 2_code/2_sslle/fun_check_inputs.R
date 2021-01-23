@@ -7,7 +7,8 @@
 check_inputs <- function(data,
                          intrinsic_dim, 
                          neighborhood_method, 
-                         neighborhood_size) {
+                         neighborhood_size,
+                         regularization_param) {
   
   checkmate::assert_count(intrinsic_dim)
   
@@ -20,6 +21,11 @@ check_inputs <- function(data,
   checkmate::assert_numeric(
     neighborhood_size, 
     lower = 1e-08,
+    finite = TRUE)
+  
+  checkmate::assert_numeric(
+    regularization_param, 
+    lower = 0,
     finite = TRUE)
   
   if (neighborhood_method == "knn" & 

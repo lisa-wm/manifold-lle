@@ -55,6 +55,8 @@ plot_manifold(swiss_roll_lle_plot, 2L)
 
 # SSLLE ------------------------------------------------------------------------
 
+# Exact version
+
 incomplete_tire <- data_unlabeled$incomplete_tire
 
 prior_points_ind <- find_landmarks(
@@ -73,13 +75,35 @@ incomplete_tire_sslle <- perform_sslle(
   data = incomplete_tire[new_order],
   prior_points = prior_points,
   neighborhood_method = "knn",
-  neighborhood_size = 13L
+  neighborhood_size = 10L,
+  regularization_param = 0.001
 )
 
-incomplete_tire_lle_plot <- data.table(
+incomplete_tire_sslle_plot <- data.table(
   incomplete_tire_sslle$Y, 
   data_sets$incomplete_tire[new_order][, .(t, s)])
-plot_manifold(incomplete_tire_lle_plot, 2L)
+plot_manifold(incomplete_tire_sslle_plot, 2L)
+
+# Inexact version (simulated with Gaussian noise)
+
+set.seed(1L)
+prior_points_noisy <- data_sets$incomplete_tire[prior_points_ind, .(t, s)] +
+  rnorm(length(prior_points_ind), sd = .5)
+
+incomplete_tire_sslle_noisy <- perform_sslle(
+  data = incomplete_tire[new_order],
+  prior_points = prior_points_noisy,
+  neighborhood_method = "knn",
+  neighborhood_size = 10L,
+  regularization_param = 0.001,
+  is_exact = FALSE,
+  confidence_param = 0.001
+)
+
+incomplete_tire_sslle_plot_noisy <- data.table(
+  incomplete_tire_sslle_noisy$Y, 
+  data_sets$incomplete_tire[new_order][, .(t, s)])
+plot_manifold(incomplete_tire_sslle_plot_noisy, 2L)
 
 # FIND NEIGHBORS ---------------------------------------------------------------
 

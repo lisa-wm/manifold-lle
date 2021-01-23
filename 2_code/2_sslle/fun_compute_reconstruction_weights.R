@@ -6,7 +6,8 @@ compute_reconstruction_weights <- function(data,
                                            neighborhood_method, 
                                            neighborhood_size, 
                                            intrinsic_dim,
-                                           regularization) {
+                                           regularization,
+                                           regularization_param) {
   
   # COMPUTE NEIGHBORHOOD MATRIX ------------------------------------------------
   
@@ -63,10 +64,9 @@ compute_reconstruction_weights <- function(data,
         # delta is arbitrary, seems to work
         
         eigenvalues_gram <- eigen(gram)$values
-        delta <- 1e-4
-        regularization_param <- delta * sum(eigenvalues_gram)
+        gamma <- regularization_param * sum(eigenvalues_gram)
         
-        gram <- gram +  diag(regularization_param, k)
+        gram <- gram + diag(gamma, k)
         
       }
       
