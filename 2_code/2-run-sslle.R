@@ -9,6 +9,14 @@
 
 # DATA -------------------------------------------------------------------------
 
+# TODO work on automatic selection of k
+# TODO what about epsilon neighborhoods
+# TODO set up benchmark study with varying combos of samples and neigbhors
+# (and landmarks!)
+# TODO find out about rev and abs in returning embedding coordinates
+# TODO incorporate landmark lle / nystrom approx
+# TODO incorporate inexact prior information
+
 load_rdata_files(data_sets, folder = "2_code/1_data")
 data_unlabeled <- lapply(data_sets, function(i) {i[, .(x, y, z)]})
 
@@ -29,7 +37,7 @@ scurve_lle <- perform_lle(
 scurve_lle_plot <- data.table(scurve_lle$Y, data_sets$scurve[, .(t, s)])
 plot_manifold(scurve_lle_plot, 2L)
 
-# scurve 1500 points, 14 neighbors works fairly well
+# swiss roll 1500 points, 14 neighbors works fairly well
 
 swiss_roll_lle <- perform_lle(
   data_unlabeled$swiss_roll,
@@ -51,7 +59,7 @@ incomplete_tire <- data_unlabeled$incomplete_tire
 
 prior_points_ind <- find_landmarks(
   incomplete_tire,
-  n_landmarks = 50L,
+  n_landmarks = 10L,
   method = "maxmin"
 )
 

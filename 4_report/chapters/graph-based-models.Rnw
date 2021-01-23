@@ -310,7 +310,8 @@ present ones, see e.g. https://horvath.genetics.ucla.edu/html/RFclustering/RFclu
 \label{challenges}
 
 \begin{itemize}
-  \item Number of neighbors
+  \item Number of neighbors (diss grilli (referenced in lle manual) discusses 
+  regression model, ghojogh propose different things)
   \item Intrinsic dimensionality
   \item Singularity of gram matrix (LLE-specific?!)
   \item Large data (landmarks)

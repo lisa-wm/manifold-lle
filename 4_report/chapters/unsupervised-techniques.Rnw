@@ -16,7 +16,7 @@
   \item Approximation of graph Laplacian
 \end{itemize}
 
-% TODO Regularized version???
+% TODO Regularized version --> look into de ridder
 
 % ------------------------------------------------------------------------------
 

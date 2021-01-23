@@ -17,6 +17,9 @@ find_embedding_coordinates <- function(reconstruction_weights, intrinsic_dim) {
   
   # Find bottom intrinsic_dim + 1 eigenvectors 
   
+  # TODO check whether automatic selection of d works
+  # see de ridder p. 7
+  
   idx_bottom_eigenvectors <- seq(n - intrinsic_dim, n - 1L, by = 1L)
     
   # COMPUTE EMBEDDING COORDINATES ----------------------------------------------

@@ -5,7 +5,8 @@
 compute_reconstruction_weights <- function(data, 
                                            neighborhood_method, 
                                            neighborhood_size, 
-                                           intrinsic_dim) {
+                                           intrinsic_dim,
+                                           regularization) {
   
   # COMPUTE NEIGHBORHOOD MATRIX ------------------------------------------------
   
@@ -34,10 +35,10 @@ compute_reconstruction_weights <- function(data,
       p <- ncol(data)
       k <- sum(neighborhood_matrix[i, ])
       
-      # Center data wrt i-th observation
+      # Center data with respect to i-th observation
       
       data_centered <- sweep(data, 2L, c(t(data[i, ])))
-      
+
       # Filter for neighbors of i-th observation
       
       data_nn <- as.matrix(
@@ -51,17 +52,30 @@ compute_reconstruction_weights <- function(data,
       # Apply regularization
       # TODO find out about this delta and regu
       
-      if (k > p) {
+      if (regularization & k > p) {
         
-        delta <- 0.1
-        regularization_param <- delta^2 / k * sum(diag(gram))
-        gram <- gram + regularization_param * diag(1, k)
+        # roweis saul themselves mention regu, but no details
+        # this is taken from grilli diss
+        # this is now concept from ghojogh (l2 penalization) with penalization 
+        # param from grilli
+        # lle pkg does similar thing but sum diagonal is not equal to 
+        # eigenvalues, gram is not diagonal
+        # delta is arbitrary, seems to work
+        
+        eigenvalues_gram <- eigen(gram)$values
+        delta <- 1e-4
+        regularization_param <- delta * sum(eigenvalues_gram)
+        
+        gram <- gram +  diag(regularization_param, k)
         
       }
       
       # Reconstruct weights from les
       
-      weights <- t(MASS::ginv(gram)) %*% rep(1, k)
+      gram_inv <- MASS::ginv(gram)
+      
+      weights <- (gram_inv %*% rep(1, k)) / 
+        as.numeric(crossprod(rep(1, k), gram_inv) %*% rep(1, k))
       
       # Enforce sum-1 constraint
       
