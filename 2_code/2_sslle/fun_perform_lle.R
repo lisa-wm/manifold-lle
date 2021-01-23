@@ -23,7 +23,12 @@ perform_lle <- function(data,
   
   # Check argument validity
   
-  check_inputs(data, intrinsic_dim, neighborhood_method, neighborhood_size)
+  check_inputs(
+    data, 
+    intrinsic_dim, 
+    neighborhood_method, 
+    neighborhood_size,
+    regularization_param)
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
 
@@ -32,7 +37,8 @@ perform_lle <- function(data,
     neighborhood_method, 
     neighborhood_size,
     intrinsic_dim,
-    regularization)
+    regularization,
+    regularization_param)
   
   # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   
