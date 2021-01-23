@@ -13,22 +13,20 @@
 
 % ------------------------------------------------------------------------------
 
-\subsection{Replication of Original Results on the Incomplete Tire}
-\label{replic}
-
-\subsubsection{Incomplete Tire Data}
-\label{data-tire}
-
-\subsubsection{Results}
-\label{results-orig}
+\subsection{Application to Synthetic Data}
+\label{application}
 
 % ------------------------------------------------------------------------------
 
-\subsection{Application on XXX Data}
-\label{applic-new}
+\subsubsection{Data}
+\label{data}
 
-\subsubsection{XXX Data}
-\label{data-swiss}
+% ------------------------------------------------------------------------------
 
 \subsubsection{Results}
-\label{results-new}
+\label{results}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Sensitivity Analysis}
+\label{sensitivity}

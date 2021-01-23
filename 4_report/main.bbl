@@ -40,6 +40,12 @@ Cayton, L.  \harvardyearleft 2005\harvardyearright .
 \newblock Algorithms for manifold learning, {\em Technical Report CS2008-0923},
   University of California, San Diego (UCSD).
 
+\harvarditem{de~Ridder \harvardand\ Duin}{2002}{deridderduin2002}
+de~Ridder, D. \harvardand\ Duin, R.~P.  \harvardyearleft 2002\harvardyearright
+  .
+\newblock Locally linear embedding for classification, {\em Technical Report
+  PH-2002-01}, Delft University of Technology, Delft, The Netherlands.
+
 \harvarditem{Donoho \harvardand\ Grimes}{2003}{donohogrimes2003}
 Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
 \newblock Hessian eigenmaps: Locally linear embedding techniques for
@@ -122,6 +128,12 @@ Schölkopf, B., Smola, A. \harvardand\ Müller, K.-R.  \harvardyearleft
 \newblock Nonlinear component analysis as a kernel eigenvalue problem, {\em
   Neural Computation} {\bf 10}:~1299--1319.
 
+\harvarditem{Sha \harvardand\ Saul}{2005}{shasaul2005}
+Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft 2005\harvardyearright .
+\newblock Analysis and extension of spectral methods for nonlinear
+  dimensionality reduction, {\em Proceedings of the 22nd International
+  Conference on Machine Learning}.
+
 \harvarditem{Sudderth}{2002}{sudderth2002}
 Sudderth, E.~B.  \harvardyearleft 2002\harvardyearright .
 \newblock Nonlinear manifold learning part ii 6.454 summary.
@@ -157,6 +169,11 @@ Weinberger, K.~Q., Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft
   2004\harvardyearright .
 \newblock Learning a kernel matrix for nonlinear dimensionality reduction, {\em
   Proceedings of the 21rd International Conference on Machine Learning}.
+
+\harvarditem{Wissel}{2017}{disswissel2017}
+Wissel, D.~R.  \harvardyearleft 2017\harvardyearright .
+\newblock {\em Intrinsic Dimension Estimation using Simplex Volumes}, PhD
+  thesis, Rheinische Friedrich-Wilhelms-Universität Bonn.
 
 \harvarditem{Wu \harvardand\ Wu}{2018}{wuwu2018}
 Wu, H.-T. \harvardand\ Wu, N.  \harvardyearleft 2018\harvardyearright .

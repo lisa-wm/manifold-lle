@@ -182,13 +182,13 @@ Munich, month day\textsuperscript{th}, 2021
 \label{lgb-mani-learn}
 \input{chapters/graph-based-models.Rnw}
 
-\section{Unsupervised Locally Linear Embedding (LLE) and Related Techniques}
-\label{unsupervised-techniques}
-\input{chapters/unsupervised-techniques.Rnw}
+\section{Selected Approaches}
+\label{techniques}
+\input{chapters/techniques.Rnw}
 
-\section{Semi-Supervised Locally Linear Embedding (SSLLE)}
-\label{sslle}
-\input{chapters/sslle.Rnw}
+% \section{Semi-Supervised Locally Linear Embedding (SSLLE)}
+% \label{sslle}
+% \input{chapters/sslle.Rnw}
 
 \section{Experiment Results}
 \label{experiment}
@@ -219,7 +219,7 @@ Munich, month day\textsuperscript{th}, 2021
 
 \section{Appendix}
 \label{app}
-\input{chapters/appendix.Rnw}
+% \input{chapters/appendix.Rnw}
 \newpage
 
 \section{Electronic Appendix}

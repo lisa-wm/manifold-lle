@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  22 JAN 2021 07:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 JAN 2021 21:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -660,56 +660,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--20
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--62
+Underfull \hbox (badness 10000) in paragraph at lines 52--60
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 74--89
+Underfull \hbox (badness 10000) in paragraph at lines 72--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--110
+Underfull \hbox (badness 10000) in paragraph at lines 102--108
 
  []
 
 <figures/s-curve.pdf, id=55, 343.2825pt x 305.22029pt>
 File: figures/s-curve.pdf Graphic file (type pdf)
 <use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 139.
+Package pdftex.def Info: figures/s-curve.pdf  used on input line 135.
 (pdftex.def)             Requested size: 124.83444pt x 157.02121pt.
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
-42.
+38.
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 1448) in paragraph at lines 142--142
+Underfull \hbox (badness 1448) in paragraph at lines 138--138
 \T1/aer/m/n/10 S-curve man-i-fold. \T1/aer/m/it/10 Source: \T1/aer/m/n/10 own r
 ep-re-
  []
 
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 115--146
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 111--142
 [][] [] [] 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 207--222
-
- []
-
-[5 <./figures/s-curve.pdf
+[4] [5 <./figures/s-curve.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 223--236
+Underfull \hbox (badness 10000) in paragraph at lines 196--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--242
+Underfull \hbox (badness 10000) in paragraph at lines 212--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--231
 
  []
 
@@ -728,106 +728,136 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--53
 <figures/spirals.png, id=83, 463.7325pt x 134.00063pt>
 File: figures/spirals.png Graphic file (type png)
 <use figures/spirals.png>
-Package pdftex.def Info: figures/spirals.png  used on input line 126.
+Package pdftex.def Info: figures/spirals.png  used on input line 125.
 (pdftex.def)             Requested size: 426.79134pt x 123.32907pt.
  [8]
-Underfull \hbox (badness 10000) in paragraph at lines 149--164
+Underfull \hbox (badness 10000) in paragraph at lines 163--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--189
+Underfull \hbox (badness 10000) in paragraph at lines 180--191
 
  []
 
 [9 <./figures/spirals.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 230--262
+Underfull \hbox (badness 10000) in paragraph at lines 192--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
 
  []
 
 [10]
+Underfull \hbox (badness 10000) in paragraph at lines 279--285
+
+ []
+
 <figures/s-curve-connected.pdf, id=94, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 293.
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 316.
 
 (pdftex.def)             Requested size: 153.64441pt x 197.34752pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 272--300
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 295--323
 [][] [] [] 
  []
 
 
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 301--306
-\T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
-/RandomForestHorvath.pdf,
+Underfull \hbox (badness 10000) in paragraph at lines 329--344
+
  []
 
-) (./chapters/unsupervised-techniques.Rnw [11 <./figures/s-curve-connected.pdf
+[11 <./figures/s-curve-connected.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
->]) (./chapters/sslle.Rnw [12]) (./chapters/experiment.Rnw)
-(./chapters/discussion.Rnw) (./chapters/conclusion.Rnw) [13]
-(./chapters/appendix.Rnw
-
-LaTeX Warning: Reference `lgb-principles' on page V undefined on input line 7.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--20
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 345--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--31
+Underfull \hbox (badness 10000) in paragraph at lines 356--366
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--43
+Underfull \hbox (badness 10000) in paragraph at lines 392--398
 
  []
 
-) [5] [6] (./main.bbl [7]) [8]
+) (./chapters/techniques.Rnw [12]
+Underfull \hbox (badness 10000) in paragraph at lines 82--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--106
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+
+ []
+
+)
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 133--189
+\T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
+/RandomForestHorvath.pdf,
+ []
+
+(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [14])
+(./chapters/conclusion.Rnw) [15] [5] [6] (./main.bbl [7] [8]) [9]
 
 Package natbib Warning: There were undefined citations.
 
-[9] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10680 strings out of 479485
- 157850 string characters out of 5875915
- 467641 words of memory out of 5000000
- 27378 multiletter control sequences out of 15000+600000
+ 10684 strings out of 479485
+ 157886 string characters out of 5875915
+ 466772 words of memory out of 5000000
+ 27387 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextr
-a/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/tex
-live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 1045311 bytes).
+ 70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (29 pages, 1048606 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 201 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

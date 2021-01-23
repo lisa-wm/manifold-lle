@@ -1,0 +1,137 @@
+\subsection{Unsupervised Techniques}
+\label{unsupervised}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Laplacian Eigenmaps (LEM)}
+\label{laplace}
+
+\begin{itemize}
+  \item Notion of locality
+  \item Laplacian eigenmaps
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Locally Linear Embedding (LLE)}
+\label{lle}
+
+\begin{itemize}
+  \item Notion of local linearity
+  \item Approximation of graph Laplacian
+\end{itemize}
+
+% TODO Regularized version --> look into de ridder
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Hessian Locally Linear Embedding (HLLE)}
+\label{hlle}
+
+\begin{itemize}
+  \item Hessian instead of Laplacian (eigenmaps)
+  \item Hessian instead of LS fit (LLE)
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Semi-Supervised Locally Linear Embedding (SSLLE)}
+\label{sslle}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Employment of Prior Information}
+\label{prior-info}
+
+% Read belkinniyogi2004 paper on this
+
+\begin{itemize}
+  \item Why use labels in the first place?
+  \item How will that help?
+  \item Exact vs inexact knowledge
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Finding Prior Points}
+\label{prior-points}
+
+Prior points: take minmax approach from sparse MDS (Sparse multidimensional 
+scaling using landmark points Vin de Silva and Joshua B. Tenenbaum 2004). 
+Easy and deterministic after choosing seed value.
+Instead Euclidean distances, though, take geodesics as estimated in isomap.
+
+can we view the prior info as some kind of active learning? like we choose 
+some points to label in a hopefully cleverish way and then hand them to you 
+(e.g., to look at some pictures instead of all droelf thousand)
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{SS-LLE Algorithm}
+\label{algo-sslle}
+
+\begin{itemize}
+  \item What is different wrt standard LLE?
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Particular Challenges}
+\label{challenges}
+
+A number of computational and design-related challenges arise from this 
+procedure that must be faced in implementation.
+\\
+
+\textbf{Choice of intrinsic dimensionality.} 
+Until now, it has been assumed, rather implicitly, that the intrinsic dimension 
+$d$ of the data is a known parameter.
+This is obviously not always the case in practical applications.
+Some methods offer the advantage of estimating $d$ in a built-in fashion. 
+PCA, MDS and Isomap, for instance, typically show an indicative gap in their 
+eigenvalue spectrum, distinctly pointing out the dimensions with the largest 
+share of variability \citep{sauletal2006}.
+For LLE, LEM and HLLE, no such tell-tale gap exists.
+While \citet{shasaul2005} have indeed drawn a mathematical relation between the 
+respective eigenspectra in LLE and LEM and intrinsic data dimensionality, they 
+immediately discarded this finding for practical applications due to large 
+computational overhead and lack of reliability in finite-sample situations.
+There have been various other proposals to tackle the problem of dimensionality 
+estimation (for an extensive discussion, see for example 
+\citet{disswissel2017}).
+However, as the focus of this report lies on a semi-supervised method of 
+manifold learning, it is mainly concerned with situations where prior knowledge 
+of coordinates, and of $d$ in particular, is actually available.
+\\
+
+\textbf{Choice of neighborhood size.} Choosing the size of neighborhoods for 
+graph approximation does pose a challenge.
+It is a standard hyperparameter optimization problem in which a trade-off 
+between locality and overall approximation must be balanced.
+If neighborhoods are too small, the model will not be able to learn the global 
+manifold structure; with overly large neighborhoods, it will forgo the 
+advantages of locality and non-linearity and essentially behave like PCA 
+\citep{deridderduin2002}.
+
+\textcolor{red}{Describe applied approach}
+\\
+
+\textbf{Robustness of eigendecomposition.} Mainly problem in LLE (?)
+\\
+
+\textbf{Computational cost.} Text
+\\
+
+\begin{itemize}
+  \item Number of neighbors (diss grilli (referenced in lle manual) discusses 
+  regression model, ghojogh propose different things)
+  \item Intrinsic dimensionality
+  \item Singularity of gram matrix (LLE-specific?!)
+  \item Large data (landmarks)
+\end{itemize}
+
+\textcolor{red}{Comment on difficulty of finding neighbors in high dimensions}
+\\
+\textcolor{red}{What about using RF proximities for neighbor search? 
+Unsupervised RF works with simulating new data from the estimated dist of the 
+present ones, see e.g. https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering/RandomForestHorvath.pdf, https://arxiv.org/pdf/2004.02121.pdf}

@@ -138,7 +138,7 @@ desired one-dimensional representation (\textit{right}).
 
 % ------------------------------------------------------------------------------
 
-\subsection{Aspects of Local Graph-Based Techniques}
+\subsection{Graph Approximation}
 \label{lgb-properties}
 
 % ------------------------------------------------------------------------------
@@ -214,19 +214,6 @@ condition to open, connected subspaces \citep{donohogrimes2003}.
 \subsubsection{Neighborhood Graphs}
 \label{algo-common}
 
-Besides the joint framework, LLE, LEM and HLLE also share algorithmic 
-commonalities, which extend to SSLLE.
-The generic algorithm might be summarized as follows \citep{bengioetal2003}:
-
-\begin{tight_enumerate}
-  \item Construct a neighborhood graph $\mathcal{G}$ from the observed data.
-  \item Analyze the graph properties with an appropriate functional and derive 
-  a matrix representation $M$ thereof.
-  \item Find the eigenvalues and associated eigenvectors of $M$.
-  \item From the principal (top or bottom) eigenvectors, as determined by the 
-  ordered eigenvalues, retrieve the low-dimensional coordinates.
-\end{tight_enumerate}
-
 \textbf{Neighborhoods.} All local graph-based methods fundamentally 
 build on neighborhood graph approximations of the manifold surface.
 A neighborhood of $\x \in \X$ is a subset of $\X$ containing another, open 
@@ -298,55 +285,99 @@ within $\epsilon$-radius, depending on the neighborhood definition.
   \end{figure}
 \end{minipage}
 
+% ------------------------------------------------------------------------------
+
+\subsection{Eigenanalysis}
+\label{eigenanalysis}
+
+Eventually, all spectral manifold learning methods boil down to an eigenanalysis 
+of a matrix $K$ believed to capture information about the intrinsic manifold 
+structure.
+As explained in chapter \ref{lgb-principles}, PCA finds the principal 
+eigenvectors of empirical covariance, thereby defining a low-dimensional 
+subspace containing most of the data-inherent variability.
+The very same idea applies when diagonalizing the more general matrix 
+corresponding to the non-linear feature map: the top (or bottom\footnote{
+This differs across methods and shall be made clear later.
+}) $d$ eigenvectors of $K$ span a subspace into which the data may be projected 
+under minimal loss of information.
+More precisely, the representation of $\X$ by the $d$ principal eigenvectors of 
+$K$ incurs is loss-optimal with respect to the least-squares error.
+Eigenanalysis is thus a very powerful concept with ubiquitous application 
+\citep{schoelkopfetal1998}.
+\\
+
+\textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
+decomposition of a square matrix into pairs of \textit{eigenvectors} and 
+\textit{eigenvalues}.
+Let $A \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a scalar 
+value. 
+$\lambda$ is said to be an eigenvalue to $A$ if there exists 
+$\bm{v} \in \R^N \setminus \{0\}$ such that $A \bm{v} = \lambda \bm{v}$.
+Then, $v$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
+their tuple is also called an \textit{eigenpair}.
+\\
+
+\textbf{Null spaces.} A closely related notion is that of the 
+\textit{null space}, consisting of the vectors that map $A$ to 0 upon 
+multiplication from the right: $\{\bm{v} \in \R^N: A \bm{v} = 0\}$.
+It can be easily seen that the null space consists precisely of those 
+eigenvectors of $A$ that correspond to an eigenvalue of zero and the zero 
+vector itself.
+For a specific eigenvalue $\lambda$ of $A$, the null space of $\lambda I - A$ 
+(with $I$ the $N$-dimensional identity matrix) constitutes the 
+\textit{eigenspace} of $A$.
+\citep{boermmehl2012}.
+\\
+
+\textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix $A$ can 
+be framed as the solution of a generalized eigenvalue problem.
+Generalized eigenvalue problems are posed subject to a constraint on a second, 
+also symmetric matrix $B \in \R^{N \times N}$.
+As the standard eigenvalue problem results immediately from $B = I$, the 
+generalized form subsumes both cases.
+It is given by $$A \bm{V} = B \bm{V} \bm{\Lambda},$$ where 
+$\bm{V} = ([\bm{v}_1, \bm{v}_2, ..., \bm{v}_N]) \in \R^{N \times N}$ 
+is the matrix of eigenvectors of $A$ and 
+$\bm{\Lambda} = \text{\textit{diag}}([\lambda_1, \lambda_2, ..., \lambda_N]^T) 
+\in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues.
+The generalized eigenvalue problem may be stated equivalently as 
+$$\max_{\bm{V}} \text{\textit{trace}}(\bm{V}^T A \bm{V}), \quad \text{s.t.} 
+\quad \bm{V}^T B \bm{V} = I,$$ and translated to the first form with help of the 
+Lagrangian multiplier \citep{ghojoghetal2019}.
+It must be noted that solving eigenvalue problems becomes computationally 
+challenging rather quickly.
+Therefore, eigendecomposition is performed approximately in virtually all 
+practical applications \citep{boermmehl2012}.
+
+% ------------------------------------------------------------------------------
+
+\subsection{Challenges in Local Graph-Based Manifold Learning}
+\label{challenges}
+
+Besides the joint framework, LLE, LEM and HLLE also share algorithmic 
+commonalities, which extend to SSLLE.
+The generic algorithm might be summarized as follows \citep{bengioetal2003}:
+
+\begin{tight_enumerate}
+  \item Construct a neighborhood graph $\mathcal{G}$ from the observed data.
+  \item Analyze the graph properties with an appropriate functional and derive 
+  a matrix representation $M$ thereof.
+  \item Find the eigenvalues and associated eigenvectors of $M$.
+  \item From the principal (top or bottom) eigenvectors, as determined by the 
+  ordered eigenvalues, retrieve the low-dimensional coordinates.
+\end{tight_enumerate}
+
+\begin{itemize}
+  \item Number of neighbors (diss grilli (referenced in lle manual) discusses 
+  regression model, ghojogh propose different things)
+  \item Intrinsic dimensionality
+  \item Singularity of gram matrix (LLE-specific?!)
+  \item Large data (landmarks)
+\end{itemize}
+
 \textcolor{red}{Comment on difficulty of finding neighbors in high dimensions}
 \\
 \textcolor{red}{What about using RF proximities for neighbor search? 
 Unsupervised RF works with simulating new data from the estimated dist of the 
 present ones, see e.g. https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering/RandomForestHorvath.pdf, https://arxiv.org/pdf/2004.02121.pdf}
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Challenges in Local Graph-Based Manifold Learning}
-\label{challenges}
-
-\begin{itemize}
-  \item Number of neighbors
-  \item Intrinsic dimensionality
-\end{itemize}
-
-% ------------------------------------------------------------------------------
-
-\subsection{Unsupervised Techniques}
-\label{techniques}
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Laplacian Eigenmaps (LEM)}
-\label{laplace}
-
-\begin{itemize}
-  \item Notion of locality
-  \item Laplacian eigenmaps
-\end{itemize}
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Locally Linear Embedding (LLE)}
-\label{lle}
-
-\begin{itemize}
-  \item Notion of local linearity
-  \item Approximation of graph Laplacian
-\end{itemize}
-
-% TODO Regularized version???
-
-% ------------------------------------------------------------------------------
-
-\subsubsection{Hessian Locally Linear Embedding (HLLE)}
-\label{hlle}
-
-\begin{itemize}
-  \item Hessian instead of Laplacian (eigenmaps)
-  \item Hessian instead of LS fit (LLE)
-\end{itemize}
