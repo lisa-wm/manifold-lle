@@ -1,0 +1,13 @@
+questions regarding implementation
+
+- am i expected to implement (lle), hlle & lem myself? --> jann
+
+- regarding geodesic computation: what does # neighbors here actually mean? --> find out
+- how can i make this faster? --> jann
+
+- regarding neighborhoods: does residual variance thing help in search? (reconstruction error only does not seem to help) --> find out
+- is it okay to basically only handle k neighborhoods? --> jann
+
+- regarding inexact information: how can i avoid this embarassingly slow inversion? --> jann
+
+- regarding sensitivity analysis: is that a sensible idea? if so, are there specific issues to pay attention to? --> jann
