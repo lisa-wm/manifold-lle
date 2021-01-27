@@ -63,7 +63,8 @@ compute_reconstruction_weights <- function(data,
             
             # roweis saul themselves mention regu, but no details
             # this is taken from grilli diss
-            # this is now concept from ghojogh (l2 penalization) with penalization 
+            # this is now concept from ghojogh (l2 penalization) with
+            # penalization 
             # param from grilli
             # lle pkg does similar thing but sum diagonal is not equal to 
             # eigenvalues, gram is not diagonal

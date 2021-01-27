@@ -65,11 +65,11 @@ find_embedding_coordinates_ss <- function(reconstruction_weights,
     
     embedding_coordinates <- as.data.table(embedding_coordinates)
     
+    data.table::setnames(
+      embedding_coordinates,
+      sprintf("y_%d", seq_len(d)))
+    
   }
-  
-  # data.table::setnames(
-  #   embedding_coordinates, 
-  #   sprintf("y_%d", seq_len(d)))
   
   # RETURN ---------------------------------------------------------------------
   
