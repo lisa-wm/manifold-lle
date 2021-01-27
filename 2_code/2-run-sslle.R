@@ -11,8 +11,6 @@
 
 # TODO work on automatic selection of k
 # TODO what about epsilon neighborhoods
-# TODO set up benchmark study with varying combos of samples and neigbhors
-# (and landmarks!)
 # TODO find out about rev and abs in returning embedding coordinates
 # TODO incorporate landmark lle / nystrom approx
 
@@ -23,14 +21,14 @@ data_unlabeled <- lapply(data_sets, function(i) {i[, .(x, y, z)]})
 
 # LLE --------------------------------------------------------------------------
 
-# scurve 3000 points, 18 neighbors works fairly well
+# scurve 3000 points, 14 neighbors works top
 # more points is def better
 
 scurve_lle <- perform_lle(
   data_unlabeled$scurve,
   intrinsic_dim = 2L,
   neighborhood_method = "knn",
-  choices_k = 12:16
+  choices_k = 14L:18L
 )
 
 scurve_lle_plot <- data.table(scurve_lle$Y, data_sets$scurve[, .(t, s)])
@@ -42,7 +40,7 @@ swiss_roll_lle <- perform_lle(
   data_unlabeled$swiss_roll,
   intrinsic_dim = 2L,
   neighborhood_method = "knn",
-  choices_k = 12:16
+  choices_k = 12L:16L
 )
 
 swiss_roll_lle_plot <- data.table(
@@ -74,7 +72,7 @@ incomplete_tire_sslle <- perform_sslle(
   data = incomplete_tire[new_order],
   prior_points = prior_points,
   neighborhood_method = "knn",
-  choices_k = 8:9,
+  choices_k = 8L:10L,
   regularization_param = 0.001
 )
 
@@ -93,7 +91,7 @@ incomplete_tire_sslle_noisy <- perform_sslle(
   data = incomplete_tire[new_order],
   prior_points = prior_points_noisy,
   neighborhood_method = "knn",
-  choices_k = 8:9,
+  choices_k = 8L:10L,
   regularization_param = 0.001,
   is_exact = FALSE,
   confidence_param = 0.001

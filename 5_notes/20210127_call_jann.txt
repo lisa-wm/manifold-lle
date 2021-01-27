@@ -1,0 +1,17 @@
+call 2021-01-27
+
+scope
+- passt total, wenn ich nur sslle implementiere
+- epsilon neighborhoods kann ich weg lassen
+- laufzeit (geodesics, inversion im fall mit unsicherheit) egal
+- sensitivitätsanalyse super idee
+- automatische ide muss ich mich jetzt nicht groß kümmern, # k wichtiger
+
+sensitivitätsanalyse
+- cool wäre worst/medium/best case szenario für prior points (worst = absichtlich dumm, medium = random, best = maxmin)
+- gute story überlegen --> nochmal mit jann abstimmen
+- mehr als 3 dim max. stretch goal
+
+sonstiges
+- geodesics kann ich gern von dimred übernehmen
+- prior points hängen damit fundamental von deren graph approx ab (aber nicht vom erfolg von isomap! globale isometrie hier egal)
