@@ -1,6 +1,11 @@
 \subsection{Overview}
 \label{principles-overview}
 
+% ------------------------------------------------------------------------------
+
+\subsubsection{Taxonomy}
+\label{taxonomy}
+
 After the goal of manifold learning has been formalized, it shall now be laid 
 out how the problem is approached by LLE as the conceptual parent of SSLLE 
 (the incorporation of prior information is a rather different matter that will 
@@ -40,6 +45,11 @@ networks and is not discussed here \citep{vandermaatenetal2009}.
     \citet{bengioetal2004}.}
     \label{fig-models-overview}
   \end{figure}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Intuition}
+\label{intuition}
 
 As indicated in figure \ref{fig-models-overview}, this report will 
 sketch the idea behind local graph-based manifold learning in the light of 
@@ -278,10 +288,21 @@ have a maximum distance of $\epsilon \in \R$ to $\x$, yielding
 \end{equation}
 
 and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
+\\
+
 Both $k$ and $\epsilon$ are hyperparameters that must be specified up-front.
 Their choice reflects beliefs about the topological structure of $\mani$ -- 
 smaller neighborhoods corresponding to a higher degree of non-linearity -- and 
 may affect performance rather strongly \citep{sudderth2002}.
+Chapter \ref{challenges} will discuss this trade-off, which is also addressed in 
+the practical implementation (section \ref{experiment}), in more detail.
+In this, the remainder of the report will focus on the $k$-neighborhood notion, 
+as it is typically more easily specified due to its inherent scale invariance\footnote{
+Yet, \citet{tenenbaumdesilvalangford2000} note that, when local dimensionality 
+is not constant across the observed data, $\epsilon$-neighborhoods might provide 
+more reliable results.
+} and has 
+attracted rather more attention in general research. 
 \\
 
 \textbf{Neighborhood graphs.}

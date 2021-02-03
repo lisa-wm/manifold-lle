@@ -67,7 +67,7 @@ some points to label in a hopefully cleverish way and then hand them to you
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{SS-LLE Algorithm}
+\subsubsection{SSLLE Algorithm}
 \label{algo-sslle}
 
 \begin{itemize}
