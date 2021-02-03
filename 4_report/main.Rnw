@@ -180,7 +180,7 @@ Munich, month day\textsuperscript{th}, 2021
 \label{math}
 \input{chapters/math.Rnw}
 
-\section{Local Graph-Based Manifold Learning}
+\section{Local Graph-Based Manifold Learning (LGML)}
 \label{lgb-mani-learn}
 \input{chapters/graph-based-models.Rnw}
 

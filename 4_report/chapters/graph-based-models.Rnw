@@ -9,22 +9,23 @@
 After the goal of manifold learning has been formalized, it shall now be laid 
 out how the problem is approached by LLE as the conceptual parent of SSLLE 
 (the incorporation of prior information is a rather different matter that will 
-be addressed in chapter \ref{sslle}). 
+be addressed in chapter \ref{sslle}; apart from this, the basic functionalities 
+of SSLLE and LLE are identical and will therefore be presented as one). 
 Much of the theoretical foundation for LLE has been discussed only in later 
 work.
 In order to provide a more integrated background, explanations will therefore be 
-given in a broader context of local graph-based manifold learning, which also 
-comprises LEM and HLLE.
+given in a broader context of local graph-based manifold learning (LGML), which 
+also comprises LEM and HLLE.
 The particular relationship of the three methods shall be made clear along the 
 way.
 
-Local graph-based manifold learning arises from a variety of geometric 
+LGML arises from a variety of geometric 
 intuitions and computational implementations.
 Nonetheless, methods share common structures that allow for interpretation in a 
 more abstract framework (\citet{bengioetal2003}, \citet{bengioetal2004}).
 It should be noted that such a framework might be established from several 
-angles; after all, the different methods attempt to solve the same problem 
-and can thus often be translated into one another.
+angles; after all, the different approaches attempt to solve the same problem 
+and can thus be translated into one another in various ways.
 
 Figure \ref{fig-models-overview} depicts a schematic overview on the models 
 studied here, representing the specific perspective taken within this report.
@@ -52,19 +53,19 @@ networks and is not discussed here \citep{vandermaatenetal2009}.
 \label{intuition}
 
 As indicated in figure \ref{fig-models-overview}, this report will 
-sketch the idea behind local graph-based manifold learning in the light of 
+sketch the idea behind LGML in the light of 
 \textit{kernel principal component analysis (kernel PCA)}.
 Kernel PCA was actually proposed first and later shown to link the other 
 concepts by a unified idea (\citet{hametal2003}.
 It makes for an appealing framework that provides a useful general 
 intuition to manifold learning and subsumes the other methods in a 
-way that proves beneficial for the important task of out-of-sample extension \citep{bengioetal2004}.
+way beneficial to the important task of out-of-sample extension \citep{bengioetal2004}.
 \\
 
 \textbf{Kernel PCA.} Kernel PCA builds upon two fundamental concepts 
 in machine learning: it performs \textit{principal component analysis (PCA)} on 
 data transformed by the \textit{kernel trick}.
-In principle, it undertakes two subsequent steps.
+It undertakes two subsequent steps.
 First, features of interest are extracted from the data by kernelization. 
 These are taken to capture the intrinsic data structure and may therefore be 
 understood as an approximation to the latent manifold properties.
@@ -97,7 +98,7 @@ relevant latent dimensions \citep{schoelkopfetal1998}.
   % space after all, right
   $\kappa(\x_i, \x_j)$ in some space with Hilbert property.
   Appropriate choice of $\kappa$ then allows for the data to be represented by a 
-  matrix $K \in \R^{N \times N}, K_{ij} = \kappa(\x_i, \x_j)$.
+  matrix $\bm{K} \in \R^{N \times N}, \bm{K}_{ij} = \kappa(\x_i, \x_j)$.
   This matrix is the numerical data representation derived with respect to their 
   latent properties. \citep{schoelkopfetal1998}.
   Precisely how it is computed depends on the choice of the kernel function 
@@ -116,7 +117,7 @@ relevant latent dimensions \citep{schoelkopfetal1998}.
   dimensionality reduction at minimal information loss \citep{cayton2005}.
   In kernel PCA, this eigenanalysis is implicitly performed in the feature space 
   $\mathcal{F}$.
-  Algorithmically, it boils down to diagonalizing the kernel matrix $K$ 
+  Algorithmically, it boils down to diagonalizing the kernel matrix $\bm{K}$ 
   \citep{schoelkopfetal1998}.
  
 \end{itemize}
@@ -147,7 +148,7 @@ desired one-dimensional representation (\textit{right}).
 
 % ------------------------------------------------------------------------------
 
-\subsection{Conceptual Framework}
+\subsection{Conceptual Framework of LGML}
 \label{framework}
 
 % ------------------------------------------------------------------------------
@@ -161,14 +162,17 @@ The nature of the feature map applied to the input data determines the kind of
 mapping that may be learned and serves to distinguish the various techniques.
 As foreshadowed in figure \ref{fig-models-overview}, spectral methods decompose 
 into groups using \textit{linear} and \textit{non-linear} kernels, respectively.
-This distinction now directly translates to the feature map $\phi$.
+This distinction directly translates to the feature map $\phi$.
 Linear methods suffer from the confinement to finding linear subspaces \citep{vandermaatenetal2009}.
 PCA in its standard form can be interpreted as kernel PCA by identifying the 
 kernel function with the covariance function.
 It thus returns the subspace of greatest variability in the original input 
 features \citep{hametal2003}.
 The closely related \textit{multi-dimensional scaling (MDS)} yields the 
-same result, albeit from a different intuition \citep{sauletal2006}.
+same result\footnote{
+At least, in its metric form; there are alternative formulations of MDS that 
+are not equivalent to PCA (see, for example, \citet{williams2002}).
+}, albeit from a different intuition \citep{sauletal2006}.
 
 As extensively discussed above, $\X$ must often be 
 assumed to lie on a non-linear manifold $\mani \subset \RD$, which is precisely 
@@ -181,7 +185,7 @@ In fact, they do not even perform kernelization explicitly: they transform the
 data in a way that can be shown to correspond to applying a (data-dependent) 
 kernel function\footnote{
 The report does not discuss the actual kernel function as their illustrative 
-ability is rather limited.
+ability is considered rather limited.
 For an explicit formulation of kernels in LLE, LEM and HLLE see for example \citet{bengioetal2004} and \citet{weinbergeretal2004}.
 }, 
 but the fundamental intuition is a different one. 
@@ -190,7 +194,8 @@ but the fundamental intuition is a different one.
 \textbf{Non-linearity.} 
 The key idea in graph-based learning is to approximate the manifold by a 
 discretized graph representation.
-Such a graph may be intuitively imagined as a skeletal model of $\mani$.
+Such a graph may be intuitively imagined as a skeletal model of $\mani$ (an 
+example is given in \ref{fig-neighbor-graph}).
 This way, distances may be measured along the approximated manifold 
 surface rather than in the ambient Euclidean space, effectively enabling 
 non-linearity.
@@ -199,12 +204,13 @@ graph -- essentially a proxy of the latent manifold properties
 \citep{sauletal2006}.
 \\
 
-\textbf{Locality.} The second desideratum in general manifold learning is the 
+\textbf{Locality.} A second desideratum in general manifold learning is the 
 ability to treat highly non-linear manifolds with sufficiently local focus.
 Non-convexity means $\mani$ is isometric to a non-convex subset of Euclidean 
 space \citep{donohogrimes2003}. 
 Intuitively, such behavior requires careful tracing of the manifold surface.
-Local graph-based methods therefore focus on solely local manifold properties \citep{cayton2005}.
+LGML methods therefore focus on solely local manifold properties 
+\citep{cayton2005}.
 They are frequently contrasted to \textit{Isomap}, one of the 
 earliest and most prominent examples of global manifold learning.
 Isomap retains pairwise distances between points on the manifold surface as 
@@ -222,9 +228,10 @@ condition to open, connected subspaces \citep{donohogrimes2003}.
 \\
 
 \textbf{Algorithmic procedure.}
-Summing up the above, local graph-based methods use functionals defined on graph approximations of the manifold to capture the intrinsic data structure.
-This information is stored in a matrix representation $M$ that is directly 
-linked to the kernel matrix $K$.
+Summing up the above, LGML methods use functionals defined on graph 
+approximations of the manifold to capture the intrinsic data structure.
+This information is stored in a matrix representation $\bm{M}$ that is 
+directly linked to the kernel matrix $\bm{K}$.
 Eigenanalysis of $M$ then leads to the sought-for low-dimensional subspace 
 coordinates.
 
@@ -234,8 +241,8 @@ The resulting algorithmic pattern may be stated as follows
 \begin{tight_enumerate}
   \item Construct a neighborhood graph $\mathcal{G}$ from the observed data.
   \item Analyze the graph properties with an appropriate functional and derive 
-  a matrix representation $M$ thereof.
-  \item Find the eigenvalues and associated eigenvectors of $M$.
+  a matrix representation $\bm{M}$ thereof.
+  \item Find the eigenvalues and associated eigenvectors of $\bm{M}$.
   \item From the principal (top or bottom) eigenvectors, as determined by the 
   ordered eigenvalues, retrieve the low-dimensional coordinates.
 \end{tight_enumerate}
@@ -245,11 +252,11 @@ The resulting algorithmic pattern may be stated as follows
 \subsubsection{Graph Approximation}
 \label{graph}
 
-All local graph-based methods fundamentally build on graph approximations of the 
+All LGML methods fundamentally build on graph approximations of the 
 manifold surface.
 Note that these graphs are constructed from neighborhood relations in the 
-high-dimensional observation space and do not require any information about the 
-latent manifold coordinates.
+high-dimensional observation space and do not require any prior information 
+about the latent manifold coordinates.
 \\
 
 \textbf{Neighborhoods.} 
@@ -263,13 +270,16 @@ consequence of their local isometry to the Euclidean observation space
 \citep{mafu2011}.
 There are two principal ways to build a neighborhood around $\x \in \X$, 
 both of which usually employ the squared Euclidean norm\footnote{
-In principle, alternative metrics are equally applicable, for instance such 
+In principle, alternative metrics are applicable, for instance such 
 that measure angles \citep{belkinniyogi2004}.
 } $\| \cdot \|^2$.
 Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
 constructor that assigns a set of neighbors to $\x$.
 The first possibility is to restrict the size of the neighborhood to the $k$ 
-points with the smallest distance to $\x$, such that
+points\footnote{
+In presence of ties in pairwise distances k may vary across the data, but with 
+zero probability in continuous feature spaces.
+} with the smallest distance to $\x$, such that
 $\ell = k$ and 
 
 \begin{equation}
@@ -296,13 +306,13 @@ smaller neighborhoods corresponding to a higher degree of non-linearity -- and
 may affect performance rather strongly \citep{sudderth2002}.
 Chapter \ref{challenges} will discuss this trade-off, which is also addressed in 
 the practical implementation (section \ref{experiment}), in more detail.
-In this, the remainder of the report will focus on the $k$-neighborhood notion, 
-as it is typically more easily specified due to its inherent scale invariance\footnote{
+In this, the remainder of the report will focus on the $k$-neighborhood notion 
+as it is typically more easily specified due to its inherent scale invariance 
+and has attracted rather more attention in general research\footnote{
 Yet, \citet{tenenbaumdesilvalangford2000} note that, when local dimensionality 
 is not constant across the observed data, $\epsilon$-neighborhoods might provide 
 more reliable results.
-} and has 
-attracted rather more attention in general research. 
+}. 
 \\
 
 \textbf{Neighborhood graphs.}
@@ -324,9 +334,8 @@ within $\epsilon$-radius, depending on the neighborhood definition.
   Figure \ref{fig-neighbor-graph} shows how a neighborhood graph may be used as 
   an approximation for the example of the S-curve manifold.
   It was built using $k$-neighborhoods with $k = 3$.
-  Note that no information on the latent manifold coordinates is required.
-  For a densely sampled set of points, the graph representation yields a fairly
-  good approximation of the manifold surface.
+  For a densely sampled set of points, the graph representation should yield a 
+  fairly good approximation of the manifold surface.
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -349,8 +358,8 @@ within $\epsilon$-radius, depending on the neighborhood definition.
 \label{eigenanalysis}
 
 Eventually, spectral manifold learning boils down to an eigenanalysis 
-of the matrix $M$ believed to hold information about the intrinsic manifold 
-structure.
+of the matrix $\bm{M}$ believed to hold information about the intrinsic 
+manifold structure.
 As explained in chapter \ref{principles-overview}, PCA finds the principal 
 eigenvectors of empirical covariance, thereby defining a low-dimensional 
 subspace containing most of the data-inherent variability.
@@ -367,35 +376,36 @@ $M$ is loss-optimal with respect to the least-squares error
 \textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
 decomposition of a square matrix into pairs of \textit{eigenvectors} and 
 \textit{eigenvalues}.
-Let $A \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a scalar 
-value. 
-$\lambda$ is said to be an eigenvalue to $A$ if there exists 
-$\bm{v} \in \R^N \setminus \{0\}$ such that $A \bm{v} = \lambda \bm{v}$.
+Let $\bm{A} \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a 
+scalar value. 
+$\lambda$ is said to be an eigenvalue to $\bm{A}$ if there exists 
+$\bm{v} \in \R^N \setminus \{0\}$ such that $\bm{A} \bm{v} = \lambda \bm{v}$.
 Then, $\bm{v}$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
 their tuple is also called an \textit{eigenpair}.
 \\
 
 \textbf{Null spaces.} A closely related notion is that of the 
-\textit{null space}, consisting of the vectors that map $A$ to 0 upon 
-multiplication from the right: $\{\bm{v} \in \R^N: A \bm{v} = 0\}$.
-It can be easily seen that the null space consists of those eigenvectors of $A$ 
-that are associated with an eigenvalue of zero, and the zero vector itself.
-For a specific eigenvalue $\lambda$ of $A$, the null space of $\lambda I - A$ 
-(with $I$ the $N$-dimensional identity matrix) constitutes the 
-\textit{eigenspace} of $A$.
-\citep{boermmehl2012}.
+\textit{null space}, consisting of the vectors that map $\bm{A}$ to 0 upon 
+multiplication from the right: $\{\bm{v} \in \R^N: \bm{A} \bm{v} = 0\}$.
+It can be easily seen that the null space consists of those eigenvectors of 
+$\bm{A}$ that are associated with an eigenvalue of zero, and the zero vector 
+itself. 
+For a specific eigenvalue $\lambda$ of $\bm{A}$, the null space of 
+$\lambda \bm{I} - \bm{A}$ 
+(with $\bm{I}$ the $N$-dimensional identity matrix) constitutes the 
+\textit{eigenspace} of $\bm{A}$ \citep{boermmehl2012}.
 \\
 
-\textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix $A$ can 
-be framed as the solution of a generalized eigenvalue problem.
+\textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix 
+$\bm{A}$ can be framed as the solution of a generalized eigenvalue problem.
 Generalized eigenvalue problems are posed subject to a constraint on a second, 
-also symmetric matrix $B \in \R^{N \times N}$.
-As the standard eigenvalue problem results immediately from $B = I$, the 
-generalized form subsumes both cases.
+also symmetric matrix $\bm{B} \in \R^{N \times N}$.
+As the standard eigenvalue problem results immediately from 
+$\bm{B} = \bm{I}$, the generalized form subsumes both cases.
 It is given by 
 
 \begin{equation}
-  A \bm{V} = B \bm{V} \bm{\Lambda},
+  \bm{A} \bm{V} = \bm{B} \bm{V} \bm{\Lambda},
   \label{eq-gevproblem}
 \end{equation}
 
@@ -406,8 +416,8 @@ $\bm{\Lambda} = \text{\textit{diag}}[\lambda_1, \lambda_2, ..., \lambda_N]^T
 The generalized eigenvalue problem may be stated equivalently as 
 
 \begin{equation}
-  \max_{\bm{V}} \text{\textit{trace}}(\bm{V}^T A \bm{V}), \quad \text{s.t.} 
-  \quad \bm{V}^T B \bm{V} = I,
+  \max_{\bm{V}} \text{\textit{trace}}(\bm{V}^T \bm{A} \bm{V}), \quad \text{s.t.} 
+  \quad \bm{V}^T \bm{B} \bm{V} = \bm{I},
   \label{eq-gevproblem-max}
 \end{equation}
 
@@ -420,5 +430,5 @@ also briefly comments with regard to the methods discussed here
 
 Building upon the concepts of neighborhood graph approximation and subsequent 
 eigenanalysis, the following chapter will now present in detail how LEM, LLE and 
-HLLE approach the manifold learning task, and eventually, how SSLLE seeks to 
+HLLE approach the manifold learning task, and, eventually, how SSLLE seeks to 
 improve the low-dimensional embedding through anchoring with prior points.

@@ -1,8 +1,5 @@
 \begin{thebibliography}{xx}
 
-\harvarditem{}{n.d.}{zhangchau2009}
-  \harvardyearleft n.d.\harvardyearright .
-
 \harvarditem{Belkin \harvardand\ Niyogi}{2001}{belkinniyogi2001}
 Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2001\harvardyearright .
 \newblock Laplacian eigenmaps and spectral technique for embedding and
@@ -173,6 +170,11 @@ Weinberger, K.~Q., Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft
 \newblock Learning a kernel matrix for nonlinear dimensionality reduction, {\em
   Proceedings of the 21rd International Conference on Machine Learning}.
 
+\harvarditem{Williams}{2002}{williams2002}
+Williams, C.~K.  \harvardyearleft 2002\harvardyearright .
+\newblock On a connection between kernel pca and metric multidimensional
+  scaling, {\em Machine Learning} {\bf 46}:~11–19.
+
 \harvarditem{Wissel}{2017}{disswissel2017}
 Wissel, D.~R.  \harvardyearleft 2017\harvardyearright .
 \newblock {\em Intrinsic Dimension Estimation using Simplex Volumes}, PhD
@@ -190,5 +192,11 @@ Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
   2006\harvardyearright .
 \newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
   of the 23rd International Conference on Machine Learning}.
+
+\harvarditem{Zhang \harvardand\ Chau}{2009}{zhangchau2009}
+Zhang, S. \harvardand\ Chau, K.-W.  \harvardyearleft 2009\harvardyearright .
+\newblock Dimension reduction using semi-supervised locally linear embedding
+  for plant leaf classification, {\em Proceedings of the 2009 International
+  Conference on Intelligent Computing}.
 
 \end{thebibliography}
