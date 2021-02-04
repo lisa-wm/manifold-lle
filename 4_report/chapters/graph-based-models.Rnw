@@ -414,11 +414,12 @@ It is given by
 where $\bm{V} = [\bm{v}_1, \bm{v}_2, ..., \bm{v}_N] \in \R^{N \times N}$ 
 is the matrix of eigenvectors of $A$ and 
 $\bm{\Lambda} = \text{\textit{diag}}[\lambda_1, \lambda_2, ..., \lambda_N]^T 
-\in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues.
+\in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues 
+(ordered from smallest to largest).
 The generalized eigenvalue problem may be stated equivalently as 
 
 \begin{equation}
-  \max_{\bm{V}} \text{\textit{trace}}(\bm{V}^T \bm{A} \bm{V}), \quad \text{s.t.} 
+  \min_{\bm{V}} \text{\textit{trace}}(\bm{V}^T \bm{A} \bm{V}), \quad \text{s.t.} 
   \quad \bm{V}^T \bm{B} \bm{V} = \bm{I},
   \label{eq-gevproblem-max}
 \end{equation}

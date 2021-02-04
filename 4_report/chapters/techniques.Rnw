@@ -20,6 +20,7 @@ similar inputs is essentially a notion of smoothness and can thus be controlled
 by a size constraint on the gradient of the mapping function.
 \\
 
+\textbf{Laplace-Beltrami operator.}
 Consider the twice differentiable function $f: \mani \rightarrow \R$ mapping 
 two points $\pv, \qv \in \mani$ to $f(\pv)$ and $f(\qv)$, respectively. 
 On $\mani$ they are connected by a length-parametrized curve $c(t)$.
@@ -68,11 +69,52 @@ locality by minimizing $\int_{\mani}\| \nabla f \|^2$.
 This is just equal to minimizing $\int_{\mani} \mathcal{L}(f)f$ with 
 $\mathcal{L}$ the Laplace-Beltrami operator.
 The optimal embedding map is then given by the $d$ principal eigenfunctions of
-$\mathcal{L}$ \citep{belkinniyogi2003}.
+$\mathcal{L}$ after removing the bottom one which would map $\mani$ but to a 
+single point \citep{belkinniyogi2003}.
 \\
 
+\textbf{Graph Laplacian.}
 Now the same reasoning can be applied to the neighborhood graph approximation of
 $\mani$.
+$\mathcal{L}$ is replaced by the graph Laplacian 
+$\bm{L} \in \R^{N \times N}$ derived from edge weights 
+$\bm{W} = (w)_{ij} \in \R^{N \times N}$.
+In LEM, these weights are computed using a heat kernel, such that 
+$w_{ij} = \exp(\frac{\|x_i - x_J \|^2}{t})$, $t \in \R$, for any two points 
+$x_i, x_j \in \RD$ if they connected by a graph edge and 0 otherwise.
+Clearly, edges between closer points receive larger weights.
+Let $\bm{D} = (d)_{ij} \in \R^{N \times N}$ be the diagonal matrix of row sums 
+of $\bm{W}$ \citep{belkinniyogi2003}.
+Then, $\bm{L} = \bm{D} - \bm{W}$.
+Translating the idea of smoothness from above leads to a generalized 
+eigenvalue problem as stated in equation \ref{eq-gevproblem} \citep{kurras2016}.
+To arrive at this, recall the desideratum of mapping nearby inputs to nearby 
+outputs.
+As the heat kernel assigns larger weights to points with small distance, this 
+requirement may be put in terms of minimizing weighted output distances: 
+% \begin{equation*}
+% \begin{split}
+% \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
+% &= \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i^2 + \Y_j^2 - 2\Y_i\Y_j) w_{ij} \\
+% &= \argmin_{\Y} \frac{1}{2} (\sum_i \Y_i^2 d_{ii} + \sum_j \Y_j^2 d_{jj} 
+% - 2 \sum_{ij}\Y_i\Y_j w_{ij}) \\
+% &= \argmin_{\Y} \Y^T \bm{L} \Y.
+% \end{split}
+% \end{equation*}
+\begin{equation*}
+\begin{split}
+\min_{\Y} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
+&= \min_{\Y} \sum_{i, j} \| \Y_i - \Y_j \|^2 w_{ij} \\
+&= \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
+  \quad \Y^T \bm{D} \Y^T = \bm{I},
+\end{split}
+\end{equation*}
+
+the additional constraint removing an arbitrary scaling factor.
+As explained in section \ref{eigenanalysis}, the solution to this generalized 
+eigenproblem is given by the eigenvectors of $\bm{L}$, the $d$ bottom ones 
+(again, after removing the constant vector) yielding the desired low-dimensional 
+embedding \citep{belkinniyogi2003}.
 
 % ------------------------------------------------------------------------------
 

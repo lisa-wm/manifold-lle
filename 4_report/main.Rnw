@@ -61,6 +61,9 @@ bindingoffset = 6mm]{geometry}
   \setlength{\parskip}{0pt}
 }{\end{enumerate}}
 
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\changefont{Semi-Supervised Locally Linear Embedding: Application 
