@@ -17,4 +17,6 @@ This is directly related to the COD -- local methods require dense sampling
 \citep{vandermaatenetal2009}
 
 Also: generalization to new points (w/o recomputing everything)
-neighborhood-preserving propositions
+neighborhood-preserving propositions --> fundamental problem: except for prior
+points, it is deterministic (as opposed to generative approaches, such as 
+autoencoders)

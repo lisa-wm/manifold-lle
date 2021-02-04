@@ -113,6 +113,8 @@ relevant latent dimensions \citep{schoelkopfetal1998}.
   eigenvectors, thereby mapping the observations to a coordinate system given 
   by the linear feature combinations that represent the strongest 
   (co)variability.
+  Note that for this transformation to actually rotate the coordinate system 
+  about the origin, the data must be mean-centered beforehand.
   PCA thus performs an orthogonal input transformation that allows for 
   dimensionality reduction at minimal information loss \citep{cayton2005}.
   In kernel PCA, this eigenanalysis is implicitly performed in the feature space 

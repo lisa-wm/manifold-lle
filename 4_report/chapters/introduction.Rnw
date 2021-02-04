@@ -42,7 +42,8 @@ is reasonable to suppose that variation in these images is in fact caused by a
 small number of latent features.
 More formally, the data are assumed to lie on a $d$-dimensional 
 \textit{manifold} embedded in the $D$-dimensional observation space, with 
-$d \ll D$ \citep{cayton2005}.
+$d \ll D$.
+This belief is referred to as \textit{manifold assumption} \citep{cayton2005}.
 A crucial property of $d$-manifolds, i.e., the $d$-dimensional generalization of
 a curved surface, embedded in $\RD$, is their local topological equivalence to 
 $\Rd$ \citep{mafu2011}.
@@ -67,7 +68,7 @@ are connected by curved paths rather than straight lines \citep{mafu2011}.
 \textcolor{red}{Adapt to structure of chapter 3}
 
 \textbf{Local graph-based techniques.}
-Various approaches have been proposed to retrieve points' manifold coordinates.
+Various approaches have been proposed to retrieve points' manifold.
 A taxonomy may, for example, be found in \citet{vandermaatenetal2009}. 
 Many rely on spectral techniques, trying to find a matrix representation of the 
 data whose principal eigenvectors are used to span a $d$-dimensional subspace.
@@ -86,7 +87,7 @@ Research indicates, however, that for non-convex manifolds it is more effective
 to preserve local structures only.
 Otherwise, solutions are prone to shortcuts, i.e., placing points close in $\RD$
 next to each other when they lie in fact on quite different parts of the 
-manifold \citep{belkinniyogi2003}.
+manifold \citep{belkinniyogi2001}.
 In order to avoid such miscalculations, sparse techniques focus on merely 
 local neighborhood structures, modeled through weighted graph representations.
 The information from these graphs is then condensed into a sparse matrix. 
@@ -157,3 +158,16 @@ introduced; chapter \ref{lgb-mani-learn} explains the idea of local
 graph-based manifold learning; chapter \ref{sslle} presents SSLLE in detail; 
 chapter \ref{experiment} discusses the results of the conducted experiments; and 
 chapter \ref{concl} draws final conclusions.
+\\
+
+\textbf{Remark.}
+This report addresses a particular sub-field of dimensionality reduction rooted, 
+more or less, in machine learning.
+A lot of research has been attracted by deep learning in the recent past.
+The manifold learning task naturally lends itself to neural networks where
+the derivation of intermediate data representations is an integral component 
+(perhaps most notably so in autoencoder and generative adversarial systems; see
+for example \citet{khayatkhoeielgammal2018}, \citet{huangetal2020}).
+So, while the focus here lies on a different family of methods, it should not go 
+unmentioned that deep dimensionality reduction is certainly a very promising 
+area.

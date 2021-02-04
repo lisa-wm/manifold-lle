@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  3 FEB 2021 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 FEB 2021 06:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,35 +626,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--32
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--66
-
- []
-
-
-Package natbib Warning: Citation `belkinniyogi2003' on page 1 undefined on inpu
-t line 89.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--96
+Underfull \hbox (badness 10000) in paragraph at lines 33--67
 
  []
 
 [1]
+Underfull \hbox (badness 10000) in paragraph at lines 70--97
+
+ []
+
 
 Package natbib Warning: Citation `belkinniyogi2003' on page 2 undefined on inpu
-t line 115.
+t line 116.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--148
+Underfull \hbox (badness 10000) in paragraph at lines 111--126
 
  []
 
-[2]) (./chapters/math.Rnw
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--149
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 150--162
+
+ []
+
+) (./chapters/math.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--20
 
  []
@@ -674,14 +674,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--108
 
  []
 
-<figures/s-curve.pdf, id=55, 343.2825pt x 305.22029pt>
+[4]
+<figures/s-curve.pdf, id=59, 343.2825pt x 305.22029pt>
 File: figures/s-curve.pdf Graphic file (type pdf)
 <use figures/s-curve.pdf>
 Package pdftex.def Info: figures/s-curve.pdf  used on input line 135.
 (pdftex.def)             Requested size: 124.83444pt x 157.02121pt.
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
 38.
-(c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
+ (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 Underfull \hbox (badness 1448) in paragraph at lines 138--138
@@ -694,7 +695,7 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 111--142
 [][] [] [] 
  []
 
-[4] [5 <./figures/s-curve.pdf
+[5 <./figures/s-curve.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
@@ -728,61 +729,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--64
 <figures/spirals.png, id=83, 463.7325pt x 134.00063pt>
 File: figures/spirals.png Graphic file (type png)
 <use figures/spirals.png>
-Package pdftex.def Info: figures/spirals.png  used on input line 136.
+Package pdftex.def Info: figures/spirals.png  used on input line 138.
 (pdftex.def)             Requested size: 426.79134pt x 123.32907pt.
  [8]
-Underfull \hbox (badness 10000) in paragraph at lines 177--193
+Underfull \hbox (badness 10000) in paragraph at lines 179--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--206
+Underfull \hbox (badness 10000) in paragraph at lines 196--208
 
  []
 
 [9 <./figures/spirals.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 207--229
+Underfull \hbox (badness 10000) in paragraph at lines 209--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--261
+Underfull \hbox (badness 10000) in paragraph at lines 257--263
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--317
+Underfull \hbox (badness 10000) in paragraph at lines 305--319
 
  []
 
 <figures/s-curve-connected.pdf, id=94, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 347.
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 349.
 
 (pdftex.def)             Requested size: 153.64441pt x 197.34752pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 327--354
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 329--356
 [][] [] [] 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 360--375
+Underfull \hbox (badness 10000) in paragraph at lines 362--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--386
+Underfull \hbox (badness 10000) in paragraph at lines 378--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--397
+Underfull \hbox (badness 10000) in paragraph at lines 389--400
 
  []
 
@@ -792,37 +793,37 @@ pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 423--429
+Underfull \hbox (badness 10000) in paragraph at lines 426--432
 
  []
 
 ) (./chapters/techniques.Rnw [13]
-Underfull \hbox (badness 10000) in paragraph at lines 82--85
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--106
+Underfull \hbox (badness 10000) in paragraph at lines 88--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 
  []
 
 [14])
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 133--191
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 135--191
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
@@ -834,10 +835,10 @@ Package natbib Warning: There were undefined citations.
 
 [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10692 strings out of 479485
- 158030 string characters out of 5875915
- 466972 words of memory out of 5000000
- 27395 multiletter control sequences out of 15000+600000
+ 10698 strings out of 479485
+ 158186 string characters out of 5875915
+ 466077 words of memory out of 5000000
+ 27401 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -859,7 +860,7 @@ blic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 1055867 bytes).
+Output written on main.pdf (29 pages, 1056884 bytes).
 PDF statistics:
  201 PDF objects out of 1000 (max. 8388607)
  133 compressed objects within 2 object streams

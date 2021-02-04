@@ -6,6 +6,8 @@
 \subsubsection{Laplacian Eigenmaps (LEM)}
 \label{laplace}
 
+The reason for LEM to be part of this report alongside the
+
 \begin{itemize}
   \item Notion of locality
   \item Laplacian eigenmaps
