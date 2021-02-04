@@ -137,13 +137,15 @@ or that annotation of a subset of the data is available at low cost
 When prior knowledge is at hand it is only natural to use it.
 Therefore, \citet{yangetal2006} proposed \textit{semi-supervised locally linear 
 embedding (SSLLE)}, an extension to LLE that is able to harvest prior 
-information\footnote{
-It should be noted that an alternative proposal for SSLLE has been made by 
-\citet{zhangchau2009} some time after but without reference to 
-\citet{yangetal2006} and building upon a rather different approach, namely 
-the fully supervised LLE model that \citet{deridderduin2002} had designed for 
-classification tasks.
-Here, solely the work by \citet{yangetal2006} is examined.
+information.
+Note that this intuition is rather different from general semi-supervised 
+learning where unlabeled data is used to aid an inherently supervised task with 
+few available labels: SSLLE tackles an inherently unsupervised task by providing 
+some labeled data points as reference\footnote{
+On this note, alternative proposals for a semi-supervised LLE have been made, 
+for instance by \citet{zhangchau2009}, that build upon a fully supervised LLE 
+model such as the one \citet{deridderduin2002} had designed for classification 
+tasks.
 }.
 \\
 
