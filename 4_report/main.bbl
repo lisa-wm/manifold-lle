@@ -101,11 +101,6 @@ Khayatkhoei, M. \harvardand\ Elgammal, A.  \harvardyearleft
   {\em Proceedings of the 32nd Conference on Neural Information Processing
   Systems (NeurIPS)}.
 
-\harvarditem{Kurras}{2016}{kurras2016}
-Kurras, S.  \harvardyearleft 2016\harvardyearright .
-\newblock {\em Variants of the Graph Laplacian with Applications in Machine
-  Learning}, PhD thesis, Universität Hamburg.
-
 \harvarditem[Leist et~al.]{Leist, Playne \harvardand\
   Hawick}{2009}{leistetal2009}
 Leist, A., Playne, D.~P. \harvardand\ Hawick, K.~A.  \harvardyearleft
@@ -113,6 +108,12 @@ Leist, A., Playne, D.~P. \harvardand\ Hawick, K.~A.  \harvardyearleft
 \newblock Exploiting graphical processing units for data‐parallel scientific
   applications, {\em Concurrency and Computation. Practice and Experience} {\bf
   21}(18):~2400--2437.
+
+\harvarditem{Levy}{2006}{levy2006}
+Levy, B.  \harvardyearleft 2006\harvardyearright .
+\newblock Laplace-beltrami eigenfunctions towards an algorithm that
+  “understands” geometry, {\em Proceedings of the IEEE International
+  Conference on Shape Modeling and Applications}.
 
 \harvarditem{Ma \harvardand\ Fu}{2011}{mafu2011}
 Ma, Y. \harvardand\ Fu, Y.  \harvardyearleft 2011\harvardyearright .

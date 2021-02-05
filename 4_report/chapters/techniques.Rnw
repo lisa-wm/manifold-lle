@@ -8,13 +8,13 @@
 
 The reason for LEM to appear in this report alongside the LLE family is its 
 underlying theory both providing a foundation for LLE \citep{belkinniyogi2003}, 
-which was originally proposed lacking such, and closely related to the 
+which was originally proposed lacking such, and closely relating to the 
 theoretical concepts in HLLE \citep{donohogrimes2003}.
 
 LEM are centered around the preservation of locality, i.e., mapping nearby 
 inputs to nearby outputs.
 Locality is enforced via the \textit{Laplace-Beltrami operator} defined on 
-smooth, compact manifolds and operationalized by means of the \textit{graph Laplacian} acting as a discrete approximator \citep{belkinniyogi2003}.
+smooth, compact manifolds, and operationalized by means of the \textit{graph Laplacian} acting as a discrete approximator \citep{belkinniyogi2003}.
 This idea is best understood recalling that the similarity of outputs for 
 similar inputs is essentially a notion of smoothness and can thus be controlled 
 by a size constraint on the gradient of the mapping function.
@@ -30,9 +30,9 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
 \begin{minipage}[b]{0.65\textwidth}
   Gradients of $f$ with respect to $\pv$ are defined in the local tangent space
   $T_{\pv}(\mani)$ spanned by vectors tangent to $\mani$ at $\pv$.
-  As $\mani$ is embedded in $\RD$, its tangent spaces are again Euclidean and of 
-  dimension $d$, i.e., $d$-dimensional hyperplanes as depicted in figure 
-  \ref{fig:sphere-tangent} \citep{sudderth2002}.
+  As $\mani$ is embedded in $\RD$, its tangent spaces are Euclidean and of 
+  dimension $d$, i.e., $d$-dimensional hyperplanes \citep{sudderth2002} as 
+  depicted in figure \ref{fig:sphere-tangent}.
   If $\pv$ is identified with the origin of $T_{\pv}(\mani)$, the tangent space
   inherits an orthonormal coordinate system obtained from endowing
   $T_{\pv}(\mani)$ with the inner product from $\Rd$ \citep{donohogrimes2003}.
@@ -61,60 +61,120 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
 Exploiting the Schwartz equality and relations proved in 
 \citet{belkinniyogi2008}, it
 can be shown that 
-$|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$.
+$|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$, where 
+$o$ marks a term of vanishing size. 
 Acknowledging the fact that the distance between $\pv$ and $\qv$ is a datum,
 $\| \nabla f \|$ controls how far apart points are mapped on the real line.
 Consequently, the goal is to find a mapping that, on average, preserves 
-locality by minimizing $\int_{\mani}\| \nabla f \|^2$.
-This is just equal to minimizing $\int_{\mani} \mathcal{L}(f)f$ with 
-$\mathcal{L}$ the Laplace-Beltrami operator.
+locality, by posing a second-order penalty on $\| \nabla f \|$ and minimizing $\int_{\mani}\| \nabla f \|^2$.
+This is just equal to minimizing $\int_{\mani} \mathcal{L}(f)f$ with the 
+Laplace-Beltrami operator $\mathcal{L}$ \citep{belkinniyogi2003}.
+Applying the operator $\mathcal{L}$ to $f$ again results in a function from the 
+same function space as $f$, and for $\mathcal{L} f = \lambda f$, $f$ is an 
+eigenfunction of $\mathcal{L}$ with $\lambda \in \R$ as its associated 
+eigenvalue.
+Crucially, these eigenfunctions are orthogonal for $\mathcal{L}$ and their  
+eigenvalues are real, meaning they are natural candidates for forming a 
+functional basis \citep{levy2006}.
 The optimal embedding map is then given by the $d$ principal eigenfunctions of
-$\mathcal{L}$ after removing the bottom one which would map $\mani$ but to a 
+$\mathcal{L}$ after removing the bottom one which would map $\mani$ to a 
 single point \citep{belkinniyogi2003}.
 \\
 
 \textbf{Graph Laplacian.}
 Now the same reasoning can be applied to the neighborhood graph approximation of
 $\mani$.
-$\mathcal{L}$ is replaced by the graph Laplacian 
-$\bm{L} \in \R^{N \times N}$ derived from edge weights 
-$\bm{W} = (w)_{ij} \in \R^{N \times N}$.
-In LEM, these weights are computed using a heat kernel, such that 
-$w_{ij} = \exp(\frac{\|x_i - x_J \|^2}{t})$, $t \in \R$, for any two points 
-$x_i, x_j \in \RD$ if they connected by a graph edge and 0 otherwise.
-Clearly, edges between closer points receive larger weights.
-Let $\bm{D} = (d)_{ij} \in \R^{N \times N}$ be the diagonal matrix of row sums 
-of $\bm{W}$ \citep{belkinniyogi2003}.
-Then, $\bm{L} = \bm{D} - \bm{W}$.
-Translating the idea of smoothness from above leads to a generalized 
-eigenvalue problem as stated in equation \ref{eq-gevproblem} \citep{kurras2016}.
-To arrive at this, recall the desideratum of mapping nearby inputs to nearby 
+Recall the desideratum of mapping nearby inputs to nearby 
 outputs.
-As the heat kernel assigns larger weights to points with small distance, this 
-requirement may be put in terms of minimizing weighted output distances: 
-% \begin{equation*}
-% \begin{split}
-% \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
-% &= \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i^2 + \Y_j^2 - 2\Y_i\Y_j) w_{ij} \\
-% &= \argmin_{\Y} \frac{1}{2} (\sum_i \Y_i^2 d_{ii} + \sum_j \Y_j^2 d_{jj} 
-% - 2 \sum_{ij}\Y_i\Y_j w_{ij}) \\
-% &= \argmin_{\Y} \Y^T \bm{L} \Y.
-% \end{split}
-% \end{equation*}
+LEM achieves this by assigning edge weights\footnote{
+As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
+equal to 1 for connected nodes and 0 otherwise.
+}
+
 \begin{equation*}
-\begin{split}
-\min_{\Y} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
-&= \min_{\Y} \sum_{i, j} \| \Y_i - \Y_j \|^2 w_{ij} \\
-&= \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
-  \quad \Y^T \bm{D} \Y^T = \bm{I},
-\end{split}
+  w_{ij} = \begin{cases}
+    \exp(\frac{\|x_i - x_j \|^2}{t}), t \in \R, & \mbox{ if } x_i, x_j  
+    \text{ are connected,} \\
+    0 & \mbox{ otherwise,}
+  \end{cases}
 \end{equation*}
 
-the additional constraint removing an arbitrary scaling factor.
-As explained in section \ref{eigenanalysis}, the solution to this generalized 
-eigenproblem is given by the eigenvectors of $\bm{L}$, the $d$ bottom ones 
-(again, after removing the constant vector) yielding the desired low-dimensional 
-embedding \citep{belkinniyogi2003}.
+forming a weight matrix $\bm{W} = (w)_{ij} \in \R^{N \times N}$.
+Clearly, edges between closer points receive larger weights.
+A second matrix $\bm{D} = (d)_{ij} \in \R^{N \times N}$ takes the row sums of
+$\bm{W}$ on its diagonals.
+The smoothness requirement may be stated as follows:
+
+\begin{equation*}
+  \begin{split}
+    \min_{\Y} \sum_{i, j} \| \Y_i - \Y_j \|^2 w_{ij}
+    &= \min_{\Y} \sum_{i, j} \Y_i^T \Y_i w_{ij} + \Y_j^T \Y_j w_{ij} - 
+    2 \Y_i^T \Y_j w_{ij} \\
+    &= \min_{\Y} \sum_i \Y_i^T \Y_i d_{ii} + \sum_j \Y_j^T \Y_j d_{jj} - 
+    2 \sum_{i, j} \Y_i^T \Y_j w_{ij}.
+  \end{split}
+\end{equation*}
+
+Now, defining the graph Laplacian as 
+$\bm{L} = \bm{D} - \bm{W} \in \R^{N \times N}$, the above can be rewritten as
+
+\begin{equation}
+  \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
+      \quad \Y^T \bm{D} \Y^T = \bm{I},
+\end{equation}
+
+which has precisely the form of the generalized eigenvalue problem in equation 
+\ref{eq-gevproblem} \citep{belkinniyogi2003}.
+As in the continuous case, the bottom eigenvector is constant and must be 
+discarded; the subsequent $d$ eigenvectors yield the desired low-dimensional 
+embedding \citep{levy2006}.
+
+% As the heat kernel assigns larger weights to points with small distance, this 
+% requirement may be put in terms of minimizing weighted output distances
+% 
+% 
+% $\mathcal{L}$ is replaced by the graph Laplacian 
+% $\bm{L} \in \R^{N \times N}$ derived from edge weights 
+% $\bm{W} = (w)_{ij} \in \R^{N \times N}$.
+% In LEM, these weights are computed using a heat kernel\footnote{
+% As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
+% equal to 1 for connected nodes and 0 otherwise.
+% }, such that 
+% $w_{ij} = \exp(\frac{\|x_i - x_J \|^2}{t})$, $t \in \R$, for any two points 
+% $x_i, x_j \in \RD$ if they are connected by a graph edge, and 0 otherwise.
+% Clearly, edges between closer points receive larger weights.
+% Let $\bm{D} = (d)_{ij} \in \R^{N \times N}$ be the diagonal matrix of row sums 
+% of $\bm{W}$ \citep{belkinniyogi2003}.
+% Then, $\bm{L} = \bm{D} - \bm{W}$.
+% Translating the idea of smoothness from above leads to a generalized 
+% eigenvalue problem as stated in equation \ref{eq-gevproblem} \citep{kurras2016}.
+% To arrive at this, recall the desideratum of mapping nearby inputs to nearby 
+% outputs.
+% As the heat kernel assigns larger weights to points with small distance, this 
+% requirement may be put in terms of minimizing weighted output distances: 
+% % \begin{equation*}
+% % \begin{split}
+% % \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
+% % &= \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i^2 + \Y_j^2 - 2\Y_i\Y_j) w_{ij} \\
+% % &= \argmin_{\Y} \frac{1}{2} (\sum_i \Y_i^2 d_{ii} + \sum_j \Y_j^2 d_{jj} 
+% % - 2 \sum_{ij}\Y_i\Y_j w_{ij}) \\
+% % &= \argmin_{\Y} \Y^T \bm{L} \Y.
+% % \end{split}
+% % \end{equation*}
+% \begin{equation*}
+% \begin{split}
+% \min_{\Y} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
+% &= \min_{\Y} \sum_{i, j} \| \Y_i - \Y_j \|^2 w_{ij} \\
+% &= \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
+%   \quad \Y^T \bm{D} \Y^T = \bm{I},
+% \end{split}
+% \end{equation*}
+% 
+% the additional constraint removing an arbitrary scaling factor.
+% As explained in section \ref{eigenanalysis}, the solution to this generalized 
+% eigenproblem is given by the eigenvectors of $\bm{L}$, the $d$ bottom ones 
+% (again, after removing the constant vector) yielding the desired low-dimensional 
+% embedding \citep{belkinniyogi2003}.
 
 % ------------------------------------------------------------------------------
 
