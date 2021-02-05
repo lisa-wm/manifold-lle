@@ -2,7 +2,7 @@
 # MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
-plot_manifold <- function(data, dim, n_colors = 10) {
+plot_manifold <- function(data, dim, n_colors = 10, coord_syst = FALSE) {
   
   # Perform basic input checks
   
@@ -10,7 +10,7 @@ plot_manifold <- function(data, dim, n_colors = 10) {
   checkmate::assert_int(dim, lower = 1L, upper = 3L)
   checkmate::assert_count(n_colors)
   
-  if (ncol(data) != dim + 2L) 
+  if (ncol(data) != dim + 2L)
     {stop(sprintf("data must contain %d columns plus two for coloring", dim))}
   
   colnames <- c(c("x", "y", "z")[1:dim], "t", "s")
@@ -22,16 +22,20 @@ plot_manifold <- function(data, dim, n_colors = 10) {
   
   if (dim <= 2L) {
     
-    # Remove coordinate system
+    # Remove coordinate system if desired
     
-    ax <- list(
-      title = "",
-      zeroline = FALSE,
-      showline = FALSE,
-      showticklabels = FALSE,
-      showgrid = FALSE
-    )
-    
+    if (coord_syst) {
+      ax <- list(title = "", showticklabels = FALSE)
+    } else {
+      
+      ax <- list(
+        title = "",
+        zeroline = FALSE,
+        showline = FALSE,
+        showticklabels = FALSE,
+        showgrid = FALSE)
+      
+    }
     
     if (dim == 1L) {
       my_plot <- plotly::plot_ly(data, x = ~ t, y = 0, color = ~ t)
@@ -52,16 +56,29 @@ plot_manifold <- function(data, dim, n_colors = 10) {
   
   if (dim == 3L) {
     
-    scene <- list(
-      camera = list(eye = list(
-        x = 1.5, 
-        y = -1.5, 
-        z = 0.75)
-      ),
-      xaxis = list(visible = FALSE),
-      yaxis = list(visible = FALSE),
-      zaxis = list(visible = FALSE)
-    )
+    if (coord_syst) {
+      
+      scene <- list(
+        camera = list(eye = list(
+          x = 1.5, 
+          y = -1.5, 
+          z = 0.75)),
+        xaxis = list(showticklabels = FALSE),
+        yaxis = list(showticklabels = FALSE),
+        zaxis = list(showticklabels = FALSE))
+      
+    } else {
+      
+      scene <- list(
+        camera = list(eye = list(
+          x = 1.5, 
+          y = -1.5, 
+          z = 0.75)),
+        xaxis = list(visible = FALSE),
+        yaxis = list(visible = FALSE),
+        zaxis = list(visible = FALSE))
+      
+    }
     
     my_plot <-plotly::plot_ly(
       data, 

@@ -86,9 +86,21 @@ n_colors <- nrow(spirals_data)
 
 # FIXME Save via orca w/ correct angles
 
-spirals_1d <- plot_manifold(spirals_data[, .(x, t)], dim = 1L, n_colors)
-spirals_2d <- plot_manifold(spirals_data[, .(x, y, t)], dim = 2L, n_colors)
-spirals_3d <- plot_manifold(spirals_data, dim = 3L, n_colors)
+spirals_1d <- plot_manifold(
+  spirals_data[, .(x, t, t)], 
+  dim = 1L, 
+  n_colors = n_colors,
+  coord_syst = TRUE)
+spirals_2d <- plot_manifold(
+  spirals_data[, .(x, y, t, t)], 
+  dim = 2L, 
+  n_colors = n_colors,
+  coord_syst = TRUE)
+spirals_3d <- plot_manifold(
+  spirals_data[, .(x, y, z, t, t)], 
+  dim = 3L, 
+  n_colors = n_colors,
+  coord_syst = TRUE)
 
 orca(
   spirals_1d, 
