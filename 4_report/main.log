@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  5 FEB 2021 07:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  5 FEB 2021 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,7 +809,7 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 30--60
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 61--83
+Underfull \hbox (badness 10000) in paragraph at lines 63--85
 
  []
 
@@ -818,39 +818,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--83
 pdfTeX warning: pdflatex.exe (file ./figures/sphere-tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
->] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 210--213
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 148--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--234
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
+Overfull \hbox (6.74028pt too wide) in paragraph at lines 185--196
+[]\T1/aer/b/n/12 Reconstruction loss min-i-miza-tion. \T1/aer/m/n/12 Re-con-str
+uc-tion er-rors are mea-sured by a quadratic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--196
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 256--259
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Underfull \hbox (badness 10000) in paragraph at lines 260--280
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 290--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 
  []
 
 )
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 261--194
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 307--194
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-[16] (./chapters/experiment.Rnw) (./chapters/discussion.Rnw)
-(./chapters/conclusion.Rnw) [17] [5] [6] (./main.bbl
+(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [17])
+(./chapters/conclusion.Rnw) [18] [5] [6] (./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 20--24
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
 foun-da-tion for 
@@ -858,10 +884,10 @@ foun-da-tion for
 
 [7] [8]) [9] [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10719 strings out of 479485
- 158637 string characters out of 5875915
- 470220 words of memory out of 5000000
- 27421 multiletter control sequences out of 15000+600000
+ 10722 strings out of 479485
+ 158706 string characters out of 5875915
+ 470289 words of memory out of 5000000
+ 27424 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,16n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -884,10 +910,10 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 1165491 bytes).
+Output written on main.pdf (32 pages, 1168310 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 222 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  59 words of extra memory for PDF output out of 10000 (max. 10000000)
 
