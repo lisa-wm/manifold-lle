@@ -86,7 +86,7 @@ Now the same reasoning can be applied to the neighborhood graph approximation of
 $\mani$.
 Recall the desideratum of mapping nearby inputs to nearby 
 outputs.
-LEM achieves this by assigning edge weights\footnote{
+LEM achieve this by assigning edge weights\footnote{
 As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
 equal to 1 for connected nodes and 0 otherwise.
 }
@@ -107,86 +107,49 @@ The smoothness requirement may be stated as follows:
 
 \begin{equation*}
   \begin{split}
-    \min_{\Y} \sum_{i, j} \| \Y_i - \Y_j \|^2 w_{ij}
-    &= \min_{\Y} \sum_{i, j} \Y_i^T \Y_i w_{ij} + \Y_j^T \Y_j w_{ij} - 
-    2 \Y_i^T \Y_j w_{ij} \\
-    &= \min_{\Y} \sum_i \Y_i^T \Y_i d_{ii} + \sum_j \Y_j^T \Y_j d_{jj} - 
-    2 \sum_{i, j} \Y_i^T \Y_j w_{ij}.
+    \min_{\Y} \sum_{i, j} \| \y_i - \y_j \|^2 w_{ij}
+    &= \min_{\Y} \sum_{i, j} \y_i^T \y_i w_{ij} + \y_j^T \y_j w_{ij} - 
+    2 \y_i^T \y_j w_{ij} \\
+    &= \min_{\Y} \sum_i \y_i^T \y_i d_{ii} + \sum_j \y_j^T \y_j d_{jj} - 
+    2 \sum_{i, j} \y_i^T \y_j w_{ij}.
   \end{split}
 \end{equation*}
 
-Now, defining the graph Laplacian as 
-$\bm{L} = \bm{D} - \bm{W} \in \R^{N \times N}$, the above can be rewritten as
+Now, define the graph Laplacian as 
+$\bm{L} = \bm{D} - \bm{W} \in \R^{N \times N}$, thereby coercing all information 
+about the graph structure into a single matrix representation\footnote{
+This corresponds to the general matrix $\bm{M}$ introduced in chapter
+\ref{motivation}; the deviating notation shall merely emphasize the special 
+role of $\bm{M}$ as the Laplacian.}.
+With $\bm{L}$ the above can be rewritten as
 
 \begin{equation}
   \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
-      \quad \Y^T \bm{D} \Y^T = \bm{I},
+      \quad \Y^T \bm{D} \Y = \bm{I},
 \end{equation}
 
 which has precisely the form of the generalized eigenvalue problem in equation 
-\ref{eq-gevproblem} \citep{belkinniyogi2003}.
-As in the continuous case, the bottom eigenvector is constant and must be 
-discarded; the subsequent $d$ eigenvectors yield the desired low-dimensional 
+\ref{eq-gevproblem} and is therefore solved by eigendecomposition of $\bm{L}$ \citep{belkinniyogi2003}.
+As in the continuous case, the bottom eigenvector with zero eigenvalue is 
+constant and must be discarded.
+The subsequent $d$ eigenvectors yield the desired low-dimensional 
 embedding \citep{levy2006}.
-
-% As the heat kernel assigns larger weights to points with small distance, this 
-% requirement may be put in terms of minimizing weighted output distances
-% 
-% 
-% $\mathcal{L}$ is replaced by the graph Laplacian 
-% $\bm{L} \in \R^{N \times N}$ derived from edge weights 
-% $\bm{W} = (w)_{ij} \in \R^{N \times N}$.
-% In LEM, these weights are computed using a heat kernel\footnote{
-% As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
-% equal to 1 for connected nodes and 0 otherwise.
-% }, such that 
-% $w_{ij} = \exp(\frac{\|x_i - x_J \|^2}{t})$, $t \in \R$, for any two points 
-% $x_i, x_j \in \RD$ if they are connected by a graph edge, and 0 otherwise.
-% Clearly, edges between closer points receive larger weights.
-% Let $\bm{D} = (d)_{ij} \in \R^{N \times N}$ be the diagonal matrix of row sums 
-% of $\bm{W}$ \citep{belkinniyogi2003}.
-% Then, $\bm{L} = \bm{D} - \bm{W}$.
-% Translating the idea of smoothness from above leads to a generalized 
-% eigenvalue problem as stated in equation \ref{eq-gevproblem} \citep{kurras2016}.
-% To arrive at this, recall the desideratum of mapping nearby inputs to nearby 
-% outputs.
-% As the heat kernel assigns larger weights to points with small distance, this 
-% requirement may be put in terms of minimizing weighted output distances: 
-% % \begin{equation*}
-% % \begin{split}
-% % \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
-% % &= \argmin_{\Y} \frac{1}{2} \sum_{i, j} (\Y_i^2 + \Y_j^2 - 2\Y_i\Y_j) w_{ij} \\
-% % &= \argmin_{\Y} \frac{1}{2} (\sum_i \Y_i^2 d_{ii} + \sum_j \Y_j^2 d_{jj} 
-% % - 2 \sum_{ij}\Y_i\Y_j w_{ij}) \\
-% % &= \argmin_{\Y} \Y^T \bm{L} \Y.
-% % \end{split}
-% % \end{equation*}
-% \begin{equation*}
-% \begin{split}
-% \min_{\Y} \sum_{i, j} (\Y_i - \Y_j)^2 w_{ij} 
-% &= \min_{\Y} \sum_{i, j} \| \Y_i - \Y_j \|^2 w_{ij} \\
-% &= \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
-%   \quad \Y^T \bm{D} \Y^T = \bm{I},
-% \end{split}
-% \end{equation*}
-% 
-% the additional constraint removing an arbitrary scaling factor.
-% As explained in section \ref{eigenanalysis}, the solution to this generalized 
-% eigenproblem is given by the eigenvectors of $\bm{L}$, the $d$ bottom ones 
-% (again, after removing the constant vector) yielding the desired low-dimensional 
-% embedding \citep{belkinniyogi2003}.
 
 % ------------------------------------------------------------------------------
 
 \subsubsection{Locally Linear Embedding (LLE)}
 \label{lle}
 
-\begin{itemize}
-  \item Notion of local linearity
-  \item Approximation of graph Laplacian
-\end{itemize}
+In proposing LEM, \citet{belkinniyogi2003} also demonstrated how the somewhat 
+earlier LLE algorithm may be reinterpreted within the LEM framework: it can be 
+shown to approximate the graph Laplacian under certain conditions and thus asymptotically approach the Laplace-Beltrami operator \citep{belkinniyogi2003}.
+More recent research, however, suggests that these conditions might be more restrictive than previously assumed. 
+In particular, convergence appears to depend on the choice of a regularization 
+parameter that will be shortly introduced \citep{wuwu2018}.
 
-% TODO Regularized version --> look into de ridder
+The initial proposal by \citet{roweissaul2000}, ignorant to these discussions, 
+was made with a different intuition, and rather heuristically.
+LLE employs a simple yet powerful concept:
 
 % ------------------------------------------------------------------------------
 

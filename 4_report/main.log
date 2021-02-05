@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  5 FEB 2021 06:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  5 FEB 2021 07:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,38 +818,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--83
 pdfTeX warning: pdflatex.exe (file ./figures/sphere-tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
->]
-Underfull \hbox (badness 10000) in paragraph at lines 247--250
+>] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 210--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--271
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+Underfull \hbox (badness 10000) in paragraph at lines 214--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
 )
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 298--194
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 261--194
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [16])
+[16] (./chapters/experiment.Rnw) (./chapters/discussion.Rnw)
 (./chapters/conclusion.Rnw) [17] [5] [6] (./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 20--24
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
@@ -860,7 +860,7 @@ foun-da-tion for
 Here is how much of TeX's memory you used:
  10719 strings out of 479485
  158637 string characters out of 5875915
- 469220 words of memory out of 5000000
+ 470220 words of memory out of 5000000
  27421 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -884,7 +884,7 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 1164239 bytes).
+Output written on main.pdf (31 pages, 1165491 bytes).
 PDF statistics:
  219 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams
