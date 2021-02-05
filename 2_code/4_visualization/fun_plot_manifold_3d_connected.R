@@ -21,6 +21,10 @@ plot_manifold_3d_connected <- function(data, k = 2L) {
   k_neighborhoods <- as.data.table(k_neighborhoods)
   setnames(k_neighborhoods, c("x", paste0("neighbor_", c(1:k))))
   
+  # FIXME list elements may only contain of 2 elements: center + neighbor_i
+  # currently lines are drawn from center to neighbor_1, from neighbor_1 to
+  # neighbor_2 etc.
+  
   neighborhood_data <- lapply(
     seq_len(nrow(data)), 
     function(i) {
