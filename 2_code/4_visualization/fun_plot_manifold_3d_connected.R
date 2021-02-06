@@ -9,7 +9,7 @@ plot_manifold_3d_connected <- function(data, k = 2L) {
   # Perform basic input checks
   
   checkmate::assert_data_table(data)
-  stopifnot(names(data) %in% c("x", "y", "z", "t"))
+  stopifnot(names(data) %in% c("x", "y", "z", "t", "s"))
   
   k_neighborhoods <- kknn::kknn(
     t ~ .,
@@ -19,16 +19,24 @@ plot_manifold_3d_connected <- function(data, k = 2L) {
   )$C
   
   k_neighborhoods <- as.data.table(k_neighborhoods)
-  setnames(k_neighborhoods, c("x", paste0("neighbor_", c(1:k))))
+  setnames(k_neighborhoods, c("x", sprintf("neighbor_%d", seq_len(k))))
   
   # FIXME list elements may only contain of 2 elements: center + neighbor_i
   # currently lines are drawn from center to neighbor_1, from neighbor_1 to
   # neighbor_2 etc.
   
   neighborhood_data <- lapply(
-    seq_len(nrow(data)), 
+    seq_len(nrow(k_neighborhoods)),
     function(i) {
-      bind_rows(data[i, ], data[as.numeric(k_neighborhoods[i, 2:(k + 1)]), ])})
+      lapply(
+        seq_len(k),
+        function(j) {
+          rbind(data[i, ], data[k_neighborhoods[i, j + 1], ])})})
+  
+  # neighborhood_data <- lapply(
+  #   seq_len(nrow(data)), 
+  #   function(i) {
+  #     bind_rows(data[i, ], data[as.numeric(k_neighborhoods[i, 2:(k + 1)]), ])})
   
   scene <- list(
     camera = list(eye = list(
@@ -61,17 +69,21 @@ plot_manifold_3d_connected <- function(data, k = 2L) {
   # neighborhoods are established, only within)
   
   for (i in seq_len(nrow(data))) {
-
-    neighborhood_graph <- neighborhood_graph %>%
-      add_trace(
-        x = neighborhood_data[[i]]$x,
-        y = neighborhood_data[[i]]$y,
-        z = neighborhood_data[[i]]$z,
-        type = "scatter3d",
-        mode = "segments",
-        line = list(size = 3L, color = "gray")
-      )
-
+    
+    for (k in seq_len(k)) {
+      
+      neighborhood_graph <- neighborhood_graph %>%
+        add_trace(
+          x = neighborhood_data[[i]][[k]]$x,
+          y = neighborhood_data[[i]][[k]]$y,
+          z = neighborhood_data[[i]][[k]]$z,
+          type = "scatter3d",
+          mode = "segments",
+          line = list(size = 3L, color = "gray")
+        )
+      
+    }
+    
   }
   
   neighborhood_graph
