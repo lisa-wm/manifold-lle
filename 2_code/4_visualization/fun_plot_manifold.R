@@ -2,7 +2,14 @@
 # MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
-plot_manifold <- function(data, dim, n_colors = 10, coord_syst = FALSE) {
+plot_manifold <- function(data, 
+                          dim, 
+                          n_colors = 10, 
+                          coord_syst = FALSE,
+                          camera_eye = list(
+                            x = 1.5, 
+                            y = -1.5, 
+                            z = 0.75)) {
   
   # Perform basic input checks
   
@@ -58,22 +65,22 @@ plot_manifold <- function(data, dim, n_colors = 10, coord_syst = FALSE) {
     
     if (coord_syst) {
       
+      ax <- list(
+        showticklabels = FALSE, 
+        showline = TRUE, 
+        showgrid = FALSE, 
+        title = "")
+      
       scene <- list(
-        camera = list(eye = list(
-          x = 1.5, 
-          y = -1.5, 
-          z = 0.75)),
-        xaxis = list(showticklabels = FALSE),
-        yaxis = list(showticklabels = FALSE),
-        zaxis = list(showticklabels = FALSE))
+        camera = list(eye = camera_eye),
+        xaxis = ax,
+        yaxis = ax,
+        zaxis = ax)
       
     } else {
       
       scene <- list(
-        camera = list(eye = list(
-          x = 1.5, 
-          y = -1.5, 
-          z = 0.75)),
+        camera = list(eye = camera_eye),
         xaxis = list(visible = FALSE),
         yaxis = list(visible = FALSE),
         zaxis = list(visible = FALSE))

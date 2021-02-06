@@ -134,8 +134,23 @@ Coercing the data to this dimension as the sole axis of variation yields the
 desired one-dimensional representation (\textit{right}). 
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width = \textwidth]{figures/spirals}
+ \centering
+ \begin{subfigure}[c]{0.29\textwidth}
+   \centering
+   \includegraphics[%trim = 50 0 0 0, clip, % left bottom right top
+   width = \textwidth]{figures/spirals-2d}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[c]{0.4\textwidth}
+   \centering
+   \includegraphics[%trim = 250 50 100 50, clip, % left bottom right top
+   width = \textwidth]{figures/spirals-3d}
+ \end{subfigure}
+ \begin{subfigure}[c]{0.29\textwidth}
+   \centering
+   \includegraphics[%trim = 0 0 0 300, clip, % left bottom right top
+   width = \textwidth]{figures/spirals-1d}
+ \end{subfigure}
   \caption[Schematic idea of kernel PCA]{Schematic idea of kernel PCA: from data
   observed in two dimensions, but clearly of intrinsic dimensionality one 
   (\textit{left}), create a mapping to a higher-dimensional feature space 

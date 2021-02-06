@@ -176,18 +176,17 @@ in chapter \ref{challenges}.
  \begin{subfigure}[b]{0.58\textwidth}
    \centering
    \includegraphics[width = \textwidth]{figures/reconstruction-3d}
-   % \caption{Reconstruction in three dimensions}
  \end{subfigure}
  \hfill
  \begin{subfigure}[b]{0.4\textwidth}
    \centering
    \includegraphics[width = \textwidth]{figures/reconstruction-2d}
-   % \caption{Reconstruction in two dimensions}
  \end{subfigure}
-  \caption{Reconstruction in three (\textit{left}) and two (\textit{right}) 
+  \caption[Linear reconstruction in LLE]{Reconstruction in three (\textit{left}) 
+  and two (\textit{right}) 
   dimensions, employing the same reconstruction weights. \textit{Source:} own
   representation.}
-  \label{fig:three graphs}
+  \label{fig-reconstruction}
 \end{figure}
 
 The LLE algorithm consists of two subsequent steps \citep{roweissaul2000}:

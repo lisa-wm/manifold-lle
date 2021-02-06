@@ -90,38 +90,39 @@ n_colors <- nrow(spirals_data)
 spirals_1d <- plot_manifold(
   spirals_data[, .(x, t, t)], 
   dim = 1L, 
-  n_colors = n_colors,
-  coord_syst = TRUE)
+  n_colors = n_colors)
 
 spirals_2d <- plot_manifold(
   spirals_data[, .(x, y, t, t)], 
   dim = 2L, 
-  n_colors = n_colors,
-  coord_syst = TRUE)
+  n_colors = n_colors)
 
 spirals_3d <- plot_manifold(
   spirals_data[, .(x, y, z, t, t)], 
   dim = 3L, 
   n_colors = n_colors,
-  coord_syst = TRUE)
+  camera_eye = list(
+    x = 1, 
+    y = -1.2, 
+    z = 0.5))
 
 orca(
   spirals_1d, 
   "4_report/figures/spirals-1d.pdf",
-  height = 400,
+  height = 50,
   width = 400)
 
 orca(
   spirals_2d, 
   "4_report/figures/spirals-2d.pdf",
-  height = 400,
+  height = 300,
   width = 300)
 
 orca(
   spirals_3d, 
   "4_report/figures/spirals-3d.pdf",
-  height = 400,
-  width = 300)
+  height = 800,
+  width = 1200)
 
 # SPHERE WITH TANGENT PLANE ----------------------------------------------------
 
