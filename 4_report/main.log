@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  6 FEB 2021 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  6 FEB 2021 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -850,7 +850,7 @@ File: figures/reconstruction-3d.pdf Graphic file (type pdf)
 <use figures/reconstruction-3d.pdf>
 Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 179.
 
-(pdftex.def)             Requested size: 204.85802pt x 183.18405pt.
+(pdftex.def)             Requested size: 204.85802pt x 192.74916pt.
 <figures/reconstruction-2d.pdf, id=134, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-2d.pdf Graphic file (type pdf)
 <use figures/reconstruction-2d.pdf>
@@ -949,7 +949,7 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (32 pages, 1194447 bytes).
+Output written on main.pdf (32 pages, 1194444 bytes).
 PDF statistics:
  250 PDF objects out of 1000 (max. 8388607)
  163 compressed objects within 2 object streams

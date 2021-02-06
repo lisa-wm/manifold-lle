@@ -175,7 +175,7 @@ in chapter \ref{challenges}.
  \centering
  \begin{subfigure}[b]{0.48\textwidth}
    \centering
-   \includegraphics[trim = 20 40 20 20, clip, % left bottom right top
+   \includegraphics[trim = 40 50 20 20, clip, % left bottom right top
    width = \textwidth]{figures/reconstruction-3d}
  \end{subfigure}
  \hfill
