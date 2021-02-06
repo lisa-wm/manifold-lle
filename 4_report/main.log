@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  5 FEB 2021 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  6 FEB 2021 08:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -823,59 +823,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--155
 
  []
 
+<figures/reconstruction-3d.pdf, id=123, 305.22029pt x 229.81859pt>
+File: figures/reconstruction-3d.pdf Graphic file (type pdf)
+<use figures/reconstruction-3d.pdf>
+Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 178.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--176
+(pdftex.def)             Requested size: 247.53975pt x 186.38698pt.
+<figures/reconstruction-2d.pdf, id=124, 305.22029pt x 229.81859pt>
+File: figures/reconstruction-2d.pdf Graphic file (type pdf)
+<use figures/reconstruction-2d.pdf>
+Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 184.
 
- []
-
-
-Overfull \hbox (6.74028pt too wide) in paragraph at lines 185--196
+(pdftex.def)             Requested size: 170.71393pt x 128.53972pt.
+[15]
+Overfull \hbox (6.74028pt too wide) in paragraph at lines 201--212
 []\T1/aer/b/n/12 Reconstruction loss min-i-miza-tion. \T1/aer/m/n/12 Re-con-str
 uc-tion er-rors are mea-sured by a quadratic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--196
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
+Underfull \hbox (badness 10000) in paragraph at lines 201--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
+
+ []
+
+[16 <./figures/reconstruction-3d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-3d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+> <./figures/reconstruction-2d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-2d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 272--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--280
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 290--292
+Underfull \hbox (badness 10000) in paragraph at lines 276--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 309--311
 
  []
 
-)
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 307--194
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
+
+ []
+
+[17])
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 323--194
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [17])
+(./chapters/experiment.Rnw) (./chapters/discussion.Rnw)
 (./chapters/conclusion.Rnw) [18] [5] [6] (./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 20--24
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
@@ -884,10 +901,10 @@ foun-da-tion for
 
 [7] [8]) [9] [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10722 strings out of 479485
- 158706 string characters out of 5875915
- 470289 words of memory out of 5000000
- 27424 multiletter control sequences out of 15000+600000
+ 10750 strings out of 479485
+ 159393 string characters out of 5875915
+ 470298 words of memory out of 5000000
+ 27450 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,16n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -910,10 +927,10 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (32 pages, 1168310 bytes).
+Output written on main.pdf (32 pages, 1161491 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
+ 237 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -348,7 +348,7 @@ within $\epsilon$-radius, depending on the neighborhood definition.
     \includegraphics[trim = 250 170 200 140, clip, % left bottom right top
       width = 0.8\textwidth]{figures/s-curve-connected}
     \caption[S-curve neighborhood graph]{$k$-neighborhood graph for 300 points 
-    sampled from the S-curve with $k = 5$.
+    sampled from the S-curve with $k = 3$.
     \textit{Source:} own representation.}
     \label{fig-neighbor-graph}
   \end{figure}
