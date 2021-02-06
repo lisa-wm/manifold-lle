@@ -13,31 +13,24 @@ plot_manifold_3d_connected <- function(data, k = 2L) {
   
   k_neighborhoods <- kknn::kknn(
     t ~ .,
-    data, # train
-    data, # test
+    train = data,
+    test = data,
     k = k + 1
   )$C
   
   k_neighborhoods <- as.data.table(k_neighborhoods)
   setnames(k_neighborhoods, c("x", sprintf("neighbor_%d", seq_len(k))))
-  
-  # FIXME list elements may only contain of 2 elements: center + neighbor_i
-  # currently lines are drawn from center to neighbor_1, from neighbor_1 to
-  # neighbor_2 etc.
-  
+
   neighborhood_data <- lapply(
     seq_len(nrow(k_neighborhoods)),
     function(i) {
       lapply(
         seq_len(k),
         function(j) {
-          rbind(data[i, ], data[k_neighborhoods[i, j + 1], ])})})
-  
-  # neighborhood_data <- lapply(
-  #   seq_len(nrow(data)), 
-  #   function(i) {
-  #     bind_rows(data[i, ], data[as.numeric(k_neighborhoods[i, 2:(k + 1)]), ])})
-  
+          rbind(
+            data[i, ], 
+            data[as.numeric(k_neighborhoods[i, j + 1, with = FALSE]), ])})})
+
   scene <- list(
     camera = list(eye = list(
       x = 1.5 * 2, 

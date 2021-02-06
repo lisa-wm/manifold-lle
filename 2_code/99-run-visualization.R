@@ -66,8 +66,7 @@ orca(
   s_curve_connected, 
   "4_report/figures/s-curve-connected.pdf",
   height = 800,
-  width = 900
-)
+  width = 900)
 
 # ILLUSTRATION KERNEL PCA ------------------------------------------------------
 
@@ -76,11 +75,13 @@ spirals_data <- mlbench::mlbench.spirals(
   cycles = 1, 
   sd = 0) %>% 
   as.data.table()
+
 spirals_data <- spirals_data[
   classes == 1 & x.1 < 0.4
   ][, classes := seq(0, 1, length.out = length(.I))
     ][, t := seq(0, 1, length.out = length(.I))]
-setnames(spirals_data, c("x", "y", "z", "t"))
+
+data.table::setnames(spirals_data, c("x", "y", "z", "t"))
 
 n_colors <- nrow(spirals_data)
 
@@ -91,11 +92,13 @@ spirals_1d <- plot_manifold(
   dim = 1L, 
   n_colors = n_colors,
   coord_syst = TRUE)
+
 spirals_2d <- plot_manifold(
   spirals_data[, .(x, y, t, t)], 
   dim = 2L, 
   n_colors = n_colors,
   coord_syst = TRUE)
+
 spirals_3d <- plot_manifold(
   spirals_data[, .(x, y, z, t, t)], 
   dim = 3L, 
@@ -106,20 +109,19 @@ orca(
   spirals_1d, 
   "4_report/figures/spirals-1d.pdf",
   height = 400,
-  width = 400
-)
+  width = 400)
+
 orca(
   spirals_2d, 
   "4_report/figures/spirals-2d.pdf",
   height = 400,
-  width = 300
-)
+  width = 300)
+
 orca(
   spirals_3d, 
   "4_report/figures/spirals-3d.pdf",
   height = 400,
-  width = 300
-)
+  width = 300)
 
 # SPHERE WITH TANGENT PLANE ----------------------------------------------------
 
@@ -138,12 +140,144 @@ sphere_tangent_plane <- plot_manifold(
     camera = list(eye = list(
       x = 2, 
       y = -1.25, 
-      z = -0.5)
-    )))
+      z = -0.5))))
 
 orca(
   sphere_tangent_plane, 
   "4_report/figures/sphere-tangent.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
+
+# EXAMPLE RECONSTRUCTION -------------------------------------------------------
+
+x <- c(1.2, 1.5, 2, 1, 1.8)
+y <- c(1, 2, 2.2, 1.6, 1.4)
+z <- c(0.5, 1, 1, 0.8, 0.5)
+weights <- c(0.2, 0.1, 0.2, 0.3, 0.2)
+
+vertices_2d <- data.table(x, y, weights)
+center_2d <- data.table(
+  x = sum(vertices_2d$x * vertices_2d$weights),
+  y = sum(vertices_2d$y * vertices_2d$weights))
+
+edges_2d <- lapply(
+  seq_len(nrow(vertices_3d)), 
+  function(i) {rbind(vertices_2d[i, .(x, y)], center_2d)})
+
+ax <- list(showticklabels = FALSE, showline = TRUE, title = "")
+
+neighborhood_graph_2d <- plotly::plotly_empty() %>% 
+  layout(
+    xaxis = ax, 
+    yaxis = ax)
+
+for (i in seq_along(edges_2d)) {
+  
+  neighborhood_graph_2d <- neighborhood_graph_2d %>%
+    add_trace(
+      x = ~ edges_2d[[i]]$x,
+      y = ~ edges_2d[[i]]$y,
+      type = "scatter",
+      mode = "segments",
+      line = list(size = 10L, color = "gray")
+    ) %>% 
+    hide_guides()
+  
+}
+
+for (i in seq_len(nrow(vertices_2d))) {
+  
+  neighborhood_graph_2d <- neighborhood_graph_2d %>%
+    add_trace(
+      x = ~ edges_2d[[i]]$x,
+      y = ~ edges_2d[[i]]$y,
+      type = "scatter",
+      mode = "markers",
+      marker = list(size = 20L, color = rainbow(nrow(vertices_2d))[i])
+    ) %>% 
+    hide_guides()
+  
+}
+
+neighborhood_graph_2d <- neighborhood_graph_2d %>%
+  add_trace(
+    x = ~ center_2d$x,
+    y = ~ center_2d$y,
+    type = "scatter",
+    mode = "markers",
+    marker = list(size = 20L, color = "gray")) %>% 
+  hide_colorbar()
+
+vertices_3d <- data.table(x, y, z, weights)
+
+center_3d <- data.table(
+  x = sum(vertices_3d$x * vertices_3d$weights),
+  y = sum(vertices_3d$y * vertices_3d$weights),
+  z = sum(vertices_3d$z * vertices_3d$weights))
+
+edges_3d <- lapply(
+  seq_len(nrow(vertices_3d)), 
+  function(i) {rbind(vertices_3d[i, .(x, y, z)], center_3d)})
+
+ax <- list(showticklabels = FALSE, showline = TRUE, showgrid = TRUE, title = "")
+
+scene <- list(
+  camera = list(eye = list(
+    x = 1.5, 
+    y = -1.5, 
+    z = 0.75)),
+  xaxis = ax,
+  yaxis = ax,
+  zaxis = ax)
+
+neighborhood_graph_3d <- plotly::plotly_empty() %>% 
+  layout(scene = scene)
+
+for (i in seq_len(nrow(vertices_3d))) {
+  
+  neighborhood_graph_3d <- neighborhood_graph_3d %>%
+    add_trace(
+      x = edges_3d[[i]]$x,
+      y = edges_3d[[i]]$y,
+      z = edges_3d[[i]]$z,
+      type = "scatter3d",
+      mode = "segments",
+      line = list(size = 10L, color = "gray"))
+  
+}
+
+for (i in seq_along(edges_3d)) {
+  
+  neighborhood_graph_3d <- neighborhood_graph_3d %>%
+    add_trace(
+      x = edges_3d[[i]]$x,
+      y = edges_3d[[i]]$y,
+      z = edges_3d[[i]]$z,
+      type = "scatter3d",
+      mode = "markers",
+      marker = list(size = 10L, color = rainbow(nrow(vertices_3d))[i])) %>% 
+    hide_guides()
+  
+}
+
+neighborhood_graph_3d <- neighborhood_graph_3d %>%
+  add_trace(
+    x = ~ center_3d$x,
+    y = ~ center_3d$y,
+    z = ~ center_3d$z,
+    type = "scatter3d",
+    mode = "markers",
+    marker = list(size = 10L, color = "gray")) %>% 
+  hide_colorbar()
+
+orca(
+  neighborhood_graph_2d,
+  "4_report/figures/reconstruction-2d.pdf",
+  height = 300,
+  width = 400)
+
+orca(
+  neighborhood_graph_3d, 
+  "4_report/figures/reconstruction-3d.pdf",
+  height = 300,
+  width = 400)
