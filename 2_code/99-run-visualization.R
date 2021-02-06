@@ -154,7 +154,7 @@ orca(
 # Coordinates
 
 x <- c(1.2, 1.5, 2, 1, 1.8)
-y <- c(1, 2, 2.2, 1.6, 1.4)
+y <- c(1.4, 2, 1.8, 1.6, 1.4)
 z <- c(0.5, 1, 1, 0.8, 0.5)
 weights <- c(0.2, 0.1, 0.2, 0.3, 0.2)
 
@@ -249,9 +249,9 @@ ax <- list(
 
 scene <- list(
   camera = list(eye = list(
-    x = 1, 
-    y = -1, 
-    z = 1)),
+    x = 1.6, 
+    y = -1.8, 
+    z = 0.6)),
   xaxis = ax,
   yaxis = ax,
   zaxis = ax)
@@ -316,10 +316,10 @@ orca(
   neighborhood_graph_2d,
   "4_report/figures/reconstruction-2d.pdf",
   height = 300,
-  width = 400)
+  width = 300)
 
 orca(
   neighborhood_graph_3d, 
   "4_report/figures/reconstruction-3d.pdf",
   height = 300,
-  width = 400)
+  width = 300)

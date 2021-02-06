@@ -173,14 +173,16 @@ in chapter \ref{challenges}.
 
 \begin{figure}[H]
  \centering
- \begin{subfigure}[b]{0.58\textwidth}
+ \begin{subfigure}[b]{0.48\textwidth}
    \centering
-   \includegraphics[width = \textwidth]{figures/reconstruction-3d}
+   \includegraphics[trim = 20 40 20 20, clip, % left bottom right top
+   width = \textwidth]{figures/reconstruction-3d}
  \end{subfigure}
  \hfill
- \begin{subfigure}[b]{0.4\textwidth}
+ \begin{subfigure}[b]{0.48\textwidth}
    \centering
-   \includegraphics[width = \textwidth]{figures/reconstruction-2d}
+   \includegraphics[trim = 20 30 0 20, clip, % left bottom right top
+   width = 0.8\textwidth]{figures/reconstruction-2d}
  \end{subfigure}
   \caption[Linear reconstruction in LLE]{Reconstruction in three (\textit{left}) 
   and two (\textit{right}) 
