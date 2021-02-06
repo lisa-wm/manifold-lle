@@ -150,10 +150,14 @@ orca(
 
 # EXAMPLE RECONSTRUCTION -------------------------------------------------------
 
+# Coordinates
+
 x <- c(1.2, 1.5, 2, 1, 1.8)
 y <- c(1, 2, 2.2, 1.6, 1.4)
 z <- c(0.5, 1, 1, 0.8, 0.5)
 weights <- c(0.2, 0.1, 0.2, 0.3, 0.2)
+
+# 2D plot
 
 vertices_2d <- data.table(x, y, weights)
 center_2d <- data.table(
@@ -208,6 +212,23 @@ neighborhood_graph_2d <- neighborhood_graph_2d %>%
     marker = list(size = 20L, color = "gray")) %>% 
   hide_colorbar()
 
+label_positions_2d <- data.table(
+  x = sapply(seq_along(edges_2d), function(i) mean(edges_2d[[i]]$x)),
+  y = sapply(seq_along(edges_2d), function(i) mean(edges_2d[[i]]$y)))
+
+neighborhood_graph_2d <- neighborhood_graph_2d %>% 
+  add_annotations(
+    x = ~ label_positions_2d$x,
+    y = ~ label_positions_2d$y,
+    text = sprintf("w<sub>i,%d</sub>", seq_along(edges_2d)),
+    xref = "x",
+    yref = "y",
+    bgcolor = "white",
+    font = list(size = 20),
+    showarrow = FALSE)
+
+# 3D plot
+
 vertices_3d <- data.table(x, y, z, weights)
 
 center_3d <- data.table(
@@ -219,19 +240,23 @@ edges_3d <- lapply(
   seq_len(nrow(vertices_3d)), 
   function(i) {rbind(vertices_3d[i, .(x, y, z)], center_3d)})
 
-ax <- list(showticklabels = FALSE, showline = TRUE, showgrid = TRUE, title = "")
+ax <- list(
+  showticklabels = FALSE, 
+  showline = TRUE, 
+  showgrid = FALSE, 
+  title = "")
 
 scene <- list(
   camera = list(eye = list(
-    x = 1.5, 
-    y = -1.5, 
-    z = 0.75)),
+    x = 1, 
+    y = -1, 
+    z = 1)),
   xaxis = ax,
   yaxis = ax,
   zaxis = ax)
 
 neighborhood_graph_3d <- plotly::plotly_empty() %>% 
-  layout(scene = scene)
+  layout(scene = scene, uniformtext = list(minsize = 30))
 
 for (i in seq_len(nrow(vertices_3d))) {
   
@@ -269,6 +294,22 @@ neighborhood_graph_3d <- neighborhood_graph_3d %>%
     mode = "markers",
     marker = list(size = 10L, color = "gray")) %>% 
   hide_colorbar()
+
+label_positions_3d <- data.table(
+  x = sapply(seq_along(edges_3d), function(i) mean(edges_3d[[i]]$x)),
+  y = sapply(seq_along(edges_3d), function(i) mean(edges_3d[[i]]$y)),
+  z = sapply(seq_along(edges_3d), function(i) mean(edges_3d[[i]]$z)))
+
+neighborhood_graph_3d <- neighborhood_graph_3d %>% 
+  add_trace(
+    type = "scatter3d",
+    mode = "text",
+    x = ~ label_positions_3d$x,
+    y = ~ label_positions_3d$y,
+    z = ~ label_positions_3d$z,
+    text = sprintf("w<sub>i,%d</sub>", seq_along(edges_3d)),
+    showlegend = FALSE,
+    inherit = FALSE)
 
 orca(
   neighborhood_graph_2d,
