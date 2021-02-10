@@ -59,8 +59,7 @@ incomplete_tire <- data_unlabeled$incomplete_tire
 prior_points_ind <- find_landmarks(
   incomplete_tire,
   n_landmarks = 10L,
-  method = "maxmin"
-)
+  method = "maxmin")
 
 prior_points <- data_sets$incomplete_tire[prior_points_ind, .(t, s)]
 
@@ -71,10 +70,11 @@ new_order <- c(
 incomplete_tire_sslle <- perform_sslle(
   data = incomplete_tire[new_order],
   prior_points = prior_points,
-  neighborhood_method = "knn",
-  choices_k = 8L:10L,
-  regularization_param = 0.001
-)
+  regularization_param = 0.001)
+
+as.data.frame(incomplete_tire_sslle$neighborhood_search) %>% 
+  ggplot(aes(x = neighborhood_sizes, y = reconstruction_errors)) + 
+  geom_line()
 
 incomplete_tire_sslle_plot <- data.table(
   incomplete_tire_sslle$Y, 
