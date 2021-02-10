@@ -9,12 +9,17 @@
 
 # DATA -------------------------------------------------------------------------
 
-# TODO work on automatic selection of k
-# TODO what about epsilon neighborhoods
-# TODO find out about rev and abs in returning embedding coordinates
-# TODO incorporate landmark lle / nystrom approx
+# GENERATE DATA SETS -----------------------------------------------------------
 
-load_rdata_files(data_sets, folder = "2_code/1_data")
+data_incomplete_tire <- make_incomplete_tire(n_points = 300L)
+data_swiss_roll <- make_swiss_roll(n_points = 300L)
+data_scurve <- make_s_curve(n_points = 300L)
+
+data_sets <- list(
+  incomplete_tire = data_incomplete_tire, 
+  swiss_roll = data_swiss_roll,
+  scurve = data_scurve)
+
 data_unlabeled <- lapply(data_sets, function(i) {i[, .(x, y, z)]})
 
 # LEM --------------------------------------------------------------------------
