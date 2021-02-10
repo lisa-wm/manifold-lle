@@ -55,6 +55,35 @@ find_embedding_coordinates_ss <- function(reconstruction_weights,
           embedding_matrix_22)),
       ncol = n)
     
+    # Try to invert penalized embedding matrix
+    
+    embedding_coordinates <- try(
+      solve(
+        embedding_matrix_penalized,
+        as.matrix(rbind(
+          confidence_param * prior_points,
+          matrix(0L, nrow = n - m, ncol = d),
+          use.names = FALSE))),
+      silent = TRUE)
+    
+    # If penalized embedding matrix is singular, apply small regularization 
+    # constant
+    
+    if (inherits(embedding_coordinates, "try-error")) {
+      
+      embedding_matrix_penalized <- embedding_matrix_penalized +
+        diag(1e-4, nrow = nrow(embedding_matrix_penalized))
+      
+      embedding_coordinates <- try(
+        solve(
+          embedding_matrix_penalized,
+          as.matrix(rbind(
+            confidence_param * prior_points,
+            matrix(0L, nrow = n - m, ncol = d),
+            use.names = FALSE))))
+      
+    }
+    
     embedding_coordinates <- solve(
       embedding_matrix_penalized,
       as.matrix(rbind(

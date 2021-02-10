@@ -55,9 +55,11 @@ plot_manifold(swiss_roll_lle_plot, 2L)
 # Exact version
 
 incomplete_tire <- data_unlabeled$incomplete_tire
+k_max <- 0.05 * nrow(incomplete_tire)
 
 prior_points_ind <- find_landmarks(
   incomplete_tire,
+  n_neighbors = k_max,
   n_landmarks = 10L,
   method = "maxmin")
 
@@ -69,8 +71,8 @@ new_order <- c(
 
 incomplete_tire_sslle <- perform_sslle(
   data = incomplete_tire[new_order],
-  prior_points = prior_points,
-  regularization_param = 0.001)
+  k_max = k_max,
+  prior_points = prior_points)
 
 as.data.frame(incomplete_tire_sslle$neighborhood_search) %>% 
   ggplot(aes(x = neighborhood_sizes, y = reconstruction_errors)) + 
@@ -89,13 +91,10 @@ prior_points_noisy <- data_sets$incomplete_tire[prior_points_ind, .(t, s)] +
 
 incomplete_tire_sslle_noisy <- perform_sslle(
   data = incomplete_tire[new_order],
+  k_max = k_max,
   prior_points = prior_points_noisy,
-  neighborhood_method = "knn",
-  choices_k = 8L:10L,
-  regularization_param = 0.001,
   is_exact = FALSE,
-  confidence_param = 0.001
-)
+  confidence_param = 0.01)
 
 incomplete_tire_sslle_plot_noisy <- data.table(
   incomplete_tire_sslle_noisy$Y, 

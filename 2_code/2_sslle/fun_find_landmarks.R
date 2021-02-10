@@ -4,7 +4,8 @@
 
 # Purpose: find landmarks to use as prior points in sslle
 
-find_landmarks <- function(data, 
+find_landmarks <- function(data,
+                           n_neighbors = NULL,
                            n_landmarks, 
                            method = c("random", "maxmin"),
                            seed = 123L) {
@@ -39,7 +40,7 @@ find_landmarks <- function(data,
       data,
       "Isomap",
       .mute = "message",
-      knn = 0.1 * nrow(data),
+      knn = k_max,
       get_geod = TRUE)@other.data$geod)
     
     cat("finding landmarks...\n")

@@ -5,6 +5,7 @@
 # Purpose: perform sslle
 
 perform_sslle <- function(data,
+                          k_max,
                           prior_points,
                           is_exact = TRUE,
                           confidence_param = NULL,
@@ -52,8 +53,8 @@ perform_sslle <- function(data,
   
   reconstruction_results <- compute_reconstruction_weights(
     data,
-    regularization,
-    regularization_param)
+    k_max,
+    regularization)
   
   # plot(reconstruction_weights$results_search_k$reconstruction_errors ~
   #        reconstruction_weights$results_search_k$neighborhood_sizes, 

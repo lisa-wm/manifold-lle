@@ -3,8 +3,8 @@
 # ------------------------------------------------------------------------------
 
 compute_reconstruction_weights <- function(data,
-                                           regularization,
-                                           regularization_param) {
+                                           k_max,
+                                           regularization) {
   
   # COMPUTE NEIGHBORHOOD MATRIX ------------------------------------------------
   
@@ -15,8 +15,6 @@ compute_reconstruction_weights <- function(data,
   # TODO read up on regularization methods for inverting gram matrix
   
   cat("computing reconstruction weights...\n")
-  
-  k_max <- 0.1 * nrow(data) # TODO check whether 5 percent is sensible
   
   error_per_size <- lapply(
     
@@ -68,7 +66,7 @@ compute_reconstruction_weights <- function(data,
             # delta is arbitrary, seems to work
             
             eigenvalues_gram <- eigen(gram)$values
-            gamma <- regularization_param * sum(eigenvalues_gram)
+            gamma <- 1e-2 * sum(eigenvalues_gram)
             
             gram <- gram + diag(gamma, k)
             
