@@ -118,9 +118,11 @@ compute_reconstruction_weights <- function(data,
           reconstruction_errors[i] < reconstruction_errors[i - 1L],
           (reconstruction_errors[i] < reconstruction_errors[i - 1L] &
           reconstruction_errors[i] < reconstruction_errors[i + 1L])))})
-  
-  candidates_k <- neighborhood_sizes[is_local_minimum]
-  
+
+  top_errors <- reconstruction_errors < quantile(reconstruction_errors, 0.5)
+
+  candidates_k <- neighborhood_sizes[is_local_minimum | top_errors]
+
   # RETURN ---------------------------------------------------------------------
   
   list(
@@ -128,6 +130,6 @@ compute_reconstruction_weights <- function(data,
       neighborhood_sizes = neighborhood_sizes,
       weight_matrices = weight_matrices,
       reconstruction_errors = reconstruction_errors),
-    candidates_k = neighborhood_sizes[is_local_minimum])
+    candidates_k = candidates_k)
   
 }

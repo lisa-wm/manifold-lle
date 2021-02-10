@@ -33,8 +33,12 @@ find_embedding_coordinates <- function(reconstruction_weights,
     embedding_coordinates, 
     sprintf("y_%d", seq_len(intrinsic_dim)))
   
+  embedding_distances <- as.matrix(dist(embedding_coordinates))
+  
   # RETURN ---------------------------------------------------------------------
   
-  embedding_coordinates
+  list(
+    embedding_coordinates = embedding_coordinates,
+    embedding_distances = embedding_distances)
   
 }

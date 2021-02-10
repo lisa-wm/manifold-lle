@@ -26,10 +26,12 @@ data_unlabeled <- lapply(data_sets, function(i) {i[, .(x, y, z)]})
 
 scurve_lle <- perform_lle(
   data_unlabeled$scurve,
-  intrinsic_dim = 2L,
-  neighborhood_method = "knn",
-  choices_k = 14L:18L
-)
+  k_max = 15L,
+  intrinsic_dim = 2L)
+
+as.data.frame(scurve_lle$neighborhood_search) %>% 
+  ggplot(aes(x = neighborhood_sizes, y = reconstruction_errors)) + 
+  geom_line()
 
 scurve_lle_plot <- data.table(scurve_lle$Y, data_sets$scurve[, .(t, s)])
 plot_manifold(scurve_lle_plot, 2L)
@@ -39,9 +41,7 @@ plot_manifold(scurve_lle_plot, 2L)
 swiss_roll_lle <- perform_lle(
   data_unlabeled$swiss_roll,
   intrinsic_dim = 2L,
-  neighborhood_method = "knn",
-  choices_k = 12L:16L
-)
+  k_max = 15L)
 
 swiss_roll_lle_plot <- data.table(
   swiss_roll_lle$Y, 
@@ -87,14 +87,14 @@ plot_manifold(incomplete_tire_sslle_plot, 2L)
 
 set.seed(1L)
 prior_points_noisy <- data_sets$incomplete_tire[prior_points_ind, .(t, s)] +
-  rnorm(length(prior_points_ind), sd = .5)
+  rnorm(length(prior_points_ind), sd = 1L)
 
 incomplete_tire_sslle_noisy <- perform_sslle(
   data = incomplete_tire[new_order],
   k_max = k_max,
   prior_points = prior_points_noisy,
   is_exact = FALSE,
-  confidence_param = 0.01)
+  confidence_param = 0.001)
 
 incomplete_tire_sslle_plot_noisy <- data.table(
   incomplete_tire_sslle_noisy$Y, 

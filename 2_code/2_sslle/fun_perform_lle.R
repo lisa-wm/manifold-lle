@@ -5,14 +5,12 @@
 # Purpose: perform lle
 
 perform_lle <- function(data,
+                        k_max,
                         intrinsic_dim = 2L,
-                        neighborhood_method = c("knn", "epsilon"),
-                        choices_k,
                         regularization = TRUE,
                         regularization_param = 1e-4,
                         landmark = FALSE) {
   
-  # FIXME do neighborhood search properly
   # TODO adjust input checks
   
   # CHECK INPUTS ---------------------------------------------------------------
@@ -33,33 +31,47 @@ perform_lle <- function(data,
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
 
-  reconstruction <- compute_reconstruction_weights(
+  reconstruction_results <- compute_reconstruction_weights(
     data, 
-    neighborhood_method, 
-    choices_k,
-    regularization,
-    regularization_param)
+    k_max,
+    regularization)
   
-  reconstruction_weights <- reconstruction$weight_matrix
-  optimal_k <- reconstruction$neighborhood_size
+  # reconstruction_weights <- reconstruction$weight_matrix
+  # optimal_k <- reconstruction$neighborhood_size
   
-  cat(sprintf("chose %d neighbors\n", optimal_k))
+  cat(sprintf(
+    "finding embedding coordinates for %d candidate neighborhood sizes...\n",
+    length(reconstruction_results$candidates_k)))
   
   # COMPUTE EMBEDDING COORDINATES ----------------------------------------------
   
-  cat("finding embedding coordinates...\n")
+  embedding_results <- lapply(
+    reconstruction_results$candidates_k,
+    function(i) {
+      find_embedding_coordinates(
+        reconstruction_results$search_k$weight_matrices[[i]], 
+        intrinsic_dim)})
   
-  embedding_coordinates <- find_embedding_coordinates(
-    reconstruction_weights, 
-    intrinsic_dim
-  )
-  
+  residual_variances <- lapply(
+    seq_along(reconstruction_results$candidates_k),
+    function(i) {
+      1 - cor(
+        c(as.matrix(dist(data))), 
+        c(as.matrix(dist(embedding_results[[i]]$embedding_coordinates))))})
+
   # RETURN ---------------------------------------------------------------------
   
   list(
+    neighborhood_search = list(
+      neighborhood_sizes = 
+        reconstruction_results$search_k$neighborhood_sizes,
+      reconstruction_errors = 
+        reconstruction_results$search_k$reconstruction_errors),
+    neighborhood_candidates = reconstruction_results$candidates_k,
+    neighborhood_size = 
+      reconstruction_results$candidates_k[which.min(residual_variances)],
     X = data,
-    k = optimal_k,
-    Y = embedding_coordinates
-  )
+    Y = abs(
+      embedding_results[[which.min(residual_variances)]]$embedding_coordinates))
   
 }
