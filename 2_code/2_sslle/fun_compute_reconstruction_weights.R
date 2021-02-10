@@ -2,9 +2,7 @@
 # LLE IMPLEMENTATION: WEIGHT COMPUTATION
 # ------------------------------------------------------------------------------
 
-compute_reconstruction_weights <- function(data, 
-                                           neighborhood_method, 
-                                           choices_k,
+compute_reconstruction_weights <- function(data,
                                            regularization,
                                            regularization_param) {
   
@@ -18,29 +16,28 @@ compute_reconstruction_weights <- function(data,
   
   cat("computing reconstruction weights...\n")
   
-  results_k <- lapply(
+  k_max <- 0.1 * nrow(data) # TODO check whether 5 percent is sensible
+  
+  error_per_size <- lapply(
     
-    choices_k,
+    seq_len(k_max),
     
     function(k) {
       
       cat(sprintf("trying %d neighbors...\n", k))
       
-      neighborhood_matrix <- find_neighbors(
-        data,
-        neighborhood_method,
-        k)
+      neighborhood_matrix <- find_neighbors(data, k)
       
       reconstruction <- lapply(
         
         data[, .I],
+        
         function(i) {
           
           # Define dimensions
           
           n <- nrow(data)
           p <- ncol(data)
-          # k <- sum(neighborhood_matrix[i, ])
           
           # Center data with respect to i-th observation
           
@@ -81,8 +78,8 @@ compute_reconstruction_weights <- function(data,
           
           gram_inv <- MASS::ginv(gram)
           
-          weights <- (gram_inv %*% rep(1, k)) / 
-            as.numeric(crossprod(rep(1, k), gram_inv) %*% rep(1, k))
+          weights <- (gram_inv %*% rep(1L, k)) / 
+            as.numeric(crossprod(rep(1L, k), gram_inv) %*% rep(1L, k))
           
           # Enforce sum-1 constraint
           
@@ -90,7 +87,7 @@ compute_reconstruction_weights <- function(data,
           
           # Pad with zeroes for weight matrix
           
-          weights_row <- rep(0, n)
+          weights_row <- rep(0L, n)
           weights_row[neighborhood_matrix[i, ]] <- weights_normed
           
           err <- crossprod(weights_normed, gram) %*% weights_normed
@@ -101,24 +98,38 @@ compute_reconstruction_weights <- function(data,
       )
       
       weight_matrix <- do.call(rbind, do.call(rbind, reconstruction)[, 1])
-      reconstruction_err <- sum(unlist(do.call(rbind, reconstruction)[, 2]))
+      reconstruction_error <- sum(unlist(do.call(rbind, reconstruction)[, 2]))
       
-      list(k, weight_matrix, reconstruction_err)
+      list(k, weight_matrix, reconstruction_error)
       
     }
-    
   )
   
-  neighborhood_sizes <- unlist(do.call(rbind, results_k)[, 1])
-  weight_matrices <- do.call(rbind, results_k)[, 2]
-  reconstruction_errors <- unlist(do.call(rbind, results_k)[, 3])
+  neighborhood_sizes <- unlist(do.call(rbind, error_per_size)[, 1L])
+  weight_matrices <- do.call(rbind, error_per_size)[, 2L]
+  reconstruction_errors <- unlist(do.call(rbind, error_per_size)[, 3L])
   
-  optimal_k_ind <- which.min(reconstruction_errors)
+  is_local_minimum <- sapply(
+    seq_along(neighborhood_sizes),
+    function(i) {
+      is_local_minimum <- ifelse(
+        i == 1L,
+        reconstruction_errors[i] < reconstruction_errors[i + 1L],
+        ifelse(
+          i == length(neighborhood_sizes),
+          reconstruction_errors[i] < reconstruction_errors[i - 1L],
+          (reconstruction_errors[i] < reconstruction_errors[i - 1L] &
+          reconstruction_errors[i] < reconstruction_errors[i + 1L])))})
+  
+  candidates_k <- neighborhood_sizes[is_local_minimum]
   
   # RETURN ---------------------------------------------------------------------
   
   list(
-    weight_matrix = do.call(rbind, weight_matrices[optimal_k_ind]),
-    neighborhood_size = neighborhood_sizes[optimal_k_ind])
+    search_k = list(
+      neighborhood_sizes = neighborhood_sizes,
+      weight_matrices = weight_matrices,
+      reconstruction_errors = reconstruction_errors),
+    candidates_k = neighborhood_sizes[is_local_minimum])
   
 }

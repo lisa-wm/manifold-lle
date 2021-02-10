@@ -39,7 +39,7 @@ find_landmarks <- function(data,
       data,
       "Isomap",
       .mute = "message",
-      knn = nrow(data) - 1L,
+      knn = 0.1 * nrow(data),
       get_geod = TRUE)@other.data$geod)
     
     cat("finding landmarks...\n")
