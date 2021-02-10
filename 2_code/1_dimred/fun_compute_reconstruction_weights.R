@@ -119,7 +119,7 @@ compute_reconstruction_weights <- function(data,
           (reconstruction_errors[i] < reconstruction_errors[i - 1L] &
           reconstruction_errors[i] < reconstruction_errors[i + 1L])))})
 
-  top_errors <- reconstruction_errors < quantile(reconstruction_errors, 0.5)
+  top_errors <- reconstruction_errors < quantile(reconstruction_errors, 0.1)
 
   candidates_k <- neighborhood_sizes[is_local_minimum | top_errors]
 

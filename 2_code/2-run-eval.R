@@ -1,27 +1,26 @@
 # ------------------------------------------------------------------------------
-# EVALUATION
+# SENSITIVITY ANALYSIS
 # ------------------------------------------------------------------------------
 
-# VISUAL INSPECTION ------------------------------------------------------------
+# DATA -------------------------------------------------------------------------
 
-load_rdata_files(data_sets, folder = "2_code/1_data")
-load_rdata_files(result_lle, folder = "2_code")
+data_labeled <- list(
+  incomplete_tire = make_incomplete_tire(n_points = 1000L), 
+  swiss_roll = make_swiss_roll(n_points = 1000L),
+  scurve = make_s_curve(n_points = 1000L))
 
-result_lle_original_coordinates <- lapply(
-  result_lle,
-  function(i) data.table(i$Y, data_sets$i[, .(t, s)]))
+data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x, y, z)]})
 
-lapply(
-  result_lle_original_coordinates,
-  plot_manifold,
-  dim = 2L)
+# SENSITIVITY ANALYSIS I: CHOICE OF PRIOR POINTS -------------------------------
 
-# result_lle_original_coordinates <- lapply(
-#   list(swiss_roll = swiss_roll_sslle),
-#   function(i) data.table(i$Y, data_sets$i[, .(t)]))
-# 
-# plot_manifold(
-#   data.table(
-#     incomplete_tire_sslle$Y, 
-#     data_sets$incomplete_tire[, .(t)]), 
-#   dim = 2L)
+search_grid_prior_points <- expand.grid(
+  landmark_method = c("poor_coverage", "random_coverage", "optimal_coverage"),
+  n_prior_points = seq_len(20L))
+
+
+
+# SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE ----------------------------
+
+search_grid_noise <- expand.grid(
+  noise_level = seq(0L, 3L, length.out = 10L),
+  confidence_param = sapply(seq_len(10L), function(i) 10^(-i)))

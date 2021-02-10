@@ -87,6 +87,20 @@ perform_sslle <- function(data,
         c(as.matrix(dist(data))), 
         c(as.matrix(dist(embedding_results[[i]]$embedding_coordinates))))})
   
+  # COMPUTE AUC_LNK_RNX --------------------------------------------------------
+  
+  auc_lnk_rnx <- lapply(
+    seq_along(reconstruction_results$candidates_k),
+    function(i) {
+      compute_auc_lnk_rnx(
+        data, 
+        embedding_results[[i]]$embedding_coordinates)})
+  
+  # FIND OPTIMAL EMBEDDING -----------------------------------------------------
+  
+  # embedding_opt <- which.min(residual_variances)
+  embedding_opt <- which.max(auc_lnk_rnx)
+  
   # RETURN ---------------------------------------------------------------------
   
   list(
@@ -96,10 +110,8 @@ perform_sslle <- function(data,
       reconstruction_errors = 
         reconstruction_results$search_k$reconstruction_errors),
     neighborhood_candidates = reconstruction_results$candidates_k,
-    neighborhood_size = 
-      reconstruction_results$candidates_k[which.min(residual_variances)],
+    neighborhood_size = reconstruction_results$candidates_k[embedding_opt],
     X = data,
-    Y = abs(
-      embedding_results[[which.min(residual_variances)]]$embedding_coordinates))
+    Y = abs(embedding_results[[embedding_opt]]$embedding_coordinates))
   
 }

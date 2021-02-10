@@ -12,6 +12,7 @@
 packages_required <-  c(
   
   "checkmate", # input checking
+  "coRanking", # dimensionality reduction evaluation
   "data.table", # data wrangling
   "dimRed", # dimensionality reduction, in particluar, isomap
   "here", # path management

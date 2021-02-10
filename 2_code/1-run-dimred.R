@@ -11,9 +11,9 @@
 
 # GENERATE DATA SETS -----------------------------------------------------------
 
-data_incomplete_tire <- make_incomplete_tire(n_points = 300L)
+data_incomplete_tire <- make_incomplete_tire(n_points = 1000L)
 data_swiss_roll <- make_swiss_roll(n_points = 300L)
-data_scurve <- make_s_curve(n_points = 300L)
+data_scurve <- make_s_curve(n_points = 1000L)
 
 data_sets <- list(
   incomplete_tire = data_incomplete_tire, 
@@ -29,17 +29,19 @@ data_unlabeled <- lapply(data_sets, function(i) {i[, .(x, y, z)]})
 # scurve 3000 points, 14 neighbors works top
 # more points is def better
 
-scurve_lle <- perform_lle(
-  data_unlabeled$scurve,
-  k_max = 15L,
+swissroll_lle <- perform_lle(
+  data_unlabeled$swiss_roll,
+  k_max = 0.05 * nrow(data_unlabeled$swiss_roll),
   intrinsic_dim = 2L)
 
-as.data.frame(scurve_lle$neighborhood_search) %>% 
+as.data.frame(swissroll_lle$neighborhood_search) %>% 
   ggplot(aes(x = neighborhood_sizes, y = reconstruction_errors)) + 
   geom_line()
 
-scurve_lle_plot <- data.table(scurve_lle$Y, data_sets$scurve[, .(t, s)])
-plot_manifold(scurve_lle_plot, 2L)
+swissroll_lle_plot <- data.table(
+  swissroll_lle$Y, 
+  data_sets$swiss_roll[, .(t, s)])
+plot_manifold(swissroll_lle_plot, 2L)
 
 # swiss roll 1500 points, 14 neighbors works fairly well
 
@@ -99,7 +101,7 @@ incomplete_tire_sslle_noisy <- perform_sslle(
   k_max = k_max,
   prior_points = prior_points_noisy,
   is_exact = FALSE,
-  confidence_param = 0.001)
+  confidence_param = 0.0001)
 
 incomplete_tire_sslle_plot_noisy <- data.table(
   incomplete_tire_sslle_noisy$Y, 
