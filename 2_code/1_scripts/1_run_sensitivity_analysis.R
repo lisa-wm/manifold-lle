@@ -19,75 +19,90 @@ search_grid_landmarks <- expand.grid(
   landmark_method = c("poor_coverage", "random_coverage", "optimal_coverage"),
   n_landmarks = seq_len(2L))
 
-sensitivity_landmarks <- lapply(
+sensitivity_landmarks <- parallel::mclapply(
   
-  seq_len(nrow(search_grid_landmarks)),
+  seq_along(data_unlabeled),
   
   function(i) {
     
-    if (i == 1L | i %% 10 == 0) cat(sprintf("trying combination %d...\n", i))
-    
-    # Define required parameters
-    
-    data_l <- data_labeled$scurve
-    data_u <- data_unlabeled$scurve
-    this_method <- as.character(search_grid_landmarks[i, "landmark_method"])
-    this_number <- search_grid_landmarks[i, "n_landmarks"]
-    k_max <- 10L
-    
-    # Find prior points according to current method and number
-    
-    landmarks_ind <- switch(
-      this_method,
-      poor_coverage = order(data_l$t)[seq_len(this_number)],
-      random_coverage = find_landmarks(
-        data = data_u,
-        n_landmarks = this_number,
-        method = "random"),
-      optimal_coverage = find_landmarks(
-        data = data_u,
-        n_neighbors = k_max,
-        n_landmarks = this_number,
-        method = "maxmin"))
-    
-    landmarks <- data_l[landmarks_ind, .(t, s)]
-    
-    # Move prior points up in the data as sslle function assumes the the first
-    # observations to be prior points
-    
-    new_order <- c(landmarks_ind, setdiff(data_u[, .I], landmarks_ind))
-    
-    # Compute embedding
-    
-    embedding <- perform_sslle(
-      data = data_u[new_order],
-      k_max = k_max,
-      prior_points = landmarks,
-      verbose = FALSE)
-    
-    # Return
-    
-    list(
-      landmark_method = this_method,
-      n_landmarks = this_number,
-      auc_lnk_rnx = max(embedding$auc_lnk_rnx),
-      embedding_result = embedding)
-    
-  }
+    parallel::mclapply(
   
+    seq_len(nrow(search_grid_landmarks)),
+    
+    function(j) {
+      
+      if (j == 1L | j %% 10 == 0) cat(sprintf("trying combination %d...\n", j))
+      
+      # Define required parameters
+      
+      data_l <- data_labeled[[i]]
+      data_u <- data_unlabeled[[i]]
+      this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
+      this_number <- search_grid_landmarks[j, "n_landmarks"]
+      k_max <- 15L
+      
+      # Find prior points according to current method and number
+      
+      landmarks_ind <- switch(
+        this_method,
+        poor_coverage = order(data_l$t)[seq_len(this_number)],
+        random_coverage = find_landmarks(
+          data = data_u,
+          n_landmarks = this_number,
+          method = "random"),
+        optimal_coverage = find_landmarks(
+          data = data_u,
+          n_neighbors = k_max,
+          n_landmarks = this_number,
+          method = "maxmin"))
+      
+      landmarks <- data_l[landmarks_ind, .(t, s)]
+      
+      # Move prior points up in the data as sslle function assumes the the first
+      # observations to be prior points
+      
+      new_order <- c(landmarks_ind, setdiff(data_u[, .I], landmarks_ind))
+      
+      # Compute embedding
+      
+      embedding <- perform_sslle(
+        data = data_u[new_order],
+        k_max = k_max,
+        prior_points = landmarks,
+        verbose = FALSE)
+      
+      # Return
+      
+      list(
+        landmark_method = this_method,
+        n_landmarks = this_number,
+        auc_lnk_rnx = max(embedding$auc_lnk_rnx),
+        embedding_result = embedding)
+      
+    },
+    
+    mc.cores = parallel::detectCores())
+    
+  }, 
+  
+  mc.cores = parallel::detectCores()
+
 )
 
-sensitivity_landmarks_dt <- data.table::as.data.table(
-  do.call(rbind, sensitivity_landmarks))
+sensitivity_landmarks_dt <- lapply(
+  seq_along(sensitivity_landmarks), 
+  function(i) {
+    dt <- data.table::as.data.table(do.call(rbind, sensitivity_landmarks[[i]]))
+    dt[, names(dt)[1:3] := lapply(.SD, unlist), .SDcols = names(dt)[1:3]]
+    dt[, landmark_method := as.factor(landmark_method)]
+    dt})
 
-sensitivity_landmarks_dt[
-  , names(sensitivity_landmarks_dt) := lapply(sensitivity_landmarks_dt, unlist)]
-
-sensitivity_landmarks_dt[, landmark_method := as.factor(landmark_method)]
+names(sensitivity_landmarks_dt) <- names(data_labeled)
 
 save_rdata_files(sensitivity_landmarks_dt, "2_code")
 
-sensitivity_landmarks_dt %>% 
+sensitivity_landmarks_dt$incomplete_tire[
+  , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
   ggplot(aes(
     x = forcats::fct_relevel(
       landmark_method, 
