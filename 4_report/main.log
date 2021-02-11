@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  11 FEB 2021 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  11 FEB 2021 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,7 +455,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 88
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 91
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aer.fd
@@ -469,20 +469,20 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -523,9 +523,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package csquotes Info: Making character " active on input line 88.
+Package csquotes Info: Making character " active on input line 91.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 88.
+LaTeX Info: Redefining \selectfont on input line 91.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -579,14 +579,14 @@ e
 <figures/sigillum.png, id=2, 2946.00626pt x 2991.175pt>
 File: figures/sigillum.png Graphic file (type png)
 <use figures/sigillum.png>
-Package pdftex.def Info: figures/sigillum.png  used on input line 115.
+Package pdftex.def Info: figures/sigillum.png  used on input line 118.
 (pdftex.def)             Requested size: 170.71393pt x 173.30113pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 122
+LaTeX Font Info:    Trying to load font information for U+msa on input line 125
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 122
+LaTeX Font Info:    Trying to load font information for U+msb on input line 125
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -603,7 +603,7 @@ G might cause out of memory (use non-interlaced PNG to fix this)
 \openout4 = `main.toc'.
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 154--159
+Underfull \hbox (badness 10000) in paragraph at lines 157--162
 
  []
 
@@ -841,31 +841,26 @@ pdfTeX warning: pdflatex.exe (file ./figures/sphere-tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 151--160
+Underfull \hbox (badness 10000) in paragraph at lines 153--162
 
  []
 
 <figures/reconstruction-3d.pdf, id=132, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-3d.pdf Graphic file (type pdf)
 <use figures/reconstruction-3d.pdf>
-Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 185.
+Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 187.
 
 (pdftex.def)             Requested size: 204.85802pt x 192.74916pt.
 <figures/reconstruction-2d.pdf, id=134, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-2d.pdf Graphic file (type pdf)
 <use figures/reconstruction-2d.pdf>
-Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 191.
+Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 193.
 
 (pdftex.def)             Requested size: 163.88702pt x 140.36375pt.
 [15]
-Overfull \hbox (6.74028pt too wide) in paragraph at lines 208--217
+Overfull \hbox (6.74028pt too wide) in paragraph at lines 210--222
 []\T1/aer/b/n/12 Reconstruction loss min-i-miza-tion. \T1/aer/m/n/12 Re-con-str
 uc-tion er-rors are mea-sured by a quadratic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
-
  []
 
 [16 <./figures/reconstruction-3d.pdf
@@ -879,38 +874,43 @@ pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-2d.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 308--311
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--332
+Underfull \hbox (badness 10000) in paragraph at lines 259--265
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+Underfull \hbox (badness 10000) in paragraph at lines 367--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--347
+Underfull \hbox (badness 10000) in paragraph at lines 371--391
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--350
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--409
 
  []
 
 )
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 359--200
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 418--203
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [18])
-(./chapters/conclusion.Rnw) [19] [5] [6] (./main.bbl
+(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [19])
+(./chapters/conclusion.Rnw) [20] [5] [6] (./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 20--24
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
 foun-da-tion for 
@@ -918,13 +918,13 @@ foun-da-tion for
 
 [7] [8]) [9] [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10770 strings out of 479485
- 159898 string characters out of 5875915
- 468396 words of memory out of 5000000
- 27468 multiletter control sequences out of 15000+600000
+ 10774 strings out of 479485
+ 159967 string characters out of 5875915
+ 469448 words of memory out of 5000000
+ 27472 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,16n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,21n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
@@ -933,21 +933,22 @@ exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/20
 20/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (33 pages, 1198134 bytes).
+blic/amsfonts/cmextra/cmmib7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
+c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (34 pages, 1210554 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 260 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

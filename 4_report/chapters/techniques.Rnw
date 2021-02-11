@@ -11,18 +11,18 @@ underlying theory both providing a foundation for LLE \citep{belkinniyogi2003},
 which was originally proposed lacking such, and closely relating to the 
 theoretical concepts in HLLE \citep{donohogrimes2003}.
 
-LEM are centered around the preservation of locality, i.e., mapping nearby 
+LEM are centered around the preservation of locality, i.e., mapping nearby
 inputs to nearby outputs.
-Locality is enforced via the \textit{Laplace-Beltrami operator} defined on 
+Locality is enforced via the \textit{Laplace-Beltrami operator} defined on
 smooth, compact manifolds, and operationalized by means of the \textit{graph Laplacian} acting as a discrete approximator \citep{belkinniyogi2003}.
-This idea is best understood recalling that the similarity of outputs for 
-similar inputs is essentially a notion of smoothness and can thus be controlled 
+This idea is best understood recalling that the similarity of outputs for
+similar inputs is essentially a notion of smoothness and can thus be controlled
 by a size constraint on the gradient of the mapping function.
 \\
 
 \textbf{Laplace-Beltrami operator.}
-Consider the twice differentiable function $f: \mani \rightarrow \R$ mapping 
-two points $\pv, \qv \in \mani$ to $f(\pv)$ and $f(\qv)$, respectively. 
+Consider the twice differentiable function $f: \mani \rightarrow \R$ mapping
+two points $\pv, \qv \in \mani$ to $f(\pv)$ and $f(\qv)$, respectively.
 On $\mani$ these points are connected by a length-parametrized curve $c(t)$.
 Denote the geodesic distance between $\pv$ and $\qv$ by $\ell$, such that
 $\pv = c(0)$ and $\qv = c(\ell)$.
@@ -30,8 +30,8 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
 \begin{minipage}[b]{0.65\textwidth}
   Gradients of $f$ with respect to $\pv$ are defined in the local tangent space
   $T_{\pv}(\mani)$ spanned by vectors tangent to $\mani$ at $\pv$.
-  As $\mani$ is embedded in $\RD$, its tangent spaces are Euclidean and of 
-  dimension $d$, i.e., $d$-dimensional hyperplanes \citep{sudderth2002} as 
+  As $\mani$ is embedded in $\RD$, its tangent spaces are Euclidean and of
+  dimension $d$, i.e., $d$-dimensional hyperplanes \citep{sudderth2002} as
   depicted in figure \ref{fig:sphere-tangent}.
   If $\pv$ is identified with the origin of $T_{\pv}(\mani)$, the tangent space
   inherits an orthonormal coordinate system obtained from endowing
@@ -39,8 +39,8 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
   With this, the distance $|f(\pv) - f(\qv)|$ of mappings can be expressed as
   the length of the integral
   $\int_0^{\ell} \langle \nabla f(c(t)), c^{\prime}(t) \rangle dt$.
-  In other words, the geodesic curve connecting $\pv$ and $\qv$ is projected 
-  onto $T_{\pv}(\mani)$, and the length of this projection depends on the 
+  In other words, the geodesic curve connecting $\pv$ and $\qv$ is projected
+  onto $T_{\pv}(\mani)$, and the length of this projection depends on the
   gradient of $f$ and the curve velocity.
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
@@ -51,8 +51,8 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
     \centering
     \includegraphics[trim = 90 70 60 30, clip, % left bottom right top
       width = 0.8\textwidth]{figures/sphere-tangent}
-    \caption[Tangent hyperplane for two-dimensional unit sphere]{Tangent 
-    hyperplane for an exemplary point on the two-dimensional unit sphere 
+    \caption[Tangent hyperplane for two-dimensional unit sphere]{Tangent
+    hyperplane for an exemplary point on the two-dimensional unit sphere
     manifold, embedded in $\R^3$. \textit{Source:} own representation.}
     \label{fig:sphere-tangent}
   \end{figure}
@@ -62,24 +62,24 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
 
 Exploiting the Schwartz equality and relations formally proved by
 \citet{belkinniyogi2008}, it
-can be shown that 
-$|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$, where 
-$o$ marks a term of vanishing size. 
+can be shown that
+$|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$, where
+$o$ marks a term of vanishing size.
 As the distance between $\pv$ and $\qv$ is a datum,
 $\| \nabla f \|$ controls how far apart points are mapped on the real line.
-Consequently, the goal is to find a mapping that, on average, preserves 
+Consequently, the goal is to find a mapping that, on average, preserves
 locality by posing a second-order penalty on $\| \nabla f \|$ and minimizing $\int_{\mani}\| \nabla f \|^2$.
-This is just equal to minimizing $\int_{\mani} \mathcal{L}(f)f$ with the 
+This is just equal to minimizing $\int_{\mani} \mathcal{L}(f)f$ with the
 Laplace-Beltrami operator $\mathcal{L}$ \citep{belkinniyogi2003}.
-Applying the operator $\mathcal{L}$ to $f$ results in a function from the 
-same function space as $f$, and for $\mathcal{L} f = \lambda f$, $f$ is an 
-eigenfunction of $\mathcal{L}$ with $\lambda \in \R$ as its associated 
+Applying the operator $\mathcal{L}$ to $f$ results in a function from the
+same function space as $f$, and for $\mathcal{L} f = \lambda f$, $f$ is an
+eigenfunction of $\mathcal{L}$ with $\lambda \in \R$ as its associated
 eigenvalue.
-Crucially, these eigenfunctions are orthogonal for $\mathcal{L}$ and their  
-eigenvalues are real, meaning they are natural candidates for forming a 
+Crucially, these eigenfunctions are orthogonal for $\mathcal{L}$ and their
+eigenvalues are real, meaning they are natural candidates for forming a
 functional basis \citep{levy2006}.
 The optimal embedding map is then given by the $d$ principal eigenfunctions of
-$\mathcal{L}$ after removing the bottom one which would map $\mani$ to a 
+$\mathcal{L}$ after removing the bottom one which would map $\mani$ to a
 single point \citep{belkinniyogi2003}.
 \\
 
@@ -88,7 +88,7 @@ Now the same reasoning can be applied to the neighborhood graph approximation of
 $\mani$.
 Recall the desideratum of mapping nearby inputs to nearby 
 outputs.
-LEM achieve this by assigning edge weights\footnote{
+LEM achieves this by assigning edge weights\footnote{
 These weights stem from the heat kernel intimately related to the 
 Laplace-Beltrami operator and ensure positive semi-definiteness of the resulting
 graph Laplacian. 
@@ -98,7 +98,7 @@ equal to 1 for connected nodes and 0 otherwise.
 
 \begin{equation*}
   w_{ij} = \begin{cases}
-    \exp(\frac{\|x_i - x_j \|^2}{t}), t \in \R, & \mbox{ if } x_i, x_j  
+    \exp(\frac{\|x_i - x_j \|^2}{t}), t \in \R, & \mbox{ if } x_i, x_j
     \text{ are connected,} \\
     0 & \mbox{ otherwise,}
   \end{cases}
@@ -106,41 +106,43 @@ equal to 1 for connected nodes and 0 otherwise.
 
 forming a weight matrix $\W = (w)_{ij} \in \R^{N \times N}$.
 Clearly, edges between closer points receive larger weights.
-A second matrix $\D = (d)_{ij} \in \R^{N \times N}$ takes the row sums of
-$\W$ on its diagonals.
-Penalizing output disparities more severely for pairs of nearby points, i.e., 
-pairs with a large weight coefficient, the smoothness requirement may be stated 
+A second matrix $\D = (d)_{ij} \in \R^{N \times N}$ takes the row
+sums of $\W$ on its diagonals.
+Penalizing output disparities more severely for pairs of nearby points, i.e.,
+pairs with a large weight coefficient, the smoothness requirement may be stated
 as follows:
 
 \begin{equation*}
   \begin{split}
     \min_{\Y} \sum_{i, j} \| \y_i - \y_j \|^2 w_{ij}
-    &= \min_{\Y} \sum_{i, j} \y_i^T \y_i w_{ij} + \y_j^T \y_j w_{ij} - 
+    &= \min_{\Y} \sum_{i, j} \y_i^T \y_i w_{ij} + \y_j^T \y_j
+    w_{ij} -
     2 \y_i^T \y_j w_{ij} \\
-    &= \min_{\Y} \sum_i \y_i^T \y_i d_{ii} + \sum_j \y_j^T \y_j d_{jj} - 
-    2 \sum_{i, j} \y_i^T \y_j w_{ij}.
+    &= \min_{\Y} \sum_i \y_i^T \y_i d_{ii} + \sum_j \y_j^T \y_j
+    d_{jj} - 2 \sum_{i, j} \y_i^T \y_j w_{ij}.
   \end{split}
 \end{equation*}
 
-Now, define the graph Laplacian as 
-$\Lap = \D - \W \in \R^{N \times N}$, thereby coercing all information 
-about the graph structure into a single matrix representation\footnote{
+Now, define the graph Laplacian as
+$\Lap = \D - \W \in \R^{N \times N}$, thereby coercing
+all information about the graph structure into a single matrix
+representation\footnote{
 This corresponds to the general matrix $\M$ introduced in chapter
-\ref{motivation}; the deviating notation shall merely emphasize the special 
+\ref{motivation}; the deviating notation shall merely emphasize the special
 role of $\M$ as the Laplacian.}.
 With $\Lap$ the above can be rewritten as
 
 \begin{equation}
-  \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t.} 
-      \quad \Y^T \D \Y = \bm{I},
+  \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
+  \Y^T \D \Y = \I,
   \label{eq-obj-lem}
 \end{equation}
 
-which has precisely the form of the generalized eigenvalue problem in equation 
+which has precisely the form of the generalized eigenvalue problem in equation
 \ref{eq-gevproblem} and is therefore solved by eigendecomposition of $\Lap$ \citep{belkinniyogi2003}.
-As in the continuous case, the bottom eigenvector with zero eigenvalue is 
+As in the continuous case, the bottom eigenvector with zero eigenvalue is
 constant and must be discarded.
-The subsequent $d$ eigenvectors yield the desired low-dimensional 
+The subsequent $d$ eigenvectors yield the desired low-dimensional
 embedding \citep{levy2006}.
 
 % ------------------------------------------------------------------------------
@@ -207,47 +209,104 @@ Algorithmically, LLE then performs two subsequent steps \citep{roweissaul2000}:
 
 \textbf{Reconstruction loss minimization.}
 Reconstruction errors are measured by a quadratic loss function.
-Optimization of the objective is subject to a sum-one constraint for the weights 
+Optimization of the objective is subject to a sum-one constraint for the weights
 of each point.
-A second constraint, zero weights for non-neighboring points, is implicitly 
-enforced during construction of the neighborhood graph, where edges are only 
+A second constraint, zero weights for non-neighboring points, is implicitly
+enforced during construction of the neighborhood graph, where edges are only
 drawn to vertices belonging to $\x_i$'s neighborhood \citep{ghojoghetal2020}.
-The resulting quadratic optimization problem is convex and has a unique 
-closed-form solution \citep{roweissaul2000}:
+The resulting quadratic optimization problem is convex and has a unique
+closed-form solution\footnote{
+Note that the weight matrix $\min_{\W}$ is different from the one computed in
+LEM, but the same symbol is used as not to overload notation.
+} \citep{roweissaul2000}:
 
 \begin{equation}
   \begin{split}
-    \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i \| \x_i - \sum_j w_{ij} \x_j 
-    \|^2_2 \\
-    &= \min_{\W} \sum_i \| \x_i - \bm{N}_i \bm{w}_i \|^2_2
+    \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i
+    \twonorm{\x_i - \sum_j w_{ij} \x_j} \\
+    &= \min_{\W} \sum_i \twonorm{\x_i - \bm{N}_i \bm{w}_i}, \\
+    & \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN
   \end{split}
-  \label{eq-obj-lle}
+  \label{eq-obj-lle-recon}
 \end{equation}
 
-Here, $\bm{N}_i \in \R^{D \times k}$ denotes the matrix of feature vectors of 
+Here, $\bm{N}_i \in \R^{D \times k}$ denotes the matrix of feature vectors of
 $\x_i$'s neighbors and $\bm{w}_i = \sum_j w_{ij} \in \R^k$.
 
-Equation \ref{eq-obj-lle} can be re-arranged by use of the sum-one constraint, 
-implying $\bm{1}^T \bm{w}_i = \bm{1}$, and simplified by introduction of the 
-Gram, or local covariance, matrix $\G_i$ 
-\citep{saulroweis2001}:
+Equation \ref{eq-obj-lle-recon} can be re-arranged by use of the sum-one
+constraint and simplified by introduction of the gram, or local covariance,
+matrix $\G_i$ \citep{saulroweis2001}:
 
 \begin{equation}
   \begin{split}
-    \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i \| \x_i \bm{1}^T \bm{w}_i - 
-    \bm{N}_i \bm{w}_i \|^2_2 \\
-    &= \min_{\W} \sum_i \| (\x_i \bm{1}^T - \bm{N}_i) \bm{w}_i \|^2_2 \\
-    &= \min_{\W} \sum_i \bm{w}_i^T (\x_i \bm{1}^T - \bm{N}_i)^t 
+    \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i \twonorm{\x_i \bm{1}^T
+    \bm{w}_i - \bm{N}_i \bm{w}_i} \\
+    &= \min_{\W} \sum_i \bm{w}_i^T (\x_i \bm{1}^T - \bm{N}_i)^T
     (\x_i \bm{1}^T - \bm{N}_i) \bm{w}_i \\
-    &= \min_{\W} \sum_i \bm{w}_i^T \G_i \bm{w}_i
-  \end{split}  
-  \label{eq-obj-lle-2}
+    &= \min_{\W} \sum_i \bm{w}_i^T \G_i \bm{w}_i, \\
+    & \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN
+  \end{split}
+  \label{eq-obj-lle-recon-2}
 \end{equation}
 
+By standard use of a Lagrange multiplier, the solution for the above constrained optimization problem eventually collapses to:
 
+\begin{equation}
+  \bm{w}_i = \frac{\G_i^{-1}\bm{1}}{\bm{1}^T \G_i^{-1}\bm{1}}.
+  \label{eq-obj-lle-sol}
+\end{equation}
 
-\textbf{Embedding loss minimization.} Text
+Solving the reconstruction problem therefore requires $N$ matrix inversions, 
+which may prove problematic if the gram matrices do not achieve full rank.
+In the case of $D < k$, $\G_i$ is indeed singular and must be robustified by 
+adding a small numerical constant to its diagonal \citep{ghojoghetal2020}.
+Chapter \ref{challenges} will discuss how such regularization is applied.
 \\
+
+\textbf{Embedding loss minimization.}
+The second optimization problem minimizes the embedding cost arising from 
+mapping neighborhood geometries, just derived in the form of reconstruction 
+weights, into the $d$-dimensional subspace.
+Keeping the weight coefficients fixed, the aim is to find such embedding 
+coordinates that best preserve the vicinity structures and adhere to the 
+constraints of summing to zero (i.e., being centered around the origin) and 
+having unit covariance \citep{roweissaul2000}:
+
+\begin{equation}
+  \begin{split}
+    \min_{\Y} \Phi(\Y) &= \min_{\Y} \sum_i \twonorm{\y_i - \sum_j w_{ij} \y_j}\\
+    & \text{s.t. } \frac{1}{N} \sum_i \y_i \y_i^T = \I, \quad \text{and} \\
+    & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN. 
+  \end{split}
+  \label{eq-obj-lle-emb}
+\end{equation}
+
+This can now be expressed as a standard eigenvalue problem.
+For this purpose, define $\E = (\I - \W)^T(\I - \W)$ and set 
+$\tilde{\Y} = \Y^T$ \citep{cayton2005}, such that:
+
+\begin{equation}
+  \begin{split}
+    & \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}) \\
+    & \text{s.t. } \tilde{\Y}^T \tilde{\Y} = \I, \quad \text{and} \\
+    & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN.
+  \end{split}
+  \label{eq-obj-lle-emb-2}
+\end{equation}
+
+The close resemblance to the optimization problem in LEM (equation 
+\ref{eq-obj-lem}) is not coincidental.
+Recall that LEM builds upon eigenfunctions of the Laplace-Beltrami operator 
+$\mathcal{L}$.
+\citet{belkinniyogi2003} show that LLE approximates the eigenfunctions of the 
+iterated form $\frac{1}{2} \mathcal{L}^2$, which are identical to those of 
+$\mathcal{L}$.
+Therefore, with a somewhat different intuition, LLE essentially arrives at the 
+same conclusion.
+
+Again, the solution is thus found by eigenanalysis of the matrix encoding the 
+intrinsic manifold structures, i.e., by computing the bottom $d$ eigenvectors 
+of $\E$ after discarding the bottom one associated with a zero eigenvalue \citep{cayton2005}.
 
 % ------------------------------------------------------------------------------
 

@@ -175,7 +175,7 @@ Component-wise differentiation with respect to $\lambda$ yields
 The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
 $\| \cdot \|^2$ denotes the square norm.
 Distance along this curve is measured by the arc-length
-$$L(c) = \int_{\pv}^{\qv} \| c^{\prime}(\lambda) \|^2 d\lambda.$$
+$$L(c) = \int_{\pv}^{\qv} \twonorm{c^{\prime}(\lambda)}  d\lambda.$$
 Eventually, geodesic distance can be derived as the length of the shortest such
 curve, out of the set $\mathcal{C}(\pv, \qv)$ of differentiable curves in 
 $\mani$ that connect $\pv$ and $\qv$:

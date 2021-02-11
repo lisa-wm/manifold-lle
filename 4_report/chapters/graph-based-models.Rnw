@@ -249,7 +249,7 @@ Summing up the above, LGML methods use functionals defined on graph
 approximations of the manifold to capture the intrinsic data structure.
 This information is stored in a matrix representation $\M$ that is 
 directly linked to the kernel matrix $\K$.
-Eigenanalysis of $M$ then leads to the sought-for low-dimensional subspace 
+Eigenanalysis of $\M$ then leads to the sought-for low-dimensional subspace 
 coordinates.
 
 The resulting algorithmic pattern may be stated as follows 
@@ -408,8 +408,8 @@ It can be easily seen that the null space consists of those eigenvectors of
 $\bm{A}$ that are associated with an eigenvalue of zero, and the zero vector 
 itself. 
 For a specific eigenvalue $\lambda$ of $\bm{A}$, the null space of 
-$\lambda \bm{I} - \bm{A}$ 
-(with $\bm{I}$ the $N$-dimensional identity matrix) constitutes the 
+$\lambda \I - \bm{A}$ 
+(with $\I$ the $N$-dimensional identity matrix) constitutes the 
 \textit{eigenspace} of $\bm{A}$ \citep{boermmehl2012}.
 \\
 
@@ -418,7 +418,7 @@ $\bm{A}$ can be framed as the solution of a generalized eigenvalue problem.
 Generalized eigenvalue problems are posed subject to a constraint on a second, 
 also symmetric matrix $\bm{B} \in \R^{N \times N}$.
 As the standard eigenvalue problem results immediately from 
-$\bm{B} = \bm{I}$, the generalized form subsumes both cases.
+$\bm{B} = \I$, the generalized form subsumes both cases.
 It is given by 
 
 \begin{equation}
@@ -435,7 +435,7 @@ The generalized eigenvalue problem may be stated equivalently as
 
 \begin{equation}
   \min_{\bm{V}} \text{\textit{trace}}(\bm{V}^T \bm{A} \bm{V}), \quad \text{s.t.} 
-  \quad \bm{V}^T \bm{B} \bm{V} = \bm{I},
+  \quad \bm{V}^T \bm{B} \bm{V} = \I,
   \label{eq-gevproblem-max}
 \end{equation}
 
