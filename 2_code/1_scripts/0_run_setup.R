@@ -20,6 +20,7 @@ packages_required <-  c(
   "kknn", # k-nearest neighbor search
   "MASS", # matrix computation
   "mlbench", # artificial data sets for benchmarking
+  "parallel", # parallel computing
   "plotly", # 3d plots
   "tidyverse" # data wrangling
 
