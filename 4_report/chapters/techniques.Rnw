@@ -23,7 +23,7 @@ by a size constraint on the gradient of the mapping function.
 \textbf{Laplace-Beltrami operator.}
 Consider the twice differentiable function $f: \mani \rightarrow \R$ mapping 
 two points $\pv, \qv \in \mani$ to $f(\pv)$ and $f(\qv)$, respectively. 
-On $\mani$ they are connected by a length-parametrized curve $c(t)$.
+On $\mani$ these points are connected by a length-parametrized curve $c(t)$.
 Denote the geodesic distance between $\pv$ and $\qv$ by $\ell$, such that
 $\pv = c(0)$ and $\qv = c(\ell)$.
 
@@ -60,18 +60,18 @@ $\pv = c(0)$ and $\qv = c(\ell)$.
 
 \vspace{0.5cm}
 
-Exploiting the Schwartz equality and relations proved in 
+Exploiting the Schwartz equality and relations formally proved by
 \citet{belkinniyogi2008}, it
 can be shown that 
 $|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$, where 
 $o$ marks a term of vanishing size. 
-Acknowledging the fact that the distance between $\pv$ and $\qv$ is a datum,
+As the distance between $\pv$ and $\qv$ is a datum,
 $\| \nabla f \|$ controls how far apart points are mapped on the real line.
 Consequently, the goal is to find a mapping that, on average, preserves 
-locality, by posing a second-order penalty on $\| \nabla f \|$ and minimizing $\int_{\mani}\| \nabla f \|^2$.
+locality by posing a second-order penalty on $\| \nabla f \|$ and minimizing $\int_{\mani}\| \nabla f \|^2$.
 This is just equal to minimizing $\int_{\mani} \mathcal{L}(f)f$ with the 
 Laplace-Beltrami operator $\mathcal{L}$ \citep{belkinniyogi2003}.
-Applying the operator $\mathcal{L}$ to $f$ again results in a function from the 
+Applying the operator $\mathcal{L}$ to $f$ results in a function from the 
 same function space as $f$, and for $\mathcal{L} f = \lambda f$, $f$ is an 
 eigenfunction of $\mathcal{L}$ with $\lambda \in \R$ as its associated 
 eigenvalue.
@@ -108,7 +108,9 @@ forming a weight matrix $\bm{W} = (w)_{ij} \in \R^{N \times N}$.
 Clearly, edges between closer points receive larger weights.
 A second matrix $\bm{D} = (d)_{ij} \in \R^{N \times N}$ takes the row sums of
 $\bm{W}$ on its diagonals.
-The smoothness requirement may be stated as follows:
+Penalizing output disparities more severely for pairs of nearby points, i.e., 
+pairs with a large weight coefficient, the smoothness requirement may be stated 
+as follows:
 
 \begin{equation*}
   \begin{split}
@@ -147,8 +149,10 @@ embedding \citep{levy2006}.
 
 In proposing LEM, \citet{belkinniyogi2003} also demonstrated how the somewhat 
 earlier LLE algorithm may be reinterpreted within the LEM framework: it can be 
-shown to approximate the graph Laplacian under certain conditions and thus asymptotically approach the Laplace-Beltrami operator.
-More recent research, however, suggests that these conditions might be more restrictive than previously assumed. 
+shown to approximate the graph Laplacian under certain conditions and thus 
+asymptotically approach the Laplace-Beltrami operator.
+More recent research, however, suggests that these conditions might be more 
+restrictive than previously assumed. 
 In particular, convergence appears to depend on the choice of a regularization 
 parameter that will be shortly introduced \citep{wuwu2018}.
 \\
@@ -159,13 +163,14 @@ was made with a different, and rather heuristically motivated, intuition.
 LLE relies on a simple yet powerful idea.
 Each point $\x_i$ in the $D$-dimensional input space is expressed as a convex 
 combination of its neighbors, such that the weighting coefficients of this 
-reconstruction essentially represent the edge weights of the neighborhood graph around $\x_i$. 
+reconstruction essentially represent the edge weights of the neighborhood graph 
+around $\x_i$. 
 These (generalized) barycentric coordinates now bear a crucial property: they 
-must be invariant to rotation, rescaling and translation of the neighborhood and 
+are invariant to rotation, rescaling and translation of the neighborhood, and 
 thus topological properties that equally hold in the low-dimensional embedding 
 space. 
-In other words, the same weights that serve to reconstruct $x_i$ in $\RD$ should 
-do so in $\Rd$ \citep{roweissaul2000}.
+In other words, the same weights that serve to reconstruct $\x_i$ in $\RD$ 
+should do so in $\Rd$ \citep{roweissaul2000}.
 Obviously, this belief is only justified if $\mani$ is indeed locally linear and 
 the graph edges run along the manifold surface rather than short-circuiting it, 
 hinting at the important role of neighborhood size which will be discussed 
@@ -191,7 +196,7 @@ in chapter \ref{challenges}.
   \label{fig-reconstruction}
 \end{figure}
 
-The LLE algorithm consists of two subsequent steps \citep{roweissaul2000}:
+Algorithmically, LLE then performs two subsequent steps \citep{roweissaul2000}:
 
 \begin{tight_enumerate}
   \item Compute the reconstruction weights in $\RD$ minimizing reconstruction 
@@ -205,8 +210,7 @@ Optimization of the objective is subject to a sum-one constraint for the weights
 of each point.
 A second constraint, zero weights for non-neighboring points, is implicitly 
 enforced during construction of the neighborhood graph, where edges are only 
-drawn to vertices belonging to $\x_i$'s ($k$- or $\epsilon$-) neighborhood 
-\citep{ghojoghetal2020}.
+drawn to vertices belonging to $\x_i$'s neighborhood \citep{ghojoghetal2020}.
 The resulting quadratic optimization problem is convex and has a unique 
 closed-form solution.
 \\

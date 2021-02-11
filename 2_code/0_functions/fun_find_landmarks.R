@@ -55,7 +55,7 @@ find_landmarks <- function(data,
       search_area <- as.matrix(
         distance_matrix_geodesic[-landmarks, landmarks],
         ncol = length(landmarks))
-      min_distance <- apply(search_area, 1, min)
+      min_distance <- apply(search_area, 1L, min)
       next_landmark <- as.integer(names(which.max(min_distance)))
       
       landmarks <- c(landmarks, next_landmark)
