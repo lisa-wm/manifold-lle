@@ -17,7 +17,7 @@ data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x, y, z)]})
 
 search_grid_landmarks <- expand.grid(
   landmark_method = c("poor_coverage", "random_coverage", "optimal_coverage"),
-  n_landmarks = seq_len(2L))
+  n_landmarks = seq_len(20L))
 
 sensitivity_landmarks <- parallel::mclapply(
   
@@ -101,18 +101,41 @@ names(sensitivity_landmarks_dt) <- names(data_labeled)
 
 save_rdata_files(sensitivity_landmarks_dt, "2_code")
 
-sensitivity_landmarks_dt$incomplete_tire[
-  , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
-  ggplot(aes(
-    x = forcats::fct_relevel(
-      landmark_method, 
-      "poor_coverage",
-      "random_coverage",
-      "optimal_coverage"), 
-    y = n_landmarks, 
-    col = auc_lnk_rnx)) +
-  geom_point(size = 5L) +
-  scale_color_gradient(low = "red", high = "green")
+sensitivity_landmarks_plots <- lapply(
+  seq_along(sensitivity_landmarks_dt),
+  function(i) {
+    sensitivity_landmarks_dt[[i]][
+      , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
+      ggplot2::ggplot(aes(
+        x = forcats::fct_relevel(
+          landmark_method, 
+          "poor_coverage",
+          "random_coverage",
+          "optimal_coverage"), 
+        y = n_landmarks, 
+        col = auc_lnk_rnx)) +
+      geom_point(size = 5L) +
+      scale_color_gradient(low = "red", high = "green") +
+      ylab("number of landmarks") +
+      xlab("") +
+      ggtitle(sprintf("Method: %s", names(sensitivity_landmarks[i])))})
+
+for (i in seq_along(sensitivity_landmarks_dt)) {
+  
+  sensitivity_landmarks_dt[[i]][
+    , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
+    ggplot2::ggplot(aes(
+      x = forcats::fct_relevel(
+        landmark_method, 
+        "poor_coverage",
+        "random_coverage",
+        "optimal_coverage"), 
+      y = n_landmarks, 
+      col = auc_lnk_rnx)) +
+    geom_point(size = 5L) +
+    scale_color_gradient(low = "red", high = "green")
+  
+}
 
 # SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE ----------------------------
 
