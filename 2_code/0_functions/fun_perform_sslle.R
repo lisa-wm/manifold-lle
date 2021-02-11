@@ -10,7 +10,8 @@ perform_sslle <- function(data,
                           is_exact = TRUE,
                           confidence_param = NULL,
                           regularization = TRUE,
-                          regularization_param = 1e-4) {
+                          regularization_param = 1e-4,
+                          verbose = TRUE) {
   
   # TODO adjust input checks
   
@@ -51,10 +52,11 @@ perform_sslle <- function(data,
   
   # COMPUTE RECONSTRUCTION WEIGHTS FOR CANDIDATE NEIGHBORHOOD SIZES ------------
   
-  reconstruction_results <- compute_reconstruction_weights(
+  reconstruction <- compute_reconstruction_weights(
     data,
     k_max,
-    regularization)
+    regularization,
+    verbose)
   
   # plot(reconstruction_weights$results_search_k$reconstruction_errors ~
   #        reconstruction_weights$results_search_k$neighborhood_sizes, 
@@ -65,15 +67,19 @@ perform_sslle <- function(data,
 
   # COMPUTE EMBEDDING COORDINATES FOR CANDIDATE NEIGHBORHOOD SIZES -------------
   
-  cat(sprintf(
-    "finding embedding coordinates for %d candidate neighborhood sizes...\n",
-    length(reconstruction_results$candidates_k)))
+  if (verbose) {
+   
+    cat(sprintf(
+      "finding embedding coordinates for %d candidate neighborhood sizes...\n",
+      length(reconstruction$candidates_k)))
+     
+  }
  
-  embedding_results <- lapply(
-    reconstruction_results$candidates_k,
+  embedding <- lapply(
+    reconstruction$candidates_k,
     function(i) {
       find_embedding_coordinates_ss(
-        reconstruction_results$search_k$weight_matrices[[i]], 
+        reconstruction$search_k$weight_matrices[[i]], 
         prior_points,
         is_exact,
         confidence_param)})
@@ -81,20 +87,20 @@ perform_sslle <- function(data,
   # COMPUTE RESIDUAL VARIANCES -------------------------------------------------
 
   residual_variances <- lapply(
-    seq_along(reconstruction_results$candidates_k),
+    seq_along(reconstruction$candidates_k),
     function(i) {
       1 - cor(
         c(as.matrix(dist(data))), 
-        c(as.matrix(dist(embedding_results[[i]]$embedding_coordinates))))})
+        c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
   
   # COMPUTE AUC_LNK_RNX --------------------------------------------------------
   
   auc_lnk_rnx <- lapply(
-    seq_along(reconstruction_results$candidates_k),
+    seq_along(reconstruction$candidates_k),
     function(i) {
       compute_auc_lnk_rnx(
         data, 
-        embedding_results[[i]]$embedding_coordinates)})
+        embedding[[i]]$embedding_coordinates)})
   
   # FIND OPTIMAL EMBEDDING -----------------------------------------------------
   
@@ -104,14 +110,11 @@ perform_sslle <- function(data,
   # RETURN ---------------------------------------------------------------------
   
   list(
-    neighborhood_search = list(
-      neighborhood_sizes = 
-        reconstruction_results$search_k$neighborhood_sizes,
-      reconstruction_errors = 
-        reconstruction_results$search_k$reconstruction_errors),
-    neighborhood_candidates = reconstruction_results$candidates_k,
-    neighborhood_size = reconstruction_results$candidates_k[embedding_opt],
+    reconstruction_errors = reconstruction$search_k$reconstruction_errors,
+    neighborhood_candidates = reconstruction$candidates_k,
+    neighborhood_size = reconstruction$candidates_k[embedding_opt],
+    auc_lnk_rnx = unlist(auc_lnk_rnx),
     X = data,
-    Y = abs(embedding_results[[embedding_opt]]$embedding_coordinates))
+    Y = abs(embedding[[embedding_opt]]$embedding_coordinates))
   
 }

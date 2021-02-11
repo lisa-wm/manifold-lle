@@ -4,17 +4,14 @@
 
 compute_reconstruction_weights <- function(data,
                                            k_max,
-                                           regularization) {
-  
-  # COMPUTE NEIGHBORHOOD MATRIX ------------------------------------------------
-  
-  cat("finding neighbors...\n")
+                                           regularization,
+                                           verbose) {
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
   
   # TODO read up on regularization methods for inverting gram matrix
   
-  cat("computing reconstruction weights...\n")
+  if (verbose) cat("computing reconstruction weights...\n")
   
   error_per_size <- lapply(
     
@@ -22,7 +19,8 @@ compute_reconstruction_weights <- function(data,
     
     function(k) {
       
-      cat(sprintf("trying %d neighbors...\n", k))
+      if (verbose & (k == 1L | k %% 10L == 0)) {
+        cat(sprintf("trying %d neighbors...\n", k))}
       
       neighborhood_matrix <- find_neighbors(data, k)
       

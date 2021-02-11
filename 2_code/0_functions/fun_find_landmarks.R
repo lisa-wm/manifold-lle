@@ -5,20 +5,20 @@
 # Purpose: find landmarks to use as prior points in sslle
 
 find_landmarks <- function(data,
-                           n_neighbors = NULL,
                            n_landmarks, 
                            method = c("random", "maxmin"),
-                           seed = 123L) {
+                           n_neighbors = NULL,
+                           seed = 1L) {
   
   # CHECK INPUTS ---------------------------------------------------------------
   
-  check_data(data)
-  data <- as.data.table(data)
+  # check_data(data)
+  # data <- as.data.table(data)
+  # 
+  # if (!checkmate::test_count(n_landmarks)) {
+  #   stop("number of landmarks must be a positive integer")
+  # }
 
-  if (!checkmate::test_count(n_landmarks)) {
-    stop("number of landmarks must be a positive integer")
-  }
-  
   method <- match.arg(method, c("random", "maxmin"))
 
   # FIND LANDMARKS -------------------------------------------------------------
@@ -32,16 +32,14 @@ find_landmarks <- function(data,
     
   } else {
     
-    # TODO make sure this does the right thing!!
-    
     cat("computing geodesics...\n")
     
-    distances_geodesic <- invisible(dimRed::embed(
+    distances_geodesic <- dimRed::embed(
       data,
       "Isomap",
       .mute = "message",
-      knn = k_max,
-      get_geod = TRUE)@other.data$geod)
+      knn = n_neighbors,
+      get_geod = TRUE)@other.data$geod
     
     cat("finding landmarks...\n")
     
