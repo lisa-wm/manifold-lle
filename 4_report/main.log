@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  11 FEB 2021 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  11 FEB 2021 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -696,17 +696,17 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 111--142
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 196--211
+Underfull \hbox (badness 10000) in paragraph at lines 205--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--225
+Underfull \hbox (badness 10000) in paragraph at lines 221--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--231
+Underfull \hbox (badness 10000) in paragraph at lines 235--240
 
  []
 
@@ -879,32 +879,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--265
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 367--370
+Underfull \hbox (badness 10000) in paragraph at lines 373--376
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--391
+Underfull \hbox (badness 10000) in paragraph at lines 377--397
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 401--403
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--406
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 407--409
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
+
+ []
+
 )
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 418--203
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 424--203
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
@@ -918,13 +918,13 @@ foun-da-tion for
 
 [7] [8]) [9] [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10774 strings out of 479485
- 159967 string characters out of 5875915
- 469448 words of memory out of 5000000
- 27472 multiletter control sequences out of 15000+600000
+ 10777 strings out of 479485
+ 160021 string characters out of 5875915
+ 468441 words of memory out of 5000000
+ 27475 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,21n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
@@ -933,22 +933,21 @@ exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/20
 20/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cmextra/cmmib7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
-c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/
-2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
-c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 1210554 bytes).
+blic/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (34 pages, 1204503 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
+ 256 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

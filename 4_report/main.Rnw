@@ -42,7 +42,7 @@ bindingoffset = 6mm]{geometry}
 \usepackage{ragged2e}
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{amsmath}
+\usepackage[fleqn]{amsmath}
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage{amsthm }
@@ -196,7 +196,7 @@ Munich, April 2\textsuperscript{nd}, 2021
 \label{lgb-mani-learn}
 \input{chapters/graph-based-models.Rnw}
 
-\section{Selected Approaches}
+\section{LGML Techniques}
 \label{techniques}
 \input{chapters/techniques.Rnw}
 

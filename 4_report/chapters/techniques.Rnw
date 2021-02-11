@@ -157,7 +157,7 @@ asymptotically approach the Laplace-Beltrami operator.
 More recent research, however, suggests that these conditions might be more 
 restrictive than previously assumed. 
 In particular, convergence appears to depend on the choice of a regularization 
-parameter that will be shortly introduced \citep{wuwu2018}.
+parameter required in the case of $D < k$ \citep{wuwu2018}.
 \\
 
 \textbf{Idea.}
@@ -199,7 +199,7 @@ in chapter \ref{challenges}.
   \label{fig-reconstruction}
 \end{figure}
 
-Algorithmically, LLE then performs two subsequent steps \citep{roweissaul2000}:
+Algorithmically, LLE performs two subsequent steps \citep{roweissaul2000}:
 
 \begin{tight_enumerate}
   \item Compute the reconstruction weights in $\RD$ minimizing reconstruction 
@@ -214,9 +214,9 @@ of each point.
 A second constraint, zero weights for non-neighboring points, is implicitly
 enforced during construction of the neighborhood graph, where edges are only
 drawn to vertices belonging to $\x_i$'s neighborhood \citep{ghojoghetal2020}.
-The resulting quadratic optimization problem is convex and has a unique
+The resulting optimization problem is convex and has a unique
 closed-form solution\footnote{
-Note that the weight matrix $\min_{\W}$ is different from the one computed in
+Note that the weight matrix $\W$ is different from the one computed in
 LEM, but the same symbol is used as not to overload notation.
 } \citep{roweissaul2000}:
 
@@ -225,7 +225,7 @@ LEM, but the same symbol is used as not to overload notation.
     \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i
     \twonorm{\x_i - \sum_j w_{ij} \x_j} \\
     &= \min_{\W} \sum_i \twonorm{\x_i - \bm{N}_i \bm{w}_i}, \\
-    & \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN
+    & \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN.
   \end{split}
   \label{eq-obj-lle-recon}
 \end{equation}
@@ -244,12 +244,12 @@ matrix $\G_i$ \citep{saulroweis2001}:
     &= \min_{\W} \sum_i \bm{w}_i^T (\x_i \bm{1}^T - \bm{N}_i)^T
     (\x_i \bm{1}^T - \bm{N}_i) \bm{w}_i \\
     &= \min_{\W} \sum_i \bm{w}_i^T \G_i \bm{w}_i, \\
-    & \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN
+    & \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN.
   \end{split}
   \label{eq-obj-lle-recon-2}
 \end{equation}
 
-By standard use of a Lagrange multiplier, the solution for the above constrained optimization problem eventually collapses to:
+By standard use of a Lagrange multiplier, the solution for the above constrained optimization problem collapses to
 
 \begin{equation}
   \bm{w}_i = \frac{\G_i^{-1}\bm{1}}{\bm{1}^T \G_i^{-1}\bm{1}}.
@@ -260,12 +260,12 @@ Solving the reconstruction problem therefore requires $N$ matrix inversions,
 which may prove problematic if the gram matrices do not achieve full rank.
 In the case of $D < k$, $\G_i$ is indeed singular and must be robustified by 
 adding a small numerical constant to its diagonal \citep{ghojoghetal2020}.
-Chapter \ref{challenges} will discuss how such regularization is applied.
+Chapter \ref{challenges} will discuss how this regularization is applied.
 \\
 
 \textbf{Embedding loss minimization.}
 The second optimization problem minimizes the embedding cost arising from 
-mapping neighborhood geometries, just derived in the form of reconstruction 
+mapping neighborhood geometries, derived in the form of reconstruction 
 weights, into the $d$-dimensional subspace.
 Keeping the weight coefficients fixed, the aim is to find such embedding 
 coordinates that best preserve the vicinity structures and adhere to the 
@@ -274,28 +274,38 @@ having unit covariance \citep{roweissaul2000}:
 
 \begin{equation}
   \begin{split}
-    \min_{\Y} \Phi(\Y) &= \min_{\Y} \sum_i \twonorm{\y_i - \sum_j w_{ij} \y_j}\\
-    & \text{s.t. } \frac{1}{N} \sum_i \y_i \y_i^T = \I, \quad \text{and} \\
-    & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN. 
+    \min_{\Y} \Phi(\Y) &= \min_{\Y} \sum_i \twonorm{\y_i - \sum_j w_{ij} \y_j}, 
+    \\
+    & \text{s.t. } \frac{1}{N} \sum_i \y_i \y_i^T = \I \quad \text{and}
+    \quad \sum_i \y_i = \bm{0} \quad \forall i \in \setN.
+    % & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN. 
   \end{split}
   \label{eq-obj-lle-emb}
 \end{equation}
 
-This can now be expressed as a standard eigenvalue problem.
+The objective can be equivalently stated as an eigenvalue problem.
 For this purpose, define $\E = (\I - \W)^T(\I - \W)$ and set 
 $\tilde{\Y} = \Y^T$ \citep{cayton2005}, such that:
 
 \begin{equation}
-  \begin{split}
-    & \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}) \\
-    & \text{s.t. } \tilde{\Y}^T \tilde{\Y} = \I, \quad \text{and} \\
-    & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN.
-  \end{split}
+  \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}), \quad
+  \text{s.t. } \frac{1}{N} \tilde{\Y}^T \tilde{\Y} = \I \quad \text{and}
+  \quad \tilde{\Y}^T\bm{1} = \bm{0}.
   \label{eq-obj-lle-emb-2}
 \end{equation}
 
-The close resemblance to the optimization problem in LEM (equation 
-\ref{eq-obj-lem}) is not coincidental.
+Again, the solution is found by eigenanalysis of the matrix encoding the 
+intrinsic manifold structures.
+Note that the first constraint carries a factor $\frac{1}{N}$ as originally 
+proposed.
+In fact, any such quadratic form, provided its right hand side is of full rank, 
+would suffice to ensure the embedding vectors actually span a $d$-dimensional 
+space \citep{burges2010}.
+The additional sum-zero condition is implicitly met by discarding the constant 
+eigenvector associated with the bottom, zero eigenvalue \citep{ghojoghetal2020}.
+
+As mentioned before, the close resemblance to the optimization problem in LEM 
+(equation \ref{eq-obj-lem}) is not coincidental.
 Recall that LEM builds upon eigenfunctions of the Laplace-Beltrami operator 
 $\mathcal{L}$.
 \citet{belkinniyogi2003} show that LLE approximates the eigenfunctions of the 
@@ -303,10 +313,6 @@ iterated form $\frac{1}{2} \mathcal{L}^2$, which are identical to those of
 $\mathcal{L}$.
 Therefore, with a somewhat different intuition, LLE essentially arrives at the 
 same conclusion.
-
-Again, the solution is thus found by eigenanalysis of the matrix encoding the 
-intrinsic manifold structures, i.e., by computing the bottom $d$ eigenvectors 
-of $\E$ after discarding the bottom one associated with a zero eigenvalue \citep{cayton2005}.
 
 % ------------------------------------------------------------------------------
 
