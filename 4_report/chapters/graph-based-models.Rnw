@@ -98,7 +98,7 @@ relevant latent dimensions \citep{schoelkopfetal1998}.
   % space after all, right
   $\kappa(\x_i, \x_j)$ in some space with Hilbert property.
   Appropriate choice of $\kappa$ then allows for the data to be represented by a 
-  matrix $\bm{K} \in \R^{N \times N}, \bm{K}_{ij} = \kappa(\x_i, \x_j)$.
+  matrix $\K \in \R^{N \times N}, \K_{ij} = \kappa(\x_i, \x_j)$.
   This matrix is the numerical data representation derived with respect to their 
   latent properties. \citep{schoelkopfetal1998}.
   Precisely how it is computed depends on the choice of the kernel function 
@@ -119,7 +119,7 @@ relevant latent dimensions \citep{schoelkopfetal1998}.
   dimensionality reduction at minimal information loss \citep{cayton2005}.
   In kernel PCA, this eigenanalysis is implicitly performed in the feature space 
   $\mathcal{F}$.
-  Algorithmically, it boils down to diagonalizing the kernel matrix $\bm{K}$ 
+  Algorithmically, it boils down to diagonalizing the kernel matrix $\K$ 
   \citep{schoelkopfetal1998}.
  
 \end{itemize}
@@ -247,8 +247,8 @@ condition to open, connected subspaces \citep{donohogrimes2003}.
 \textbf{Algorithmic procedure.}
 Summing up the above, LGML methods use functionals defined on graph 
 approximations of the manifold to capture the intrinsic data structure.
-This information is stored in a matrix representation $\bm{M}$ that is 
-directly linked to the kernel matrix $\bm{K}$.
+This information is stored in a matrix representation $\M$ that is 
+directly linked to the kernel matrix $\K$.
 Eigenanalysis of $M$ then leads to the sought-for low-dimensional subspace 
 coordinates.
 
@@ -258,8 +258,8 @@ The resulting algorithmic pattern may be stated as follows
 \begin{tight_enumerate}
   \item Construct a neighborhood graph $\mathcal{G}$ from the observed data.
   \item Analyze the graph properties with an appropriate functional and derive 
-  a matrix representation $\bm{M}$ thereof.
-  \item Find the eigenvalues and associated eigenvectors of $\bm{M}$.
+  a matrix representation $\M$ thereof.
+  \item Find the eigenvalues and associated eigenvectors of $\M$.
   \item From the principal (top or bottom) eigenvectors, as determined by the 
   ordered eigenvalues, retrieve the low-dimensional coordinates.
 \end{tight_enumerate}
@@ -375,7 +375,7 @@ within $\epsilon$-radius, depending on the neighborhood definition.
 \label{eigenanalysis}
 
 Eventually, spectral manifold learning boils down to an eigenanalysis 
-of the matrix $\bm{M}$ believed to hold information about the intrinsic 
+of the matrix $\M$ believed to hold information about the intrinsic 
 manifold structure.
 As explained in chapter \ref{principles-overview}, PCA finds the principal 
 eigenvectors of empirical covariance, thereby defining a low-dimensional 

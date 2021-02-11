@@ -150,6 +150,12 @@ Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
 
+\harvarditem{Saul \harvardand\ Roweis}{2001}{saulroweis2001}
+Saul, L.~K. \harvardand\ Roweis, S.~T.  \harvardyearleft 2001\harvardyearright
+  .
+\newblock An introduction to locally linear embedding, {\em Journal of Machine
+  Learning Research} {\bf 7}.
+
 \harvarditem[Saul et~al.]{Saul, Weinberger, Sha, Ham \harvardand\
   Lee}{2006}{sauletal2006}
 Saul, L.~K., Weinberger, K.~Q., Sha, F., Ham, J. \harvardand\ Lee, D.~D.

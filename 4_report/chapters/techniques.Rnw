@@ -104,10 +104,10 @@ equal to 1 for connected nodes and 0 otherwise.
   \end{cases}
 \end{equation*}
 
-forming a weight matrix $\bm{W} = (w)_{ij} \in \R^{N \times N}$.
+forming a weight matrix $\W = (w)_{ij} \in \R^{N \times N}$.
 Clearly, edges between closer points receive larger weights.
-A second matrix $\bm{D} = (d)_{ij} \in \R^{N \times N}$ takes the row sums of
-$\bm{W}$ on its diagonals.
+A second matrix $\D = (d)_{ij} \in \R^{N \times N}$ takes the row sums of
+$\W$ on its diagonals.
 Penalizing output disparities more severely for pairs of nearby points, i.e., 
 pairs with a large weight coefficient, the smoothness requirement may be stated 
 as follows:
@@ -123,20 +123,21 @@ as follows:
 \end{equation*}
 
 Now, define the graph Laplacian as 
-$\bm{L} = \bm{D} - \bm{W} \in \R^{N \times N}$, thereby coercing all information 
+$\Lap = \D - \W \in \R^{N \times N}$, thereby coercing all information 
 about the graph structure into a single matrix representation\footnote{
-This corresponds to the general matrix $\bm{M}$ introduced in chapter
+This corresponds to the general matrix $\M$ introduced in chapter
 \ref{motivation}; the deviating notation shall merely emphasize the special 
-role of $\bm{M}$ as the Laplacian.}.
-With $\bm{L}$ the above can be rewritten as
+role of $\M$ as the Laplacian.}.
+With $\Lap$ the above can be rewritten as
 
 \begin{equation}
-  \min_{\Y} \text{\textit{trace}}(\Y^T \bm{L} \Y), \quad \text{s.t.} 
-      \quad \Y^T \bm{D} \Y = \bm{I},
+  \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t.} 
+      \quad \Y^T \D \Y = \bm{I},
+  \label{eq-obj-lem}
 \end{equation}
 
 which has precisely the form of the generalized eigenvalue problem in equation 
-\ref{eq-gevproblem} and is therefore solved by eigendecomposition of $\bm{L}$ \citep{belkinniyogi2003}.
+\ref{eq-gevproblem} and is therefore solved by eigendecomposition of $\Lap$ \citep{belkinniyogi2003}.
 As in the continuous case, the bottom eigenvector with zero eigenvalue is 
 constant and must be discarded.
 The subsequent $d$ eigenvectors yield the desired low-dimensional 
@@ -212,8 +213,38 @@ A second constraint, zero weights for non-neighboring points, is implicitly
 enforced during construction of the neighborhood graph, where edges are only 
 drawn to vertices belonging to $\x_i$'s neighborhood \citep{ghojoghetal2020}.
 The resulting quadratic optimization problem is convex and has a unique 
-closed-form solution.
-\\
+closed-form solution \citep{roweissaul2000}:
+
+\begin{equation}
+  \begin{split}
+    \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i \| \x_i - \sum_j w_{ij} \x_j 
+    \|^2_2 \\
+    &= \min_{\W} \sum_i \| \x_i - \bm{N}_i \bm{w}_i \|^2_2
+  \end{split}
+  \label{eq-obj-lle}
+\end{equation}
+
+Here, $\bm{N}_i \in \R^{D \times k}$ denotes the matrix of feature vectors of 
+$\x_i$'s neighbors and $\bm{w}_i = \sum_j w_{ij} \in \R^k$.
+
+Equation \ref{eq-obj-lle} can be re-arranged by use of the sum-one constraint, 
+implying $\bm{1}^T \bm{w}_i = \bm{1}$, and simplified by introduction of the 
+Gram, or local covariance, matrix $\G_i$ 
+\citep{saulroweis2001}:
+
+\begin{equation}
+  \begin{split}
+    \min_{\W} \varepsilon(\W) &= \min_{\W} \sum_i \| \x_i \bm{1}^T \bm{w}_i - 
+    \bm{N}_i \bm{w}_i \|^2_2 \\
+    &= \min_{\W} \sum_i \| (\x_i \bm{1}^T - \bm{N}_i) \bm{w}_i \|^2_2 \\
+    &= \min_{\W} \sum_i \bm{w}_i^T (\x_i \bm{1}^T - \bm{N}_i)^t 
+    (\x_i \bm{1}^T - \bm{N}_i) \bm{w}_i \\
+    &= \min_{\W} \sum_i \bm{w}_i^T \G_i \bm{w}_i
+  \end{split}  
+  \label{eq-obj-lle-2}
+\end{equation}
+
+
 
 \textbf{Embedding loss minimization.} Text
 \\
