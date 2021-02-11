@@ -17,7 +17,7 @@ data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x, y, z)]})
 
 search_grid_landmarks <- expand.grid(
   landmark_method = c("poor_coverage", "random_coverage", "optimal_coverage"),
-  n_landmarks = seq_len(20L))
+  n_landmarks = seq_len(1L))
 
 sensitivity_landmarks <- lapply(
   
@@ -33,7 +33,7 @@ sensitivity_landmarks <- lapply(
     data_u <- data_unlabeled$incomplete_tire
     this_method <- as.character(search_grid_landmarks[i, "landmark_method"])
     this_number <- search_grid_landmarks[i, "n_landmarks"]
-    k_max <- 20L
+    k_max <- 2L
     
     # Find prior points according to current method and number
     
@@ -73,6 +73,7 @@ sensitivity_landmarks <- lapply(
       auc_lnk_rnx = max(embedding$auc_lnk_rnx))
     
   }
+  
 )
 
 sensitivity_landmarks_dt <- data.table::as.data.table(
