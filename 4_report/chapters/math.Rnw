@@ -168,18 +168,18 @@ A curve $c$ in $\mani$ is a smooth mapping from an open interval $\Lambda
 \subset \R$ into $\mani$.
 $c$ is parametrized by a point $\lambda \in \Lambda$, such that
 
-\begin{equation*}
+\begin{equation}
   c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T
-\end{equation*} 
+\end{equation} 
 
 is a curve in $\Rd$ (all 
 $c_j, j = 1, ..., d$ having a sufficient number of continuous derivatives).
 Component-wise differentiation with respect to $\lambda$ yields
 \textit{velocity} in $\lambda$: 
 
-\begin{equation*}
+\begin{equation}
   c^{\prime}(\lambda) = (c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T.
-\end{equation*} 
+\end{equation} 
 
 The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
 $\| \cdot \|^2$ denotes the square norm.
