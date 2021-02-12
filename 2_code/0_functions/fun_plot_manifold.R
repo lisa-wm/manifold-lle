@@ -9,7 +9,8 @@ plot_manifold <- function(data,
                           camera_eye = list(
                             x = 1.5, 
                             y = -1.5, 
-                            z = 0.75)) {
+                            z = 0.75),
+                          title = NULL) {
   
   # Perform basic input checks
   
@@ -57,7 +58,7 @@ plot_manifold <- function(data,
         colors = my_palette
       ) %>% 
       hide_colorbar() %>%
-      layout(xaxis = ax, yaxis = ax)
+      layout(xaxis = ax, yaxis = ax, title = title)
     
   }
   
@@ -99,7 +100,7 @@ plot_manifold <- function(data,
         colors = my_palette
       ) %>% 
       hide_colorbar() %>% 
-      layout(scene = scene)
+      layout(scene = scene, title = title)
 
   }
   
