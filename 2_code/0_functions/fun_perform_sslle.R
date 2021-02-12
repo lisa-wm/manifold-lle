@@ -50,13 +50,18 @@ perform_sslle <- function(data,
   #   stop("confidence parameter must be positive numeric value")
   # }
   
+  # REMOVE MANIFOLD COORDINATES FOR COMPUTATIONS -------------------------------
+  
+  capital_d <- ncol(data) - ncol(prior_points)
+  data_euclidean <- data[, seq_len(capital_d), with = FALSE]
+  
   # COMPUTE RECONSTRUCTION WEIGHTS FOR CANDIDATE NEIGHBORHOOD SIZES ------------
   
   reconstruction <- compute_reconstruction_weights(
-    data,
-    k_max,
-    regularization,
-    verbose)
+    data = data_euclidean,
+    k_max = k_max,
+    regularization = regularization,
+    verbose = verbose)
   
   # plot(reconstruction_weights$results_search_k$reconstruction_errors ~
   #        reconstruction_weights$results_search_k$neighborhood_sizes, 
@@ -79,19 +84,19 @@ perform_sslle <- function(data,
     reconstruction$candidates_k,
     function(i) {
       find_embedding_coordinates_ss(
-        reconstruction$search_k$weight_matrices[[i]], 
-        prior_points,
-        is_exact,
-        confidence_param)})
+        reconstruction_weights = reconstruction$search_k$weight_matrices[[i]], 
+        prior_points = prior_points,
+        is_exact = is_exact,
+        confidence_param = confidence_param)})
     
   # COMPUTE RESIDUAL VARIANCES -------------------------------------------------
 
-  residual_variances <- lapply(
-    seq_along(reconstruction$candidates_k),
-    function(i) {
-      1 - cor(
-        c(as.matrix(dist(data))), 
-        c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
+  # residual_variances <- lapply(
+  #   seq_along(reconstruction$candidates_k),
+  #   function(i) {
+  #     1 - cor(
+  #       c(as.matrix(dist(data))), 
+  #       c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
   
   # COMPUTE AUC_LNK_RNX --------------------------------------------------------
   
@@ -99,7 +104,7 @@ perform_sslle <- function(data,
     seq_along(reconstruction$candidates_k),
     function(i) {
       compute_auc_lnk_rnx(
-        data, 
+        data_euclidean, 
         embedding[[i]]$embedding_coordinates)})
   
   # FIND OPTIMAL EMBEDDING -----------------------------------------------------

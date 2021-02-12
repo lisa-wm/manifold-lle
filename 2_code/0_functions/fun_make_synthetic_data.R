@@ -19,11 +19,11 @@ make_incomplete_tire <- function(n_points, seed = 123L) {
   t <- 5 * pi * runif(0, 1, n = n_points) / 3
   set.seed(seed + 1L)
   s <- 5 * pi * runif(0, 1, n = n_points) / 3
-  x <- (3 + cos(s)) * cos(t)
-  y <- (3 + cos(s)) * sin(t)
-  z <- sin(s)
+  x_1 <- (3 + cos(s)) * cos(t)
+  x_2 <- (3 + cos(s)) * sin(t)
+  x_3 <- sin(s)
   
-  data.table(x, y, z, t, s)
+  data.table(x_1, x_2, x_3, t, s)
   
 }
 
@@ -40,13 +40,13 @@ make_swiss_roll <- function(n_points, seed = 123L) {
   
   set.seed(seed)
   t <- 1.5 * pi * (1 + 2 * runif(0, 1, n = n_points))
-  x <- t * cos(t)
+  x_1 <- t * cos(t)
   set.seed(seed + 1L)
-  y <- 21 * runif(0, 1, n = n_points)
-  z <- t * sin(t)
-  s <- t
+  x_2 <- 21 * runif(0, 1, n = n_points)
+  x_3 <- t * sin(t)
+  s <- x_2
   
-  data.table(x, y, z, t, s)
+  data.table(x_1, x_2, x_3, t, s)
   
 }
 
@@ -63,13 +63,13 @@ make_s_curve <- function(n_points, seed = 123L) {
   
   set.seed(seed)
   t <- 3 * pi * (runif(0, 1, n = n_points) - 0.5)
-  x <- sin(t)
+  x_1 <- sin(t)
   set.seed(seed + 1L)
-  y <- 2 * runif(0, 1, n = n_points)
-  z <- (sign(t) * (cos(t) - 1))
-  s <- t
+  x_2 <- 2 * runif(0, 1, n = n_points)
+  x_3 <- (sign(t) * (cos(t) - 1))
+  s <- x_2
   
-  data.table(x, y, z, t, s)
+  data.table(x_1, x_2, x_3, t, s)
 
 }
 
@@ -117,9 +117,3 @@ make_unit_sphere <- function(n_points, seed = 123L) {
   res
   
 }
-
-# CIRCLE DATA ------------------------------------------------------------------
-
-
-
-# WORLD DATA -------------------------------------------------------------------
