@@ -10,13 +10,16 @@ data_labeled <- list(
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
+k_max <- 15L
+n_landmarks_max <- 12L
+
 # SENSITIVITY ANALYSIS I: CHOICE OF PRIOR POINTS -------------------------------
 
 # Set up combinations of method and number of prior points
 
 search_grid_landmarks <- expand.grid(
   landmark_method = c("poor_coverage", "random_coverage", "optimal_coverage"),
-  n_landmarks = seq(2L, 12L, by = 2L))
+  n_landmarks = seq(2L, n_landmarks_max, by = 2L))
 
 sensitivity_landmarks <- parallel::mclapply(
   
@@ -38,7 +41,6 @@ sensitivity_landmarks <- parallel::mclapply(
       data_u <- data_unlabeled[[i]]
       this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
       this_number <- search_grid_landmarks[j, "n_landmarks"]
-      k_max <- 15L
       
       # Find prior points according to current method and number
       
@@ -103,11 +105,13 @@ save_rdata_files(sensitivity_landmarks_dt, "2_code")
 
 # SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE ----------------------------
 
-search_space_noise <- list(
-  noise_level = c(lower = 0L, upper = 3L),
-  confidence_param = c(lower = 10e-10, upper = 10e-1))
+# search_space_noise <- list(
+#   noise_level = c(lower = 0L, upper = 1L),
+#   confidence_param = c(lower = 10e-10, upper = 10e-1))
 
-set.seed(123L)
+search_grid_noise <- expand.grid(
+  noise_level = c(0.1, 0.5, 1L, 5L, 10L),
+  confidence_param = sapply(seq(-4L, 2L, length.out = 7), function(i) 10^(i)))
 
 sensitivity_noise <- parallel::mclapply(
   
@@ -117,7 +121,7 @@ sensitivity_noise <- parallel::mclapply(
     
     parallel::mclapply(
       
-      seq_len(45L),
+      seq_len(nrow(search_grid_noise)),
       
       function(j) {
         
@@ -128,22 +132,15 @@ sensitivity_noise <- parallel::mclapply(
         
         data_l <- data_labeled[[i]]
         data_u <- data_unlabeled[[i]]
-        this_noise <- runif(
-          1L, 
-          min = search_space_noise$noise_level["lower"],
-          max = search_space_noise$noise_level["upper"])
-        this_confidence <- runif(
-          1L, 
-          min = search_space_noise$confidence_param["lower"],
-          max = search_space_noise$confidence_param["upper"])
-        k_max <- 15L
+        this_noise <- search_grid_noise[j, "noise_level"]
+        this_confidence <- search_grid_noise[j, "confidence_param"]
         
         # Find prior points and apply perturbation
         
         landmarks_ind <- find_landmarks(
           data = data_u,
           n_neighbors = k_max,
-          n_landmarks = 15L,
+          n_landmarks = 5L,
           method = "maxmin")
         
         landmarks <- data_l[landmarks_ind, .(t, s)] +
@@ -157,7 +154,7 @@ sensitivity_noise <- parallel::mclapply(
         # Compute embedding
 
         embedding <- perform_sslle(
-          data = data_u[new_order],
+          data = data_l[new_order],
           k_max = k_max,
           prior_points = landmarks,
           is_exact = FALSE,
@@ -169,6 +166,7 @@ sensitivity_noise <- parallel::mclapply(
         list(
           noise_level = this_noise,
           confidence_param = this_confidence,
+          residual_variance = min(embedding$residual_variances),
           auc_lnk_rnx = max(embedding$auc_lnk_rnx),
           embedding_result = embedding)
         
@@ -186,34 +184,9 @@ sensitivity_noise_dt <- lapply(
   seq_along(sensitivity_noise), 
   function(i) {
     dt <- data.table::as.data.table(do.call(rbind, sensitivity_noise[[i]]))
-    dt[, names(dt)[1:3] := lapply(.SD, unlist), .SDcols = names(dt)[1:3]]
+    dt[, names(dt)[1:4] := lapply(.SD, unlist), .SDcols = names(dt)[1:4]]
     dt})
 
 names(sensitivity_noise_dt) <- names(data_labeled)
 
 save_rdata_files(sensitivity_noise_dt, "2_code")
-
-sensitivity_landmarks_plots <- lapply(
-  seq_along(sensitivity_landmarks_dt),
-  function(i) {
-    sensitivity_landmarks_dt[[i]][
-      , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
-      ggplot2::ggplot(aes(
-        x = forcats::fct_relevel(
-          landmark_method, 
-          "poor_coverage",
-          "random_coverage",
-          "optimal_coverage"), 
-        y = n_landmarks, 
-        col = auc_lnk_rnx)) +
-      geom_point(size = 5L) +
-      scale_color_gradient(
-        low = "#EFFF7F", 
-        high = "#067F10", 
-        limits = c(0, 1)) +
-      ylab("number of landmarks") +
-      xlab("") +
-      ggtitle(sprintf(
-        "Data: %s", 
-        stringr::str_replace_all(
-          names(sensitivity_landmarks_dt[i]), "_", " ")))})

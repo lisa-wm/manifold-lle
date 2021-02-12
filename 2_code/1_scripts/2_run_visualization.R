@@ -5,6 +5,7 @@
 # DATA -------------------------------------------------------------------------
 
 load_rdata_files(sensitivity_landmarks_dt, "2_code")
+load_rdata_files(sensitivity_noise_dt, "2_code")
 
 # VISUALIZATION: AUC_LNK_RNX & RESIDUAL VARIANCE -------------------------------
 
@@ -70,6 +71,10 @@ sensitivity_landmarks_plots_quant <- lapply(
           stringr::str_replace_all(
             names(sensitivity_landmarks_dt[i]), "_", " "))))})
 
+# ------------------------------------------------------------------------------
+
+# sensitivity_landmarks_plots_quant <- lapply()
+
 # VISUALIZATION: LOW-DIMENSIONAL EMBEDDING -------------------------------------
 
 sensitivity_landmarks_plots_qual <- lapply(
@@ -118,3 +123,53 @@ sensitivity_landmarks_plots_qual <- lapply(
 )
 
 save_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
+
+# ------------------------------------------------------------------------------
+
+sensitivity_noise_plots_qual <- lapply(
+  
+  seq_along(sensitivity_noise_dt),
+  
+  function(i) {
+    
+    dt <- sensitivity_noise_dt[[i]]
+    data.table::setorder(dt, confidence_param, noise_level)
+    dt_name <- names(sensitivity_noise_dt)[i]
+    
+    plots <- lapply(
+      seq_len(nrow(dt)),
+      function(j) {
+        plot_manifold(
+          data.table(
+            dt[j, ]$embedding_result[[1]]$Y, 
+            dt[j, ]$embedding_result[[1]]$X[, .(t, s)]), 
+          dim = 2L,
+          title = sprintf(
+            "Data: %s", 
+            unlist(stringr::str_replace(dt_name, "_", " ")))) %>% 
+          layout(annotations = list(
+            text = sprintf(
+              "noise %.3f, confidence %.3f",
+              dt[j, ]$noise_level,
+              dt[j, ]$confidence_param),
+            xref = "paper",
+            yref = "paper",
+            yanchor = "bottom",
+            xanchor = "center",
+            align = "center",
+            x = 0.5,
+            y = -0.25,
+            showarrow = FALSE))
+        
+      })
+    
+    subplot(
+      plots,
+      nrows = 7L) %>% 
+      hide_guides()
+    
+  }
+  
+)
+
+save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
