@@ -37,7 +37,8 @@ find_embedding_coordinates_ss <- function(reconstruction_weights,
       embedding_matrix_22_inv %*% embedding_matrix_12 %*% 
         as.matrix(prior_points))
     
-    data.table::setnames(prior_points, names(embedding_coordinates))
+    data.table::setnames(prior_points, sprintf("y_%d", seq_len(d)))
+    data.table::setnames(embedding_coordinates, sprintf("y_%d", seq_len(d)))
     
     embedding_coordinates <- rbind(
       prior_points,
