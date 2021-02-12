@@ -6,8 +6,7 @@
 
 data_labeled <- list(
   incomplete_tire = make_incomplete_tire(n_points = 1000L), 
-  swiss_roll = make_swiss_roll(n_points = 1000L),
-  scurve = make_s_curve(n_points = 1000L))
+  swiss_roll = make_swiss_roll(n_points = 1000L))
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
@@ -17,7 +16,7 @@ data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
 search_grid_landmarks <- expand.grid(
   landmark_method = c("poor_coverage", "random_coverage", "optimal_coverage"),
-  n_landmarks = seq_len(5L))
+  n_landmarks = seq_len(15L))
 
 sensitivity_landmarks <- parallel::mclapply(
   
@@ -76,6 +75,7 @@ sensitivity_landmarks <- parallel::mclapply(
       list(
         landmark_method = this_method,
         n_landmarks = this_number,
+        residual_variance = min(embedding$residual_variances),
         auc_lnk_rnx = max(embedding$auc_lnk_rnx),
         embedding_result = embedding)
       
@@ -93,7 +93,7 @@ sensitivity_landmarks_dt <- lapply(
   seq_along(sensitivity_landmarks), 
   function(i) {
     dt <- data.table::as.data.table(do.call(rbind, sensitivity_landmarks[[i]]))
-    dt[, names(dt)[1:3] := lapply(.SD, unlist), .SDcols = names(dt)[1:3]]
+    dt[, names(dt)[1:4] := lapply(.SD, unlist), .SDcols = names(dt)[1:4]]
     dt[, landmark_method := as.factor(landmark_method)]
     dt})
 
@@ -104,47 +104,90 @@ save_rdata_files(sensitivity_landmarks_dt, "2_code")
 # TODO find way to scale color limits properly
 
 sensitivity_landmarks_plots <- lapply(
+  
   seq_along(sensitivity_landmarks_dt),
+  
   function(i) {
-    sensitivity_landmarks_dt[[i]][
-      , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
-      ggplot2::ggplot(aes(
-        x = forcats::fct_relevel(
-          landmark_method, 
-          "poor_coverage",
-          "random_coverage",
-          "optimal_coverage"), 
-        y = n_landmarks, 
-        col = auc_lnk_rnx)) +
-      geom_point(size = 5L) +
-      scale_color_gradient(
-        low = "red", 
-        high = "green"
-        # , 
-        # limits = c(
-        #   min(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx),
-        #   max(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx))
+    
+    list(
+      
+      auc_plot = sensitivity_landmarks_dt[[i]][
+        , .(landmark_method, n_landmarks, auc_lnk_rnx)] %>% 
+        ggplot2::ggplot(aes(
+          x = forcats::fct_relevel(
+            landmark_method, 
+            "poor_coverage",
+            "random_coverage",
+            "optimal_coverage"), 
+          y = n_landmarks, 
+          col = auc_lnk_rnx)) +
+        geom_point(size = 5L) +
+        scale_color_gradient(
+          low = "red", 
+          high = "green"
+          # , 
+          # limits = c(
+          #   min(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx),
+          #   max(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx))
         ) +
-      ylab("number of landmarks") +
-      xlab("") +
-      ggtitle(sprintf(
-        "Data: %s", 
-        stringr::str_replace_all(
-          names(sensitivity_landmarks_dt[i]), "_", " ")))})
+        ylab("number of landmarks") +
+        xlab("") +
+        ggtitle(sprintf(
+          "Data: %s", 
+          stringr::str_replace_all(
+            names(sensitivity_landmarks_dt[i]), "_", " "))),
+      
+      res_var_plot = sensitivity_landmarks_dt[[i]][
+        , .(landmark_method, n_landmarks, residual_variance, auc_lnk_rnx)] %>% 
+        ggplot2::ggplot(aes(
+          x = forcats::fct_relevel(
+            landmark_method, 
+            "poor_coverage",
+            "random_coverage",
+            "optimal_coverage"), 
+          y = n_landmarks, 
+          col = residual_variance)) +
+        geom_point(size = 5L) +
+        scale_color_gradient(
+          low = "green", 
+          high = "red"
+          # , 
+          # limits = c(
+          #   min(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx),
+          #   max(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx))
+        ) +
+        ylab("number of landmarks") +
+        xlab("") +
+        ggtitle(sprintf(
+          "Data: %s", 
+          stringr::str_replace_all(
+            names(sensitivity_landmarks_dt[i]), "_", " "))))})
 
 best_models <- lapply(
   seq_along(sensitivity_landmarks_dt),
-  function(i) sensitivity_landmarks_dt[[i]][auc_lnk_rnx == max(auc_lnk_rnx)])
+  function(i) sensitivity_landmarks_dt[[i]][
+    landmark_method == "optimal_coverage" & n_landmarks == max(n_landmarks)])
 
 names(best_models) <- names(data_labeled)
 
 plot_manifold(
   data.table(
-    best_models$incomplete_tire$embedding_result[[1]]$Y, 
-    best_models$incomplete_tire$embedding_result[[1]]$X[, .(t, s)]), 
+    best_models$swiss_roll$embedding_result[[1]]$Y, 
+    best_models$swiss_roll$embedding_result[[1]]$X[, .(t, s)]), 
   2L)
 
-sensitivity_landmarks_dt[auc_lnk_rnx == max(sensitivity_landmarks_dt$auc_lnk_rnx)]
+medium_models <- lapply(
+  seq_along(sensitivity_landmarks_dt),
+  function(i) sensitivity_landmarks_dt[[i]][
+    landmark_method == "optimal_coverage" & n_landmarks == median(n_landmarks)])
+
+names(medium_models) <- names(data_labeled)
+
+plot_manifold(
+  data.table(
+    medium_models$swiss_roll$embedding_result[[1]]$Y, 
+    medium_models$swiss_roll$embedding_result[[1]]$X[, .(t, s)]), 
+  2L)
 
 # SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE ----------------------------
 

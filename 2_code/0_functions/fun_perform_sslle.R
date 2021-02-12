@@ -91,12 +91,12 @@ perform_sslle <- function(data,
     
   # COMPUTE RESIDUAL VARIANCES -------------------------------------------------
 
-  # residual_variances <- lapply(
-  #   seq_along(reconstruction$candidates_k),
-  #   function(i) {
-  #     1 - cor(
-  #       c(as.matrix(dist(data))), 
-  #       c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
+  residual_variances <- lapply(
+    seq_along(reconstruction$candidates_k),
+    function(i) {
+      1 - cor(
+        c(as.matrix(dist(data_euclidean))),
+        c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
   
   # COMPUTE AUC_LNK_RNX --------------------------------------------------------
   
@@ -104,7 +104,7 @@ perform_sslle <- function(data,
     seq_along(reconstruction$candidates_k),
     function(i) {
       compute_auc_lnk_rnx(
-        data_euclidean, 
+        data_euclidean,
         embedding[[i]]$embedding_coordinates)})
   
   # FIND OPTIMAL EMBEDDING -----------------------------------------------------
@@ -118,6 +118,7 @@ perform_sslle <- function(data,
     reconstruction_errors = reconstruction$search_k$reconstruction_errors,
     neighborhood_candidates = reconstruction$candidates_k,
     neighborhood_size = reconstruction$candidates_k[embedding_opt],
+    residual_variances = unlist(residual_variances),
     auc_lnk_rnx = unlist(auc_lnk_rnx),
     X = data,
     Y = abs(embedding[[embedding_opt]]$embedding_coordinates))

@@ -62,14 +62,14 @@ make_s_curve <- function(n_points, seed = 123L) {
   # Compute S-curve coordinates as implemented in Python's sklearn
   
   set.seed(seed)
-  t <- 3 * pi * (runif(0, 1, n = n_points) - 0.5)
-  x_1 <- sin(t)
+  s <- 3 * pi * (runif(0, 1, n = n_points) - 0.5)
+  x_1 <- sin(s)
   set.seed(seed + 1L)
   x_2 <- 2 * runif(0, 1, n = n_points)
-  x_3 <- (sign(t) * (cos(t) - 1))
-  s <- x_2
+  x_3 <- (sign(s) * (cos(s) - 1))
+  t <- x_1
   
-  data.table(x_1, x_2, x_3, t, s)
+  data.table(x_1, x_2, x_3, s, t)
 
 }
 
