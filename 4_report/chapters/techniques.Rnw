@@ -296,7 +296,7 @@ $\tilde{\Y} = \Y^T$ \citep{cayton2005}, such that:
 
 Again, the solution is found by eigenanalysis of the matrix encoding the 
 intrinsic manifold structures.
-Note that the first constraint carries a factor $\frac{1}{N}$ as originally 
+Note that the first constraint carries a factor $1/N$ as originally 
 proposed.
 In fact, any such quadratic form, provided its right hand side is of full rank, 
 would suffice to ensure the embedding vectors actually span a $d$-dimensional 
@@ -319,10 +319,10 @@ same conclusion.
 \subsubsection{Hessian Locally Linear Embedding (HLLE)}
 \label{hlle}
 
-\begin{itemize}
-  \item Hessian instead of Laplacian (eigenmaps)
-  \item Hessian instead of LS fit (LLE)
-\end{itemize}
+Lastly, HLLE \citep{donohogrimes2003} pursues an approach toward LGML that 
+straddles the two former techniques: it borrows heavily from the idea behind 
+LEM, but, as the name suggests, is more akin to LLE in an algorithmic sense 
+\citep{dissross2008}. 
 
 % ------------------------------------------------------------------------------
 
@@ -426,3 +426,10 @@ advantages of locality and non-linearity and essentially behave like PCA
 \textcolor{red}{What about using RF proximities for neighbor search? 
 Unsupervised RF works with simulating new data from the estimated dist of the 
 present ones, see e.g. https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering/RandomForestHorvath.pdf, https://arxiv.org/pdf/2004.02121.pdf}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Comparative Remarks}
+\label{comparison}
+
+HLLE has convergence guarantees - not so LLE, LEM (sudderth)
