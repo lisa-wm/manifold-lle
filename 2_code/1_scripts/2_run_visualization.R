@@ -173,3 +173,53 @@ sensitivity_noise_plots_qual <- lapply(
 )
 
 save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
+
+# ------------------------------------------------------------------------------
+
+sensitivity_noise_pp_plots_qual <- lapply(
+  
+  seq_along(sensitivity_noise_pp_dt),
+  
+  function(i) {
+    
+    dt <- sensitivity_noise_pp_dt[[i]]
+    dt_name <- names(sensitivity_noise_pp_dt)[i]
+    
+    plots <- lapply(
+      seq_len(nrow(dt)),
+      function(j) {
+        plot_manifold(
+          data.table(
+            dt[j, ]$embedding_result[[1]]$Y, 
+            dt[j, ]$embedding_result[[1]]$X[, .(t, s)]), 
+          dim = 2L,
+          title = sprintf(
+            "Data: %s", 
+            unlist(stringr::str_replace(dt_name, "_", " ")))) %>% 
+          layout(annotations = list(
+            text = sprintf(
+              "noise %.3f, %d landmarks",
+              dt[j, ]$noise_level,
+              dt[j, ]$n_landmarks),
+            xref = "paper",
+            yref = "paper",
+            yanchor = "bottom",
+            xanchor = "center",
+            align = "center",
+            x = 0.5,
+            y = -0.25,
+            showarrow = FALSE))
+        
+      })
+    
+    subplot(
+      plots,
+      nrows = 7L) %>% 
+      hide_guides()
+    
+  }
+  
+)
+
+save_rdata_files(sensitivity_noise_pp_plots_qual, folder = "2_code")
+
