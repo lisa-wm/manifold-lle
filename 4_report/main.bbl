@@ -42,6 +42,12 @@ Brown, R.  \harvardyearleft 2006\harvardyearright .
 \newblock {\em Topology and Groupoids. A Geometric Account of General Topology,
   Homotopy Types and the Fundamental Groupoid}, 2 edn, Createspace.
 
+\harvarditem{Burges}{2010}{burges2010}
+Burges, C.~J.  \harvardyearleft 2010\harvardyearright .
+\newblock Geometric methods for feature extraction and dimensional reduction -
+  a guided tour, {\em in} O.~Maimon \harvardand\ L.~Rokach (eds), {\em Data
+  Mining and Knowledge Discovery Methods}, Springer US, pp.~53--82.
+
 \harvarditem{Börm \harvardand\ Mehl}{2012}{boermmehl2012}
 Börm, S. \harvardand\ Mehl, C.  \harvardyearleft 2012\harvardyearright .
 \newblock {\em Numerical Methods for Eigenvalue Problems}, De Gruyter.
@@ -149,6 +155,12 @@ Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
+
+\harvarditem{Saul \harvardand\ Roweis}{2001}{saulroweis2001}
+Saul, L.~K. \harvardand\ Roweis, S.~T.  \harvardyearleft 2001\harvardyearright
+  .
+\newblock An introduction to locally linear embedding, {\em Journal of Machine
+  Learning Research} {\bf 7}.
 
 \harvarditem[Saul et~al.]{Saul, Weinberger, Sha, Ham \harvardand\
   Lee}{2006}{sauletal2006}

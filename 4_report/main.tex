@@ -21,6 +21,15 @@
 \newcommand{\y}{\bm{y}}
 \newcommand{\pv}{\bm{p}}
 \newcommand{\qv}{\bm{q}}
+\newcommand{\W}{\bm{W}}
+\newcommand{\M}{\bm{M}}
+\newcommand{\Lap}{\bm{L}}
+\newcommand{\D}{\bm{D}}
+\newcommand{\K}{\bm{K}}
+\newcommand{\G}{\bm{G}}
+\newcommand{\I}{\bm{I}}
+\newcommand{\E}{\bm{E}}
+\newcommand{\twonorm}[1]{\left\lVert #1 \right\rVert^2}
 
 \usepackage[a4paper,width = 150mm, top = 25mm, bottom = 25mm, 
 bindingoffset = 6mm]{geometry}
@@ -33,7 +42,7 @@ bindingoffset = 6mm]{geometry}
 \usepackage{ragged2e}
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{amsmath}
+\usepackage[fleqn]{amsmath}
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage{amsthm }
@@ -67,7 +76,7 @@ bindingoffset = 6mm]{geometry}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\changefont{Semi-Supervised Locally Linear Embedding: Application 
-and Sensitivity Analysis of Selected Hyperparameters}}
+and Sensitivity Analysis of Critical Hyperparameters}}
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{14.5pt}
@@ -95,7 +104,7 @@ Seminar Report
 \rule{\textwidth}{1.5pt}
 \LARGE 
 \textbf{Semi-Supervised Locally Linear Embedding: Application and Sensitivity 
-Analysis of Selected Hyperparameters}
+Analysis of Critical Hyperparameters}
 \rule{\textwidth}{1.5pt}
    
 \vspace{0.5cm}
@@ -188,7 +197,7 @@ Munich, April 2\textsuperscript{nd}, 2021
 \label{lgb-mani-learn}
 \input{chapters/graph-based-models.Rnw}
 
-\section{Selected Approaches}
+\section{LGML Techniques}
 \label{techniques}
 \input{chapters/techniques.Rnw}
 
