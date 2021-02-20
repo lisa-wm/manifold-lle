@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  20 FEB 2021 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  20 FEB 2021 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,78 +1278,80 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 15.89755pt on input line 74.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 74.
-<figures/report_titlepage_sigillum.png, id=15, 963.6pt x 722.7pt>
-File: figures/report_titlepage_sigillum.png Graphic file (type png)
-<use figures/report_titlepage_sigillum.png>
-Package pdftex.def Info: figures/report_titlepage_sigillum.png  used on input l
-ine 74.
+(Font)              scaled to size 10.07397pt on input line 74.
+<figures/report_titlepage.png, id=15, 963.6pt x 722.7pt>
+File: figures/report_titlepage.png Graphic file (type png)
+<use figures/report_titlepage.png>
+Package pdftex.def Info: figures/report_titlepage.png  used on input line 74.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [1
 
 {c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/repor
-t_titlepage_sigillum.png (PNG copy)>]
+t_titlepage.png (PNG copy)>]
 [LECTURE]=[0][\insertlecture ][2][1]
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.07397pt on input line 108.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 108
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104
 .
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 108
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 108.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.07397pt on input line 108.
+(Font)              scaled to size 10.07397pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 108.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 7.35999pt on input line 108.
+(Font)              scaled to size 7.35999pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 108.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.51999pt on input line 108.
+(Font)              scaled to size 5.51999pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 10.07397pt on input line 108.
+(Font)              scaled to size 10.07397pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <8> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <8> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 7.35999pt on input line 108.
+(Font)              scaled to size 7.35999pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 5.51999pt on input line 108.
+(Font)              scaled to size 5.51999pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 108.
+(Font)              scaled to size 7.35999pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.35999pt on input line 108.
+(Font)              scaled to size 7.35999pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 108.
+(Font)              scaled to size 13.24796pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 3.68pt on input line 108.
+(Font)              scaled to size 3.68pt on input line 104.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.68pt on input line 108.
+(Font)              scaled to size 3.68pt on input line 104.
  [2
 
 ] [3
 
 ] [4
 
-] [5
+]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.88956pt on input line 153.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.88956pt on input line 153.
+ [5
 
 ]
 [6
@@ -1396,17 +1398,17 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23222 strings out of 479485
- 426318 string characters out of 5875915
- 774046 words of memory out of 5000000
- 39609 multiletter control sequences out of 15000+600000
- 580876 words of font info for 82 fonts, out of 8000000 for 9000
+ 23223 strings out of 479485
+ 426283 string characters out of 5875915
+ 772037 words of memory out of 5000000
+ 39610 multiletter control sequences out of 15000+600000
+ 582612 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,13n,126p,453b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,13n,126p,453b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvr8a.pfb>
-Output written on report.pdf (17 pages, 102549 bytes).
+Output written on report.pdf (17 pages, 91682 bytes).
 PDF statistics:
  124 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream

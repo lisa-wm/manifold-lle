@@ -39,15 +39,15 @@
  {\enditemize}
 
 \AtBeginLecture{%
-  \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{figures/report_titlepage_sigillum.png}}
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{figures/report_titlepage.png}}
   \begin{frame}[plain]
     \global\advance\c@lecture by -1
-    \vspace*{3 cm}
+    \vspace*{4 cm}
     \LARGE\bfseries\inserttitle
     \vspace*{0.5 cm}
 
     \ifx\lecturesection\@empty\relax\else%
-    { \large\lecturesection}%
+    { \normalsize\lecturesection}%
     \fi%
   \end{frame}
   \immediate\write\@auxout {\string \newlabel{lect:@@\thelecture}{{\insertframenumber}}}%
