@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  20 FEB 2021 17:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  20 FEB 2021 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1378,6 +1378,10 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ] [17
 
+] [18
+
+] [19
+
 ]
 \tf@nav=\write7
 \openout7 = `report.nav'.
@@ -1398,20 +1402,20 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23223 strings out of 479485
- 426283 string characters out of 5875915
+ 23231 strings out of 479485
+ 426353 string characters out of 5875915
  772037 words of memory out of 5000000
- 39610 multiletter control sequences out of 15000+600000
+ 39614 multiletter control sequences out of 15000+600000
  582612 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,126p,453b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvr8a.pfb>
-Output written on report.pdf (17 pages, 91682 bytes).
+Output written on report.pdf (19 pages, 93204 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 35 named destinations out of 1000 (max. 500000)
+ 139 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  54 words of extra memory for PDF output out of 10000 (max. 10000000)
 
