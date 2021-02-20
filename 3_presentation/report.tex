@@ -1,0 +1,298 @@
+\documentclass[11pt,compress,t,notes=noshow, xcolor=table]{beamer}
+\usepackage[]{graphicx}\usepackage[]{color}
+
+\usepackage{framed}
+
+\usepackage{alltt}
+\newcommand{\SweaveOpts}[1]{}  % do not interfere with LaTeX
+\newcommand{\SweaveInput}[1]{} % because they are not real TeX commands
+\newcommand{\Sexpr}[1]{}       % will only be parsed by R
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{csquotes}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{enumerate}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{eqnarray}
+\usepackage{arydshln}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{colortbl}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{caption}
+\captionsetup[figure]{font=tiny}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+
+% Defines macros and environments
+% \input{style/common.tex}
+\usepackage{style/report}
+
+% ------------------------------------------------------------------------------
+
+\colorlet{highlightcol}{gray!90}
+\newcommand{\maketag}[1]{\colorbox{highlightcol}{\textcolor{white}
+{\MakeUppercase{#1}}}}
+\newcommand{\highlight}[1]{\textcolor{highlightcol}{\textbf{#1}}}
+\newcommand{\arritem}{\item[\highlight{$\rightarrow$}]}
+\newcommand{\positem}{\item[$\highlight{+}$]}
+\newcommand{\negitem}{\item[$\highlight{-}$]}
+\newcommand{\flexitem}[1]{\item[$\highlight{#1}$]}
+\newcommand{\conclbox}[1]{\fbox{\parbox{\textwidth}{\centering\textbf{#1}}}}
+\colorlet{GRAY}{gray}
+
+\let\code=\texttt
+\let\proglang=\textsf
+
+\setkeys{Gin}{width=0.9\textwidth}
+
+% ------------------------------------------------------------------------------
+
+\title{Semi-Supervised Locally Linear Embedding (SSLLE)}
+\author{Lisa Wimmer}
+\date{2021/26/02}
+
+\setbeamertemplate{frametitle}{\expandafter\uppercase\expandafter
+\insertframetitle}
+
+\begin{document}
+
+\lecturechapter{Application \& Sensitivity Analysis \\of Critical 
+Hyperparameters}
+\lecture{Semi-Supervised Locally Linear Embedding (SSLLE)}
+
+% ------------------------------------------------------------------------------
+% AGENDA
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{0 agenda} ~~ fun with sslle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+\medskip
+
+\begin{itemize}
+\flexitem{1} Manifold learning problem
+\flexitem{2} Local graph-based manifold learning (LGML)
+\begin{itemize}
+  \flexitem{1} Taxonomy
+  \flexitem{2} Concept
+\end{itemize}
+\flexitem{3} LGML techniques
+\begin{itemize}
+  \flexitem{1} Unsupervised: LLE \& friends
+  \flexitem{2} Semi-supervised: \maketag{SSLLE}
+  \flexitem{3} Challenges in application
+\end{itemize}
+\flexitem{4} Sensitivity analysis
+\begin{itemize}
+  \flexitem{1} Setup
+  \flexitem{2} Results
+\end{itemize}
+\flexitem{5} Discussion
+\end{itemize}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% MANIFOLD LEARNING PROBLEM
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{1 problem} ~~ manifold learning}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{1 problem} ~~ notation}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% LGML
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{2.1 lgml taxonomy} ~~ overview}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{2.2 lgml concept} ~~ graphs \& eigenvectors}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% LGML TECHNIQUES
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.1 unsupervised lgml} ~~ lle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised lgml} ~~ sslle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.3 challenges} ~~ neighborhood relations}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% SENSITIVITY ANALYSIS
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.1 analysis setup} ~~ scenarios}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.1 analysis setup} ~~ evaluation}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.2 analysis results} ~~ foo}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{5 discussion} ~~ foo}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+
+% \footnotesize
+
+\medskip
+
+woteva
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\endlecture
+
+\end{document}
