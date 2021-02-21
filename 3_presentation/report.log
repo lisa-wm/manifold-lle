@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 09:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 10:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1376,12 +1376,12 @@ id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
 File: figures/s-curve.pdf Graphic file (type pdf)
 <use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 226.
+Package pdftex.def Info: figures/s-curve.pdf  used on input line 211.
 (pdftex.def)             Requested size: 51.62425pt x 62.37761pt.
 <figures/s-curve-undone.pdf, id=43, 756.90776pt x 305.22029pt>
 File: figures/s-curve-undone.pdf Graphic file (type pdf)
 <use figures/s-curve-undone.pdf>
-Package pdftex.def Info: figures/s-curve-undone.pdf  used on input line 226.
+Package pdftex.def Info: figures/s-curve-undone.pdf  used on input line 211.
 (pdftex.def)             Requested size: 172.08318pt x 72.5218pt.
  [4
 
@@ -1392,14 +1392,20 @@ pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone.pdf): PDF inclusion
 ed.
 >]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.88956pt on input line 241.
+(Font)              scaled to size 22.88956pt on input line 226.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 241.
+(Font)              scaled to size 22.88956pt on input line 226.
  [5
 
-] [6
+]
+<figures/models-overview.jpg, id=64, 903.375pt x 533.995pt>
+File: figures/models-overview.jpg Graphic file (type jpg)
+<use figures/models-overview.jpg>
+Package pdftex.def Info: figures/models-overview.jpg  used on input line 256.
+(pdftex.def)             Requested size: 266.31517pt x 155.83179pt.
+ [6
 
-] [7
+ <./figures/models-overview.jpg>] [7
 
 ] [8
 
@@ -1413,7 +1419,8 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ] [13
 
-] [14
+]
+[14
 
 ] [15
 
@@ -1435,16 +1442,15 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@snm=\write9
 \openout9 = `report.snm'.
 
-
-(./report.aux)
+ (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23285 strings out of 479485
- 427172 string characters out of 5875915
+ 23295 strings out of 479485
+ 427426 string characters out of 5875915
  772208 words of memory out of 5000000
- 39657 multiletter control sequences out of 15000+600000
+ 39665 multiletter control sequences out of 15000+600000
  598949 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,126p,453b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1456,10 +1462,10 @@ msfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic
 /uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c
 :/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on report.pdf (19 pages, 598821 bytes).
+Output written on report.pdf (19 pages, 637827 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 180 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  39 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
