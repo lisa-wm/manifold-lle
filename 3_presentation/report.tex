@@ -12,7 +12,7 @@ aspectratio = 1610]{beamer}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
-\usepackage{amsmath}
+\usepackage{amsmath, nccmath}
 \usepackage{amsfonts}
 \usepackage{bm}
 \usepackage{csquotes}
@@ -35,6 +35,7 @@ aspectratio = 1610]{beamer}
 \captionsetup[figure]{font=tiny}
 \usepackage[labelformat=empty]{caption}
 \usepackage{subcaption}
+\usepackage[round, comma]{natbib}
 
 % Defines macros and environments
 % \input{style/common.tex}
@@ -446,16 +447,45 @@ spanned by $d$ principal eigenvectors
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{3.1 unsupervised} ~~ lle}
+\begin{frame}{\textcolor{gray!90}{3.1 unsupervised} ~~ lem}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
 
-% \footnotesize
+\textbf{Proposal}. \citet{donohogrimes2003}
 
 \medskip
 
-woteva
+\textbf{Idea}. Forcing nearby inputs to be mapped to nearby outputs
+
+\begin{itemize}
+  \arritem Notion of smoothness in mapping function
+  \arritem Second-order penalty on large gradients
+\end{itemize}
+
+\medskip
+
+\textbf{Graph Laplacian}. Coercing neighborhood graph information into a matrix
+
+\begin{itemize}
+  \arritem Weight matrix. $\W = (w)_{ij} \in \R^{N \times N}$, where 
+  $w_{ij} = w_{ij}(\twonorm{\x_i - \x_j})$
+  \arritem Diagonal matrix of row sums. $\D = 
+  \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
+  \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$
+\end{itemize}
+
+\medskip
+
+\textbf{Generalized eigenvalue problem}. 
+
+\begin{fleqn}
+\begin{equation}
+  \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
+  \Y^T \D \Y = \I
+\end{equation}
+\end{fleqn}
 
 \end{frame}
 
@@ -688,7 +718,8 @@ woteva
 \begin{frame}{}
 \normalsize
 
-G. Randauthor (2021): Most Relevant Shit, THE Journal, frontpage (what else)
+\bibliography{bibliography}
+\bibliographystyle{dcu}
 
 \end{frame}
 

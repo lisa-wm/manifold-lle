@@ -98,7 +98,7 @@ equal to 1 for connected nodes and 0 otherwise.
 
 \begin{equation*}
   w_{ij} = \begin{cases}
-    \exp(\frac{\|x_i - x_j \|^2}{t}), t \in \R, & \mbox{ if } x_i, x_j
+    \exp(\frac{\|\x_i - \x_j \|^2}{t}), t \in \R, & \mbox{ if } \x_i, \x_j
     \text{ are connected,} \\
     0 & \mbox{ otherwise,}
   \end{cases}
