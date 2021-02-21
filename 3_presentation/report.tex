@@ -322,7 +322,8 @@ retain most salient ones
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Graph representation}. Construct skeletal model of the manifold in $\RD$
+\textbf{Graph representation}. Constructing a skeletal model of the manifold in 
+$\RD$
 
 \vspace{0.15cm}
 
@@ -338,8 +339,8 @@ retain most salient ones
   \textbf{Graph functional}. Belief about intrinsic manifold properties at the 
   heart of each method
   \begin{itemize}
-    \arritem Local linearity ~ \maketag{LLE} \maketag{SSLLE}
     \arritem Smoothness ~ \maketag{LEM}
+    \arritem Local linearity ~ \maketag{LLE} \maketag{SSLLE}
     \arritem Curvature ~ \maketag{HLLE}
     \arritem ...
   \end{itemize}
@@ -350,6 +351,42 @@ retain most salient ones
       width = \textwidth]{figures/s-curve-connected}
   \end{figure}
 \end{minipage}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{2 lgml} ~~ concept}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Eigenanalysis}. Finding axes of variability in intrinsic 
+manifold structure
+
+\begin{itemize}
+  \arritem Matrix representation of manifold properties
+  \arritem Assessment through eigenanalysis
+  \begin{itemize}
+    \arritem Directions of variability $\Rightarrow$ eigenvectors
+    \arritem Respective degrees of variability $\Rightarrow$ eigenvalues
+  \end{itemize}
+\end{itemize}
+
+\vfill
+
+\textbf{Dimensionality reduction}. Projection into subspace 
+spanned by $d$ principal eigenvectors
+
+\vfill
+
+\begin{figure}[H]
+  \raggedright
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = 0.7\textwidth]{figures/eigenanalysis}
+\end{figure}
 
 \end{frame}
 

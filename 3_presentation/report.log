@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1417,7 +1417,7 @@ Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 314.
 <figures/s-curve-connected.pdf, id=84, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 354.
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 357.
 
 (pdftex.def)             Requested size: 135.20818pt x 164.40675pt.
 
@@ -1428,9 +1428,15 @@ Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 354.
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
->] [9
+>]
+<figures/eigenanalysis.png, id=96, 742.775pt x 218.8175pt>
+File: figures/eigenanalysis.png Graphic file (type png)
+<use figures/eigenanalysis.png>
+Package pdftex.def Info: figures/eigenanalysis.png  used on input line 393.
+(pdftex.def)             Requested size: 286.8024pt x 84.4904pt.
+ [9
 
-] [10
+ <./figures/eigenanalysis.png>] [10
 
 ] [11
 
@@ -1444,13 +1450,16 @@ nored.
 
 ] [16
 
-] [17
+]
+[17
 
 ] [18
 
 ] [19
 
 ] [20
+
+] [21
 
 ]
 \tf@nav=\write7
@@ -1467,10 +1476,10 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23312 strings out of 479485
- 427879 string characters out of 5875915
+ 23324 strings out of 479485
+ 428121 string characters out of 5875915
  773208 words of memory out of 5000000
- 39679 multiletter control sequences out of 15000+600000
+ 39688 multiletter control sequences out of 15000+600000
  598949 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,126p,453b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1482,10 +1491,10 @@ msfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic
 /uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c
 :/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on report.pdf (20 pages, 815804 bytes).
+Output written on report.pdf (21 pages, 822503 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
