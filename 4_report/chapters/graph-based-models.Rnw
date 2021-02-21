@@ -37,7 +37,7 @@ networks and is not discussed here \citep{vandermaatenetal2009}.
     \centering
     % https://docs.google.com/drawings/d/1982RyrkrJzhR-LHvR3xUmuCMEdpiK8qkm00HBvKMY9I/edit
     \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-      width = \textwidth]{figures/models-overview}
+      width = \textwidth]{figures/models_overview}
     \caption[Overview on selected manifold learning models]{A schematic overview 
     on selected methods of manifold learning (the list is by no means extensive 
     and could arguably be ordered in several alternative ways). 

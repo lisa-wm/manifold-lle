@@ -214,6 +214,37 @@ applications and data sources
 % LGML
 % ------------------------------------------------------------------------------
 
+\LARGE
+\begin{frame}{{}}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{white}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\begin{itemize}
+\large
+\flexitem{1} Problem
+\flexitem{2} \textbf{Local graph-based manifold learning (LGML)}
+\flexitem{3} Techniques
+\begin{itemize}
+  \large
+  \flexitem{1} Unsupervised
+  \flexitem{2} Semi-supervised
+  \flexitem{3} Challenges
+\end{itemize}
+\flexitem{4} Sensitivity analysis
+\begin{itemize}
+  \large
+  \flexitem{1} Setup
+  \flexitem{2} Results
+\end{itemize}
+\flexitem{5} Discussion
+\end{itemize}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
 \begin{frame}{}
 
 \Huge
@@ -239,18 +270,17 @@ another
 
 \vspace{0.5cm}
 
-
 \begin{minipage}[b]{0.65\textwidth}
   \begin{figure}[H]
-    \includegraphics[trim = 0 20 25 0, clip, % left bottom right top
-      width = \textwidth]{figures/models-overview}
+    \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+      width = \textwidth]{figures/models_overview}
   \end{figure}
 \end{minipage}%
 \begin{minipage}[b]{0.35\textwidth}
-  \highlight{LEM} Laplacian eigenmaps \\
-  \highlight{LLE} Locally linear embedding \\
-  \highlight{HLLE} Hessian LLE \\
-  \highlight{SSLLE} Semi-supervised LLE 
+  \highlight{LEM} ~ Laplacian eigenmaps \\
+  \highlight{LLE} ~ Locally linear embedding \\
+  \highlight{HLLE} ~ Hessian LLE \\
+  \highlight{SSLLE} ~ Semi-supervised LLE 
 \end{minipage}
 
 \end{frame}
@@ -262,17 +292,103 @@ another
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
 
-% \footnotesize
+\textbf{Idea}. Capture intrinsic geometry, find principal axes of variability, 
+retain most salient ones
 
 \medskip
 
-woteva
+\begin{figure}[H]
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/kpca_lgml_algo}
+\end{figure}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{2 lgml} ~~ concept}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Graph representation}. Construct skeletal model of the manifold in $\RD$
+
+\vspace{0.15cm}
+
+\begin{minipage}[b]{0.67\textwidth}
+  % \begin{itemize}
+  %   \arritem \textbf{Vertices.} Given by observations 
+  %   \arritem \textbf{Edges.} Present between neighboring points
+  %   \begin{itemize} 
+  %     \arritem Typically, $k$-neighborhoods
+  %     \arritem Edge weights determined by nearness
+  %   \end{itemize}
+  % \end{itemize}
+  \medskip
+  \textbf{Vertices.} Given by observations \\
+  % \medskip
+  \textbf{Edges.} Present between neighboring points
+    \begin{itemize} 
+      \arritem Typically, $k$-neighborhoods
+      \arritem Edge weights determined by nearness
+    \end{itemize}
+  % \end{itemize}
+  \medskip
+  \textbf{Graph functional}. Belief about intrinsic manifold properties at the 
+  heart of each method
+  \begin{itemize}
+    \arritem Local linearity ~ \maketag{LLE} \maketag{SSLLE}
+    \arritem Smoothness ~ \maketag{LEM}
+    \arritem Curvature ~ \maketag{HLLE}
+    \arritem ...
+  \end{itemize}
+\end{minipage}%
+\begin{minipage}[b]{0.33\textwidth}
+  \begin{figure}[H]
+    \includegraphics[trim = 250 190 220 160, clip, % left bottom right top
+      width = \textwidth]{figures/s-curve-connected}
+  \end{figure}
+\end{minipage}
 
 \end{frame}
 
 % ------------------------------------------------------------------------------
 % LGML TECHNIQUES
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{{}}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{white}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\begin{itemize}
+\large
+\flexitem{1} Problem
+\flexitem{2} Local graph-based manifold learning (LGML)
+\flexitem{3} \textbf{Techniques}
+\begin{itemize}
+  \large
+  \flexitem{1} Unsupervised
+  \flexitem{2} Semi-supervised
+  \flexitem{3} Challenges
+\end{itemize}
+\flexitem{4} Sensitivity analysis
+\begin{itemize}
+  \large
+  \flexitem{1} Setup
+  \flexitem{2} Results
+\end{itemize}
+\flexitem{5} Discussion
+\end{itemize}
+
+\end{frame}
+
 % ------------------------------------------------------------------------------
 
 \begin{frame}{}
@@ -338,6 +454,37 @@ woteva
 % SENSITIVITY ANALYSIS
 % ------------------------------------------------------------------------------
 
+\LARGE
+\begin{frame}{{}}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{white}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\begin{itemize}
+\large
+\flexitem{1} Problem
+\flexitem{2} Local graph-based manifold learning (LGML)
+\flexitem{3} Techniques
+\begin{itemize}
+  \large
+  \flexitem{1} Unsupervised
+  \flexitem{2} Semi-supervised
+  \flexitem{3} Challenges
+\end{itemize}
+\flexitem{4} \textbf{Sensitivity analysis}
+\begin{itemize}
+  \large
+  \flexitem{1} Setup
+  \flexitem{2} Results
+\end{itemize}
+\flexitem{5} Discussion
+\end{itemize}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
 \begin{frame}{}
 
 \Huge
@@ -399,6 +546,37 @@ woteva
 
 % ------------------------------------------------------------------------------
 % DISCUSSION
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{{}}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{white}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\begin{itemize}
+\large
+\flexitem{1} Problem
+\flexitem{2} Local graph-based manifold learning (LGML)
+\flexitem{3} Techniques
+\begin{itemize}
+  \large
+  \flexitem{1} Unsupervised
+  \flexitem{2} Semi-supervised
+  \flexitem{3} Challenges
+\end{itemize}
+\flexitem{4} Sensitivity analysis
+\begin{itemize}
+  \large
+  \flexitem{1} Setup
+  \flexitem{2} Results
+\end{itemize}
+\flexitem{5} \textbf{Discussion}
+\end{itemize}
+
+\end{frame}
+
 % ------------------------------------------------------------------------------
 
 \begin{frame}{}

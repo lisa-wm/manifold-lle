@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 10:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1390,28 +1390,46 @@ Package pdftex.def Info: figures/s-curve-undone.pdf  used on input line 211.
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
->]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.88956pt on input line 226.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 226.
- [5
+>] [5
 
 ]
-<figures/models-overview.jpg, id=64, 903.375pt x 533.995pt>
-File: figures/models-overview.jpg Graphic file (type jpg)
-<use figures/models-overview.jpg>
-Package pdftex.def Info: figures/models-overview.jpg  used on input line 256.
-(pdftex.def)             Requested size: 266.31517pt x 155.83179pt.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.88956pt on input line 257.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.88956pt on input line 257.
  [6
 
- <./figures/models-overview.jpg>] [7
+]
+<figures/models_overview.png, id=69, 808.01875pt x 479.7925pt>
+File: figures/models_overview.png Graphic file (type png)
+<use figures/models_overview.png>
+Package pdftex.def Info: figures/models_overview.png  used on input line 286.
+(pdftex.def)             Requested size: 266.31517pt x 158.13434pt.
+ [7
 
-] [8
+ <./figures/models_overview.png>]
+<figures/kpca_lgml_algo.png, id=80, 903.375pt x 310.15875pt>
+File: figures/kpca_lgml_algo.png Graphic file (type png)
+<use figures/kpca_lgml_algo.png>
+Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 307.
+(pdftex.def)             Requested size: 409.71951pt x 140.67285pt.
+ [8
 
-] [9
+ <./figures/kpca_lgml_algo.png>]
+<figures/s-curve-connected.pdf, id=89, 681.50606pt x 606.34526pt>
+File: figures/s-curve-connected.pdf Graphic file (type pdf)
+<use figures/s-curve-connected.pdf>
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 357.
 
-] [10
+(pdftex.def)             Requested size: 135.20818pt x 164.40675pt.
+ [9
+
+ <./figures/s-curve-connected.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>] [10
 
 ] [11
 
@@ -1419,8 +1437,7 @@ Package pdftex.def Info: figures/models-overview.jpg  used on input line 256.
 
 ] [13
 
-]
-[14
+] [14
 
 ] [15
 
@@ -1431,6 +1448,17 @@ Package pdftex.def Info: figures/models-overview.jpg  used on input line 256.
 ] [18
 
 ] [19
+
+] [20
+
+] [21
+
+] [22
+
+] [23
+
+]
+[24
 
 ]
 \tf@nav=\write7
@@ -1447,13 +1475,13 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23295 strings out of 479485
- 427426 string characters out of 5875915
- 772208 words of memory out of 5000000
- 39665 multiletter control sequences out of 15000+600000
+ 23328 strings out of 479485
+ 428019 string characters out of 5875915
+ 773208 words of memory out of 5000000
+ 39687 multiletter control sequences out of 15000+600000
  598949 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,13n,126p,453b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,13n,126p,453b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
@@ -1462,10 +1490,10 @@ msfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic
 /uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c
 :/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on report.pdf (19 pages, 637827 bytes).
+Output written on report.pdf (24 pages, 818624 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

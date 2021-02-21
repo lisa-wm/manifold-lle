@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  11 FEB 2021 20:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,28 +711,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--240
  []
 
 ) (./chapters/graph-based-models.Rnw [6]
-<figures/models-overview.jpg, id=77, 903.375pt x 533.995pt>
-File: figures/models-overview.jpg Graphic file (type jpg)
-<use figures/models-overview.jpg>
-Package pdftex.def Info: figures/models-overview.jpg  used on input line 40.
-(pdftex.def)             Requested size: 426.79134pt x 252.28137pt.
+<figures/models_overview.png, id=77, 808.01875pt x 479.7925pt>
+File: figures/models_overview.png Graphic file (type png)
+<use figures/models_overview.png>
+Package pdftex.def Info: figures/models_overview.png  used on input line 40.
+(pdftex.def)             Requested size: 426.79134pt x 253.42491pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 55--64
 
  []
 
-[7 <./figures/models-overview.jpg>] [8]
-<figures/spirals-2d.pdf, id=86, 229.81859pt x 229.81859pt>
+[7 <./figures/models_overview.png>] [8]
+<figures/spirals-2d.pdf, id=87, 229.81859pt x 229.81859pt>
 File: figures/spirals-2d.pdf Graphic file (type pdf)
 <use figures/spirals-2d.pdf>
 Package pdftex.def Info: figures/spirals-2d.pdf  used on input line 141.
 (pdftex.def)             Requested size: 123.76662pt x 123.76704pt.
-<figures/spirals-3d.pdf, id=87, 907.47026pt x 606.34526pt>
+<figures/spirals-3d.pdf, id=88, 907.47026pt x 606.34526pt>
 File: figures/spirals-3d.pdf Graphic file (type pdf)
 <use figures/spirals-3d.pdf>
 Package pdftex.def Info: figures/spirals-3d.pdf  used on input line 147.
 (pdftex.def)             Requested size: 170.71393pt x 114.05954pt.
-<figures/spirals-1d.pdf, id=88, 305.22029pt x 42.1575pt>
+<figures/spirals-1d.pdf, id=89, 305.22029pt x 42.1575pt>
 File: figures/spirals-1d.pdf Graphic file (type pdf)
 <use figures/spirals-1d.pdf>
 Package pdftex.def Info: figures/spirals-1d.pdf  used on input line 152.
@@ -779,7 +779,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--334
 
  []
 
-<figures/s-curve-connected.pdf, id=103, 681.50606pt x 606.34526pt>
+<figures/s-curve-connected.pdf, id=104, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
 Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 364.
@@ -820,7 +820,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--22
 
  []
 
-<figures/sphere-tangent.pdf, id=117, 343.2825pt x 305.22029pt>
+<figures/sphere-tangent.pdf, id=118, 343.2825pt x 305.22029pt>
 File: figures/sphere-tangent.pdf Graphic file (type pdf)
 <use figures/sphere-tangent.pdf>
 Package pdftex.def Info: figures/sphere-tangent.pdf  used on input line 53.
@@ -845,13 +845,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--162
 
  []
 
-<figures/reconstruction-3d.pdf, id=132, 229.81859pt x 229.81859pt>
+<figures/reconstruction-3d.pdf, id=133, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-3d.pdf Graphic file (type pdf)
 <use figures/reconstruction-3d.pdf>
 Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 187.
 
 (pdftex.def)             Requested size: 204.85802pt x 192.74916pt.
-<figures/reconstruction-2d.pdf, id=134, 229.81859pt x 229.81859pt>
+<figures/reconstruction-2d.pdf, id=135, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-2d.pdf Graphic file (type pdf)
 <use figures/reconstruction-2d.pdf>
 Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 193.
@@ -903,13 +903,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 413--415
 
  []
 
-)
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 424--203
+
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 424--429
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-(./chapters/experiment.Rnw) (./chapters/discussion.Rnw [19])
+) (./chapters/experiment.Rnw) (./chapters/discussion.Rnw [19])
 (./chapters/conclusion.Rnw) [20] [5] [6] (./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 20--24
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
@@ -918,10 +918,10 @@ foun-da-tion for
 
 [7] [8]) [9] [10] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10777 strings out of 479485
- 160021 string characters out of 5875915
- 468441 words of memory out of 5000000
- 27475 multiletter control sequences out of 15000+600000
+ 10779 strings out of 479485
+ 160062 string characters out of 5875915
+ 468478 words of memory out of 5000000
+ 27478 multiletter control sequences out of 15000+600000
  586629 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -944,9 +944,9 @@ nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 1204503 bytes).
+Output written on main.pdf (34 pages, 1203428 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
+ 257 PDF objects out of 1000 (max. 8388607)
  167 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)

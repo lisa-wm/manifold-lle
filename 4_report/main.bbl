@@ -150,6 +150,11 @@ Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
 \newblock Scikit-learn: Machine learning in {P}ython, {\em Journal of Machine
   Learning Research} {\bf 12}:~2825--2830.
 
+\harvarditem{Ross}{2008}{dissross2008}
+Ross, I.  \harvardyearleft 2008\harvardyearright .
+\newblock {\em Nonlinear Dimensionality Reduction Methods in Climate Data
+  Analysis}, PhD thesis, University of Bristol.
+
 \harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
 Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .
