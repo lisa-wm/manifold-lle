@@ -6,15 +6,23 @@
 
 # S-CURVE ----------------------------------------------------------------------
 
-s_curve <- plot_manifold(make_s_curve(n_points = 10000L), dim = 3L)
+s_curve_data <- make_s_curve(n_points = 10000L)
 
-# FIXME Check out how orca can be used with here()
+s_curve <- plot_manifold(s_curve_data, dim = 3L)
+s_curve_undone <- plot_manifold(s_curve_data[, .(x_1, x_2, t, t)], dim = 2L)
 
 orca(
   s_curve, 
   "4_report/figures/s-curve.pdf",
   height = 400,
   width = 450
+)
+
+orca(
+  s_curve_undone, 
+  "3_presentation/figures/s-curve-undone.pdf",
+  height = 400,
+  width = 1000
 )
 
 # EXAMPLE NEIGHBORHOOD GRAPH ---------------------------------------------------
