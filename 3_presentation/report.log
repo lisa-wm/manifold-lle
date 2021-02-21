@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  20 FEB 2021 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -793,7 +793,7 @@ Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 \sympureletters=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 17.
+ut line 18.
 
 (c:/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
@@ -859,7 +859,7 @@ Package textpos Info: choosing support for LaTeX3 on input line 61.
 \TPVertModule=\dimen291
 \TP@margin=\dimen292
 \TP@absmargin=\dimen293
-Grid set 16 x 16 = 22.7622pt x 17.07166pt
+Grid set 16 x 16 = 28.45274pt x 17.78296pt
 \TPboxrulesize=\dimen294
 \TP@ox=\dimen295
 \TP@oy=\dimen296
@@ -1057,14 +1057,14 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 69
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 95
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 69.
+(Font)              scaled to size 10.07397pt on input line 95.
 
 (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
@@ -1074,22 +1074,22 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1099,12 +1099,12 @@ LaTeX Font Info:    ... okay on input line 69.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(22.76228pt, 318.67079pt, 22.76228pt)
-* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
-* \paperwidth=364.19536pt
-* \paperheight=273.14662pt
-* \textwidth=318.67079pt
-* \textheight=244.6939pt
+* h-part:(L,W,R)=(22.76228pt, 409.71951pt, 22.76228pt)
+* v-part:(T,H,B)=(0.0pt, 284.52756pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=284.52756pt
+* \textwidth=409.71951pt
+* \textheight=256.07483pt
 * \oddsidemargin=-49.5077pt
 * \evensidemargin=-49.5077pt
 * \topmargin=-72.26999pt
@@ -1155,7 +1155,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 69.
+Package hyperref Info: Link coloring OFF on input line 95.
 
 (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1168,79 +1168,79 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count374
 )
-LaTeX Info: Redefining \ref on input line 69.
-LaTeX Info: Redefining \pageref on input line 69.
-LaTeX Info: Redefining \nameref on input line 69.
+LaTeX Info: Redefining \ref on input line 95.
+LaTeX Info: Redefining \pageref on input line 95.
+LaTeX Info: Redefining \nameref on input line 95.
 
 (./report.out) (./report.out)
 \@outlinefile=\write6
 \openout6 = `report.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 69.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 95.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 69.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 95.
 \symnumbers=\mathgroup12
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 69.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 95.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 69
+(Font)              `pureletters' in the math version `normal' on input line 95
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/phv/m/it on input line 69.
+(Font)                  OT1/mathkerncmss/m/sl --> T1/phv/m/it on input line 95.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 69.
+(Font)              `pureletters' in the math version `bold' on input line 95.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/m/it on input line 69
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/m/it on input line 95
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 69.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 95.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 95.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 69.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 69.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 95.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 69.
+(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 69.
+(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 95.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 69.
+(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 69.
+(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 95.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 69.
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 95.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 69.
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 69.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 69.
+(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 69.
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 69.
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 95.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/laett/m/n --> T1/laett/b/n on input line 69.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 69.
+(Font)                  T1/laett/m/n --> T1/laett/b/n on input line 95.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 95.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `normal' on input lin
-e 69.
+e 95.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `norma
 l'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 6
-9.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 9
+5.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `bold' on input line 
-69.
+95.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
 
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 6
-9.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 9
+5.
 
 (c:/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dictionary-En
 glish.dict
@@ -1270,91 +1270,119 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./report.nav)
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 69.
+(Font)              scaled to size 5.51999pt on input line 95.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 5.51999pt on input line 69.
+(Font)              scaled to size 5.51999pt on input line 95.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 15.89755pt on input line 74.
+(Font)              scaled to size 15.89755pt on input line 100.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 15.89755pt on input line 74.
+(Font)              scaled to size 15.89755pt on input line 100.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.07397pt on input line 74.
-<figures/report_titlepage.png, id=15, 963.6pt x 722.7pt>
+(Font)              scaled to size 10.07397pt on input line 100.
+<figures/report_titlepage.png, id=15, 963.6pt x 602.25pt>
 File: figures/report_titlepage.png Graphic file (type png)
 <use figures/report_titlepage.png>
-Package pdftex.def Info: figures/report_titlepage.png  used on input line 74.
-(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+Package pdftex.def Info: figures/report_titlepage.png  used on input line 100.
+(pdftex.def)             Requested size: 455.2446pt x 284.53705pt.
  [1
 
 {c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/repor
 t_titlepage.png (PNG copy)>]
 [LECTURE]=[0][\insertlecture ][2][1]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 104
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 132.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.03998pt on input line 132.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 132
 .
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 104
+LaTeX Font Info:    Trying to load font information for U+msb on input line 132
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.07397pt on input line 104.
+(Font)              scaled to size 11.03998pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 7.35999pt on input line 104.
+(Font)              scaled to size 7.35999pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 104.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.51999pt on input line 104.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 104.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 104.
+(Font)              scaled to size 5.51999pt on input line 132.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 132.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 10.07397pt on input line 104.
+(Font)              scaled to size 11.03998pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <8> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 104.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <8> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 104.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 7.35999pt on input line 104.
+(Font)              scaled to size 7.35999pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 104.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 104.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 5.51999pt on input line 104.
+(Font)              scaled to size 5.51999pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 104.
+(Font)              scaled to size 7.35999pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.35999pt on input line 104.
+(Font)              scaled to size 7.35999pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 104.
+(Font)              scaled to size 13.24796pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 3.68pt on input line 104.
+(Font)              scaled to size 3.68pt on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.68pt on input line 104.
+(Font)              scaled to size 3.68pt on input line 132.
  [2
 
-] [3
+]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 180.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 10.07397pt on input line 180.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 180.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 180.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 10.07397pt on input line 180.
+<figures/s-curve.pdf, id=29, 343.2825pt x 305.22029pt>
+File: figures/s-curve.pdf Graphic file (type pdf)
+<use figures/s-curve.pdf>
+Package pdftex.def Info: figures/s-curve.pdf  used on input line 180.
+(pdftex.def)             Requested size: 90.1374pt x 108.91595pt.
 
-] [4
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 180--180
+[][]  
+ []
+
+[3
+
+ <./figures/s-curve.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
+id other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>] [4
+
+] [5
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.88956pt on input line 153.
+(Font)              scaled to size 22.88956pt on input line 234.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 153.
- [5
-
-]
-[6
+(Font)              scaled to size 22.88956pt on input line 234.
+ [6
 
 ] [7
 
@@ -1380,7 +1408,10 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 ] [18
 
-] [19
+]
+[19
+
+] [20
 
 ]
 \tf@nav=\write7
@@ -1392,30 +1423,30 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@snm=\write9
 \openout9 = `report.snm'.
 
-
-
-Package caption Warning: Unused \captionsetup[figure] on input line 34.
-See the caption package documentation for explanation.
-
-(./report.aux)
+ (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23231 strings out of 479485
- 426353 string characters out of 5875915
- 772037 words of memory out of 5000000
- 39614 multiletter control sequences out of 15000+600000
- 582612 words of font info for 83 fonts, out of 8000000 for 9000
+ 23279 strings out of 479485
+ 426909 string characters out of 5875915
+ 772263 words of memory out of 5000000
+ 39649 multiletter control sequences out of 15000+600000
+ 598949 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,13n,126p,453b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,13n,126p,453b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
-f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvr8a.pfb>
-Output written on report.pdf (19 pages, 93204 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic
+/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c
+:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/
+texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on report.pdf (20 pages, 308691 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 54 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
