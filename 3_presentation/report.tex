@@ -455,7 +455,7 @@ spanned by $d$ principal eigenvectors
 
 \textbf{Proposal}. \citet{donohogrimes2003}
 
-\medskip
+\vspace{0.3cm}
 
 \textbf{Idea}. Forcing nearby inputs to be mapped to nearby outputs
 
@@ -464,7 +464,7 @@ spanned by $d$ principal eigenvectors
   \arritem Second-order penalty on large gradients
 \end{itemize}
 
-\medskip
+\vspace{0.3cm}
 
 \textbf{Graph Laplacian}. Coercing neighborhood graph information into a matrix
 
@@ -476,16 +476,53 @@ spanned by $d$ principal eigenvectors
   \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$
 \end{itemize}
 
-\medskip
+\vspace{0.3cm}
 
 \textbf{Generalized eigenvalue problem}. 
 
 \begin{fleqn}
-\begin{equation}
-  \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
-  \Y^T \D \Y = \I
-\end{equation}
+  \begin{equation}
+    \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
+    \Y^T \D \Y = \I
+  \end{equation}
 \end{fleqn}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.1 unsupervised} ~~ lle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Proposal}. \citet{roweissaul2000}
+
+\vspace{0.3cm}
+
+\textbf{Idea}. Preserving locally linear reconstructions 
+
+\begin{itemize}
+  \arritem Linear reconstruction of points in $\RD$ by their neighbors
+  \arritem Reconstruction weights = topological properties
+  \arritem Neighborhood patches invariant to dimensionality reduction
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{figure}[H]
+ \begin{subfigure}[b]{0.48\textwidth}
+   \includegraphics[trim = 50 50 20 60, clip, % left bottom right top
+   width = 0.7\textwidth]{figures/reconstruction-3d}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[b]{0.48\textwidth}
+   \includegraphics[trim = 40 30 0 20, clip, % left bottom right top
+   width = 0.5\textwidth]{figures/reconstruction-2d}
+ \end{subfigure}
+\end{figure}
 
 \end{frame}
 

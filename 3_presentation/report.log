@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  21 FEB 2021 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1451,9 +1451,32 @@ Package pdftex.def Info: figures/eigenanalysis.png  used on input line 392.
 
 ] [11
 
-] [12
+]
+<figures/reconstruction-3d.pdf, id=124, 229.81859pt x 229.81859pt>
+File: figures/reconstruction-3d.pdf Graphic file (type pdf)
+<use figures/reconstruction-3d.pdf>
+Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 527.
 
-] [13
+(pdftex.def)             Requested size: 137.66391pt x 103.0277pt.
+<figures/reconstruction-2d.pdf, id=126, 229.81859pt x 229.81859pt>
+File: figures/reconstruction-2d.pdf Graphic file (type pdf)
+<use figures/reconstruction-2d.pdf>
+Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 527.
+
+(pdftex.def)             Requested size: 98.3318pt x 93.12906pt.
+ [12
+
+ <./figures/reconstruction-3d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-3d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+> <./figures/reconstruction-2d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-2d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>] [13
 
 ] [14
 
@@ -1461,8 +1484,7 @@ Package pdftex.def Info: figures/eigenanalysis.png  used on input line 392.
 
 ] [16
 
-]
-[17
+] [17
 
 ] [18
 
@@ -1470,7 +1492,9 @@ Package pdftex.def Info: figures/eigenanalysis.png  used on input line 392.
 
 ] [20
 
-] (./report.bbl) [21
+] [21
+
+] (./report.bbl) [22
 
 ]
 \tf@nav=\write7
@@ -1482,15 +1506,16 @@ Package pdftex.def Info: figures/eigenanalysis.png  used on input line 392.
 \tf@snm=\write9
 \openout9 = `report.snm'.
 
- (./report.aux)
+
+(./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 06E27B416B3B1946CD705C501CA5B3BD;45.
  ) 
 Here is how much of TeX's memory you used:
- 23765 strings out of 479485
- 433426 string characters out of 5875915
- 781151 words of memory out of 5000000
- 40116 multiletter control sequences out of 15000+600000
+ 23787 strings out of 479485
+ 434014 string characters out of 5875915
+ 781185 words of memory out of 5000000
+ 40133 multiletter control sequences out of 15000+600000
  598949 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,126p,453b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1504,10 +1529,10 @@ m10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/tex
 live/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2020/texm
 f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvro8a.pfb>
-Output written on report.pdf (21 pages, 843060 bytes).
+Output written on report.pdf (22 pages, 879530 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

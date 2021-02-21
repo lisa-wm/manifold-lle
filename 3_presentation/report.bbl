@@ -6,4 +6,10 @@ Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
   high-dimensional data, {\em Proceedings of the National Academy of Sciences
   of the United States of America} {\bf 100}(10):~5591--5596.
 
+\harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
+Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
+  .
+\newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
+  Science} {\bf 290}(5500):~2323--2326.
+
 \end{thebibliography}
