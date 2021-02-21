@@ -1,5 +1,11 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Belkin \harvardand\ Niyogi}{2001}{belkinniyogi2001}
+Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2001\harvardyearright .
+\newblock Laplacian eigenmaps and spectral technique for embedding and
+  clustering, {\em Proceedings of the 14th International Conference on Neural
+  Information Processing Systems: Natural and Synthetic}, p.~585–591.
+
 \harvarditem{Donoho \harvardand\ Grimes}{2003}{donohogrimes2003}
 Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
 \newblock Hessian eigenmaps: Locally linear embedding techniques for
@@ -11,5 +17,12 @@ Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
+
+\harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
+  Barlow}{2006}{yangetal2006}
+Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
+  2006\harvardyearright .
+\newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
+  of the 23rd International Conference on Machine Learning}.
 
 \end{thebibliography}

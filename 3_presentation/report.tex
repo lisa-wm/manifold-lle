@@ -453,7 +453,7 @@ spanned by $d$ principal eigenvectors
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Proposal}. \citet{donohogrimes2003}
+\textbf{Proposal}. \citet{belkinniyogi2001}
 
 \vspace{0.3cm}
 
@@ -529,32 +529,140 @@ spanned by $d$ principal eigenvectors
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised} ~~ sslle}
+\begin{frame}{\textcolor{gray!90}{3.1 unsupervised} ~~ lle}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
 
-% \footnotesize
+\textbf{Procedure}. Solving $N + 1$ optimization problems  
 
-\medskip
+\vspace{0.3cm}
 
-woteva
+\textbf{Reconstruction loss minimization}. Finding optimal reconstruction 
+weights
+
+\begin{fleqn}
+  \begin{equation}
+    \small
+    \min_{\W} \varepsilon(\W) = \min_{\W} \sum_i
+    \twonorm{\x_i - \sum_j w_{ij} \x_j}, 
+    \quad \text{s.t. } \bm{1}^T \bm{w}_i = 1 \quad \forall i \in \setN
+  \end{equation}
+\end{fleqn}
+
+\textbf{Embedding loss minimization}. Finding optimal embedding coordinates
+
+\begin{fleqn}
+  \begin{equation}
+    \small
+    \min_{\Y} \Phi(\Y) = \min_{\Y} \sum_i \twonorm{\y_i - \sum_j w_{ij} 
+    \y_j},
+    \quad  \text{s.t. } \frac{1}{N} \sum_i \y_i \y_i^T = \I,
+    \quad \sum_i \y_i = \bm{0} \quad \forall i \in \setN
+  \end{equation}
+\end{fleqn}
+
+\textbf{Eigenvalue problem}. Define $\E = (\I - \W)^T(\I - \W)$ and set 
+$\tilde{\Y} = \Y^T$, such that
+
+\begin{fleqn}
+  \begin{equation}
+    \small
+    \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}), \quad
+    \text{s.t. } \frac{1}{N} \tilde{\Y}^T \tilde{\Y} = \I, \quad
+    \tilde{\Y}^T\bm{1} = \bm{0}.
+  \end{equation}
+\end{fleqn}
 
 \end{frame}
 
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{3.3 challenges} ~~ neighborhood relations}
+\begin{frame}{\textcolor{gray!90}{3.1 unsupervised} ~~ hlle}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
 
-% \footnotesize
+\textbf{Proposal}. \citet{donohogrimes2003}
 
-\medskip
+\vspace{0.3cm}
 
-woteva
+\textbf{Idea}. Capturing manifold curvature
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised} ~~ sslle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Proposal}. \citet{yangetal2006}
+
+\vspace{0.3cm}
+
+\textbf{Idea}. Improving LLE by use of prior knowledge
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.3 challenges} ~~ critical parameters}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Intrinsic dimensionality}. True sources of variability
+
+\begin{itemize}
+  \arritem Considered known with availability of prior information
+\end{itemize}
+
+% \vspace{0.3cm}
+
+\textbf{Neighborhood size}. Global vs local structure
+
+\begin{itemize}
+  \arritem Tunable (expensive)
+\end{itemize}
+
+% \vspace{0.3cm}
+
+\textbf{Regularization constant}. Singularity for $d \ll k$
+
+\begin{itemize}
+  \arritem Heuristics
+\end{itemize}
+
+% \vspace{0.3cm}
+
+\textbf{Number \& location of prior points}. Utility of prior knowledge ~ 
+\maketag{analysis}
+
+\begin{itemize}
+  \arritem Exploration vs labeling cost
+\end{itemize}
+
+\textbf{Noise level}. Quality of prior knowledge ~ 
+\maketag{analysis}
+
+\begin{itemize}
+  \arritem How exact must prior information be?
+\end{itemize}
+
+\textbf{Confidence parameter}. Belief in prior knowledge
+
+\begin{itemize}
+  \arritem Rather robust
+\end{itemize}
 
 \end{frame}
 
