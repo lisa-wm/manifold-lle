@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  20 FEB 2021 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  22 FEB 2021 06:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**slides-models.tex
-(./slides-models.tex
+**presentation.tex
+(./presentation.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-10-27> xparse <2020-03-03>
 (c:/texlive/2020/texmf-dist/tex/latex/beamer/beamer.cls
@@ -784,14 +784,15 @@ Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks46
 \inpenc@posthook=\toks47
 )
-(c:/texlive/2020/texmf-dist/tex/latex/doublestroke/dsfont.sty
-Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-)
 (c:/texlive/2020/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks48
 \verbatim@line=\toks49
 \verbatim@in@stream=\read4
+)
+(c:/texlive/2020/texmf-dist/tex/latex/ncctools/nccmath.sty
+Package: nccmath 2006/01/20 v1.3 Additional Math Commands (NCC)
+\NCC@fracrulewidth=\dimen288
 )
 \sympureletters=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
@@ -831,7 +832,7 @@ Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip67
 \multirow@cntb=\count327
 \multirow@dima=\skip68
-\bigstrutjot=\dimen288
+\bigstrutjot=\dimen289
 )
 (c:/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
@@ -840,7 +841,7 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTpre=\skip71
 \LTpost=\skip72
 \LTchunksize=\count328
-\LTcapwidth=\dimen289
+\LTcapwidth=\dimen290
 \LT@head=\box77
 \LT@firsthead=\box78
 \LT@foot=\box79
@@ -851,26 +852,6 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@chunks=\count332
 \LT@p@ftn=\toks51
 )
-(c:/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen290
-\lightrulewidth=\dimen291
-\cmidrulewidth=\dimen292
-\belowrulesep=\dimen293
-\belowbottomsep=\dimen294
-\aboverulesep=\dimen295
-\abovetopsep=\dimen296
-\cmidrulesep=\dimen297
-\cmidrulekern=\dimen298
-\defaultaddspace=\dimen299
-\@cmidla=\count333
-\@cmidlb=\count334
-\@aboverulesep=\dimen300
-\@belowrulesep=\dimen301
-\@thisruleclass=\count335
-\@lastruleclass=\count336
-\@thisrulewidth=\dimen302
-)
 (c:/texlive/2020/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2020/09/26 v1.10
 
@@ -878,29 +859,23 @@ Package: textpos 2020/09/26 1.10, absolute positioning of text on the page
 Package textpos Info: choosing support for LaTeX3 on input line 61.
 \TP@textbox=\box81
 \TP@holdbox=\box82
-\TPHorizModule=\dimen303
-\TPVertModule=\dimen304
-\TP@margin=\dimen305
-\TP@absmargin=\dimen306
-Grid set 16 x 16 = 22.7622pt x 17.07166pt
-\TPboxrulesize=\dimen307
-\TP@ox=\dimen308
-\TP@oy=\dimen309
+\TPHorizModule=\dimen291
+\TPVertModule=\dimen292
+\TP@margin=\dimen293
+\TP@absmargin=\dimen294
+Grid set 16 x 16 = 28.45274pt x 17.78296pt
+\TPboxrulesize=\dimen295
+\TP@ox=\dimen296
+\TP@oy=\dimen297
 \TP@tbargs=\toks52
 TextBlockOrigin set to 0pt x 0pt
-) (c:/texlive/2020/texmf-dist/tex/latex/psfrag/psfrag.sty
-Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count337
-\pfg@scount=\count338
-\pfg@temp=\write5
-)
-(c:/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
+) (c:/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
 (c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count339
+\c@float@type=\count333
 \float@exts=\toks53
 \float@box=\box83
 \@float@everytoks=\toks54
@@ -910,7 +885,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks55
-\c@algorithm=\count340
+\c@algorithm=\count334
 )
 (c:/texlive/2020/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -919,130 +894,55 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count341
-\c@ALG@rem=\count342
-\c@ALG@nested=\count343
+\c@ALG@line=\count335
+\c@ALG@rem=\count336
+\c@ALG@nested=\count337
 \ALG@tlm=\skip73
 \ALG@thistlm=\skip74
-\c@ALG@Lnr=\count344
-\c@ALG@blocknr=\count345
-\c@ALG@storecount=\count346
-\c@ALG@tmpcounter=\count347
+\c@ALG@Lnr=\count338
+\c@ALG@blocknr=\count339
+\c@ALG@storecount=\count340
+\c@ALG@tmpcounter=\count341
 \ALG@tmplength=\skip75
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (c:/texlive/2020/texmf-dist/tex/latex/eqnarray/eqnarray.sty
 equationarray 1.3 <December 1, 2010>
 Package: eqnarray 
-\@eqargcnt=\count348
+\@eqargcnt=\count342
 ) (c:/texlive/2020/texmf-dist/tex/latex/arydshln/arydshln.sty
 Package: arydshln 2019/02/21 v1.76 
-\dashlinedash=\dimen310
-\dashlinegap=\dimen311
+\dashlinedash=\dimen298
+\dashlinegap=\dimen299
 \adl@box=\box85
-\adl@height=\dimen312
-\adl@heightsave=\dimen313
-\adl@depth=\dimen314
-\adl@depthsave=\dimen315
-\adl@finaldepth=\dimen316
-\adl@columns=\count349
-\adl@ncol=\count350
-\adl@currentcolumn=\count351
-\adl@currentcolumnsave=\count352
-\adl@totalheight=\count353
-\adl@totalheightsave=\count354
-\adl@dash=\count355
-\adl@gap=\count356
-\adl@cla=\count357
-\adl@clb=\count358
+\adl@height=\dimen300
+\adl@heightsave=\dimen301
+\adl@depth=\dimen302
+\adl@depthsave=\dimen303
+\adl@finaldepth=\dimen304
+\adl@columns=\count343
+\adl@ncol=\count344
+\adl@currentcolumn=\count345
+\adl@currentcolumnsave=\count346
+\adl@totalheight=\count347
+\adl@totalheightsave=\count348
+\adl@dash=\count349
+\adl@gap=\count350
+\adl@cla=\count351
+\adl@clb=\count352
 \adl@everyvbox=\toks56
-\adl@LTpagetotal=\dimen317
+\adl@LTpagetotal=\dimen305
 )
 (c:/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen318
-\TX@old@table=\dimen319
-\TX@old@col=\dimen320
-\TX@target=\dimen321
-\TX@delta=\dimen322
-\TX@cols=\count359
+\TX@col@width=\dimen306
+\TX@old@table=\dimen307
+\TX@old@col=\dimen308
+\TX@target=\dimen309
+\TX@delta=\dimen310
+\TX@cols=\count353
 \TX@ftn=\toks57
 )
-(c:/texlive/2020/texmf-dist/tex/latex/placeins/placeins.sty
-Package: placeins 2005/04/18  v 2.2
-)
-(c:/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(c:/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-Package: pgf 2020/11/23 v3.1.7 (3.1.7)
-
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2020/11/23 v3.1.7 (3.1.7)
-\pgfnodeparttextbox=\box86
-)
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2020/11/23 v3.1.7 (3.1.7)
-)
-(c:/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
-y
-Package: pgfcomp-version-0-65 2020/11/23 v3.1.7 (3.1.7)
-\pgf@nodesepstart=\dimen323
-\pgf@nodesepend=\dimen324
-)
-(c:/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
-y
-Package: pgfcomp-version-1-18 2020/11/23 v3.1.7 (3.1.7)
-)) (c:/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(c:/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(c:/texlive/2020/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2020/11/23 v3.1.7 (3.1.7)
-
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen325
-\pgffor@skip=\dimen326
-\pgffor@stack=\toks58
-\pgffor@toks=\toks59
-))
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2020/11/23 v3.1.7 (3.1.7)
-
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
-de.tex
-File: pgflibraryplothandlers.code.tex 2020/11/23 v3.1.7 (3.1.7)
-\pgf@plot@mark@count=\count360
-\pgfplotmarksize=\dimen327
-)
-\tikz@lastx=\dimen328
-\tikz@lasty=\dimen329
-\tikz@lastxsaved=\dimen330
-\tikz@lastysaved=\dimen331
-\tikz@lastmovetox=\dimen332
-\tikz@lastmovetoy=\dimen333
-\tikzleveldistance=\dimen334
-\tikzsiblingdistance=\dimen335
-\tikz@figbox=\box87
-\tikz@figbox@bg=\box88
-\tikz@tempbox=\box89
-\tikz@tempbox@bg=\box90
-\tikztreelevel=\count361
-\tikznumberofchildren=\count362
-\tikznumberofcurrentchild=\count363
-\tikz@fig@count=\count364
-
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2020/11/23 v3.1.7 (3.1.7)
-\pgfmatrixcurrentrow=\count365
-\pgfmatrixcurrentcolumn=\count366
-\pgf@matrix@numberofcolumns=\count367
-)
-\tikz@expandcount=\count368
-
-(c:/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2020/11/23 v3.1.7 (3.1.7)
-)))
 (c:/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
@@ -1051,15 +951,15 @@ Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
 
 (c:/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count369
-\calc@Bcount=\count370
-\calc@Adimen=\dimen336
-\calc@Bdimen=\dimen337
+\calc@Acount=\count354
+\calc@Bcount=\count355
+\calc@Adimen=\dimen311
+\calc@Bdimen=\dimen312
 \calc@Askip=\skip76
 \calc@Bskip=\skip77
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count371
+\calc@Ccount=\count356
 \calc@Cskip=\skip78
 )
 (c:/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -1069,24 +969,24 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count372
-\l_MT_multwidth_dim=\dimen338
+\g_MT_multlinerow_int=\count357
+\l_MT_multwidth_dim=\dimen313
 \origjot=\skip79
-\l_MT_shortvdotswithinadjustabove_dim=\dimen339
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen340
-\l_MT_above_intertext_sep=\dimen341
-\l_MT_below_intertext_sep=\dimen342
-\l_MT_above_shortintertext_sep=\dimen343
-\l_MT_below_shortintertext_sep=\dimen344
-\xmathstrut@box=\box91
-\xmathstrut@dim=\dimen345
+\l_MT_shortvdotswithinadjustabove_dim=\dimen314
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen315
+\l_MT_above_intertext_sep=\dimen316
+\l_MT_below_intertext_sep=\dimen317
+\l_MT_above_shortintertext_sep=\dimen318
+\l_MT_below_shortintertext_sep=\dimen319
+\xmathstrut@box=\box86
+\xmathstrut@dim=\dimen320
 )
 (c:/texlive/2020/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen346
-\WF@size=\dimen347
-\c@WF@wrappedlines=\count373
-\WF@box=\box92
-\WF@everypar=\toks60
+\wrapoverhang=\dimen321
+\WF@size=\dimen322
+\c@WF@wrappedlines=\count358
+\WF@box=\box87
+\WF@everypar=\toks58
 Package: wrapfig 2003/01/31  v 3.6
 )
 (c:/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
@@ -1094,21 +994,21 @@ Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (c:/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen348
-\captionmargin@=\dimen349
-\captionwidth=\dimen350
-\caption@tempdima=\dimen351
-\caption@indent=\dimen352
-\caption@parindent=\dimen353
-\caption@hangindent=\dimen354
+\captionmargin=\dimen323
+\captionmargin@=\dimen324
+\captionwidth=\dimen325
+\caption@tempdima=\dimen326
+\caption@indent=\dimen327
+\caption@parindent=\dimen328
+\caption@hangindent=\dimen329
 Package caption Info: beamer document class detected.
 
 (c:/texlive/2020/texmf-dist/tex/latex/caption/caption-beamer.sto
 File: caption-beamer.sto 2020/08/22 v2.0 Adaption of the caption package to the
  beamer document classes (AR)
 ))
-\c@caption@flags=\count374
-\c@continuedfloat=\count375
+\c@caption@flags=\count359
+\c@continuedfloat=\count360
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
@@ -1122,39 +1022,38 @@ Package caption Info: wrapfig package is loaded.
 )
 (c:/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count376
-\c@subtable=\count377
+\c@subfigure=\count361
+\c@subtable=\count362
 )
-(./style/common.tex (c:/texlive/2020/texmf-dist/tex/latex/bbm-macros/bbm.sty
-Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
-LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
-(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
-(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
-))
-(./style/lmu-lecture.sty
+(c:/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip80
+\bibsep=\skip81
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count363
+) (./style/report.sty
 \symmysymbols=\mathgroup11
 LaTeX Font Info:    Overwriting symbol font `mysymbols' in version `bold'
 (Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 5.
 
 (c:/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count378
+\FV@CodeLineNo=\count364
 \FV@InFile=\read5
-\FV@TabBox=\box93
-\c@FancyVerbLine=\count379
-\FV@StepNumber=\count380
-\FV@OutFile=\write6
+\FV@TabBox=\box88
+\c@FancyVerbLine=\count365
+\FV@StepNumber=\count366
+\FV@OutFile=\write5
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 98.
+Package hyperref Info: Option `colorlinks' set `false' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\insertshortauthor' on input line 98.
+(hyperref)                removing `\insertshortauthor' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\insertshorttitle' on input line 98.
+(hyperref)                removing `\insertshorttitle' on input line 97.
 
 (c:/texlive/2020/texmf-dist/tex/latex/beamer/beamerfontthemestructurebold.sty)
 (c:/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
@@ -1163,45 +1062,45 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 (c:/texlive/2020/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
 )
-\c@lectureframenumber=\count381
+\c@lectureframenumber=\count367
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 72
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 96
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 72.
+(Font)              scaled to size 10.07397pt on input line 96.
 
 (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count382
-\l__pdf_internal_box=\box94
+\l__kernel_color_stack_int=\count368
+\l__pdf_internal_box=\box89
 )
-(./slides-models.aux)
-\openout1 = `slides-models.aux'.
+(./presentation.aux)
+\openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1211,12 +1110,12 @@ LaTeX Font Info:    ... okay on input line 72.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(22.76228pt, 318.67079pt, 22.76228pt)
-* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
-* \paperwidth=364.19536pt
-* \paperheight=273.14662pt
-* \textwidth=318.67079pt
-* \textheight=244.6939pt
+* h-part:(L,W,R)=(22.76228pt, 409.71951pt, 22.76228pt)
+* v-part:(T,H,B)=(0.0pt, 284.52756pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=284.52756pt
+* \textwidth=409.71951pt
+* \textheight=256.07483pt
 * \oddsidemargin=-49.5077pt
 * \evensidemargin=-49.5077pt
 * \topmargin=-72.26999pt
@@ -1239,17 +1138,17 @@ LaTeX Font Info:    ... okay on input line 72.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count383
-\scratchdimen=\dimen355
-\scratchbox=\box95
-\nofMPsegments=\count384
-\nofMParguments=\count385
-\everyMPshowfont=\toks61
-\MPscratchCnt=\count386
-\MPscratchDim=\dimen356
-\MPnumerator=\count387
-\makeMPintoPDFobject=\count388
-\everyMPtoPDFconversion=\toks62
+\scratchcounter=\count369
+\scratchdimen=\dimen330
+\scratchbox=\box90
+\nofMPsegments=\count370
+\nofMParguments=\count371
+\everyMPshowfont=\toks59
+\MPscratchCnt=\count372
+\MPscratchDim=\dimen331
+\MPnumerator=\count373
+\makeMPintoPDFobject=\count374
+\everyMPtoPDFconversion=\toks60
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -1267,7 +1166,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 96.
 
 (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1278,81 +1177,81 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count389
+\c@section@level=\count375
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
 
-(./slides-models.out) (./slides-models.out)
-\@outlinefile=\write7
-\openout7 = `slides-models.out'.
+(./presentation.out) (./presentation.out)
+\@outlinefile=\write6
+\openout6 = `presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 72.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 72.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 96.
 \symnumbers=\mathgroup12
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 72.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 96.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 72
+(Font)              `pureletters' in the math version `normal' on input line 96
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/phv/m/it on input line 72.
+(Font)                  OT1/mathkerncmss/m/sl --> T1/phv/m/it on input line 96.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 72.
+(Font)              `pureletters' in the math version `bold' on input line 96.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/m/it on input line 72
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/m/it on input line 96
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 72.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 72.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 72.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 72.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 72.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 72.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 72.
+(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 72.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 72.
+(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 72.
+(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 72.
+(Font)                  OT1/cmtt/m/n --> T1/laett/m/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 72.
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 72.
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 72.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 72.
+(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 72.
+(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 72.
+(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/laett/m/n --> T1/laett/b/n on input line 72.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 72.
+(Font)                  T1/laett/m/n --> T1/laett/b/n on input line 96.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 96.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `normal' on input lin
-e 72.
+e 96.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `norma
 l'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 7
-2.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 9
+6.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `bold' on input line 
-72.
+96.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
 
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 7
-2.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/phv/bx/it on input line 9
+6.
 
 (c:/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dictionary-En
 glish.dict
@@ -1380,114 +1279,378 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./slides-models.nav)
+ (./presentation.nav)
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 72.
+(Font)              scaled to size 5.51999pt on input line 96.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 5.51999pt on input line 72.
+(Font)              scaled to size 5.51999pt on input line 96.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 15.89755pt on input line 101.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 15.89755pt on input line 101.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.07397pt on input line 101.
+<figures/report_titlepage.png, id=19, 963.6pt x 602.25pt>
+File: figures/report_titlepage.png Graphic file (type png)
+<use figures/report_titlepage.png>
+Package pdftex.def Info: figures/report_titlepage.png  used on input line 101.
+(pdftex.def)             Requested size: 455.2446pt x 284.53705pt.
  [1
-Non-PDF special ignored!
-<special> header=psfrag.pro
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figures/repor
+t_titlepage.png (PNG copy)>]
 [LECTURE]=[0][\insertlecture ][2][1]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 15.89755pt on input line 82.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 102.
+(Font)              scaled to size 11.03998pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.27998pt on input line 102.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 102
+(Font)              scaled to size 11.03998pt on input line 133.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 133
 .
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 102
+LaTeX Font Info:    Trying to load font information for U+msb on input line 133
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 102.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.27998pt on input line 102.
+(Font)              scaled to size 11.03998pt on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <8> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 7.35999pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 102.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 5.51999pt on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 4.59999pt on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <9> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 102.
+(Font)              scaled to size 5.51999pt on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 8.27998pt on input line 102.
+(Font)              scaled to size 11.03998pt on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <8> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <8> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 133.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 7.35999pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 102.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 102.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 5.51999pt on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <5> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <5> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 102.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 4.59999pt on input line 102.
+(Font)              scaled to size 5.51999pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.59999pt on input line 102.
+(Font)              scaled to size 7.35999pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 15.89755pt on input line 102.
+(Font)              scaled to size 7.35999pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 102.
+(Font)              scaled to size 13.24796pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 3.68pt on input line 102.
+(Font)              scaled to size 3.68pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.68pt on input line 102.
+(Font)              scaled to size 3.68pt on input line 133.
  [2
 
 ]
-\tf@nav=\write8
-\openout8 = `slides-models.nav'.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 174.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 10.07397pt on input line 174.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 174.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 174.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 10.07397pt on input line 174.
+<figures/s-curve.pdf, id=33, 343.2825pt x 305.22029pt>
+File: figures/s-curve.pdf Graphic file (type pdf)
+<use figures/s-curve.pdf>
+Package pdftex.def Info: figures/s-curve.pdf  used on input line 174.
+(pdftex.def)             Requested size: 73.751pt x 89.11407pt.
 
-\tf@toc=\write9
-\openout9 = `slides-models.toc'.
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 174--174
+[][]  
+ []
 
-\tf@snm=\write10
-\openout10 = `slides-models.snm'.
+[3
+
+ <./figures/s-curve.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
+id other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]
+File: figures/s-curve.pdf Graphic file (type pdf)
+<use figures/s-curve.pdf>
+Package pdftex.def Info: figures/s-curve.pdf  used on input line 212.
+(pdftex.def)             Requested size: 51.62425pt x 62.37761pt.
+<figures/s-curve-undone.pdf, id=47, 756.90776pt x 305.22029pt>
+File: figures/s-curve-undone.pdf Graphic file (type pdf)
+<use figures/s-curve-undone.pdf>
+Package pdftex.def Info: figures/s-curve-undone.pdf  used on input line 212.
+(pdftex.def)             Requested size: 172.08318pt x 72.5218pt.
+ [4
+
+ <./figures/s-curve-undone.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone.pdf): PDF inclusion
+: invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
+ed.
+>]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.88956pt on input line 265.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.88956pt on input line 265.
+ [5
+
+]
+<figures/models_overview.png, id=68, 808.01875pt x 479.7925pt>
+File: figures/models_overview.png Graphic file (type png)
+<use figures/models_overview.png>
+Package pdftex.def Info: figures/models_overview.png  used on input line 294.
+(pdftex.def)             Requested size: 266.31517pt x 158.13434pt.
+ [6
+
+ <./figures/models_overview.png>]
+<figures/kpca_lgml_algo.png, id=78, 903.375pt x 310.15875pt>
+File: figures/kpca_lgml_algo.png Graphic file (type png)
+<use figures/kpca_lgml_algo.png>
+Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 315.
+(pdftex.def)             Requested size: 409.71951pt x 140.67285pt.
+ [7
+
+ <./figures/kpca_lgml_algo.png>]
+<figures/s-curve-connected.pdf, id=88, 681.50606pt x 606.34526pt>
+File: figures/s-curve-connected.pdf Graphic file (type pdf)
+<use figures/s-curve-connected.pdf>
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 360.
+
+(pdftex.def)             Requested size: 135.20818pt x 164.40675pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 360--360
+[][]  
+ []
+
+[8
+
+ <./figures/s-curve-connected.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>]
+<figures/eigenanalysis.png, id=100, 742.775pt x 218.8175pt>
+File: figures/eigenanalysis.png Graphic file (type png)
+<use figures/eigenanalysis.png>
+Package pdftex.def Info: figures/eigenanalysis.png  used on input line 396.
+(pdftex.def)             Requested size: 286.8024pt x 84.4904pt.
+ [9
+
+ <./figures/eigenanalysis.png>] [10
+
+]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 498.
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.19998pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.43999pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 4.59999pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.19998pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 6.43999pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <5> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <5> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 4.59999pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 498.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 4.59999pt on input line 498.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 498--498
+[][]  
+ []
+
+[11
+
+]
+<figures/reconstruction-3d.pdf, id=124, 229.81859pt x 229.81859pt>
+File: figures/reconstruction-3d.pdf Graphic file (type pdf)
+<use figures/reconstruction-3d.pdf>
+Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 535.
+
+(pdftex.def)             Requested size: 137.66391pt x 103.0277pt.
+<figures/reconstruction-2d.pdf, id=126, 229.81859pt x 229.81859pt>
+File: figures/reconstruction-2d.pdf Graphic file (type pdf)
+<use figures/reconstruction-2d.pdf>
+Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 535.
+
+(pdftex.def)             Requested size: 98.3318pt x 93.12906pt.
+ [12
+
+ <./figures/reconstruction-3d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-3d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+> <./figures/reconstruction-2d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-2d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 584.
 
 
+LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
+(Font)              using `OT1/cmss/m/n' instead on input line 584.
 
-Package caption Warning: Unused \captionsetup[figure] on input line 39.
-See the caption package documentation for explanation.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.19998pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 6.43999pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <5> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 4.59999pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 10.07397pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <8> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 7.35999pt on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <6> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 584.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 5.51999pt on input line 584.
 
-(./slides-models.aux)
-Package rerunfilecheck Info: File `slides-models.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+LaTeX Font Warning: Command \small invalid in math mode on input line 584.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 584.
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 584--584
+[][]  
+ []
+
+[13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] [21
+
+] [22
+
+] [23
+
+]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 875.
+ (./presentation.bbl
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.27998pt on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.27998pt on input line 13.
+)
+[24
+
+]
+\tf@nav=\write7
+\openout7 = `presentation.nav'.
+
+\tf@toc=\write8
+\openout8 = `presentation.toc'.
+
+\tf@snm=\write9
+\openout9 = `presentation.snm'.
+
+ (./presentation.aux)
+Package rerunfilecheck Info: File `presentation.out' has not changed.
+(rerunfilecheck)             Checksum: 06E27B416B3B1946CD705C501CA5B3BD;45.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
  ) 
 Here is how much of TeX's memory you used:
- 26272 strings out of 479485
- 496704 string characters out of 5875915
- 839579 words of memory out of 5000000
- 42614 multiletter control sequences out of 15000+600000
- 579579 words of font info for 80 fonts, out of 8000000 for 9000
+ 23876 strings out of 479485
+ 435222 string characters out of 5875915
+ 784345 words of memory out of 5000000
+ 40197 multiletter control sequences out of 15000+600000
+ 641697 words of font info for 147 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,13n,126p,460b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,13n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2020/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helveti
-c/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on slides-models.pdf (2 pages, 41100 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmss10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmss8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
+2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist
+/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/u
+rw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhv
+ro8a.pfb>
+Output written on presentation.pdf (24 pages, 900618 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -51,7 +51,7 @@ aspectratio = 1610]{beamer}
 \newcommand{\positem}{\item[$\highlight{+}$]}
 \newcommand{\negitem}{\item[$\highlight{-}$]}
 \newcommand{\flexitem}[1]{\item[$\highlight{#1}$]}
-\newcommand{\conclbox}[1]{\fbox{\parbox{\textwidth}{\centering\textbf{#1}}}}
+\newcommand{\conclbox}[1]{\fbox{\parbox{\textwidth}{\textbf{#1}}}}
 \colorlet{GRAY}{gray}
 
 \let\code=\texttt
@@ -353,6 +353,10 @@ $\RD$
   \end{figure}
 \end{minipage}
 
+\vspace{0.3cm}
+
+\conclbox{Achievements: non-linearity \& locality}
+
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -376,12 +380,12 @@ manifold structure
   \end{itemize}
 \end{itemize}
 
-\vfill
+\vspace{0.3cm}
 
 \textbf{Dimensionality reduction}. Projection into subspace 
 spanned by $d$ principal eigenvectors
 
-\vfill
+\vspace{0.3cm}
 
 \begin{figure}[H]
   \raggedright
@@ -471,9 +475,10 @@ spanned by $d$ principal eigenvectors
 \begin{itemize}
   \arritem Weight matrix. $\W = (w)_{ij} \in \R^{N \times N}$, where 
   $w_{ij} = w_{ij}(\twonorm{\x_i - \x_j})$
-  \arritem Diagonal matrix of row sums. $\D = 
-  \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
-  \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$
+  % \arritem Diagonal matrix of row sums. $\D = 
+  % \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
+  \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$, 
+  $\D = \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
 \end{itemize}
 
 \vspace{0.3cm}
@@ -482,10 +487,13 @@ spanned by $d$ principal eigenvectors
 
 \begin{fleqn}
   \begin{equation}
+    \small
     \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
     \Y^T \D \Y = \I
   \end{equation}
 \end{fleqn}
+
+\conclbox{Solution: bottom $d + 1$ eigenvectors}
 
 \end{frame}
 
@@ -535,10 +543,6 @@ spanned by $d$ principal eigenvectors
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Procedure}. Solving $N + 1$ optimization problems  
-
-\vspace{0.3cm}
-
 \textbf{Reconstruction loss minimization}. Finding optimal reconstruction 
 weights
 
@@ -575,6 +579,8 @@ $\tilde{\Y} = \Y^T$, such that
   \end{equation}
 \end{fleqn}
 
+\conclbox{Solution: bottom $d + 1$ eigenvectors}
+
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -590,7 +596,7 @@ $\tilde{\Y} = \Y^T$, such that
 
 \vspace{0.3cm}
 
-\textbf{Idea}. Capturing manifold curvature
+\textbf{Idea}. Minimizing mapping curvature while preserving local isometry
 
 \end{frame}
 
@@ -636,7 +642,7 @@ $\tilde{\Y} = \Y^T$, such that
 
 % \vspace{0.3cm}
 
-\textbf{Regularization constant}. Singularity for $d \ll k$
+\textbf{Regularization constant}. Singularity for $D < k$
 
 \begin{itemize}
   \arritem Heuristics
@@ -861,7 +867,7 @@ woteva
 % ------------------------------------------------------------------------------
 
 \begin{frame}{}
-\normalsize
+\footnotesize
 
 \bibliography{bibliography}
 \bibliographystyle{dcu}

@@ -302,7 +302,8 @@ In fact, any such quadratic form, provided its right hand side is of full rank,
 would suffice to ensure the embedding vectors actually span a $d$-dimensional 
 space \citep{burges2010}.
 The additional sum-zero condition is implicitly met by discarding the constant 
-eigenvector associated with the bottom, zero eigenvalue \citep{ghojoghetal2020}.
+eigenvector associated with the bottom, zero eigenvalue and taking the 
+subsequent $d$ eigenvectors to embed the data in $\Rd$ \citep{ghojoghetal2020}.
 
 As mentioned before, the close resemblance to the optimization problem in LEM 
 (equation \ref{eq-obj-lem}) is not coincidental.
