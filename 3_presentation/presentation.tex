@@ -14,6 +14,7 @@ aspectratio = 1610]{beamer}
 \usepackage{verbatim}
 \usepackage{amsmath, nccmath}
 \usepackage{amsfonts}
+\usepackage{mathrsfs}
 \usepackage{bm}
 \usepackage{csquotes}
 \usepackage{multirow}
@@ -74,15 +75,17 @@ aspectratio = 1610]{beamer}
 \newcommand{\y}{\bm{y}}
 \newcommand{\pv}{\bm{p}}
 \newcommand{\qv}{\bm{q}}
-\newcommand{\W}{\bm{W}}
-\newcommand{\M}{\bm{M}}
-\newcommand{\Lap}{\bm{L}}
 \newcommand{\D}{\bm{D}}
-\newcommand{\K}{\bm{K}}
-\newcommand{\G}{\bm{G}}
-\newcommand{\I}{\bm{I}}
 \newcommand{\E}{\bm{E}}
+\newcommand{\G}{\bm{G}}
+\newcommand{\Hes}{\bm{H}}
+\newcommand{\I}{\bm{I}}
+\newcommand{\K}{\bm{K}}
+\newcommand{\Lap}{\bm{L}}
+\newcommand{\M}{\bm{M}}
+\newcommand{\W}{\bm{W}}
 \newcommand{\twonorm}[1]{\left\lVert #1 \right\rVert^2}
+\newcommand{\frobnorm}[1]{\left\lVert #1 \right\rVert^2_F}
 
 % ------------------------------------------------------------------------------
 
@@ -465,12 +468,12 @@ spanned by $d$ principal eigenvectors
 
 \begin{itemize}
   \arritem Notion of smoothness in mapping function
-  \arritem Second-order penalty on large gradients
+  \arritem Second-order penalty on gradient
 \end{itemize}
 
 \vspace{0.3cm}
 
-\textbf{Graph Laplacian}. Coercing neighborhood graph information into a matrix
+\textbf{Graph Laplacian}. Discrete approximation of Laplace-Beltrami operator
 
 \begin{itemize}
   \arritem Weight matrix. $\W = (w)_{ij} \in \R^{N \times N}$, where 
@@ -598,6 +601,29 @@ $\tilde{\Y} = \Y^T$, such that
 
 \textbf{Idea}. Finding a truly locally linear mapping while preserving local 
 isometry
+
+\begin{itemize}
+  \arritem Notion of curviness in mapping function
+  \arritem Second-order penalty on Hessian
+  \arritem Strong convergence guarantees for limit case
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Hessian functional}. Measuring average curviness over $\mani$
+
+\begin{itemize}
+  \arritem Continuous functional. 
+  $\mathscr{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv$
+  \arritem Empirical approximator.
+  $\mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
+  (\Hes_{\ell})_{m,j}$ with local Hessian estimators $\Hes_{\ell}$
+  \arritem Finding null space of $\mathcal{H}$
+\end{itemize}
+
+\vspace{0.3cm}
+
+\conclbox{Solution: bottom $d + 1$ eigenvectors + scaling}
 
 \end{frame}
 
