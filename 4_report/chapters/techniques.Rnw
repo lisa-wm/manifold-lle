@@ -377,11 +377,11 @@ neighborhood of zero in $\Rd$ \citep{donohogrimes2003}:
 \end{equation}
 
 From these point-wise tangent Hessians it is now possible to construct a 
-quadratic functional $\mathcal{H}(f)$ on the entire manifold, analogous to the 
+quadratic functional $\mathscr{H}(f)$ on the entire manifold, analogous to the 
 Laplace-Beltrami operator in LEM.
-The crucial property of $\mathcal{H}(f)$ is given by the fact that, if $\mani$ 
+The crucial property of $\mathscr{H}(f)$ is given by the fact that, if $\mani$ 
 is truly locally homeomorphic to an open, connected subset of $\Rd$, 
-$\mathcal{H}(f)$ has a $(d + 1)$-dimensional null space.
+$\mathscr{H}(f)$ has a $(d + 1)$-dimensional null space.
 After discarding the constant function corresponding to the bottom zero 
 eigenvalue, the subsequent $d$ eigenfunctions again span the desired 
 low-dimensional embedding space \citep{donohogrimes2003}.
@@ -395,17 +395,70 @@ $\frobnorm{\Hes^{\prime}} = \frobnorm{ \bm{B} \Hes \bm{B}^T} =
 \text{\textit{trace}} (\bm{B} \Hes^T \bm{B}^T \bm{B} \Hes \bm{B}^T) = 
 \text{\textit{trace}} (\Hes^T \Hes) = \frobnorm{\Hes}$, due to the permutation 
 invariance of the trace operator \citep{dissross2008}.
-Thus, $\mathcal{H}(f)$ as a measure for overall curviness of the mapping is 
+Thus, $\mathscr{H}(f)$ as a measure for overall curviness of the mapping is 
 given by \citep{donohogrimes2003}:
 
 \begin{equation}
-  \mathcal{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv.
+  \mathscr{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv.
   \label{eq-hfunctional}
 \end{equation}
 
-\textbf{HLLE.}
-In analogy to LEM, the functional defined on $\mani$ must be approximated in an 
-empirical manner.
+\textbf{HLLE algorithm.}
+In analogy to LEM, the functional defined on $\mani$ is approximated in an 
+empirical manner; yet, the computations performed in HLLE are somewhat more 
+involved.
+As before, the first step consists of finding the $k$ nearest neighbors 
+to $\x_i \in \X$ for $i \in \setN$.
+Let $\bm{N}_i \in \R^{D \times k}$ denote the matrix of feature vectors of
+$\x_i$'s neighbors that have been centered with respect to the mean over all 
+members of the neighborhood.
+From these neighborhood matrices the local tangent coordinates are then 
+estimated by means of $N$ singular value decompositions 
+$\bm{N}_i = \bm{U_i}\bm{D_i}\bm{V_i}^T$ \citep{dissross2008}.
+In effect, this amounts to finding the basis of $T_{\x_i}(\mani)$ by performing 
+PCA on the local covariance matrix at $\x_i$ and retaining the $d$ principal 
+eigenvectors.
+Now a matrix $\bm{Z_i}$, whose columns contain all cross products of $\bm{U}_i$ 
+up to order $d$, is constructed at each point and coerced into orthonormal form.
+Extracting the transpose of the last $\frac{d(d + 1)}{2}$ columns of $\bm{Z_i}$ 
+yields the local Hessian approximator $\Hes_i$ as the least-squares estimate of 
+a local quadratic polynomial regression in the neighborhood of $\x_i$ (\citet{vandermaatenetal2009}, \citet{tingjordan2018}).
+The empirical Hessian functional $\mathcal{H}$ is obtained as a 
+quadratic form of the local Hessian approximators \citep{donohogrimes2003}:
+
+\begin{equation}
+  \mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
+  (\Hes_{\ell})_{m,j}.
+  \label{eq-hfunctional-emp}
+\end{equation}
+
+Eventually, eigenanalysis of $\mathcal{H}$ yields the approximate null space 
+spanned by the $d$ bottom eigenvectors after discarding the constant one.
+The final step required to find the desired embedding coordinates consists of
+finding a basis for the null space.
+For this, take the matrix $\bm{Q} \in \R^{N \times d}$ containing the $d$
+non-constant eigenvectors and find a second matrix $\bm{R}$ such that the
+columns of $\bm{Q}\bm{R}$ restricted to a fixed local neighborhood are
+orthonormal.
+The $d$-dimensional embedding coordinates are then given by $\bm{Q}^T\bm{R}^T$
+\citep{yezhi2015}.
+As an alternative, \citet{dissross2008} proposes to replace the last step
+by simply scaling $\bm{Q}$ with $\sqrt{N}$.
+\\
+
+Tracing the steps described above, it becomes clear that the theoretical 
+guarantees of HLLE come at the expense of rather complex computations that have 
+been sketched only roughly here\footnote{
+For a more in-depth analysis that also encompasses examination of limit behavior 
+and the connection between HLLE and \textit{local tangent space alignment 
+(LTSA)} see, for example, \citet{tingjordan2018}.
+}.
+At the same time, its implementation employs numerous approximations 
+calling the merit of theoretical convergence into question.
+It is perhaps this approximate yet computationally challenging design, along 
+with the fact that the other methods are more easily accessible by intuition, 
+that has acted as a limiting factor on the practical applications of HLLE 
+(\citet{cayton2005}, \citet{yezhi2015}).
 
 % ------------------------------------------------------------------------------
 

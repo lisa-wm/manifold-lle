@@ -15,21 +15,21 @@
 \contentsline {subsubsection}{\numberline {4.1.1}Laplacian Eigenmaps (LEM)}{14}{}%
 \contentsline {subsubsection}{\numberline {4.1.2}Locally Linear Embedding (LLE)}{15}{}%
 \contentsline {subsubsection}{\numberline {4.1.3}Hessian Locally Linear Embedding (HLLE)}{18}{}%
-\contentsline {subsection}{\numberline {4.2}Semi-Supervised Locally Linear Embedding (SSLLE)}{19}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Employment of Prior Information}{19}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}Finding Prior Points}{19}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}SSLLE Algorithm}{19}{}%
+\contentsline {subsection}{\numberline {4.2}Semi-Supervised Locally Linear Embedding (SSLLE)}{20}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Employment of Prior Information}{20}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Finding Prior Points}{20}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}SSLLE Algorithm}{20}{}%
 \contentsline {subsection}{\numberline {4.3}Particular Challenges}{20}{}%
 \contentsline {subsection}{\numberline {4.4}Comparative Remarks}{21}{}%
-\contentsline {section}{\numberline {5}Experiment Results}{21}{}%
-\contentsline {subsection}{\numberline {5.1}Experimental Design}{21}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{21}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{21}{}%
-\contentsline {subsection}{\numberline {5.2}Application to Synthetic Data}{21}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Data}{21}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Results}{21}{}%
-\contentsline {subsection}{\numberline {5.3}Sensitivity Analysis}{21}{}%
-\contentsline {section}{\numberline {6}Discussion}{21}{}%
-\contentsline {section}{\numberline {7}Conclusion}{21}{}%
+\contentsline {section}{\numberline {5}Experiment Results}{22}{}%
+\contentsline {subsection}{\numberline {5.1}Experimental Design}{22}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{22}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{22}{}%
+\contentsline {subsection}{\numberline {5.2}Application to Synthetic Data}{22}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Data}{22}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Results}{22}{}%
+\contentsline {subsection}{\numberline {5.3}Sensitivity Analysis}{22}{}%
+\contentsline {section}{\numberline {6}Discussion}{22}{}%
+\contentsline {section}{\numberline {7}Conclusion}{22}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%

@@ -205,6 +205,11 @@ Tenenbaum, J.~B., de~Silva, V. \harvardand\ Langford, J.~C.  \harvardyearleft
 \newblock A global geometric framework for nonlinear dimensionality reduction,
   {\em Science} {\bf 290}(5500):~2319--2322.
 
+\harvarditem{Ting \harvardand\ Jordan}{2018}{tingjordan2018}
+Ting, D. \harvardand\ Jordan, M.~I.  \harvardyearleft 2018\harvardyearright .
+\newblock On nonlinear dimensionality reduction, linear smoothing and
+  autoencoding, {\em arXiv: Machine Learning} .
+
 \harvarditem[van~der Maaten et~al.]{van~der Maaten, Postma \harvardand\ van~den
   Herik}{2009}{vandermaatenetal2009}
 van~der Maaten, L., Postma, E. \harvardand\ van~den Herik, J.  \harvardyearleft
@@ -252,6 +257,11 @@ Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
   2006\harvardyearright .
 \newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
   of the 23rd International Conference on Machine Learning}.
+
+\harvarditem{Ye \harvardand\ Zhi}{2015}{yezhi2015}
+Ye, Q. \harvardand\ Zhi, W.  \harvardyearleft 2015\harvardyearright .
+\newblock Discrete hessian eigenmaps for dimensionality reduction, {\em Journal
+  of Computational and Applied Mathematics} {\bf 278}:~197--212.
 
 \harvarditem{Zhang \harvardand\ Chau}{2009}{zhangchau2009}
 Zhang, S. \harvardand\ Chau, K.-W.  \harvardyearleft 2009\harvardyearright .
