@@ -264,6 +264,18 @@ The resulting algorithmic pattern may be stated as follows
   ordered eigenvalues, retrieve the low-dimensional coordinates.
 \end{tight_enumerate}
 
+Figure \ref{fig-kpca-lgml} provides a final view on the LGML concept and its 
+algorithmic operationalization in the kernel PCA context.
+
+\begin{figure}[H]
+  \includegraphics[%trim = 0 0 0 300, clip, % left bottom right top
+  width = \textwidth]{figures/kpca_lgml_algo}
+  \caption[Kernel PCA and LGML]{Conceptual view of LGML, interpreted as a form 
+  of kernel PCA.
+  \textit{Source:} own representation.}
+  \label{fig-kpca-lgml}
+\end{figure}
+
 % ------------------------------------------------------------------------------
 
 \subsubsection{Graph Approximation}
@@ -388,7 +400,21 @@ under minimal loss of information.
 More precisely, the representation of $\X$ by the $d$ selected eigenvectors of 
 $M$ is loss-optimal with respect to the least-squares error
 \citep{schoelkopfetal1998}.
-\\
+Figure \ref{fig:eigen} depicts the idea of eigenanalysis in a schematic way.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+      width = 0.6\textwidth]{figures/eigenanalysis}
+    \caption[Schematic view on eigenanalysis]{Conceptual idea of eigenanalysis. 
+    Eigenvectors of a matrix (\textit{left}) point in the direction of greatest 
+    variability (\textit{middle}), the degree of which is measured by the 
+    associated eigenvalues depicted as rhombi. Retaining the thus determined 
+    principal $d$ eigenvectors allows to span a linear subspace of reduced 
+    dimensionality (\textit{right}).
+    \textit{Source:} own representation.}
+    \label{fig-eigen}
+  \end{figure}
 
 \textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
 decomposition of a square matrix into pairs of \textit{eigenvectors} and 

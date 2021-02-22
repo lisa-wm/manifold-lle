@@ -322,8 +322,90 @@ same conclusion.
 
 Lastly, HLLE \citep{donohogrimes2003} pursues an approach toward LGML that 
 straddles the two former techniques: it borrows heavily from the idea behind 
-LEM, but, as the name suggests, is more akin to LLE in an algorithmic sense 
-\citep{dissross2008}. 
+LEM but is akin to LLE in an algorithmic sense \citep{dissross2008}.
+Proposed under the title \textit{Hessian eigenmaps}, it is therefore also 
+referred to as Hessian LLE \citep{donohogrimes2003}.
+
+As opposed to LLE, HLLE is built upon a rigid theoretical foundation.
+It makes the assumptions of local isometry and homeomorphicity to an open, 
+connected subset of $\Rd$ (see chapter \ref{motivation}), which is a much less 
+restrictive demand than Isomap's global isometry and parameter space 
+convexity \citep{donohogrimes2003}.
+With this, HLLE provides veritable convergence guarantees for a wide range of 
+cases, albeit only for the continuum limit and not in finite-sample situations 
+\citep{cayton2005}.
+\\
+
+\textbf{Idea.}
+HLLE considers the twice-differentiable mapping functions 
+$f: \mani \rightarrow \R$ employed in LEM.
+Recall that LEM defines the gradient of $f$ with respect to local tangent 
+spaces $T_{\pv}(\mani)$ at $\pv \in \mani$ as a notion of smoothness.
+Similarly, HLLE computes the Hessian to measure curviness of $f$ 
+\citep{donohogrimes2003}.
+One advantage of this modification is that, while the Laplacian equals zero 
+for any harmonic\footnote{
+An example is indeed given by the coordinate functions; however, other functions 
+that are clearly non-linear have the harmonic property (see, for example,
+\citet{axleretal2001}).
+} function on $\mani$, the Hessian vanishes if and only if $f$ is 
+linear \citep{dissross2008}.
+\\
+
+\textbf{Hessian functional.}
+Consider $\pv \in \mani$ and its $k$-neighborhood $\mathcal{N}_k(\pv)$, each of 
+whose members has a unique closest point on $T_{\pv}(\mani)$ via the smooth 
+mapping $f$.
+Identifying $f(\pv)$ with $\bm{0} \in \Rd$ yields a system of local 
+coordinates on $T_{\pv}(\mani)$ that depends on this particular choice of the 
+origin.
+For a neighbor $\pv^{\prime}$ of $\pv$, let these local coordinates be denoted 
+by $\x^{\text{loc, }\pv^{\prime}}$.
+Then, the Hessian $\Hes_f^{\text{loc}}(\pv)$ of $f$ at $\pv$ in tangent 
+coordinates may be expressed as the ordinary Hessian of a function 
+$g: U \rightarrow \R$ with $f(\pv^{\prime}) = g(\x^{\text{loc, }\pv^{\prime}})$, 
+$U$ being a 
+neighborhood of zero in $\Rd$ \citep{donohogrimes2003}:
+
+\begin{equation}
+  (\Hes_f^{\text{loc}}(\pv))_{i,j} = \frac{\partial^2 
+  g(\x^{\text{loc, }\pv^{\prime}})}
+  {\partial x_i^{\text{loc, }\pv^{\prime}} 
+  \partial x_j^{\text{loc, }\pv^{\prime}}} 
+  \bigg\rvert_{\x^{\text{loc, }\pv^{\prime}} = 0}.
+  \label{eq-hessian-local}
+\end{equation}
+
+From these point-wise tangent Hessians it is now possible to construct a 
+quadratic functional $\mathcal{H}(f)$ on the entire manifold, analogous to the 
+Laplace-Beltrami operator in LEM.
+The crucial property of $\mathcal{H}(f)$ is given by the fact that, if $\mani$ 
+is truly locally homeomorphic to an open, connected subset of $\Rd$, 
+$\mathcal{H}(f)$ has a $(d + 1)$-dimensional null space.
+After discarding the constant function corresponding to the bottom zero 
+eigenvalue, the subsequent $d$ eigenfunctions again span the desired 
+low-dimensional embedding space \citep{donohogrimes2003}.
+
+First, however, the dependency on the respective local coordinate systems must 
+be removed.
+This is achieved by taking the Frobenius norm of the tangent Hessians: for any 
+alternative coordinate system $\Hes^{\prime}$ obtained by orthogonal 
+transformation of $\Hes$ with a suitable matrix $\bm{B}$, it must hold that 
+$\frobnorm{\Hes^{\prime}} = \frobnorm{ \bm{B} \Hes \bm{B}^T} = 
+\text{\textit{trace}} (\bm{B} \Hes^T \bm{B}^T \bm{B} \Hes \bm{B}^T) = 
+\text{\textit{trace}} (\Hes^T \Hes) = \frobnorm{\Hes}$, due to the permutation 
+invariance of the trace operator \citep{dissross2008}.
+Thus, $\mathcal{H}(f)$ as a measure for overall curviness of the mapping is 
+given by \citep{donohogrimes2003}:
+
+\begin{equation}
+  \mathcal{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv.
+  \label{eq-hfunctional}
+\end{equation}
+
+\textbf{HLLE.}
+In analogy to LEM, the functional defined on $\mani$ must be approximated in an 
+empirical manner.
 
 % ------------------------------------------------------------------------------
 

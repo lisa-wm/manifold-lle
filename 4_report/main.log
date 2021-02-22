@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  22 FEB 2021 07:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  22 FEB 2021 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,7 +455,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 91
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 93
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aer.fd
@@ -469,20 +469,20 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -523,9 +523,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package csquotes Info: Making character " active on input line 91.
+Package csquotes Info: Making character " active on input line 93.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 91.
+LaTeX Info: Redefining \selectfont on input line 93.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -579,14 +579,14 @@ e
 <figures/sigillum.png, id=2, 2946.00626pt x 2991.175pt>
 File: figures/sigillum.png Graphic file (type png)
 <use figures/sigillum.png>
-Package pdftex.def Info: figures/sigillum.png  used on input line 118.
+Package pdftex.def Info: figures/sigillum.png  used on input line 120.
 (pdftex.def)             Requested size: 170.71393pt x 173.30113pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 125
+LaTeX Font Info:    Trying to load font information for U+msa on input line 127
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 125
+LaTeX Font Info:    Trying to load font information for U+msb on input line 127
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -603,7 +603,7 @@ G might cause out of memory (use non-interlaced PNG to fix this)
 \openout4 = `main.toc'.
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 157--162
+Underfull \hbox (badness 10000) in paragraph at lines 159--164
 
  []
 
@@ -764,63 +764,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--246
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--278
-
- []
-
+<figures/kpca_lgml_algo.png, id=101, 903.375pt x 310.15875pt>
+File: figures/kpca_lgml_algo.png Graphic file (type png)
+<use figures/kpca_lgml_algo.png>
+Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 272.
+(pdftex.def)             Requested size: 426.79134pt x 146.53185pt.
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 317--319
+Underfull \hbox (badness 10000) in paragraph at lines 284--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--334
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
 
  []
 
-<figures/s-curve-connected.pdf, id=104, 681.50606pt x 606.34526pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--346
+
+ []
+
+[11 <./figures/kpca_lgml_algo.png>]
+<figures/s-curve-connected.pdf, id=110, 681.50606pt x 606.34526pt>
 File: figures/s-curve-connected.pdf Graphic file (type pdf)
 <use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 364.
+Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 376.
 
 (pdftex.def)             Requested size: 153.64441pt x 197.34752pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 344--371
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 356--383
 [][] [] [] 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 377--392
 
- []
+LaTeX Warning: Reference `fig:eigen' on page 12 undefined on input line 403.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--403
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--415
-
- []
-
+<figures/eigenanalysis.png, id=112, 742.775pt x 218.8175pt>
+File: figures/eigenanalysis.png Graphic file (type png)
+<use figures/eigenanalysis.png>
+Package pdftex.def Info: figures/eigenanalysis.png  used on input line 408.
+(pdftex.def)             Requested size: 256.0774pt x 75.43869pt.
 [12 <./figures/s-curve-connected.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 442--448
+Underfull \hbox (badness 10000) in paragraph at lines 419--429
 
  []
 
-) (./chapters/techniques.Rnw
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--474
+
+ []
+
+) (./chapters/techniques.Rnw [13 <./figures/eigenanalysis.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 14--22
 
  []
 
-<figures/sphere-tangent.pdf, id=118, 343.2825pt x 305.22029pt>
+<figures/sphere-tangent.pdf, id=128, 343.2825pt x 305.22029pt>
 File: figures/sphere-tangent.pdf Graphic file (type pdf)
 <use figures/sphere-tangent.pdf>
 Package pdftex.def Info: figures/sphere-tangent.pdf  used on input line 53.
@@ -830,7 +839,7 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 30--60
 [][] [] [] 
  []
 
-[13]
+
 Underfull \hbox (badness 10000) in paragraph at lines 63--85
 
  []
@@ -845,19 +854,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--162
 
  []
 
-<figures/reconstruction-3d.pdf, id=133, 229.81859pt x 229.81859pt>
+[15]
+<figures/reconstruction-3d.pdf, id=142, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-3d.pdf Graphic file (type pdf)
 <use figures/reconstruction-3d.pdf>
 Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 187.
 
 (pdftex.def)             Requested size: 204.85802pt x 192.74916pt.
-<figures/reconstruction-2d.pdf, id=135, 229.81859pt x 229.81859pt>
+<figures/reconstruction-2d.pdf, id=144, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-2d.pdf Graphic file (type pdf)
 <use figures/reconstruction-2d.pdf>
 Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 193.
 
 (pdftex.def)             Requested size: 163.88702pt x 140.36375pt.
-[15]
+
 Overfull \hbox (6.74028pt too wide) in paragraph at lines 210--222
 []\T1/aer/b/n/12 Reconstruction loss min-i-miza-tion. \T1/aer/m/n/12 Re-con-str
 uc-tion er-rors are mea-sured by a quadratic
@@ -879,75 +889,91 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--265
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 373--376
+Underfull \hbox (badness 10000) in paragraph at lines 329--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--397
+Underfull \hbox (badness 10000) in paragraph at lines 339--354
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 407--409
+Underfull \hbox (badness 10000) in paragraph at lines 456--459
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 460--480
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
+Underfull \hbox (badness 10000) in paragraph at lines 493--495
 
  []
 
 
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 424--429
+Underfull \hbox (badness 10000) in paragraph at lines 496--498
+
+ []
+
+
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 507--512
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-) (./chapters/experiment.Rnw) (./chapters/discussion.Rnw [19])
-(./chapters/conclusion.Rnw) [20] [5] [6] (./main.bbl
-Underfull \hbox (badness 1237) in paragraph at lines 20--24
+) [20] (./chapters/experiment.Rnw) (./chapters/discussion.Rnw)
+(./chapters/conclusion.Rnw) [21] [5] [6] (./main.bbl
+Underfull \hbox (badness 1237) in paragraph at lines 26--30
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
 foun-da-tion for 
  []
 
-[7] [8]) [9] [10] (./main.aux) ) 
+[7] [8]) [9] [10] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 10779 strings out of 479485
- 160062 string characters out of 5875915
- 468478 words of memory out of 5000000
- 27478 multiletter control sequences out of 15000+600000
- 586629 words of font info for 134 fonts, out of 8000000 for 9000
+ 10807 strings out of 479485
+ 160639 string characters out of 5875915
+ 469591 words of memory out of 5000000
+ 27502 multiletter control sequences out of 15000+600000
+ 587279 words of font info for 136 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2020/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
-pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 1203185 bytes).
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib
+10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.p
+fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><
+c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (35 pages, 1273806 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
+ 274 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
