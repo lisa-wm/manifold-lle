@@ -681,6 +681,53 @@ coordinates
 % ------------------------------------------------------------------------------
 
 \LARGE
+\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised} ~~ sslle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Choice of prior points}. Basically, three options
+
+\begin{itemize}
+  \arritem Pre-existing prior information
+  \arritem Random choice
+  \arritem Maximum exploration
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Types of prior information}. Exact vs inexact
+\begin{itemize}
+  \arritem Level of confidence encoded in confidence parameter
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{minipage}[c]{0.67\textwidth}
+  \textbf{Algorithmic impact}. Recall LLE eigenvalue problem
+  \begin{fleqn}
+    \begin{equation*}
+      \small
+      \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}), \quad
+      \text{s.t. } \frac{1}{N} \tilde{\Y}^T \tilde{\Y} = \I, \quad
+      \tilde{\Y}^T\bm{1} = \bm{0}.
+    \end{equation*}
+  \end{fleqn}
+  $\Rightarrow$ Partitioning of $\E$ and $\tilde{\Y}$ 
+\end{minipage}%
+\begin{minipage}[c]{0.33\textwidth}
+  \begin{figure}[H]
+    \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+      width = 0.85\textwidth]{figures/matrix_partition}
+  \end{figure}
+\end{minipage}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
 \begin{frame}{\textcolor{gray!90}{3.3 challenges} ~~ critical parameters}
 \normalsize
 \vspace{-0.5cm}
