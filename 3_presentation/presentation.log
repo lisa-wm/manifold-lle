@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 FEB 2021 09:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 FEB 2021 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1593,9 +1593,30 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 630--630
 
 [14
 
-] [15
+]
+<figures/s-curve-pp.pdf, id=167, 343.2825pt x 305.22029pt>
+File: figures/s-curve-pp.pdf Graphic file (type pdf)
+<use figures/s-curve-pp.pdf>
+Package pdftex.def Info: figures/s-curve-pp.pdf  used on input line 679.
+(pdftex.def)             Requested size: 40.97131pt x 49.50656pt.
+<figures/s-curve-undone-pp.pdf, id=169, 756.90776pt x 305.22029pt>
+File: figures/s-curve-undone-pp.pdf Graphic file (type pdf)
+<use figures/s-curve-undone-pp.pdf>
+Package pdftex.def Info: figures/s-curve-undone-pp.pdf  used on input line 679.
 
-] [16
+(pdftex.def)             Requested size: 143.4012pt x 60.43483pt.
+ [15
+
+ <./figures/s-curve-pp.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp.pdf): PDF inclusion: in
+valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+> <./figures/s-curve-undone-pp.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone-pp.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>] [16
 
 ] [17
 
@@ -1613,7 +1634,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 630--630
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 904.
+(Font)              scaled to size 8.27998pt on input line 936.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1643,10 +1664,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23909 strings out of 479485
- 435854 string characters out of 5875915
+ 23923 strings out of 479485
+ 436273 string characters out of 5875915
  784599 words of memory out of 5000000
- 40220 multiletter control sequences out of 15000+600000
+ 40232 multiletter control sequences out of 15000+600000
  642851 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1663,10 +1684,10 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf
 1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/
 uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:
 /texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (24 pages, 912770 bytes).
+Output written on presentation.pdf (24 pages, 1395474 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
+ 293 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
  54 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 

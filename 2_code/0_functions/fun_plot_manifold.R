@@ -18,15 +18,17 @@ plot_manifold <- function(data,
   checkmate::assert_int(dim, lower = 1L, upper = 3L)
   checkmate::assert_count(n_colors)
   
+  data <- data.table::copy(data)
+  
   if (ncol(data) != dim + 2L)
     {stop(sprintf("data must contain %d columns plus two for coloring", dim))}
   
   colnames <- c(c("x", "y", "z")[1:dim], "t", "s")
-  setnames(data, colnames)
+  data.table::setnames(data, colnames)
 
   # Create rainbow color palette, granularity depending on n_colors
   
-  my_palette <- rainbow(n_colors)
+  my_palette <- grDevices::rainbow(n_colors)
   
   if (dim <= 2L) {
     

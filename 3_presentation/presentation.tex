@@ -642,7 +642,39 @@ isometry
 
 \vspace{0.3cm}
 
+\textbf{Problem}. Embedding found by unsupervised methods not always meaningful
+
+\vspace{0.3cm}
+
 \textbf{Idea}. Improving LLE by use of prior knowledge
+
+\vspace{0.3cm}
+
+\textbf{Semi-supervision}. Anchoring embedding at some prior points with known 
+coordinates
+
+\begin{itemize}
+  \arritem More active than semi-supervised learning?
+  \arritem Setting. Information available or to be obtained by querying the 
+  oracle
+  \arritem Goal. Maximum information at little expense $\Rightarrow$ careful 
+  choice of prior points
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{figure}[H]
+ \begin{subfigure}[c]{0.2\textwidth}
+  \centering
+   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
+      width = 0.5\textwidth]{figures/s-curve-pp}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[c]{0.7\textwidth}
+   \includegraphics[trim = 80 20 0 0, clip, % left bottom right top
+      width = 0.5\textwidth]{figures/s-curve-undone-pp}
+ \end{subfigure}
+\end{figure}
 
 \end{frame}
 

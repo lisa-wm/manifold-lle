@@ -25,6 +25,48 @@ orca(
   width = 1000
 )
 
+# S-CURVE WITH PRIOR POINTS ----------------------------------------------------
+
+set.seed(1L)
+prior_points <- s_curve_data[sample(seq_len(nrow(s_curve_data)), 10L)]
+
+s_curve_pp <- s_curve %>% 
+  add_trace(
+    x = ~ prior_points$x_1,
+    y = ~ prior_points$x_2,
+    z = ~ prior_points$x_3,
+    color = ~ 1L,
+    type = "scatter3d",
+    mode = "markers",
+    marker = list(color = "black", size = 15L)
+  ) %>% 
+  hide_guides()
+
+s_curve_undone_pp <- s_curve_undone %>% 
+  add_trace(
+    x = ~ prior_points$x_1,
+    y = ~ prior_points$x_2,
+    color = ~ 1L,
+    type = "scatter",
+    mode = "markers",
+    marker = list(color = "black", size = 20L)
+  ) %>% 
+  hide_guides()
+
+orca(
+  s_curve_pp, 
+  "3_presentation/figures/s-curve-pp.pdf",
+  height = 400,
+  width = 450
+)
+
+orca(
+  s_curve_undone_pp, 
+  "3_presentation/figures/s-curve-undone-pp.pdf",
+  height = 400,
+  width = 1000
+)
+
 # EXAMPLE NEIGHBORHOOD GRAPH ---------------------------------------------------
 
 neighborhood_data <- igraph::make_graph(
