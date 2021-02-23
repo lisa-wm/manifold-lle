@@ -668,12 +668,12 @@ coordinates
  \begin{subfigure}[c]{0.2\textwidth}
   \centering
    \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
-      width = 0.5\textwidth]{figures/s-curve-pp}
+      width = 0.5\textwidth]{figures/s-curve-pp-maxmin}
  \end{subfigure}
  \hfill
  \begin{subfigure}[c]{0.7\textwidth}
    \includegraphics[trim = 80 20 0 0, clip, % left bottom right top
-      width = 0.5\textwidth]{figures/s-curve-undone-pp}
+      width = 0.5\textwidth]{figures/s-curve-undone-pp-maxmin}
  \end{subfigure}
 \end{figure}
 
@@ -688,36 +688,67 @@ coordinates
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Choice of prior points}. Basically, three options
+% \textbf{Choice of prior points}. Basically, three options
+% 
+% \begin{itemize}
+%   \arritem Pre-existing prior information
+%   \arritem Random choice
+%   \arritem Maximum exploration
+% \end{itemize}
+% 
+% \vspace{0.3cm}
 
+% \textbf{Types of prior information}. Exact vs inexact
+% 
+% \begin{itemize}
+%   \arritem Level of confidence encoded in parameter
+% \end{itemize}
+% 
+% \vspace{0.3cm}
+% 
+% \textbf{Algorithmic impact}. Recall LLE eigenvalue problem
+% 
+% \begin{fleqn}
+%   \begin{equation*}
+%     \small
+%     \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
+%     \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
+%     \Y^T\bm{1} = \bm{0}.
+%   \end{equation*}
+% \end{fleqn}
+% 
+% $\Rightarrow$ Partitioning of $\E$ and $\Y$ 
+
+% \begin{figure}[H]
+%   \raggedright
+%   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+%   width = 0.4\textwidth]{figures/matrix_partition}
+% \end{figure}
+
+\textbf{Types of prior information}. Exact vs inexact
 \begin{itemize}
-  \arritem Pre-existing prior information
-  \arritem Random choice
-  \arritem Maximum exploration
+  \arritem Level of confidence encoded in parameter $\beta$
 \end{itemize}
+% \vspace{0.1cm}
 
-\vspace{0.3cm}
-
-\begin{minipage}[c]{0.6\textwidth}
-  \textbf{Types of prior information}. Exact vs inexact
-  \begin{itemize}
-    \arritem Level of confidence encoded in parameter
-  \end{itemize}
-  \vspace{0.3cm}
-  \textbf{Algorithmic impact}. Recall LLE eigenvalue problem
-  \begin{fleqn}
-    \begin{equation*}
-      \small
-      \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
-      \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
-      \Y^T\bm{1} = \bm{0}.
-    \end{equation*}
-  \end{fleqn}
-  $\Rightarrow$ Partitioning of $\E$ and $\Y$ 
+\begin{minipage}[t]{0.6\textwidth}
+\phantom{foo} \\
+\textbf{Algorithmic impact}. Recall LLE eigenvalue problem
+\begin{fleqn}
+  \begin{equation*}
+    \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
+    \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
+    \Y^T\bm{1} = \bm{0}.
+  \end{equation*}
+\end{fleqn}
+$\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \end{minipage}%
-\begin{minipage}[c]{0.4\textwidth}
+\begin{minipage}[t]{0.05\textwidth}
+  \phantom{foo}
+\end{minipage}%
+\begin{minipage}[t]{0.35\textwidth}
   \begin{figure}[H]
-    \includegraphics[trim = 0 0 0 -20, clip, % left bottom right top
+    \includegraphics[trim = 0 0 0 -15, clip, % left bottom right top
       width = 1.1\textwidth]{figures/matrix_partition}
   \end{figure}
 \end{minipage}
@@ -733,15 +764,15 @@ coordinates
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Modified optimization problem}. LES 
+\textbf{Modified optimization problem}. Exact information 
 
 \begin{fleqn}
   \begin{equation}
-    \min_{\Y_2} 
+    \min_{\Y_2}
     \begin{bmatrix} \textcolor{gray!90}{\Y_1} & \Y_2 \end{bmatrix}
     \begin{bmatrix} \textcolor{gray!90}{M_{11}} & M_{12} \\ M_{21} & M_{22} 
     \end{bmatrix}
-    \begin{bmatrix} \textcolor{gray!90}{\Y_1^T} \\ \Y_2^T \end{bmatrix}.
+    \begin{bmatrix} \textcolor{gray!90}{\Y_1^T} \\ \Y_2^T \end{bmatrix}
   \end{equation}
 \end{fleqn}
 
@@ -750,6 +781,76 @@ coordinates
     \Leftrightarrow \Y_2^T = M_{22}^{-1} M_{12} \textcolor{gray!90}{\Y_1^T}
   \end{equation}
 \end{fleqn}
+
+\textbf{Modified optimization problem}. Inexact information 
+
+\begin{fleqn}
+  \begin{equation}
+    \min_{\Y}
+    \begin{bmatrix} \Y_1 & \Y_2 \end{bmatrix}
+    \begin{bmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
+    \begin{bmatrix} \Y_1^T \\ \Y_2^T \end{bmatrix} +
+    \beta \frobnorm{\Y_1^T - \textcolor{gray!90}{\hat{\Y}_1^T}}
+  \end{equation}
+\end{fleqn}
+
+\begin{fleqn}
+  \begin{equation}
+    \Leftrightarrow \begin{bmatrix} \textcolor{gray!90}{M_{11}} +
+    \beta \I & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
+    \begin{bmatrix} \Y_1^T \\ \Y_2^T \end{bmatrix} =
+    \begin{bmatrix} \textcolor{gray!90}{\hat{\Y}_1^T} \\ \bm{0} \end{bmatrix}
+  \end{equation}
+\end{fleqn}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised} ~~ sslle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Choice of prior points.} Basically, three options
+
+\begin{itemize}
+  \arritem Pre-existing prior information $\Rightarrow$ worst case: poor 
+  coverage
+  \arritem Random sampling
+  \arritem Maximum coverage
+\end{itemize}
+
+\begin{figure}[H]
+ \begin{subfigure}[c]{0.3\textwidth}
+  \centering
+   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
+      width = \textwidth]{figures/s-curve-undone-pp-poor}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[c]{0.3\textwidth}
+  \centering
+   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
+      width = \textwidth]{figures/s-curve-undone-pp-random}
+ \end{subfigure}
+ \hfill
+ \begin{subfigure}[c]{0.3\textwidth}
+   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
+      width = \textwidth]{figures/s-curve-undone-pp-maxmin}
+ \end{subfigure}
+\end{figure}
+
+\vspace{0.3cm}
+
+\textbf{Maximum coverage.} Points scattered across manifold surface
+
+\begin{itemize}
+  \arritem Goodness of solution depending on condition number $\kappa(M_{22})$
+  \arritem $\kappa(M_{22})$ minimal at maximization of minimum pairwise 
+  distances between prior points
+\end{itemize}
 
 \end{frame}
 

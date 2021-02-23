@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 FEB 2021 13:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 FEB 2021 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1594,39 +1594,42 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 631--631
 [14
 
 ]
-<figures/s-curve-pp.pdf, id=166, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp.pdf Graphic file (type pdf)
-<use figures/s-curve-pp.pdf>
-Package pdftex.def Info: figures/s-curve-pp.pdf  used on input line 680.
-(pdftex.def)             Requested size: 40.97131pt x 49.50656pt.
-<figures/s-curve-undone-pp.pdf, id=168, 756.90776pt x 305.22029pt>
-File: figures/s-curve-undone-pp.pdf Graphic file (type pdf)
-<use figures/s-curve-undone-pp.pdf>
-Package pdftex.def Info: figures/s-curve-undone-pp.pdf  used on input line 680.
+<figures/s-curve-pp-maxmin.pdf, id=166, 343.2825pt x 305.22029pt>
+File: figures/s-curve-pp-maxmin.pdf Graphic file (type pdf)
+<use figures/s-curve-pp-maxmin.pdf>
+Package pdftex.def Info: figures/s-curve-pp-maxmin.pdf  used on input line 680.
 
+(pdftex.def)             Requested size: 40.97131pt x 49.50656pt.
+<figures/s-curve-undone-pp-maxmin.pdf, id=168, 756.90776pt x 305.22029pt>
+File: figures/s-curve-undone-pp-maxmin.pdf Graphic file (type pdf)
+<use figures/s-curve-undone-pp-maxmin.pdf>
+Package pdftex.def Info: figures/s-curve-undone-pp-maxmin.pdf  used on input li
+ne 680.
 (pdftex.def)             Requested size: 143.4012pt x 60.43483pt.
  [15
 
- <./figures/s-curve-pp.pdf
+ <./figures/s-curve-pp-maxmin.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp.pdf): PDF inclusion: in
-valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
-> <./figures/s-curve-undone-pp.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone-pp.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-maxmin.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
->]
+> <./figures/s-curve-undone-pp-maxmin.pdf
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 725.
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone-pp-maxmin.pdf): PDF
+ inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
+y>); ignored.
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 756--756
+
+ []
 
 <figures/matrix_partition.png, id=184, 772.8875pt x 497.86pt>
 File: figures/matrix_partition.png Graphic file (type png)
 <use figures/matrix_partition.png>
-Package pdftex.def Info: figures/matrix_partition.png  used on input line 725.
-(pdftex.def)             Requested size: 180.27483pt x 120.8059pt.
+Package pdftex.def Info: figures/matrix_partition.png  used on input line 756.
+(pdftex.def)             Requested size: 157.74562pt x 104.68675pt.
 
-Overfull \hbox (16.38953pt too wide) in paragraph at lines 725--725
+Overfull \hbox (14.3413pt too wide) in paragraph at lines 756--756
  [] 
  []
 
@@ -1634,9 +1637,37 @@ Overfull \hbox (16.38953pt too wide) in paragraph at lines 725--725
 
  <./figures/matrix_partition.png>] [17
 
-] [18
+]
+<figures/s-curve-undone-pp-poor.pdf, id=199, 756.90776pt x 305.22029pt>
+File: figures/s-curve-undone-pp-poor.pdf Graphic file (type pdf)
+<use figures/s-curve-undone-pp-poor.pdf>
+Package pdftex.def Info: figures/s-curve-undone-pp-poor.pdf  used on input line
+ 855.
+(pdftex.def)             Requested size: 122.9171pt x 48.8561pt.
+<figures/s-curve-undone-pp-random.pdf, id=201, 756.90776pt x 305.22029pt>
+File: figures/s-curve-undone-pp-random.pdf Graphic file (type pdf)
+<use figures/s-curve-undone-pp-random.pdf>
+Package pdftex.def Info: figures/s-curve-undone-pp-random.pdf  used on input li
+ne 855.
+(pdftex.def)             Requested size: 122.9171pt x 48.8561pt.
+File: figures/s-curve-undone-pp-maxmin.pdf Graphic file (type pdf)
+<use figures/s-curve-undone-pp-maxmin.pdf>
+Package pdftex.def Info: figures/s-curve-undone-pp-maxmin.pdf  used on input li
+ne 855.
+(pdftex.def)             Requested size: 122.9171pt x 48.8561pt.
+ [18
 
-] [19
+ <./figures/s-curve-undone-pp-poor.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone-pp-poor.pdf): PDF i
+nclusion: invalid other resource which is no dict (key 'ProcSets', type <array>
+); ignored.
+> <./figures/s-curve-undone-pp-random.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone-pp-random.pdf): PDF
+ inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
+y>); ignored.
+>] [19
 
 ] [20
 
@@ -1646,14 +1677,15 @@ Overfull \hbox (16.38953pt too wide) in paragraph at lines 725--725
 
 ] [23
 
-]
-[24
+] [24
 
 ] [25
 
+] [26
+
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1011.
+(Font)              scaled to size 8.27998pt on input line 1112.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1661,7 +1693,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.27998pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.27998pt on input line 13.
-) [26
+) [27
 
 ]
 \tf@nav=\write7
@@ -1673,7 +1705,8 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@snm=\write9
 \openout9 = `presentation.snm'.
 
- (./presentation.aux)
+
+(./presentation.aux)
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 06E27B416B3B1946CD705C501CA5B3BD;45.
 
@@ -1682,13 +1715,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23939 strings out of 479485
- 436574 string characters out of 5875915
- 783599 words of memory out of 5000000
- 40243 multiletter control sequences out of 15000+600000
+ 23957 strings out of 479485
+ 437259 string characters out of 5875915
+ 798599 words of memory out of 5000000
+ 40257 multiletter control sequences out of 15000+600000
  642851 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,13n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,16n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
@@ -1701,10 +1734,10 @@ ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
 fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw
 /helvetic/uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (26 pages, 1405989 bytes).
+Output written on presentation.pdf (27 pages, 1988200 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
