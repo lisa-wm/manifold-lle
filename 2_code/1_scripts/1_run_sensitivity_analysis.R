@@ -103,7 +103,7 @@ names(sensitivity_landmarks_dt) <- names(data_labeled)
 
 save_rdata_files(sensitivity_landmarks_dt, "2_code")
 
-# SENSITIVITY ANALYSIS II: NOISE LEVEL & PRIOR POINTS --------------------------
+# SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE PARAM ----------------------
 
 # search_space_noise <- list(
 #   noise_level = c(lower = 0L, upper = 1L),
@@ -191,7 +191,7 @@ names(sensitivity_noise_dt) <- names(data_labeled)
 
 save_rdata_files(sensitivity_noise_dt, "2_code")
 
-# SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE ----------------------------
+# SENSITIVITY ANALYSIS II: NOISE LEVEL & NUMBER OF PRIOR POINTS ----------------
 
 # search_space_noise <- list(
 #   noise_level = c(lower = 0L, upper = 1L),

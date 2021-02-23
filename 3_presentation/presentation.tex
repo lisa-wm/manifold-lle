@@ -814,7 +814,7 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Choice of prior points.} Basically, three options
+\textbf{Choice of landmark points.} Basically, three options
 
 \begin{itemize}
   \arritem Pre-existing prior information $\Rightarrow$ worst case: poor 
@@ -965,16 +965,60 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 % ------------------------------------------------------------------------------
 
 \LARGE
+\begin{frame}{\textcolor{gray!90}{4.1 setup} ~~ data}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Swiss roll}. 
+
+\vspace{0.3cm}
+
+\textbf{Incomplete tire}. 
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
 \begin{frame}{\textcolor{gray!90}{4.1 setup} ~~ scenarios}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
 
-% \footnotesize
+\textbf{Sensitivity analysis I}. Landmark coverage $\times$ number of landmark 
+points
 
-\medskip
+\begin{itemize}
+  \arritem Landmark coverage $\in \{ \text{poor}, \text{ random}, 
+  \text{ maximum}\}$
+  \arritem Number of landmark points $\in \{2, 4, 6, 8, 10, 12\}$
+  \arritem 18 scenarios
+\end{itemize}
 
-woteva
+\vspace{0.3cm}
+
+\conclbox{Best case: maximum coverage, 12 landmarks}
+
+\vspace{0.3cm}
+
+\textbf{Sensitivity analysis II}. Noise level $\times$ number of landmark 
+points
+
+\begin{itemize}
+  \arritem Simulation of inexact prior information through perturbation with 
+  Gaussian noise
+  \arritem Noise level $\in \{0.1, 0.5, 1, 3, 5\}$ 
+  $\Rightarrow$ standard deviation
+  \arritem Number of landmark points $\in \{2, 4, 6, 8, 10, 12\}$
+  \arritem 30 scenarios
+\end{itemize}
+
+\vspace{0.3cm}
+
+\conclbox{Best case: noise level 0.1, 12 landmarks}
 
 \end{frame}
 
