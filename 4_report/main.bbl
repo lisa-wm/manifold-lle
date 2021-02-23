@@ -188,6 +188,11 @@ Schölkopf, B., Smola, A. \harvardand\ Müller, K.-R.  \harvardyearleft
 \newblock Nonlinear component analysis as a kernel eigenvalue problem, {\em
   Neural Computation} {\bf 10}:~1299--1319.
 
+\harvarditem{Settles}{2009}{settles2009}
+Settles, B.  \harvardyearleft 2009\harvardyearright .
+\newblock Active learning literature survey, {\em Technical Report 1648},
+  University of Wisconsin -- Madison.
+
 \harvarditem{Sha \harvardand\ Saul}{2005}{shasaul2005}
 Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft 2005\harvardyearright .
 \newblock Analysis and extension of spectral methods for nonlinear

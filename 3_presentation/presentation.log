@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  22 FEB 2021 13:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 FEB 2021 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1587,7 +1587,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 587--587
 [13
 
 ]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 628--628
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 630--630
 [][]  
  []
 
@@ -1613,7 +1613,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 628--628
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 902.
+(Font)              scaled to size 8.27998pt on input line 904.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1663,7 +1663,7 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf
 1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/
 uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:
 /texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (24 pages, 912725 bytes).
+Output written on presentation.pdf (24 pages, 912770 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  22 FEB 2021 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  23 FEB 2021 10:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -899,68 +899,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--265
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 329--338
+Underfull \hbox (badness 10000) in paragraph at lines 333--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--354
+Underfull \hbox (badness 10000) in paragraph at lines 343--358
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 435--448
+Underfull \hbox (badness 10000) in paragraph at lines 444--457
 
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 509--512
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 513--533
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 545--548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--548
+Underfull \hbox (badness 10000) in paragraph at lines 549--569
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--551
+Underfull \hbox (badness 10000) in paragraph at lines 579--581
 
  []
 
 
-Overfull \hbox (62.36002pt too wide) in paragraph at lines 560--565
+Underfull \hbox (badness 10000) in paragraph at lines 582--584
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
+
+ []
+
+[21]
+Overfull \hbox (62.36002pt too wide) in paragraph at lines 596--601
 \T1/aer/m/n/12 https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering
 /RandomForestHorvath.pdf,
  []
 
-) (./chapters/experiment.Rnw) (./chapters/discussion.Rnw [21])
+) (./chapters/experiment.Rnw) (./chapters/discussion.Rnw)
 (./chapters/conclusion.Rnw) [22] [5] [6] (./main.bbl
 Underfull \hbox (badness 1237) in paragraph at lines 26--30
 []\T1/aer/m/n/12 Belkin, M. and Niyogi, P. (2008).  To-wards a the-o-ret-i-cal 
 foun-da-tion for 
  []
 
-[7] [8]) [9] [10] (./main.aux)
+[7] [8] [9]) [10] [11] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10845 strings out of 479485
- 161396 string characters out of 5875915
- 469846 words of memory out of 5000000
- 27530 multiletter control sequences out of 15000+600000
+ 10848 strings out of 479485
+ 161453 string characters out of 5875915
+ 469873 words of memory out of 5000000
+ 27533 multiletter control sequences out of 15000+600000
  588433 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -986,10 +986,10 @@ dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/rsfs/rsfs10.pfb>
-Output written on main.pdf (36 pages, 1284175 bytes).
+Output written on main.pdf (37 pages, 1287224 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
+ 287 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

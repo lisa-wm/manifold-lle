@@ -322,7 +322,11 @@ same conclusion.
 
 Lastly, HLLE \citep{donohogrimes2003} pursues an approach toward LGML that 
 straddles the two former techniques: it borrows heavily from the idea behind 
-LEM but is akin to LLE in an algorithmic sense \citep{dissross2008}.
+LEM but is akin to LLE in an algorithmic sense\footnote{
+HLLE is also closely related to another technique beyond the scope of this 
+report, namely \textit{local tangent space alignment (LTSA)} (see, for example, 
+\citet{tingjordan2018}).
+} \citep{dissross2008}.
 Proposed under the title \textit{Hessian eigenmaps}, it is therefore also 
 referred to as Hessian LLE \citep{donohogrimes2003}.
 
@@ -407,10 +411,15 @@ given by \citep{donohogrimes2003}:
 In analogy to LEM, the functional defined on $\mani$ is approximated in an 
 empirical manner; yet, the computations performed in HLLE are somewhat more 
 involved.
+LEM incorporates neighborhood information as pairwise distances entering weight 
+computation.
+LLE and HLLE take a more explicit look at locally linear patches on the manifold 
+surface and attempt to map these to the low-dimensional space 
+\citep{cayton2005}.
 As before, the first step consists of finding the $k$ nearest neighbors 
-to $\x_i \in \X$ for $i \in \setN$.
-Let $\bm{N}_i \in \R^{D \times k}$ denote the matrix of feature vectors of
-$\x_i$'s neighbors that have been centered with respect to the mean over all 
+to $\x_i \in \X$ for $i \in \setN$, followed by 
+Let $\bm{N}_i \in \R^{D \times k}$ again denote the matrix of feature vectors of
+$\x_i$'s neighbors, this time centered with respect to the mean over all 
 members of the neighborhood.
 From these neighborhood matrices the local tangent coordinates are then 
 estimated by means of $N$ singular value decompositions 
@@ -449,9 +458,7 @@ by simply scaling $\bm{Q}$ with $\sqrt{N}$.
 Tracing the steps described above, it becomes clear that the theoretical 
 guarantees of HLLE come at the expense of rather complex computations that have 
 been sketched only roughly here\footnote{
-For a more in-depth analysis that also encompasses examination of limit behavior 
-and the connection between HLLE and \textit{local tangent space alignment 
-(LTSA)} see, for example, \citet{tingjordan2018}.
+For a more in-depth analysis see, for example, \citet{tingjordan2018}.
 }.
 At the same time, its implementation employs numerous approximations 
 calling the merit of theoretical convergence into question.
@@ -470,13 +477,42 @@ that has acted as a limiting factor on the practical applications of HLLE
 \subsubsection{Employment of Prior Information}
 \label{prior-info}
 
-% Read belkinniyogi2004 paper on this
+All of the above methods operate in a fully unsupervised manner, relying solely 
+on the $D$-dimensional coordinates of the observation space.
+The endeavor of dimensionality reduction will thus sometimes fail to produce 
+a meaningful embedding.
+\citet{yangetal2006} therefore propose to anchor the low-dimensional 
+representation at a number of prior points whose coordinates in $\Rd$ are 
+already known.
+Obviously, this semi-supervision commands the availability of prior information.
+It is, however, easy to conceive practical applications where prior 
+knowledge is indeed at hand or may be obtained at little cost.
+For instance, consider the image classification task stated as an 
+introductory example.
+While the learning algorithm must regard all of the numerous dimensions 
+spanned by (high-resolution) image data on pixel level, a human annotator may 
+quickly spot the typically much fewer latent sources causing variability, such 
+as rotation or zooming.
+Other applications like, say, textual analysis might not reveal this information 
+at first sight, but can benefit from pre-labeled data made available by the 
+advance of open-source research.
 
-\begin{itemize}
-  \item Why use labels in the first place?
-  \item How will that help?
-  \item Exact vs inexact knowledge
-\end{itemize}
+What \citet{yangetal2006} dub semi-supervised LLE is actually somewhat different 
+from the idea typically employed in semi-supervised learning.
+Rather than supporting a supervised learning task by information extracted from 
+the pool of unlabeled data, an inherently unsupervised problem is alleviated by 
+specifying part of the solution upfront.
+Arguably, SSLLE might therefore be viewed in the context of active 
+learning, where the model is allowed to query labels in a sequential 
+manner that seeks to maximize utility at minimal expense \footnote{
+For an extensive overview on active learning see, for example, 
+\citet{settles2009}.
+}.
+The practical experiments in chapter \ref{experiment} will thus assume a 
+setting where prior information can be inquired from the pool of initially 
+unlabeled observations.
+A straightforward approach is then to select the prior points in a way that is 
+most informative to the SSLLE learning algorithm.
 
 % ------------------------------------------------------------------------------
 

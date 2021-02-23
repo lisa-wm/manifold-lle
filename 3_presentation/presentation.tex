@@ -605,7 +605,7 @@ isometry
 \begin{itemize}
   \arritem Notion of curviness in mapping function
   \arritem Second-order penalty on Hessian
-  \arritem Strong convergence guarantees for limit case
+  \arritem Strong convergence guarantees but rather complex computations
 \end{itemize}
 
 \vspace{0.3cm}
@@ -615,9 +615,11 @@ isometry
 \begin{itemize}
   \arritem Continuous functional. 
   $\mathscr{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv$
+  \arritem Hessian estimators $\Hes_{\ell}$ derived from locally linear 
+  neighborhood patches
   \arritem Empirical approximator.
   $\mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
-  (\Hes_{\ell})_{m,j}$ with local Hessian estimators $\Hes_{\ell}$
+  (\Hes_{\ell})_{m,j}$
   \arritem Finding null space of $\mathcal{H}$
 \end{itemize}
 
