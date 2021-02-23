@@ -570,15 +570,16 @@ weights
   \end{equation}
 \end{fleqn}
 
-\textbf{Eigenvalue problem}. Define $\E = (\I - \W)^T(\I - \W)$ and set 
-$\tilde{\Y} = \Y^T$, such that
+\textbf{Eigenvalue problem}. Define $\E = (\I - \W)^T(\I - \W)$ 
+% and set $\tilde{\Y} = \Y^T$
+, such that
 
 \begin{fleqn}
   \begin{equation}
     \small
-    \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}), \quad
-    \text{s.t. } \frac{1}{N} \tilde{\Y}^T \tilde{\Y} = \I, \quad
-    \tilde{\Y}^T\bm{1} = \bm{0}.
+    \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
+    \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
+    \Y^T\bm{1} = \bm{0}.
   \end{equation}
 \end{fleqn}
 
@@ -697,31 +698,58 @@ coordinates
 
 \vspace{0.3cm}
 
-\textbf{Types of prior information}. Exact vs inexact
-\begin{itemize}
-  \arritem Level of confidence encoded in confidence parameter
-\end{itemize}
-
-\vspace{0.3cm}
-
-\begin{minipage}[c]{0.67\textwidth}
+\begin{minipage}[c]{0.6\textwidth}
+  \textbf{Types of prior information}. Exact vs inexact
+  \begin{itemize}
+    \arritem Level of confidence encoded in parameter
+  \end{itemize}
+  \vspace{0.3cm}
   \textbf{Algorithmic impact}. Recall LLE eigenvalue problem
   \begin{fleqn}
     \begin{equation*}
       \small
-      \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}), \quad
-      \text{s.t. } \frac{1}{N} \tilde{\Y}^T \tilde{\Y} = \I, \quad
-      \tilde{\Y}^T\bm{1} = \bm{0}.
+      \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
+      \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
+      \Y^T\bm{1} = \bm{0}.
     \end{equation*}
   \end{fleqn}
-  $\Rightarrow$ Partitioning of $\E$ and $\tilde{\Y}$ 
+  $\Rightarrow$ Partitioning of $\E$ and $\Y$ 
 \end{minipage}%
-\begin{minipage}[c]{0.33\textwidth}
+\begin{minipage}[c]{0.4\textwidth}
   \begin{figure}[H]
-    \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-      width = 0.85\textwidth]{figures/matrix_partition}
+    \includegraphics[trim = 0 0 0 -20, clip, % left bottom right top
+      width = 1.1\textwidth]{figures/matrix_partition}
   \end{figure}
 \end{minipage}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised} ~~ sslle}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Modified optimization problem}. LES 
+
+\begin{fleqn}
+  \begin{equation}
+    \min_{\Y_2} 
+    \begin{bmatrix} \textcolor{gray!90}{\Y_1} & \Y_2 \end{bmatrix}
+    \begin{bmatrix} \textcolor{gray!90}{M_{11}} & M_{12} \\ M_{21} & M_{22} 
+    \end{bmatrix}
+    \begin{bmatrix} \textcolor{gray!90}{\Y_1^T} \\ \Y_2^T \end{bmatrix}.
+  \end{equation}
+\end{fleqn}
+
+\begin{fleqn}
+  \begin{equation}
+    \Leftrightarrow \Y_2^T = M_{22}^{-1} M_{12} \textcolor{gray!90}{\Y_1^T}
+  \end{equation}
+\end{fleqn}
 
 \end{frame}
 
