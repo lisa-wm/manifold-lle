@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  24 FEB 2021 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  24 FEB 2021 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1674,12 +1674,12 @@ nored.
 <figures/swiss-roll.pdf, id=231, 343.2825pt x 305.22029pt>
 File: figures/swiss-roll.pdf Graphic file (type pdf)
 <use figures/swiss-roll.pdf>
-Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 1025.
+Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 1023.
 (pdftex.def)             Requested size: 64.53151pt x 78.41673pt.
 <figures/incomplete-tire.pdf, id=234, 455.78279pt x 305.22029pt>
 File: figures/incomplete-tire.pdf Graphic file (type pdf)
 <use figures/incomplete-tire.pdf>
-Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 1025.
+Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 1023.
 (pdftex.def)             Requested size: 100.38258pt x 70.31561pt.
  [21
 
@@ -1693,12 +1693,12 @@ pdfTeX warning: pdflatex.exe (file ./figures/incomplete-tire.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
 >]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1070--1070
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1068--1068
 [][]  
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1070--1070
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1068--1068
 [][]  
  []
 
@@ -1716,7 +1716,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1070--1070
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1203.
+(Font)              scaled to size 8.27998pt on input line 1215.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1764,7 +1764,7 @@ ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
 fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw
 /helvetic/uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (28 pages, 1550231 bytes).
+Output written on presentation.pdf (28 pages, 1550670 bytes).
 PDF statistics:
  347 PDF objects out of 1000 (max. 8388607)
  239 compressed objects within 3 object streams
