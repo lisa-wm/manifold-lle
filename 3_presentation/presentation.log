@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  24 FEB 2021 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  24 FEB 2021 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1706,17 +1706,62 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1068--1068
 
 ] [23
 
-] [24
+]
+<figures/sensitivity_landmarks_auc.pdf, id=261, 1156.32pt x 433.62pt>
+File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
+<use figures/sensitivity_landmarks_auc.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
+ine 1116.
+(pdftex.def)             Requested size: 409.71951pt x 153.64174pt.
+ [24
 
-] [25
+ <./figures/sensitivity_landmarks_auc.pdf>]
+<figures/sensitivity_landmarks_qual_swiss.pdf, id=277, 756.90776pt x 343.2825pt
+>
+File: figures/sensitivity_landmarks_qual_swiss.pdf Graphic file (type pdf)
+<use figures/sensitivity_landmarks_qual_swiss.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss.pdf  used on 
+input line 1134.
+(pdftex.def)             Requested size: 409.71951pt x 196.22829pt.
 
-] [26
+Overfull \vbox (1.06485pt too high) detected at line 1134
+ []
 
-] [27
+[25
+
+ <./figures/sensitivity_landmarks_qual_swiss.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss.p
+df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
+pe <array>); ignored.
+>]
+<figures/sensitivity_landmarks_qual_tire.pdf, id=293, 756.90776pt x 343.2825pt>
+
+File: figures/sensitivity_landmarks_qual_tire.pdf Graphic file (type pdf)
+<use figures/sensitivity_landmarks_qual_tire.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_qual_tire.pdf  used on i
+nput line 1152.
+(pdftex.def)             Requested size: 409.71951pt x 196.22829pt.
+
+Overfull \vbox (1.06485pt too high) detected at line 1152
+ []
+
+[26
+
+ <./figures/sensitivity_landmarks_qual_tire.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_tire.pd
+f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
+e <array>); ignored.
+>] [27
+
+] [28
+
+] [29
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1215.
+(Font)              scaled to size 8.27998pt on input line 1253.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1724,7 +1769,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.27998pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.27998pt on input line 13.
-) [28
+) [30
 
 ]
 \tf@nav=\write7
@@ -1745,10 +1790,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23975 strings out of 479485
- 437601 string characters out of 5875915
+ 24004 strings out of 479485
+ 438632 string characters out of 5875915
  798599 words of memory out of 5000000
- 40271 multiletter control sequences out of 15000+600000
+ 40293 multiletter control sequences out of 15000+600000
  642851 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1764,10 +1809,10 @@ ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
 fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw
 /helvetic/uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (28 pages, 1550670 bytes).
+Output written on presentation.pdf (30 pages, 2637556 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 239 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 272 words of extra memory for PDF output out of 10000 (max. 10000000)
 

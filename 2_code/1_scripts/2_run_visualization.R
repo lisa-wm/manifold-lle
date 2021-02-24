@@ -17,7 +17,7 @@ sensitivity_landmarks_plots_quant <- lapply(
     
     auc_plot <-  sensitivity_landmarks_dt[[i]][
       , .(landmark_method, n_landmarks, auc_lnk_rnx)
-      ][, auc_scaled := scale_01(auc_lnk_rnx)] %>% 
+      ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>% 
       ggplot2::ggplot(aes(
         x = forcats::fct_relevel(
           landmark_method, 
@@ -26,7 +26,7 @@ sensitivity_landmarks_plots_quant <- lapply(
           "maximum_coverage"), 
         y = n_landmarks, 
         col = auc_scaled)) +
-      geom_point(size = 5L) +
+      geom_point(size = 10L) +
       scale_color_gradient(
         low = "red", 
         high = "green",
@@ -36,6 +36,8 @@ sensitivity_landmarks_plots_quant <- lapply(
         #   min(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx),
         #   max(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx))
       ) +
+      theme_bw() +
+      theme(text = element_text(size = 20)) +
       scale_x_discrete(labels = c("poor", "random", "maximum")) +
       scale_y_continuous(breaks = seq(2L, 12L, by = 2L)) +
       xlab("coverage") +
@@ -47,7 +49,7 @@ sensitivity_landmarks_plots_quant <- lapply(
     
     res_var_plot <- sensitivity_landmarks_dt[[i]][
       , .(landmark_method, n_landmarks, residual_variance)
-      ][, res_var_scaled := scale_01(residual_variance)] %>% 
+      ][, res_var_scaled := scale_zero_one(residual_variance)] %>% 
       ggplot2::ggplot(aes(
         x = forcats::fct_relevel(
           landmark_method, 
@@ -56,12 +58,14 @@ sensitivity_landmarks_plots_quant <- lapply(
           "maximum_coverage"), 
         y = n_landmarks, 
         col = res_var_scaled)) +
-      geom_point(size = 5L) +
+      geom_point(size = 10L) +
       scale_color_gradient(
         low = "green", 
         high = "red",
         name = "residual variance (scaled)",
         limits = c(0L, 1L)) +
+      theme_bw() +
+      theme(text = element_text(size = 20L)) +
       scale_x_discrete(labels = c("poor", "random", "maximum")) +
       scale_y_continuous(breaks = seq(2L, 12L, by = 2L)) +
       xlab("coverage") +
@@ -99,7 +103,7 @@ sensitivity_noise_plots_quant <- lapply(
         x = noise_level, 
         y = n_landmarks, 
         col = auc_scaled)) +
-      geom_point(size = 5L) +
+      geom_point(size = 10L) +
       scale_color_gradient(
         low = "red", 
         high = "green",
@@ -109,6 +113,8 @@ sensitivity_noise_plots_quant <- lapply(
         #   min(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx),
         #   max(do.call(rbind, sensitivity_landmarks_dt)$auc_lnk_rnx))
       ) +
+      theme_bw() +
+      theme(text = element_text(size = 20L)) +
       scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L, 5L)) +
       scale_y_continuous(breaks = seq(2L, 12L, by = 2L)) +
       xlab("noise level") +
