@@ -90,7 +90,7 @@ gridExtra::grid.arrange(
 
 # ------------------------------------------------------------------------------
 
-sensitivity_noise_plots_quant <- lapply(
+sensitivity_noise_pp_plots_quant <- lapply(
   
   seq_along(sensitivity_noise_pp_dt),
   
@@ -98,7 +98,7 @@ sensitivity_noise_plots_quant <- lapply(
     
     auc_plot <-  sensitivity_noise_pp_dt[[i]][
       , .(noise_level, n_landmarks, auc_lnk_rnx)
-    ][, auc_scaled := scale_01(auc_lnk_rnx)] %>% 
+    ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>% 
       ggplot2::ggplot(aes(
         x = noise_level, 
         y = n_landmarks, 
@@ -156,9 +156,9 @@ sensitivity_noise_plots_quant <- lapply(
     
   })
 
-names(sensitivity_noise_plots_quant) <- names(sensitivity_noise_pp_dt)
+names(sensitivity_noise_pp_plots_quant) <- names(sensitivity_noise_pp_dt)
 
-save_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
+save_rdata_files(sensitivity_noise_pp_plots_quant, folder = "2_code")
 
 gridExtra::grid.arrange(
   sensitivity_noise_plots_quant$swiss_roll$auc_plot,

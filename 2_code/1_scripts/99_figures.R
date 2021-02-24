@@ -498,7 +498,7 @@ orca(
 load_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
 load_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
 load_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
-load_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
+load_rdata_files(sensitivity_noise_pp_plots_qual, folder = "2_code")
 
 pdf(
   here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
@@ -516,12 +516,6 @@ ggplot2::ggsave(
   height = 6)
 dev.off()
 
-ggsave(
-  here("4_report/figures", "neighborhood-graph.pdf"), 
-  width = 8, 
-  height = 8)
-dev.off()
-
 orca(
   sensitivity_landmarks_plots_qual$swiss_roll, 
   "3_presentation/figures/sensitivity_landmarks_qual_swiss.pdf",
@@ -532,4 +526,32 @@ orca(
   sensitivity_landmarks_plots_qual$incomplete_tire, 
   "3_presentation/figures/sensitivity_landmarks_qual_tire.pdf",
   height = 450,
+  width = 1000)
+
+pdf(
+  here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
+  width = 16, 
+  height = 6)
+
+gridExtra::grid.arrange(
+  sensitivity_noise_pp_plots_quant$swiss_roll$auc_plot,
+  sensitivity_noise_pp_plots_quant$incomplete_tire$auc_plot, 
+  ncol = 2L)
+
+ggplot2::ggsave(
+  here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
+  width = 16, 
+  height = 6)
+dev.off()
+
+orca(
+  sensitivity_noise_pp_plots_qual$swiss_roll, 
+  "3_presentation/figures/sensitivity_noise_qual_swiss.pdf",
+  height = 500,
+  width = 1000)
+
+orca(
+  sensitivity_noise_pp_plots_qual$incomplete_tire, 
+  "3_presentation/figures/sensitivity_noise_qual_tire.pdf",
+  height = 500,
   width = 1000)
