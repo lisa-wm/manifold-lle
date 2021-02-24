@@ -668,12 +668,12 @@ coordinates
  \begin{subfigure}[c]{0.2\textwidth}
   \centering
    \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
-      width = 0.5\textwidth]{figures/s-curve-pp-maxmin}
+      width = 0.5\textwidth]{figures/s-curve-pp-random}
  \end{subfigure}
  \hfill
  \begin{subfigure}[c]{0.7\textwidth}
    \includegraphics[trim = 80 20 0 0, clip, % left bottom right top
-      width = 0.5\textwidth]{figures/s-curve-undone-pp-maxmin}
+      width = 0.5\textwidth]{figures/s-curve-pp-undone-random}
  \end{subfigure}
 \end{figure}
 
@@ -823,24 +823,37 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
   \arritem Maximum coverage
 \end{itemize}
 
-\begin{figure}[H]
- \begin{subfigure}[c]{0.3\textwidth}
-  \centering
-   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
-      width = \textwidth]{figures/s-curve-undone-pp-poor}
- \end{subfigure}
- \hfill
- \begin{subfigure}[c]{0.3\textwidth}
-  \centering
-   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
-      width = \textwidth]{figures/s-curve-undone-pp-random}
- \end{subfigure}
- \hfill
- \begin{subfigure}[c]{0.3\textwidth}
-   \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
-      width = \textwidth]{figures/s-curve-undone-pp-maxmin}
- \end{subfigure}
-\end{figure}
+% \begin{figure}[H]
+%  \begin{subfigure}[c]{0.2\textwidth}
+%   % \centering
+%    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+%       width = 0.8\textwidth]{figures/s-curve-pp-poor}
+%  \end{subfigure}
+%  \hfill
+%  \begin{subfigure}[c]{0.2\textwidth}
+%   % \centering
+%    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+%       width = 0.8\textwidth]{figures/s-curve-pp-random}
+%  \end{subfigure}
+%  \hfill
+%  \begin{subfigure}[c]{0.2\textwidth}
+%    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+%       width = 0.8\textwidth]{figures/s-curve-pp-maxmin}
+%  \end{subfigure}
+% \end{figure}
+
+\begin{minipage}[t]{0.2\textwidth}
+  \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      width = 0.7\textwidth]{figures/s-curve-pp-poor}
+\end{minipage}%
+\begin{minipage}[t]{0.2\textwidth}
+  \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      width = 0.7\textwidth]{figures/s-curve-pp-random}
+\end{minipage}%
+\begin{minipage}[t]{0.2\textwidth}
+    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+    width = 0.7\textwidth]{figures/s-curve-pp-maxmin}
+\end{minipage}
 
 \vspace{0.3cm}
 
@@ -988,24 +1001,27 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Sensitivity analysis I}. Landmark coverage $\times$ number of landmark 
-points
+\conclbox{Sensitivity analysis I. ~~ Landmark coverage $\times$ number of 
+landmark points} 
+
+\vspace{0.3cm}
 
 \begin{itemize}
   \arritem Landmark coverage $\in \{ \text{poor}, \text{ random}, 
   \text{ maximum}\}$
   \arritem Number of landmark points $\in \{2, 4, 6, 8, 10, 12\}$
-  \arritem 18 scenarios
 \end{itemize}
 
 \vspace{0.3cm}
 
-\conclbox{Best case: maximum coverage, 12 landmarks}
+$\Rightarrow$ Best case: maximum coverage, 12 landmarks
 
 \vspace{0.3cm}
 
-\textbf{Sensitivity analysis II}. Noise level $\times$ number of landmark 
-points
+\conclbox{Sensitivity analysis II. ~~ Noise level $\times$ number of landmark 
+points}
+
+\vspace{0.3cm}
 
 \begin{itemize}
   \arritem Simulation of inexact prior information through perturbation with 
@@ -1013,12 +1029,11 @@ points
   \arritem Noise level $\in \{0.1, 0.5, 1, 3, 5\}$ 
   $\Rightarrow$ standard deviation
   \arritem Number of landmark points $\in \{2, 4, 6, 8, 10, 12\}$
-  \arritem 30 scenarios
 \end{itemize}
 
 \vspace{0.3cm}
 
-\conclbox{Best case: noise level 0.1, 12 landmarks}
+$\Rightarrow$ Best case: noise level 0.1, 12 landmarks
 
 \end{frame}
 

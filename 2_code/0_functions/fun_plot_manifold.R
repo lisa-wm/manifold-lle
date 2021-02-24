@@ -57,7 +57,8 @@ plot_manifold <- function(data,
       add_trace(
         type = "scatter",
         mode = "markers",
-        colors = my_palette
+        colors = my_palette,
+        marker = list(size = 10L)
       ) %>% 
       hide_colorbar() %>%
       layout(xaxis = ax, yaxis = ax, title = title)
@@ -99,7 +100,8 @@ plot_manifold <- function(data,
       add_trace(
         type = "scatter3d",
         mode = "markers",
-        colors = my_palette
+        colors = my_palette,
+        marker = list(size = 5L)
       ) %>% 
       hide_colorbar() %>% 
       layout(scene = scene, title = title)

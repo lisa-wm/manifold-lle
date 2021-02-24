@@ -6,14 +6,24 @@
 
 # S-CURVE ----------------------------------------------------------------------
 
-s_curve_data <- make_s_curve(n_points = 10000L)
+s_curve_10k <- plot_manifold(make_s_curve(n_points = 1000L), dim = 3L)
 
+orca(
+  s_curve_10k, 
+  "4_report/figures/s-curve.pdf",
+  height = 400,
+  width = 450
+)
+
+# S-CURVE UNDONE ---------------------------------------------------------------
+
+s_curve_data <- make_s_curve(n_points = 1000L)
 s_curve <- plot_manifold(s_curve_data, dim = 3L)
 s_curve_undone <- plot_manifold(s_curve_data[, .(x_1, x_2, t, t)], dim = 2L)
 
 orca(
   s_curve, 
-  "4_report/figures/s-curve.pdf",
+  "3_presentation/figures/s-curve.pdf",
   height = 400,
   width = 450
 )
@@ -27,21 +37,46 @@ orca(
 
 # S-CURVE WITH PRIOR POINTS ----------------------------------------------------
 
+n_landmarks <- 12L
+
 prior_points_poor <- data.table::copy(s_curve_data)
-data.table::setorder(prior_points_poor, t)
-prior_points_poor <- prior_points_poor[seq_len(10L)]
+data.table::setorder(prior_points_poor, s)
+prior_points_poor <- prior_points_poor[seq_len(n_landmarks)]
 
 prior_points_random <- find_landmarks(
   s_curve_data,
-  n_landmarks = 10L,
-  n_neighbors = 15L,
+  n_landmarks = n_landmarks,
   method = "random")
 
 prior_points_maxmin <- find_landmarks(
   s_curve_data,
-  n_landmarks = 10L,
+  n_landmarks = n_landmarks,
   n_neighbors = 15L,
   method = "maxmin")
+
+s_curve_pp_poor <- s_curve %>% 
+  add_trace(
+    x = ~ prior_points_poor$x_1,
+    y = ~ prior_points_poor$x_2,
+    z = ~ prior_points_poor$x_3,
+    color = ~ 1L,
+    type = "scatter3d",
+    mode = "markers",
+    marker = list(color = "black", size = 10L)
+  ) %>% 
+  hide_guides()
+
+s_curve_pp_random <- s_curve %>% 
+  add_trace(
+    x = ~ s_curve_data[prior_points_random]$x_1,
+    y = ~ s_curve_data[prior_points_random]$x_2,
+    z = ~ s_curve_data[prior_points_random]$x_3,
+    color = ~ 1L,
+    type = "scatter3d",
+    mode = "markers",
+    marker = list(color = "black", size = 10L)
+  ) %>% 
+  hide_guides()
 
 s_curve_pp_maxmin <- s_curve %>% 
   add_trace(
@@ -51,33 +86,11 @@ s_curve_pp_maxmin <- s_curve %>%
     color = ~ 1L,
     type = "scatter3d",
     mode = "markers",
-    marker = list(color = "black", size = 15L)
+    marker = list(color = "black", size = 10L)
   ) %>% 
   hide_guides()
 
-s_curve_undone_pp_maxmin <- s_curve_undone %>% 
-  add_trace(
-    x = ~ s_curve_data[prior_points_maxmin]$x_1,
-    y = ~ s_curve_data[prior_points_maxmin]$x_2,
-    color = ~ 1L,
-    type = "scatter",
-    mode = "markers",
-    marker = list(color = "black", size = 20L)
-  ) %>% 
-  hide_guides()
-
-s_curve_undone_pp_poor <- s_curve_undone %>% 
-  add_trace(
-    x = ~ prior_points_poor$x_1,
-    y = ~ prior_points_poor$x_2,
-    color = ~ 1L,
-    type = "scatter",
-    mode = "markers",
-    marker = list(color = "black", size = 20L)
-  ) %>% 
-  hide_guides()
-
-s_curve_undone_pp_random <- s_curve_undone %>% 
+s_curve_undone_pp_random <- s_curve_undone %>%
   add_trace(
     x = ~ s_curve_data[prior_points_random]$x_1,
     y = ~ s_curve_data[prior_points_random]$x_2,
@@ -85,28 +98,44 @@ s_curve_undone_pp_random <- s_curve_undone %>%
     type = "scatter",
     mode = "markers",
     marker = list(color = "black", size = 20L)
-  ) %>% 
+  ) %>%
   hide_guides()
 
+# s_curve_undone_pp_maxmin <- s_curve_undone %>% 
+#   add_trace(
+#     x = ~ s_curve_data[prior_points_maxmin]$x_1,
+#     y = ~ s_curve_data[prior_points_maxmin]$x_2,
+#     color = ~ 1L,
+#     type = "scatter",
+#     mode = "markers",
+#     marker = list(color = "black", size = 20L)
+#   ) %>% 
+#   hide_guides()
+# 
+# s_curve_undone_pp_poor <- s_curve_undone %>% 
+#   add_trace(
+#     x = ~ prior_points_poor$x_1,
+#     y = ~ prior_points_poor$x_2,
+#     color = ~ 1L,
+#     type = "scatter",
+#     mode = "markers",
+#     marker = list(color = "black", size = 20L)
+#   ) %>% 
+#   hide_guides()
+
+
 orca(
-  s_curve_undone_pp_poor, 
-  "3_presentation/figures/s-curve-undone-pp-poor.pdf",
+  s_curve_pp_poor, 
+  "3_presentation/figures/s-curve-pp-poor.pdf",
   height = 400,
-  width = 1000
+  width = 450
 )
 
 orca(
-  s_curve_undone_pp_random, 
-  "3_presentation/figures/s-curve-undone-pp-random.pdf",
+  s_curve_pp_random, 
+  "3_presentation/figures/s-curve-pp-random.pdf",
   height = 400,
-  width = 1000
-)
-
-orca(
-  s_curve_undone_pp_maxmin, 
-  "3_presentation/figures/s-curve-undone-pp-maxmin.pdf",
-  height = 400,
-  width = 1000
+  width = 450
 )
 
 orca(
@@ -114,6 +143,13 @@ orca(
   "3_presentation/figures/s-curve-pp-maxmin.pdf",
   height = 400,
   width = 450
+)
+
+orca(
+  s_curve_undone_pp_random, 
+  "3_presentation/figures/s-curve-pp-undone-random.pdf",
+  height = 400,
+  width = 1000
 )
 
 # EXAMPLE NEIGHBORHOOD GRAPH ---------------------------------------------------
