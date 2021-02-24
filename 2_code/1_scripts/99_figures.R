@@ -152,6 +152,40 @@ orca(
   width = 1000
 )
 
+# SWISS ROLL -------------------------------------------------------------------
+
+swiss_roll <- plot_manifold(
+  make_swiss_roll(n_points = 1000L), 
+  dim = 3L, 
+  camera_eye = list(
+    x = 0.75, 
+    y = -1.5, 
+    z = 0.25))
+
+orca(
+  swiss_roll, 
+  "3_presentation/figures/swiss-roll.pdf",
+  height = 400,
+  width = 450
+)
+
+# SWISS ROLL -------------------------------------------------------------------
+
+incomplete_tire <- plot_manifold(
+  make_incomplete_tire(n_points = 1000L), 
+  dim = 3L, 
+  camera_eye = list(
+    x = 1.25, 
+    y = 0, 
+    z = 0.75))
+
+orca(
+  incomplete_tire, 
+  "3_presentation/figures/incomplete-tire.pdf",
+  height = 400,
+  width = 600
+)
+
 # EXAMPLE NEIGHBORHOOD GRAPH ---------------------------------------------------
 
 neighborhood_data <- igraph::make_graph(

@@ -481,7 +481,7 @@ spanned by $d$ principal eigenvectors
   % \arritem Diagonal matrix of row sums. $\D = 
   % \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
   \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$, 
-  $\D = \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
+  $\D = \mathit{diag}(\sum_j w_{ij}) \in \R^{N \times N}$
 \end{itemize}
 
 \vspace{0.3cm}
@@ -491,7 +491,7 @@ spanned by $d$ principal eigenvectors
 \begin{fleqn}
   \begin{equation}
     \small
-    \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
+    \min_{\Y} \mathit{trace}(\Y^T \Lap \Y), \quad \text{s.t. } 
     \Y^T \D \Y = \I
   \end{equation}
 \end{fleqn}
@@ -577,7 +577,7 @@ weights
 \begin{fleqn}
   \begin{equation}
     \small
-    \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
+    \min_{\Y} \mathit{trace}(\Y^T \E \Y), \quad
     \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
     \Y^T\bm{1} = \bm{0}.
   \end{equation}
@@ -736,7 +736,7 @@ coordinates
 \textbf{Algorithmic impact}. Recall LLE eigenvalue problem
 \begin{fleqn}
   \begin{equation*}
-    \min_{\Y} \text{\textit{trace}}(\Y^T \E \Y), \quad
+    \min_{\Y} \mathit{trace}(\Y^T \E \Y), \quad
     \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
     \Y^T\bm{1} = \bm{0}.
   \end{equation*}
@@ -882,23 +882,17 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
   \arritem Considered known with availability of prior information
 \end{itemize}
 
-% \vspace{0.3cm}
-
 \textbf{Neighborhood size}. Global vs local structure
 
 \begin{itemize}
   \arritem Tunable (expensive)
 \end{itemize}
 
-% \vspace{0.3cm}
-
 \textbf{Regularization constant}. Singularity for $D < k$
 
 \begin{itemize}
   \arritem Heuristics
 \end{itemize}
-
-% \vspace{0.3cm}
 
 \textbf{Number \& location of prior points}. Utility of prior knowledge ~ 
 \maketag{analysis}
@@ -914,11 +908,14 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
   \arritem How exact must prior information be?
 \end{itemize}
 
-\textbf{Confidence parameter}. Belief in prior knowledge
+\textbf{Confidence parameter}. Strength of belief in prior knowledge 
+% ~ \maketag{analysis}
 
 \begin{itemize}
   \arritem Rather robust
 \end{itemize}
+
+
 
 \end{frame}
 
@@ -984,11 +981,46 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Swiss roll}. 
+\textbf{Data}. Two data sets, $N = 1000$ observations each
+
+% \vspace{0.3cm}
+
+\begin{minipage}[b]{0.65\textwidth}
+  \textbf{Swiss roll}. \textit{The} standard synthetic manifold
+  \begin{itemize}
+    \flexitem{1} Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ 
+    $\mathit{ iid}$ with $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_1 \rvert = N$
+    \flexitem{2} Compute $\bm{t} = 1.5 \pi (1 + 2\bm{u}_1)$
+    \flexitem{3} Set $\X_{\text{swiss}} = 
+    \begin{bmatrix} \bm{t} \cos{\bm{t}} & 21 \bm{u}_2 & 
+    \bm{t} \sin{\bm{t}} \end{bmatrix}$ 
+  \end{itemize}
+\end{minipage}%
+\begin{minipage}[b]{0.35\textwidth}
+  \centering
+  \includegraphics[trim = 60 30 40 -20, clip, % left bottom right top
+    width = 0.45\textwidth]{figures/swiss-roll}
+\end{minipage}
 
 \vspace{0.3cm}
 
-\textbf{Incomplete tire}. 
+\begin{minipage}[b]{0.65\textwidth}
+  \textbf{Incomplete tire}. Examined in \citet{yangetal2006}
+  \begin{itemize}
+    \flexitem{1} Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ 
+    $\mathit{ iid}$ with $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_1 \rvert = N$
+    \flexitem{2} Compute $\bm{t} = \frac{5 \pi}{3} \bm{u}_1$ and 
+    $\bm{s} = \frac{5 \pi}{3} \bm{u}_2$
+    \flexitem{3} Set $\X_{\text{tire}} = 
+    \begin{bmatrix} (3 + \cos{\bm{s}}) \cos{\bm{t}} & 
+    (3 + \cos{\bm{s}}) \sin{\bm{t}} & \sin{\bm{s}} \end{bmatrix}$ 
+  \end{itemize}
+\end{minipage}%
+\begin{minipage}[b]{0.35\textwidth}
+  \centering
+  \includegraphics[trim = 20 0 0 0, clip, % left bottom right top
+    width = 0.7\textwidth]{figures/incomplete-tire}
+\end{minipage}
 
 \end{frame}
 
@@ -1001,8 +1033,8 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\conclbox{Sensitivity analysis I. ~~ Landmark coverage $\times$ number of 
-landmark points} 
+\conclbox{Sensitivity analysis \phantom{I}I. ~~ Landmark coverage $\times$ 
+number of landmark points} 
 
 \vspace{0.3cm}
 
@@ -1014,7 +1046,7 @@ landmark points}
 
 \vspace{0.3cm}
 
-$\Rightarrow$ Best case: maximum coverage, 12 landmarks
+$\Rightarrow$ Best case: maximum coverage \& 12 landmarks
 
 \vspace{0.3cm}
 
@@ -1033,7 +1065,7 @@ points}
 
 \vspace{0.3cm}
 
-$\Rightarrow$ Best case: noise level 0.1, 12 landmarks
+$\Rightarrow$ Best case: noise level 0.1 \& 12 landmarks
 
 \end{frame}
 
