@@ -521,13 +521,13 @@ dev.off()
 orca(
   sensitivity_noise_plots_qual$swiss_roll, 
   "3_presentation/figures/sensitivity_noise_qual_swiss.pdf",
-  height = 500,
+  height = 520,
   width = 1000)
 
 orca(
   sensitivity_noise_plots_qual$incomplete_tire, 
   "3_presentation/figures/sensitivity_noise_qual_tire.pdf",
-  height = 500,
+  height = 520,
   width = 1000)
 
 # ------------------------------------------------------------------------------

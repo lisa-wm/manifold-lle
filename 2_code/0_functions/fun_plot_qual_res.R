@@ -9,9 +9,9 @@ plot_qual_res <- function(data, dt_name, annotation_text) {
   plot_manifold(
     data, 
     dim = 2L,
-    title = sprintf(
-      "Data: %s", 
-      unlist(stringr::str_replace(dt_name, "_", " "))),
+    # title = sprintf(
+    #   "Data: %s", 
+    #   unlist(stringr::str_replace(dt_name, "_", " "))),
     point_size_1_2_d = 3L) %>% 
     layout(annotations = list(
       text = annotation_text,
