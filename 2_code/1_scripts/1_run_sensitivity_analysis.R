@@ -144,12 +144,12 @@ sensitivity_noise <- parallel::mclapply(
         
         landmarks <- data_l[landmarks_ind, .(t, s)]
         
-        sd_s = sd(data_l$s)
         sd_t = sd(data_l$t)
+        sd_s = sd(data_l$s)
         
         landmarks_corrupted <- landmarks + c(
-          rnorm(length(landmarks_ind), sd = this_noise * sd_s),
-          rnorm(length(landmarks_ind), sd = this_noise * sd_t))
+          rnorm(length(landmarks_ind), sd = this_noise * sd_t),
+          rnorm(length(landmarks_ind), sd = this_noise * sd_s))
         
         # Move prior points up in the data as sslle function assumes the the 
         # first observations to be prior points
@@ -174,8 +174,7 @@ sensitivity_noise <- parallel::mclapply(
           residual_variance = min(embedding$residual_variances),
           auc_lnk_rnx = max(embedding$auc_lnk_rnx),
           embedding_result = embedding,
-          landmarks = landmarks,
-          landmarks_corrupted = landmarks_corrupted)
+          landmarks = landmarks)
         
       },
       
