@@ -1346,6 +1346,35 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \end{frame}
 
 % ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.2 results} ~~ concluding comparison}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Comparison.} SSLLE vs other methods as implemented in \texttt{dimRed} 
+package
+
+\vspace{0.3cm}
+
+\begin{minipage}[b]{0.5\textwidth}
+  \raggedright
+  \textbf{Swiss roll}. LLE, HLLE, SSLLE
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = 0.7\textwidth]{figures/comparison_swiss}
+\end{minipage}%
+\begin{minipage}[b]{0.5\textwidth}
+  \raggedright
+  \textbf{Incomplete tire}. LLE, HLLE, SSLLE
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = 0.7\textwidth]{figures/comparison_tire}
+\end{minipage}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
 % DISCUSSION
 % ------------------------------------------------------------------------------
 
@@ -1401,16 +1430,21 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{5 discussion} ~~ foo}
+\begin{frame}{\textcolor{gray!90}{5 discussion} ~~ open issues}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
 
-% \footnotesize
+\textbf{Sensitivity.} SSLLE rather sensitive with respect to its
+(hyper)parameters
 
-\medskip
+\begin{itemize}
+  \arritem Disturbances by poor landmark coverage and/or inexact prior 
+  information 
+\end{itemize}
 
-woteva
+\vspace{0.3cm}
 
 \end{frame}
 

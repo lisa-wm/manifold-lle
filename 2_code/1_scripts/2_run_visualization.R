@@ -427,3 +427,68 @@ names(sensitivity_noise_plots_key_variation) <-
   names(sensitivity_noise_dt)
 
 save_rdata_files(sensitivity_noise_plots_key_variation, folder = "2_code")
+
+# COMPARISON: LLE & HLLE -------------------------------------------------------
+
+load_rdata_files(data_labeled, folder = "2_code")
+
+data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+
+comp_lle <- lapply(
+  
+  seq_along(data_unlabeled),
+  
+  function(i) {
+    
+    res_lle <- dimRed::embed(
+      data_unlabeled[[i]][, .(x_1, x_2, x_3)],
+      "LLE", 
+      ndim = 2L)
+    
+    res_hlle <- dimRed::embed(
+      data_unlabeled[[i]][, .(x_1, x_2, x_3)],
+      "HLLE", 
+      ndim = 2L)
+    
+    res <- list(lle = res_lle, hlle = res_hlle)
+    
+    plots <- lapply(
+      
+      seq_along(res),
+      
+      function(j) {
+        
+        emb_dt <- data.table::as.data.table(
+          res[[j]]@data@data)
+        
+        plot_manifold(
+          data.table::data.table(
+            emb_dt,
+            data_labeled[[i]][, .(t, s)]),
+          dim = 2L)
+        
+      }
+      
+    )
+    
+    names(plots) <- names(res)
+    
+    data_opt <- sensitivity_landmarks_dt[[i]][
+      landmark_method == "maximum_coverage" & n_landmarks == 12L]
+    
+    plot_sslle <- plot_manifold(
+      data.table::data.table(
+        data_opt$embedding_result[[1]]$Y,
+        data_opt$embedding_result[[1]]$X[, .(t, s)]),
+      dim = 2L)
+    
+    plotly::subplot(list(plots$lle, plots$hlle, plot_sslle), nrows = 3L) %>% 
+      hide_guides()
+    
+  }
+  
+)
+
+names(comp_lle) <- names(data_labeled)
+
+save_rdata_files(comp_lle, folder = "2_code")

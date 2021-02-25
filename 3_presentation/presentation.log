@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  25 FEB 2021 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  25 FEB 2021 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1831,15 +1831,44 @@ Package pdftex.def Info: figures/sensitivity_noise_qual_tire.pdf  used on input
 pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_tire.pdf): 
 PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
 rray>); ignored.
->] [33
+>]
+LaTeX Font Info:    Trying to load font information for T1+laett on input line 
+1375.
+ (c:/texlive/2020/texmf-dist/tex/latex/ae/t1laett.fd
+File: t1laett.fd 2001/02/12 Font definitions for T1/laett.
+)
+<figures/comparison_swiss.pdf, id=407, 380.38109pt x 455.78279pt>
+File: figures/comparison_swiss.pdf Graphic file (type pdf)
+<use figures/comparison_swiss.pdf>
+Package pdftex.def Info: figures/comparison_swiss.pdf  used on input line 1375.
 
-] [34
+(pdftex.def)             Requested size: 143.4012pt x 171.82918pt.
+<figures/comparison_tire.pdf, id=409, 380.38109pt x 455.78279pt>
+File: figures/comparison_tire.pdf Graphic file (type pdf)
+<use figures/comparison_tire.pdf>
+Package pdftex.def Info: figures/comparison_tire.pdf  used on input line 1375.
+(pdftex.def)             Requested size: 143.4012pt x 171.82918pt.
+ [33
+
+ <./figures/comparison_swiss.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/comparison_swiss.pdf): PDF inclusi
+on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
+ored.
+> <./figures/comparison_tire.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/comparison_tire.pdf): PDF inclusio
+n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
+red.
+>] [34
 
 ] [35
 
+] [36
+
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1447.
+(Font)              scaled to size 8.27998pt on input line 1481.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1847,7 +1876,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.27998pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.27998pt on input line 13.
-) [36
+) [37
 
 ]
 \tf@nav=\write7
@@ -1868,11 +1897,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 24082 strings out of 479485
- 441073 string characters out of 5875915
+ 24122 strings out of 479485
+ 441917 string characters out of 5875915
  798663 words of memory out of 5000000
- 40350 multiletter control sequences out of 15000+600000
- 644068 words of font info for 155 fonts, out of 8000000 for 9000
+ 40379 multiletter control sequences out of 15000+600000
+ 644916 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
@@ -1884,15 +1913,16 @@ m/cmss10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.p
 fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/te
 xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fo
-nts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/he
-lvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.
-pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive
-/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (36 pages, 4635473 bytes).
+t/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/
+public/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhv
+b8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/te
+xlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texm
+f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on presentation.pdf (37 pages, 4809217 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
- 349 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 352 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 371 words of extra memory for PDF output out of 10000 (max. 10000000)
 
