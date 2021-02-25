@@ -204,10 +204,7 @@ sensitivity_landmarks_plots_key_variation <- lapply(
     base_plot <- plot_manifold(
       data_labeled[[i]][, .(t, s, t, t)],
       dim = 2L,
-      point_size_1_2_d = 5L,
-      title = sprintf(
-        "Data: %s", 
-        unlist(stringr::str_replace(names(sensitivity_noise_dt)[i], "_", " ")))) 
+      point_size_1_2_d = 5L) 
     
     landmarks_poor <- 
       data.table::as.data.table(sensitivity_landmarks_dt[[i]][
@@ -284,12 +281,6 @@ names(sensitivity_landmarks_plots_key_variation) <-
   names(sensitivity_landmarks_dt)
 
 save_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
-
-subplot(
-  list(
-    sensitivity_landmarks_plots_key_variation$incomplete_tire,
-    sensitivity_landmarks_plots_key_variation$swiss_roll),
-  nrows = 2L)
 
 # ------------------------------------------------------------------------------
 
