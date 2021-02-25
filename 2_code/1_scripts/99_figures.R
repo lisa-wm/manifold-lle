@@ -470,6 +470,8 @@ ggplot2::ggsave(
   height = 6)
 dev.off()
 
+# ------------------------------------------------------------------------------
+
 orca(
   sensitivity_landmarks_plots_qual$swiss_roll, 
   "3_presentation/figures/sensitivity_landmarks_qual_swiss.pdf",
@@ -482,17 +484,21 @@ orca(
   height = 450,
   width = 1000)
 
+# ------------------------------------------------------------------------------
+
 orca(
   sensitivity_landmarks_plots_key_variation$swiss_roll, 
   "3_presentation/figures/sensitivity_landmarks_key_swiss.pdf",
-  height = 250,
+  height = 220,
   width = 1000)
 
 orca(
   sensitivity_landmarks_plots_key_variation$incomplete_tire, 
   "3_presentation/figures/sensitivity_landmarks_key_tire.pdf",
-  height = 250,
+  height = 220,
   width = 1000)
+
+# ------------------------------------------------------------------------------
 
 pdf(
   here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
@@ -510,6 +516,8 @@ ggplot2::ggsave(
   height = 6)
 dev.off()
 
+# ------------------------------------------------------------------------------
+
 orca(
   sensitivity_noise_plots_qual$swiss_roll, 
   "3_presentation/figures/sensitivity_noise_qual_swiss.pdf",
@@ -522,14 +530,16 @@ orca(
   height = 500,
   width = 1000)
 
+# ------------------------------------------------------------------------------
+
 orca(
   sensitivity_noise_plots_key_variation$swiss_roll, 
   "3_presentation/figures/sensitivity_noise_key_swiss.pdf",
-  height = 250,
+  height = 200,
   width = 1000)
 
 orca(
   sensitivity_noise_plots_key_variation$incomplete_tire, 
   "3_presentation/figures/sensitivity_noise_key_tire.pdf",
-  height = 250,
+  height = 200,
   width = 1000)

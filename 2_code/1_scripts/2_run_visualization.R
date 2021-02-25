@@ -204,7 +204,10 @@ sensitivity_landmarks_plots_key_variation <- lapply(
     base_plot <- plot_manifold(
       data_labeled[[i]][, .(t, s, t, t)],
       dim = 2L,
-      point_size_1_2_d = 5L)
+      point_size_1_2_d = 5L,
+      title = sprintf(
+        "Data: %s", 
+        unlist(stringr::str_replace(names(sensitivity_noise_dt)[i], "_", " ")))) 
     
     landmarks_poor <- 
       data.table::as.data.table(sensitivity_landmarks_dt[[i]][
@@ -214,43 +217,64 @@ sensitivity_landmarks_plots_key_variation <- lapply(
       data.table::as.data.table(sensitivity_landmarks_dt[[i]][
         landmark_method == "random_coverage" & n_landmarks == 12L]$landmarks)
     
-    landmarks_optimal <- 
+    landmarks_maximum <- 
       data.table::as.data.table(sensitivity_landmarks_dt[[i]][
         landmark_method == "maximum_coverage" & n_landmarks == 12L]$landmarks)
     
-    plot_poor <- base_plot %>% 
-      add_trace(
-        x = ~ landmarks_poor$y_1,
-        y = ~ landmarks_poor$y_2,
-        color = ~ 1L,
-        type = "scatter",
-        mode = "markers",
-        marker = list(color = "black", size = 10L)) %>% 
-      hide_guides()
+    make_annotations <- function(base_plot, annotation_text) {
+      
+      base_plot %>% 
+        plotly::layout(annotations = list(
+          text = annotation_text,
+          xref = "paper",
+          yanchor = "bottom",
+          xanchor = "center",
+          align = "center",
+          x = 0.5,
+          y = -0.5,
+          showarrow = FALSE))
+      
+    }
     
-    plot_random <- base_plot %>% 
-      add_trace(
-        x = ~ landmarks_random$y_1,
-        y = ~ landmarks_random$y_2,
-        color = ~ 1L,
-        type = "scatter",
-        mode = "markers",
-        marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
-      hide_guides()
+    plot_poor <- #make_annotations(
+      base_plot %>%
+        plotly::add_trace(
+          x = ~ landmarks_poor$y_1,
+          y = ~ landmarks_poor$y_2,
+          color = ~ 1L,
+          type = "scatter",
+          mode = "markers",
+          marker = list(color = "black", size = 10L))#,
+      # annotation_text = "poor coverage") 
     
-    plot_maximum <- base_plot %>% 
-      add_trace(
-        x = ~ landmarks_optimal$y_1,
-        y = ~ landmarks_optimal$y_2,
-        color = ~ 1L,
-        type = "scatter",
-        mode = "markers",
-        marker = list(color = "black", size = 15L, symbol = "star")) %>% 
-      hide_guides()
+    plot_random <- #make_annotations(
+      base_plot %>%
+        plotly::add_trace(
+          x = ~ landmarks_random$y_1,
+          y = ~ landmarks_random$y_2,
+          color = ~ 1L,
+          type = "scatter",
+          mode = "markers",
+          marker = list(color = "black", size = 10L, symbol = "diamond"))#,
+      # annotation_text = "random coverage")
     
-    subplot(
-      list(plot_poor, plot_random, plot_maximum), nrows = 1L) %>%
-      hide_guides()
+    plot_maximum <- #make_annotations(
+      base_plot %>%
+        plotly::add_trace(
+          x = ~ landmarks_maximum$y_1,
+          y = ~ landmarks_maximum$y_2,
+          color = ~ 1L,
+          type = "scatter",
+          mode = "markers",
+          marker = list(color = "black", size = 10L, symbol = "star")) #,
+      # annotation_text = "maximum coverage")
+    
+      plotly::subplot(list(
+        plot_poor = plot_poor, 
+        plot_random = plot_random, 
+        plot_maximum = plot_maximum),
+        nrows = 1L) %>% 
+        hide_guides()
     
   }
   
@@ -260,6 +284,12 @@ names(sensitivity_landmarks_plots_key_variation) <-
   names(sensitivity_landmarks_dt)
 
 save_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
+
+subplot(
+  list(
+    sensitivity_landmarks_plots_key_variation$incomplete_tire,
+    sensitivity_landmarks_plots_key_variation$swiss_roll),
+  nrows = 2L)
 
 # ------------------------------------------------------------------------------
 
