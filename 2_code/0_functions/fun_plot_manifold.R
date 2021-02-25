@@ -10,7 +10,8 @@ plot_manifold <- function(data,
                             x = 1.5, 
                             y = -1.5, 
                             z = 0.75),
-                          title = NULL) {
+                          title = NULL, 
+                          point_size_1_2_d = 10L) {
   
   # Perform basic input checks
   
@@ -58,7 +59,7 @@ plot_manifold <- function(data,
         type = "scatter",
         mode = "markers",
         colors = my_palette,
-        marker = list(size = 10L)
+        marker = list(size = point_size_1_2_d)
       ) %>% 
       hide_colorbar() %>%
       layout(xaxis = ax, yaxis = ax, title = title)
