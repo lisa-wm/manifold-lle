@@ -12,8 +12,7 @@ orca(
   s_curve_10k, 
   "4_report/figures/s-curve.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
 
 # S-CURVE UNDONE ---------------------------------------------------------------
 
@@ -25,15 +24,13 @@ orca(
   s_curve, 
   "3_presentation/figures/s-curve.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
 
 orca(
   s_curve_undone, 
   "3_presentation/figures/s-curve-undone.pdf",
   height = 400,
-  width = 1000
-)
+  width = 1000)
 
 # S-CURVE WITH PRIOR POINTS ----------------------------------------------------
 
@@ -128,29 +125,25 @@ orca(
   s_curve_pp_poor, 
   "3_presentation/figures/s-curve-pp-poor.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
 
 orca(
   s_curve_pp_random, 
   "3_presentation/figures/s-curve-pp-random.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
 
 orca(
   s_curve_pp_maxmin, 
   "3_presentation/figures/s-curve-pp-maxmin.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
 
 orca(
   s_curve_undone_pp_random, 
   "3_presentation/figures/s-curve-pp-undone-random.pdf",
   height = 400,
-  width = 1000
-)
+  width = 1000)
 
 # SWISS ROLL -------------------------------------------------------------------
 
@@ -166,10 +159,9 @@ orca(
   swiss_roll, 
   "3_presentation/figures/swiss-roll.pdf",
   height = 400,
-  width = 450
-)
+  width = 450)
 
-# SWISS ROLL -------------------------------------------------------------------
+# INCOMPLETE TIRE --------------------------------------------------------------
 
 incomplete_tire <- plot_manifold(
   make_incomplete_tire(n_points = 1000L), 
@@ -183,47 +175,7 @@ orca(
   incomplete_tire, 
   "3_presentation/figures/incomplete-tire.pdf",
   height = 400,
-  width = 600
-)
-
-# EXAMPLE NEIGHBORHOOD GRAPH ---------------------------------------------------
-
-neighborhood_data <- igraph::make_graph(
-  edges = c(
-    1, 2, 
-    1, 3,
-    2, 1, 
-    2, 3,
-    3, 1,
-    3, 2,
-    4, 1,
-    4, 3,
-    5, 1,
-    5, 4,
-    6, 1,
-    6, 2,
-    7, 5,
-    7, 6), 
-  n = 7)
-
-pdf(here("4_report/figures", "neighborhood-graph.pdf"), width = 8, height = 8)
-
-set.seed(1)
-
-plot(
-  neighborhood_data,
-  vertex.color = "gray", 
-  vertex.size = 15, 
-  vertex.frame.color = "gray", 
-  vertex.label.color = "black", 
-  vertex.label.cex = 2,
-  edge.color = "black")   
-
-ggsave(
-  here("4_report/figures", "neighborhood-graph.pdf"), 
-  width = 8, 
-  height = 8)
-dev.off()
+  width = 600)
 
 # EXAMPLE NEIGHBORHOOD GRAPH 3D ------------------------------------------------
 
@@ -498,7 +450,7 @@ orca(
 load_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
 load_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
 load_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
-load_rdata_files(sensitivity_noise_pp_plots_qual, folder = "2_code")
+load_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
 
 pdf(
   here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
@@ -534,8 +486,8 @@ pdf(
   height = 6)
 
 gridExtra::grid.arrange(
-  sensitivity_noise_pp_plots_quant$swiss_roll$auc_plot,
-  sensitivity_noise_pp_plots_quant$incomplete_tire$auc_plot, 
+  sensitivity_noise_plots_quant$swiss_roll$auc_plot,
+  sensitivity_noise_plots_quant$incomplete_tire$auc_plot, 
   ncol = 2L)
 
 ggplot2::ggsave(
@@ -545,13 +497,13 @@ ggplot2::ggsave(
 dev.off()
 
 orca(
-  sensitivity_noise_pp_plots_qual$swiss_roll, 
+  sensitivity_noise_plots_qual$swiss_roll, 
   "3_presentation/figures/sensitivity_noise_qual_swiss.pdf",
   height = 500,
   width = 1000)
 
 orca(
-  sensitivity_noise_pp_plots_qual$incomplete_tire, 
+  sensitivity_noise_plots_qual$incomplete_tire, 
   "3_presentation/figures/sensitivity_noise_qual_tire.pdf",
   height = 500,
   width = 1000)

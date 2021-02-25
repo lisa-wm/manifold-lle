@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  25 FEB 2021 07:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  25 FEB 2021 08:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1788,7 +1788,7 @@ rray>); ignored.
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1391.
+(Font)              scaled to size 8.27998pt on input line 1390.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1819,7 +1819,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  24046 strings out of 479485
  439745 string characters out of 5875915
- 798662 words of memory out of 5000000
+ 798663 words of memory out of 5000000
  40322 multiletter control sequences out of 15000+600000
  644068 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1837,7 +1837,7 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf
 1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/
 uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:
 /texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (34 pages, 4427016 bytes).
+Output written on presentation.pdf (34 pages, 4562561 bytes).
 PDF statistics:
  450 PDF objects out of 1000 (max. 8388607)
  308 compressed objects within 4 object streams
