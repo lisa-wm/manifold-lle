@@ -5,7 +5,7 @@
 # DATA -------------------------------------------------------------------------
 
 load_rdata_files(sensitivity_landmarks_dt, "2_code")
-load_rdata_files(sensitivity_noise_pp_dt, "2_code")
+load_rdata_files(sensitivity_noise_dt, "2_code")
 
 # VISUALIZATION: AUC_LNK_RNX ---------------------------------------------------
 
@@ -63,21 +63,16 @@ names(sensitivity_landmarks_plots_quant) <- names(sensitivity_landmarks_dt)
 
 save_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
 
-gridExtra::grid.arrange(
-  sensitivity_landmarks_plots_quant$swiss_roll$auc_plot,
-  sensitivity_landmarks_plots_quant$incomplete_tire$auc_plot,
-  ncol = 2L)
-
 # ------------------------------------------------------------------------------
 
 sensitivity_noise_plots_quant <- lapply(
   
-  seq_along(sensitivity_noise_pp_dt),
+  seq_along(sensitivity_noise_dt),
   
   function(i) {
     
     auc_plot <- plot_quant_res(
-      base_plot = sensitivity_noise_pp_dt[[i]][
+      base_plot = sensitivity_noise_dt[[i]][
         , .(noise_level, n_landmarks, auc_lnk_rnx)
       ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
         ggplot2::ggplot(aes(
@@ -85,14 +80,14 @@ sensitivity_noise_plots_quant <- lapply(
           y = n_landmarks,
           col = auc_scaled)) + 
         geom_point(size = 10L) + 
-        scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L, 5L)),
+        scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L)),
       dt_name = stringr::str_replace_all(
         names(sensitivity_landmarks_dt[i]), "_", " "),
       legend_title = expression(AUC(R[NX]) ~ " (scaled)"),
       x_lab = "noise level")
     
     res_var_plot <- plot_quant_res(
-      base_plot = sensitivity_noise_pp_dt[[i]][
+      base_plot = sensitivity_noise_dt[[i]][
         , .(noise_level, n_landmarks, residual_variance)
       ][, res_var_scaled := scale_zero_one(residual_variance)] %>%
         ggplot2::ggplot(aes(
@@ -100,7 +95,7 @@ sensitivity_noise_plots_quant <- lapply(
           y = n_landmarks,
           col = res_var_scaled)) + 
         geom_point(size = 10L) + 
-        scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L, 5L)),
+        scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L)),
       dt_name = stringr::str_replace_all(
         names(sensitivity_landmarks_dt[i]), "_", " "),
       legend_title = "residual variance (scaled)",
@@ -112,7 +107,7 @@ sensitivity_noise_plots_quant <- lapply(
     
   })
 
-names(sensitivity_noise_plots_quant) <- names(sensitivity_noise_pp_dt)
+names(sensitivity_noise_plots_quant) <- names(sensitivity_noise_dt)
 
 save_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
 
@@ -136,7 +131,7 @@ sensitivity_landmarks_plots_qual <- lapply(
           data = data.table(
             dt[j, ]$embedding_result[[1]]$Y, 
             dt[j, ]$embedding_result[[1]]$X[, .(t, s)]),
-          dt_name = names(sensitivity_noise_pp_dt)[i],
+          dt_name = names(sensitivity_landmarks_dt)[i],
           annotation_text = sprintf(
             "%s coverage, %d landmarks",
             unlist(stringr::str_split(dt[j, ]$landmark_method, "_"))[1L],
@@ -159,13 +154,13 @@ save_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
 
 sensitivity_noise_plots_qual <- lapply(
   
-  seq_along(sensitivity_noise_pp_dt),
+  seq_along(sensitivity_noise_dt),
   
   function(i) {
     
-    dt <- sensitivity_noise_pp_dt[[i]]
+    dt <- sensitivity_noise_dt[[i]]
     data.table::setorder(dt, -n_landmarks)
-    dt_name <- names(sensitivity_noise_pp_dt)[i]
+    dt_name <- names(sensitivity_noise_dt)[i]
     
     plots <- lapply(
       
@@ -175,7 +170,7 @@ sensitivity_noise_plots_qual <- lapply(
           data = data.table(
             dt[j, ]$embedding_result[[1]]$Y, 
             dt[j, ]$embedding_result[[1]]$X[, .(t, s)]),
-          dt_name = names(sensitivity_noise_pp_dt)[i],
+          dt_name = names(sensitivity_noise_dt)[i],
           annotation_text = sprintf(
             "noise %.1f, %d landmarks",
             dt[j, ]$noise_level,
@@ -190,24 +185,224 @@ sensitivity_noise_plots_qual <- lapply(
   
 )
 
-names(sensitivity_noise_plots_qual) <- names(sensitivity_noise_pp_dt)
+names(sensitivity_noise_plots_qual) <- names(sensitivity_noise_dt)
 
 save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
 
 # VISUALIZATION: KEY VARIATION -------------------------------------------------
 
-data_labeled <- list(
-  incomplete_tire = make_incomplete_tire(n_points = 1000L), 
-  swiss_roll = make_swiss_roll(n_points = 1000L))
+load_rdata_files(data_labeled, folder = "2_code")
 
-data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+# ------------------------------------------------------------------------------
 
-plot_manifold(
-  data_labeled$swiss_roll[, .(x_2, t, s, s)],
-  dim = 2L,
-  point_size_1_2_d = 5L)
+sensitivity_landmarks_plots_key_variation <- lapply(
+  
+  seq_along(sensitivity_landmarks_dt), 
+  
+  function(i) {
+    
+    base_plot <- plot_manifold(
+      data_labeled[[i]][, .(t, s, t, t)],
+      dim = 2L,
+      point_size_1_2_d = 5L)
+    
+    landmarks_poor <- 
+      data.table::as.data.table(sensitivity_landmarks_dt[[i]][
+        landmark_method == "poor_coverage" & n_landmarks == 12L]$landmarks)
+    
+    landmarks_random <- 
+      data.table::as.data.table(sensitivity_landmarks_dt[[i]][
+        landmark_method == "random_coverage" & n_landmarks == 12L]$landmarks)
+    
+    landmarks_optimal <- 
+      data.table::as.data.table(sensitivity_landmarks_dt[[i]][
+        landmark_method == "maximum_coverage" & n_landmarks == 12L]$landmarks)
+    
+    plot_poor <- base_plot %>% 
+      add_trace(
+        x = ~ landmarks_poor$y_1,
+        y = ~ landmarks_poor$y_2,
+        color = ~ 1L,
+        type = "scatter",
+        mode = "markers",
+        marker = list(color = "black", size = 10L)) %>% 
+      hide_guides()
+    
+    plot_random <- base_plot %>% 
+      add_trace(
+        x = ~ landmarks_random$y_1,
+        y = ~ landmarks_random$y_2,
+        color = ~ 1L,
+        type = "scatter",
+        mode = "markers",
+        marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
+      hide_guides()
+    
+    plot_maximum <- base_plot %>% 
+      add_trace(
+        x = ~ landmarks_optimal$y_1,
+        y = ~ landmarks_optimal$y_2,
+        color = ~ 1L,
+        type = "scatter",
+        mode = "markers",
+        marker = list(color = "black", size = 15L, symbol = "star")) %>% 
+      hide_guides()
+    
+    subplot(
+      list(plot_poor, plot_random, plot_maximum), nrows = 1L) %>%
+      hide_guides()
+    
+  }
+  
+)
 
-plot_manifold(
-  data_labeled$incomplete_tire[, .(s, t, s, s)],
-  dim = 2L,
-  point_size_1_2_d = 5L)
+names(sensitivity_landmarks_plots_key_variation) <- 
+  names(sensitivity_landmarks_dt)
+
+save_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
+
+# ------------------------------------------------------------------------------
+
+sensitivity_noise_plots_key_variation <- lapply(
+  
+  seq_along(sensitivity_noise_dt), 
+  
+  function(i) {
+    
+    landmarks <- data.table::as.data.table(sensitivity_noise_dt[[i]][
+      noise_level == 0.1 & n_landmarks == 12L]$landmarks)
+    
+    sd_s = sd(data_labeled[[i]]$s)
+    sd_t = sd(data_labeled[[i]]$t)
+    
+    base_plot <- plot_manifold(
+      data_labeled[[i]][, .(t, s, t, t)],
+      dim = 2L,
+      point_size_1_2_d = 5L) %>% 
+      add_trace(
+        x = ~ landmarks$t,
+        y = ~ landmarks$s,
+        color = ~ 1L,
+        type = "scatter",
+        mode = "markers",
+        marker = list(color = "black", size = 10L)) %>% 
+      hide_guides()
+    
+    noise_plots <- lapply(
+      
+      seq_along(unique(sensitivity_noise_dt[[i]]$noise_level)), 
+      
+      function(j) {
+        
+        noise_level <- unique(sensitivity_noise_dt[[i]]$noise_level)[j]
+        
+        base_plot %>% 
+          layout(shapes = list(
+            type = "circle",
+            xref = "x",
+            yref = "y",
+            x0 = landmarks[12L]$t - noise_level * sd_t,
+            x1 = landmarks[12L]$t + noise_level * sd_t,
+            y0 = landmarks[12L]$s - noise_level * sd_s,
+            y1 = landmarks[12L]$s + noise_level * sd_s,
+            fillcolor = "black",
+            opacity = 0.4,
+            line = list(color = "black")
+          ))
+        
+      })
+    
+    # 
+    # 
+    # 
+    # 
+    # base_plot %>% 
+    #   layout(shapes = list(type = 'circle',
+    #               xref = 'x', x0 = 2.7, x1 = 6,
+    #               yref = 'y', y0 = 2.7, y1 = 6,
+    #               fillcolor = 'black', line = list(color = 'rgb(50, 20, 90)'),
+    #               opacity = 0.2))
+    # 
+    # 
+    # 
+    # 
+    # 
+    # landmarks_corrupted_little <- 
+    #   data.table::as.data.table(sensitivity_noise_dt[[i]][
+    #     noise_level == 0.1L & n_landmarks == 12L]$landmarks_corrupted)
+    # 
+    # landmarks_corrupted_medium <- 
+    #   data.table::as.data.table(sensitivity_noise_dt[[i]][
+    #     noise_level == 1L & n_landmarks == 12L]$landmarks_corrupted)
+    # 
+    # landmarks_corrupted_badly <- 
+    #   data.table::as.data.table(sensitivity_noise_dt[[i]][
+    #     noise_level == 5L & n_landmarks == 12L]$landmarks_corrupted)
+    # 
+    # plot_little_noise <- base_plot %>% 
+    #   add_trace(
+    #     x = ~ landmarks$t,
+    #     y = ~ landmarks$s,
+    #     color = ~ 1L,
+    #     type = "scatter",
+    #     mode = "markers",
+    #     marker = list(color = "black", size = 10L)) %>% 
+    #   add_trace(
+    #     x = ~ landmarks_corrupted_medium$t,
+    #     y = ~ landmarks_corrupted_medium$s,
+    #     color = ~ 1L,
+    #     type = "scatter",
+    #     mode = "markers",
+    #     marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
+    #   hide_guides()
+    # 
+    # plot_medium_noise <- base_plot %>% 
+    #   add_trace(
+    #     x = ~ landmarks$t,
+    #     y = ~ landmarks$s,
+    #     color = ~ 1L,
+    #     type = "scatter",
+    #     mode = "markers",
+    #     marker = list(color = "black", size = 10L)) %>% 
+    #   add_trace(
+    #     x = ~ landmarks_corrupted$t,
+    #     y = ~ landmarks_corrupted$s,
+    #     color = ~ 1L,
+    #     type = "scatter",
+    #     mode = "markers",
+    #     marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
+    #   hide_guides()
+    # 
+    # 
+    # plot_random <- base_plot %>% 
+    #   add_trace(
+    #     x = ~ landmarks_random$y_1,
+    #     y = ~ landmarks_random$y_2,
+    #     color = ~ 1L,
+    #     type = "scatter",
+    #     mode = "markers",
+    #     marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
+    #   hide_guides()
+    # 
+    # plot_maximum <- base_plot %>% 
+    #   add_trace(
+    #     x = ~ landmarks_optimal$y_1,
+    #     y = ~ landmarks_optimal$y_2,
+    #     color = ~ 1L,
+    #     type = "scatter",
+    #     mode = "markers",
+    #     marker = list(color = "black", size = 15L, symbol = "star")) %>% 
+    #   hide_guides()
+    
+    subplot(
+      noise_plots, nrows = 1L) %>%
+      hide_guides()
+    
+  }
+  
+)
+
+names(sensitivity_noise_plots_key_variation) <- 
+  names(sensitivity_noise_dt)
+
+save_rdata_files(sensitivity_noise_plots_key_variation, folder = "2_code")

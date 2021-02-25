@@ -8,6 +8,8 @@ data_labeled <- list(
   incomplete_tire = make_incomplete_tire(n_points = 1000L), 
   swiss_roll = make_swiss_roll(n_points = 1000L))
 
+save_rdata_files(data_labeled, folder = "2_code")
+
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
 k_max <- 15L
@@ -107,10 +109,10 @@ save_rdata_files(sensitivity_landmarks_dt, "2_code")
 # SENSITIVITY ANALYSIS II: NOISE LEVEL & NUMBER OF PRIOR POINTS ----------------
 
 search_grid_noise <- expand.grid(
-  noise_level = c(0.1, 0.5, 1L, 3L, 5L),
+  noise_level = c(0.1, 0.5, 1L, 3L),
   n_landmarks = seq(2L, n_landmarks_max, by = 2L))
 
-sensitivity_noise_pp <- parallel::mclapply(
+sensitivity_noise <- parallel::mclapply(
   
   seq_along(data_unlabeled),
   
@@ -140,8 +142,14 @@ sensitivity_noise_pp <- parallel::mclapply(
           n_landmarks = this_number,
           method = "maxmin")
         
-        landmarks <- data_l[landmarks_ind, .(t, s)] +
-          rnorm(length(landmarks_ind), sd = this_noise)
+        landmarks <- data_l[landmarks_ind, .(t, s)]
+        
+        sd_s = sd(data_l$s)
+        sd_t = sd(data_l$t)
+        
+        landmarks_corrupted <- landmarks + c(
+          rnorm(length(landmarks_ind), sd = this_noise * sd_s),
+          rnorm(length(landmarks_ind), sd = this_noise * sd_t))
         
         # Move prior points up in the data as sslle function assumes the the 
         # first observations to be prior points
@@ -153,7 +161,7 @@ sensitivity_noise_pp <- parallel::mclapply(
         embedding <- perform_sslle(
           data = data_l[new_order],
           k_max = k_max,
-          prior_points = landmarks,
+          prior_points = landmarks_corrupted,
           is_exact = FALSE,
           confidence_param = 0.01,
           verbose = FALSE)
@@ -165,7 +173,9 @@ sensitivity_noise_pp <- parallel::mclapply(
           n_landmarks = this_number,
           residual_variance = min(embedding$residual_variances),
           auc_lnk_rnx = max(embedding$auc_lnk_rnx),
-          embedding_result = embedding)
+          embedding_result = embedding,
+          landmarks = landmarks,
+          landmarks_corrupted = landmarks_corrupted)
         
       },
       
@@ -177,16 +187,16 @@ sensitivity_noise_pp <- parallel::mclapply(
   
 )
 
-sensitivity_noise_pp_dt <- lapply(
-  seq_along(sensitivity_noise_pp), 
+sensitivity_noise_dt <- lapply(
+  seq_along(sensitivity_noise), 
   function(i) {
-    dt <- data.table::as.data.table(do.call(rbind, sensitivity_noise_pp[[i]]))
+    dt <- data.table::as.data.table(do.call(rbind, sensitivity_noise[[i]]))
     dt[, names(dt)[1:4] := lapply(.SD, unlist), .SDcols = names(dt)[1:4]]
     dt})
 
-names(sensitivity_noise_pp_dt) <- names(data_labeled)
+names(sensitivity_noise_dt) <- names(data_labeled)
 
-save_rdata_files(sensitivity_noise_pp_dt, "2_code")
+save_rdata_files(sensitivity_noise_dt, "2_code")
 
 # SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE PARAM ----------------------
 
