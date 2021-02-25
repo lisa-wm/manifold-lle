@@ -473,28 +473,36 @@ spanned by $d$ principal eigenvectors
 
 \vspace{0.3cm}
 
-\textbf{Graph Laplacian}. Discrete approximation of Laplace-Beltrami operator
+\textbf{Solution}. Eigenanalysis of graph Laplacian $\Lap$
 
 \begin{itemize}
-  \arritem Weight matrix. $\W = (w)_{ij} \in \R^{N \times N}$, where 
-  $w_{ij} = w_{ij}(\twonorm{\x_i - \x_j})$
-  % \arritem Diagonal matrix of row sums. $\D = 
-  % \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
-  \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$, 
-  $\D = \mathit{diag}(\sum_j w_{ij}) \in \R^{N \times N}$
+  \arritem Derived from weight matrix encoding nearness of inputs
+  \arritem Discrete approximation of Laplace-Beltrami operator $\mathcal{L}(f)$
+  \arritem Generalized eigenvalue problem
 \end{itemize}
+
+% \textbf{Graph Laplacian}. Discrete approximation of Laplace-Beltrami operator
+% 
+% \begin{itemize}
+%   \arritem Weight matrix. $\W = (w)_{ij} \in \R^{N \times N}$, where 
+%   $w_{ij} = w_{ij}(\twonorm{\x_i - \x_j})$
+%   % \arritem Diagonal matrix of row sums. $\D = 
+%   % \text{\textit{diag}}(\sum_j w_{ij}) \in \R^{N \times N}$
+%   \arritem Graph Laplacian. $\Lap = \D - \W \in \R^{N \times N}$,
+%   $\D = \mathit{diag}(\sum_j w_{ij}) \in \R^{N \times N}$
+% \end{itemize}
 
 \vspace{0.3cm}
 
-\textbf{Generalized eigenvalue problem}. 
-
-\begin{fleqn}
-  \begin{equation}
-    \small
-    \min_{\Y} \mathit{trace}(\Y^T \Lap \Y), \quad \text{s.t. } 
-    \Y^T \D \Y = \I
-  \end{equation}
-\end{fleqn}
+% \textbf{Generalized eigenvalue problem}. 
+% 
+% \begin{fleqn}
+%   \begin{equation}
+%     \small
+%     \min_{\Y} \mathit{trace}(\Y^T \Lap \Y), \quad \text{s.t. } 
+%     \Y^T \D \Y = \I
+%   \end{equation}
+% \end{fleqn}
 
 \conclbox{Solution: bottom $d + 1$ eigenvectors}
 
@@ -600,7 +608,7 @@ weights
 
 \vspace{0.3cm}
 
-\textbf{Idea}. Finding a truly locally linear mapping while preserving local 
+\textbf{Idea}. Finding a truly linear mapping while preserving local 
 isometry
 
 \begin{itemize}
@@ -611,18 +619,28 @@ isometry
 
 \vspace{0.3cm}
 
-\textbf{Hessian functional}. Measuring average curviness over $\mani$
+\textbf{Solution.} Eigenanalysis of empirical Hessian functional $\mathcal{H}$
 
 \begin{itemize}
-  \arritem Continuous functional. 
-  $\mathscr{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv$
-  \arritem Hessian estimators $\Hes_{\ell}$ derived from locally linear 
+  \arritem Derived as a quadratic form of Hessian estimators in linear 
   neighborhood patches
-  \arritem Empirical approximator.
-  $\mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
-  (\Hes_{\ell})_{m,j}$
-  \arritem Finding null space of $\mathcal{H}$
+  \arritem Discrete approximation of continuous Hesssian functional
+  $\mathscr{H}(f)$
+  \arritem Null space problem
 \end{itemize}
+
+% \textbf{Hessian functional}. Measuring average curviness over $\mani$
+% 
+% \begin{itemize}
+%   \arritem Continuous functional. 
+%   $\mathscr{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv$
+%   \arritem Hessian estimators $\Hes_{\ell}$ derived from locally linear 
+%   neighborhood patches
+%   \arritem Empirical approximator.
+%   $\mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
+%   (\Hes_{\ell})_{m,j}$
+%   \arritem Finding null space of $\mathcal{H}$
+% \end{itemize}
 
 \vspace{0.3cm}
 
@@ -786,7 +804,7 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 
 \begin{fleqn}
   \begin{equation}
-    \min_{\Y}
+    \min_{\Y_1, \Y_2}
     \begin{bmatrix} \Y_1 & \Y_2 \end{bmatrix}
     \begin{bmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
     \begin{bmatrix} \Y_1^T \\ \Y_2^T \end{bmatrix} +
@@ -819,8 +837,9 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \begin{itemize}
   \arritem Pre-existing prior information $\Rightarrow$ worst case: poor 
   coverage
-  \arritem Random sampling
-  \arritem Maximum coverage
+  \arritem (Uniform) random sampling
+  \arritem Maximum coverage $\Rightarrow$ minimization of condition number 
+  $\kappa(M_{22})$
 \end{itemize}
 
 % \begin{figure}[H]
@@ -842,28 +861,28 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 %  \end{subfigure}
 % \end{figure}
 
-\begin{minipage}[t]{0.2\textwidth}
+\begin{minipage}[t]{0.33\textwidth}
   \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
       width = 0.7\textwidth]{figures/s-curve-pp-poor}
 \end{minipage}%
-\begin{minipage}[t]{0.2\textwidth}
+\begin{minipage}[t]{0.33\textwidth}
   \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
       width = 0.7\textwidth]{figures/s-curve-pp-random}
 \end{minipage}%
-\begin{minipage}[t]{0.2\textwidth}
+\begin{minipage}[t]{0.33\textwidth}
     \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
     width = 0.7\textwidth]{figures/s-curve-pp-maxmin}
 \end{minipage}
 
-\vspace{0.3cm}
-
-\textbf{Maximum coverage.} Points scattered across manifold surface
-
-\begin{itemize}
-  \arritem Goodness of solution depending on condition number $\kappa(M_{22})$
-  \arritem $\kappa(M_{22})$ minimal at maximization of minimum pairwise 
-  distances between prior points
-\end{itemize}
+% \vspace{0.3cm}
+% 
+% \textbf{Maximum coverage.} Points scattered across manifold surface
+% 
+% \begin{itemize}
+%   \arritem Goodness of solution depending on condition number $\kappa(M_{22})$
+%   \arritem $\kappa(M_{22})$ minimal at maximization of minimum pairwise 
+%   distances between prior points
+% \end{itemize}
 
 \end{frame}
 
@@ -1076,24 +1095,71 @@ $\Rightarrow$ Best case: noise level 0.1 \& 12 landmarks
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Evaluation criterion I.} Residual variance
+\textbf{Evaluation criterion.} $\text{AUC}(R_{NX})$ \citep{kraemeretal2019}
 
 \begin{itemize}
-  \arritem foo
+  \arritem Area under the $R_{NX}$ curve
+  \arritem Based on co-ranking matrix
 \end{itemize}
 
 \vspace{0.3cm}
 
-\textbf{Evaluation criterion II.} Area under the xy curve
+\textbf{Co-ranking matrix.} Comparing distance ranks in observation \& embedding 
+spaces
 
 \begin{itemize}
-  \arritem foo
+  \arritem Rank distance matrices. $(r)_{ij}^{\text{obs}}$ and
+  $(r)_{ij}^{\text{emb}}$
+  \arritem Co-ranking matrix. $\bm{Q} = (q)_{\ell m}$ with $q_{\ell m} = 
+  \rvert \{ (i, j): 
+  r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} 
+  \rvert$ 
+  \arritem Interpretation.
+  \begin{itemize}
+    \flexitem{a} All non-zero entries on diagonal $\Rightarrow$ optimal 
+    embedding
+    \flexitem{b} Most non-zero entries on upper triangle $\Rightarrow$ close 
+    points torn apart
+    \flexitem{c} Most non-zero entries on lower triangle $\Rightarrow$ faraway 
+    poits collapsed
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.1 setup} ~~ evaluation}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Co-ranking-based metrics.} Comparing distance ranks in observation \& 
+embedding spaces
+
+\begin{itemize}
+  \arritem Number of points belonging to $k$-neighborhood in both spaces. 
+  $Q_{NX}(k) = \frac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
+  q_{\ell m}$
+  \arritem Adjustment for random embeddings and normalization. \\ 
+  $R_{NX}(k) = \frac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}$
 \end{itemize}
 
 \vspace{0.3cm}
 
-$\Rightarrow$ Both semi-reliable \\
-$\Rightarrow$ Additional visual inspection
+\textbf{AUC measure.} Parameter-free
+
+\begin{itemize}
+  \arritem $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
+  \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
+  \arritem Interpretation.
+  \begin{itemize}
+    \flexitem{a} $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
+    \flexitem{b} $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
+  \end{itemize}
+\end{itemize}
 
 \end{frame}
 
@@ -1112,6 +1178,14 @@ $\Rightarrow$ Additional visual inspection
 
 \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_landmarks_auc}
+    
+\vspace{0.3cm}
+
+\scriptsize
+$\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of 1 
+in both figures for better visibility of differences. \\
+Original scales. Swiss roll: $\text{AUC}(R_{NX}) \in [0.2655, 0.4086]$, 
+incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 
 \end{frame}
 
@@ -1168,6 +1242,14 @@ landmarks
 \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_noise_auc}
 
+\vspace{0.3cm}
+
+\scriptsize
+$\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of 1 
+in both figures for better visibility of differences. \\
+Original scales. Swiss roll: $\text{AUC}(R_{NX}) \in [0.2720, 0.4167]$, 
+incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
+
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -1179,8 +1261,7 @@ landmarks
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Qualitative results.} Some compensation of noise by larger number of 
-landmarks
+\textbf{Qualitative results.} Impact different across data sets
 
 \vspace{0.3cm}
 
@@ -1198,8 +1279,7 @@ landmarks
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Qualitative results.} Some compensation of noise by larger number of 
-landmarks
+\textbf{Qualitative results.} Impact different across data sets
 
 \vspace{0.3cm}
 
@@ -1207,7 +1287,6 @@ landmarks
     width = \textwidth]{figures/sensitivity_noise_qual_tire}
 
 \end{frame}
-
 
 % ------------------------------------------------------------------------------
 % DISCUSSION

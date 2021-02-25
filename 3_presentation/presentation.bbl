@@ -12,6 +12,13 @@ Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
   high-dimensional data, {\em Proceedings of the National Academy of Sciences
   of the United States of America} {\bf 100}(10):~5591--5596.
 
+\harvarditem[Kraemer et~al.]{Kraemer, Reichstein \harvardand\
+  Mahecha}{2019}{kraemeretal2019}
+Kraemer, G., Reichstein, M. \harvardand\ Mahecha, M.~D.  \harvardyearleft
+  2019\harvardyearright .
+\newblock dimred and coranking -— unifying dimensionality reduction in r,
+  {\em Technical report}.
+
 \harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
 Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  24 FEB 2021 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  25 FEB 2021 07:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1464,63 +1464,23 @@ Package pdftex.def Info: figures/eigenanalysis.png  used on input line 399.
  <./figures/eigenanalysis.png>] [10
 
 ]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 501.
-
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 9.19998pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.43999pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 4.59999pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 9.19998pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <7> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 6.43999pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <5> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <5> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 4.59999pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 501.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.59999pt on input line 501.
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 501--501
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 509--509
 [][]  
  []
 
 [11
 
 ]
-<figures/reconstruction-3d.pdf, id=124, 229.81859pt x 229.81859pt>
+<figures/reconstruction-3d.pdf, id=122, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-3d.pdf Graphic file (type pdf)
 <use figures/reconstruction-3d.pdf>
-Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 538.
+Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 546.
 
 (pdftex.def)             Requested size: 137.66391pt x 103.0277pt.
-<figures/reconstruction-2d.pdf, id=126, 229.81859pt x 229.81859pt>
+<figures/reconstruction-2d.pdf, id=124, 229.81859pt x 229.81859pt>
 File: figures/reconstruction-2d.pdf Graphic file (type pdf)
 <use figures/reconstruction-2d.pdf>
-Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 538.
+Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 546.
 
 (pdftex.def)             Requested size: 98.3318pt x 93.12906pt.
  [12
@@ -1537,74 +1497,110 @@ ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 588.
+LaTeX Font Warning: Command \small invalid in math mode on input line 596.
 
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 9.19998pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.43999pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 4.59999pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 9.19998pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 6.43999pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <5> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <5> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 4.59999pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 596.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 4.59999pt on input line 596.
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 588.
+(Font)              using `OT1/cmss/m/n' instead on input line 596.
 
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 588.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 9.19998pt on input line 588.
+(Font)              scaled to size 9.19998pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <7> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 588.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 6.43999pt on input line 588.
+(Font)              scaled to size 6.43999pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <5> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 588.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 4.59999pt on input line 588.
+(Font)              scaled to size 4.59999pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.19998pt on input line 588.
+(Font)              scaled to size 9.19998pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.43999pt on input line 588.
+(Font)              scaled to size 6.43999pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 4.59999pt on input line 588.
+(Font)              scaled to size 4.59999pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 588.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 10.07397pt on input line 588.
+(Font)              scaled to size 10.07397pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <8> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 588.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 7.35999pt on input line 588.
+(Font)              scaled to size 7.35999pt on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <6> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 588.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 596.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 5.51999pt on input line 588.
+(Font)              scaled to size 5.51999pt on input line 596.
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 588.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 588.
+LaTeX Font Warning: Command \small invalid in math mode on input line 596.
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 588--588
+LaTeX Font Warning: Command \small invalid in math mode on input line 596.
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 596--596
 [][]  
  []
 
 [13
 
 ]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 631--631
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 649--649
 [][]  
  []
 
 [14
 
 ]
-<figures/s-curve-pp-random.pdf, id=166, 343.2825pt x 305.22029pt>
+<figures/s-curve-pp-random.pdf, id=164, 343.2825pt x 305.22029pt>
 File: figures/s-curve-pp-random.pdf Graphic file (type pdf)
 <use figures/s-curve-pp-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 680.
+Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 698.
 
 (pdftex.def)             Requested size: 40.97131pt x 49.50656pt.
-<figures/s-curve-pp-undone-random.pdf, id=168, 756.90776pt x 305.22029pt>
+<figures/s-curve-pp-undone-random.pdf, id=166, 756.90776pt x 305.22029pt>
 File: figures/s-curve-pp-undone-random.pdf Graphic file (type pdf)
 <use figures/s-curve-pp-undone-random.pdf>
 Package pdftex.def Info: figures/s-curve-pp-undone-random.pdf  used on input li
-ne 680.
+ne 698.
 (pdftex.def)             Requested size: 143.4012pt x 60.43483pt.
  [15
 
@@ -1619,17 +1615,17 @@ pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-undone-random.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 756--756
+Underfull \hbox (badness 10000) in paragraph at lines 774--774
 
  []
 
-<figures/matrix_partition.png, id=184, 772.8875pt x 497.86pt>
+<figures/matrix_partition.png, id=182, 772.8875pt x 497.86pt>
 File: figures/matrix_partition.png Graphic file (type png)
 <use figures/matrix_partition.png>
-Package pdftex.def Info: figures/matrix_partition.png  used on input line 756.
+Package pdftex.def Info: figures/matrix_partition.png  used on input line 774.
 (pdftex.def)             Requested size: 157.74562pt x 104.68675pt.
 
-Overfull \hbox (14.3413pt too wide) in paragraph at lines 756--756
+Overfull \hbox (14.3413pt too wide) in paragraph at lines 774--774
  [] 
  []
 
@@ -1641,19 +1637,19 @@ Overfull \hbox (14.3413pt too wide) in paragraph at lines 756--756
 <figures/s-curve-pp-poor.pdf, id=199, 343.2825pt x 305.22029pt>
 File: figures/s-curve-pp-poor.pdf Graphic file (type pdf)
 <use figures/s-curve-pp-poor.pdf>
-Package pdftex.def Info: figures/s-curve-pp-poor.pdf  used on input line 868.
-(pdftex.def)             Requested size: 57.35959pt x 80.6668pt.
+Package pdftex.def Info: figures/s-curve-pp-poor.pdf  used on input line 887.
+(pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
 File: figures/s-curve-pp-random.pdf Graphic file (type pdf)
 <use figures/s-curve-pp-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 868.
+Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 887.
 
-(pdftex.def)             Requested size: 57.35959pt x 80.6668pt.
+(pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
 <figures/s-curve-pp-maxmin.pdf, id=202, 343.2825pt x 305.22029pt>
 File: figures/s-curve-pp-maxmin.pdf Graphic file (type pdf)
 <use figures/s-curve-pp-maxmin.pdf>
-Package pdftex.def Info: figures/s-curve-pp-maxmin.pdf  used on input line 868.
+Package pdftex.def Info: figures/s-curve-pp-maxmin.pdf  used on input line 887.
 
-(pdftex.def)             Requested size: 57.35959pt x 80.6668pt.
+(pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
  [18
 
  <./figures/s-curve-pp-poor.pdf
@@ -1674,12 +1670,12 @@ nored.
 <figures/swiss-roll.pdf, id=231, 343.2825pt x 305.22029pt>
 File: figures/swiss-roll.pdf Graphic file (type pdf)
 <use figures/swiss-roll.pdf>
-Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 1023.
+Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 1042.
 (pdftex.def)             Requested size: 64.53151pt x 78.41673pt.
 <figures/incomplete-tire.pdf, id=234, 455.78279pt x 305.22029pt>
 File: figures/incomplete-tire.pdf Graphic file (type pdf)
 <use figures/incomplete-tire.pdf>
-Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 1023.
+Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 1042.
 (pdftex.def)             Requested size: 100.38258pt x 70.31561pt.
  [21
 
@@ -1693,12 +1689,12 @@ pdfTeX warning: pdflatex.exe (file ./figures/incomplete-tire.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
 >]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1068--1068
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1087--1087
 [][]  
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1068--1068
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1087--1087
 [][]  
  []
 
@@ -1706,24 +1702,26 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1068--1068
 
 ] [23
 
+] [24
+
 ]
-<figures/sensitivity_landmarks_auc.pdf, id=261, 1156.32pt x 433.62pt>
+<figures/sensitivity_landmarks_auc.pdf, id=269, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
-ine 1116.
+ine 1190.
 (pdftex.def)             Requested size: 409.71951pt x 153.64174pt.
- [24
+ [25
 
  <./figures/sensitivity_landmarks_auc.pdf>]
-<figures/sensitivity_landmarks_qual_swiss.pdf, id=277, 756.90776pt x 343.2825pt
+<figures/sensitivity_landmarks_qual_swiss.pdf, id=286, 756.90776pt x 343.2825pt
 >
 File: figures/sensitivity_landmarks_qual_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_qual_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss.pdf  used on 
-input line 1134.
+input line 1208.
 (pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
- [25
+ [26
 
  <./figures/sensitivity_landmarks_qual_swiss.pdf
 
@@ -1731,14 +1729,14 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss.p
 df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
 pe <array>); ignored.
 >]
-<figures/sensitivity_landmarks_qual_tire.pdf, id=293, 756.90776pt x 343.2825pt>
+<figures/sensitivity_landmarks_qual_tire.pdf, id=301, 756.90776pt x 343.2825pt>
 
 File: figures/sensitivity_landmarks_qual_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_qual_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_tire.pdf  used on i
-nput line 1152.
+nput line 1226.
 (pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
- [26
+ [27
 
  <./figures/sensitivity_landmarks_qual_tire.pdf
 
@@ -1746,22 +1744,22 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_tire.pd
 f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
 e <array>); ignored.
 >]
-<figures/sensitivity_noise_auc.pdf, id=308, 1156.32pt x 433.62pt>
+<figures/sensitivity_noise_auc.pdf, id=316, 1156.32pt x 433.62pt>
 File: figures/sensitivity_noise_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line 
-1171.
+1253.
 (pdftex.def)             Requested size: 409.71951pt x 153.64174pt.
- [27
+ [28
 
  <./figures/sensitivity_noise_auc.pdf>]
-<figures/sensitivity_noise_qual_swiss.pdf, id=324, 756.90776pt x 380.38109pt>
+<figures/sensitivity_noise_qual_swiss.pdf, id=332, 756.90776pt x 380.38109pt>
 File: figures/sensitivity_noise_qual_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_swiss.pdf  used on inpu
-t line 1190.
+t line 1271.
 (pdftex.def)             Requested size: 409.71951pt x 188.74628pt.
- [28
+ [29
 
  <./figures/sensitivity_noise_qual_swiss.pdf
 
@@ -1769,28 +1767,28 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss.pdf):
  PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <
 array>); ignored.
 >]
-<figures/sensitivity_noise_qual_tire.pdf, id=339, 756.90776pt x 380.38109pt>
+<figures/sensitivity_noise_qual_tire.pdf, id=348, 756.90776pt x 380.38109pt>
 File: figures/sensitivity_noise_qual_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_tire.pdf  used on input
- line 1209.
+ line 1289.
 (pdftex.def)             Requested size: 409.71951pt x 188.74628pt.
- [29
+ [30
 
  <./figures/sensitivity_noise_qual_tire.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_tire.pdf): 
 PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
 rray>); ignored.
->] [30
-
-] [31
+>] [31
 
 ] [32
 
+] [33
+
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1311.
+(Font)              scaled to size 8.27998pt on input line 1391.
  (./presentation.bbl
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
@@ -1798,7 +1796,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.27998pt on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.27998pt on input line 13.
-) [33
+) [34
 
 ]
 \tf@nav=\write7
@@ -1819,11 +1817,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 24037 strings out of 479485
- 439614 string characters out of 5875915
- 798599 words of memory out of 5000000
- 40317 multiletter control sequences out of 15000+600000
- 642851 words of font info for 154 fonts, out of 8000000 for 9000
+ 24046 strings out of 479485
+ 439745 string characters out of 5875915
+ 798662 words of memory out of 5000000
+ 40322 multiletter control sequences out of 15000+600000
+ 644068 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,459b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
@@ -1831,17 +1829,18 @@ f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmss10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
-2020/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/
-fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw
-/helvetic/uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr
-8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (33 pages, 4415501 bytes).
+/cmss8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf
+-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type
+1/urw/helvetic/uhvb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/
+uhvbo8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:
+/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on presentation.pdf (34 pages, 4427016 bytes).
 PDF statistics:
- 436 PDF objects out of 1000 (max. 8388607)
- 297 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 308 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
  305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
