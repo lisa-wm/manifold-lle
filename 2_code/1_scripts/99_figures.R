@@ -485,13 +485,13 @@ orca(
 orca(
   sensitivity_landmarks_plots_key_variation$swiss_roll, 
   "3_presentation/figures/sensitivity_landmarks_key_swiss.pdf",
-  height = 450,
+  height = 250,
   width = 1000)
 
 orca(
   sensitivity_landmarks_plots_key_variation$incomplete_tire, 
   "3_presentation/figures/sensitivity_landmarks_key_tire.pdf",
-  height = 450,
+  height = 250,
   width = 1000)
 
 pdf(
@@ -525,11 +525,11 @@ orca(
 orca(
   sensitivity_noise_plots_key_variation$swiss_roll, 
   "3_presentation/figures/sensitivity_noise_key_swiss.pdf",
-  height = 450,
+  height = 250,
   width = 1000)
 
 orca(
   sensitivity_noise_plots_key_variation$incomplete_tire, 
   "3_presentation/figures/sensitivity_noise_key_tire.pdf",
-  height = 450,
+  height = 250,
   width = 1000)

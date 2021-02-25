@@ -1116,11 +1116,11 @@ spaces
   \rvert$ 
   \arritem Interpretation.
   \begin{itemize}
-    \flexitem{a} All non-zero entries on diagonal $\Rightarrow$ optimal 
+    \flexitem{1} All non-zero entries on diagonal $\Rightarrow$ optimal 
     embedding
-    \flexitem{b} Most non-zero entries on upper triangle $\Rightarrow$ close 
+    \flexitem{2} Most non-zero entries on upper triangle $\Rightarrow$ close 
     points torn apart
-    \flexitem{c} Most non-zero entries on lower triangle $\Rightarrow$ faraway 
+    \flexitem{3} Most non-zero entries on lower triangle $\Rightarrow$ faraway 
     poits collapsed
   \end{itemize}
 \end{itemize}
@@ -1156,11 +1156,34 @@ embedding spaces
   \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
   \arritem Interpretation.
   \begin{itemize}
-    \flexitem{a} $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
-    \flexitem{b} $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
+    \flexitem{1} $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
+    \flexitem{2} $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
   \end{itemize}
 \end{itemize}
 
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.2 results} ~~ sensitivity analysis I}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Key variation.} Swiss roll
+
+\includegraphics[trim = 40 20 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/sensitivity_landmarks_key_swiss}
+    
+% \vspace{0.3cm}
+    
+\textbf{Key variation.} Incomplete tire
+
+\includegraphics[trim = 40 20 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/sensitivity_landmarks_key_tire}    
+    
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -1223,6 +1246,29 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 \includegraphics[trim = 40 10 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_landmarks_qual_tire}
 
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\LARGE
+\begin{frame}{\textcolor{gray!90}{4.2 results} ~~ sensitivity analysis II}
+\normalsize
+\vspace{-0.5cm}
+\noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
+\smallskip
+
+\textbf{Key variation.} Swiss roll
+
+\includegraphics[trim = 40 30 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/sensitivity_noise_key_swiss}
+    
+% \vspace{0.3cm}
+    
+\textbf{Key variation.} Incomplete tire
+
+\includegraphics[trim = 40 30 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/sensitivity_noise_key_tire}    
+    
 \end{frame}
 
 % ------------------------------------------------------------------------------
