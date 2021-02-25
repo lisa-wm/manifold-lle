@@ -451,6 +451,8 @@ load_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
 load_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
 load_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
 load_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
+load_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
+load_rdata_files(sensitivity_noise_plots_key_variation, folder = "2_code")
 
 pdf(
   here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
@@ -480,6 +482,18 @@ orca(
   height = 450,
   width = 1000)
 
+orca(
+  sensitivity_landmarks_plots_key_variation$swiss_roll, 
+  "3_presentation/figures/sensitivity_landmarks_key_swiss.pdf",
+  height = 450,
+  width = 1000)
+
+orca(
+  sensitivity_landmarks_plots_key_variation$incomplete_tire, 
+  "3_presentation/figures/sensitivity_landmarks_key_tire.pdf",
+  height = 450,
+  width = 1000)
+
 pdf(
   here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
   width = 16, 
@@ -506,4 +520,16 @@ orca(
   sensitivity_noise_plots_qual$incomplete_tire, 
   "3_presentation/figures/sensitivity_noise_qual_tire.pdf",
   height = 500,
+  width = 1000)
+
+orca(
+  sensitivity_noise_plots_key_variation$swiss_roll, 
+  "3_presentation/figures/sensitivity_noise_key_swiss.pdf",
+  height = 450,
+  width = 1000)
+
+orca(
+  sensitivity_noise_plots_key_variation$incomplete_tire, 
+  "3_presentation/figures/sensitivity_noise_key_tire.pdf",
+  height = 450,
   width = 1000)
