@@ -79,7 +79,8 @@ sensitivity_landmarks <- parallel::mclapply(
         n_landmarks = this_number,
         residual_variance = min(embedding$residual_variances),
         auc_lnk_rnx = max(embedding$auc_lnk_rnx),
-        embedding_result = embedding)
+        embedding_result = embedding,
+        landmarks = landmarks)
       
     },
     

@@ -194,3 +194,20 @@ names(sensitivity_noise_plots_qual) <- names(sensitivity_noise_pp_dt)
 
 save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
 
+# VISUALIZATION: KEY VARIATION -------------------------------------------------
+
+data_labeled <- list(
+  incomplete_tire = make_incomplete_tire(n_points = 1000L), 
+  swiss_roll = make_swiss_roll(n_points = 1000L))
+
+data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+
+plot_manifold(
+  data_labeled$swiss_roll[, .(x_2, t, s, s)],
+  dim = 2L,
+  point_size_1_2_d = 5L)
+
+plot_manifold(
+  data_labeled$incomplete_tire[, .(s, t, s, s)],
+  dim = 2L,
+  point_size_1_2_d = 5L)
