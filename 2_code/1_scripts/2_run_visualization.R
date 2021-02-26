@@ -252,7 +252,7 @@ sensitivity_landmarks_plots_key_variation <- lapply(
           color = ~ 1L,
           type = "scatter",
           mode = "markers",
-          marker = list(color = "black", size = 10L, symbol = "diamond"))#,
+          marker = list(color = "black", size = 10L, symbol = "x"))#,
       # annotation_text = "random coverage")
     
     plot_maximum <- #make_annotations(
@@ -333,88 +333,6 @@ sensitivity_noise_plots_key_variation <- lapply(
         
       })
     
-    # 
-    # 
-    # 
-    # 
-    # base_plot %>% 
-    #   layout(shapes = list(type = 'circle',
-    #               xref = 'x', x0 = 2.7, x1 = 6,
-    #               yref = 'y', y0 = 2.7, y1 = 6,
-    #               fillcolor = 'black', line = list(color = 'rgb(50, 20, 90)'),
-    #               opacity = 0.2))
-    # 
-    # 
-    # 
-    # 
-    # 
-    # landmarks_corrupted_little <- 
-    #   data.table::as.data.table(sensitivity_noise_dt[[i]][
-    #     noise_level == 0.1L & n_landmarks == 12L]$landmarks_corrupted)
-    # 
-    # landmarks_corrupted_medium <- 
-    #   data.table::as.data.table(sensitivity_noise_dt[[i]][
-    #     noise_level == 1L & n_landmarks == 12L]$landmarks_corrupted)
-    # 
-    # landmarks_corrupted_badly <- 
-    #   data.table::as.data.table(sensitivity_noise_dt[[i]][
-    #     noise_level == 5L & n_landmarks == 12L]$landmarks_corrupted)
-    # 
-    # plot_little_noise <- base_plot %>% 
-    #   add_trace(
-    #     x = ~ landmarks$t,
-    #     y = ~ landmarks$s,
-    #     color = ~ 1L,
-    #     type = "scatter",
-    #     mode = "markers",
-    #     marker = list(color = "black", size = 10L)) %>% 
-    #   add_trace(
-    #     x = ~ landmarks_corrupted_medium$t,
-    #     y = ~ landmarks_corrupted_medium$s,
-    #     color = ~ 1L,
-    #     type = "scatter",
-    #     mode = "markers",
-    #     marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
-    #   hide_guides()
-    # 
-    # plot_medium_noise <- base_plot %>% 
-    #   add_trace(
-    #     x = ~ landmarks$t,
-    #     y = ~ landmarks$s,
-    #     color = ~ 1L,
-    #     type = "scatter",
-    #     mode = "markers",
-    #     marker = list(color = "black", size = 10L)) %>% 
-    #   add_trace(
-    #     x = ~ landmarks_corrupted$t,
-    #     y = ~ landmarks_corrupted$s,
-    #     color = ~ 1L,
-    #     type = "scatter",
-    #     mode = "markers",
-    #     marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
-    #   hide_guides()
-    # 
-    # 
-    # plot_random <- base_plot %>% 
-    #   add_trace(
-    #     x = ~ landmarks_random$y_1,
-    #     y = ~ landmarks_random$y_2,
-    #     color = ~ 1L,
-    #     type = "scatter",
-    #     mode = "markers",
-    #     marker = list(color = "black", size = 15L, symbol = "diamond")) %>% 
-    #   hide_guides()
-    # 
-    # plot_maximum <- base_plot %>% 
-    #   add_trace(
-    #     x = ~ landmarks_optimal$y_1,
-    #     y = ~ landmarks_optimal$y_2,
-    #     color = ~ 1L,
-    #     type = "scatter",
-    #     mode = "markers",
-    #     marker = list(color = "black", size = 15L, symbol = "star")) %>% 
-    #   hide_guides()
-    
     subplot(
       noise_plots, nrows = 1L) %>%
       hide_guides()
@@ -443,12 +361,14 @@ comp_lle <- lapply(
     res_lle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
       "LLE", 
-      ndim = 2L)
+      ndim = 2L,
+      knn = data_opt$embedding_result[[1]]$neighborhood_size)
     
     res_hlle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
       "HLLE", 
-      ndim = 2L)
+      ndim = 2L,
+      knn = data_opt$embedding_result[[1]]$neighborhood_size)
     
     res <- list(lle = res_lle, hlle = res_hlle)
     
@@ -482,7 +402,7 @@ comp_lle <- lapply(
         data_opt$embedding_result[[1]]$X[, .(t, s)]),
       dim = 2L)
     
-    plotly::subplot(list(plots$lle, plots$hlle, plot_sslle), nrows = 3L) %>% 
+    plotly::subplot(list(plots$lle, plots$hlle, plot_sslle), nrows = 1L) %>% 
       hide_guides()
     
   }

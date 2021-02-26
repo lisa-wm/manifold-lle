@@ -551,13 +551,13 @@ load_rdata_files(comp_lle, folder = "2_code")
 orca(
   comp_lle$swiss_roll, 
   "3_presentation/figures/comparison_swiss.pdf",
-  height = 600,
-  width = 500)
+  height = 200,
+  width = 1000)
 
 orca(
   comp_lle$incomplete_tire, 
   "3_presentation/figures/comparison_tire.pdf",
-  height = 600,
-  width = 500)
+  height = 200,
+  width = 1000)
 
 

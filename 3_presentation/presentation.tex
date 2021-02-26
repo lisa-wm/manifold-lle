@@ -346,7 +346,6 @@ $\RD$
     \arritem Smoothness ~ \maketag{LEM}
     \arritem Local linearity ~ \maketag{LLE} \maketag{SSLLE}
     \arritem Curviness ~ \maketag{HLLE}
-    \arritem ...
   \end{itemize}
 \end{minipage}%
 \begin{minipage}[b]{0.33\textwidth}
@@ -1077,6 +1076,7 @@ points}
 \vspace{0.3cm}
 
 \begin{itemize}
+  \arritem Landmark coverage kept at optimal configuration
   \arritem Simulation of inexact prior information through additive Gaussian 
   noise 
   \arritem Corruption of landmark $\pv$ as 
@@ -1183,18 +1183,34 @@ embedding spaces
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Key variation.} Swiss roll -- poor, random, maximum coverage
+\textbf{Key variation.} Poor, random, maximum coverage
 
-\includegraphics[trim = 40 20 0 0, clip, % left bottom right top
+\vspace{0.3cm}
+
+\begin{minipage}[c]{0.2\textwidth}
+  Swiss roll
+\end{minipage}%
+\begin{minipage}[c]{0.8\textwidth}
+  \includegraphics[trim = 40 20 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_landmarks_key_swiss}
-    
-% \vspace{0.3cm}
-    
-\textbf{Key variation.} Incomplete tire -- poor, random, maximum coverage
+\end{minipage}
 
-\includegraphics[trim = 40 20 0 0, clip, % left bottom right top
-    width = \textwidth]{figures/sensitivity_landmarks_key_tire}    
-    
+\vspace{0.3cm}   
+
+\begin{minipage}[c]{0.2\textwidth}
+  Incomplete tire
+\end{minipage}%
+\begin{minipage}[c]{0.8\textwidth}
+  \includegraphics[trim = 40 20 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/sensitivity_landmarks_key_tire}
+\end{minipage}
+
+\vfill
+
+\scriptsize
+$\bullet$ ~ poor coverage ~~~ $\bm{\times}$ ~ random coverage ~~~
+$\star$ ~ maximum coverage
+
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -1213,7 +1229,7 @@ embedding spaces
 \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_landmarks_auc}
     
-\vspace{0.3cm}
+\vfill
 
 \scriptsize
 $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of 1 
@@ -1268,18 +1284,37 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Key variation.} Swiss roll -- $\alpha \in \{0.1, 0.5, 1.0, 3.0\}$ 
+\textbf{Key variation.} Noise level $\alpha \in \{0.1, 0.5, 1.0, 3.0\}$ 
 
-\includegraphics[trim = 40 30 0 0, clip, % left bottom right top
+\vspace{0.3cm}
+
+\begin{minipage}[c]{0.2\textwidth}
+  Swiss roll
+\end{minipage}%
+\begin{minipage}[c]{0.8\textwidth}
+  \includegraphics[trim = 40 30 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_noise_key_swiss}
-    
-% \vspace{0.3cm}
-    
-\textbf{Key variation.} Incomplete tire -- $\alpha \in \{0.1, 0.5, 1.0, 3.0\}$ 
+\end{minipage}
 
-\includegraphics[trim = 40 30 0 0, clip, % left bottom right top
-    width = \textwidth]{figures/sensitivity_noise_key_tire}    
-    
+\vspace{0.3cm}   
+
+\begin{minipage}[c]{0.2\textwidth}
+  Incomplete tire
+\end{minipage}%
+\begin{minipage}[c]{0.8\textwidth}
+  \includegraphics[trim = 40 30 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/sensitivity_noise_key_tire}
+\end{minipage}
+
+\vfill
+
+\scriptsize
+Expected displacement by random noise, exemplified at one prior point location. 
+\\
+Ellipses have semi-axes of length $\alpha \cdot s_i$, i.e., noise level scaled 
+by standard deviation $s_i$ in $t$ and $s$ direction, respectively, so
+$i \in \{t, s\}$.
+
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -1354,23 +1389,48 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Comparison.} SSLLE vs other methods as implemented in \texttt{dimRed} 
-package
+\textbf{Comparison.} LLE, HLLE, SSLLE
 
 \vspace{0.3cm}
 
-\begin{minipage}[b]{0.5\textwidth}
-  \raggedright
-  \textbf{Swiss roll}. LLE, HLLE, SSLLE
-  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-    width = 0.7\textwidth]{figures/comparison_swiss}
+\begin{minipage}[c]{0.2\textwidth}
+  Swiss roll
 \end{minipage}%
-\begin{minipage}[b]{0.5\textwidth}
-  \raggedright
-  \textbf{Incomplete tire}. LLE, HLLE, SSLLE
+\begin{minipage}[c]{0.8\textwidth}
   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-    width = 0.7\textwidth]{figures/comparison_tire}
+    width = \textwidth]{figures/comparison_swiss}
 \end{minipage}
+
+\vspace{0.3cm}   
+
+\begin{minipage}[c]{0.2\textwidth}
+  Incomplete tire
+\end{minipage}%
+\begin{minipage}[c]{0.8\textwidth}
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/comparison_tire}
+\end{minipage}
+
+% \begin{minipage}[b]{0.5\textwidth}
+%   \raggedright
+%   \textbf{Swiss roll}. LLE, HLLE, SSLLE
+%   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+%     width = 0.7\textwidth]{figures/comparison_swiss}
+% \end{minipage}%
+% \begin{minipage}[b]{0.5\textwidth}
+%   \raggedright
+%   \textbf{Incomplete tire}. LLE, HLLE, SSLLE
+%   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+%     width = 0.7\textwidth]{figures/comparison_tire}
+% \end{minipage}
+
+\vspace{0.3cm}  
+
+\scriptsize
+LLE and HLLE computed using implementation in \texttt{R}'s \texttt{dimRed} 
+package (\textcolor{red}{cite}). \\
+Number of neighbors as deemed optimal by SSLLE implementation (no other 
+hyperparameters to set).
 
 \end{frame}
 
