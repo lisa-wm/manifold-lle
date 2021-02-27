@@ -91,7 +91,7 @@ aspectratio = 1610]{beamer}
 
 \title{Semi-Supervised Locally Linear Embedding (SSLLE)}
 \author{Lisa Wimmer}
-\date{2021/26/02}
+\date{February, 2021}
 
 \setbeamertemplate{frametitle}{\expandafter\uppercase\expandafter
 \insertframetitle}
@@ -825,7 +825,7 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{3.2 semi-supervised} ~~ sslle}
+\begin{frame}{\textcolor{gray!90}{3.3 challenges} ~~ critical parameters}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
@@ -894,28 +894,6 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Intrinsic dimensionality}. True sources of variability
-
-\begin{itemize}
-  \arritem Considered known with availability of prior information
-\end{itemize}
-
-% \vspace{0.3cm}
-
-\textbf{Neighborhood size}. Global vs local structure
-
-\begin{itemize}
-  \arritem Tunable (expensive)
-\end{itemize}
-
-% \vspace{0.3cm}
-
-\textbf{Regularization constant}. Singularity for $D < k$
-
-\begin{itemize}
-  \arritem Heuristics
-\end{itemize}
-
 % \vspace{0.3cm}
 
 \textbf{Number \& location of prior points}. Utility of prior knowledge ~ 
@@ -938,6 +916,37 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \begin{itemize}
   \arritem Rather robust
 \end{itemize}
+
+% \textbf{Intrinsic dimensionality}. True sources of variability
+% 
+% \begin{itemize}
+%   \arritem Considered known with availability of prior information
+% \end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Further hyperparameters}. Also critical in unsupervised case
+
+\begin{itemize}
+  \arritem Intrinsic dimensionality
+  \arritem Neighborhood size
+  \arritem Regularization constant
+\end{itemize}
+% 
+% \textbf{Neighborhood size}. Global vs local structure
+% 
+% \begin{itemize}
+%   \arritem Tunable (expensive)
+% \end{itemize}
+% 
+% % \vspace{0.3cm}
+% 
+% \textbf{Regularization constant}. Singularity for $D < k$
+% 
+% \begin{itemize}
+%   \arritem Heuristics
+% \end{itemize}
+
 
 \end{frame}
 
@@ -1159,14 +1168,15 @@ embedding spaces
   \arritem Number of points remaining in $k$-neighborhood after projection. 
   $Q_{NX}(k) = \dfrac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
   q_{\ell m}$
-  \arritem Adjustment for random embeddings and normalization. \\ 
+  \arritem 
+  % Adjustment for random embeddings and normalization. \\ 
   $R_{NX}(k) = \dfrac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}$
 \end{itemize}
 
 \vspace{0.3cm}
 
 \begin{minipage}[b]{0.6\textwidth}
-  \textbf{AUC measure.} Parameter-free
+  \textbf{AUC measure.} % Parameter-free
   \begin{itemize}
     \arritem $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
     \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
@@ -1322,7 +1332,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 Expected displacement by random noise, exemplified at one prior point location. 
 \\
 Ellipses have semi-axes of length $\alpha \cdot s_i$, i.e., noise level scaled 
-by standard deviation $s_i$ in $t$ and $s$ direction, respectively, so
+by standard deviation $s_i$ in $t$ and $s$ direction, \\respectively, so
 $i \in \{t, s\}$.
 
 \end{frame}
@@ -1439,7 +1449,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \scriptsize
 SSLLE with maximum coverage, 12 landmarks and exact prior information. \\
 LLE and HLLE computed using implementation in \texttt{R}'s \texttt{dimRed} 
-package (\textcolor{red}{cite}); number of neighbors as deemed optimal by 
+package \citep{pkgdimred}; number of neighbors as deemed optimal by 
 SSLLE implementation (no other hyperparameters to set).
 
 \end{frame}
@@ -1500,23 +1510,20 @@ SSLLE implementation (no other hyperparameters to set).
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{5 discussion} ~~ issues \& drawbacks}
+\begin{frame}{\textcolor{gray!90}{5 discussion}}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Sensitivity.} 
+% \textbf{Sensitivity.} 
 
-\textbf{Sensitivity.} SSLLE rather sensitive with respect to its
-(hyper)parameters
+\includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/discussion}
+    
+\vfill
 
-\begin{itemize}
-  \arritem Disturbances by poor landmark coverage and/or inexact prior 
-  information 
-\end{itemize}
-
-\vspace{0.3cm}
+\conclbox{SSLLE. Imperfect but potentially very powerful approach to LGML}
 
 \end{frame}
 
@@ -1544,8 +1551,20 @@ SSLLE implementation (no other hyperparameters to set).
 
 % ------------------------------------------------------------------------------
 
+\begin{frame}<presentation:0>[noframenumbering]
+
+\citep{bengioetal2004}
+\citep{ghojoghetal2020}
+\citep{cayton2005}
+\citep{vandermaatenetal2009}
+\citep{sauletal2006}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
 \begin{frame}{}
-\footnotesize
+\scriptsize
 
 \bibliography{bibliography}
 \bibliographystyle{dcu}

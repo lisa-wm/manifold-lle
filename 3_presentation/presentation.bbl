@@ -6,11 +6,35 @@ Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2001\harvardyearright .
   clustering, {\em Proceedings of the 14th International Conference on Neural
   Information Processing Systems: Natural and Synthetic}, p.~585–591.
 
+\harvarditem[Bengio et~al.]{Bengio, Delalleau, Roux, Paiement, Vincent
+  \harvardand\ Ouimet}{2004}{bengioetal2004}
+Bengio, Y., Delalleau, O., Roux, N.~L., Paiement, J.-F., Vincent, P.
+  \harvardand\ Ouimet, M.  \harvardyearleft 2004\harvardyearright .
+\newblock Learning eigenfunction links spectral embedding and kernel pca, {\em
+  Neural Computation} {\bf 16}:~2197--2219.
+
+\harvarditem{Cayton}{2005}{cayton2005}
+Cayton, L.  \harvardyearleft 2005\harvardyearright .
+\newblock Algorithms for manifold learning, {\em Technical Report CS2008-0923},
+  University of California, San Diego (UCSD).
+
 \harvarditem{Donoho \harvardand\ Grimes}{2003}{donohogrimes2003}
 Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
 \newblock Hessian eigenmaps: Locally linear embedding techniques for
   high-dimensional data, {\em Proceedings of the National Academy of Sciences
   of the United States of America} {\bf 100}(10):~5591--5596.
+
+\harvarditem[Ghojogh et~al.]{Ghojogh, Ghodsi, Karray \harvardand\
+  Crowley}{2020}{ghojoghetal2020}
+Ghojogh, B., Ghodsi, A., Karray, F. \harvardand\ Crowley, M.  \harvardyearleft
+  2020\harvardyearright .
+\newblock Locally linear embedding and its variants: Tutorial and survey.
+
+\harvarditem{Kraemer}{2019}{pkgdimred}
+Kraemer, G.  \harvardyearleft 2019\harvardyearright .
+\newblock {\em dimRed: A Framework for Dimensionality Reduction}.
+\newblock R package version 0.2.3.
+\newline\harvardurl{https://CRAN.R-project.org/package=dimRed}
 
 \harvarditem[Kraemer et~al.]{Kraemer, Reichstein \harvardand\
   Mahecha}{2019}{kraemeretal2019}
@@ -31,6 +55,21 @@ Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
+
+\harvarditem[Saul et~al.]{Saul, Weinberger, Sha, Ham \harvardand\
+  Lee}{2006}{sauletal2006}
+Saul, L.~K., Weinberger, K.~Q., Sha, F., Ham, J. \harvardand\ Lee, D.~D.
+  \harvardyearleft 2006\harvardyearright .
+\newblock Spectral methods for dimensionality reduction, {\em in} O.~Chapelle,
+  B.~Scholkopf \harvardand\ A.~Zien (eds), {\em Semi-Supervised Learning}, MIT
+  Press Scholarship Online, chapter~1.
+
+\harvarditem[van~der Maaten et~al.]{van~der Maaten, Postma \harvardand\ van~den
+  Herik}{2009}{vandermaatenetal2009}
+van~der Maaten, L., Postma, E. \harvardand\ van~den Herik, J.  \harvardyearleft
+  2009\harvardyearright .
+\newblock Dimensionality reduction: A comparative review, {\em Technical Report
+  TiCC TR 2009-005}, Tilburg University.
 
 \harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
   Barlow}{2006}{yangetal2006}

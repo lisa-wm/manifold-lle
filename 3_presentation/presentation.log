@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  27 FEB 2021 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  27 FEB 2021 12:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1670,12 +1670,12 @@ nored.
 <figures/swiss-roll.pdf, id=231, 343.2825pt x 305.22029pt>
 File: figures/swiss-roll.pdf Graphic file (type pdf)
 <use figures/swiss-roll.pdf>
-Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 1049.
+Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 1058.
 (pdftex.def)             Requested size: 64.53151pt x 78.41673pt.
 <figures/incomplete-tire.pdf, id=234, 455.78279pt x 305.22029pt>
 File: figures/incomplete-tire.pdf Graphic file (type pdf)
 <use figures/incomplete-tire.pdf>
-Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 1049.
+Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 1058.
 (pdftex.def)             Requested size: 100.38258pt x 70.31561pt.
  [21
 
@@ -1689,12 +1689,12 @@ pdfTeX warning: pdflatex.exe (file ./figures/incomplete-tire.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
 >]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1102--1102
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1111--1111
 [][]  
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1102--1102
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1111--1111
 [][]  
  []
 
@@ -1706,7 +1706,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1102--1102
 <figures/rnx_curve.pdf, id=266, 578.16pt x 289.08pt>
 File: figures/rnx_curve.pdf Graphic file (type pdf)
 <use figures/rnx_curve.pdf>
-Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1185.
+Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1195.
 (pdftex.def)             Requested size: 163.8853pt x 81.93872pt.
  [24
 
@@ -1716,13 +1716,13 @@ Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1185.
 File: figures/sensitivity_landmarks_key_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_key_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss.pdf  used on i
-nput line 1224.
+nput line 1234.
 (pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
 <figures/sensitivity_landmarks_key_tire.pdf, id=282, 756.90776pt x 169.5936pt>
 File: figures/sensitivity_landmarks_key_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_key_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_key_tire.pdf  used on in
-put line 1224.
+put line 1234.
 (pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
  [25
 
@@ -1737,17 +1737,13 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_tire.pdf
 ): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type
  <array>); ignored.
 >]
-<figures/sensitivity_landmarks_auc.pdf, id=297, 1156.32pt x 1011.78pt>
+<figures/sensitivity_landmarks_auc.pdf, id=297, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
-ine 1250.
-(pdftex.def)             Requested size: 409.71951pt x 358.49739pt.
-
-Overfull \vbox (184.4549pt too high) detected at line 1250
- []
-
-[26
+ine 1260.
+(pdftex.def)             Requested size: 409.71951pt x 153.64174pt.
+ [26
 
  <./figures/sensitivity_landmarks_auc.pdf>]
 <figures/sensitivity_landmarks_qual_swiss.pdf, id=310, 756.90776pt x 343.2825pt
@@ -1755,7 +1751,7 @@ Overfull \vbox (184.4549pt too high) detected at line 1250
 File: figures/sensitivity_landmarks_qual_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_qual_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss.pdf  used on 
-input line 1268.
+input line 1278.
 (pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
  [27
 
@@ -1770,7 +1766,7 @@ pe <array>); ignored.
 File: figures/sensitivity_landmarks_qual_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_qual_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_tire.pdf  used on i
-nput line 1286.
+nput line 1296.
 (pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
  [28
 
@@ -1784,13 +1780,13 @@ e <array>); ignored.
 File: figures/sensitivity_noise_key_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_key_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_swiss.pdf  used on input
- line 1328.
+ line 1338.
 (pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
 <figures/sensitivity_noise_key_tire.pdf, id=342, 756.90776pt x 154.6578pt>
 File: figures/sensitivity_noise_key_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_key_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_tire.pdf  used on input 
-line 1328.
+line 1338.
 (pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
  [29
 
@@ -1809,7 +1805,7 @@ ray>); ignored.
 File: figures/sensitivity_noise_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line 
-1355.
+1365.
 (pdftex.def)             Requested size: 409.71951pt x 153.64174pt.
  [30
 
@@ -1818,7 +1814,7 @@ Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line
 File: figures/sensitivity_noise_qual_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_swiss.pdf  used on inpu
-t line 1373.
+t line 1383.
 (pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
  [31
 
@@ -1832,7 +1828,7 @@ array>); ignored.
 File: figures/sensitivity_noise_qual_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_tire.pdf  used on input
- line 1391.
+ line 1401.
 (pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
  [32
 
@@ -1845,16 +1841,16 @@ rray>); ignored.
 <figures/comparison_swiss.pdf, id=415, 756.90776pt x 154.6578pt>
 File: figures/comparison_swiss.pdf Graphic file (type pdf)
 <use figures/comparison_swiss.pdf>
-Package pdftex.def Info: figures/comparison_swiss.pdf  used on input line 1445.
+Package pdftex.def Info: figures/comparison_swiss.pdf  used on input line 1455.
 
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
 <figures/comparison_tire.pdf, id=417, 756.90776pt x 154.6578pt>
 File: figures/comparison_tire.pdf Graphic file (type pdf)
 <use figures/comparison_tire.pdf>
-Package pdftex.def Info: figures/comparison_tire.pdf  used on input line 1445.
+Package pdftex.def Info: figures/comparison_tire.pdf  used on input line 1455.
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
 LaTeX Font Info:    Trying to load font information for T1+laett on input line 
-1445.
+1455.
  (c:/texlive/2020/texmf-dist/tex/latex/ae/t1laett.fd
 File: t1laett.fd 2001/02/12 Font definitions for T1/laett.
 ) [33
@@ -1871,21 +1867,22 @@ n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
 >] [34
 
-] [35
-
-] [36
-
 ]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 1553.
- (./presentation.bbl
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.27998pt on input line 6.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.27998pt on input line 13.
-) [37
+<figures/discussion.png, id=438, 1128.215pt x 436.63126pt>
+File: figures/discussion.png Graphic file (type png)
+<use figures/discussion.png>
+Package pdftex.def Info: figures/discussion.png  used on input line 1528.
+(pdftex.def)             Requested size: 409.71951pt x 158.56625pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1528--1528
+[][]  
+ []
+
+[35
+
+ <./figures/discussion.png>] [36
+
+] (./presentation.bbl) [37
 
 ]
 \tf@nav=\write7
@@ -1897,7 +1894,8 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@snm=\write9
 \openout9 = `presentation.snm'.
 
- (./presentation.aux)
+
+(./presentation.aux)
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 06E27B416B3B1946CD705C501CA5B3BD;45.
 
@@ -1906,11 +1904,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 24133 strings out of 479485
- 442172 string characters out of 5875915
- 798725 words of memory out of 5000000
- 40388 multiletter control sequences out of 15000+600000
- 644916 words of font info for 158 fonts, out of 8000000 for 9000
+ 24159 strings out of 479485
+ 442786 string characters out of 5875915
+ 799084 words of memory out of 5000000
+ 40409 multiletter control sequences out of 15000+600000
+ 637377 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,459b,608s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
@@ -1929,10 +1927,10 @@ ic/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texliv
 e/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (37 pages, 4842837 bytes).
+Output written on presentation.pdf (37 pages, 4907335 bytes).
 PDF statistics:
- 530 PDF objects out of 1000 (max. 8388607)
- 361 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 547 PDF objects out of 1000 (max. 8388607)
+ 370 compressed objects within 4 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
