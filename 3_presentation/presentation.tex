@@ -98,8 +98,7 @@ aspectratio = 1610]{beamer}
 
 \begin{document}
 
-\lecturechapter{Application \& Sensitivity Analysis of Critical 
-Hyperparameters}
+\lecturechapter{Application \& Sensitivity Analysis of Critical Parameters}
 \lecture{Semi-Supervised Locally Linear Embedding (SSLLE)}
 
 % ------------------------------------------------------------------------------
@@ -157,7 +156,7 @@ applications and data sources
   \begin{itemize}
     \arritem Model functionality
     \arritem Interpretability
-    \arritem Generalization ability
+    % \arritem Generalization ability
   \end{itemize}
   \medskip
   \textbf{Manifold assumption.} Data in high-dimensional observation
@@ -344,8 +343,8 @@ $\RD$
   heart of each method
   \begin{itemize}
     \arritem Smoothness ~ \maketag{LEM}
-    \arritem Local linearity ~ \maketag{LLE} \maketag{SSLLE}
     \arritem Curviness ~ \maketag{HLLE}
+    \arritem Local linearity ~ \maketag{LLE} \maketag{SSLLE}
   \end{itemize}
 \end{minipage}%
 \begin{minipage}[b]{0.33\textwidth}
@@ -364,7 +363,8 @@ $\RD$
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{2 lgml} ~~ concept}
+\begin{frame}<presentation:0>[noframenumbering]
+{\textcolor{gray!90}{2 lgml} ~~ concept}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
@@ -453,7 +453,7 @@ spanned by $d$ principal eigenvectors
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}<presentation:0>[noframenumbering]
+\begin{frame}%<presentation:0>[noframenumbering]
 {\textcolor{gray!90}{3.1 unsupervised} ~~ lem}
 
 \normalsize
@@ -599,7 +599,7 @@ weights
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}<presentation:0>[noframenumbering]
+\begin{frame}%<presentation:0>[noframenumbering]
 {\textcolor{gray!90}{3.1 unsupervised} ~~ hlle}
 
 \normalsize
@@ -1150,7 +1150,7 @@ spaces
     \flexitem{2} Most non-zero entries on upper triangle $\Rightarrow$ close 
     points torn apart
     \flexitem{3} Most non-zero entries on lower triangle $\Rightarrow$ faraway 
-    poits collapsed
+    points collapsed
   \end{itemize}
 \end{itemize}
 
