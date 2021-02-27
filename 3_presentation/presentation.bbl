@@ -19,6 +19,13 @@ Kraemer, G., Reichstein, M. \harvardand\ Mahecha, M.~D.  \harvardyearleft
 \newblock dimred and coranking -— unifying dimensionality reduction in r,
   {\em Technical report}.
 
+\harvarditem[Lueks et~al.]{Lueks, Mokbel, Biehl \harvardand\
+  Hammer}{2011}{lueksetal2011}
+Lueks, W., Mokbel, B., Biehl, M. \harvardand\ Hammer, B.  \harvardyearleft
+  2011\harvardyearright .
+\newblock How to evaluate dimensionality reduction? - improving the co-ranking
+  matrix, {\em arXiv: Machine Learning} .
+
 \harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
 Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .

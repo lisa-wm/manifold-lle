@@ -329,7 +329,7 @@ retain most salient ones
 \textbf{Graph representation}. Constructing a skeletal model of the manifold in 
 $\RD$
 
-\vspace{0.15cm}
+\vspace{0.3cm}
 
 \begin{minipage}[b]{0.67\textwidth}
   \medskip
@@ -339,7 +339,7 @@ $\RD$
       \arritem Typically, $k$-neighborhoods
       \arritem Edge weights determined by nearness
     \end{itemize}
-  \medskip
+  \vspace{0.3cm}
   \textbf{Graph functional}. Belief about intrinsic manifold properties at the 
   heart of each method
   \begin{itemize}
@@ -351,11 +351,11 @@ $\RD$
 \begin{minipage}[b]{0.33\textwidth}
   \begin{figure}[H]
     \includegraphics[trim = 250 190 220 160, clip, % left bottom right top
-      width = \textwidth]{figures/s-curve-connected}
+      width = 0.9\textwidth]{figures/s-curve-connected}
   \end{figure}
 \end{minipage}
 
-\vspace{0.3cm}
+\vfill
 
 \conclbox{Achievements: non-linearity \& locality}
 
@@ -392,7 +392,7 @@ spanned by $d$ principal eigenvectors
 \begin{figure}[H]
   \raggedright
   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-    width = 0.7\textwidth]{figures/eigenanalysis}
+    width = 0.6\textwidth]{figures/eigenanalysis}
 \end{figure}
 
 \end{frame}
@@ -900,17 +900,23 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
   \arritem Considered known with availability of prior information
 \end{itemize}
 
+% \vspace{0.3cm}
+
 \textbf{Neighborhood size}. Global vs local structure
 
 \begin{itemize}
   \arritem Tunable (expensive)
 \end{itemize}
 
+% \vspace{0.3cm}
+
 \textbf{Regularization constant}. Singularity for $D < k$
 
 \begin{itemize}
   \arritem Heuristics
 \end{itemize}
+
+% \vspace{0.3cm}
 
 \textbf{Number \& location of prior points}. Utility of prior knowledge ~ 
 \maketag{analysis}
@@ -932,8 +938,6 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \begin{itemize}
   \arritem Rather robust
 \end{itemize}
-
-
 
 \end{frame}
 
@@ -1106,7 +1110,8 @@ points}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Evaluation criterion.} $\text{AUC}(R_{NX})$ \citep{kraemeretal2019}
+\textbf{Evaluation criterion.} $\text{AUC}(R_{NX})$ 
+(\citet{kraemeretal2019}, \citet{lueksetal2011})
 
 \begin{itemize}
   \arritem Area under the $R_{NX}$ curve
@@ -1151,26 +1156,31 @@ spaces
 embedding spaces
 
 \begin{itemize}
-  \arritem Number of points belonging to $k$-neighborhood in both spaces. 
-  $Q_{NX}(k) = \frac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
+  \arritem Number of points remaining in $k$-neighborhood after projection. 
+  $Q_{NX}(k) = \dfrac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
   q_{\ell m}$
   \arritem Adjustment for random embeddings and normalization. \\ 
-  $R_{NX}(k) = \frac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}$
+  $R_{NX}(k) = \dfrac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}$
 \end{itemize}
 
 \vspace{0.3cm}
 
-\textbf{AUC measure.} Parameter-free
-
-\begin{itemize}
-  \arritem $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
-  \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
-  \arritem Interpretation.
+\begin{minipage}[b]{0.6\textwidth}
+  \textbf{AUC measure.} Parameter-free
   \begin{itemize}
-    \flexitem{1} $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
-    \flexitem{2} $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
-  \end{itemize}
+    \arritem $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
+    \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
+    \arritem Interpretation.
+    \begin{itemize}
+      \flexitem{1} $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
+      \flexitem{2} $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
+    \end{itemize}
 \end{itemize}
+\end{minipage}%
+\begin{minipage}[b]{0.4\textwidth}
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+    width = \textwidth]{figures/rnx_curve}
+\end{minipage}
 
 \end{frame}
 
@@ -1389,7 +1399,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Comparison.} LLE, HLLE, SSLLE
+\textbf{Comparison.} LLE vs HLLE vs SSLLE
 
 \vspace{0.3cm}
 
@@ -1427,10 +1437,10 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \vspace{0.3cm}  
 
 \scriptsize
+SSLLE with maximum coverage, 12 landmarks and exact prior information. \\
 LLE and HLLE computed using implementation in \texttt{R}'s \texttt{dimRed} 
-package (\textcolor{red}{cite}). \\
-Number of neighbors as deemed optimal by SSLLE implementation (no other 
-hyperparameters to set).
+package (\textcolor{red}{cite}); number of neighbors as deemed optimal by 
+SSLLE implementation (no other hyperparameters to set).
 
 \end{frame}
 
@@ -1490,11 +1500,13 @@ hyperparameters to set).
 % ------------------------------------------------------------------------------
 
 \LARGE
-\begin{frame}{\textcolor{gray!90}{5 discussion} ~~ open issues}
+\begin{frame}{\textcolor{gray!90}{5 discussion} ~~ issues \& drawbacks}
 \normalsize
 \vspace{-0.5cm}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
+
+\textbf{Sensitivity.} 
 
 \textbf{Sensitivity.} SSLLE rather sensitive with respect to its
 (hyper)parameters

@@ -445,6 +445,48 @@ orca(
   height = 300,
   width = 300)
 
+# RNX CURVE --------------------------------------------------------------------
+
+load_rdata_files(data_labeled, folder = "2_code")
+data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+
+embeddings <- lapply(data_unlabeled, function(i) dimRed::embed(i, "PCA"))
+names(embeddings) <- c("incomplete tire", "swiss roll")
+
+rnx_curve_dimred <- dimRed::plot_R_NX(embeddings)$data
+
+pdf(
+  here("3_presentation/figures", "rnx_curve.pdf"),
+  width = 8L, 
+  height = 4L)
+
+ggplot2::ggplot(rnx_curve_dimred, aes(x = K, y = R_NX, col = embedding)) +
+  geom_line(size = 1.5) + 
+  ggplot2::scale_x_log10(
+    labels = scales::trans_format(
+      "log10",
+      scales::math_format()), expand = c(0, 0)) + 
+  ggplot2::scale_y_continuous(
+    expression(R[NX]), 
+    limits = c(0, 1), 
+    expand = c(0, 0)) +
+  theme_bw() +
+  theme(text = element_text(size = 20L)) +
+  scale_color_manual(
+    values = c("darkgray", "darkslategray4"),
+    labels = sprintf(
+      "%s: \nAUC = %.2f",
+      names(embeddings),
+      sapply(embeddings, dimRed::AUC_lnK_R_NX)),
+    name = "") +
+  ggtitle("Exemplary embedding with PCA")
+
+ggplot2::ggsave(
+  here("3_presentation/figures", "rnx_curve.pdf"),
+  width = 8L, 
+  height = 4L)
+dev.off()
+
 # SENSITIVITY ANALYSIS ---------------------------------------------------------
 
 load_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
