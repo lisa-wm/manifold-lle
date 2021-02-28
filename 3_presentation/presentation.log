@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  27 FEB 2021 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  28 FEB 2021 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1430,9 +1430,14 @@ Package pdftex.def Info: figures/models_overview.png  used on input line 296.
 <figures/kpca_lgml_algo.png, id=78, 903.375pt x 310.15875pt>
 File: figures/kpca_lgml_algo.png Graphic file (type png)
 <use figures/kpca_lgml_algo.png>
-Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 317.
+Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 321.
 (pdftex.def)             Requested size: 409.71951pt x 140.67285pt.
- [7
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 321--321
+[][]  
+ []
+
+[7
 
  <./figures/kpca_lgml_algo.png>]
 <figures/s-curve-connected.pdf, id=88, 681.50606pt x 606.34526pt>
@@ -1441,12 +1446,7 @@ File: figures/s-curve-connected.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 361.
 
 (pdftex.def)             Requested size: 121.68652pt x 147.9653pt.
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 361--361
-[][]  
- []
-
-[8
+ [8
 
  <./figures/s-curve-connected.pdf
 
@@ -1709,14 +1709,14 @@ Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1199.
  [23
 
  <./figures/rnx_curve.pdf>]
-<figures/sensitivity_landmarks_key_swiss.pdf, id=273, 756.90776pt x 169.5936pt>
+<figures/sensitivity_landmarks_key_swiss.pdf, id=274, 756.90776pt x 169.5936pt>
 
 File: figures/sensitivity_landmarks_key_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_key_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss.pdf  used on i
 nput line 1238.
 (pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
-<figures/sensitivity_landmarks_key_tire.pdf, id=275, 756.90776pt x 169.5936pt>
+<figures/sensitivity_landmarks_key_tire.pdf, id=276, 756.90776pt x 169.5936pt>
 File: figures/sensitivity_landmarks_key_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_key_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_key_tire.pdf  used on in
@@ -1735,7 +1735,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_tire.pdf
 ): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type
  <array>); ignored.
 >]
-<figures/sensitivity_landmarks_auc.pdf, id=289, 1156.32pt x 433.62pt>
+<figures/sensitivity_landmarks_auc.pdf, id=290, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
@@ -1744,7 +1744,7 @@ ine 1264.
  [25
 
  <./figures/sensitivity_landmarks_auc.pdf>]
-<figures/sensitivity_landmarks_qual_swiss.pdf, id=303, 756.90776pt x 343.2825pt
+<figures/sensitivity_landmarks_qual_swiss.pdf, id=307, 756.90776pt x 343.2825pt
 >
 File: figures/sensitivity_landmarks_qual_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_qual_swiss.pdf>
@@ -1759,7 +1759,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss.p
 df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
 pe <array>); ignored.
 >]
-<figures/sensitivity_landmarks_qual_tire.pdf, id=318, 756.90776pt x 343.2825pt>
+<figures/sensitivity_landmarks_qual_tire.pdf, id=322, 756.90776pt x 343.2825pt>
 
 File: figures/sensitivity_landmarks_qual_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_qual_tire.pdf>
@@ -1774,13 +1774,13 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_tire.pd
 f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
 e <array>); ignored.
 >]
-<figures/sensitivity_noise_key_swiss.pdf, id=333, 756.90776pt x 154.6578pt>
+<figures/sensitivity_noise_key_swiss.pdf, id=337, 756.90776pt x 154.6578pt>
 File: figures/sensitivity_noise_key_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_key_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_swiss.pdf  used on input
  line 1342.
 (pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
-<figures/sensitivity_noise_key_tire.pdf, id=335, 756.90776pt x 154.6578pt>
+<figures/sensitivity_noise_key_tire.pdf, id=339, 756.90776pt x 154.6578pt>
 File: figures/sensitivity_noise_key_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_key_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_tire.pdf  used on input 
@@ -1799,7 +1799,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_tire.pdf): P
 DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
 ray>); ignored.
 >]
-<figures/sensitivity_noise_auc.pdf, id=361, 1156.32pt x 433.62pt>
+<figures/sensitivity_noise_auc.pdf, id=365, 1156.32pt x 433.62pt>
 File: figures/sensitivity_noise_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line 
@@ -1808,7 +1808,7 @@ Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line
  [29
 
  <./figures/sensitivity_noise_auc.pdf>]
-<figures/sensitivity_noise_qual_swiss.pdf, id=377, 756.90776pt x 395.55779pt>
+<figures/sensitivity_noise_qual_swiss.pdf, id=381, 756.90776pt x 395.55779pt>
 File: figures/sensitivity_noise_qual_swiss.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_swiss.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_swiss.pdf  used on inpu
@@ -1822,7 +1822,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss.pdf):
  PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <
 array>); ignored.
 >]
-<figures/sensitivity_noise_qual_tire.pdf, id=392, 756.90776pt x 395.55779pt>
+<figures/sensitivity_noise_qual_tire.pdf, id=396, 756.90776pt x 395.55779pt>
 File: figures/sensitivity_noise_qual_tire.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_tire.pdf  used on input
@@ -1836,13 +1836,13 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_tire.pdf):
 PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
 rray>); ignored.
 >]
-<figures/comparison_swiss.pdf, id=408, 756.90776pt x 154.6578pt>
+<figures/comparison_swiss.pdf, id=412, 756.90776pt x 154.6578pt>
 File: figures/comparison_swiss.pdf Graphic file (type pdf)
 <use figures/comparison_swiss.pdf>
 Package pdftex.def Info: figures/comparison_swiss.pdf  used on input line 1459.
 
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
-<figures/comparison_tire.pdf, id=410, 756.90776pt x 154.6578pt>
+<figures/comparison_tire.pdf, id=414, 756.90776pt x 154.6578pt>
 File: figures/comparison_tire.pdf Graphic file (type pdf)
 <use figures/comparison_tire.pdf>
 Package pdftex.def Info: figures/comparison_tire.pdf  used on input line 1459.
@@ -1866,7 +1866,7 @@ red.
 >] [33
 
 ]
-<figures/discussion.png, id=431, 1128.215pt x 436.63126pt>
+<figures/discussion.png, id=435, 1128.215pt x 436.63126pt>
 File: figures/discussion.png Graphic file (type png)
 <use figures/discussion.png>
 Package pdftex.def Info: figures/discussion.png  used on input line 1532.
@@ -1925,10 +1925,10 @@ ic/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texliv
 e/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (36 pages, 4901042 bytes).
+Output written on presentation.pdf (36 pages, 4902706 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
+ 541 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
  86 named destinations out of 1000 (max. 500000)
  393 words of extra memory for PDF output out of 10000 (max. 10000000)
 

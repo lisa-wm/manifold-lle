@@ -467,11 +467,11 @@ ggplot2::ggplot(rnx_curve_dimred, aes(x = K, y = R_NX, col = embedding)) +
       "log10",
       scales::math_format()), expand = c(0, 0)) + 
   ggplot2::scale_y_continuous(
-    expression(R[NX]), 
+    expression(R[NX](k)), 
     limits = c(0, 1), 
     expand = c(0, 0)) +
   theme_bw() +
-  theme(text = element_text(size = 20L)) +
+  theme(text = element_text(size = 25L)) +
   scale_color_manual(
     values = c("darkgray", "darkslategray4"),
     labels = sprintf(
@@ -479,6 +479,7 @@ ggplot2::ggplot(rnx_curve_dimred, aes(x = K, y = R_NX, col = embedding)) +
       names(embeddings),
       sapply(embeddings, dimRed::AUC_lnK_R_NX)),
     name = "") +
+  xlab("k") +
   ggtitle("Exemplary embedding with PCA")
 
 ggplot2::ggsave(
@@ -496,21 +497,16 @@ load_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
 load_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
 load_rdata_files(sensitivity_noise_plots_key_variation, folder = "2_code")
 
-pdf(
-  here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
-  width = 16, 
-  height = 6)
-
-gridExtra::grid.arrange(
+landmarks_auc <- gridExtra::grid.arrange(
   sensitivity_landmarks_plots_quant$swiss_roll$auc_plot,
   sensitivity_landmarks_plots_quant$incomplete_tire$auc_plot, 
   ncol = 2L)
 
 ggplot2::ggsave(
   here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
+  landmarks_auc,
   width = 16, 
   height = 6)
-dev.off()
 
 # ------------------------------------------------------------------------------
 
@@ -542,21 +538,16 @@ orca(
 
 # ------------------------------------------------------------------------------
 
-pdf(
-  here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
-  width = 16, 
-  height = 6)
-
-gridExtra::grid.arrange(
+noise_auc <- gridExtra::grid.arrange(
   sensitivity_noise_plots_quant$swiss_roll$auc_plot,
   sensitivity_noise_plots_quant$incomplete_tire$auc_plot, 
   ncol = 2L)
 
 ggplot2::ggsave(
   here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
+  noise_auc,
   width = 16, 
   height = 6)
-dev.off()
 
 # ------------------------------------------------------------------------------
 

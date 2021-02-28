@@ -314,6 +314,10 @@ retain most salient ones
     width = \textwidth]{figures/kpca_lgml_algo}
 \end{figure}
 
+\vfill
+
+\conclbox{Achievements: non-linearity \& locality}
+
 \end{frame}
 
 % ------------------------------------------------------------------------------
@@ -353,10 +357,6 @@ $\RD$
       width = 0.9\textwidth]{figures/s-curve-connected}
   \end{figure}
 \end{minipage}
-
-\vfill
-
-\conclbox{Achievements: non-linearity \& locality}
 
 \end{frame}
 
@@ -683,7 +683,7 @@ coordinates
   choice of prior points
 \end{itemize}
 
-\vspace{0.3cm}
+% \vspace{0.3cm}
 
 \begin{figure}[H]
  \begin{subfigure}[c]{0.2\textwidth}
@@ -1333,11 +1333,11 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 \vfill
 
 \scriptsize
-Expected displacement by random noise, exemplified at one prior point location. 
+Potential displacement by random noise, exemplified at one prior point location. 
 \\
-Ellipses have semi-axes of length $\alpha \cdot s_i$, i.e., noise level scaled 
-by standard deviation $s_i$ in $t$ and $s$ direction, \\respectively, so
-$i \in \{t, s\}$.
+Ellipses have semi-axes of length = one standard deviation of the Gaussian noise 
+variable, i.e., noise level scaled by standard deviation $s_i$ in $t$ and $s$ 
+direction, respectively: $\alpha \cdot s_i$ with $i \in \{t, s\}$.
 
 \end{frame}
 
