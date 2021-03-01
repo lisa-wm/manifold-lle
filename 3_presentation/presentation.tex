@@ -1137,9 +1137,10 @@ points}
 spaces
 
 \begin{itemize}
-  \arritem Rank distance matrices. $(r)_{ij}^{\text{obs}}$ and
-  $(r)_{ij}^{\text{emb}}$
-  \arritem Co-ranking matrix. $\bm{Q} = (q)_{\ell m}$ with $q_{\ell m} = 
+  \arritem Rank distance matrices. $(r)_{ij}^{\text{obs}}, (r)_{ij}^{\text{emb}} 
+  \in \R^{N \times N}$
+  \arritem Co-ranking matrix. $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ with 
+  $q_{\ell m} = 
   \rvert \{ (i, j): 
   r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} 
   \rvert$ 
@@ -1165,8 +1166,7 @@ spaces
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Co-ranking-based metrics.} Comparing distance ranks in observation \& 
-embedding spaces
+\textbf{Co-ranking-based metrics.}
 
 \begin{itemize}
   \arritem Number of points remaining in $k$-neighborhood after projection. 
@@ -1527,7 +1527,7 @@ SSLLE implementation (no other hyperparameters to set).
     
 \vfill
 
-\conclbox{SSLLE. Imperfect but potentially very powerful approach to LGML}
+\conclbox{SSLLE. Imperfect but potentially powerful approach to LGML}
 
 \end{frame}
 
