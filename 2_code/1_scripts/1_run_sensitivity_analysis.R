@@ -20,6 +20,8 @@ true_embeddings <- list(
   world_data = make_world_data_2d(
     here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
 
+plot_manifold(true_embeddings$swiss_roll, true_embeddings$swiss_roll[, .(t)])
+
 k_max <- 15L
 n_landmarks_max <- 12L
 
@@ -48,7 +50,7 @@ sensitivity_landmarks <- parallel::mclapply(
       # Define required parameters
       
       # data_l <- data_labeled[[i]]
-      data_u <- data_unlabeled[[i]]
+      data <- data_unlabeled[[i]]
       true_emb <- true_embeddings[[i]]
       this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
       this_number <- search_grid_landmarks[j, "n_landmarks"]
@@ -59,29 +61,33 @@ sensitivity_landmarks <- parallel::mclapply(
         this_method,
         poor_coverage = order(true_emb$t)[seq_len(this_number)],
         random_coverage = find_landmarks(
-          data = data_u,
+          data = data,
           n_landmarks = this_number,
           method = "random"),
         maximum_coverage = find_landmarks(
-          data = data_u,
+          data = data,
           n_neighbors = k_max,
           n_landmarks = this_number,
           method = "maxmin"))
       
-      landmarks <- true_emb[landmarks_ind, .(t, s)]
+      landmarks <- true_emb[landmarks_ind]
       
       # Move prior points up in the data as sslle function assumes the the first
       # observations to be prior points
       
-      new_order <- c(landmarks_ind, setdiff(data_u[, .I], landmarks_ind))
+      new_order <- c(landmarks_ind, setdiff(data[, .I], landmarks_ind))
       
       # Compute embedding
       
       embedding <- perform_sslle(
-        data = data_u[new_order],
+        data = data[new_order],
         k_max = k_max,
         prior_points = landmarks,
         verbose = FALSE)
+      
+      plot_manifold(
+        data = embedding$Y,
+        intrinsic_coords = true_emb[new_order][, .(t)])
       
       # Return
       

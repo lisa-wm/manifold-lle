@@ -128,10 +128,28 @@ sensitivity_landmarks_plots_qual <- lapply(
       
       seq_len(nrow(dt)),
       function(j) {
+        plot_manifold(
+          data = dt[j, ]$embedding_result[[1]]$Y, 
+          intrinsic_coords = dt[j, ]$true_embedding[[1]][, .(t)],
+          # title = sprintf(
+          #   "Data: %s", 
+          #   unlist(stringr::str_replace(dt_name, "_", " "))),
+          point_size_1_2_d = 3L) %>% 
+          layout(annotations = list(
+            text = annotation_text,
+            xref = "paper",
+            yref = "paper",
+            yanchor = "bottom",
+            xanchor = "center",
+            align = "center",
+            x = 0.5,
+            y = -0.25,
+            showarrow = FALSE))
+        
+        
         plot_qual_res(
           data = data.table(
-            dt[j, ]$embedding_result[[1]]$Y, 
-            dt[j, ]$embedding_result[[1]]$X[, .(t, s)]),
+            dt[j, ]$embedding_result[[1]]$Y),
           dt_name = names(sensitivity_landmarks_dt)[i],
           annotation_text = sprintf(
             "%s coverage, %d landmarks",
