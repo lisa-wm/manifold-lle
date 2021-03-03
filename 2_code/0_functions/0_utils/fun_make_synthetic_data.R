@@ -27,6 +27,29 @@ make_incomplete_tire <- function(n_points, seed = 123L) {
   
 }
 
+# S-CURVE ----------------------------------------------------------------------
+
+make_s_curve <- function(n_points, seed = 123L) {
+  
+  # Perform basic input checks
+  
+  checkmate::assert_number(seed)
+  checkmate::assert_count(n_points)
+  
+  # Compute S-curve coordinates as implemented in Python's sklearn
+  
+  set.seed(seed)
+  s <- 3 * pi * (runif(0, 1, n = n_points) - 0.5)
+  x_1 <- sin(s)
+  set.seed(seed + 1L)
+  x_2 <- 2 * runif(0, 1, n = n_points)
+  x_3 <- (sign(s) * (cos(s) - 1))
+  t <- x_1
+  
+  data.table(x_1, x_2, x_3, s, t)
+  
+}
+
 # SWISS ROLL -------------------------------------------------------------------
 
 make_swiss_roll <- function(n_points, seed = 123L) {
@@ -50,31 +73,7 @@ make_swiss_roll <- function(n_points, seed = 123L) {
   
 }
 
-# S-CURVE ----------------------------------------------------------------------
-
-make_s_curve <- function(n_points, seed = 123L) {
-  
-  # Perform basic input checks
-  
-  checkmate::assert_number(seed)
-  checkmate::assert_count(n_points)
-  
-  # Compute S-curve coordinates as implemented in Python's sklearn
-  
-  set.seed(seed)
-  s <- 3 * pi * (runif(0, 1, n = n_points) - 0.5)
-  x_1 <- sin(s)
-  set.seed(seed + 1L)
-  x_2 <- 2 * runif(0, 1, n = n_points)
-  x_3 <- (sign(s) * (cos(s) - 1))
-  t <- x_1
-  
-  data.table(x_1, x_2, x_3, s, t)
-
-}
-
 # UNIT SPHERE ------------------------------------------------------------------
-
 
 make_unit_sphere <- function(n_points, seed = 123L) {
   
@@ -117,3 +116,40 @@ make_unit_sphere <- function(n_points, seed = 123L) {
   res
   
 }
+
+# WOLRD DATA -------------------------------------------------------------------
+
+make_world_data_3d <- function(file) {
+  
+  dt <- data.table::fread(file)
+  
+  x_1 <- dt$x_1
+  x_2 <- dt$x_2
+  x_3 <- -1.5 * dt$x_3
+  t <- s <- dt$y
+  
+  # FIXME find proper scale for third dimension
+  
+  data.table(x_1, x_2, x_3, t, s)
+  
+}
+
+make_world_data_2d <- function(file) {
+  
+  dt <- data.table::fread(file)
+  
+  x_1 <- scale_zero_one(dt$x_1)
+  x_2 <- scale_zero_one(dt$x_2)
+  t <- s <- dt$y
+  
+  data.table(x_1, x_2, t, s)
+  
+}
+
+world_data_3d <- make_world_data_3d(
+  here("2_code/2_data", "rawdata_world_3d.csv"))
+plot_manifold(world_data_3d, n_colors = length(unique(world_data$t)), dim = 3L)
+
+world_data_2d <- make_world_data_2d(
+  here("2_code/2_data", "rawdata_world_2d.csv"))
+plot_manifold(world_data_2d, n_colors = length(unique(world_data$t)), dim = 2L)

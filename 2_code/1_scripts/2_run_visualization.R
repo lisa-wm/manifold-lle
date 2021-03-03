@@ -4,8 +4,9 @@
 
 # DATA -------------------------------------------------------------------------
 
-load_rdata_files(sensitivity_landmarks_dt, "2_code")
-load_rdata_files(sensitivity_noise_dt, "2_code")
+load_rdata_files(sensitivity_landmarks_dt, folder = "2_code/2_data")
+load_rdata_files(sensitivity_noise_dt, folder = "2_code/2_data")
+load_rdata_files(data_labeled, folder = "2_code/2_data")
 
 # VISUALIZATION: AUC_LNK_RNX ---------------------------------------------------
 
@@ -61,7 +62,7 @@ sensitivity_landmarks_plots_quant <- lapply(
 
 names(sensitivity_landmarks_plots_quant) <- names(sensitivity_landmarks_dt)
 
-save_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
+save_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code/2_data")
 
 # ------------------------------------------------------------------------------
 
@@ -109,7 +110,7 @@ sensitivity_noise_plots_quant <- lapply(
 
 names(sensitivity_noise_plots_quant) <- names(sensitivity_noise_dt)
 
-save_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
+save_rdata_files(sensitivity_noise_plots_quant, folder = "2_code/2_data")
 
 # VISUALIZATION: LOW-DIMENSIONAL EMBEDDING -------------------------------------
 
@@ -148,7 +149,7 @@ sensitivity_landmarks_plots_qual <- lapply(
 
 names(sensitivity_landmarks_plots_qual) <- names(sensitivity_landmarks_dt)
 
-save_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
+save_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code/2_data")
 
 # ------------------------------------------------------------------------------
 
@@ -187,11 +188,11 @@ sensitivity_noise_plots_qual <- lapply(
 
 names(sensitivity_noise_plots_qual) <- names(sensitivity_noise_dt)
 
-save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
+save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code/2_data")
 
 # VISUALIZATION: KEY VARIATION -------------------------------------------------
 
-load_rdata_files(data_labeled, folder = "2_code")
+load_rdata_files(data_labeled, folder = "2_code/2_data")
 
 # ------------------------------------------------------------------------------
 
@@ -280,7 +281,9 @@ sensitivity_landmarks_plots_key_variation <- lapply(
 names(sensitivity_landmarks_plots_key_variation) <- 
   names(sensitivity_landmarks_dt)
 
-save_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
+save_rdata_files(
+  sensitivity_landmarks_plots_key_variation, 
+  folder = "2_code/2_data")
 
 # ------------------------------------------------------------------------------
 
@@ -344,19 +347,54 @@ sensitivity_noise_plots_key_variation <- lapply(
 names(sensitivity_noise_plots_key_variation) <- 
   names(sensitivity_noise_dt)
 
-save_rdata_files(sensitivity_noise_plots_key_variation, folder = "2_code")
+save_rdata_files(
+  sensitivity_noise_plots_key_variation, 
+  folder = "2_code/2_data")
 
 # COMPARISON: LLE & HLLE -------------------------------------------------------
 
-load_rdata_files(data_labeled, folder = "2_code")
+load_rdata_files(data_labeled, folder = "2_code/2_data")
+data_labeled$world_data <- 
+  make_world_data_3d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+# data_unlabeled$world_data <- 
+#   make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))
+
+world_true_embedding <- 
+  make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
+
+landmarks_world_ind <- find_landmarks(
+  data = world_true_embedding[, .(x_1, x_2)],
+  n_landmarks = 12L,
+  method = "random")
+
+landmarks_world <- world_true_embedding[landmarks_world_ind, .(x_1, x_2)]
+
+new_order_world <- c(
+  landmarks_world_ind, 
+  setdiff(data_labeled$world_data[, .I], landmarks_world_ind))
+
+data_opt <- data.table::copy(sensitivity_landmarks_dt)
+
+data_opt$world_data <- data.table(
+  embedding_result = list(perform_sslle(
+    data = data_labeled$world_data[new_order_world],
+    k_max = k_max,
+    prior_points = landmarks_world,
+    verbose = FALSE)))
 
 comp_lle <- lapply(
   
   seq_along(data_unlabeled),
   
   function(i) {
+    
+    plot_sslle <- plot_manifold(
+      data.table::data.table(
+        data_opt[[i]]$embedding_result[[1]]$Y,
+        data_opt[[i]]$embedding_result[[1]]$X[, .(t, s)]),
+      dim = 2L)
     
     res_lle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
@@ -393,15 +431,6 @@ comp_lle <- lapply(
     
     names(plots) <- names(res)
     
-    data_opt <- sensitivity_landmarks_dt[[i]][
-      landmark_method == "maximum_coverage" & n_landmarks == 12L]
-    
-    plot_sslle <- plot_manifold(
-      data.table::data.table(
-        data_opt$embedding_result[[1]]$Y,
-        data_opt$embedding_result[[1]]$X[, .(t, s)]),
-      dim = 2L)
-    
     plotly::subplot(list(plots$lle, plots$hlle, plot_sslle), nrows = 1L) %>% 
       hide_guides()
     
@@ -411,4 +440,4 @@ comp_lle <- lapply(
 
 names(comp_lle) <- names(data_labeled)
 
-save_rdata_files(comp_lle, folder = "2_code")
+save_rdata_files(comp_lle, folder = "2_code/2_data")
