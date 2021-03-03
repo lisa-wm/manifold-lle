@@ -377,7 +377,7 @@ plotly::orca(
 
 # RNX CURVE --------------------------------------------------------------------
 
-load_rdata_files(data_labeled, folder = "2_code")
+load_rdata_files(data_labeled, folder = "2_code/2_data")
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
 embeddings <- lapply(data_unlabeled, function(i) dimRed::embed(i, "PCA"))
@@ -385,12 +385,9 @@ names(embeddings) <- c("incomplete tire", "swiss roll")
 
 rnx_curve_dimred <- dimRed::plot_R_NX(embeddings)$data
 
-pdf(
-  here("3_presentation/figures", "rnx_curve.pdf"),
-  width = 8L, 
-  height = 4L)
-
-ggplot2::ggplot(rnx_curve_dimred, aes(x = K, y = R_NX, col = embedding)) +
+rnx_curve_ <- ggplot2::ggplot(
+  rnx_curve_dimred, 
+  aes(x = K, y = R_NX, col = embedding)) +
   geom_line(size = 1.5) + 
   ggplot2::scale_x_log10(
     labels = scales::trans_format(
@@ -416,25 +413,33 @@ ggplot2::ggsave(
   here("3_presentation/figures", "rnx_curve.pdf"),
   width = 8L, 
   height = 4L)
-dev.off()
 
 # SENSITIVITY ANALYSIS ---------------------------------------------------------
 
-load_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code")
-load_rdata_files(sensitivity_noise_plots_quant, folder = "2_code")
-load_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code")
-load_rdata_files(sensitivity_noise_plots_qual, folder = "2_code")
-load_rdata_files(sensitivity_landmarks_plots_key_variation, folder = "2_code")
-load_rdata_files(sensitivity_noise_plots_key_variation, folder = "2_code")
+load_rdata_files(sensitivity_landmarks_plots_quant, "2_code/2_data")
+load_rdata_files(sensitivity_noise_plots_quant, "2_code/2_data")
+load_rdata_files(sensitivity_landmarks_plots_qual, "2_code/2_data")
+load_rdata_files(sensitivity_noise_plots_qual, "2_code/2_data")
+load_rdata_files(sensitivity_landmarks_plots_key_variation, "2_code/2_data")
+load_rdata_files(sensitivity_noise_plots_key_variation, "2_code/2_data")
 
-landmarks_auc <- gridExtra::grid.arrange(
-  sensitivity_landmarks_plots_quant$swiss_roll$auc_plot,
-  sensitivity_landmarks_plots_quant$incomplete_tire$auc_plot, 
-  ncol = 2L)
+# ------------------------------------------------------------------------------
 
 ggplot2::ggsave(
   here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
-  landmarks_auc,
+  gridExtra::grid.arrange(
+    sensitivity_landmarks_plots_quant$swiss_roll$auc_plot,
+    sensitivity_landmarks_plots_quant$incomplete_tire$auc_plot, 
+    ncol = 2L),
+  width = 16, 
+  height = 6)
+
+ggplot2::ggsave(
+  here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
+  gridExtra::grid.arrange(
+    sensitivity_noise_plots_quant$swiss_roll$auc_plot,
+    sensitivity_noise_plots_quant$incomplete_tire$auc_plot, 
+    ncol = 2L),
   width = 16, 
   height = 6)
 
@@ -465,19 +470,6 @@ plotly::orca(
   "3_presentation/figures/sensitivity_landmarks_key_tire.pdf",
   height = 220,
   width = 1000)
-
-# ------------------------------------------------------------------------------
-
-noise_auc <- gridExtra::grid.arrange(
-  sensitivity_noise_plots_quant$swiss_roll$auc_plot,
-  sensitivity_noise_plots_quant$incomplete_tire$auc_plot, 
-  ncol = 2L)
-
-ggplot2::ggsave(
-  here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
-  noise_auc,
-  width = 16, 
-  height = 6)
 
 # ------------------------------------------------------------------------------
 
