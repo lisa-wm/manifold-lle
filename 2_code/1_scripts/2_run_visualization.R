@@ -354,35 +354,41 @@ save_rdata_files(
 # COMPARISON: LLE & HLLE -------------------------------------------------------
 
 load_rdata_files(data_labeled, folder = "2_code/2_data")
-data_labeled$world_data <- 
-  make_world_data_3d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
+
+# data_labeled$world_data <- 
+#   make_world_data_3d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+
 # data_unlabeled$world_data <- 
 #   make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))
 
-world_true_embedding <- 
-  make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
-
-landmarks_world_ind <- find_landmarks(
-  data = world_true_embedding[, .(x_1, x_2)],
-  n_landmarks = 12L,
-  method = "random")
-
-landmarks_world <- world_true_embedding[landmarks_world_ind, .(x_1, x_2)]
-
-new_order_world <- c(
-  landmarks_world_ind, 
-  setdiff(data_labeled$world_data[, .I], landmarks_world_ind))
+# world_true_embedding <- 
+#   make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
+# 
+# landmarks_world_ind <- find_landmarks(
+#   data = world_true_embedding[, .(x_1, x_2)],
+#   n_landmarks = 12L,
+#   method = "random")
+# 
+# landmarks_world <- world_true_embedding[landmarks_world_ind, .(x_1, x_2)]
+# 
+# new_order_world <- c(
+#   landmarks_world_ind, 
+#   setdiff(data_labeled$world_data[, .I], landmarks_world_ind))
 
 data_opt <- data.table::copy(sensitivity_landmarks_dt)
 
-data_opt$world_data <- data.table(
-  embedding_result = list(perform_sslle(
-    data = data_labeled$world_data[new_order_world],
-    k_max = k_max,
-    prior_points = landmarks_world,
-    verbose = FALSE)))
+# data_opt$world_data <- data.table(
+#   embedding_result = list(
+#     perform_sslle(
+#     data = data_labeled$world_data[new_order_world],
+#     k_max = k_max,
+#     prior_points = landmarks_world,
+#     verbose = FALSE)))
+# 
+# data_opt$world_data$embedding_result[[1]]$X <- 
+#   world_true_embedding[new_order_world]
 
 comp_lle <- lapply(
   
@@ -400,13 +406,13 @@ comp_lle <- lapply(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
       "LLE", 
       ndim = 2L,
-      knn = data_opt$embedding_result[[1]]$neighborhood_size)
+      knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
     
     res_hlle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
       "HLLE", 
       ndim = 2L,
-      knn = data_opt$embedding_result[[1]]$neighborhood_size)
+      knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
     
     res <- list(lle = res_lle, hlle = res_hlle)
     
