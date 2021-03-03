@@ -73,6 +73,7 @@ aspectratio = 1610]{beamer}
 \newcommand{\x}{\bm{x}}
 \newcommand{\Y}{\mathcal{Y}}
 \newcommand{\y}{\bm{y}}
+\newcommand{\Ytil}{\tilde{\Y}}
 \newcommand{\pv}{\bm{p}}
 \newcommand{\qv}{\bm{q}}
 \newcommand{\D}{\bm{D}}
@@ -145,27 +146,27 @@ aspectratio = 1610]{beamer}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Situation}. Rapidly increasing amount of data thanks to novel 
+\textbf{Situation:} rapidly increasing amount of data thanks to novel 
 applications and data sources
 
 \vspace{0.5cm}
 
 \begin{minipage}[b]{0.7\textwidth}
   \raggedright
-  \textbf{Problem.} High data dimensionality detrimental to
+  \textbf{Problem:} high data dimensionality detrimental to
   \begin{itemize}
-    \arritem Model functionality
-    \arritem Interpretability
+    \flexitem{1} model functionality
+    \flexitem{2} interpretability
     % \arritem Generalization ability
   \end{itemize}
   \medskip
-  \textbf{Manifold assumption.} Data in high-dimensional observation
+  \textbf{Manifold assumption:} data in high-dimensional observation
   space truly sampled from low-dimensional manifold
 \end{minipage}%
 \begin{minipage}[b]{0.3\textwidth}
   \begin{figure}[H]
-    \includegraphics[trim = 70 30 70 30, clip, % left bottom right top
-      width = 0.6\textwidth]{figures/s-curve}
+    \includegraphics[trim = 70 40 70 30, clip, % left bottom right top
+      width = 0.55\textwidth]{figures/s-curve}
   \end{figure}
 \end{minipage}
 
@@ -182,16 +183,16 @@ applications and data sources
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Formal goal of manifold learning.}
+\textbf{Formal goal of manifold learning:}
 \medskip
 \begin{itemize}
-  \arritem \textbf{Given.} Data $\X = (\x_1, \x_2, ..., \x_N)$, with $\x_i \in 
+  \arritem \textbf{Given:} data $\X = (\x_1, \x_2, ..., \x_N)$, with $\x_i \in 
   \RD$ $\forall i \in \setN$ and $N, D \in \N$, supposedly lying on 
   $d$-dimensional manifold $\mani$ \\
   $\Rightarrow$ $\psi: \mani \rightarrow \Rd$ with $d \ll D, d \in \N$ \\
   $\Rightarrow$ $\X \sim \mani \subset \RD$ 
   \medskip
-  \arritem \textbf{Goal.} Find $d$-dimensional Euclidean representation \\
+  \arritem \textbf{Goal:} find $d$-dimensional Euclidean representation \\
   $\Rightarrow$ $\Y = (\y_1, \y_2, ..., \y_N)$, with 
   $\y_i = \psi(\x_i) \in \R^d$ $\forall i \in \setN$.
 \end{itemize}
@@ -215,37 +216,6 @@ applications and data sources
 
 % ------------------------------------------------------------------------------
 % LGML
-% ------------------------------------------------------------------------------
-
-% \LARGE
-% \begin{frame}{{}}
-% \normalsize
-% \vspace{-0.5cm}
-% \noindent \textcolor{white}{\rule{\textwidth}{1pt}}
-% \smallskip
-% 
-% \begin{itemize}
-% \large
-% \flexitem{1} Problem
-% \flexitem{2} \textbf{Local graph-based manifold learning (LGML)}
-% \flexitem{3} Techniques
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Unsupervised
-%   \flexitem{2} Semi-supervised
-%   \flexitem{3} Challenges
-% \end{itemize}
-% \flexitem{4} Sensitivity analysis
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Setup
-%   \flexitem{2} Results
-% \end{itemize}
-% \flexitem{5} Discussion
-% \end{itemize}
-% 
-% \end{frame}
-
 % ------------------------------------------------------------------------------
 
 \LARGE
@@ -275,7 +245,7 @@ applications and data sources
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Landscape}. Various approaches, many of which may be translated into one
+\textbf{Landscape:} various approaches, many of which may be translated into one
 another
 
 \vspace{0.5cm}
@@ -288,9 +258,9 @@ another
 \end{minipage}%
 \begin{minipage}[b]{0.35\textwidth}
   \highlight{LEM} ~ Laplacian eigenmaps \\
-  \highlight{LLE} ~ Locally linear embedding \\
+  \highlight{LLE} ~ locally linear embedding \\
   \highlight{HLLE} ~ Hessian LLE \\
-  \highlight{SSLLE} ~ Semi-supervised LLE 
+  \highlight{SSLLE} ~ semi-supervised LLE 
 \end{minipage}
 
 \end{frame}
@@ -304,7 +274,7 @@ another
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Idea}. Capture intrinsic geometry, find principal axes of variability, 
+\textbf{Idea:} capture intrinsic geometry, find principal axes of variability, 
 retain most salient ones
 
 \medskip
@@ -329,21 +299,21 @@ retain most salient ones
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Graph representation}. Constructing a skeletal model of the manifold in 
+\textbf{Graph representation:} constructing a skeletal model of the manifold in 
 $\RD$
 
 \vspace{0.3cm}
 
 \begin{minipage}[b]{0.67\textwidth}
   \medskip
-  \textbf{Vertices.} Given by observations \\
-  \textbf{Edges.} Present between neighboring points
+  \textbf{Vertices:} given by observations \\
+  \textbf{Edges:} present between neighboring points
     \begin{itemize} 
       \arritem Typically, $k$-neighborhoods
       \arritem Edge weights determined by nearness
     \end{itemize}
   \vspace{0.3cm}
-  \textbf{Graph functional}. Belief about intrinsic manifold properties at the 
+  \textbf{Graph functional:} belief about intrinsic manifold properties at the 
   heart of each method
   \begin{itemize}
     \arritem Smoothness ~ \maketag{LEM}
@@ -370,7 +340,7 @@ $\RD$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Eigenanalysis}. Finding axes of variability in intrinsic 
+\textbf{Eigenanalysis:} finding axes of variability in intrinsic 
 manifold structure
 
 \begin{itemize}
@@ -384,7 +354,7 @@ manifold structure
 
 \vspace{0.3cm}
 
-\textbf{Dimensionality reduction}. Projection into subspace 
+\textbf{Dimensionality reduction:} projection into subspace 
 spanned by $d$ principal eigenvectors
 
 \vspace{0.3cm}
@@ -399,37 +369,6 @@ spanned by $d$ principal eigenvectors
 
 % ------------------------------------------------------------------------------
 % LGML TECHNIQUES
-% ------------------------------------------------------------------------------
-
-% \LARGE
-% \begin{frame}{{}}
-% \normalsize
-% \vspace{-0.5cm}
-% \noindent \textcolor{white}{\rule{\textwidth}{1pt}}
-% \smallskip
-% 
-% \begin{itemize}
-% \large
-% \flexitem{1} Problem
-% \flexitem{2} Local graph-based manifold learning (LGML)
-% \flexitem{3} \textbf{Techniques}
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Unsupervised
-%   \flexitem{2} Semi-supervised
-%   \flexitem{3} Challenges
-% \end{itemize}
-% \flexitem{4} Sensitivity analysis
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Setup
-%   \flexitem{2} Results
-% \end{itemize}
-% \flexitem{5} Discussion
-% \end{itemize}
-% 
-% \end{frame}
-
 % ------------------------------------------------------------------------------
 
 \LARGE
@@ -461,11 +400,11 @@ spanned by $d$ principal eigenvectors
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Proposal}. \citet{belkinniyogi2001}
+\textbf{Proposal:} \citet{belkinniyogi2001}
 
 \vspace{0.3cm}
 
-\textbf{Idea}. Forcing nearby inputs to be mapped to nearby outputs
+\textbf{Idea:} forcing nearby inputs to be mapped to nearby outputs
 
 \begin{itemize}
   \arritem Notion of smoothness in mapping function
@@ -474,7 +413,7 @@ spanned by $d$ principal eigenvectors
 
 \vspace{0.3cm}
 
-\textbf{Solution}. Eigenanalysis of graph Laplacian $\Lap$
+\textbf{Solution:} eigenanalysis of graph Laplacian $\Lap$
 
 \begin{itemize}
   \arritem Derived from weight matrix encoding nearness of inputs
@@ -493,7 +432,7 @@ spanned by $d$ principal eigenvectors
 %   $\D = \mathit{diag}(\sum_j w_{ij}) \in \R^{N \times N}$
 % \end{itemize}
 
-\vspace{0.3cm}
+\vfill
 
 % \textbf{Generalized eigenvalue problem}. 
 % 
@@ -518,11 +457,11 @@ spanned by $d$ principal eigenvectors
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Proposal}. \citet{roweissaul2000}
+\textbf{Proposal:} \citet{roweissaul2000}
 
 \vspace{0.3cm}
 
-\textbf{Idea}. Preserving locally linear reconstructions 
+\textbf{Idea:} preserving locally linear reconstructions 
 
 \begin{itemize}
   \arritem Linear reconstruction of points in $\RD$ by their neighbors
@@ -555,7 +494,7 @@ spanned by $d$ principal eigenvectors
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Reconstruction loss minimization}. Finding optimal reconstruction 
+\textbf{Reconstruction loss minimization:} finding optimal reconstruction 
 weights
 
 \begin{fleqn}
@@ -567,7 +506,7 @@ weights
   \end{equation}
 \end{fleqn}
 
-\textbf{Embedding loss minimization}. Finding optimal embedding coordinates
+\textbf{Embedding loss minimization:} finding optimal embedding coordinates
 
 \begin{fleqn}
   \begin{equation}
@@ -579,16 +518,16 @@ weights
   \end{equation}
 \end{fleqn}
 
-\textbf{Eigenvalue problem}. Define $\E = (\I - \W)^T(\I - \W)$ 
-% and set $\tilde{\Y} = \Y^T$
-, such that
+\textbf{Eigenvalue problem:} define $\E = (\I - \W)^T(\I - \W)$ and set 
+$\Ytil = \Y^T$, such that
 
 \begin{fleqn}
   \begin{equation}
     \small
-    \min_{\Y} \mathit{trace}(\Y^T \E \Y), \quad
-    \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
-    \Y^T\bm{1} = \bm{0}.
+    \min_{\Ytil} \mathit{trace}(\Ytil^T \E \Ytil), \quad
+    \text{s.t. } \frac{1}{N} \Ytil^T \Ytil = \I, \quad
+    \Ytil^T\bm{1} = \bm{0}.
+    \label{eq-lle-eigen}
   \end{equation}
 \end{fleqn}
 
@@ -607,11 +546,11 @@ weights
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Proposal}. \citet{donohogrimes2003}
+\textbf{Proposal:} \citet{donohogrimes2003}
 
 \vspace{0.3cm}
 
-\textbf{Idea}. Finding a truly linear mapping while preserving local 
+\textbf{Idea:} finding a truly linear mapping while preserving local 
 isometry
 
 \begin{itemize}
@@ -622,10 +561,10 @@ isometry
 
 \vspace{0.3cm}
 
-\textbf{Solution.} Eigenanalysis of empirical Hessian functional $\mathcal{H}$
+\textbf{Solution:} eigenanalysis of empirical Hessian functional $\mathcal{H}$
 
 \begin{itemize}
-  \arritem Derived as a quadratic form of Hessian estimators in linear 
+  \arritem Quadratic form of Hessian estimators in linear 
   neighborhood patches
   \arritem Discrete approximation of continuous Hesssian functional
   $\mathscr{H}(f)$
@@ -645,7 +584,7 @@ isometry
 %   \arritem Finding null space of $\mathcal{H}$
 % \end{itemize}
 
-\vspace{0.3cm}
+\vfill
 
 \conclbox{Solution: bottom $d + 1$ eigenvectors + scaling}
 
@@ -660,26 +599,26 @@ isometry
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Proposal}. \citet{yangetal2006}
+\textbf{Proposal:} \citet{yangetal2006}
 
 \vspace{0.3cm}
 
-\textbf{Problem}. Embedding found by unsupervised methods not always meaningful
+\textbf{Problem:} embedding found by unsupervised methods not always meaningful
 
 \vspace{0.3cm}
 
-\textbf{Idea}. Improving LLE by use of prior knowledge
+\textbf{Idea:} improving LLE by use of prior knowledge
 
 \vspace{0.3cm}
 
-\textbf{Semi-supervision}. Anchoring embedding at some prior points with known 
+\textbf{Semi-supervision:} anchoring embedding at some prior points with known 
 coordinates
 
 \begin{itemize}
   \arritem More active than semi-supervised learning?
-  \arritem Setting. Information available or to be obtained by querying the 
+  \arritem Information available or to be obtained by querying the 
   oracle
-  \arritem Goal. Maximum information at little expense $\Rightarrow$ careful 
+  \arritem Maximum information at little expense $\Rightarrow$ careful 
   choice of prior points
 \end{itemize}
 
@@ -746,7 +685,7 @@ coordinates
 %   width = 0.4\textwidth]{figures/matrix_partition}
 % \end{figure}
 
-\textbf{Types of prior information}. Exact vs inexact
+\textbf{Types of prior information:} exact vs inexact
 \begin{itemize}
   \arritem Level of confidence encoded in parameter $\beta$
 \end{itemize}
@@ -754,23 +693,23 @@ coordinates
 
 \begin{minipage}[t]{0.6\textwidth}
 \phantom{foo} \\
-\textbf{Algorithmic impact}. Recall LLE eigenvalue problem
+\textbf{Algorithmic impact:} recall LLE eigenvalue problem
 \begin{fleqn}
   \begin{equation*}
-    \min_{\Y} \mathit{trace}(\Y^T \E \Y), \quad
-    \text{s.t. } \frac{1}{N} \Y^T \Y = \I, \quad
-    \Y^T\bm{1} = \bm{0}.
+    \min_{\Ytil} \mathit{trace}(\Ytil^T \E \Ytil), \quad
+    \text{s.t. } \frac{1}{N} \Ytil^T \Ytil = \I, \quad
+    \Ytil^T\bm{1} = \bm{0}.
   \end{equation*}
 \end{fleqn}
-$\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
+$\Rightarrow$ partitioning of $\E$ and $\Ytil$ \\
 \end{minipage}%
 \begin{minipage}[t]{0.05\textwidth}
   \phantom{foo}
 \end{minipage}%
 \begin{minipage}[t]{0.35\textwidth}
   \begin{figure}[H]
-    \includegraphics[trim = 0 0 0 -15, clip, % left bottom right top
-      width = 1.1\textwidth]{figures/matrix_partition}
+    \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+      width = 0.9\textwidth]{figures/matrix_partition}
   \end{figure}
 \end{minipage}
 
@@ -785,33 +724,34 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Modified optimization problem}. Exact information 
+\textbf{Modified optimization problem:} exact information 
 
 \begin{fleqn}
   \begin{equation}
-    \min_{\Y_2}
-    \begin{bmatrix} \textcolor{gray!90}{\Y_1} & \Y_2 \end{bmatrix}
+    \min_{\Ytil_2}
+    \begin{bmatrix} \textcolor{gray!90}{\Ytil_1} & \Ytil_2 \end{bmatrix}
     \begin{bmatrix} \textcolor{gray!90}{M_{11}} & M_{12} \\ M_{21} & M_{22} 
     \end{bmatrix}
-    \begin{bmatrix} \textcolor{gray!90}{\Y_1^T} \\ \Y_2^T \end{bmatrix}
+    \begin{bmatrix} \textcolor{gray!90}{\Ytil_1^T} \\ \Ytil_2^T \end{bmatrix}
   \end{equation}
 \end{fleqn}
 
 \begin{fleqn}
   \begin{equation}
-    \Leftrightarrow \Y_2^T = M_{22}^{-1} M_{12} \textcolor{gray!90}{\Y_1^T}
+    \Leftrightarrow \Ytil_2^T = M_{22}^{-1} M_{12} 
+    \textcolor{gray!90}{\Ytil_1^T}
   \end{equation}
 \end{fleqn}
 
-\textbf{Modified optimization problem}. Inexact information 
+\textbf{Modified optimization problem:} inexact information 
 
 \begin{fleqn}
   \begin{equation}
-    \min_{\Y_1, \Y_2}
-    \begin{bmatrix} \Y_1 & \Y_2 \end{bmatrix}
+    \min_{\Ytil_1, \Ytil_2}
+    \begin{bmatrix} \Ytil_1 & \Ytil_2 \end{bmatrix}
     \begin{bmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
-    \begin{bmatrix} \Y_1^T \\ \Y_2^T \end{bmatrix} +
-    \beta \frobnorm{\Y_1^T - \textcolor{gray!90}{\hat{\Y}_1^T}}
+    \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} +
+    \beta \frobnorm{\Ytil_1^T - \textcolor{gray!90}{\hat{\Ytil}_1^T}}
   \end{equation}
 \end{fleqn}
 
@@ -819,8 +759,9 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
   \begin{equation}
     \Leftrightarrow \begin{bmatrix} \textcolor{gray!90}{M_{11}} +
     \beta \I & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
-    \begin{bmatrix} \Y_1^T \\ \Y_2^T \end{bmatrix} =
-    \begin{bmatrix} \textcolor{gray!90}{\hat{\Y}_1^T} \\ \bm{0} \end{bmatrix}
+    \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} =
+    \begin{bmatrix} \textcolor{gray!90}{\hat{\Ytil}_1^T} \\ \bm{0} 
+    \end{bmatrix}
   \end{equation}
 \end{fleqn}
 
@@ -835,13 +776,13 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Choice of landmark points.} Basically, three options
+\textbf{Choice of landmark points:} basically, three options
 
 \begin{itemize}
-  \arritem Pre-existing prior information $\Rightarrow$ worst case: poor 
+  \flexitem{1} Pre-existing prior information $\Rightarrow$ worst case: poor 
   coverage
-  \arritem (Uniform) random sampling
-  \arritem Maximum coverage $\Rightarrow$ minimization of condition number 
+  \flexitem{2} (Uniform) random sampling
+  \flexitem{3} Maximum coverage $\Rightarrow$ minimization of condition number 
   $\kappa(M_{22})$
 \end{itemize}
 
@@ -900,21 +841,21 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 
 % \vspace{0.3cm}
 
-\textbf{Number \& location of prior points}. Utility of prior knowledge ~ 
+\textbf{Number \& location of prior points:} utility of prior knowledge ~ 
 \maketag{analysis}
 
 \begin{itemize}
   \arritem Exploration vs labeling cost
 \end{itemize}
 
-\textbf{Noise level}. Quality of prior knowledge ~ 
+\textbf{Noise level:} quality of prior knowledge ~ 
 \maketag{analysis}
 
 \begin{itemize}
-  \arritem How exact must prior information be?
+  \arritem Support vs harm through prior knowledge
 \end{itemize}
 
-\textbf{Confidence parameter}. Strength of belief in prior knowledge 
+\textbf{Confidence parameter:} strength of belief in prior knowledge 
 % ~ \maketag{analysis}
 
 \begin{itemize}
@@ -929,12 +870,12 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 
 \vspace{0.3cm}
 
-\textbf{Further hyperparameters}. Also critical in unsupervised case
+\textbf{Further hyperparameters:} also critical in unsupervised case
 
 \begin{itemize}
-  \arritem Intrinsic dimensionality
-  \arritem Neighborhood size
-  \arritem Regularization constant
+  \flexitem{1} Intrinsic dimensionality
+  \flexitem{2} Neighborhood size
+  \flexitem{3} Regularization constant
 \end{itemize}
 % 
 % \textbf{Neighborhood size}. Global vs local structure
@@ -956,37 +897,6 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 
 % ------------------------------------------------------------------------------
 % SENSITIVITY ANALYSIS
-% ------------------------------------------------------------------------------
-
-% \LARGE
-% \begin{frame}{{}}
-% \normalsize
-% \vspace{-0.5cm}
-% \noindent \textcolor{white}{\rule{\textwidth}{1pt}}
-% \smallskip
-% 
-% \begin{itemize}
-% \large
-% \flexitem{1} Problem
-% \flexitem{2} Local graph-based manifold learning (LGML)
-% \flexitem{3} Techniques
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Unsupervised
-%   \flexitem{2} Semi-supervised
-%   \flexitem{3} Challenges
-% \end{itemize}
-% \flexitem{4} \textbf{Sensitivity analysis}
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Setup
-%   \flexitem{2} Results
-% \end{itemize}
-% \flexitem{5} Discussion
-% \end{itemize}
-% 
-% \end{frame}
-
 % ------------------------------------------------------------------------------
 
 \LARGE
@@ -1016,10 +926,10 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Data}. Two data sets, $N = 1000$ observations each
+\textbf{Data:} two data sets, $N = 1000$ observations each
 
 \begin{minipage}[b]{0.65\textwidth}
-  \textbf{Swiss roll}. \textit{The} standard synthetic manifold
+  \textbf{Swiss roll:} \textit{the} standard synthetic manifold
   \begin{itemize}
     \flexitem{1} Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ 
     $\mathit{ iid}$ with $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_1 \rvert = N$
@@ -1040,7 +950,7 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \vspace{0.3cm}
 
 \begin{minipage}[b]{0.65\textwidth}
-  \textbf{Incomplete tire}. Examined in \citet{yangetal2006}
+  \textbf{Incomplete tire:} examined in \citet{yangetal2006}
   \begin{itemize}
     \flexitem{1} Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ 
     $\mathit{ iid}$ with $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_1 \rvert = N$
@@ -1070,7 +980,7 @@ $\Rightarrow$ Partitioning of $\E$ and $\Y$ \\
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\conclbox{Sensitivity analysis \phantom{I}I. ~~ Landmark coverage $\times$ 
+\conclbox{Sensitivity analysis \phantom{I}I: ~~ landmark coverage $\times$ 
 number of landmark points} 
 
 \vspace{0.3cm}
@@ -1085,9 +995,9 @@ number of landmark points}
 % 
 % $\Rightarrow$ Best case: maximum coverage \& 12 landmarks
 
-\vspace{0.3cm}
+\vfill
 
-\conclbox{Sensitivity analysis II. ~~ Noise level $\times$ number of landmark 
+\conclbox{Sensitivity analysis II: ~~ noise level $\times$ number of landmark 
 points}
 
 \vspace{0.3cm}
@@ -1098,7 +1008,7 @@ points}
   noise 
   \arritem Corruption of landmark $\pv$ as 
   $\tilde{\pv} = \pv + \bm{\epsilon} = (p_t, p_s) + (\epsilon_t, \epsilon_s)$ \\
-  with $\epsilon_i \sim N(0, (\alpha \cdot s_i)^2)$ 
+  with $\epsilon_i \sim N(0, (\alpha \cdot s_i)^2) ~ \mathit{iid}$,
   scaled by empirical variance $s_i$, $i \in \{t, s\}$
   % $(\epsilon_t, \epsilon_s) \sim N(\bm{0}, 
   % \mathit{diag}(\sigma_t^2, \sigma_s^2))$
@@ -1123,7 +1033,7 @@ points}
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Evaluation criterion.} $\text{AUC}(R_{NX})$ 
+\textbf{Evaluation criterion:} $\text{AUC}(R_{NX})$ 
 (\citet{kraemeretal2019}, \citet{lueksetal2011})
 
 \begin{itemize}
@@ -1133,18 +1043,17 @@ points}
 
 \vspace{0.3cm}
 
-\textbf{Co-ranking matrix.} Comparing distance ranks in observation \& embedding 
+\textbf{Co-ranking matrix:} comparing distance ranks in observation \& embedding 
 spaces
 
 \begin{itemize}
-  \arritem Rank distance matrices. $(r)_{ij}^{\text{obs}}, (r)_{ij}^{\text{emb}} 
+  \arritem Rank distance matrices $(r)_{ij}^{\text{obs}}, (r)_{ij}^{\text{emb}} 
   \in \R^{N \times N}$
-  \arritem Co-ranking matrix. $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ with 
+  \arritem Co-ranking matrix $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ with 
   $q_{\ell m} = 
-  \rvert \{ (i, j): 
-  r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} 
-  \rvert$ 
-  \arritem Interpretation.
+  \big \rvert \{ (i, j): 
+  r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} \big \rvert$ 
+  \arritem Interpretation:
   \begin{itemize}
     \flexitem{1} All non-zero entries on diagonal $\Rightarrow$ optimal 
     embedding
@@ -1166,10 +1075,10 @@ spaces
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Co-ranking-based metrics.}
+\textbf{Co-ranking-based metrics:}
 
 \begin{itemize}
-  \arritem Number of points remaining in $k$-neighborhood after projection. 
+  \arritem Number of points remaining in $k$-neighborhood after projection: 
   $Q_{NX}(k) = \dfrac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
   q_{\ell m}$
   \arritem 
@@ -1180,11 +1089,11 @@ spaces
 \vspace{0.3cm}
 
 \begin{minipage}[b]{0.6\textwidth}
-  \textbf{AUC measure.} % Parameter-free
+  \textbf{AUC measure:} % Parameter-free
   \begin{itemize}
     \arritem $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
     \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
-    \arritem Interpretation.
+    \arritem Interpretation:
     \begin{itemize}
       \flexitem{1} $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
       \flexitem{2} $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
@@ -1207,7 +1116,7 @@ spaces
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Key variation.} Poor, random, maximum coverage
+\textbf{Key variation:} poor, random, maximum coverage
 
 \vspace{0.3cm}
 
@@ -1246,7 +1155,7 @@ $\star$ ~ maximum coverage
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Quantitative results.} Seemingly better performance of random coverage
+\textbf{Quantitative results:} seemingly better performance of random coverage
 
 \vspace{0.3cm}
 
@@ -1258,8 +1167,8 @@ $\star$ ~ maximum coverage
 \scriptsize
 $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of 1 
 in both figures for better visibility of differences. \\
-Original scales. Swiss roll: $\text{AUC}(R_{NX}) \in [0.2655, 0.4086]$, 
-incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
+Original scales: swiss roll -- $\text{AUC}(R_{NX}) \in [0.2655, 0.4086]$, 
+incomplete tire -- $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 
 \end{frame}
 
@@ -1272,7 +1181,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Qualitative results.} Swiss roll
+\textbf{Qualitative results:} swiss roll
 
 \vspace{0.3cm}
 
@@ -1290,7 +1199,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Qualitative results.} Incomplete tire
+\textbf{Qualitative results:} incomplete tire
 
 \vspace{0.3cm}
 
@@ -1308,7 +1217,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Key variation.} Noise level $\alpha \in \{0.1, 0.5, 1.0, 3.0\}$ 
+\textbf{Key variation:} noise level $\alpha \in \{0.1, 0.5, 1.0, 3.0\}$ 
 
 \vspace{0.3cm}
 
@@ -1337,7 +1246,8 @@ Potential displacement by random noise, exemplified at one prior point location.
 \\
 Ellipses have semi-axes of length = one standard deviation of the Gaussian noise 
 variable, i.e., noise level scaled by standard deviation $s_i$ in $t$ and $s$ 
-direction, respectively: $\alpha \cdot s_i$ with $i \in \{t, s\}$.
+direction, respectively: $\alpha \cdot s_i$ with $i \in \{t, s\}$. \\
+Landmarks have been found via maximum coverage.
 
 \end{frame}
 
@@ -1350,7 +1260,7 @@ direction, respectively: $\alpha \cdot s_i$ with $i \in \{t, s\}$.
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Quantitative results.} Some compensation of noise by larger number of 
+\textbf{Quantitative results:} some compensation of noise by larger number of 
 landmarks
 
 \vspace{0.3cm}
@@ -1363,8 +1273,8 @@ landmarks
 \scriptsize
 $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of 1 
 in both figures for better visibility of differences. \\
-Original scales. Swiss roll: $\text{AUC}(R_{NX}) \in [0.2720, 0.4167]$, 
-incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
+Original scales: swiss roll -- $\text{AUC}(R_{NX}) \in [0.2720, 0.4167]$, 
+incomplete tire -- $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 
 \end{frame}
 
@@ -1377,7 +1287,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Qualitative results.} Swiss roll
+\textbf{Qualitative results:} swiss roll
 
 \vspace{0.3cm}
 
@@ -1395,7 +1305,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Qualitative results.} Incomplete tire
+\textbf{Qualitative results:} incomplete tire
 
 \vspace{0.3cm}
 
@@ -1413,7 +1323,7 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \noindent \textcolor{gray!90}{\rule{\textwidth}{1pt}}
 \smallskip
 
-\textbf{Comparison.} LLE vs HLLE vs SSLLE
+\textbf{Comparison:} LLE vs HLLE vs SSLLE
 
 \vspace{0.3cm}
 
@@ -1451,46 +1361,18 @@ incomplete tire: $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 \vspace{0.3cm}  
 
 \scriptsize
-SSLLE with maximum coverage, 12 landmarks and exact prior information. \\
-LLE and HLLE computed using implementation in \texttt{R}'s \texttt{dimRed} 
-package \citep{pkgdimred}; number of neighbors as deemed optimal by 
-SSLLE implementation (no other hyperparameters to set).
+SSLLE: own implementation (see 
+\href{https://github.com/lisa-wm/manifold-lle/tree/main/2_code}{Github}), 
+LLE \& HLLE: implementation in \texttt{R}'s \texttt{dimRed} 
+package \citep{pkgdimred}. \\
+SSLLE with maximum coverage, 12 landmarks and exact prior information,
+LLE and HLLE with number of neighbors as deemed optimal by SSLLE implementation 
+(no other hyperparameters to set).
 
 \end{frame}
 
 % ------------------------------------------------------------------------------
 % DISCUSSION
-% ------------------------------------------------------------------------------
-
-% \LARGE
-% \begin{frame}{{}}
-% \normalsize
-% \vspace{-0.5cm}
-% \noindent \textcolor{white}{\rule{\textwidth}{1pt}}
-% \smallskip
-% 
-% \begin{itemize}
-% \large
-% \flexitem{1} Problem
-% \flexitem{2} Local graph-based manifold learning (LGML)
-% \flexitem{3} Techniques
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Unsupervised
-%   \flexitem{2} Semi-supervised
-%   \flexitem{3} Challenges
-% \end{itemize}
-% \flexitem{4} Sensitivity analysis
-% \begin{itemize}
-%   \large
-%   \flexitem{1} Setup
-%   \flexitem{2} Results
-% \end{itemize}
-% \flexitem{5} \textbf{Discussion}
-% \end{itemize}
-% 
-% \end{frame}
-
 % ------------------------------------------------------------------------------
 
 \LARGE
@@ -1527,7 +1409,7 @@ SSLLE implementation (no other hyperparameters to set).
     
 \vfill
 
-\conclbox{SSLLE. Imperfect but potentially powerful approach to LGML}
+\conclbox{SSLLE: imperfect but potentially powerful approach to LGML}
 
 \end{frame}
 
