@@ -19,36 +19,15 @@ perform_sslle <- function(data,
   
   # Check data
   
-  # invisible(sapply(list(data, prior_points), function(i) {
-  #   check_data(i)
-  #   assign(deparse(substitute(i)), as.data.table(i))
-  #   }))
-  
-  # Check argument validity
-  
-  # if (nrow(data) <= nrow(prior_points)) {
-  #   stop("sslle only makes sense if not all points are known yet")
-  # }
-  # 
-  # intrinsic_dim <- ncol(prior_points)
-  
-  # check_inputs(
-  #   data, 
-  #   intrinsic_dim, 
-  #   neighborhood_method, 
-  #   neighborhood_size,
-  #   regularization_param)
-  
-  # if (!is_exact & is.null(confidence_param)) {
-  #   stop("please specify a confidence parameter")
-  # }
-  # 
-  # if (!is_exact & !checkmate::test_numeric(
-  #   confidence_param, 
-  #   lower = 1e-08,
-  #   finite = TRUE)) {
-  #   stop("confidence parameter must be positive numeric value")
-  # }
+  check_inputs(
+    data = data,
+    k_max = k_max,
+    prior_points = prior_points,
+    is_exact = is_exact,
+    confidence_param = confidence_param,
+    regularization = regularization,
+    regularization_param = regularization_param,
+    verbose = verbose)
   
   # REMOVE MANIFOLD COORDINATES FOR COMPUTATIONS -------------------------------
   
@@ -62,13 +41,6 @@ perform_sslle <- function(data,
     k_max = k_max,
     regularization = regularization,
     verbose = verbose)
-  
-  # plot(reconstruction_weights$results_search_k$reconstruction_errors ~
-  #        reconstruction_weights$results_search_k$neighborhood_sizes, 
-  #      type = "l")
-  
-  # reconstruction_weights <- reconstruction$weight_matrix
-  # optimal_k <- reconstruction$neighborhood_size
 
   # COMPUTE EMBEDDING COORDINATES FOR CANDIDATE NEIGHBORHOOD SIZES -------------
   
@@ -110,6 +82,7 @@ perform_sslle <- function(data,
   # FIND OPTIMAL EMBEDDING -----------------------------------------------------
   
   # embedding_opt <- which.min(residual_variances)
+  
   embedding_opt <- which.max(auc_lnk_rnx)
   
   # RETURN ---------------------------------------------------------------------

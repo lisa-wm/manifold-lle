@@ -2,8 +2,8 @@
 # MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
-plot_manifold <- function(data, 
-                          dim, 
+plot_manifold <- function(data,
+                          intrinsic_coords,
                           n_colors = 10, 
                           coord_syst = FALSE,
                           camera_eye = list(
@@ -16,16 +16,16 @@ plot_manifold <- function(data,
   # Perform basic input checks
   
   checkmate::assert_data_table(data)
-  checkmate::assert_int(dim, lower = 1L, upper = 3L)
+  checkmate::assert_data_table(intrinsic_coords)
   checkmate::assert_count(n_colors)
   
-  data <- data.table::copy(data)
+  dt <- data.table::copy(data)
+  dim <- ncol(dt)
+
+  data.table::setnames(dt, c("x", "y", "z")[1:dim])
+  data.table::setnames(intrinsic_coords, "t")
   
-  if (ncol(data) != dim + 2L)
-    {stop(sprintf("data must contain %d columns plus two for coloring", dim))}
-  
-  colnames <- c(c("x", "y", "z")[1:dim], "t", "s")
-  data.table::setnames(data, colnames)
+  dt_plot <- cbind(dt, intrinsic_coords)
 
   # Create rainbow color palette, granularity depending on n_colors
   
@@ -49,10 +49,9 @@ plot_manifold <- function(data,
     }
     
     if (dim == 1L) {
-      my_plot <- plotly::plot_ly(data, x = ~ t, y = 0, color = ~ t)
+      my_plot <- plotly::plot_ly(dt_plot, x = ~ x, y = 0, color = ~ t)
     } else {
-      my_plot <- plotly::plot_ly(data, x = ~ x, y = ~ y, color = ~ t)
-    }
+      my_plot <- plotly::plot_ly(dt_plot, x = ~ x, y = ~ y, color = ~ t)}
     
     my_plot <- my_plot %>% 
       add_trace(
@@ -93,7 +92,7 @@ plot_manifold <- function(data,
     }
     
     my_plot <-plotly::plot_ly(
-      data, 
+      dt_plot, 
       x = ~ x, 
       y = ~ y, 
       z = ~ z, 
@@ -112,3 +111,7 @@ plot_manifold <- function(data,
   my_plot
   
 }
+
+plot_manifold(
+  data = make_incomplete_tire(1000L)[, .(x_1, x_2, x_3)],
+  intrinsic_coords = make_incomplete_tire(1000L)[, .(t)])
