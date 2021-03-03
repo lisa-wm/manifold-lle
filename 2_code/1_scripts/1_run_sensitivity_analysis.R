@@ -6,11 +6,19 @@
 
 data_labeled <- list(
   incomplete_tire = make_incomplete_tire(n_points = 1000L), 
-  swiss_roll = make_swiss_roll(n_points = 1000L))
+  swiss_roll = make_swiss_roll(n_points = 1000L),
+  world_data = make_world_data_3d(
+    here("2_code/2_data", "rawdata_world_3d.csv")))
 
 save_rdata_files(data_labeled, folder = "2_code/2_data")
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
+
+true_embeddings <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t, s)],
+  swiss_roll = data_labeled$swiss_roll[, .(t, s = x_2)],
+  world_data = make_world_data_2d(
+    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
 
 k_max <- 15L
 n_landmarks_max <- 12L
@@ -35,12 +43,13 @@ sensitivity_landmarks <- parallel::mclapply(
     
     function(j) {
       
-      if (j == 1L | j %% 10 == 0) cat(sprintf("trying combination %d...\n", j))
+      if (j == 1L | j %% 5L == 0L) cat(sprintf("trying combination %d...\n", j))
       
       # Define required parameters
       
-      data_l <- data_labeled[[i]]
+      # data_l <- data_labeled[[i]]
       data_u <- data_unlabeled[[i]]
+      true_emb <- true_embeddings[[i]]
       this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
       this_number <- search_grid_landmarks[j, "n_landmarks"]
       
@@ -48,7 +57,7 @@ sensitivity_landmarks <- parallel::mclapply(
       
       landmarks_ind <- switch(
         this_method,
-        poor_coverage = order(data_l$t)[seq_len(this_number)],
+        poor_coverage = order(true_emb$t)[seq_len(this_number)],
         random_coverage = find_landmarks(
           data = data_u,
           n_landmarks = this_number,
@@ -59,17 +68,17 @@ sensitivity_landmarks <- parallel::mclapply(
           n_landmarks = this_number,
           method = "maxmin"))
       
-      landmarks <- data_l[landmarks_ind, .(t, s)]
+      landmarks <- true_emb[landmarks_ind, .(t, s)]
       
       # Move prior points up in the data as sslle function assumes the the first
       # observations to be prior points
       
-      new_order <- c(landmarks_ind, setdiff(data_l[, .I], landmarks_ind))
+      new_order <- c(landmarks_ind, setdiff(data_u[, .I], landmarks_ind))
       
       # Compute embedding
       
       embedding <- perform_sslle(
-        data = data_l[new_order],
+        data = data_u[new_order],
         k_max = k_max,
         prior_points = landmarks,
         verbose = FALSE)
@@ -83,7 +92,7 @@ sensitivity_landmarks <- parallel::mclapply(
         auc_lnk_rnx = max(embedding$auc_lnk_rnx),
         embedding_result = embedding,
         landmarks = landmarks, 
-        new_order = new_order)
+        true_embedding = true_emb[new_order])
       
     },
     

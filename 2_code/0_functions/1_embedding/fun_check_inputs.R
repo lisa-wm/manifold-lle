@@ -35,13 +35,12 @@ check_inputs <- function(data,
   # Check semantics
   
   intrinsic_d <- ncol(pp)
-  capital_d <- ncol(dt) - intrinsic_d
+  capital_d <- ncol(dt)
 
   if (capital_d <= intrinsic_d) {
     stop("intrinsic dimensionality must be lower than input dimensionality")}
   
   if (nrow(pp) >= nrow(dt)) {
-    stop("number of prior points must be smaller than number of observations")
-  }
+    stop("number of prior points must be smaller than number of observations")}
   
 }

@@ -445,74 +445,56 @@ ggplot2::ggsave(
 
 # ------------------------------------------------------------------------------
 
-plotly::orca(
-  sensitivity_landmarks_plots_qual$swiss_roll, 
-  "3_presentation/figures/sensitivity_landmarks_qual_swiss.pdf",
-  height = 450,
-  width = 1000)
+height_qual_landmarks <- 450L
+height_key_landmarks <- 220L
+height_qual_noise <- 520L
+height_key_noise <- 200L
+width_all <- 1000L
 
-plotly::orca(
-  sensitivity_landmarks_plots_qual$incomplete_tire, 
-  "3_presentation/figures/sensitivity_landmarks_qual_tire.pdf",
-  height = 450,
-  width = 1000)
-
-# ------------------------------------------------------------------------------
-
-plotly::orca(
-  sensitivity_landmarks_plots_key_variation$swiss_roll, 
-  "3_presentation/figures/sensitivity_landmarks_key_swiss.pdf",
-  height = 220,
-  width = 1000)
-
-plotly::orca(
-  sensitivity_landmarks_plots_key_variation$incomplete_tire, 
-  "3_presentation/figures/sensitivity_landmarks_key_tire.pdf",
-  height = 220,
-  width = 1000)
-
-# ------------------------------------------------------------------------------
-
-plotly::orca(
-  sensitivity_noise_plots_qual$swiss_roll, 
-  "3_presentation/figures/sensitivity_noise_qual_swiss.pdf",
-  height = 520,
-  width = 1000)
-
-plotly::orca(
-  sensitivity_noise_plots_qual$incomplete_tire, 
-  "3_presentation/figures/sensitivity_noise_qual_tire.pdf",
-  height = 520,
-  width = 1000)
-
-# ------------------------------------------------------------------------------
-
-plotly::orca(
-  sensitivity_noise_plots_key_variation$swiss_roll, 
-  "3_presentation/figures/sensitivity_noise_key_swiss.pdf",
-  height = 200,
-  width = 1000)
-
-plotly::orca(
-  sensitivity_noise_plots_key_variation$incomplete_tire, 
-  "3_presentation/figures/sensitivity_noise_key_tire.pdf",
-  height = 200,
-  width = 1000)
+invisible(lapply(
+  
+  c("swiss_roll", "incomplete_tire"),
+  
+  function(i) {
+    
+    plotly::orca(
+      sensitivity_landmarks_plots_qual[[i]], 
+      sprintf("3_presentation/figures/sensitivity_landmarks_qual_%s.pdf", i),
+      height = height_qual_landmarks,
+      width = width_all)
+    
+    plotly::orca(
+      sensitivity_landmarks_plots_key_variation[[i]], 
+      sprintf("3_presentation/figures/sensitivity_landmarks_key_%s.pdf", i),
+      height = height_key_landmarks,
+      width = width_all)
+    
+    plotly::orca(
+      sensitivity_noise_plots_qual[[i]], 
+      sprintf("3_presentation/figures/sensitivity_noise_qual_%s.pdf", i),
+      height = height_qual_noise,
+      width = width_all)
+    
+    plotly::orca(
+      sensitivity_noise_plots_key_variation[[i]], 
+      sprintf("3_presentation/figures/sensitivity_noise_key_%s.pdf", i),
+      height = height_key_noise,
+      width = width_all)
+   
+  }))
 
 # COMPARISON - LLE & HLLE ------------------------------------------------------
 
-load_rdata_files(comp_lle, folder = "2_code")
+load_rdata_files(comp_lle, folder = "2_code/2_data")
 
-plotly::orca(
-  comp_lle$swiss_roll, 
-  "3_presentation/figures/comparison_swiss.pdf",
-  height = 200,
-  width = 1000)
-
-plotly::orca(
-  comp_lle$incomplete_tire, 
-  "3_presentation/figures/comparison_tire.pdf",
-  height = 200,
-  width = 1000)
-
-
+invisible(lapply(
+  
+  c("swiss_roll", "incomplete_tire"),
+  
+  function(i) {
+    plotly::orca(
+      comp_lle[[i]], 
+      sprintf("3_presentation/figures/comparison_%s.pdf", i),
+      height = 200L,
+      width = width_all)
+  }))
