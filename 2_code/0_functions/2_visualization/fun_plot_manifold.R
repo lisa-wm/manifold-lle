@@ -11,7 +11,7 @@ plot_manifold <- function(data,
                             y = -1.5, 
                             z = 0.75),
                           title = NULL, 
-                          point_size_1_2_d = 10L) {
+                          point_size = 10L) {
   
   # Perform basic input checks
   
@@ -58,7 +58,7 @@ plot_manifold <- function(data,
         type = "scatter",
         mode = "markers",
         colors = my_palette,
-        marker = list(size = point_size_1_2_d)
+        marker = list(size = point_size)
       ) %>% 
       hide_colorbar() %>%
       layout(xaxis = ax, yaxis = ax, title = title)
@@ -101,7 +101,7 @@ plot_manifold <- function(data,
         type = "scatter3d",
         mode = "markers",
         colors = my_palette,
-        marker = list(size = 5L)
+        marker = list(size = 0.5 * point_size)
       ) %>% 
       hide_colorbar() %>% 
       layout(scene = scene, title = title)
@@ -111,7 +111,3 @@ plot_manifold <- function(data,
   my_plot
   
 }
-
-plot_manifold(
-  data = make_incomplete_tire(1000L)[, .(x_1, x_2, x_3)],
-  intrinsic_coords = make_incomplete_tire(1000L)[, .(t)])

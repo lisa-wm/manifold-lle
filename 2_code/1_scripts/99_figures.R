@@ -267,7 +267,11 @@ edges_3d <- lapply(
 
 # ------------------------------------------------------------------------------
 
-ax <- list(showticklabels = FALSE, showline = TRUE, title = "")
+ax <- list(
+  showticklabels = FALSE, 
+  showline = TRUE, 
+  title = "", 
+  showgrid = FALSE)
 
 label_positions_2d <- data.table::data.table(
   x = sapply(edges_2d, function(i) mean(i$x)),
@@ -416,20 +420,17 @@ ggplot2::ggsave(
 
 # SENSITIVITY ANALYSIS ---------------------------------------------------------
 
-load_rdata_files(sensitivity_landmarks_plots_quant, "2_code/2_data")
-load_rdata_files(sensitivity_noise_plots_quant, "2_code/2_data")
-load_rdata_files(sensitivity_landmarks_plots_qual, "2_code/2_data")
-load_rdata_files(sensitivity_noise_plots_qual, "2_code/2_data")
-load_rdata_files(sensitivity_landmarks_plots_key_variation, "2_code/2_data")
-load_rdata_files(sensitivity_noise_plots_key_variation, "2_code/2_data")
+load_rdata_files(sensitivity_plots_auc, "2_code/2_data")
+load_rdata_files(sensitivity_plots_emb, "2_code/2_data")
+load_rdata_files(sensitivity_plots_key, "2_code/2_data")
 
 # ------------------------------------------------------------------------------
 
 ggplot2::ggsave(
   here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
   gridExtra::grid.arrange(
-    sensitivity_landmarks_plots_quant$swiss_roll$auc_plot,
-    sensitivity_landmarks_plots_quant$incomplete_tire$auc_plot, 
+    sensitivity_plots_auc$swiss_roll$auc_plot_landmarks,
+    sensitivity_plots_auc$incomplete_tire$auc_plot_landmarks, 
     ncol = 2L),
   width = 16, 
   height = 6)
@@ -437,8 +438,8 @@ ggplot2::ggsave(
 ggplot2::ggsave(
   here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
   gridExtra::grid.arrange(
-    sensitivity_noise_plots_quant$swiss_roll$auc_plot,
-    sensitivity_noise_plots_quant$incomplete_tire$auc_plot, 
+    sensitivity_plots_auc$swiss_roll$auc_plot_noise,
+    sensitivity_plots_auc$incomplete_tire$auc_plot_noise, 
     ncol = 2L),
   width = 16, 
   height = 6)
@@ -458,25 +459,25 @@ invisible(lapply(
   function(i) {
     
     plotly::orca(
-      sensitivity_landmarks_plots_qual[[i]], 
+      sensitivity_plots_emb[[i]]$emb_plots_landmarks, 
       sprintf("3_presentation/figures/sensitivity_landmarks_qual_%s.pdf", i),
       height = height_qual_landmarks,
       width = width_all)
     
     plotly::orca(
-      sensitivity_landmarks_plots_key_variation[[i]], 
+      sensitivity_plots_key[[i]]$plot_coverage, 
       sprintf("3_presentation/figures/sensitivity_landmarks_key_%s.pdf", i),
       height = height_key_landmarks,
       width = width_all)
     
     plotly::orca(
-      sensitivity_noise_plots_qual[[i]], 
+      sensitivity_plots_emb[[i]]$emb_plots_noise, 
       sprintf("3_presentation/figures/sensitivity_noise_qual_%s.pdf", i),
       height = height_qual_noise,
       width = width_all)
     
     plotly::orca(
-      sensitivity_noise_plots_key_variation[[i]], 
+      sensitivity_plots_key[[i]]$plot_noise, 
       sprintf("3_presentation/figures/sensitivity_noise_key_%s.pdf", i),
       height = height_key_noise,
       width = width_all)
@@ -496,5 +497,41 @@ invisible(lapply(
       comp_lle[[i]], 
       sprintf("3_presentation/figures/comparison_%s.pdf", i),
       height = 200L,
-      width = width_all)
+      width = 100L)
   }))
+
+# COMPARISON - WORLD DATA ------------------------------------------------------
+
+plotly::orca(
+  plot_manifold(
+    data = make_world_data_3d(
+      here("2_code/2_data", "rawdata_world_3d.csv"))[, .(x_1, x_2, x_3)],
+    intrinsic_coords = make_world_data_3d(
+      here("2_code/2_data", "rawdata_world_3d.csv"))[, .(t = t)],
+    camera_eye = list(
+      x = 0.4, 
+      y = -1.8, 
+      z = -0.1), 
+    point_size_3d = 3L),
+  "3_presentation/figures/world_3d.pdf",
+  height = 800L,
+  width = 800L)
+
+plotly::orca(
+  plot_manifold(
+    data = make_world_data_2d(
+      here("2_code/2_data", "rawdata_world_2d.csv"))[, .(x_1, x_2)],
+    intrinsic_coords = make_world_data_2d(
+      here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = t)],
+    point_size = 5L),
+  "3_presentation/figures/world_2d.pdf",
+  height = 350L,
+  width = 800L)
+
+load_rdata_files(comp_lle, folder = "2_code/2_data")
+
+plotly::orca(
+  comp_lle$world_data, 
+  sprintf("3_presentation/figures/comparison_world.pdf", i),
+  height = 200L,
+  width = 100L)
