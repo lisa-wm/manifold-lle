@@ -33,80 +33,82 @@ search_grid_landmarks <- expand.grid(
   landmark_method = c("poor_coverage", "random_coverage", "maximum_coverage"),
   n_landmarks = seq(2L, n_landmarks_max, by = 2L))
 
-sensitivity_landmarks <- parallel::mclapply(
+# sensitivity_landmarks <- parallel::mclapply(
   
-  seq_along(data_unlabeled),
+sensitivity_landmarks <- lapply(
+  
+  seq_along(data_unlabeled[1L:2L]),
   
   function(i) {
     
-    parallel::mclapply(
-  
-    seq_len(nrow(search_grid_landmarks)),
-    
-    function(j) {
+    lapply(
       
-      if (j == 1L | j %% 5L == 0L) cat(sprintf("trying combination %d...\n", j))
+      seq_len(nrow(search_grid_landmarks)),
       
-      # Define required parameters
+      function(j) {
       
-      # data_l <- data_labeled[[i]]
-      data <- data_unlabeled[[i]]
-      true_emb <- true_embeddings[[i]]
-      this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
-      this_number <- search_grid_landmarks[j, "n_landmarks"]
-      
-      # Find prior points according to current method and number
-      
-      landmarks_ind <- switch(
-        this_method,
-        poor_coverage = order(true_emb$t)[seq_len(this_number)],
-        random_coverage = find_landmarks(
-          data = data,
+        if (j == 1L | j %% 5L == 0L) {
+          cat(sprintf("trying combination %d...\n", j))}
+        
+        # Define required parameters
+        
+        dt <- data_unlabeled[[i]]
+        true_emb <- true_embeddings[[i]]
+        this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
+        this_number <- search_grid_landmarks[j, "n_landmarks"]
+        
+        # Find prior points according to current method and number
+        
+        landmarks_ind <- switch(
+          this_method,
+          poor_coverage = order(true_emb$t)[seq_len(this_number)],
+          random_coverage = find_landmarks(
+            data = dt,
+            n_landmarks = this_number,
+            method = "random"),
+          maximum_coverage = find_landmarks(
+            data = dt,
+            n_neighbors = ceiling(0.05 * nrow(dt)),
+            n_landmarks = this_number,
+            method = "maxmin"))
+        
+        landmarks <- true_emb[landmarks_ind]
+        
+        # Move prior points up in the data as sslle function assumes the the 
+        # first observations to be prior points
+        
+        new_order <- c(landmarks_ind, setdiff(dt[, .I], landmarks_ind))
+        
+        # Compute embedding
+        
+        embedding <- perform_sslle(
+          data = dt[new_order],
+          k_max = k_max,
+          prior_points = landmarks,
+          verbose = FALSE)
+        
+        # Return
+        
+        list(
+          landmark_method = this_method,
           n_landmarks = this_number,
-          method = "random"),
-        maximum_coverage = find_landmarks(
-          data = data,
-          n_neighbors = k_max,
-          n_landmarks = this_number,
-          method = "maxmin"))
+          residual_variance = min(embedding$residual_variances),
+          auc_lnk_rnx = max(embedding$auc_lnk_rnx),
+          embedding_result = embedding,
+          landmarks = landmarks, 
+          true_embedding = true_emb[new_order])
+        
+        plot_manifold(embedding$Y, true_emb[, .(t)])
+        
+      }#,
       
-      landmarks <- true_emb[landmarks_ind]
+      #mc.cores = parallel::detectCores())
       
-      # Move prior points up in the data as sslle function assumes the the first
-      # observations to be prior points
+    )
       
-      new_order <- c(landmarks_ind, setdiff(data[, .I], landmarks_ind))
-      
-      # Compute embedding
-      
-      embedding <- perform_sslle(
-        data = data[new_order],
-        k_max = k_max,
-        prior_points = landmarks,
-        verbose = FALSE)
-      
-      plot_manifold(
-        data = embedding$Y,
-        intrinsic_coords = true_emb[new_order][, .(t)])
-      
-      # Return
-      
-      list(
-        landmark_method = this_method,
-        n_landmarks = this_number,
-        residual_variance = min(embedding$residual_variances),
-        auc_lnk_rnx = max(embedding$auc_lnk_rnx),
-        embedding_result = embedding,
-        landmarks = landmarks, 
-        true_embedding = true_emb[new_order])
-      
-    },
+    }#, 
     
-    mc.cores = parallel::detectCores())
-    
-  }, 
-  
-  mc.cores = parallel::detectCores()
+    #mc.cores = parallel::detectCores()
 
 )
 

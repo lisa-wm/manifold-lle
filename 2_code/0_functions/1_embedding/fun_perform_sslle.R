@@ -29,15 +29,10 @@ perform_sslle <- function(data,
     regularization_param = regularization_param,
     verbose = verbose)
   
-  # REMOVE MANIFOLD COORDINATES FOR COMPUTATIONS -------------------------------
-  
-  capital_d <- ncol(data) - ncol(prior_points)
-  data_euclidean <- data[, seq_len(capital_d), with = FALSE]
-  
   # COMPUTE RECONSTRUCTION WEIGHTS FOR CANDIDATE NEIGHBORHOOD SIZES ------------
   
   reconstruction <- compute_reconstruction_weights(
-    data = data_euclidean,
+    data = data,
     k_max = k_max,
     regularization = regularization,
     verbose = verbose)
@@ -67,7 +62,7 @@ perform_sslle <- function(data,
     seq_along(reconstruction$candidates_k),
     function(i) {
       1 - cor(
-        c(as.matrix(dist(data_euclidean))),
+        c(as.matrix(dist(data))),
         c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
   
   # COMPUTE AUC_LNK_RNX --------------------------------------------------------
@@ -76,7 +71,7 @@ perform_sslle <- function(data,
     seq_along(reconstruction$candidates_k),
     function(i) {
       compute_auc_lnk_rnx(
-        data_euclidean,
+        data,
         embedding[[i]]$embedding_coordinates)})
   
   # FIND OPTIMAL EMBEDDING -----------------------------------------------------
