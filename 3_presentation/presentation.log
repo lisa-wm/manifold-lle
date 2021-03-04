@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  3 MAR 2021 06:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 MAR 2021 07:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,11 +1379,21 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 177.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 10.07397pt on input line 177.
-<figures/s-curve.pdf, id=33, 343.2825pt x 305.22029pt>
-File: figures/s-curve.pdf Graphic file (type pdf)
-<use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 177.
-(pdftex.def)             Requested size: 67.60477pt x 78.34291pt.
+
+
+! LaTeX Error: File `figures/s-curve' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 177--177
 [][]  
@@ -1391,28 +1401,38 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 177--177
 
 [3
 
- <./figures/s-curve.pdf
+]
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
-id other resource which is no dict (key 'ProcSets', type <array>); ignored.
->]
-File: figures/s-curve.pdf Graphic file (type pdf)
-<use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 215.
-(pdftex.def)             Requested size: 51.62425pt x 62.37761pt.
-<figures/s-curve-undone.pdf, id=46, 756.90776pt x 305.22029pt>
-File: figures/s-curve-undone.pdf Graphic file (type pdf)
-<use figures/s-curve-undone.pdf>
-Package pdftex.def Info: figures/s-curve-undone.pdf  used on input line 215.
-(pdftex.def)             Requested size: 172.08318pt x 72.5218pt.
- [4
+! LaTeX Error: File `figures/s-curve' not found.
 
- <./figures/s-curve-undone.pdf
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone.pdf): PDF inclusion
-: invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
-ed.
->]
+
+! LaTeX Error: File `figures/s-curve-undone' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4
+
+]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.88956pt on input line 237.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
@@ -1420,7 +1440,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
  [5
 
 ]
-<figures/models_overview.png, id=68, 808.01875pt x 479.7925pt>
+<figures/models_overview.png, id=54, 808.01875pt x 479.7925pt>
 File: figures/models_overview.png Graphic file (type png)
 <use figures/models_overview.png>
 Package pdftex.def Info: figures/models_overview.png  used on input line 266.
@@ -1428,7 +1448,7 @@ Package pdftex.def Info: figures/models_overview.png  used on input line 266.
  [6
 
  <./figures/models_overview.png>]
-<figures/kpca_lgml_algo.png, id=78, 903.375pt x 310.15875pt>
+<figures/kpca_lgml_algo.png, id=64, 903.375pt x 310.15875pt>
 File: figures/kpca_lgml_algo.png Graphic file (type png)
 <use figures/kpca_lgml_algo.png>
 Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 291.
@@ -1441,21 +1461,24 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 291--291
 [7
 
  <./figures/kpca_lgml_algo.png>]
-<figures/s-curve-connected.pdf, id=88, 681.50606pt x 606.34526pt>
-File: figures/s-curve-connected.pdf Graphic file (type pdf)
-<use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 331.
 
-(pdftex.def)             Requested size: 121.68652pt x 147.9653pt.
- [8
+! LaTeX Error: File `figures/s-curve-connected' not found.
 
- <./figures/s-curve-connected.pdf
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.331 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
->]
-<figures/eigenanalysis.png, id=100, 742.775pt x 218.8175pt>
+[8
+
+]
+<figures/eigenanalysis.png, id=79, 742.775pt x 218.8175pt>
 File: figures/eigenanalysis.png Graphic file (type png)
 <use figures/eigenanalysis.png>
 Package pdftex.def Info: figures/eigenanalysis.png  used on input line 368.
@@ -1470,31 +1493,37 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 449--449
 [10
 
 ]
-<figures/reconstruction-3d.pdf, id=115, 229.81859pt x 229.81859pt>
-File: figures/reconstruction-3d.pdf Graphic file (type pdf)
-<use figures/reconstruction-3d.pdf>
-Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 486.
 
-(pdftex.def)             Requested size: 137.66391pt x 103.0277pt.
-<figures/reconstruction-2d.pdf, id=117, 229.81859pt x 229.81859pt>
-File: figures/reconstruction-2d.pdf Graphic file (type pdf)
-<use figures/reconstruction-2d.pdf>
-Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 486.
+! LaTeX Error: File `figures/reconstruction-3d' not found.
 
-(pdftex.def)             Requested size: 98.3318pt x 93.12906pt.
- [11
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.486 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- <./figures/reconstruction-3d.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-3d.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
-> <./figures/reconstruction-2d.pdf
+! LaTeX Error: File `figures/reconstruction-2d' not found.
 
-pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-2d.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
->]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.486 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[11
+
+]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 536.
 
@@ -1589,36 +1618,42 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 591--591
 [13
 
 ]
-<figures/s-curve-pp-random.pdf, id=159, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp-random.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 640.
 
-(pdftex.def)             Requested size: 40.97131pt x 49.50656pt.
-<figures/s-curve-pp-undone-random.pdf, id=161, 756.90776pt x 305.22029pt>
-File: figures/s-curve-pp-undone-random.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-undone-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-undone-random.pdf  used on input li
-ne 640.
-(pdftex.def)             Requested size: 143.4012pt x 60.43483pt.
- [14
+! LaTeX Error: File `figures/s-curve-pp-random' not found.
 
- <./figures/s-curve-pp-random.pdf
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.640 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-random.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
-> <./figures/s-curve-pp-undone-random.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-undone-random.pdf): PDF
- inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
-y>); ignored.
->]
+! LaTeX Error: File `figures/s-curve-pp-undone-random' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.640 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[14
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 716--716
 
  []
 
-<figures/matrix_partition.png, id=177, 643.40375pt x 455.7025pt>
+<figures/matrix_partition.png, id=125, 643.40375pt x 455.7025pt>
 File: figures/matrix_partition.png Graphic file (type png)
 <use figures/matrix_partition.png>
 Package pdftex.def Info: figures/matrix_partition.png  used on input line 716.
@@ -1628,61 +1663,86 @@ Package pdftex.def Info: figures/matrix_partition.png  used on input line 716.
  <./figures/matrix_partition.png>] [16
 
 ]
-<figures/s-curve-pp-poor.pdf, id=194, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp-poor.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-poor.pdf>
-Package pdftex.def Info: figures/s-curve-pp-poor.pdf  used on input line 831.
-(pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
-File: figures/s-curve-pp-random.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 831.
 
-(pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
-<figures/s-curve-pp-maxmin.pdf, id=197, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp-maxmin.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-maxmin.pdf>
-Package pdftex.def Info: figures/s-curve-pp-maxmin.pdf  used on input line 831.
+! LaTeX Error: File `figures/s-curve-pp-poor' not found.
 
-(pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
- [17
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.831 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- <./figures/s-curve-pp-poor.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-poor.pdf): PDF inclusio
-n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
-red.
-> <./figures/s-curve-pp-maxmin.pdf
+! LaTeX Error: File `figures/s-curve-pp-random' not found.
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-maxmin.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
->] [18
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.831 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `figures/s-curve-pp-maxmin' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.831 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[17
+
+] [18
 
 ] [19
 
 ]
-<figures/swiss-roll.pdf, id=226, 343.2825pt x 305.22029pt>
-File: figures/swiss-roll.pdf Graphic file (type pdf)
-<use figures/swiss-roll.pdf>
-Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 972.
-(pdftex.def)             Requested size: 64.53151pt x 78.41673pt.
-<figures/incomplete-tire.pdf, id=229, 455.78279pt x 305.22029pt>
-File: figures/incomplete-tire.pdf Graphic file (type pdf)
-<use figures/incomplete-tire.pdf>
-Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 972.
-(pdftex.def)             Requested size: 100.38258pt x 70.31561pt.
- [20
 
- <./figures/swiss-roll.pdf
+! LaTeX Error: File `figures/swiss-roll' not found.
 
-pdfTeX warning: pdflatex.exe (file ./figures/swiss-roll.pdf): PDF inclusion: in
-valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
-> <./figures/incomplete-tire.pdf
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.972 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-pdfTeX warning: pdflatex.exe (file ./figures/incomplete-tire.pdf): PDF inclusio
-n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
-red.
->]
+
+! LaTeX Error: File `figures/incomplete-tire' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.972 \end{frame}
+                 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[20
+
+]
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 1025--1025
 [][]  
  []
@@ -1697,7 +1757,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1025--1025
 ] [22
 
 ]
-<figures/rnx_curve.pdf, id=261, 578.16pt x 289.08pt>
+<figures/rnx_curve.pdf, id=179, 578.16pt x 289.08pt>
 File: figures/rnx_curve.pdf Graphic file (type pdf)
 <use figures/rnx_curve.pdf>
 Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1108.
@@ -1705,33 +1765,38 @@ Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1108.
  [23
 
  <./figures/rnx_curve.pdf>]
-<figures/sensitivity_landmarks_key_swiss.pdf, id=275, 756.90776pt x 169.5936pt>
 
-File: figures/sensitivity_landmarks_key_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_key_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss.pdf  used on i
-nput line 1147.
-(pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
-<figures/sensitivity_landmarks_key_tire.pdf, id=277, 756.90776pt x 169.5936pt>
-File: figures/sensitivity_landmarks_key_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_key_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_key_tire.pdf  used on in
-put line 1147.
-(pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
- [24
+! LaTeX Error: File `figures/sensitivity_landmarks_key_swiss' not found.
 
- <./figures/sensitivity_landmarks_key_swiss.pdf
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1147 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_swiss.pd
-f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
-e <array>); ignored.
-> <./figures/sensitivity_landmarks_key_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_tire.pdf
-): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type
- <array>); ignored.
->]
-<figures/sensitivity_landmarks_auc.pdf, id=291, 1156.32pt x 433.62pt>
+! LaTeX Error: File `figures/sensitivity_landmarks_key_tire' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1147 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[24
+
+]
+<figures/sensitivity_landmarks_auc.pdf, id=199, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
@@ -1740,62 +1805,72 @@ ine 1173.
  [25
 
  <./figures/sensitivity_landmarks_auc.pdf>]
-<figures/sensitivity_landmarks_qual_swiss.pdf, id=308, 756.90776pt x 343.2825pt
->
-File: figures/sensitivity_landmarks_qual_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_qual_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss.pdf  used on 
-input line 1191.
-(pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
- [26
 
- <./figures/sensitivity_landmarks_qual_swiss.pdf
+! LaTeX Error: File `figures/sensitivity_landmarks_qual_swiss' not found.
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss.p
-df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
-pe <array>); ignored.
->]
-<figures/sensitivity_landmarks_qual_tire.pdf, id=323, 756.90776pt x 343.2825pt>
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1191 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-File: figures/sensitivity_landmarks_qual_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_qual_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_qual_tire.pdf  used on i
-nput line 1209.
-(pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
- [27
+[26
 
- <./figures/sensitivity_landmarks_qual_tire.pdf
+]
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_tire.pd
-f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
-e <array>); ignored.
->]
-<figures/sensitivity_noise_key_swiss.pdf, id=338, 756.90776pt x 154.6578pt>
-File: figures/sensitivity_noise_key_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_key_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_key_swiss.pdf  used on input
- line 1252.
-(pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
-<figures/sensitivity_noise_key_tire.pdf, id=340, 756.90776pt x 154.6578pt>
-File: figures/sensitivity_noise_key_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_key_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_key_tire.pdf  used on input 
-line 1252.
-(pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
- [28
+! LaTeX Error: File `figures/sensitivity_landmarks_qual_tire' not found.
 
- <./figures/sensitivity_noise_key_swiss.pdf
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1209 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_swiss.pdf): 
-PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
-rray>); ignored.
-> <./figures/sensitivity_noise_key_tire.pdf
+[27
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_tire.pdf): P
-DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
-ray>); ignored.
->]
-<figures/sensitivity_noise_auc.pdf, id=366, 1156.32pt x 433.62pt>
+]
+
+! LaTeX Error: File `figures/sensitivity_noise_key_swiss' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `figures/sensitivity_noise_key_tire' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[28
+
+]
+<figures/sensitivity_noise_auc.pdf, id=233, 1156.32pt x 433.62pt>
 File: figures/sensitivity_noise_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line 
@@ -1804,65 +1879,78 @@ Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line
  [29
 
  <./figures/sensitivity_noise_auc.pdf>]
-<figures/sensitivity_noise_qual_swiss.pdf, id=382, 756.90776pt x 395.55779pt>
-File: figures/sensitivity_noise_qual_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_qual_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_qual_swiss.pdf  used on inpu
-t line 1297.
-(pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
- [30
 
- <./figures/sensitivity_noise_qual_swiss.pdf
+! LaTeX Error: File `figures/sensitivity_noise_qual_swiss' not found.
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss.pdf):
- PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <
-array>); ignored.
->]
-<figures/sensitivity_noise_qual_tire.pdf, id=397, 756.90776pt x 395.55779pt>
-File: figures/sensitivity_noise_qual_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_qual_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_qual_tire.pdf  used on input
- line 1315.
-(pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
- [31
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1297 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- <./figures/sensitivity_noise_qual_tire.pdf
+[30
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_tire.pdf): 
-PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
-rray>); ignored.
->]
-<figures/comparison_swiss.pdf, id=413, 756.90776pt x 154.6578pt>
-File: figures/comparison_swiss.pdf Graphic file (type pdf)
-<use figures/comparison_swiss.pdf>
-Package pdftex.def Info: figures/comparison_swiss.pdf  used on input line 1372.
+]
 
-(pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
-<figures/comparison_tire.pdf, id=415, 756.90776pt x 154.6578pt>
-File: figures/comparison_tire.pdf Graphic file (type pdf)
-<use figures/comparison_tire.pdf>
-Package pdftex.def Info: figures/comparison_tire.pdf  used on input line 1372.
-(pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
+! LaTeX Error: File `figures/sensitivity_noise_qual_tire' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1315 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[31
+
+]
+
+! LaTeX Error: File `figures/comparison_swiss' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1372 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `figures/comparison_tire' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1372 \end{frame}
+                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 LaTeX Font Info:    Trying to load font information for T1+laett on input line 
 1372.
- (c:/texlive/2020/texmf-dist/tex/latex/ae/t1laett.fd
+(c:/texlive/2020/texmf-dist/tex/latex/ae/t1laett.fd
 File: t1laett.fd 2001/02/12 Font definitions for T1/laett.
 ) [32
 
- <./figures/comparison_swiss.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/comparison_swiss.pdf): PDF inclusi
-on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
-ored.
-> <./figures/comparison_tire.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/comparison_tire.pdf): PDF inclusio
-n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
-red.
->] [33
+] [33
 
 ]
-<figures/discussion.png, id=437, 1128.215pt x 436.63126pt>
+<figures/discussion.png, id=276, 1128.215pt x 436.63126pt>
 File: figures/discussion.png Graphic file (type png)
 <use figures/discussion.png>
 Package pdftex.def Info: figures/discussion.png  used on input line 1414.
@@ -1876,7 +1964,11 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1414--1414
 
  <./figures/discussion.png>] [35
 
-] (./presentation.bbl) [36
+] [36
+
+] [37
+
+] (./presentation.bbl) [38
 
 ]
 \tf@nav=\write7
@@ -1898,11 +1990,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 24158 strings out of 479485
- 442781 string characters out of 5875915
+ 24368 strings out of 479485
+ 448215 string characters out of 5875915
  802113 words of memory out of 5000000
- 40409 multiletter control sequences out of 15000+600000
- 637377 words of font info for 153 fonts, out of 8000000 for 9000
+ 40602 multiletter control sequences out of 15000+600000
+ 638531 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,459b,608s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
@@ -1921,10 +2013,10 @@ ic/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texliv
 e/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (36 pages, 4902082 bytes).
+Output written on presentation.pdf (38 pages, 412815 bytes).
 PDF statistics:
- 543 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 393 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 401 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -93,8 +93,8 @@ compute_reconstruction_weights <- function(data,
         }
       )
       
-      weight_matrix <- do.call(rbind, do.call(rbind, reconstruction)[, 1])
-      reconstruction_error <- sum(unlist(do.call(rbind, reconstruction)[, 2]))
+      weight_matrix <- do.call(rbind, do.call(rbind, reconstruction)[, 1L])
+      reconstruction_error <- sum(unlist(do.call(rbind, reconstruction)[, 2L]))
       
       list(k, weight_matrix, reconstruction_error)
       

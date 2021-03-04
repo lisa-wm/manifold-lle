@@ -292,10 +292,13 @@ data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 landmarks_world_ind <- find_landmarks(
   data = true_embeddings$world_data,
   n_landmarks = 12L,
-  n_neighbors = ceiling(0.05 * nrow(true_embeddings$world_data)),
+  n_neighbors = 30L,
   method = "maxmin")
 
-landmarks_world <- true_embeddings$world_data[landmarks_world_ind]
+true_embedding_world_data <- make_world_data_2d(
+  here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)]
+
+landmarks_world <- true_embedding_world_data[landmarks_world_ind]
 
 new_order_world <- c(
   landmarks_world_ind,
@@ -308,15 +311,20 @@ data_opt <- lapply(
   function(i) i[landmark_method == "maximum_coverage" & n_landmarks == 12L])
 
 data_opt$world_data <- data.table::data.table(
-  embedding_result = list(
-    perform_sslle(
-      data = data_unlabeled$world_data[new_order_world],
-      k_max = k_max,
-      prior_points = landmarks_world,
-      verbose = FALSE)))
+  embedding_result = list(perform_sslle(
+    data = data_unlabeled$world_data[new_order_world],
+    k_max = k_max,
+    prior_points = landmarks_world,
+    verbose = TRUE)),
+  true_embedding = list(true_embedding_world_data[new_order_world]))
 
-data_opt$world_data$true_embedding <- list(make_world_data_2d(
-  here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
+lapply(
+  seq_along(data_opt$world_data), 
+  function(i) {
+    dt <- data.table::as.data.table(do.call(rbind, data_opt$world_data[[i]]))
+    # dt[, names(dt)[1L:4L] := lapply(.SD, unlist), .SDcols = names(dt)[1L:4L]]
+    # dt[, landmark_method := as.factor(landmark_method)]
+    dt})
 
 # Compute embeddings and plot
 
