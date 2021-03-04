@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 MAR 2021 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 MAR 2021 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1846,16 +1846,16 @@ s', type <array>); ignored.
 File: figures/comparison_swiss_roll.pdf Graphic file (type pdf)
 <use figures/comparison_swiss_roll.pdf>
 Package pdftex.def Info: figures/comparison_swiss_roll.pdf  used on input line 
-1372.
+1373.
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
 <figures/comparison_incomplete_tire.pdf, id=419, 756.90776pt x 154.6578pt>
 File: figures/comparison_incomplete_tire.pdf Graphic file (type pdf)
 <use figures/comparison_incomplete_tire.pdf>
 Package pdftex.def Info: figures/comparison_incomplete_tire.pdf  used on input 
-line 1372.
+line 1373.
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
 LaTeX Font Info:    Trying to load font information for T1+laett on input line 
-1372.
+1373.
  (c:/texlive/2020/texmf-dist/tex/latex/ae/t1laett.fd
 File: t1laett.fd 2001/02/12 Font definitions for T1/laett.
 ) [32
@@ -1876,10 +1876,10 @@ ray>); ignored.
 <figures/discussion.png, id=441, 1128.215pt x 436.63126pt>
 File: figures/discussion.png Graphic file (type png)
 <use figures/discussion.png>
-Package pdftex.def Info: figures/discussion.png  used on input line 1414.
+Package pdftex.def Info: figures/discussion.png  used on input line 1415.
 (pdftex.def)             Requested size: 409.71951pt x 158.56625pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 1414--1414
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 1415--1415
 [][]  
  []
 
@@ -1891,12 +1891,12 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1414--1414
 <figures/world_3d.pdf, id=455, 606.34526pt x 606.34526pt>
 File: figures/world_3d.pdf Graphic file (type pdf)
 <use figures/world_3d.pdf>
-Package pdftex.def Info: figures/world_3d.pdf  used on input line 1463.
+Package pdftex.def Info: figures/world_3d.pdf  used on input line 1466.
 (pdftex.def)             Requested size: 135.20818pt x 162.02228pt.
 <figures/world_2d.pdf, id=457, 606.34526pt x 268.12169pt>
 File: figures/world_2d.pdf Graphic file (type pdf)
 <use figures/world_2d.pdf>
-Package pdftex.def Info: figures/world_2d.pdf  used on input line 1463.
+Package pdftex.def Info: figures/world_2d.pdf  used on input line 1466.
 (pdftex.def)             Requested size: 274.51132pt x 102.0466pt.
  [36
 
@@ -1909,10 +1909,10 @@ lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 pdfTeX warning: pdflatex.exe (file ./figures/world_2d.pdf): PDF inclusion: inva
 lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/comparison_world.pdf, id=472, 756.90776pt x 268.12169pt>
+<figures/comparison_world.pdf, id=473, 756.90776pt x 268.12169pt>
 File: figures/comparison_world.pdf Graphic file (type pdf)
 <use figures/comparison_world.pdf>
-Package pdftex.def Info: figures/comparison_world.pdf  used on input line 1491.
+Package pdftex.def Info: figures/comparison_world.pdf  used on input line 1495.
 
 (pdftex.def)             Requested size: 409.71951pt x 149.09158pt.
  [37
@@ -1968,10 +1968,10 @@ ic/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texliv
 e/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (39 pages, 5305917 bytes).
+Output written on presentation.pdf (39 pages, 5306307 bytes).
 PDF statistics:
- 585 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
+ 586 PDF objects out of 1000 (max. 8388607)
+ 394 compressed objects within 4 object streams
  93 named destinations out of 1000 (max. 500000)
  426 words of extra memory for PDF output out of 10000 (max. 10000000)
 

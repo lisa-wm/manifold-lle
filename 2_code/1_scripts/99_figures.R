@@ -535,7 +535,7 @@ plotly::orca(
     nrows = 1L,
     widths = c(1/6, 1/6, 2/3)) %>% 
     hide_guides() %>%
-    layout(plot_bgcolor = "rgb(240, 240, 240)"),
+    layout(plot_bgcolor = "rgb(235, 235, 235)"),
   "3_presentation/figures/comparison_world.pdf",
   height = 350L,
   width = 1000L)
