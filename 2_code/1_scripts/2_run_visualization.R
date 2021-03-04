@@ -99,7 +99,7 @@ sensitivity_plots_emb <- lapply(
       plot_manifold(
         data, 
         intrinsic_coords,
-        point_size_1_2_d = 3L) %>% 
+        point_size = 3L) %>% 
         layout(annotations = list(
           text = annotation_text,
           xref = "paper",
@@ -184,7 +184,7 @@ sensitivity_plots_key <- lapply(
     base_plot <- plot_manifold(
       data = true_embeddings[[i]],
       intrinsic_coords = true_embeddings[[i]][, .(t)],
-      point_size_1_2_d = 5L) 
+      point_size = 5L) 
     
     landmarks <- lapply(
       list(
