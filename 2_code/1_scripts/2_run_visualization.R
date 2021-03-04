@@ -287,16 +287,19 @@ data_labeled$world_data <-
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
+true_embeddings <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t, s)],
+  swiss_roll = data_labeled$swiss_roll[, .(t, s = x_2)],
+  world_data = make_world_data_2d(
+    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
+
 # Perform SSLLE for world data
 
 landmarks_world_ind <- find_landmarks(
-  data = true_embeddings$world_data,
-  n_landmarks = 12L,
-  n_neighbors = 30L,
+  data = data_unlabeled$world_data,
+  n_landmarks = 25L,
+  n_neighbors = 100L,
   method = "maxmin")
-
-true_embedding_world_data <- make_world_data_2d(
-  here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)]
 
 landmarks_world <- true_embedding_world_data[landmarks_world_ind]
 
@@ -318,14 +321,6 @@ data_opt$world_data <- data.table::data.table(
     verbose = TRUE)),
   true_embedding = list(true_embedding_world_data[new_order_world]))
 
-lapply(
-  seq_along(data_opt$world_data), 
-  function(i) {
-    dt <- data.table::as.data.table(do.call(rbind, data_opt$world_data[[i]]))
-    # dt[, names(dt)[1L:4L] := lapply(.SD, unlist), .SDcols = names(dt)[1L:4L]]
-    # dt[, landmark_method := as.factor(landmark_method)]
-    dt})
-
 # Compute embeddings and plot
 
 comp_lle <- lapply(
@@ -346,7 +341,13 @@ comp_lle <- lapply(
     
     res_hlle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
-      "HLLE", 
+      "HLLE",
+      ndim = 2L,
+      knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
+    
+    res_hlle <- dimRed::embed(
+      data_unlabeled[[i]][, .(x_1, x_2, x_3)],
+      "HLLE",
       ndim = 2L,
       knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
     
@@ -363,7 +364,7 @@ comp_lle <- lapply(
         
         plot_manifold(
           data = emb_dt,
-          intrinsic_coords = data_opt[[i]]$true_embedding[[1]][, .(t)])
+          intrinsic_coords = true_embeddings[[i]][, .(t)])
         
       }
       
