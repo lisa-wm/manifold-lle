@@ -511,8 +511,7 @@ plotly::orca(
     camera_eye = list(
       x = 0.4, 
       y = -1.8, 
-      z = -0.1), 
-    point_size_3d = 3L),
+      z = -0.1)),
   "3_presentation/figures/world_3d.pdf",
   height = 800L,
   width = 800L)
