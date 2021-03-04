@@ -1,48 +1,46 @@
 # ------------------------------------------------------------------------------
-# LLE IMPLEMENTATION: INPUT CHECKS
+# SSLLE IMPLEMENTATION: INPUT CHECKS
 # ------------------------------------------------------------------------------
 
-# TODO Make better if there is time
-
 check_inputs <- function(data,
-                         intrinsic_dim, 
-                         neighborhood_method, 
-                         neighborhood_size,
-                         regularization_param) {
+                         k_max,
+                         prior_points,
+                         is_exact,
+                         confidence_param,
+                         regularization,
+                         regularization_param,
+                         verbose) {
   
-  checkmate::assert_count(intrinsic_dim)
+  # Check formats
   
-  if (ncol(data) <= intrinsic_dim) {
-    stop("intrinsic dimensionality must be lower than input dimensionality")
-  }
-  
-  neighborhood_method <- match.arg(neighborhood_method, c("knn", "epsilon"))
-  
+  dt <- data.table::as.data.table(data)
+  pp <- data.table::as.data.table(prior_points)
+  checkmate::assert_count(k_max)
+  checkmate::assert_logical(is_exact)
   checkmate::assert_numeric(
-    neighborhood_size, 
-    lower = 1e-08,
-    finite = TRUE)
-  
+    confidence_param, 
+    lower = 0L, 
+    finite = TRUE,
+    len = 1L,
+    null.ok = TRUE)
+  checkmate::assert_logical(regularization)
   checkmate::assert_numeric(
     regularization_param, 
-    lower = 0,
-    finite = TRUE)
+    lower = 0L, 
+    finite = TRUE,
+    len = 1L,
+    null.ok = TRUE)
+  checkmate::assert_logical(verbose)
   
-  if (neighborhood_method == "knn" & 
-      !checkmate::test_count(neighborhood_size)) {
-    stop("for k-neighborhoods, neighborhood size must be a positive integer")
-  }
+  # Check semantics
   
-  if (neighborhood_method == "knn" & neighborhood_size <= intrinsic_dim) {
-    stop("neighborhood size must be greater than intrinsic dimension")
-  }
+  intrinsic_d <- ncol(pp)
+  capital_d <- ncol(dt)
+
+  if (capital_d <= intrinsic_d) {
+    stop("intrinsic dimensionality must be lower than input dimensionality")}
   
-  if (neighborhood_method == "epsilon" & min(dist(data)) > neighborhood_size) {
-    stop("neighborhood size too small, no neighbors found")
-  }
-  
-  if (neighborhood_method == "epsilon" & max(dist(data)) < neighborhood_size) {
-    stop("neighborhood size too large, single neighborhood produced")
-  }
+  if (nrow(pp) >= nrow(dt)) {
+    stop("number of prior points must be smaller than number of observations")}
   
 }

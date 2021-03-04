@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  3 MAR 2021 06:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 MAR 2021 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,10 +1379,10 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10.95> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 177.
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 10.07397pt on input line 177.
-<figures/s-curve.pdf, id=33, 343.2825pt x 305.22029pt>
-File: figures/s-curve.pdf Graphic file (type pdf)
-<use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 177.
+<figures/s_curve.pdf, id=33, 343.2825pt x 305.22029pt>
+File: figures/s_curve.pdf Graphic file (type pdf)
+<use figures/s_curve.pdf>
+Package pdftex.def Info: figures/s_curve.pdf  used on input line 177.
 (pdftex.def)             Requested size: 67.60477pt x 78.34291pt.
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 177--177
@@ -1391,25 +1391,25 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 177--177
 
 [3
 
- <./figures/s-curve.pdf
+ <./figures/s_curve.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve.pdf): PDF inclusion: inval
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-File: figures/s-curve.pdf Graphic file (type pdf)
-<use figures/s-curve.pdf>
-Package pdftex.def Info: figures/s-curve.pdf  used on input line 215.
+File: figures/s_curve.pdf Graphic file (type pdf)
+<use figures/s_curve.pdf>
+Package pdftex.def Info: figures/s_curve.pdf  used on input line 215.
 (pdftex.def)             Requested size: 51.62425pt x 62.37761pt.
-<figures/s-curve-undone.pdf, id=46, 756.90776pt x 305.22029pt>
-File: figures/s-curve-undone.pdf Graphic file (type pdf)
-<use figures/s-curve-undone.pdf>
-Package pdftex.def Info: figures/s-curve-undone.pdf  used on input line 215.
+<figures/s_curve_undone.pdf, id=46, 756.90776pt x 305.22029pt>
+File: figures/s_curve_undone.pdf Graphic file (type pdf)
+<use figures/s_curve_undone.pdf>
+Package pdftex.def Info: figures/s_curve_undone.pdf  used on input line 215.
 (pdftex.def)             Requested size: 172.08318pt x 72.5218pt.
  [4
 
- <./figures/s-curve-undone.pdf
+ <./figures/s_curve_undone.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-undone.pdf): PDF inclusion
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_undone.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
 >]
@@ -1441,17 +1441,17 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 291--291
 [7
 
  <./figures/kpca_lgml_algo.png>]
-<figures/s-curve-connected.pdf, id=88, 681.50606pt x 606.34526pt>
-File: figures/s-curve-connected.pdf Graphic file (type pdf)
-<use figures/s-curve-connected.pdf>
-Package pdftex.def Info: figures/s-curve-connected.pdf  used on input line 331.
+<figures/s_curve_connected.pdf, id=88, 681.50606pt x 606.34526pt>
+File: figures/s_curve_connected.pdf Graphic file (type pdf)
+<use figures/s_curve_connected.pdf>
+Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 331.
 
 (pdftex.def)             Requested size: 121.68652pt x 147.9653pt.
  [8
 
- <./figures/s-curve-connected.pdf
+ <./figures/s_curve_connected.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-connected.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
@@ -1470,28 +1470,28 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 449--449
 [10
 
 ]
-<figures/reconstruction-3d.pdf, id=115, 229.81859pt x 229.81859pt>
-File: figures/reconstruction-3d.pdf Graphic file (type pdf)
-<use figures/reconstruction-3d.pdf>
-Package pdftex.def Info: figures/reconstruction-3d.pdf  used on input line 486.
+<figures/reconstruction_3d.pdf, id=115, 229.81859pt x 229.81859pt>
+File: figures/reconstruction_3d.pdf Graphic file (type pdf)
+<use figures/reconstruction_3d.pdf>
+Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 486.
 
 (pdftex.def)             Requested size: 137.66391pt x 103.0277pt.
-<figures/reconstruction-2d.pdf, id=117, 229.81859pt x 229.81859pt>
-File: figures/reconstruction-2d.pdf Graphic file (type pdf)
-<use figures/reconstruction-2d.pdf>
-Package pdftex.def Info: figures/reconstruction-2d.pdf  used on input line 486.
+<figures/reconstruction_2d.pdf, id=117, 229.81859pt x 229.81859pt>
+File: figures/reconstruction_2d.pdf Graphic file (type pdf)
+<use figures/reconstruction_2d.pdf>
+Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 486.
 
 (pdftex.def)             Requested size: 98.3318pt x 93.12906pt.
  [11
 
- <./figures/reconstruction-3d.pdf
+ <./figures/reconstruction_3d.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-3d.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_3d.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
-> <./figures/reconstruction-2d.pdf
+> <./figures/reconstruction_2d.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/reconstruction-2d.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_2d.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
@@ -1589,28 +1589,28 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 591--591
 [13
 
 ]
-<figures/s-curve-pp-random.pdf, id=159, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp-random.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 640.
+<figures/s_curve_pp_random.pdf, id=159, 343.2825pt x 305.22029pt>
+File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_random.pdf>
+Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 640.
 
 (pdftex.def)             Requested size: 40.97131pt x 49.50656pt.
-<figures/s-curve-pp-undone-random.pdf, id=161, 756.90776pt x 305.22029pt>
-File: figures/s-curve-pp-undone-random.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-undone-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-undone-random.pdf  used on input li
+<figures/s_curve_undone_pp_random.pdf, id=161, 756.90776pt x 305.22029pt>
+File: figures/s_curve_undone_pp_random.pdf Graphic file (type pdf)
+<use figures/s_curve_undone_pp_random.pdf>
+Package pdftex.def Info: figures/s_curve_undone_pp_random.pdf  used on input li
 ne 640.
 (pdftex.def)             Requested size: 143.4012pt x 60.43483pt.
  [14
 
- <./figures/s-curve-pp-random.pdf
+ <./figures/s_curve_pp_random.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-random.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_random.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
-> <./figures/s-curve-pp-undone-random.pdf
+> <./figures/s_curve_undone_pp_random.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-undone-random.pdf): PDF
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_undone_pp_random.pdf): PDF
  inclusion: invalid other resource which is no dict (key 'ProcSets', type <arra
 y>); ignored.
 >]
@@ -1628,32 +1628,32 @@ Package pdftex.def Info: figures/matrix_partition.png  used on input line 716.
  <./figures/matrix_partition.png>] [16
 
 ]
-<figures/s-curve-pp-poor.pdf, id=194, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp-poor.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-poor.pdf>
-Package pdftex.def Info: figures/s-curve-pp-poor.pdf  used on input line 831.
+<figures/s_curve_pp_poor.pdf, id=194, 343.2825pt x 305.22029pt>
+File: figures/s_curve_pp_poor.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_poor.pdf>
+Package pdftex.def Info: figures/s_curve_pp_poor.pdf  used on input line 831.
 (pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
-File: figures/s-curve-pp-random.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-random.pdf>
-Package pdftex.def Info: figures/s-curve-pp-random.pdf  used on input line 831.
+File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_random.pdf>
+Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 831.
 
 (pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
-<figures/s-curve-pp-maxmin.pdf, id=197, 343.2825pt x 305.22029pt>
-File: figures/s-curve-pp-maxmin.pdf Graphic file (type pdf)
-<use figures/s-curve-pp-maxmin.pdf>
-Package pdftex.def Info: figures/s-curve-pp-maxmin.pdf  used on input line 831.
+<figures/s_curve_pp_maxmin.pdf, id=197, 343.2825pt x 305.22029pt>
+File: figures/s_curve_pp_maxmin.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_maxmin.pdf>
+Package pdftex.def Info: figures/s_curve_pp_maxmin.pdf  used on input line 831.
 
 (pdftex.def)             Requested size: 94.64531pt x 133.10457pt.
  [17
 
- <./figures/s-curve-pp-poor.pdf
+ <./figures/s_curve_pp_poor.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-poor.pdf): PDF inclusio
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_poor.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
-> <./figures/s-curve-pp-maxmin.pdf
+> <./figures/s_curve_pp_maxmin.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/s-curve-pp-maxmin.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_maxmin.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >] [18
@@ -1661,25 +1661,25 @@ nored.
 ] [19
 
 ]
-<figures/swiss-roll.pdf, id=226, 343.2825pt x 305.22029pt>
-File: figures/swiss-roll.pdf Graphic file (type pdf)
-<use figures/swiss-roll.pdf>
-Package pdftex.def Info: figures/swiss-roll.pdf  used on input line 972.
+<figures/swiss_roll.pdf, id=226, 343.2825pt x 305.22029pt>
+File: figures/swiss_roll.pdf Graphic file (type pdf)
+<use figures/swiss_roll.pdf>
+Package pdftex.def Info: figures/swiss_roll.pdf  used on input line 972.
 (pdftex.def)             Requested size: 64.53151pt x 78.41673pt.
-<figures/incomplete-tire.pdf, id=229, 455.78279pt x 305.22029pt>
-File: figures/incomplete-tire.pdf Graphic file (type pdf)
-<use figures/incomplete-tire.pdf>
-Package pdftex.def Info: figures/incomplete-tire.pdf  used on input line 972.
+<figures/incomplete_tire.pdf, id=229, 455.78279pt x 305.22029pt>
+File: figures/incomplete_tire.pdf Graphic file (type pdf)
+<use figures/incomplete_tire.pdf>
+Package pdftex.def Info: figures/incomplete_tire.pdf  used on input line 972.
 (pdftex.def)             Requested size: 100.38258pt x 70.31561pt.
  [20
 
- <./figures/swiss-roll.pdf
+ <./figures/swiss_roll.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/swiss-roll.pdf): PDF inclusion: in
+pdfTeX warning: pdflatex.exe (file ./figures/swiss_roll.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
-> <./figures/incomplete-tire.pdf
+> <./figures/incomplete_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/incomplete-tire.pdf): PDF inclusio
+pdfTeX warning: pdflatex.exe (file ./figures/incomplete_tire.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
 red.
 >]
@@ -1705,31 +1705,33 @@ Package pdftex.def Info: figures/rnx_curve.pdf  used on input line 1108.
  [23
 
  <./figures/rnx_curve.pdf>]
-<figures/sensitivity_landmarks_key_swiss.pdf, id=275, 756.90776pt x 169.5936pt>
-
-File: figures/sensitivity_landmarks_key_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_key_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss.pdf  used on i
-nput line 1147.
+<figures/sensitivity_landmarks_key_swiss_roll.pdf, id=275, 756.90776pt x 169.59
+36pt>
+File: figures/sensitivity_landmarks_key_swiss_roll.pdf Graphic file (type pdf)
+<use figures/sensitivity_landmarks_key_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss_roll.pdf  used
+ on input line 1147.
 (pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
-<figures/sensitivity_landmarks_key_tire.pdf, id=277, 756.90776pt x 169.5936pt>
-File: figures/sensitivity_landmarks_key_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_key_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_key_tire.pdf  used on in
-put line 1147.
+<figures/sensitivity_landmarks_key_incomplete_tire.pdf, id=277, 756.90776pt x 1
+69.5936pt>
+File: figures/sensitivity_landmarks_key_incomplete_tire.pdf Graphic file (type 
+pdf)
+<use figures/sensitivity_landmarks_key_incomplete_tire.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_key_incomplete_tire.pdf 
+ used on input line 1147.
 (pdftex.def)             Requested size: 327.77686pt x 68.37553pt.
  [24
 
- <./figures/sensitivity_landmarks_key_swiss.pdf
+ <./figures/sensitivity_landmarks_key_swiss_roll.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_swiss.pd
-f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
-e <array>); ignored.
-> <./figures/sensitivity_landmarks_key_tire.pdf
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_swiss_ro
+ll.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets'
+, type <array>); ignored.
+> <./figures/sensitivity_landmarks_key_incomplete_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_tire.pdf
-): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type
- <array>); ignored.
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_incomple
+te_tire.pdf): PDF inclusion: invalid other resource which is no dict (key 'Proc
+Sets', type <array>); ignored.
 >]
 <figures/sensitivity_landmarks_auc.pdf, id=291, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
@@ -1740,62 +1742,67 @@ ine 1173.
  [25
 
  <./figures/sensitivity_landmarks_auc.pdf>]
-<figures/sensitivity_landmarks_qual_swiss.pdf, id=308, 756.90776pt x 343.2825pt
->
-File: figures/sensitivity_landmarks_qual_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_qual_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss.pdf  used on 
-input line 1191.
+<figures/sensitivity_landmarks_qual_swiss_roll.pdf, id=310, 756.90776pt x 343.2
+825pt>
+File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
+
+<use figures/sensitivity_landmarks_qual_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss_roll.pdf  use
+d on input line 1191.
 (pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
  [26
 
- <./figures/sensitivity_landmarks_qual_swiss.pdf
+ <./figures/sensitivity_landmarks_qual_swiss_roll.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss.p
-df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
-pe <array>); ignored.
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss_r
+oll.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets
+', type <array>); ignored.
 >]
-<figures/sensitivity_landmarks_qual_tire.pdf, id=323, 756.90776pt x 343.2825pt>
-
-File: figures/sensitivity_landmarks_qual_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_landmarks_qual_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_landmarks_qual_tire.pdf  used on i
-nput line 1209.
+<figures/sensitivity_landmarks_qual_incomplete_tire.pdf, id=325, 756.90776pt x 
+343.2825pt>
+File: figures/sensitivity_landmarks_qual_incomplete_tire.pdf Graphic file (type
+ pdf)
+<use figures/sensitivity_landmarks_qual_incomplete_tire.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_qual_incomplete_tire.pdf
+  used on input line 1209.
 (pdftex.def)             Requested size: 409.71951pt x 190.4906pt.
  [27
 
- <./figures/sensitivity_landmarks_qual_tire.pdf
+ <./figures/sensitivity_landmarks_qual_incomplete_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_tire.pd
-f): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', typ
-e <array>); ignored.
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_incompl
+ete_tire.pdf): PDF inclusion: invalid other resource which is no dict (key 'Pro
+cSets', type <array>); ignored.
 >]
-<figures/sensitivity_noise_key_swiss.pdf, id=338, 756.90776pt x 154.6578pt>
-File: figures/sensitivity_noise_key_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_key_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_key_swiss.pdf  used on input
- line 1252.
+<figures/sensitivity_noise_key_swiss_roll.pdf, id=340, 756.90776pt x 154.6578pt
+>
+File: figures/sensitivity_noise_key_swiss_roll.pdf Graphic file (type pdf)
+<use figures/sensitivity_noise_key_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_noise_key_swiss_roll.pdf  used on 
+input line 1252.
 (pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
-<figures/sensitivity_noise_key_tire.pdf, id=340, 756.90776pt x 154.6578pt>
-File: figures/sensitivity_noise_key_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_key_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_key_tire.pdf  used on input 
-line 1252.
+<figures/sensitivity_noise_key_incomplete_tire.pdf, id=342, 756.90776pt x 154.6
+578pt>
+File: figures/sensitivity_noise_key_incomplete_tire.pdf Graphic file (type pdf)
+
+<use figures/sensitivity_noise_key_incomplete_tire.pdf>
+Package pdftex.def Info: figures/sensitivity_noise_key_incomplete_tire.pdf  use
+d on input line 1252.
 (pdftex.def)             Requested size: 327.77686pt x 56.95512pt.
  [28
 
- <./figures/sensitivity_noise_key_swiss.pdf
+ <./figures/sensitivity_noise_key_swiss_roll.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_swiss.pdf): 
-PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
-rray>); ignored.
-> <./figures/sensitivity_noise_key_tire.pdf
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_swiss_roll.p
+df): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', ty
+pe <array>); ignored.
+> <./figures/sensitivity_noise_key_incomplete_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_tire.pdf): P
-DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
-ray>); ignored.
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_incomplete_t
+ire.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets
+', type <array>); ignored.
 >]
-<figures/sensitivity_noise_auc.pdf, id=366, 1156.32pt x 433.62pt>
+<figures/sensitivity_noise_auc.pdf, id=368, 1156.32pt x 433.62pt>
 File: figures/sensitivity_noise_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line 
@@ -1804,44 +1811,48 @@ Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line
  [29
 
  <./figures/sensitivity_noise_auc.pdf>]
-<figures/sensitivity_noise_qual_swiss.pdf, id=382, 756.90776pt x 395.55779pt>
-File: figures/sensitivity_noise_qual_swiss.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_qual_swiss.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_qual_swiss.pdf  used on inpu
-t line 1297.
-(pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
+<figures/sensitivity_noise_qual_swiss_roll.pdf, id=386, 756.90776pt x 343.2825p
+t>
+File: figures/sensitivity_noise_qual_swiss_roll.pdf Graphic file (type pdf)
+<use figures/sensitivity_noise_qual_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_noise_qual_swiss_roll.pdf  used on
+ input line 1297.
+(pdftex.def)             Requested size: 409.71951pt x 184.75291pt.
  [30
 
- <./figures/sensitivity_noise_qual_swiss.pdf
+ <./figures/sensitivity_noise_qual_swiss_roll.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss.pdf):
- PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <
-array>); ignored.
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss_roll.
+pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', t
+ype <array>); ignored.
 >]
-<figures/sensitivity_noise_qual_tire.pdf, id=397, 756.90776pt x 395.55779pt>
-File: figures/sensitivity_noise_qual_tire.pdf Graphic file (type pdf)
-<use figures/sensitivity_noise_qual_tire.pdf>
-Package pdftex.def Info: figures/sensitivity_noise_qual_tire.pdf  used on input
- line 1315.
-(pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
+<figures/sensitivity_noise_qual_incomplete_tire.pdf, id=401, 756.90776pt x 343.
+2825pt>
+File: figures/sensitivity_noise_qual_incomplete_tire.pdf Graphic file (type pdf
+)
+<use figures/sensitivity_noise_qual_incomplete_tire.pdf>
+Package pdftex.def Info: figures/sensitivity_noise_qual_incomplete_tire.pdf  us
+ed on input line 1315.
+(pdftex.def)             Requested size: 409.71951pt x 184.75291pt.
  [31
 
- <./figures/sensitivity_noise_qual_tire.pdf
+ <./figures/sensitivity_noise_qual_incomplete_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_tire.pdf): 
-PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <a
-rray>); ignored.
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_incomplete_
+tire.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSet
+s', type <array>); ignored.
 >]
-<figures/comparison_swiss.pdf, id=413, 756.90776pt x 154.6578pt>
-File: figures/comparison_swiss.pdf Graphic file (type pdf)
-<use figures/comparison_swiss.pdf>
-Package pdftex.def Info: figures/comparison_swiss.pdf  used on input line 1372.
-
+<figures/comparison_swiss_roll.pdf, id=417, 756.90776pt x 154.6578pt>
+File: figures/comparison_swiss_roll.pdf Graphic file (type pdf)
+<use figures/comparison_swiss_roll.pdf>
+Package pdftex.def Info: figures/comparison_swiss_roll.pdf  used on input line 
+1372.
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
-<figures/comparison_tire.pdf, id=415, 756.90776pt x 154.6578pt>
-File: figures/comparison_tire.pdf Graphic file (type pdf)
-<use figures/comparison_tire.pdf>
-Package pdftex.def Info: figures/comparison_tire.pdf  used on input line 1372.
+<figures/comparison_incomplete_tire.pdf, id=419, 756.90776pt x 154.6578pt>
+File: figures/comparison_incomplete_tire.pdf Graphic file (type pdf)
+<use figures/comparison_incomplete_tire.pdf>
+Package pdftex.def Info: figures/comparison_incomplete_tire.pdf  used on input 
+line 1372.
 (pdftex.def)             Requested size: 327.77686pt x 66.97588pt.
 LaTeX Font Info:    Trying to load font information for T1+laett on input line 
 1372.
@@ -1849,20 +1860,20 @@ LaTeX Font Info:    Trying to load font information for T1+laett on input line
 File: t1laett.fd 2001/02/12 Font definitions for T1/laett.
 ) [32
 
- <./figures/comparison_swiss.pdf
+ <./figures/comparison_swiss_roll.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/comparison_swiss.pdf): PDF inclusi
-on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
-ored.
-> <./figures/comparison_tire.pdf
+pdfTeX warning: pdflatex.exe (file ./figures/comparison_swiss_roll.pdf): PDF in
+clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
+; ignored.
+> <./figures/comparison_incomplete_tire.pdf
 
-pdfTeX warning: pdflatex.exe (file ./figures/comparison_tire.pdf): PDF inclusio
-n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
-red.
+pdfTeX warning: pdflatex.exe (file ./figures/comparison_incomplete_tire.pdf): P
+DF inclusion: invalid other resource which is no dict (key 'ProcSets', type <ar
+ray>); ignored.
 >] [33
 
 ]
-<figures/discussion.png, id=437, 1128.215pt x 436.63126pt>
+<figures/discussion.png, id=441, 1128.215pt x 436.63126pt>
 File: figures/discussion.png Graphic file (type png)
 <use figures/discussion.png>
 Package pdftex.def Info: figures/discussion.png  used on input line 1414.
@@ -1876,7 +1887,44 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1414--1414
 
  <./figures/discussion.png>] [35
 
-] (./presentation.bbl) [36
+]
+<figures/world_3d.pdf, id=455, 606.34526pt x 606.34526pt>
+File: figures/world_3d.pdf Graphic file (type pdf)
+<use figures/world_3d.pdf>
+Package pdftex.def Info: figures/world_3d.pdf  used on input line 1463.
+(pdftex.def)             Requested size: 135.20818pt x 162.02228pt.
+<figures/world_2d.pdf, id=457, 606.34526pt x 268.12169pt>
+File: figures/world_2d.pdf Graphic file (type pdf)
+<use figures/world_2d.pdf>
+Package pdftex.def Info: figures/world_2d.pdf  used on input line 1463.
+(pdftex.def)             Requested size: 274.51132pt x 102.0466pt.
+ [36
+
+ <./figures/world_3d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/world_3d.pdf): PDF inclusion: inva
+lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+> <./figures/world_2d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/world_2d.pdf): PDF inclusion: inva
+lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]
+<figures/comparison_world.pdf, id=472, 756.90776pt x 268.12169pt>
+File: figures/comparison_world.pdf Graphic file (type pdf)
+<use figures/comparison_world.pdf>
+Package pdftex.def Info: figures/comparison_world.pdf  used on input line 1491.
+
+(pdftex.def)             Requested size: 409.71951pt x 149.09158pt.
+ [37
+
+ <./figures/comparison_world.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/comparison_world.pdf): PDF inclusi
+on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
+ored.
+>] [38
+
+] (./presentation.bbl) [39
 
 ]
 \tf@nav=\write7
@@ -1888,8 +1936,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1414--1414
 \tf@snm=\write9
 \openout9 = `presentation.snm'.
 
-
-(./presentation.aux)
+ (./presentation.aux)
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 06E27B416B3B1946CD705C501CA5B3BD;45.
 
@@ -1898,10 +1945,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 24158 strings out of 479485
- 442781 string characters out of 5875915
- 802113 words of memory out of 5000000
- 40409 multiletter control sequences out of 15000+600000
+ 24191 strings out of 479485
+ 444015 string characters out of 5875915
+ 802114 words of memory out of 5000000
+ 40433 multiletter control sequences out of 15000+600000
  637377 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,16n,126p,459b,608s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1921,10 +1968,10 @@ ic/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texliv
 e/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (36 pages, 4902082 bytes).
+Output written on presentation.pdf (39 pages, 5305917 bytes).
 PDF statistics:
- 543 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 393 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 585 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 426 words of extra memory for PDF output out of 10000 (max. 10000000)
 

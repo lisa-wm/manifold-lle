@@ -23,9 +23,9 @@ find_embedding_coordinates_ss <- function(reconstruction_weights,
   
   # Decompose into block matrices (top left part corresponding to prior points)
   
-  embedding_matrix_11 <- embedding_matrix[1:m, 1:m]
-  embedding_matrix_12 <- embedding_matrix[(m + 1):n, 1:m]
-  embedding_matrix_22 <- embedding_matrix[(m + 1):n, (m + 1):n]
+  embedding_matrix_11 <- embedding_matrix[seq_len(m), seq_len(m)]
+  embedding_matrix_12 <- embedding_matrix[(m + 1L):n, seq_len(m)]
+  embedding_matrix_22 <- embedding_matrix[(m + 1L):n, (m + 1):n]
   
   # SOLVE LES ------------------------------------------------------------------
   

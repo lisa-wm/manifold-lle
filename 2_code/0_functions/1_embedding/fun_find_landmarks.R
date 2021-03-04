@@ -12,18 +12,17 @@ find_landmarks <- function(data,
   
   # CHECK INPUTS ---------------------------------------------------------------
   
-  # check_data(data)
-  # data <- as.data.table(data)
-  # 
-  # if (!checkmate::test_count(n_landmarks)) {
-  #   stop("number of landmarks must be a positive integer")
-  # }
-
+  dt <- data.table::as.data.table(data)
   method <- match.arg(method, c("random", "maxmin"))
+  checkmate::assert_count(n_landmarks)
+  checkmate::assert_count(n_neighbors, null.ok = TRUE)
+  
+  if (method == "maxmin" & is.null(n_neighbors)) {
+    stop("number of neighbors must be specified for maxmin method")}
 
   # FIND LANDMARKS -------------------------------------------------------------
   
-  indices <- data[, .I]
+  indices <- dt[, .I]
   
   if (method == "random") {
     
@@ -35,7 +34,7 @@ find_landmarks <- function(data,
     cat("computing geodesics...\n")
     
     distances_geodesic <- dimRed::embed(
-      data,
+      dt,
       "Isomap",
       .mute = "message",
       knn = n_neighbors,
@@ -43,7 +42,7 @@ find_landmarks <- function(data,
     
     cat("finding landmarks...\n")
     
-    distance_matrix_geodesic <- as.matrix(distances_geodesic, nrow = nrow(data))
+    distance_matrix_geodesic <- as.matrix(distances_geodesic, nrow = nrow(dt))
 
     set.seed(seed)
     landmarks <- sample(indices, 1L)

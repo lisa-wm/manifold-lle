@@ -2,8 +2,8 @@
 # MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
-plot_manifold <- function(data, 
-                          dim, 
+plot_manifold <- function(data,
+                          intrinsic_coords,
                           n_colors = 10, 
                           coord_syst = FALSE,
                           camera_eye = list(
@@ -11,21 +11,21 @@ plot_manifold <- function(data,
                             y = -1.5, 
                             z = 0.75),
                           title = NULL, 
-                          point_size_1_2_d = 10L) {
+                          point_size = 10L) {
   
   # Perform basic input checks
   
   checkmate::assert_data_table(data)
-  checkmate::assert_int(dim, lower = 1L, upper = 3L)
+  checkmate::assert_data_table(intrinsic_coords)
   checkmate::assert_count(n_colors)
   
-  data <- data.table::copy(data)
+  dt <- data.table::copy(data)
+  dim <- ncol(dt)
+
+  data.table::setnames(dt, c("x", "y", "z")[1:dim])
+  data.table::setnames(intrinsic_coords, "t")
   
-  if (ncol(data) != dim + 2L)
-    {stop(sprintf("data must contain %d columns plus two for coloring", dim))}
-  
-  colnames <- c(c("x", "y", "z")[1:dim], "t", "s")
-  data.table::setnames(data, colnames)
+  dt_plot <- cbind(dt, intrinsic_coords)
 
   # Create rainbow color palette, granularity depending on n_colors
   
@@ -49,17 +49,16 @@ plot_manifold <- function(data,
     }
     
     if (dim == 1L) {
-      my_plot <- plotly::plot_ly(data, x = ~ t, y = 0, color = ~ t)
+      my_plot <- plotly::plot_ly(dt_plot, x = ~ x, y = 0, color = ~ t)
     } else {
-      my_plot <- plotly::plot_ly(data, x = ~ x, y = ~ y, color = ~ t)
-    }
+      my_plot <- plotly::plot_ly(dt_plot, x = ~ x, y = ~ y, color = ~ t)}
     
     my_plot <- my_plot %>% 
       add_trace(
         type = "scatter",
         mode = "markers",
         colors = my_palette,
-        marker = list(size = point_size_1_2_d)
+        marker = list(size = point_size)
       ) %>% 
       hide_colorbar() %>%
       layout(xaxis = ax, yaxis = ax, title = title)
@@ -93,7 +92,7 @@ plot_manifold <- function(data,
     }
     
     my_plot <-plotly::plot_ly(
-      data, 
+      dt_plot, 
       x = ~ x, 
       y = ~ y, 
       z = ~ z, 
@@ -102,7 +101,7 @@ plot_manifold <- function(data,
         type = "scatter3d",
         mode = "markers",
         colors = my_palette,
-        marker = list(size = 5L)
+        marker = list(size = 0.5 * point_size)
       ) %>% 
       hide_colorbar() %>% 
       layout(scene = scene, title = title)

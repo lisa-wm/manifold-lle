@@ -10,13 +10,37 @@ load_rdata_files(data_labeled, folder = "2_code/2_data")
 
 # VISUALIZATION: AUC_LNK_RNX ---------------------------------------------------
 
-sensitivity_landmarks_plots_quant <- lapply(
+sensitivity_plots_auc <- lapply(
   
-  seq_along(sensitivity_landmarks_dt),
+  seq_along(data_labeled),
   
   function(i) {
     
-    auc_plot <- plot_quant_res(
+    # Make grid plot theme
+    
+    mk_theme <- function(base_plot, 
+                         dt_name,
+                         legend_title,
+                         x_lab,
+                         low = "red",
+                         high = "green") {
+      
+      base_plot +
+        ggplot2::scale_color_gradient(
+          low = low,  
+          high = high,
+          name = legend_title,
+          limits = c(0L, 1L)) +
+        ggplot2::theme_bw() +
+        ggplot2::theme(text = element_text(size = 20)) +
+        ggplot2::scale_y_continuous(breaks = seq(2L, 12L, by = 2L)) +
+        ggplot2::xlab(as.character(x_lab)) +
+        ggplot2::ylab("number of landmarks") +
+        ggplot2::ggtitle(sprintf("Data: %s", dt_name))
+      
+    }
+    
+    auc_plot_landmarks <- mk_theme(
       base_plot = sensitivity_landmarks_dt[[i]][
         , .(landmark_method, n_landmarks, auc_lnk_rnx)
         ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
@@ -35,284 +59,182 @@ sensitivity_landmarks_plots_quant <- lapply(
       legend_title = expression(AUC(R[NX]) ~ " (scaled)"),
       x_lab = "coverage")
     
-    res_var_plot <- plot_quant_res(
-      base_plot = sensitivity_landmarks_dt[[i]][
-        , .(landmark_method, n_landmarks, residual_variance)
-      ][, res_var_scaled := scale_zero_one(residual_variance)] %>%
-        ggplot2::ggplot(aes(
-          x = forcats::fct_relevel(
-            landmark_method,
-            "poor_coverage",
-            "random_coverage",
-            "maximum_coverage"),
-          y = n_landmarks,
-          col = res_var_scaled)) + 
-        geom_point(size = 10L) + 
-        scale_x_discrete(labels = c("poor", "random", "maximum")),
-      dt_name = stringr::str_replace_all(
-        names(sensitivity_landmarks_dt[i]), "_", " "),
-      legend_title = "residual variance (scaled)",
-      x_lab = "coverage",
-      low = "green", 
-      high = "red")
-    
-    list(auc_plot = auc_plot, res_var_plot = res_var_plot)
-    
-    })
-
-names(sensitivity_landmarks_plots_quant) <- names(sensitivity_landmarks_dt)
-
-save_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code/2_data")
-
-# ------------------------------------------------------------------------------
-
-sensitivity_noise_plots_quant <- lapply(
-  
-  seq_along(sensitivity_noise_dt),
-  
-  function(i) {
-    
-    auc_plot <- plot_quant_res(
+    auc_plot_noise <- plot_quant_res(
       base_plot = sensitivity_noise_dt[[i]][
         , .(noise_level, n_landmarks, auc_lnk_rnx)
-      ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
+        ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
         ggplot2::ggplot(aes(
           x = noise_level,
           y = n_landmarks,
-          col = auc_scaled)) + 
-        geom_point(size = 10L) + 
+          col = auc_scaled)) +
+        geom_point(size = 10L) +
         scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L)),
       dt_name = stringr::str_replace_all(
         names(sensitivity_landmarks_dt[i]), "_", " "),
       legend_title = expression(AUC(R[NX]) ~ " (scaled)"),
       x_lab = "noise level")
     
-    res_var_plot <- plot_quant_res(
-      base_plot = sensitivity_noise_dt[[i]][
-        , .(noise_level, n_landmarks, residual_variance)
-      ][, res_var_scaled := scale_zero_one(residual_variance)] %>%
-        ggplot2::ggplot(aes(
-          x = noise_level,
-          y = n_landmarks,
-          col = res_var_scaled)) + 
-        geom_point(size = 10L) + 
-        scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L)),
-      dt_name = stringr::str_replace_all(
-        names(sensitivity_landmarks_dt[i]), "_", " "),
-      legend_title = "residual variance (scaled)",
-      x_lab = "noise level",
-      low = "green", 
-      high = "red")
+    list(
+      auc_plot_landmarks = auc_plot_landmarks, 
+      auc_plot_noise = auc_plot_noise)
     
-    list(auc_plot = auc_plot, res_var_plot = res_var_plot)
-    
-  })
+  }
+  
+)
 
-names(sensitivity_noise_plots_quant) <- names(sensitivity_noise_dt)
+names(sensitivity_plots_auc) <- names(sensitivity_landmarks_dt)
 
-save_rdata_files(sensitivity_noise_plots_quant, folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_auc, folder = "2_code/2_data")
 
 # VISUALIZATION: LOW-DIMENSIONAL EMBEDDING -------------------------------------
 
-sensitivity_landmarks_plots_qual <- lapply(
+sensitivity_plots_emb <- lapply(
   
-  seq_along(sensitivity_landmarks_dt),
-  
-  function(i) {
-
-    dt <- sensitivity_landmarks_dt[[i]]
-    data.table::setorder(dt, -n_landmarks)
-    dt_name <- names(sensitivity_landmarks_dt)[i]
-    
-    plots <- lapply(
-      
-      seq_len(nrow(dt)),
-      function(j) {
-        plot_qual_res(
-          data = data.table(
-            dt[j, ]$embedding_result[[1]]$Y, 
-            dt[j, ]$embedding_result[[1]]$X[, .(t, s)]),
-          dt_name = names(sensitivity_landmarks_dt)[i],
-          annotation_text = sprintf(
-            "%s coverage, %d landmarks",
-            unlist(stringr::str_split(dt[j, ]$landmark_method, "_"))[1L],
-            dt[j, ]$n_landmarks))})
-    
-    subplot(
-      plots,
-      nrows = 6L) %>% 
-      hide_guides()
-    
-  }
-  
-)
-
-names(sensitivity_landmarks_plots_qual) <- names(sensitivity_landmarks_dt)
-
-save_rdata_files(sensitivity_landmarks_plots_qual, folder = "2_code/2_data")
-
-# ------------------------------------------------------------------------------
-
-sensitivity_noise_plots_qual <- lapply(
-  
-  seq_along(sensitivity_noise_dt),
+  seq_along(data_labeled),
   
   function(i) {
     
-    dt <- sensitivity_noise_dt[[i]]
-    data.table::setorder(dt, -n_landmarks)
-    dt_name <- names(sensitivity_noise_dt)[i]
-    
-    plots <- lapply(
+    mk_theme <- function(data, intrinsic_coords, dt_name, annotation_text) {
       
-      seq_len(nrow(dt)),
-      function(j) {
-        plot_qual_res(
-          data = data.table(
-            dt[j, ]$embedding_result[[1]]$Y, 
-            dt[j, ]$embedding_result[[1]]$X[, .(t, s)]),
-          dt_name = names(sensitivity_noise_dt)[i],
-          annotation_text = sprintf(
-            "noise %.1f, %d landmarks",
-            dt[j, ]$noise_level,
-            dt[j, ]$n_landmarks))})
-    
-    subplot(
-      plots,
-      nrows = 7L) %>% 
-      hide_guides()
-    
-  }
-  
-)
-
-names(sensitivity_noise_plots_qual) <- names(sensitivity_noise_dt)
-
-save_rdata_files(sensitivity_noise_plots_qual, folder = "2_code/2_data")
-
-# VISUALIZATION: KEY VARIATION -------------------------------------------------
-
-load_rdata_files(data_labeled, folder = "2_code/2_data")
-
-# ------------------------------------------------------------------------------
-
-sensitivity_landmarks_plots_key_variation <- lapply(
-  
-  seq_along(sensitivity_landmarks_dt), 
-  
-  function(i) {
-    
-    base_plot <- plot_manifold(
-      data_labeled[[i]][, .(t, s, t, t)],
-      dim = 2L,
-      point_size_1_2_d = 5L) 
-    
-    landmarks_poor <- 
-      data.table::as.data.table(sensitivity_landmarks_dt[[i]][
-        landmark_method == "poor_coverage" & n_landmarks == 12L]$landmarks)
-    
-    landmarks_random <- 
-      data.table::as.data.table(sensitivity_landmarks_dt[[i]][
-        landmark_method == "random_coverage" & n_landmarks == 12L]$landmarks)
-    
-    landmarks_maximum <- 
-      data.table::as.data.table(sensitivity_landmarks_dt[[i]][
-        landmark_method == "maximum_coverage" & n_landmarks == 12L]$landmarks)
-    
-    make_annotations <- function(base_plot, annotation_text) {
-      
-      base_plot %>% 
-        plotly::layout(annotations = list(
+      plot_manifold(
+        data, 
+        intrinsic_coords,
+        point_size = 3L) %>% 
+        layout(annotations = list(
           text = annotation_text,
           xref = "paper",
+          yref = "paper",
           yanchor = "bottom",
           xanchor = "center",
           align = "center",
           x = 0.5,
-          y = -0.5,
+          y = -0.25,
           showarrow = FALSE))
       
     }
     
-    plot_poor <- #make_annotations(
-      base_plot %>%
-        plotly::add_trace(
-          x = ~ landmarks_poor$y_1,
-          y = ~ landmarks_poor$y_2,
-          color = ~ 1L,
-          type = "scatter",
-          mode = "markers",
-          marker = list(color = "black", size = 10L))#,
-      # annotation_text = "poor coverage") 
+    emb_plots_landmarks <- lapply(
+      
+      seq_len(nrow(sensitivity_landmarks_dt[[i]])),
+      
+      function(j) {
+        
+        dt_lm <- data.table::copy(sensitivity_landmarks_dt[[i]])
+        data.table::setorder(dt_lm, -n_landmarks)
+        dt_lm_name <- names(sensitivity_landmarks_dt)[i]
+        
+        mk_theme(
+          data = dt_lm[j, ]$embedding_result[[1]]$Y,
+          intrinsic_coords = dt_lm[j, ]$true_embedding[[1]][, .(t)],
+          dt_name = names(sensitivity_landmarks_dt)[i],
+          annotation_text = sprintf(
+            "%s coverage, %d landmarks",
+            unlist(stringr::str_split(dt_lm[j, ]$landmark_method, "_"))[1L],
+            dt_lm[j, ]$n_landmarks))})
     
-    plot_random <- #make_annotations(
-      base_plot %>%
-        plotly::add_trace(
-          x = ~ landmarks_random$y_1,
-          y = ~ landmarks_random$y_2,
-          color = ~ 1L,
-          type = "scatter",
-          mode = "markers",
-          marker = list(color = "black", size = 10L, symbol = "x"))#,
-      # annotation_text = "random coverage")
+    emb_plots_noise <- lapply(
+        
+        seq_len(nrow(sensitivity_noise_dt[[i]])),
+        
+        function(j) {
+          
+          dt_n <- data.table::copy(sensitivity_noise_dt[[i]])
+          data.table::setorder(dt_n, -n_landmarks)
+          dt_n_name <- names(sensitivity_noise_dt)[i]
+          
+          mk_theme(
+            data = dt_n[j, ]$embedding_result[[1]]$Y,
+            intrinsic_coords = dt_n[j, ]$true_embedding[[1]][, .(t)],
+            dt_name = names(sensitivity_noise_dt)[i],
+            annotation_text = sprintf(
+              "noise %.1f, %d landmarks",
+              dt_n[j, ]$noise_level,
+              dt_n[j, ]$n_landmarks))})
     
-    plot_maximum <- #make_annotations(
-      base_plot %>%
-        plotly::add_trace(
-          x = ~ landmarks_maximum$y_1,
-          y = ~ landmarks_maximum$y_2,
-          color = ~ 1L,
-          type = "scatter",
-          mode = "markers",
-          marker = list(color = "black", size = 10L, symbol = "star")) #,
-      # annotation_text = "maximum coverage")
-    
-      plotly::subplot(list(
-        plot_poor = plot_poor, 
-        plot_random = plot_random, 
-        plot_maximum = plot_maximum),
-        nrows = 1L) %>% 
-        hide_guides()
+    list(
+      emb_plots_landmarks = plotly::subplot(
+        emb_plots_landmarks,
+        nrows = 6L) %>% 
+        hide_guides(),
+      emb_plots_noise = plotly::subplot(
+        emb_plots_noise,
+        nrows = 6L) %>% 
+        hide_guides())
     
   }
   
 )
 
-names(sensitivity_landmarks_plots_key_variation) <- 
-  names(sensitivity_landmarks_dt)
+names(sensitivity_plots_emb) <- names(data_labeled)
 
-save_rdata_files(
-  sensitivity_landmarks_plots_key_variation, 
-  folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_emb, folder = "2_code/2_data")
 
-# ------------------------------------------------------------------------------
+# VISUALIZATION: KEY VARIATION -------------------------------------------------
 
-sensitivity_noise_plots_key_variation <- lapply(
+true_embeddings <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t, s)],
+  swiss_roll = data_labeled$swiss_roll[, .(t, s = x_2)])
+
+sensitivity_plots_key <- lapply(
   
-  seq_along(sensitivity_noise_dt), 
+  seq_along(data_labeled),
   
   function(i) {
     
-    landmarks <- data.table::as.data.table(sensitivity_noise_dt[[i]][
+    base_plot <- plot_manifold(
+      data = true_embeddings[[i]],
+      intrinsic_coords = true_embeddings[[i]][, .(t)],
+      point_size = 5L) 
+    
+    landmarks <- lapply(
+      list(
+        landmarks_poor = "poor_coverage", 
+        landmarks_random = "random_coverage", 
+        landmarks_maximum = "maximum_coverage"),
+      function(j) {
+        data.table::as.data.table(sensitivity_landmarks_dt[[i]][
+          landmark_method == j & n_landmarks == 12L]$landmarks)})
+    
+    plots_coverage <- lapply(
+      seq_along(landmarks), 
+      function(j) {
+        symbols <- c("circle", "x", "star")
+        base_plot %>%
+          plotly::add_trace(
+            x = ~ landmarks[[j]]$y_1,
+            y = ~ landmarks[[j]]$y_2,
+            color = ~ 1L,
+            type = "scatter",
+            mode = "markers",
+            marker = list(
+              color = "black", 
+              size = 10L, 
+              symbol = symbols[j]))})
+   
+    plot_coverage <- plotly::subplot(
+      plots_coverage,
+      nrows = 1L) %>% 
+      hide_guides()
+    
+    # --------------------------------------------------------------------------
+    
+    landmarks_n <- data.table::as.data.table(sensitivity_noise_dt[[i]][
       noise_level == 0.1 & n_landmarks == 12L]$landmarks)
     
-    sd_s = sd(data_labeled[[i]]$s)
-    sd_t = sd(data_labeled[[i]]$t)
+    sd_s = sd(true_embeddings[[i]]$s)
+    sd_t = sd(true_embeddings[[i]]$t)
     
-    base_plot <- plot_manifold(
-      data_labeled[[i]][, .(t, s, t, t)],
-      dim = 2L,
-      point_size_1_2_d = 5L) %>% 
+    base_plot_n <- base_plot %>% 
       add_trace(
-        x = ~ landmarks$t,
-        y = ~ landmarks$s,
+        x = ~ landmarks_n$t,
+        y = ~ landmarks_n$s,
         color = ~ 1L,
         type = "scatter",
         mode = "markers",
         marker = list(color = "black", size = 10L)) %>% 
       hide_guides()
-    
-    noise_plots <- lapply(
+
+    plots_noise <- lapply(
       
       seq_along(unique(sensitivity_noise_dt[[i]]$noise_level)), 
       
@@ -320,15 +242,15 @@ sensitivity_noise_plots_key_variation <- lapply(
         
         noise_level <- unique(sensitivity_noise_dt[[i]]$noise_level)[j]
         
-        base_plot %>% 
+        base_plot_n %>% 
           layout(shapes = list(
             type = "circle",
             xref = "x",
             yref = "y",
-            x0 = landmarks[12L]$t - noise_level * sd_t,
-            x1 = landmarks[12L]$t + noise_level * sd_t,
-            y0 = landmarks[12L]$s - noise_level * sd_s,
-            y1 = landmarks[12L]$s + noise_level * sd_s,
+            x0 = landmarks_n[12L]$t - noise_level * sd_t,
+            x1 = landmarks_n[12L]$t + noise_level * sd_t,
+            y0 = landmarks_n[12L]$s - noise_level * sd_s,
+            y1 = landmarks_n[12L]$s + noise_level * sd_s,
             fillcolor = "black",
             opacity = 0.4,
             line = list(color = "black")
@@ -336,59 +258,76 @@ sensitivity_noise_plots_key_variation <- lapply(
         
       })
     
-    subplot(
-      noise_plots, nrows = 1L) %>%
+    plot_noise <- plotly::subplot(
+      plots_noise,
+      nrows = 1L) %>% 
       hide_guides()
+ 
+    # --------------------------------------------------------------------------
+    
+    list(plot_coverage = plot_coverage, plot_noise = plot_noise)
     
   }
   
 )
 
-names(sensitivity_noise_plots_key_variation) <- 
-  names(sensitivity_noise_dt)
+names(sensitivity_plots_key) <- names(data_labeled)
 
-save_rdata_files(
-  sensitivity_noise_plots_key_variation, 
-  folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_key, folder = "2_code/2_data")
 
 # COMPARISON: LLE & HLLE -------------------------------------------------------
 
 load_rdata_files(data_labeled, folder = "2_code/2_data")
+load_rdata_files(sensitivity_landmarks_dt, folder = "2_code/2_data")
 
-# data_labeled$world_data <- 
-#   make_world_data_3d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
+# Add world data set
+
+data_labeled$world_data <-
+  make_world_data_3d(here("2_code/2_data", "rawdata_world_3d.csv"))
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
-# data_unlabeled$world_data <- 
-#   make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))
+true_embeddings <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t, s)],
+  swiss_roll = data_labeled$swiss_roll[, .(t, s = x_2)],
+  world_data = make_world_data_2d(
+    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
 
-# world_true_embedding <- 
-#   make_world_data_2d(here("2_code/2_data", "rawdata_world_3d.csv"))[1:100]
-# 
-# landmarks_world_ind <- find_landmarks(
-#   data = world_true_embedding[, .(x_1, x_2)],
-#   n_landmarks = 12L,
-#   method = "random")
-# 
-# landmarks_world <- world_true_embedding[landmarks_world_ind, .(x_1, x_2)]
-# 
-# new_order_world <- c(
-#   landmarks_world_ind, 
-#   setdiff(data_labeled$world_data[, .I], landmarks_world_ind))
+# Perform SSLLE for world data
+
+landmarks_world_ind <- find_landmarks(
+  data = data_unlabeled$world_data,
+  n_landmarks = 25L,
+  n_neighbors = 100L,
+  method = "maxmin")
+
+landmarks_world <- true_embedding_world_data[landmarks_world_ind]
+
+new_order_world <- c(
+  landmarks_world_ind,
+  setdiff(data_labeled$world_data[, .I], landmarks_world_ind))
 
 data_opt <- data.table::copy(sensitivity_landmarks_dt)
 
-# data_opt$world_data <- data.table(
-#   embedding_result = list(
-#     perform_sslle(
-#     data = data_labeled$world_data[new_order_world],
-#     k_max = k_max,
-#     prior_points = landmarks_world,
-#     verbose = FALSE)))
-# 
-# data_opt$world_data$embedding_result[[1]]$X <- 
-#   world_true_embedding[new_order_world]
+data_opt <- lapply(
+  data.table::copy(sensitivity_landmarks_dt),
+  function(i) i[landmark_method == "maximum_coverage" & n_landmarks == 12L])
+
+data_opt$world_data <- data.table::data.table(
+  embedding_result = list(perform_sslle(
+    data = data_unlabeled$world_data[new_order_world],
+    k_max = k_max,
+    prior_points = landmarks_world,
+    verbose = TRUE)),
+  true_embedding = list(true_embedding_world_data[new_order_world]))
+
+colors <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t)],
+  swiss_roll = data_labeled$swiss_roll[, .(t)],
+  world_data = make_world_data_2d(
+    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t)])
+
+# Compute embeddings and plot
 
 comp_lle <- lapply(
   
@@ -396,11 +335,16 @@ comp_lle <- lapply(
   
   function(i) {
     
+    if (i < 3L) {
+      this_color <- data_opt[[i]]$true_embedding[[1]][, .(t)]
+    } else {
+      this_color <- make_world_data_2d(
+        here("2_code/2_data", "rawdata_world_2d.csv"))[new_order_world][, .(t)]}
+    
     plot_sslle <- plot_manifold(
-      data.table::data.table(
-        data_opt[[i]]$embedding_result[[1]]$Y,
-        data_opt[[i]]$embedding_result[[1]]$X[, .(t, s)]),
-      dim = 2L)
+      data = data_opt[[i]]$embedding_result[[1]]$Y,
+      intrinsic_coords = this_color,
+      point_size = 5L)
     
     res_lle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
@@ -410,35 +354,36 @@ comp_lle <- lapply(
     
     res_hlle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
-      "HLLE", 
+      "HLLE",
       ndim = 2L,
       knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
     
-    res <- list(lle = res_lle, hlle = res_hlle)
+    res_unsupervised <- list(lle = res_lle, hlle = res_hlle)
     
-    plots <- lapply(
+    plots_unsupervised <- lapply(
       
-      seq_along(res),
+      seq_along(res_unsupervised),
       
       function(j) {
         
         emb_dt <- data.table::as.data.table(
-          res[[j]]@data@data)
+          res_unsupervised[[j]]@data@data)
         
         plot_manifold(
-          data.table::data.table(
-            emb_dt,
-            data_labeled[[i]][, .(t, s)]),
-          dim = 2L)
+          data = emb_dt,
+          intrinsic_coords = colors[[i]],
+          point_size = 5L)
         
       }
       
     )
     
-    names(plots) <- names(res)
+    names(plots_unsupervised) <- names(res_unsupervised)
     
-    plotly::subplot(list(plots$lle, plots$hlle, plot_sslle), nrows = 1L) %>% 
-      hide_guides()
+    list(
+      lle = plots_unsupervised$lle,
+      hlle = plots_unsupervised$hlle,
+      sslle = plot_sslle)
     
   }
   

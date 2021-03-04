@@ -12,6 +12,10 @@ save_rdata_files(data_labeled, folder = "2_code/2_data")
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
+true_embeddings <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t, s)],
+  swiss_roll = data_labeled$swiss_roll[, .(t, s = x_2)])
+
 k_max <- 15L
 n_landmarks_max <- 12L
 
@@ -25,73 +29,78 @@ search_grid_landmarks <- expand.grid(
 
 sensitivity_landmarks <- parallel::mclapply(
   
+# sensitivity_landmarks <- lapply(
+  
   seq_along(data_unlabeled),
   
   function(i) {
     
     parallel::mclapply(
-  
-    seq_len(nrow(search_grid_landmarks)),
-    
-    function(j) {
       
-      if (j == 1L | j %% 10 == 0) cat(sprintf("trying combination %d...\n", j))
+      seq_len(nrow(search_grid_landmarks)),
       
-      # Define required parameters
+      function(j) {
       
-      data_l <- data_labeled[[i]]
-      data_u <- data_unlabeled[[i]]
-      this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
-      this_number <- search_grid_landmarks[j, "n_landmarks"]
-      
-      # Find prior points according to current method and number
-      
-      landmarks_ind <- switch(
-        this_method,
-        poor_coverage = order(data_l$t)[seq_len(this_number)],
-        random_coverage = find_landmarks(
-          data = data_u,
+        if (j == 1L | j %% 5L == 0L) {
+          cat(sprintf("trying combination %d...\n", j))}
+        
+        # Define required parameters
+        
+        dt <- data_unlabeled[[i]]
+        true_emb <- true_embeddings[[i]]
+        this_method <- as.character(search_grid_landmarks[j, "landmark_method"])
+        this_number <- search_grid_landmarks[j, "n_landmarks"]
+        
+        # Find prior points according to current method and number
+        
+        landmarks_ind <- switch(
+          this_method,
+          poor_coverage = order(true_emb$t)[seq_len(this_number)],
+          random_coverage = find_landmarks(
+            data = dt,
+            n_landmarks = this_number,
+            method = "random"),
+          maximum_coverage = find_landmarks(
+            data = dt,
+            n_neighbors = k_max,
+            n_landmarks = this_number,
+            method = "maxmin"))
+        
+        landmarks <- true_emb[landmarks_ind]
+        
+        # Move prior points up in the data as sslle function assumes the the 
+        # first observations to be prior points
+        
+        new_order <- c(landmarks_ind, setdiff(dt[, .I], landmarks_ind))
+        
+        # Compute embedding
+        
+        embedding <- perform_sslle(
+          data = dt[new_order],
+          k_max = k_max,
+          prior_points = landmarks,
+          verbose = FALSE)
+        
+        # Return
+        
+        list(
+          landmark_method = this_method,
           n_landmarks = this_number,
-          method = "random"),
-        maximum_coverage = find_landmarks(
-          data = data_u,
-          n_neighbors = k_max,
-          n_landmarks = this_number,
-          method = "maxmin"))
+          residual_variance = min(embedding$residual_variances),
+          auc_lnk_rnx = max(embedding$auc_lnk_rnx),
+          embedding_result = embedding,
+          landmarks = landmarks, 
+          true_embedding = true_emb[new_order])
+        
+      },
       
-      landmarks <- data_l[landmarks_ind, .(t, s)]
+      mc.cores = parallel::detectCores()
       
-      # Move prior points up in the data as sslle function assumes the the first
-      # observations to be prior points
+      )
       
-      new_order <- c(landmarks_ind, setdiff(data_l[, .I], landmarks_ind))
-      
-      # Compute embedding
-      
-      embedding <- perform_sslle(
-        data = data_l[new_order],
-        k_max = k_max,
-        prior_points = landmarks,
-        verbose = FALSE)
-      
-      # Return
-      
-      list(
-        landmark_method = this_method,
-        n_landmarks = this_number,
-        residual_variance = min(embedding$residual_variances),
-        auc_lnk_rnx = max(embedding$auc_lnk_rnx),
-        embedding_result = embedding,
-        landmarks = landmarks, 
-        new_order = new_order)
-      
-    },
+    }, 
     
-    mc.cores = parallel::detectCores())
-    
-  }, 
-  
-  mc.cores = parallel::detectCores()
+    mc.cores = parallel::detectCores()
 
 )
 
@@ -99,7 +108,7 @@ sensitivity_landmarks_dt <- lapply(
   seq_along(sensitivity_landmarks), 
   function(i) {
     dt <- data.table::as.data.table(do.call(rbind, sensitivity_landmarks[[i]]))
-    dt[, names(dt)[1:4] := lapply(.SD, unlist), .SDcols = names(dt)[1:4]]
+    dt[, names(dt)[1L:4L] := lapply(.SD, unlist), .SDcols = names(dt)[1L:4L]]
     dt[, landmark_method := as.factor(landmark_method)]
     dt})
 
@@ -130,23 +139,23 @@ sensitivity_noise <- parallel::mclapply(
         
         # Define required parameters
         
-        data_l <- data_labeled[[i]]
-        data_u <- data_unlabeled[[i]]
+        dt <- data_unlabeled[[i]]
+        true_emb <- true_embeddings[[i]]
         this_noise <- search_grid_noise[j, "noise_level"]
         this_number <- search_grid_noise[j, "n_landmarks"]
         
         # Find prior points and apply perturbation
         
         landmarks_ind <- find_landmarks(
-          data = data_u,
+          data = dt,
           n_neighbors = k_max,
           n_landmarks = this_number,
           method = "maxmin")
         
-        landmarks <- data_l[landmarks_ind, .(t, s)]
+        landmarks <- true_emb[landmarks_ind]
         
-        sd_t = sd(data_l$t)
-        sd_s = sd(data_l$s)
+        sd_t = sd(true_emb$t)
+        sd_s = sd(true_emb$s)
         
         landmarks_corrupted <- landmarks + c(
           rnorm(length(landmarks_ind), sd = this_noise * sd_t),
@@ -155,12 +164,12 @@ sensitivity_noise <- parallel::mclapply(
         # Move prior points up in the data as sslle function assumes the the 
         # first observations to be prior points
         
-        new_order <- c(landmarks_ind, setdiff(data_u[, .I], landmarks_ind))
+        new_order <- c(landmarks_ind, setdiff(dt[, .I], landmarks_ind))
         
         # Compute embedding
         
         embedding <- perform_sslle(
-          data = data_l[new_order],
+          data = dt[new_order],
           k_max = k_max,
           prior_points = landmarks_corrupted,
           is_exact = FALSE,
@@ -175,7 +184,8 @@ sensitivity_noise <- parallel::mclapply(
           residual_variance = min(embedding$residual_variances),
           auc_lnk_rnx = max(embedding$auc_lnk_rnx),
           embedding_result = embedding,
-          landmarks = landmarks)
+          landmarks = landmarks,
+          true_embedding = true_emb[new_order])
         
       },
       
@@ -197,92 +207,3 @@ sensitivity_noise_dt <- lapply(
 names(sensitivity_noise_dt) <- names(data_labeled)
 
 save_rdata_files(sensitivity_noise_dt, folder = "2_code/2_data")
-
-# SENSITIVITY ANALYSIS II: NOISE LEVEL & CONFIDENCE PARAM ----------------------
-
-# search_space_noise <- list(
-#   noise_level = c(lower = 0L, upper = 1L),
-#   confidence_param = c(lower = 10e-10, upper = 10e-1))
-
-# search_grid_noise <- expand.grid(
-#   noise_level = c(0.1, 0.5, 1L, 5L, 10L),
-#   confidence_param = sapply(seq(-4L, 2L, length.out = 7), function(i) 10^(i)))
-# 
-# sensitivity_noise <- parallel::mclapply(
-#   
-#   seq_along(data_unlabeled),
-#   
-#   function(i) {
-#     
-#     parallel::mclapply(
-#       
-#       seq_len(nrow(search_grid_noise)),
-#       
-#       function(j) {
-#         
-#         if (j == 1L | j %% 10 == 0) {
-#           cat(sprintf("trying combination %d...\n", j))}
-#         
-#         # Define required parameters
-#         
-#         data_l <- data_labeled[[i]]
-#         data_u <- data_unlabeled[[i]]
-#         this_noise <- search_grid_noise[j, "noise_level"]
-#         this_confidence <- search_grid_noise[j, "confidence_param"]
-#         
-#         # Find prior points and apply perturbation
-#         
-#         landmarks_ind <- find_landmarks(
-#           data = data_u,
-#           n_neighbors = k_max,
-#           n_landmarks = 5L,
-#           method = "maxmin")
-#         
-#         landmarks <- data_l[landmarks_ind, .(t, s)] +
-#           rnorm(length(landmarks_ind), sd = this_noise)
-#         
-#         # Move prior points up in the data as sslle function assumes the the 
-#         # first observations to be prior points
-#         
-#         new_order <- c(landmarks_ind, setdiff(data_u[, .I], landmarks_ind))
-#         
-#         # Compute embedding
-# 
-#         embedding <- perform_sslle(
-#           data = data_l[new_order],
-#           k_max = k_max,
-#           prior_points = landmarks,
-#           is_exact = FALSE,
-#           confidence_param = this_confidence,
-#           verbose = FALSE)
-#         
-#         # Return
-#         
-#         list(
-#           noise_level = this_noise,
-#           confidence_param = this_confidence,
-#           residual_variance = min(embedding$residual_variances),
-#           auc_lnk_rnx = max(embedding$auc_lnk_rnx),
-#           embedding_result = embedding)
-#         
-#       },
-#       
-#       mc.cores = parallel::detectCores())
-#     
-#   }, 
-#   
-#   mc.cores = parallel::detectCores()
-#   
-# )
-# 
-# sensitivity_noise_dt <- lapply(
-#   seq_along(sensitivity_noise), 
-#   function(i) {
-#     dt <- data.table::as.data.table(do.call(rbind, sensitivity_noise[[i]]))
-#     dt[, names(dt)[1:4] := lapply(.SD, unlist), .SDcols = names(dt)[1:4]]
-#     dt})
-# 
-# names(sensitivity_noise_dt) <- names(data_labeled)
-# 
-# save_rdata_files(sensitivity_noise_dt, "2_code")
-
