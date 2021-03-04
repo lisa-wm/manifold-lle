@@ -331,13 +331,20 @@ colors <- list(
 
 comp_lle <- lapply(
   
-  seq_along(data_unlabeled)[1:2],
+  seq_along(data_unlabeled),
   
   function(i) {
     
+    if (i < 3L) {
+      this_color <- data_opt[[i]]$true_embedding[[1]][, .(t)]
+    } else {
+      this_color <- make_world_data_2d(
+        here("2_code/2_data", "rawdata_world_2d.csv"))[new_order_world][, .(t)]}
+    
     plot_sslle <- plot_manifold(
       data = data_opt[[i]]$embedding_result[[1]]$Y,
-      intrinsic_coords = colors[[i]])
+      intrinsic_coords = this_color,
+      point_size = 5L)
     
     res_lle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
