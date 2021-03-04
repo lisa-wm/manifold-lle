@@ -379,10 +379,10 @@ comp_lle <- lapply(
     
     names(plots_unsupervised) <- names(res_unsupervised)
     
-    plotly::subplot(
-      list(plots_unsupervised$lle, plots_unsupervised$hlle, plot_sslle), 
-      nrows = 1L) %>% 
-      hide_guides()
+    list(
+      lle = plots_unsupervised$lle,
+      hlle = plots_unsupervised$hlle,
+      sslle = plot_sslle)
     
   }
   
