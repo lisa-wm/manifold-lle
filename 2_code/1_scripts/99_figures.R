@@ -446,9 +446,8 @@ ggplot2::ggsave(
 
 # ------------------------------------------------------------------------------
 
-height_qual_landmarks <- 450L
+height_qual <- 450L
 height_key_landmarks <- 220L
-height_qual_noise <- 520L
 height_key_noise <- 200L
 width_all <- 1000L
 
@@ -461,7 +460,7 @@ invisible(lapply(
     plotly::orca(
       sensitivity_plots_emb[[i]]$emb_plots_landmarks, 
       sprintf("3_presentation/figures/sensitivity_landmarks_qual_%s.pdf", i),
-      height = height_qual_landmarks,
+      height = height_qual,
       width = width_all)
     
     plotly::orca(
@@ -473,7 +472,7 @@ invisible(lapply(
     plotly::orca(
       sensitivity_plots_emb[[i]]$emb_plots_noise, 
       sprintf("3_presentation/figures/sensitivity_noise_qual_%s.pdf", i),
-      height = height_qual_noise,
+      height = height_qual,
       width = width_all)
     
     plotly::orca(
@@ -494,7 +493,8 @@ invisible(lapply(
   
   function(i) {
     plotly::orca(
-      comp_lle[[i]], 
+      plotly::subplot(comp_lle[[i]], nrows = 1L) %>% 
+        hide_guides(),
       sprintf("3_presentation/figures/comparison_%s.pdf", i),
       height = 200L,
       width = 1000L)
@@ -530,7 +530,12 @@ plotly::orca(
 load_rdata_files(comp_lle, folder = "2_code/2_data")
 
 plotly::orca(
-  comp_lle$world_data, 
+  plotly::subplot(
+    comp_lle$world_data,
+    nrows = 1L,
+    widths = c(1/6, 1/6, 2/3)) %>% 
+    hide_guides() %>%
+    layout(plot_bgcolor = "rgb(240, 240, 240)"),
   "3_presentation/figures/comparison_world.pdf",
-  height = 200L,
+  height = 350L,
   width = 1000L)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 MAR 2021 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  4 MAR 2021 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1811,13 +1811,13 @@ Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line
  [29
 
  <./figures/sensitivity_noise_auc.pdf>]
-<figures/sensitivity_noise_qual_swiss_roll.pdf, id=386, 756.90776pt x 395.55779
-pt>
+<figures/sensitivity_noise_qual_swiss_roll.pdf, id=386, 756.90776pt x 343.2825p
+t>
 File: figures/sensitivity_noise_qual_swiss_roll.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_swiss_roll.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_swiss_roll.pdf  used on
  input line 1297.
-(pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
+(pdftex.def)             Requested size: 409.71951pt x 184.75291pt.
  [30
 
  <./figures/sensitivity_noise_qual_swiss_roll.pdf
@@ -1826,14 +1826,14 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss_roll.
 pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', t
 ype <array>); ignored.
 >]
-<figures/sensitivity_noise_qual_incomplete_tire.pdf, id=401, 756.90776pt x 395.
-55779pt>
+<figures/sensitivity_noise_qual_incomplete_tire.pdf, id=401, 756.90776pt x 343.
+2825pt>
 File: figures/sensitivity_noise_qual_incomplete_tire.pdf Graphic file (type pdf
 )
 <use figures/sensitivity_noise_qual_incomplete_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_incomplete_tire.pdf  us
 ed on input line 1315.
-(pdftex.def)             Requested size: 409.71951pt x 191.68396pt.
+(pdftex.def)             Requested size: 409.71951pt x 184.75291pt.
  [31
 
  <./figures/sensitivity_noise_qual_incomplete_tire.pdf
@@ -1891,13 +1891,13 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 1414--1414
 <figures/world_3d.pdf, id=455, 606.34526pt x 606.34526pt>
 File: figures/world_3d.pdf Graphic file (type pdf)
 <use figures/world_3d.pdf>
-Package pdftex.def Info: figures/world_3d.pdf  used on input line 1458.
-(pdftex.def)             Requested size: 163.8853pt x 163.88194pt.
+Package pdftex.def Info: figures/world_3d.pdf  used on input line 1463.
+(pdftex.def)             Requested size: 135.20818pt x 162.02228pt.
 <figures/world_2d.pdf, id=457, 606.34526pt x 268.12169pt>
 File: figures/world_2d.pdf Graphic file (type pdf)
 <use figures/world_2d.pdf>
-Package pdftex.def Info: figures/world_2d.pdf  used on input line 1458.
-(pdftex.def)             Requested size: 245.8342pt x 88.35591pt.
+Package pdftex.def Info: figures/world_2d.pdf  used on input line 1463.
+(pdftex.def)             Requested size: 274.51132pt x 102.0466pt.
  [36
 
  <./figures/world_3d.pdf
@@ -1909,12 +1909,12 @@ lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 pdfTeX warning: pdflatex.exe (file ./figures/world_2d.pdf): PDF inclusion: inva
 lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/comparison_world.pdf, id=472, 756.90776pt x 154.6578pt>
+<figures/comparison_world.pdf, id=472, 756.90776pt x 268.12169pt>
 File: figures/comparison_world.pdf Graphic file (type pdf)
 <use figures/comparison_world.pdf>
-Package pdftex.def Info: figures/comparison_world.pdf  used on input line 1486.
+Package pdftex.def Info: figures/comparison_world.pdf  used on input line 1491.
 
-(pdftex.def)             Requested size: 409.71951pt x 83.71927pt.
+(pdftex.def)             Requested size: 409.71951pt x 149.09158pt.
  [37
 
  <./figures/comparison_world.pdf
@@ -1968,7 +1968,7 @@ ic/rsfs/rsfs10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texliv
 e/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on presentation.pdf (39 pages, 5301368 bytes).
+Output written on presentation.pdf (39 pages, 5308832 bytes).
 PDF statistics:
  585 PDF objects out of 1000 (max. 8388607)
  393 compressed objects within 4 object streams

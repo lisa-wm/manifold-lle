@@ -1268,7 +1268,7 @@ landmarks
 \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_noise_auc}
 
-\vspace{0.3cm}
+\vfill
 
 \scriptsize
 $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of 1 
@@ -1291,7 +1291,7 @@ incomplete tire -- $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 
 \vspace{0.3cm}
 
-\includegraphics[trim = 40 60 0 0, clip, % left bottom right top
+\includegraphics[trim = 40 20 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_noise_qual_swiss_roll}
 
 \end{frame}
@@ -1309,7 +1309,7 @@ incomplete tire -- $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 
 \vspace{0.3cm}
 
-\includegraphics[trim = 40 60 0 0, clip, % left bottom right top
+\includegraphics[trim = 40 20 0 0, clip, % left bottom right top
     width = \textwidth]{figures/sensitivity_noise_qual_incomplete_tire}
 
 \end{frame}
@@ -1358,7 +1358,7 @@ incomplete tire -- $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$
 %     width = 0.7\textwidth]{figures/comparison_tire}
 % \end{minipage}
 
-\vspace{0.3cm}  
+\vfill
 
 \scriptsize
 SSLLE: own implementation (see 
@@ -1446,14 +1446,19 @@ LLE and HLLE with number of neighbors as deemed optimal by SSLLE implementation
 
 \textbf{Original:} world data in 3D and true 2D embedding 
 
-\begin{minipage}[c]{0.4\textwidth}
-  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+\begin{minipage}[c]{0.33\textwidth}
+  \includegraphics[trim = 50 0 50 0, clip, % left bottom right top
       width = \textwidth]{figures/world_3d}
 \end{minipage}%
-\begin{minipage}[c]{0.6\textwidth}
-  \includegraphics[trim = 0 0 0 50, clip, % left bottom right top
+\begin{minipage}[c]{0.67\textwidth}
+  \includegraphics[trim = 20 0 0 50, clip, % left bottom right top
       width = \textwidth]{figures/world_2d}
 \end{minipage}
+
+\vfill
+
+\scriptsize
+Data consisting of 2527 points.
 
 \end{frame}
 
@@ -1468,10 +1473,10 @@ LLE and HLLE with number of neighbors as deemed optimal by SSLLE implementation
 
 \textbf{Embedding:} LLE vs HLLE vs SSLLE
 
-\includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+\includegraphics[trim = 20 0 0 0, clip, % left bottom right top
   width = \textwidth]{figures/comparison_world}
   
-\vspace{0.3cm}  
+\vfill
 
 \scriptsize
 SSLLE: own implementation (see 

@@ -148,8 +148,8 @@ sensitivity_plots_emb <- lapply(
             dt_name = names(sensitivity_noise_dt)[i],
             annotation_text = sprintf(
               "noise %.1f, %d landmarks",
-              dt[j, ]$noise_level,
-              dt[j, ]$n_landmarks))})
+              dt_n[j, ]$noise_level,
+              dt_n[j, ]$n_landmarks))})
     
     list(
       emb_plots_landmarks = plotly::subplot(
@@ -371,7 +371,8 @@ comp_lle <- lapply(
         
         plot_manifold(
           data = emb_dt,
-          intrinsic_coords = colors[[i]])
+          intrinsic_coords = colors[[i]],
+          point_size = 5L)
         
       }
       
