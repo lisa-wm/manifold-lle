@@ -497,7 +497,7 @@ invisible(lapply(
       comp_lle[[i]], 
       sprintf("3_presentation/figures/comparison_%s.pdf", i),
       height = 200L,
-      width = 100L)
+      width = 1000L)
   }))
 
 # COMPARISON - WORLD DATA ------------------------------------------------------
@@ -531,6 +531,6 @@ load_rdata_files(comp_lle, folder = "2_code/2_data")
 
 plotly::orca(
   comp_lle$world_data, 
-  sprintf("3_presentation/figures/comparison_world.pdf", i),
+  "3_presentation/figures/comparison_world.pdf",
   height = 200L,
-  width = 100L)
+  width = 1000L)
