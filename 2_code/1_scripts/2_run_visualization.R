@@ -321,27 +321,27 @@ data_opt$world_data <- data.table::data.table(
     verbose = TRUE)),
   true_embedding = list(true_embedding_world_data[new_order_world]))
 
+colors <- list(
+  incomplete_tire = data_labeled$incomplete_tire[, .(t)],
+  swiss_roll = data_labeled$swiss_roll[, .(t)],
+  world_data = make_world_data_2d(
+    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t)])
+
 # Compute embeddings and plot
 
 comp_lle <- lapply(
   
-  seq_along(data_unlabeled),
+  seq_along(data_unlabeled)[1:2],
   
   function(i) {
     
     plot_sslle <- plot_manifold(
       data = data_opt[[i]]$embedding_result[[1]]$Y,
-      intrinsic_coords = data_opt[[i]]$true_embedding[[1]][, .(t)])
+      intrinsic_coords = colors[[i]])
     
     res_lle <- dimRed::embed(
       data_unlabeled[[i]][, .(x_1, x_2, x_3)],
       "LLE", 
-      ndim = 2L,
-      knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
-    
-    res_hlle <- dimRed::embed(
-      data_unlabeled[[i]][, .(x_1, x_2, x_3)],
-      "HLLE",
       ndim = 2L,
       knn = data_opt[[i]]$embedding_result[[1]]$neighborhood_size)
     
@@ -364,7 +364,7 @@ comp_lle <- lapply(
         
         plot_manifold(
           data = emb_dt,
-          intrinsic_coords = true_embeddings[[i]][, .(t)])
+          intrinsic_coords = colors[[i]])
         
       }
       
