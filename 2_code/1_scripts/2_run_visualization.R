@@ -10,13 +10,37 @@ load_rdata_files(data_labeled, folder = "2_code/2_data")
 
 # VISUALIZATION: AUC_LNK_RNX ---------------------------------------------------
 
-sensitivity_landmarks_plots_quant <- lapply(
+sensitivity_plots_auc <- lapply(
   
   seq_along(sensitivity_landmarks_dt),
   
   function(i) {
     
-    auc_plot <- plot_quant_res(
+    # Make grid plot theme
+    
+    mk_theme <- function(base_plot, 
+                         dt_name,
+                         legend_title,
+                         x_lab,
+                         low = "red",
+                         high = "green") {
+      
+      base_plot +
+        ggplot2::scale_color_gradient(
+          low = low,  
+          high = high,
+          name = legend_title,
+          limits = c(0L, 1L)) +
+        ggplot2::theme_bw() +
+        ggplot2::theme(text = element_text(size = 20)) +
+        ggplot2::scale_y_continuous(breaks = seq(2L, 12L, by = 2L)) +
+        ggplot2::xlab(as.character(x_lab)) +
+        ggplot2::ylab("number of landmarks") +
+        ggplot2::ggtitle(sprintf("Data: %s", dt_name))
+      
+    }
+    
+    auc_plot_landmarks <- mk_theme(
       base_plot = sensitivity_landmarks_dt[[i]][
         , .(landmark_method, n_landmarks, auc_lnk_rnx)
         ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
@@ -35,82 +59,32 @@ sensitivity_landmarks_plots_quant <- lapply(
       legend_title = expression(AUC(R[NX]) ~ " (scaled)"),
       x_lab = "coverage")
     
-    res_var_plot <- plot_quant_res(
-      base_plot = sensitivity_landmarks_dt[[i]][
-        , .(landmark_method, n_landmarks, residual_variance)
-      ][, res_var_scaled := scale_zero_one(residual_variance)] %>%
-        ggplot2::ggplot(aes(
-          x = forcats::fct_relevel(
-            landmark_method,
-            "poor_coverage",
-            "random_coverage",
-            "maximum_coverage"),
-          y = n_landmarks,
-          col = res_var_scaled)) + 
-        geom_point(size = 10L) + 
-        scale_x_discrete(labels = c("poor", "random", "maximum")),
-      dt_name = stringr::str_replace_all(
-        names(sensitivity_landmarks_dt[i]), "_", " "),
-      legend_title = "residual variance (scaled)",
-      x_lab = "coverage",
-      low = "green", 
-      high = "red")
-    
-    list(auc_plot = auc_plot, res_var_plot = res_var_plot)
-    
-    })
-
-names(sensitivity_landmarks_plots_quant) <- names(sensitivity_landmarks_dt)
-
-save_rdata_files(sensitivity_landmarks_plots_quant, folder = "2_code/2_data")
-
-# ------------------------------------------------------------------------------
-
-sensitivity_noise_plots_quant <- lapply(
-  
-  seq_along(sensitivity_noise_dt),
-  
-  function(i) {
-    
-    auc_plot <- plot_quant_res(
+    auc_plot_noise <- plot_quant_res(
       base_plot = sensitivity_noise_dt[[i]][
         , .(noise_level, n_landmarks, auc_lnk_rnx)
-      ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
+        ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
         ggplot2::ggplot(aes(
           x = noise_level,
           y = n_landmarks,
-          col = auc_scaled)) + 
-        geom_point(size = 10L) + 
+          col = auc_scaled)) +
+        geom_point(size = 10L) +
         scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L)),
       dt_name = stringr::str_replace_all(
         names(sensitivity_landmarks_dt[i]), "_", " "),
       legend_title = expression(AUC(R[NX]) ~ " (scaled)"),
       x_lab = "noise level")
     
-    res_var_plot <- plot_quant_res(
-      base_plot = sensitivity_noise_dt[[i]][
-        , .(noise_level, n_landmarks, residual_variance)
-      ][, res_var_scaled := scale_zero_one(residual_variance)] %>%
-        ggplot2::ggplot(aes(
-          x = noise_level,
-          y = n_landmarks,
-          col = res_var_scaled)) + 
-        geom_point(size = 10L) + 
-        scale_x_continuous(breaks = c(0.1, 0.5, 1L, 3L)),
-      dt_name = stringr::str_replace_all(
-        names(sensitivity_landmarks_dt[i]), "_", " "),
-      legend_title = "residual variance (scaled)",
-      x_lab = "noise level",
-      low = "green", 
-      high = "red")
+    list(
+      auc_plot_landmarks = auc_plot_landmarks, 
+      auc_plot_noise = auc_plot_noise)
     
-    list(auc_plot = auc_plot, res_var_plot = res_var_plot)
-    
-  })
+  }
+  
+)
 
-names(sensitivity_noise_plots_quant) <- names(sensitivity_noise_dt)
+names(sensitivity_plots_auc) <- names(sensitivity_landmarks_dt)
 
-save_rdata_files(sensitivity_noise_plots_quant, folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_auc, folder = "2_code/2_data")
 
 # VISUALIZATION: LOW-DIMENSIONAL EMBEDDING -------------------------------------
 
