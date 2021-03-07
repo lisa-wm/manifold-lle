@@ -42,4 +42,4 @@ vignettes/*.pdf
 *.gz
 
 # Video files
-.mp4
+*.mp4
