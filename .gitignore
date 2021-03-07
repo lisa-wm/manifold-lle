@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # Sweave files
 *.gz
+
+# Video files
+.mp4

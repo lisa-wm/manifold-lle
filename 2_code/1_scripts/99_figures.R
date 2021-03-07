@@ -90,23 +90,6 @@ invisible(lapply(
   }))
 
 plotly::orca(
-  
-)
-
-s_curve_undone_pp_random <- plot_manifold(
-  data = s_curve_data[, .(t, x_2)],
-  intrinsic_coords = s_curve_data[, .(t)]) %>%
-  add_trace(
-    x = ~ s_curve_data[prior_points_random]$t,
-    y = ~ s_curve_data[prior_points_random]$x_2,
-    color = ~ 1L,
-    type = "scatter",
-    mode = "markers",
-    marker = list(color = "black", size = 20L)
-  ) %>%
-  hide_guides()
-
-plotly::orca(
   plot_manifold(
     data = s_curve_data[, .(t, x_2)],
     intrinsic_coords = s_curve_data[, .(t)]) %>%

@@ -730,7 +730,7 @@ $\Rightarrow$ partitioning of $\E$ and $\Ytil$ \\
   \begin{equation}
     \min_{\Ytil_2}
     \begin{bmatrix} \textcolor{gray!90}{\Ytil_1} & \Ytil_2 \end{bmatrix}
-    \begin{bmatrix} \textcolor{gray!90}{M_{11}} & M_{12} \\ M_{21} & M_{22} 
+    \begin{bmatrix} \textcolor{gray!90}{E_{11}} & E_{12} \\ E_{21} & E_{22} 
     \end{bmatrix}
     \begin{bmatrix} \textcolor{gray!90}{\Ytil_1^T} \\ \Ytil_2^T \end{bmatrix}
   \end{equation}
@@ -738,7 +738,7 @@ $\Rightarrow$ partitioning of $\E$ and $\Ytil$ \\
 
 \begin{fleqn}
   \begin{equation}
-    \Leftrightarrow \Ytil_2^T = M_{22}^{-1} M_{12} 
+    \Leftrightarrow \Ytil_2^T = E_{22}^{-1} E_{12} 
     \textcolor{gray!90}{\Ytil_1^T}
   \end{equation}
 \end{fleqn}
@@ -749,7 +749,7 @@ $\Rightarrow$ partitioning of $\E$ and $\Ytil$ \\
   \begin{equation}
     \min_{\Ytil_1, \Ytil_2}
     \begin{bmatrix} \Ytil_1 & \Ytil_2 \end{bmatrix}
-    \begin{bmatrix} M_{11} & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
+    \begin{bmatrix} E_{11} & E_{12} \\ E_{21} & E_{22} \end{bmatrix}
     \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} +
     \beta \frobnorm{\Ytil_1^T - \textcolor{gray!90}{\hat{\Ytil}_1^T}}
   \end{equation}
@@ -757,8 +757,8 @@ $\Rightarrow$ partitioning of $\E$ and $\Ytil$ \\
 
 \begin{fleqn}
   \begin{equation}
-    \Leftrightarrow \begin{bmatrix} \textcolor{gray!90}{M_{11}} +
-    \beta \I & M_{12} \\ M_{21} & M_{22} \end{bmatrix}
+    \Leftrightarrow \begin{bmatrix} \textcolor{gray!90}{E_{11}} +
+    \beta \I & E_{12} \\ E_{21} & E_{22} \end{bmatrix}
     \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} =
     \begin{bmatrix} \textcolor{gray!90}{\hat{\Ytil}_1^T} \\ \bm{0} 
     \end{bmatrix}
@@ -783,7 +783,7 @@ $\Rightarrow$ partitioning of $\E$ and $\Ytil$ \\
   coverage
   \flexitem{2} (Uniform) random sampling
   \flexitem{3} Maximum coverage $\Rightarrow$ minimization of condition number 
-  $\kappa(M_{22})$
+  $\kappa(E_{22})$
 \end{itemize}
 
 % \begin{figure}[H]
