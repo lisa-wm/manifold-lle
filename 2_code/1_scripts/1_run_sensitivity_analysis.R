@@ -157,6 +157,8 @@ sensitivity_noise <- parallel::mclapply(
         sd_t = sd(true_emb$t)
         sd_s = sd(true_emb$s)
         
+        set.seed(1L)
+        
         landmarks_corrupted <- landmarks + c(
           rnorm(length(landmarks_ind), sd = this_noise * sd_t),
           rnorm(length(landmarks_ind), sd = this_noise * sd_s))
