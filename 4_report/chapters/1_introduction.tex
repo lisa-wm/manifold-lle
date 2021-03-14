@@ -1,0 +1,47 @@
+Machine learning problems increasingly employ data of high dimensionality. 
+While a large amount of samples is beneficial to learning, high-dimensional 
+feature spaces, such as in speech recognition or gene processing, pose serious 
+obstacles to the performance and convergence of most algorithms 
+\citep{cayton2005}. 
+Three aspects strike as particularly problematic: computational complexity, 
+interpretability of results, and geometric idiosyncrasies of high-dimensional 
+spaces.
+Computational cost must be considered but is becoming less of an issue with 
+technological evolution \citep{leistetal2009}.
+By contrast, the demand for explainable results (for reasons of, say, safety or
+ethics) is rather intensified by technological advance, but virtually 
+inaccessible in more than a few dimensions \citep{doshivelezkim2017}. 
+The geometric aspect is often addressed as \textit{curse of dimensionality} and 
+subsumes, among others, a sharp incline in the number of points required to 
+sample spaces and a loss in meaningfulness of distances 
+\citep{verleysenfrancois2005}.
+\\
+
+\textbf{Manifold learning.}
+These challenges make the case for \textit{dimensionality reduction}, that is, 
+the endeavor of compressing problem dimensionality to a manageable size. 
+Far from undue simplification, dimensionality reduction is justified by the 
+belief that the data-generating process is indeed of much lower dimension 
+than is observed.
+Consider, for example, image data showing objects in different poses.
+Such data are typically stored in high-dimensional pixel representations, yet it 
+is reasonable to suppose that variation is in fact caused by a small number of 
+latent features.
+More formally, the data are assumed to lie on a $d$-dimensional 
+\textit{manifold} embedded in the $D$-dimensional observation space, with 
+$d \ll D$.
+This belief is referred to as \textit{manifold assumption} \citep{cayton2005}.
+A crucial property of $d$-manifolds, i.e., the $d$-dimensional generalization of
+a curved surface, embedded in $\RD$, is their local topological equivalence to 
+$\Rd$ \citep{mafu2011}.
+It is precisely this fact that allows manifold coordinates to be mapped to 
+$\Rd$ \citep{cayton2005}.
+In this unsupervised task, models must learn the intrinsic manifold structure 
+complicated by the fact that standard distance metrics do not apply, as points 
+on general manifolds are connected by curved paths rather than straight lines \citep{mafu2011}.
+\\
+
+\textbf{Local graph-based manifold learning.}
+\\
+
+\textbf{Outline.}
