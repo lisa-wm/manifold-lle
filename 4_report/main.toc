@@ -1,35 +1,37 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{}%
 \contentsline {section}{\numberline {2}Manifold Learning Problem}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Concepts in Manifold Learning}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{4}{}%
-\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning (LGML)}{4}{}%
-\contentsline {subsection}{\numberline {3.1}Overview}{4}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Taxonomy}{4}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Intuition}{5}{}%
-\contentsline {subsection}{\numberline {3.2}Conceptual Framework of LGML}{7}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Motivation}{7}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Graph Approximation}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.3}Eigenanalysis}{10}{}%
-\contentsline {section}{\numberline {4}LGML Techniques}{11}{}%
-\contentsline {subsection}{\numberline {4.1}Unsupervised Techniques}{11}{}%
-\contentsline {subsubsection}{\numberline {4.1.1}Laplacian Eigenmaps (LEM)}{11}{}%
-\contentsline {subsubsection}{\numberline {4.1.2}Locally Linear Embedding (LLE)}{12}{}%
-\contentsline {subsubsection}{\numberline {4.1.3}Hessian Locally Linear Embedding (HLLE)}{15}{}%
-\contentsline {subsection}{\numberline {4.2}Semi-Supervised Locally Linear Embedding (SSLLE)}{16}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Employment of Prior Information}{16}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}Finding Prior Points}{17}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}SSLLE Algorithm}{17}{}%
-\contentsline {subsection}{\numberline {4.3}Particular Challenges}{17}{}%
-\contentsline {subsection}{\numberline {4.4}Comparative Remarks}{18}{}%
-\contentsline {section}{\numberline {5}Experiment Results}{18}{}%
-\contentsline {subsection}{\numberline {5.1}Experimental Design}{18}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{18}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{18}{}%
-\contentsline {subsection}{\numberline {5.2}Application to Synthetic Data}{18}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Data}{18}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Results}{18}{}%
-\contentsline {subsection}{\numberline {5.3}Sensitivity Analysis}{18}{}%
-\contentsline {section}{\numberline {6}Discussion}{18}{}%
-\contentsline {section}{\numberline {7}Conclusion}{18}{}%
+\contentsline {subsection}{\numberline {2.1}Manifolds}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{2}{}%
+\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning (LGML)}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Overview}{3}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Taxonomy}{3}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Intuition}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Conceptual Framework of LGML}{5}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Motivation}{5}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Graph Approximation}{6}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Eigenanalysis}{8}{}%
+\contentsline {section}{\numberline {4}LGML Techniques}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Unsupervised Techniques}{9}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Laplacian Eigenmaps (LEM)}{9}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Locally Linear Embedding (LLE)}{10}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}Hessian Locally Linear Embedding (HLLE)}{13}{}%
+\contentsline {subsection}{\numberline {4.2}Semi-Supervised Locally Linear Embedding (SSLLE)}{14}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Employment of Prior Information}{14}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Finding Prior Points}{15}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}SSLLE Algorithm}{15}{}%
+\contentsline {subsection}{\numberline {4.3}Particular Challenges}{15}{}%
+\contentsline {subsection}{\numberline {4.4}Comparative Remarks}{16}{}%
+\contentsline {section}{\numberline {5}Experiment Results}{16}{}%
+\contentsline {subsection}{\numberline {5.1}Experimental Design}{16}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Software Implementation}{16}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{16}{}%
+\contentsline {subsection}{\numberline {5.2}Application to Synthetic Data}{16}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Data}{16}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Results}{16}{}%
+\contentsline {subsection}{\numberline {5.3}Sensitivity Analysis}{16}{}%
+\contentsline {section}{\numberline {6}Discussion}{16}{}%
+\contentsline {section}{\numberline {7}Conclusion}{16}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
-\contentsline {section}{\numberline {B}Electronic Appendix}{VI}{}%
+\contentsline {subsection}{\numberline {A.1}Basic Concepts in Topology}{V}{}%
+\contentsline {subsection}{\numberline {A.2}Generation of Synthetic Manifolds}{VI}{}%
+\contentsline {section}{\numberline {B}Electronic Appendix}{VII}{}%

@@ -1,64 +1,244 @@
-\subsection{Eigenanalysis}
-\label{eigenanalysis}
+\subsection{Basic Concepts in Topology}
+\label{topology}
 
-Eventually, all spectral manifold learning methods boil down to an eigenanalysis 
-of a matrix $K$ believed to capture information about the intrinsic manifold 
-structure.
-As explained in chapter \ref{lgb-principles}, PCA finds the principal 
-eigenvectors of empirical covariance, thereby defining a low-dimensional 
-subspace containing most of the data-inherent variability.
-The very same idea applies when diagonalizing the more general matrix 
-corresponding to the non-linear feature map: the top (or bottom\footnote{
-This differs across methods and shall be made clear later.
-}) $d$ eigenvectors of $K$ span a subspace into which the data may be projected 
-under minimal loss of information.
-More precisely, the representation of $\X$ by the $d$ principal eigenvectors of 
-$K$ incurs is loss-optimal with respect to the least-squares error.
-Eigenanalysis is thus a very powerful concept with ubiquitous application 
-\citep{schoelkopfetal1998}.
+This section contains definitions of the main geometric concepts considered 
+above.
+Obviously, the list is by no means extensive; manifold theory is
+presented much more in detail (and mathematical rigor) in, for example, 
+\citet{mccleary2006} or \citet{waldmann2014}.
 \\
 
-\textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
-decomposition of a square matrix into pairs of \textit{eigenvectors} and 
-\textit{eigenvalues}.
-Let $A \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a scalar 
-value. 
-$\lambda$ is said to be an eigenvalue to $A$ if there exists 
-$\bm{v} \in \R^N \setminus \{0\}$ such that $A \bm{v} = \lambda \bm{v}$.
-Then, $v$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
-their tuple is also called an \textit{eigenpair}.
+\textbf{Topological spaces.} A \textit{topological space} is constituted by a 
+set $T$ equipped with a \textit{topology} $\topo$. 
+A topology is a general way of describing relations between elements in $T$.
+Consider a function $\topo: T \rightarrow 2^T, t \mapsto \topo(t)$, which 
+assigns to $t \in T$ a set of subsets of $T$ called \textit{neighborhoods}.
+For $\topo$ to be a topology\footnote{
+Alternative definitions employ open subsets of $T$, see for example 
+\citet{waldmann2014}.
+}
+on $T$, the following properties must hold \citep{brown2006}:
+\begin{tight_enumerate}
+  \item[(T1)] If $\topo$ is a neighborhood of $t$, then $t \in \topo$.
+  \item[(T2)] If $\topo$ is a subset of $T$ containing a neighborhood of $t$, 
+  then $\topo$ is a neighborhood of $t$.
+  \item[(T3)] The intersection of two neighborhoods of $t$ is again a 
+  neighborhood of $t$.
+  \item[(T4)] Any neighborhood $\topo$ of $t$ contains a neighborhood 
+  $\topo^{\prime}$ of $t$ such that $\topo$ is a neighborhood of each element in 
+  $\topo^{\prime}$.
+\end{tight_enumerate}
+
+Note that, in this general definition, neighborhoods are based on an abstract
+notion of "nearness". 
+Learning the structure of a topological space effectively boils down to learning 
+neighborhood relations.
+In Euclidean topological space these are directly based on distance: 
+neighborhoods around $t$ are constructed by $\epsilon$-balls containing all 
+elements within a Euclidean distance of $\epsilon$ from $t$. 
+The resulting topology is also called the \textit{metric topology} 
+\citep{mccleary2006}.
+
+Topological spaces in general are not accessible via distances (or angles, for 
+that matter) known from Euclidean spaces.
+The ultimate goal in manifold learning therefore is the interpretation of the 
+data in a space that is again Euclidean, albeit of lower dimensionality, where 
+such concepts are meaningful.
 \\
 
-\textbf{Null spaces.} A closely related notion is that of the 
-\textit{null space}, consisting of the vectors that map $A$ to 0 upon 
-multiplication from the right: $\{\bm{v} \in \R^N: A \bm{v} = 0\}$.
-It can be easily seen that the null space consists precisely of those 
-eigenvectors of $A$ that correspond to an eigenvalue of zero and the zero 
-vector itself.
-For a specific eigenvalue $\lambda$ of $A$, the null space of $\lambda I - A$ 
-(with $I$ the $N$-dimensional identity matrix) constitutes the 
-\textit{eigenspace} of $A$.
-\citep{boermmehl2012}.
+\textbf{Homeomorphisms.} Consider two topological spaces $(S, \topo_S)$, 
+$(T, \topo_T)$ (denoted by the respective shorthands $S$, $T$ from here) and a 
+mapping function $f: S \rightarrow T$. 
+If $f$ is bijective and continuous and $f^{-^1}: T \rightarrow S$ is also 
+continuous, $f$ is called a \textit{homeomorphism} \citep{brown2006}.
+Topological spaces for which such a mapping exists are \textit{homeomorphic} to
+each other. 
+Any properties of $S$ that $T$ shares when it is homeomorphic to $S$ are 
+referred to as topological properties. 
+Two homeomorphic spaces are thus topologically equivalent \citep{mccleary2006}.
 \\
 
-\textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix $A$ can 
-be framed as the solution of a generalized eigenvalue problem.
-Generalized eigenvalue problems are posed subject to a constraint on a second, 
-also symmetric matrix $B \in \R^{N \times N}$.
-As the standard eigenvalue problem results immediately from $B = I$, the 
-generalized form subsumes both cases.
-It is given by $$A \bm{V} = B \bm{V} \bm{\Lambda},$$ where 
-$\bm{V} = ([\bm{v}_1, \bm{v}_2, ..., \bm{v}_N]) \in \R^{N \times N}$ 
-is the matrix of eigenvectors of $A$ and 
-$\bm{\Lambda} = \text{\textit{diag}}([\lambda_1, \lambda_2, ..., \lambda_N]^T) 
-\in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues.
-The generalized eigenvalue problem may be stated equivalently as 
-$$\max_{\bm{V}} \text{\textit{trace}}(\bm{V}^T A \bm{V}), \quad \text{s.t.} 
-\quad \bm{V}^T B \bm{V} = I,$$ and translated to the first form with help of the 
-Lagrangian multiplier \citep{ghojoghetal2019}.
-It must be noted that solving eigenvalue problems becomes computationally 
-challenging rather quickly.
-Therefore, eigendecomposition is performed approximately in virtually all 
-practical applications \citep{boermmehl2012}.
+If there exists a non-negative integer $d$ such that for every $s$ in a 
+topological space $S$ a local neighborhood $U \ni s$, $U \subset S$, is 
+homeomorphic to an open subset of $\Rd$ (sometimes called \textit{parameter 
+space}), $S$ is \textit{locally 
+Euclidean}\footnote{
+For locally Euclidean topological spaces it is thus meaningful to speak of
+elements as points.
+} \citep{mafu2011}.
+In other words, there is a homeomorphism $f: U \rightarrow \Rd$ for every 
+element in $S$.
+The neighborhoods $U$ are also referred to as  \textit{coordinate patches} and 
+the associated maps $f$ are called \textit{coordinate charts} 
+\citep{cayton2005}.
+In local neighborhoods $S$ then behaves like $\Rd$ \citep{mafu2011}.
+\\
+
+\textbf{Manifolds.} \textit{Manifolds} are now precisely such locally Euclidean
+topological spaces, with some additional properties.
+For a topological space $\mani$ to be a $d$-dimensional manifold\footnote{
+$\mani$ is again a shorthand, omitting the explicit notation of the 
+corresponding topology. 
+} (also: $d$-manifold) it must meet 
+the following conditions \citep{waldmann2014}:
+
+\begin{tight_enumerate}
+  \item[(M1)] $\mani$ is Hausdorff.
+  \item[(M2)] $\mani$ is second-countable.
+  \item[(M3)] $\mani$ is locally homeomorphic to $\Rd$.
+\end{tight_enumerate}
+
+The Hausdorff condition is a separation property and ensures that for any two 
+distinct points from $\mani$ disjoint neighborhoods can be found 
+\citep{brown2006}.
+Second-countability restricts the manifold's size via the number of open sets 
+it may possess \citep{waldmann2014}.
+\\
+
+\textbf{Embeddings.} Recall that the data are observed in $\RD$ but taken to 
+lie on $\mani$, locally homeomorphic to $\Rd$.
+This implies the assumption $\mani \subset \RD$ and $\mani$ is said to be 
+\textit{embedded} in the ambient $D$-dimensional Euclidean space 
+\citep{cayton2005}.
+The associated \textit{embedding} is but a map $f: \mani \rightarrow \RD$ 
+whose restriction to $\mani$ is a homeomorphism \citep{brown2006}, or, more 
+specifically, the canonical inclusion map identifying points on the manifold 
+as particular points of $\RD$ \citep{waldmann2014}.
+It can be shown that $K = 2d + 1$ is sufficient to create an embedding 
+\citep{mafu2011}.
+\\
+
+\textbf{Geodesics.} One last aspect shall be briefly touched upon, namely how to 
+handle distances on general manifolds where Euclidean metrics are not 
+meaningful.
+Rather than measuring "shortcuts" between points across $\RD$ it makes 
+intuitive sense to constrain distances to the manifold surface.
+In order to enable the construction of such a metric, manifolds must fulfill
+two additional properties: \textit{smoothness}\footnote{
+The smoothness property is based on differentiability of coordinate charts and 
+ensures that concepts of curvature, length and angle remain meaningful 
+\citep{mafu2011}.
+A detailed derivation may be found, for example, in \citet{mukherjee2015}.
+} and \textit{connectedness}\footnote{
+Connectedness means that no separation $\{ U, V\}$ of a manifold 
+$\mani$ exists with open, non-empty and disjoint $U, V \subset \mani$, 
+$\mani = U \cup V$.
+This may be loosely put as paths linking arbitrary pairs of manifold points 
+\citep{mccleary2006}.
+} \citep{mafu2011}.
+For smooth, connected manifolds, \textit{geodesic distance} is the length of the 
+shortest curve (\textit{geodesic}) on $\mani$ between two points on $\mani$.
+A curve $c$ in $\mani$ is a smooth mapping from an open interval $\Lambda 
+\subset \R$ into $\mani$.
+$c$ is parametrized by a point $\lambda \in \Lambda$, such that
+
+\begin{equation}
+  c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T
+\end{equation} 
+
+is a curve in $\Rd$ (all 
+$c_j, j = 1, ..., d$ having a sufficient number of continuous derivatives).
+Component-wise differentiation with respect to $\lambda$ yields
+\textit{velocity} in $\lambda$: 
+
+\begin{equation}
+  c^{\prime}(\lambda) = (c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T.
+\end{equation} 
+
+The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
+$\| \cdot \|^2$ denotes the square norm.
+Distance along this curve is measured by the arc-length
+$$L(c) = \int_{\pv}^{\qv} \twonorm{c^{\prime}(\lambda)}  d\lambda.$$
+Eventually, geodesic distance can be derived as the length of the shortest such
+curve, out of the set $\mathcal{C}(\pv, \qv)$ of differentiable curves in 
+$\mani$ that connect $\pv$ and $\qv$:
+
+\begin{equation}
+  d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c).
+  \label{eq-geodesic}
+\end{equation}
+
+Intuitively, geodesic distance can be identified with Euclidean distance in
+Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
+
+% ------------------------------------------------------------------------------
+
+\subsection{Generation of Synthetic Manifolds}
+\label{synthetic_data}
+
+This section documents how the synthetic manifolds considered in the report may 
+be generated.
+\\
+
+\textbf{S-curve.}
+
+\textbf{Swiss roll.}
+
+\textbf{Incomplete tire.}
+
+\textbf{World data.}
+
+% \subsection{Eigenanalysis}
+% \label{eigenanalysis}
+% 
+% Eventually, all spectral manifold learning methods boil down to an eigenanalysis 
+% of a matrix $K$ believed to capture information about the intrinsic manifold 
+% structure.
+% As explained in chapter \ref{lgb-principles}, PCA finds the principal 
+% eigenvectors of empirical covariance, thereby defining a low-dimensional 
+% subspace containing most of the data-inherent variability.
+% The very same idea applies when diagonalizing the more general matrix 
+% corresponding to the non-linear feature map: the top (or bottom\footnote{
+% This differs across methods and shall be made clear later.
+% }) $d$ eigenvectors of $K$ span a subspace into which the data may be projected 
+% under minimal loss of information.
+% More precisely, the representation of $\X$ by the $d$ principal eigenvectors of 
+% $K$ incurs is loss-optimal with respect to the least-squares error.
+% Eigenanalysis is thus a very powerful concept with ubiquitous application 
+% \citep{schoelkopfetal1998}.
+% \\
+% 
+% \textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
+% decomposition of a square matrix into pairs of \textit{eigenvectors} and 
+% \textit{eigenvalues}.
+% Let $A \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a scalar 
+% value. 
+% $\lambda$ is said to be an eigenvalue to $A$ if there exists 
+% $\bm{v} \in \R^N \setminus \{0\}$ such that $A \bm{v} = \lambda \bm{v}$.
+% Then, $v$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
+% their tuple is also called an \textit{eigenpair}.
+% \\
+% 
+% \textbf{Null spaces.} A closely related notion is that of the 
+% \textit{null space}, consisting of the vectors that map $A$ to 0 upon 
+% multiplication from the right: $\{\bm{v} \in \R^N: A \bm{v} = 0\}$.
+% It can be easily seen that the null space consists precisely of those 
+% eigenvectors of $A$ that correspond to an eigenvalue of zero and the zero 
+% vector itself.
+% For a specific eigenvalue $\lambda$ of $A$, the null space of $\lambda I - A$ 
+% (with $I$ the $N$-dimensional identity matrix) constitutes the 
+% \textit{eigenspace} of $A$.
+% \citep{boermmehl2012}.
+% \\
+% 
+% \textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix $A$ can 
+% be framed as the solution of a generalized eigenvalue problem.
+% Generalized eigenvalue problems are posed subject to a constraint on a second, 
+% also symmetric matrix $B \in \R^{N \times N}$.
+% As the standard eigenvalue problem results immediately from $B = I$, the 
+% generalized form subsumes both cases.
+% It is given by $$A \bm{V} = B \bm{V} \bm{\Lambda},$$ where 
+% $\bm{V} = ([\bm{v}_1, \bm{v}_2, ..., \bm{v}_N]) \in \R^{N \times N}$ 
+% is the matrix of eigenvectors of $A$ and 
+% $\bm{\Lambda} = \text{\textit{diag}}([\lambda_1, \lambda_2, ..., \lambda_N]^T) 
+% \in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues.
+% The generalized eigenvalue problem may be stated equivalently as 
+% $$\max_{\bm{V}} \text{\textit{trace}}(\bm{V}^T A \bm{V}), \quad \text{s.t.} 
+% \quad \bm{V}^T B \bm{V} = I,$$ and translated to the first form with help of the 
+% Lagrangian multiplier \citep{ghojoghetal2019}.
+% It must be noted that solving eigenvalue problems becomes computationally 
+% challenging rather quickly.
+% Therefore, eigendecomposition is performed approximately in virtually all 
+% practical applications \citep{boermmehl2012}.
 
 % ------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  14 MAR 2021 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  14 MAR 2021 17:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,67 +639,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--74
  []
 
 ) (./chapters/2_math.Rnw
-Underfull \hbox (badness 10000) in paragraph at lines 4--20
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 52--60
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--87
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 102--108
-
- []
-
-<figures/s_curve.pdf, id=47, 343.2825pt x 305.22029pt>
+<figures/s_curve.pdf, id=41, 343.2825pt x 305.22029pt>
 File: figures/s_curve.pdf Graphic file (type pdf)
 <use figures/s_curve.pdf>
-Package pdftex.def Info: figures/s_curve.pdf  used on input line 135.
-(pdftex.def)             Requested size: 145.64017pt x 183.19531pt.
-LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
-38.
-(c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 111--142
+Package pdftex.def Info: figures/s_curve.pdf  used on input line 32.
+(pdftex.def)             Requested size: 74.68924pt x 98.8358pt.
+
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 10--40
 [][] [] [] 
  []
 
 
-Overfull \hbox (4.32338pt too wide) in paragraph at lines 175--179
-[]\T1/aer/m/n/12 is a curve in $\U/msb/m/n/12 R[]$ \T1/aer/m/n/12 (all $\OML/cm
-m/m/it/12 c[]; j \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; :::; d$ \T1/aer/m/n/12 h
-av-ing a suf-fi-cient num-ber of con-tin-u-ous deriva-tives). Component-
+Underfull \hbox (badness 10000) in paragraph at lines 59--71
+
  []
 
-[3 <./figures/s_curve.pdf
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
+
+ []
+
+) (./chapters/3_lgml.Rnw [2 <./figures/s_curve.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 205--220
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--240
-
- []
-
-) (./chapters/3_lgml.Rnw [4]
-<figures/models_overview.png, id=64, 808.01875pt x 479.7925pt>
+<figures/models_overview.png, id=52, 808.01875pt x 479.7925pt>
 File: figures/models_overview.png Graphic file (type png)
 <use figures/models_overview.png>
 Package pdftex.def Info: figures/models_overview.png  used on input line 40.
@@ -709,23 +684,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--64
 
  []
 
-[5 <./figures/models_overview.png>]
-<figures/spirals_2d.pdf, id=71, 229.81859pt x 229.81859pt>
+[3 <./figures/models_overview.png>]
+<figures/spirals_2d.pdf, id=59, 229.81859pt x 229.81859pt>
 File: figures/spirals_2d.pdf Graphic file (type pdf)
 <use figures/spirals_2d.pdf>
 Package pdftex.def Info: figures/spirals_2d.pdf  used on input line 141.
 (pdftex.def)             Requested size: 144.39438pt x 144.39722pt.
-<figures/spirals_3d.pdf, id=72, 907.47026pt x 606.34526pt>
+<figures/spirals_3d.pdf, id=60, 907.47026pt x 606.34526pt>
 File: figures/spirals_3d.pdf Graphic file (type pdf)
 <use figures/spirals_3d.pdf>
 Package pdftex.def Info: figures/spirals_3d.pdf  used on input line 147.
 (pdftex.def)             Requested size: 199.16624pt x 133.07254pt.
-<figures/spirals_1d.pdf, id=73, 305.22029pt x 42.1575pt>
+<figures/spirals_1d.pdf, id=61, 305.22029pt x 42.1575pt>
 File: figures/spirals_1d.pdf Graphic file (type pdf)
 <use figures/spirals_1d.pdf>
 Package pdftex.def Info: figures/spirals_1d.pdf  used on input line 152.
 (pdftex.def)             Requested size: 144.39438pt x 19.94395pt.
- [6]
+LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
+62.
+
+(c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [4]
 Underfull \hbox (badness 10000) in paragraph at lines 194--210
 
  []
@@ -740,7 +720,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--246
 
  []
 
-[7 <./figures/spirals_2d.pdf
+[5 <./figures/spirals_2d.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/spirals_2d.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
@@ -753,7 +733,7 @@ valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 pdfTeX warning: pdflatex.exe (file ./figures/spirals_1d.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/kpca_lgml_algo.png, id=89, 903.375pt x 310.15875pt>
+<figures/kpca_lgml_algo.png, id=78, 903.375pt x 310.15875pt>
 File: figures/kpca_lgml_algo.png Graphic file (type png)
 <use figures/kpca_lgml_algo.png>
 Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 272.
@@ -763,7 +743,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--290
 
  []
 
-[8 <./figures/kpca_lgml_algo.png>]
+[6 <./figures/kpca_lgml_algo.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 329--331
 
  []
@@ -773,7 +753,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--346
 
  []
 
-<figures/s_curve_connected.pdf, id=94, 681.50606pt x 606.34526pt>
+<figures/s_curve_connected.pdf, id=83, 681.50606pt x 606.34526pt>
 File: figures/s_curve_connected.pdf Graphic file (type pdf)
 <use figures/s_curve_connected.pdf>
 Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 376.
@@ -785,15 +765,15 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 356--383
  []
 
 
-LaTeX Warning: Reference `fig:eigen' on page 9 undefined on input line 403.
+LaTeX Warning: Reference `fig:eigen' on page 7 undefined on input line 403.
 
-[9 <./figures/s_curve_connected.pdf
+[7 <./figures/s_curve_connected.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve_connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-<figures/eigenanalysis.png, id=104, 742.775pt x 218.8175pt>
+<figures/eigenanalysis.png, id=95, 742.775pt x 218.8175pt>
 File: figures/eigenanalysis.png Graphic file (type png)
 <use figures/eigenanalysis.png>
 Package pdftex.def Info: figures/eigenanalysis.png  used on input line 408.
@@ -823,12 +803,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 468--474
 
  []
 
-) [10 <./figures/eigenanalysis.png>] (./chapters/4_techniques.Rnw
+) [8 <./figures/eigenanalysis.png>] (./chapters/4_techniques.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 14--22
 
  []
 
-<figures/sphere_tangent.pdf, id=112, 343.2825pt x 305.22029pt>
+<figures/sphere_tangent.pdf, id=104, 343.2825pt x 305.22029pt>
 File: figures/sphere_tangent.pdf Graphic file (type pdf)
 <use figures/sphere_tangent.pdf>
 Package pdftex.def Info: figures/sphere_tangent.pdf  used on input line 53.
@@ -843,7 +823,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--85
 
  []
 
-[11 <./figures/sphere_tangent.pdf
+[9 <./figures/sphere_tangent.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/sphere_tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
@@ -853,20 +833,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--162
 
  []
 
-[12]
-<figures/reconstruction_3d.pdf, id=126, 229.81859pt x 229.81859pt>
+[10]
+<figures/reconstruction_3d.pdf, id=120, 229.81859pt x 229.81859pt>
 File: figures/reconstruction_3d.pdf Graphic file (type pdf)
 <use figures/reconstruction_3d.pdf>
 Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 187.
 
 (pdftex.def)             Requested size: 239.001pt x 224.87402pt.
-<figures/reconstruction_2d.pdf, id=128, 229.81859pt x 229.81859pt>
+<figures/reconstruction_2d.pdf, id=122, 229.81859pt x 229.81859pt>
 File: figures/reconstruction_2d.pdf Graphic file (type pdf)
 <use figures/reconstruction_2d.pdf>
 Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 193.
 
 (pdftex.def)             Requested size: 191.20152pt x 163.7577pt.
- [13 <./figures/reconstruction_3d.pdf
+ [11 <./figures/reconstruction_3d.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_3d.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
@@ -881,7 +861,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--265
 
  []
 
-[14]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 333--342
 
  []
@@ -891,12 +871,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--358
 
  []
 
-[15]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 444--457
 
  []
 
-[16]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 545--548
 
  []
@@ -921,7 +901,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 585--587
 
  []
 
-[17]
+[15]
 Overfull \hbox (297.53372pt too wide) in paragraph at lines 596--601
 \T1/aer/m/n/12 new data from the es-ti-mated dist of the present ones, see e.g.
  https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering/RandomForestH
@@ -929,25 +909,67 @@ orvath.pdf,
  []
 
 ) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw)
-(./chapters/7_conclusion.Rnw) [18] [5] [6] (./main.bbl [7] [8]) [9]
+(./chapters/7_conclusion.Rnw) [16] (./chapters/99_appendix.Rnw
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 98--110
+
+ []
+
+
+Overfull \hbox (4.32338pt too wide) in paragraph at lines 139--143
+[]\T1/aer/m/n/12 is a curve in $\U/msb/m/n/12 R[]$ \T1/aer/m/n/12 (all $\OML/cm
+m/m/it/12 c[]; j \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; :::; d$ \T1/aer/m/n/12 h
+av-ing a suf-fi-cient num-ber of con-tin-u-ous deriva-tives). Component-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--172
+
+ []
+
+) [6] [7] (./main.bbl [8] [9]) [10]
 Overfull \hbox (4.23676pt too wide) in paragraph at lines 270--279
 []\T1/aer/m/n/12 I hereby de-clare that the re-port sub-mit-ted is my own un-ai
 ded work. All di-rect or in-di-rect sources 
  []
 
-[10] (./main.aux)
+[11] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 10842 strings out of 479485
- 161210 string characters out of 5875915
- 471764 words of memory out of 5000000
+ 10845 strings out of 479485
+ 161259 string characters out of 5875915
+ 470584 words of memory out of 5000000
  27526 multiletter control sequences out of 15000+600000
  588433 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,76p,369b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,12n,76p,369b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texl
 ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dis
@@ -970,10 +992,10 @@ dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/rsfs/rsfs10.pfb>
-Output written on main.pdf (30 pages, 1236866 bytes).
+Output written on main.pdf (29 pages, 1235097 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 259 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
