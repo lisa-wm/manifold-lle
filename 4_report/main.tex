@@ -4,10 +4,6 @@
 
 \documentclass[12pt]{article}
 
-\renewcommand{\labelitemi}{$\circ$}
-\renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\labelitemiii}{$\circ$}
-
 \newcommand{\topo}{\mathcal{T}}
 \newcommand{\mani}{\mathcal{M}}
 \newcommand{\N}{\mathbb{N}}
@@ -65,7 +61,7 @@ bindingoffset = 0mm]{geometry}
     \fontsize{8}{11}\selectfont
 }
 \usepackage{refcount}
-\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hang, flushmargin, bottom]{footmisc} 
 
 \newenvironment{tight_enumerate}{
 \begin{enumerate}
@@ -79,7 +75,7 @@ bindingoffset = 0mm]{geometry}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\changefont{Semi-Supervised Locally Linear Embedding: Application 
-and Sensitivity Analysis of Critical Parameters}}
+\& Sensitivity Analysis of Critical Parameters}}
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{14.5pt}
@@ -106,7 +102,7 @@ Seminar Report
       
 \rule{\textwidth}{1.5pt}
 \LARGE 
-\textbf{Semi-Supervised Locally Linear Embedding: Application and Sensitivity 
+\textbf{Semi-Supervised Locally Linear Embedding: Application \& Sensitivity 
 Analysis of Critical Parameters}
 \rule{\textwidth}{1.5pt}
    
@@ -158,31 +154,71 @@ Munich, April 2\textsuperscript{nd}, 2021
 
 \Large
 \noindent
+\textbf{List of Abbreviations}
+\vspace{0.5cm} \\
+\noindent
+\normalsize
+
+% \begin{tabularx}{\textwidth}{ 
+%   >{\raggedleft\arraybackslash}X 
+%   >{\raggedright\arraybackslash}X}
+%   HLLE & Hessian locally linear embedding \\
+%   LEM & Laplacian eigenmaps \\
+%   LGML & local graph-based manifold learning \\
+%   LLE & locally linear embedding \\
+%   PCA & principal component analysis \\
+%   SSLLE & semi-supervised locally linear embedding
+% \end{tabularx}
+
+\begin{tabular}{rl}
+  HLLE & Hessian locally linear embedding \\
+  kPCA & kernel principal component analysis \\
+  LEM & Laplacian eigenmaps \\
+  LGML & local graph-based manifold learning \\
+  LLE & locally linear embedding \\
+  PCA & principal component analysis \\
+  SSLLE & semi-supervised locally linear embedding
+\end{tabular}
+
+\vspace{3cm}
+
+\Large
+\noindent
 \textbf{List of Symbols}
 \vspace{0.5cm} \\
 \noindent
 \normalsize
 
-\begin{tabularx}{\textwidth}{ 
-  >{\raggedleft\arraybackslash}X 
-  >{\raggedright\arraybackslash}X}
-  $D \in \N$ & Number of observed dimensions \\
-  $d \in \N$ & Number of dimensions of embedded manifold \\
-  $m \in \N$ & Number of dimensions of low-dimensional representation \\
-  $N \in \N$ & Number of observed data points \\
+% \begin{tabularx}{\textwidth}{ 
+%   >{\raggedleft\arraybackslash}X 
+%   >{\raggedright\arraybackslash}X}
+%   $N \in \N$ & number of observed data points \\
+%   $D \in \N$ & number of observed dimensions \\
+%   $d \in \N$ & number of intrinsic dimensions\\
+%   $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
+%   $\X = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N) \in (\RD)^N$ & observed
+%   coordinates \\
+%   $\Y = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N) \in (\Rd)^N$ & embedding
+%   coordinates
+% \end{tabularx}
+
+\begin{tabular}{rl}
+  $N \in \N$ & number of observed data points \\
+  $D \in \N$ & number of observed dimensions \\
+  $d \in \N$ & number of intrinsic dimensions\\
   $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
-  $\bm{X} = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N) \in (\RD)^N$ & Observed 
-  coordinates of data sampled from $\mani$ \\
-  $\bm{Y} = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N) \in (\R^m)^N$ & Learned 
-  coordinates of low-dimensional representation of data
-\end{tabularx}
+  $\X = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N) \in (\RD)^N$ & observed
+  coordinates \\
+  $\Y = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N) \in (\Rd)^N$ & embedding
+  coordinates
+\end{tabular}
 
 \newpage
 
 \listoffigures
 \newpage
-\listoftables
-\newpage
+% \listoftables
+% \newpage
 
 % CHAPTERS ---------------------------------------------------------------------
 
@@ -208,7 +244,7 @@ Munich, April 2\textsuperscript{nd}, 2021
 % \label{sslle}
 % \input{chapters/sslle.Rnw}
 
-\section{Experiment Results}
+\section{Experimental Results}
 \label{experiment}
 \input{chapters/5_experiment.Rnw}
 

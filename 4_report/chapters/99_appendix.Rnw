@@ -108,13 +108,9 @@ It can be shown that $K = 2d + 1$ is sufficient to create an embedding
 \citep{mafu2011}.
 \\
 
-\textbf{Geodesics.} One last aspect shall be briefly touched upon, namely how to 
-handle distances on general manifolds where Euclidean metrics are not 
-meaningful.
-Rather than measuring "shortcuts" between points across $\RD$ it makes 
-intuitive sense to constrain distances to the manifold surface.
-In order to enable the construction of such a metric, manifolds must fulfill
-two additional properties: \textit{smoothness}\footnote{
+\textbf{Geodesics.} 
+In order to enable the construction of a meaningful distance metric, manifolds 
+must fulfill two additional properties: \textit{smoothness}\footnote{
 The smoothness property is based on differentiability of coordinate charts and 
 ensures that concepts of curvature, length and angle remain meaningful 
 \citep{mafu2011}.
@@ -151,18 +147,225 @@ Distance along this curve is measured by the arc-length
 $$L(c) = \int_{\pv}^{\qv} \twonorm{c^{\prime}(\lambda)}  d\lambda.$$
 Eventually, geodesic distance can be derived as the length of the shortest such
 curve, out of the set $\mathcal{C}(\pv, \qv)$ of differentiable curves in 
-$\mani$ that connect $\pv$ and $\qv$:
+$\mani$ that connect $\pv$ and $\qv$ \citep{mafu2011}:
 
 \begin{equation}
   d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c).
   \label{eq-geodesic}
 \end{equation}
 
-Intuitively, geodesic distance can be identified with Euclidean distance in
-Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
+% ------------------------------------------------------------------------------
+
+% \newpage
+% \subsection{Kernel PCA}
+% \label{kpca}
+% 
+% In this section, the concept of kPCA \citep{schoelkopfetal1998} is laid out in
+% some more detail.
+% \\
+% 
+% \textbf{Kernelization.} By kernelization, mapping the data to a
+% space $\mathcal{F}$ of arbitrarily high dimension, features may be obtained
+% that relate to the input in a non-trivial way.
+% Crucially, the feature map $\phi: \RD \rightarrow \mathcal{F}$ need not be
+% computed explicitly, which might prove prohibitively expensive.
+% Kernelization instead solely relies on inner products $\langle \phi(\x_i),
+% \phi(\x_j) \rangle$ of the transformed inputs.
+% Employing Mercer's theorem of functional analysis, these inner products may
+% be interpreted as performed by a continuous kernel
+% $\kappa(\x_i, \x_j)$ in some space with Hilbert property.
+% Appropriate choice of $\kappa$ then allows for the data to be represented by a
+% matrix $\K \in \R^{N \times N}, \K_{ij} = \kappa(\x_i, \x_j)$.
+% This matrix is the numerical data representation derived with respect to their
+% latent properties. \citep{schoelkopfetal1998}.
+% Precisely how it is computed depends on the choice of the kernel function
+% $\kappa$ and gives rise to different techniques \citep{hametal2003}.
+% \\
+% 
+% \textbf{PCA.} PCA is a quite powerful technique by itself.
+% It finds the directions of maximum variance through eigenanalysis of the
+% empirical covariance matrix, yielding the most important axes of inter-feature
+% relations that coincide with the principal eigenvectors of the covariance
+% matrix.
+% The data are projected into the linear subspace spanned by these $d$
+% eigenvectors, thereby mapping the observations to a coordinate system given
+% by the linear feature combinations that represent the strongest
+% (co)variability.
+% Note that for this transformation to actually rotate the coordinate system
+% about the origin, the data must be mean-centered beforehand.
+% PCA thus performs an orthogonal input transformation that allows for
+% dimensionality reduction at minimal information loss \citep{cayton2005}.
+% In kernel PCA, this eigenanalysis is implicitly performed in the feature space
+% $\mathcal{F}$.
+% Algorithmically, it boils down to diagonalizing the kernel matrix $\K$
+% \citep{schoelkopfetal1998}.
+% \\
+% 
+% Figure \ref{fig-spirals} visualizes the idea of kernel PCA.
+% The original data (\textit{left}) are observed in two dimensions but clearly
+% intrinsically one-dimensional, where the non-linear manifold feature is
+% expressed by coloring.
+% The kernel trick creates a feature map, visualized here as a projection of
+% the intrinsic feature to a third coordinate axis (\textit{middle}).
+% Coercing the data to this dimension as the sole axis of variation yields the
+% desired one-dimensional representation (\textit{right}).
+% 
+% \begin{figure}[H]
+%  \centering
+%  \begin{subfigure}[c]{0.29\textwidth}
+%    \centering
+%    \includegraphics[%trim = 50 0 0 0, clip, % left bottom right top
+%    width = \textwidth]{figures/spirals_2d}
+%  \end{subfigure}
+%  \hfill
+%  \begin{subfigure}[c]{0.4\textwidth}
+%    \centering
+%    \includegraphics[%trim = 250 50 100 50, clip, % left bottom right top
+%    width = \textwidth]{figures/spirals_3d}
+%  \end{subfigure}
+%  \begin{subfigure}[c]{0.29\textwidth}
+%    \centering
+%    \includegraphics[%trim = 0 0 0 300, clip, % left bottom right top
+%    width = \textwidth]{figures/spirals_1d}
+%  \end{subfigure}
+%   \caption[Schematic idea of kernel PCA]{Schematic idea of kernel PCA: from data
+%   observed in two dimensions, but clearly of intrinsic dimensionality one
+%   (\textit{left}), create a mapping to a higher-dimensional feature space
+%   (\textit{middle}), reduction of which to its principal axes yields the desired
+%   one-dimensional representation (\textit{right}).
+%   \textit{Source:} own representation, using a subset of \texttt{mlbench}'s
+%   noise-free \texttt{spirals} data. Note that this is but a schematic depiction
+%   where the mid and right representation have not been created by an actual
+%   implementation of kernel PCA.}
+%   \label{fig-spirals}
+% \end{figure}
 
 % ------------------------------------------------------------------------------
 
+\newpage
+\subsection{Neighborhood Definitions}
+\label{neighborhoods}
+
+A neighborhood of $\x \in \X$ is a subset of $\X$ containing another, open 
+subset of $\X$ of which $\x$ is an element.
+Members of the neighborhood are called neighbors of $\x$.
+In metric spaces neighborhoods are defined via distances and therefore 
+translate to open balls around each point \citep{waldmann2014}.
+This distance-based construction locally applies to manifolds as a direct 
+consequence of their local isometry to the Euclidean observation space 
+\citep{mafu2011}.
+There are two principal ways to build a neighborhood around $\x \in \X$, 
+both of which usually employ the squared Euclidean norm\footnote{
+In principle, alternative metrics are applicable, for instance such 
+that measure angles \citep{belkinniyogi2004}.
+} $\| \cdot \|^2$.
+Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
+constructor that assigns a set of neighbors to $\x$.
+The first possibility is to restrict the size of the neighborhood to the $k$ 
+points\footnote{
+In presence of ties in pairwise distances k may vary across the data, but with 
+zero probability in continuous feature spaces.
+} with the smallest distance to $\x$, such that
+$\ell = k$ and 
+
+\begin{equation}
+  \mathcal{N}_k(\x) = \{\x_j \in \X: \| \x - \x_j \|^2 \leq d_{(k)}\},
+  \label{eq-kneighborhood}
+\end{equation}
+
+with $d_{(k)} \in \R$ being the $k$-th instance of ordered pairwise distances 
+between $\x$ and all other points.
+Alternatively, the neighborhood may be constructed by collecting all points that
+have a maximum distance of $\epsilon \in \R$ to $\x$, yielding 
+
+\begin{equation}
+  \mathcal{N}_{\epsilon} (\x) = \{\x_j \in \X: \| \x - \x_j \|^2 \leq \epsilon\}
+  \label{eq-epsneighborhood}
+\end{equation}
+
+and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
+
+% ------------------------------------------------------------------------------
+
+\newpage
+\subsection{Eigenanalysis}
+\label{eigenanalysis}
+
+Eigenanalysis yields the fundamental information stored in a matrix $\bm{A}$: 
+its principal eigenvectors span a subspace into which the data may be 
+projected under minimal loss of information (with respect to quadratic loss).
+Figure \ref{fig_eigen} depicts the idea of eigenanalysis in a schematic way.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+      width = \textwidth]{figures/eigenanalysis}
+    \caption[]{
+    \raggedright
+    Conceptual idea of eigenanalysis. 
+    Eigenvectors of a matrix (\textit{left}) point in the direction of greatest 
+    variability (\textit{middle}), the degree of which is measured by the 
+    associated eigenvalues depicted as rhombi. Retaining the thus determined 
+    principal $d$ eigenvectors allows to span a linear subspace of reduced 
+    dimensionality (\textit{right}).
+    \textit{Source:} own representation.}
+    \label{fig_eigen}
+  \end{figure}
+
+\textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
+decomposition of a square matrix into pairs of \textit{eigenvectors} and 
+\textit{eigenvalues}.
+Let $\bm{A} \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a 
+scalar value. 
+$\lambda$ is said to be an eigenvalue to $\bm{A}$ if there exists 
+$\bm{v} \in \R^N \setminus \{0\}$ such that $\bm{A} \bm{v} = \lambda \bm{v}$.
+Then, $\bm{v}$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
+their tuple is also called an \textit{eigenpair}.
+\\
+
+\textbf{Null spaces.} A closely related notion is that of the 
+\textit{null space}, consisting of the vectors that map $\bm{A}$ to 0 upon 
+multiplication from the right: $\{\bm{v} \in \R^N: \bm{A} \bm{v} = 0\}$.
+It can be easily seen that the null space consists of those eigenvectors of 
+$\bm{A}$ that are associated with an eigenvalue of zero, and the zero vector 
+itself. 
+For a specific eigenvalue $\lambda$ of $\bm{A}$, the null space of 
+$\lambda \I - \bm{A}$ 
+(with $\I$ the $N$-dimensional identity matrix) constitutes the 
+\textit{eigenspace} of $\bm{A}$ \citep{boermmehl2012}.
+\\
+
+\textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix 
+$\bm{A}$ can be framed as the solution of a generalized eigenvalue problem.
+Generalized eigenvalue problems are posed subject to a constraint on a second, 
+also symmetric matrix $\bm{B} \in \R^{N \times N}$.
+As the standard eigenvalue problem results immediately from 
+$\bm{B} = \I$, the generalized form subsumes both cases.
+It is given by 
+
+\begin{equation}
+  \bm{A} \bm{V} = \bm{B} \bm{V} \bm{\Lambda},
+  \label{eq_gevproblem}
+\end{equation}
+
+where $\bm{V} = [\bm{v}_1, \bm{v}_2, ..., \bm{v}_N] \in \R^{N \times N}$ 
+is the matrix of eigenvectors of $A$ and 
+$\bm{\Lambda} = \text{\textit{diag}}[\lambda_1, \lambda_2, ..., \lambda_N]^T 
+\in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues 
+(ordered from smallest to largest).
+The generalized eigenvalue problem may be stated equivalently as 
+
+\begin{equation}
+  \min_{\bm{V}} \text{\textit{trace}}(\bm{V}^T \bm{A} \bm{V}), \quad \text{s.t.} 
+  \quad \bm{V}^T \bm{B} \bm{V} = \I,
+  \label{eq_gevproblem_max}
+\end{equation}
+
+and translated to the first form by means of a Lagrangian multiplier \citep{ghojoghetal2019}.
+
+% ------------------------------------------------------------------------------
+
+\newpage
 \subsection{Generation of Synthetic Manifolds}
 \label{synthetic_data}
 

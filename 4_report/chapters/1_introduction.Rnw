@@ -39,9 +39,10 @@ the intrinsic manifold structure \citep{mafu2011}.
 \textbf{Local graph-based manifold learning (LGML).}
 Various approaches have been proposed to retrieve points' intrinsic coordinates.
 A taxonomy may be found in \citet{vandermaatenetal2009}. 
-Many can be subsumed under the framework of \textit{kernel PCA}, characterizing 
-the data by a specific matrix representation whose principal eigenvectors are 
-used to span a $d$-dimensional embedding space \citep{hametal2003}.
+Many can be subsumed under the framework of \textit{kernel principal component 
+analysis (kPCA)}, characterizing the data by a specific matrix representation 
+whose principal eigenvectors are used to span a $d$-dimensional embedding space
+\citep{hametal2003}.
 As manifolds may exhibit complicated surfaces, methods that find non-linear 
 representations are often more successful \citep{vandermaatenetal2009}.
 LGML techniques achieve this by approximating the manifold with weighted 

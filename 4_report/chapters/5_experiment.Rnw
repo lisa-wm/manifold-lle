@@ -3,8 +3,8 @@
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{Software Implementation}
-\label{software}
+\subsubsection{Sensitivity Analysis}
+\label{sensitivity}
 
 % ------------------------------------------------------------------------------
 
@@ -13,20 +13,25 @@
 
 % ------------------------------------------------------------------------------
 
-\subsection{Application to Synthetic Data}
-\label{application}
-
-% ------------------------------------------------------------------------------
-
 \subsubsection{Data}
 \label{data}
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{Results}
+\subsection{Results}
 \label{results}
 
 % ------------------------------------------------------------------------------
 
-\subsection{Sensitivity Analysis}
-\label{sensitivity}
+\subsubsection{Location of Prior Points}
+\label{landmarks}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Level of Label Noise}
+\label{noise}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Concluding Comparison}
+\label{comparison}

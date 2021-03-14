@@ -182,7 +182,8 @@ plotly::orca(
   plot_manifold(
     data = spirals_data[, .(x, y, z)],
     intrinsic_coords = spirals_data[, .(t)],
-    n_colors = n_colors,
+    n_colors = nrow(spirals_data),
+    point_size = 20L,
     camera_eye = list(
       x = 1, 
       y = -1.2, 

@@ -353,7 +353,7 @@ indicate neighborhood relations \citep{belkinniyogi2001}.
 Each vertex is connected to its $k$ nearest neighbors or all points 
 within $\epsilon$-radius, depending on the neighborhood definition.
 
-\begin{minipage}[b]{0.5\textwidth}
+\begin{minipage}[b]{0.6\textwidth}
   It is easy to see that $k$-neighborhoods are an asymmetric notion; for one 
   point to be among another's $k$ nearest neighbors the reverse need not be 
   true.
@@ -369,7 +369,7 @@ within $\epsilon$-radius, depending on the neighborhood definition.
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
 \end{minipage}
-\begin{minipage}[b]{0.45\textwidth}
+\begin{minipage}[b]{0.35\textwidth}
   \begin{figure}[H]
     \centering
     \includegraphics[trim = 250 170 200 140, clip, % left bottom right top

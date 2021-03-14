@@ -1,11 +1,5 @@
 \begin{thebibliography}{xx}
 
-\harvarditem[Axler et~al.]{Axler, Bourdon \harvardand\
-  Ramey}{2001}{axleretal2001}
-Axler, S., Bourdon, P. \harvardand\ Ramey, W.  \harvardyearleft
-  2001\harvardyearright .
-\newblock {\em Harmonic Function Theory}, 2 edn, Springer.
-
 \harvarditem{Belkin \harvardand\ Niyogi}{2001}{belkinniyogi2001}
 Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2001\harvardyearright .
 \newblock Laplacian eigenmaps and spectral technique for embedding and
@@ -21,12 +15,6 @@ Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2003\harvardyearright .
 Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2004\harvardyearright .
 \newblock Semi-supervised learning on riemannian manifolds, {\em Machine
   Learning} {\bf 56}:~209--239.
-
-\harvarditem{Belkin \harvardand\ Niyogi}{2008}{belkinniyogi2008}
-Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2008\harvardyearright .
-\newblock Towards a theoretical foundation for laplacian-based manifold
-  methods, {\em Journal of Computer and System Sciences} {\bf
-  74}(8):~1289--1308.
 
 \harvarditem[Bengio et~al.]{Bengio, Delalleau, Roux, Paiement, Vincent
   \harvardand\ Ouimet}{2004}{bengioetal2004}
@@ -47,12 +35,6 @@ Bengio, Y., Paiement, J.-F., Vincent, P., Delalleau, O., Roux, N.~L.
 Brown, R.  \harvardyearleft 2006\harvardyearright .
 \newblock {\em Topology and Groupoids. A Geometric Account of General Topology,
   Homotopy Types and the Fundamental Groupoid}, 2 edn, Createspace.
-
-\harvarditem{Burges}{2010}{burges2010}
-Burges, C.~J.  \harvardyearleft 2010\harvardyearright .
-\newblock Geometric methods for feature extraction and dimensional reduction -
-  a guided tour, {\em in} O.~Maimon \harvardand\ L.~Rokach (eds), {\em Data
-  Mining and Knowledge Discovery Methods}, Springer US, pp.~53--82.
 
 \harvarditem{Börm \harvardand\ Mehl}{2012}{boermmehl2012}
 Börm, S. \harvardand\ Mehl, C.  \harvardyearleft 2012\harvardyearright .
@@ -79,12 +61,6 @@ Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
 Doshi-Velez, F. \harvardand\ Kim, B.  \harvardyearleft 2017\harvardyearright .
 \newblock Towards a rigorous science of interpretable machine learning, {\em
   arXiv: Machine Learning} .
-
-\harvarditem[Ghojogh et~al.]{Ghojogh, Ghodsi, Karray \harvardand\
-  Crowley}{2020}{ghojoghetal2020}
-Ghojogh, B., Ghodsi, A., Karray, F. \harvardand\ Crowley, M.  \harvardyearleft
-  2020\harvardyearright .
-\newblock Locally linear embedding and its variants: Tutorial and survey.
 
 \harvarditem[Ghojogh et~al.]{Ghojogh, Karray \harvardand\
   Crowley}{2019}{ghojoghetal2019}
@@ -113,12 +89,6 @@ Leist, A., Playne, D.~P. \harvardand\ Hawick, K.~A.  \harvardyearleft
   applications, {\em Concurrency and Computation. Practice and Experience} {\bf
   21}(18):~2400--2437.
 
-\harvarditem{Levy}{2006}{levy2006}
-Levy, B.  \harvardyearleft 2006\harvardyearright .
-\newblock Laplace-beltrami eigenfunctions towards an algorithm that
-  “understands” geometry, {\em Proceedings of the IEEE International
-  Conference on Shape Modeling and Applications}.
-
 \harvarditem{Ma \harvardand\ Fu}{2011}{mafu2011}
 Ma, Y. \harvardand\ Fu, Y.  \harvardyearleft 2011\harvardyearright .
 \newblock {\em Manifold Learning. Theory and Applications}, CRC Press.
@@ -132,22 +102,11 @@ McCleary, J.  \harvardyearleft 2006\harvardyearright .
 Mukherjee, A.  \harvardyearleft 2015\harvardyearright .
 \newblock {\em Differential Topology}, 2 edn, Springer.
 
-\harvarditem{Ross}{2008}{dissross2008}
-Ross, I.  \harvardyearleft 2008\harvardyearright .
-\newblock {\em Nonlinear Dimensionality Reduction Methods in Climate Data
-  Analysis}, PhD thesis, University of Bristol.
-
 \harvarditem{Roweis \harvardand\ Saul}{2000}{roweissaul2000}
 Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
   .
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
-
-\harvarditem{Saul \harvardand\ Roweis}{2001}{saulroweis2001}
-Saul, L.~K. \harvardand\ Roweis, S.~T.  \harvardyearleft 2001\harvardyearright
-  .
-\newblock An introduction to locally linear embedding, {\em Journal of Machine
-  Learning Research} {\bf 7}.
 
 \harvarditem[Saul et~al.]{Saul, Weinberger, Sha, Ham \harvardand\
   Lee}{2006}{sauletal2006}
@@ -164,17 +123,6 @@ Schölkopf, B., Smola, A. \harvardand\ Müller, K.-R.  \harvardyearleft
 \newblock Nonlinear component analysis as a kernel eigenvalue problem, {\em
   Neural Computation} {\bf 10}:~1299--1319.
 
-\harvarditem{Settles}{2009}{settles2009}
-Settles, B.  \harvardyearleft 2009\harvardyearright .
-\newblock Active learning literature survey, {\em Technical Report 1648},
-  University of Wisconsin -- Madison.
-
-\harvarditem{Sha \harvardand\ Saul}{2005}{shasaul2005}
-Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft 2005\harvardyearright .
-\newblock Analysis and extension of spectral methods for nonlinear
-  dimensionality reduction, {\em Proceedings of the 22nd International
-  Conference on Machine Learning}.
-
 \harvarditem{Sudderth}{2002}{sudderth2002}
 Sudderth, E.~B.  \harvardyearleft 2002\harvardyearright .
 \newblock Nonlinear manifold learning part ii 6.454 summary.
@@ -185,11 +133,6 @@ Tenenbaum, J.~B., de~Silva, V. \harvardand\ Langford, J.~C.  \harvardyearleft
   2000\harvardyearright .
 \newblock A global geometric framework for nonlinear dimensionality reduction,
   {\em Science} {\bf 290}(5500):~2319--2322.
-
-\harvarditem{Ting \harvardand\ Jordan}{2018}{tingjordan2018}
-Ting, D. \harvardand\ Jordan, M.~I.  \harvardyearleft 2018\harvardyearright .
-\newblock On nonlinear dimensionality reduction, linear smoothing and
-  autoencoding, {\em arXiv: Machine Learning} .
 
 \harvarditem[van~der Maaten et~al.]{van~der Maaten, Postma \harvardand\ van~den
   Herik}{2009}{vandermaatenetal2009}
@@ -216,33 +159,12 @@ Weinberger, K.~Q., Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft
 \newblock Learning a kernel matrix for nonlinear dimensionality reduction, {\em
   Proceedings of the 21rd International Conference on Machine Learning}.
 
-\harvarditem{Williams}{2002}{williams2002}
-Williams, C.~K.  \harvardyearleft 2002\harvardyearright .
-\newblock On a connection between kernel pca and metric multidimensional
-  scaling, {\em Machine Learning} {\bf 46}:~11–19.
-
-\harvarditem{Wissel}{2017}{disswissel2017}
-Wissel, D.~R.  \harvardyearleft 2017\harvardyearright .
-\newblock {\em Intrinsic Dimension Estimation using Simplex Volumes}, PhD
-  thesis, Rheinische Friedrich-Wilhelms-Universität Bonn.
-
-\harvarditem{Wu \harvardand\ Wu}{2018}{wuwu2018}
-Wu, H.-T. \harvardand\ Wu, N.  \harvardyearleft 2018\harvardyearright .
-\newblock Think globally, fit locally under the manifold setup: Asymptotic
-  analysis of locally linear embedding, {\em Ann. Stat} {\bf
-  246}(6B):~3805--3837.
-
 \harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
   Barlow}{2006}{yangetal2006}
 Yang, X., Fu, H., Zha, H. \harvardand\ Barlow, J.  \harvardyearleft
   2006\harvardyearright .
 \newblock Semi-supervised nonlinear dimensionality reduction, {\em Proceedings
   of the 23rd International Conference on Machine Learning}.
-
-\harvarditem{Ye \harvardand\ Zhi}{2015}{yezhi2015}
-Ye, Q. \harvardand\ Zhi, W.  \harvardyearleft 2015\harvardyearright .
-\newblock Discrete hessian eigenmaps for dimensionality reduction, {\em Journal
-  of Computational and Applied Mathematics} {\bf 278}:~197--212.
 
 \harvarditem{Zhang \harvardand\ Chau}{2009}{zhangchau2009}
 Zhang, S. \harvardand\ Chau, K.-W.  \harvardyearleft 2009\harvardyearright .

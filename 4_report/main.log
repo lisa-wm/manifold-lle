@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  14 MAR 2021 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  14 MAR 2021 21:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,7 +459,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 94
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 90
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aer.fd
@@ -473,20 +473,20 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -526,9 +526,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package csquotes Info: Making character " active on input line 94.
+Package csquotes Info: Making character " active on input line 90.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 94.
+LaTeX Info: Redefining \selectfont on input line 90.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -582,20 +582,20 @@ e
 <figures/sigillum.png, id=2, 2946.00626pt x 2991.175pt>
 File: figures/sigillum.png Graphic file (type png)
 <use figures/sigillum.png>
-Package pdftex.def Info: figures/sigillum.png  used on input line 121.
+Package pdftex.def Info: figures/sigillum.png  used on input line 117.
 (pdftex.def)             Requested size: 199.16624pt x 202.19228pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 128
+LaTeX Font Info:    Trying to load font information for U+msa on input line 124
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 128
+LaTeX Font Info:    Trying to load font information for U+msb on input line 124
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-8.
+4.
 
 (c:/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -606,12 +606,22 @@ lum.png
 
 pdfTeX warning: pdflatex.exe (file ./figures/sigillum.png): large interlaced PN
 G might cause out of memory (use non-interlaced PNG to fix this)
->] (./chapters/0_abstract.Rnw) [1] (./main.toc)
+>] (./chapters/0_abstract.Rnw) [1] (./main.toc
+Overfull \hbox (3.95448pt too wide) detected at line 29
+ []\T1/aer/m/n/12 VIII
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 160--165
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--191
 
  []
 
@@ -619,11 +629,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--165
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [4] (./main.lot)
-\tf@lot=\write6
-\openout6 = `main.lot'.
-
- [5] (./chapters/1_introduction.Rnw
+ [4] (./chapters/1_introduction.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 1--17
 
  []
@@ -634,7 +640,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--38
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--74
+Underfull \hbox (badness 10000) in paragraph at lines 39--75
 
  []
 
@@ -644,7 +650,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
  []
 
 [1]
-<figures/s_curve.pdf, id=41, 343.2825pt x 305.22029pt>
+<figures/s_curve.pdf, id=37, 343.2825pt x 305.22029pt>
 File: figures/s_curve.pdf Graphic file (type pdf)
 <use figures/s_curve.pdf>
 Package pdftex.def Info: figures/s_curve.pdf  used on input line 32.
@@ -669,247 +675,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
-) (./chapters/3_lgml.Rnw [2 <./figures/s_curve.pdf
+) (./chapters/3_lgml.Rnw
+Underfull \hbox (badness 10000) in paragraph at lines 4--16
+
+ []
+
+[2 <./figures/s_curve.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/models_overview.png, id=52, 808.01875pt x 479.7925pt>
+<figures/models_overview.png, id=49, 808.01875pt x 479.7925pt>
 File: figures/models_overview.png Graphic file (type png)
 <use figures/models_overview.png>
-Package pdftex.def Info: figures/models_overview.png  used on input line 40.
+Package pdftex.def Info: figures/models_overview.png  used on input line 35.
 (pdftex.def)             Requested size: 497.92322pt x 295.66728pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--64
-
- []
-
-[3 <./figures/models_overview.png>]
-<figures/spirals_2d.pdf, id=59, 229.81859pt x 229.81859pt>
-File: figures/spirals_2d.pdf Graphic file (type pdf)
-<use figures/spirals_2d.pdf>
-Package pdftex.def Info: figures/spirals_2d.pdf  used on input line 141.
-(pdftex.def)             Requested size: 144.39438pt x 144.39722pt.
-<figures/spirals_3d.pdf, id=60, 907.47026pt x 606.34526pt>
-File: figures/spirals_3d.pdf Graphic file (type pdf)
-<use figures/spirals_3d.pdf>
-Package pdftex.def Info: figures/spirals_3d.pdf  used on input line 147.
-(pdftex.def)             Requested size: 199.16624pt x 133.07254pt.
-<figures/spirals_1d.pdf, id=61, 305.22029pt x 42.1575pt>
-File: figures/spirals_1d.pdf Graphic file (type pdf)
-<use figures/spirals_1d.pdf>
-Package pdftex.def Info: figures/spirals_1d.pdf  used on input line 152.
-(pdftex.def)             Requested size: 144.39438pt x 19.94395pt.
-LaTeX Font Info:    Trying to load font information for T1+aett on input line 1
-62.
-
-(c:/texlive/2020/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [4]
-Underfull \hbox (badness 10000) in paragraph at lines 194--210
+ [3 <./figures/models_overview.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 69--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--223
+Underfull \hbox (badness 10000) in paragraph at lines 90--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--246
-
+Overfull \hbox (6.89447pt too wide) in paragraph at lines 117--137
+\T1/aer/m/n/12 high-dimensional ob-ser-va-tion space, where neigh-bor-hoods are
+ typ-i-cally taken to be $\OML/cmm/m/it/12 k$\T1/aer/m/n/12 -neighborhoods,
  []
 
-[5 <./figures/spirals_2d.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/spirals_2d.pdf): PDF inclusion: in
-valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
-> <./figures/spirals_3d.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/spirals_3d.pdf): PDF inclusion: in
-valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
-> <./figures/spirals_1d.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/spirals_1d.pdf): PDF inclusion: in
-valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->]
-<figures/kpca_lgml_algo.png, id=78, 903.375pt x 310.15875pt>
-File: figures/kpca_lgml_algo.png Graphic file (type png)
-<use figures/kpca_lgml_algo.png>
-Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 272.
-(pdftex.def)             Requested size: 497.92322pt x 170.95699pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 284--290
-
- []
-
-[6 <./figures/kpca_lgml_algo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 329--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--346
-
- []
-
-<figures/s_curve_connected.pdf, id=83, 681.50606pt x 606.34526pt>
+<figures/s_curve_connected.pdf, id=56, 681.50606pt x 606.34526pt>
 File: figures/s_curve_connected.pdf Graphic file (type pdf)
 <use figures/s_curve_connected.pdf>
-Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 376.
+Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 175.
 
-(pdftex.def)             Requested size: 179.25182pt x 230.23653pt.
+(pdftex.def)             Requested size: 104.56447pt x 134.30351pt.
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 356--383
+Overfull \hbox (5.23216pt too wide) in paragraph at lines 147--183
 [][] [] [] 
  []
 
-
-LaTeX Warning: Reference `fig:eigen' on page 7 undefined on input line 403.
-
-[7 <./figures/s_curve_connected.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/s_curve_connected.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
->]
-<figures/eigenanalysis.png, id=95, 742.775pt x 218.8175pt>
-File: figures/eigenanalysis.png Graphic file (type png)
-<use figures/eigenanalysis.png>
-Package pdftex.def Info: figures/eigenanalysis.png  used on input line 408.
-(pdftex.def)             Requested size: 298.75696pt x 88.01291pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--429
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 430--441
-
- []
-
-
-Overfull \hbox (3.21262pt too wide) in paragraph at lines 455--461
-[]\T1/aer/m/n/12 where $\OML/cmm/b/it/12 V \OT1/cmr/m/n/12 = [\OML/cmm/b/it/12 
-v[]\OML/cmm/m/it/12 ; \OML/cmm/b/it/12 v[]\OML/cmm/m/it/12 ; :::; \OML/cmm/b/it
-/12 v[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 R[]$ \T1/aer/m/n/12 i
-s the ma-trix of eigen-vec-tors of $\OML/cmm/m/it/12 A$ \T1/aer/m/n/12 and $\OT
-1/cmr/bx/n/12 ^^C \OT1/cmr/m/n/12 = [][\OML/cmm/m/it/12 ^^U[]; ^^U[]; :::; ^^U[
-]\OT1/cmr/m/n/12 ][] \OMS/cmsy/m/n/12 2
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--474
-
- []
-
-) [8 <./figures/eigenanalysis.png>] (./chapters/4_techniques.Rnw
+[4]
+<figures/kpca_lgml_algo.png, id=62, 903.375pt x 310.15875pt>
+File: figures/kpca_lgml_algo.png Graphic file (type png)
+<use figures/kpca_lgml_algo.png>
+Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 206.
+(pdftex.def)             Requested size: 497.92322pt x 170.95699pt.
+) (./chapters/4_techniques.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 14--22
 
  []
 
-<figures/sphere_tangent.pdf, id=104, 343.2825pt x 305.22029pt>
-File: figures/sphere_tangent.pdf Graphic file (type pdf)
-<use figures/sphere_tangent.pdf>
-Package pdftex.def Info: figures/sphere_tangent.pdf  used on input line 53.
-(pdftex.def)             Requested size: 119.50323pt x 127.02136pt.
+[5 <./figures/s_curve_connected.pdf
 
-Overfull \hbox (5.23216pt too wide) in paragraph at lines 30--60
-[][] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--85
-
- []
-
-[9 <./figures/sphere_tangent.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/sphere_tangent.pdf): PDF inclusion
-: invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
-ed.
->]
-Underfull \hbox (badness 10000) in paragraph at lines 153--162
-
- []
-
-[10]
-<figures/reconstruction_3d.pdf, id=120, 229.81859pt x 229.81859pt>
-File: figures/reconstruction_3d.pdf Graphic file (type pdf)
-<use figures/reconstruction_3d.pdf>
-Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 187.
-
-(pdftex.def)             Requested size: 239.001pt x 224.87402pt.
-<figures/reconstruction_2d.pdf, id=122, 229.81859pt x 229.81859pt>
-File: figures/reconstruction_2d.pdf Graphic file (type pdf)
-<use figures/reconstruction_2d.pdf>
-Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 193.
-
-(pdftex.def)             Requested size: 191.20152pt x 163.7577pt.
- [11 <./figures/reconstruction_3d.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_3d.pdf): PDF inclus
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_connected.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
-> <./figures/reconstruction_2d.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_2d.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
->]
-Underfull \hbox (badness 10000) in paragraph at lines 259--265
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 333--342
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 343--358
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 444--457
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 545--548
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 549--569
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 579--581
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 582--584
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 585--587
-
- []
-
-[15]
-Overfull \hbox (297.53372pt too wide) in paragraph at lines 596--601
-\T1/aer/m/n/12 new data from the es-ti-mated dist of the present ones, see e.g.
- https://horvath.genetics.ucla.edu/html/RFclustering/RFclustering/RandomForestH
-orvath.pdf,
- []
-
-) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw)
-(./chapters/7_conclusion.Rnw) [16] (./chapters/99_appendix.Rnw
+> <./figures/kpca_lgml_algo.png>]) (./chapters/5_experiment.Rnw)
+(./chapters/6_discussion.Rnw) (./chapters/7_conclusion.Rnw) [6]
+(./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -940,62 +766,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--110
  []
 
 
-Overfull \hbox (4.32338pt too wide) in paragraph at lines 139--143
+Overfull \hbox (4.32338pt too wide) in paragraph at lines 135--139
 []\T1/aer/m/n/12 is a curve in $\U/msb/m/n/12 R[]$ \T1/aer/m/n/12 (all $\OML/cm
 m/m/it/12 c[]; j \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; :::; d$ \T1/aer/m/n/12 h
 av-ing a suf-fi-cient num-ber of con-tin-u-ous deriva-tives). Component-
  []
 
+[6] [7]
+<figures/eigenanalysis.png, id=91, 742.775pt x 218.8175pt>
+File: figures/eigenanalysis.png Graphic file (type png)
+<use figures/eigenanalysis.png>
+Package pdftex.def Info: figures/eigenanalysis.png  used on input line 302.
+(pdftex.def)             Requested size: 497.92322pt x 146.68709pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--172
+Underfull \hbox (badness 10000) in paragraph at lines 315--325
 
  []
 
-) [6] [7] (./main.bbl [8] [9]) [10]
-Overfull \hbox (4.23676pt too wide) in paragraph at lines 270--279
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--337
+
+ []
+
+
+Overfull \hbox (3.21262pt too wide) in paragraph at lines 351--357
+[]\T1/aer/m/n/12 where $\OML/cmm/b/it/12 V \OT1/cmr/m/n/12 = [\OML/cmm/b/it/12 
+v[]\OML/cmm/m/it/12 ; \OML/cmm/b/it/12 v[]\OML/cmm/m/it/12 ; :::; \OML/cmm/b/it
+/12 v[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 R[]$ \T1/aer/m/n/12 i
+s the ma-trix of eigen-vec-tors of $\OML/cmm/m/it/12 A$ \T1/aer/m/n/12 and $\OT
+1/cmr/bx/n/12 ^^C \OT1/cmr/m/n/12 = [][\OML/cmm/m/it/12 ^^U[]; ^^U[]; :::; ^^U[
+]\OT1/cmr/m/n/12 ][] \OMS/cmsy/m/n/12 2
+ []
+
+[8 <./figures/eigenanalysis.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 372--375
+
+ []
+
+) [9] [10] (./main.bbl [11]) [12]
+Overfull \hbox (4.23676pt too wide) in paragraph at lines 306--315
 []\T1/aer/m/n/12 I hereby de-clare that the re-port sub-mit-ted is my own un-ai
 ded work. All di-rect or in-di-rect sources 
  []
 
-[11] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[13] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10845 strings out of 479485
- 161259 string characters out of 5875915
- 470584 words of memory out of 5000000
- 27526 multiletter control sequences out of 15000+600000
- 588433 words of font info for 143 fonts, out of 8000000 for 9000
+ 10695 strings out of 479485
+ 158239 string characters out of 5875915
+ 468935 words of memory out of 5000000
+ 27393 multiletter control sequences out of 15000+600000
+ 586936 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,76p,369b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib
-10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.p
-fb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><
-c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/20
-20/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/rsfs/rsfs10.pfb>
-Output written on main.pdf (29 pages, 1235097 bytes).
+ 70i,11n,76p,369b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on main.pdf (20 pages, 960070 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
+ 176 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
