@@ -79,7 +79,7 @@ bindingoffset = 6mm]{geometry}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\changefont{Semi-Supervised Locally Linear Embedding: Application 
-and Sensitivity Analysis of Critical Parameters}}
+and Sensitivity Analysis of Critical Hyperparameters}}
 \fancyfoot{}
 \fancyfoot[R]{\thepage}
 \setlength{\headheight}{14.5pt}
@@ -90,8 +90,9 @@ and Sensitivity Analysis of Critical Parameters}}
 % MAIN -------------------------------------------------------------------------
 % ------------------------------------------------------------------------------
 
+\usepackage{Sweave}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+\input{main-concordance}
 
 % FRONT PAGE -------------------------------------------------------------------
  
@@ -106,7 +107,7 @@ Seminar Report
 \rule{\textwidth}{1.5pt}
 \LARGE 
 \textbf{Semi-Supervised Locally Linear Embedding: Application and Sensitivity 
-Analysis of Critical Parameters}
+Analysis of Critical Hyperparameters}
 \rule{\textwidth}{1.5pt}
    
 \vspace{0.5cm}
@@ -140,17 +141,17 @@ Munich, April 2\textsuperscript{nd}, 2021
 \vspace{0.5cm} \\
 \noindent
 \normalsize
-\input{chapters/0_abstract.Rnw}
+\input{chapters/abstract.Rnw}
 \newpage
 
-% \Large
-% \noindent
-% \textbf{Extended Abstract}
-% \vspace{0.5cm} \\
-% \noindent
-% \normalsize
-% \input{chapters/extended_abstract.Rnw}
-% \newpage
+\Large
+\noindent
+\textbf{Extended Abstract}
+\vspace{0.5cm} \\
+\noindent
+\normalsize
+\input{chapters/extended-abstract.Rnw}
+\newpage
 
 \tableofcontents
 \newpage
@@ -189,19 +190,19 @@ Munich, April 2\textsuperscript{nd}, 2021
     
 \section{Introduction}
 \label{intro}
-\input{chapters/1_introduction.Rnw}
+\input{chapters/introduction.Rnw}
 
 \section{Basic Manifold Theory}
 \label{math}
-\input{chapters/2_math.Rnw}
+\input{chapters/math.Rnw}
 
 \section{Local Graph-Based Manifold Learning (LGML)}
-\label{lgml}
-\input{chapters/3_lgml.Rnw}
+\label{lgb-mani-learn}
+\input{chapters/graph-based-models.Rnw}
 
 \section{LGML Techniques}
 \label{techniques}
-\input{chapters/4_techniques.Rnw}
+\input{chapters/techniques.Rnw}
 
 % \section{Semi-Supervised Locally Linear Embedding (SSLLE)}
 % \label{sslle}
@@ -209,15 +210,15 @@ Munich, April 2\textsuperscript{nd}, 2021
 
 \section{Experiment Results}
 \label{experiment}
-\input{chapters/5_experiment.Rnw}
+\input{chapters/experiment.Rnw}
 
 \section{Discussion}
 \label{discussion}
-\input{chapters/6_discussion.Rnw}
+\input{chapters/discussion.Rnw}
 
 \section{Conclusion}
 \label{concl}
-\input{chapters/7_conclusion.Rnw}
+\input{chapters/conclusion.Rnw}
 
 \newpage
 
@@ -236,7 +237,7 @@ Munich, April 2\textsuperscript{nd}, 2021
 
 \section{Appendix}
 \label{app}
-% \input{chapters/99_appendix.Rnw}
+% \input{chapters/appendix.Rnw}
 \newpage
 
 \section{Electronic Appendix}

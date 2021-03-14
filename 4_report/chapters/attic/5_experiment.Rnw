@@ -1,0 +1,32 @@
+\subsection{Experimental Design}
+\label{design}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Software Implementation}
+\label{software}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Evaluation Framework}
+\label{eval}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Application to Synthetic Data}
+\label{application}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Data}
+\label{data}
+
+% ------------------------------------------------------------------------------
+
+\subsubsection{Results}
+\label{results}
+
+% ------------------------------------------------------------------------------
+
+\subsection{Sensitivity Analysis}
+\label{sensitivity}
