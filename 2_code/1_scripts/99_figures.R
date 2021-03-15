@@ -106,6 +106,23 @@ plotly::orca(
   height = 400,
   width = 1000)
 
+plotly::orca(
+  plot_manifold(
+    data = s_curve_data[, .(x_2, t)][, t := -t],
+    intrinsic_coords = s_curve_data[, .(t)]) %>%
+    add_trace(
+      x = ~ s_curve_data[prior_points_random]$x_2,
+      y = ~ -s_curve_data[prior_points_random]$t,
+      color = ~ 1L,
+      type = "scatter",
+      mode = "markers",
+      marker = list(color = "black", size = 20L)
+    ) %>%
+    hide_guides(), 
+  "3_presentation/figures/s_curve_undone_pp_random_long.pdf",
+  height = 600,
+  width = 300)
+
 # SWISS ROLL -------------------------------------------------------------------
 
 plotly::orca(

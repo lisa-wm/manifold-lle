@@ -264,7 +264,7 @@ as having unit covariance \citep{roweissaul2000}:
     \quad \sum_i \y_i = \bm{0} \quad \forall i \in \setN.
     % & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN. 
   \end{split}
-  \label{eq-obj-lle-emb}
+  \label{eq_obj_lle_emb}
 \end{equation}
 
 The objective can again be stated as an eigenvalue problem.
@@ -275,7 +275,7 @@ $\tilde{\Y} = \Y^T$ \citep{cayton2005}, yielding:
   \min_{\tilde{\Y}} \text{\textit{trace}}(\tilde{\Y}^T \E \tilde{\Y}), \quad
   \text{s.t. } \frac{1}{N} \tilde{\Y}^T \tilde{\Y} = \I \quad \text{and}
   \quad \tilde{\Y}^T\bm{1} = \bm{0}.
-  \label{eq-obj-lle-emb-2}
+  \label{eq_obj_lle_emb_2}
 \end{equation}
 
 Again, the solution is found by eigenanalysis of the matrix encoding the 
@@ -441,6 +441,168 @@ that has acted as a limiting factor on the practical application of HLLE
 
 \subsection{Semi-Supervised Locally Linear Embedding (SSLLE)}
 \label{sslle}
+
+\begin{minipage}[b]{0.6\textwidth}
+  \textbf{Idea.}
+  All of the above methods operate in a fully unsupervised manner, relying 
+  solely on the $D$-dimensional coordinates of the observation space.
+  The endeavor of dimensionality reduction will thus sometimes fail to produce 
+  a meaningful embedding.
+  \citet{yangetal2006} propose to anchor the low-dimensional representation at a 
+  number $m \in \N$ of prior points whose coordinates in $\Rd$ are already 
+  known.
+  Figure \ref{fig_scurve_undone_pp} hints at how such prior knowledge, 
+  illustrated by points in black, might help to improve the embedding.
+  What \citet{yangetal2006} dub semi-supervised LLE is actually somewhat 
+  different from the idea typically employed in semi-supervised learning.
+  Rather than supporting a supervised learning task by information extracted 
+  from the pool of unlabeled data, an inherently unsupervised problem is 
+  alleviated by specifying part of the solution upfront.
+  % Arguably, SSLLE might therefore be viewed in the context of active 
+  % learning, where the model is allowed to query labels in a sequential 
+  % manner that seeks to maximize utility at minimal expense \footnote{
+  % For an extensive overview on active learning see, for example, 
+  % \citet{settles2009}.
+  % }.
+\end{minipage}%
+\begin{minipage}[b]{0.05\textwidth}
+  \phantom{xxx}
+\end{minipage}%
+\begin{minipage}[b]{0.35\textwidth}
+  \begin{figure}[H]
+   \centering
+   \begin{subfigure}[b]{0.5\textwidth}
+     \centering
+     \includegraphics[trim = 80 20 70 30, clip, % left bottom right top
+     width = \textwidth]{figures/s_curve_pp_random}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.4\textwidth}
+     \centering
+     \includegraphics[trim = 0 20 0 0, clip, % left bottom right top
+     width = \textwidth]{figures/s_curve_undone_pp_random_long}
+   \end{subfigure}
+    \caption[S-curve with prior points]{
+    \raggedright
+    S-curve with 12 randomly sampled prior points.
+    \textit{Left:} prior point locations in three-dimensional observation space.
+    \textit{Right:} locations in true $\R^2$ embedding.
+    \textit{Source:} own representation.}
+    \label{fig_scurve_undone_pp}
+  \end{figure}
+\end{minipage}
+
+\vspace{0.3cm}
+
+\textbf{Prior point location.}
+Obviously, semi-supervision commands the availability of prior 
+information\footnote{
+It is easy to conceive practical applications where prior
+knowledge is indeed at hand or may be obtained at little cost.
+For instance, consider the image classification task stated as an
+introductory example.
+While the learning algorithm must regard all of the numerous dimensions
+spanned by (high-resolution) image data on pixel level, a human annotator may
+quickly spot the typically much fewer latent sources causing variability, such
+as rotation or zooming.
+Other applications like, say, textual analysis might not reveal this
+information at first sight, but can benefit from pre-labeled data made
+available by the advance of open-source research.
+}.
+The practical experiments in chapter \ref{experiment} will assume a
+setting where prior information can be inquired from the pool of initially
+unlabeled observations.
+A straightforward approach would be to select the prior points in a way that is 
+most informative to the SSLLE learning algorithm.
+As this is, of course, not always possible, the sensitivity analysis will 
+examine the impact of such optimal selection versus scenarios of poor landmark 
+choice and random sampling:
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      width = 0.9\textwidth]{figures/s_curve_pp_poor}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      width = 0.9\textwidth]{figures/s_curve_pp_random}
+\end{subfigure}%
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      width = 0.9\textwidth]{figures/s_curve_pp_maxmin}
+  \end{subfigure}
+  \caption[S-curve with poor, random and optimal landmark coverage]{
+    \raggedright
+    S-curve with poor (\textit{left}), random (\textit{middle}), and optimal 
+    (\textit{right}) coverage (again, 12 prior points).
+    \textit{Source:} own representation.}
+    \label{fig_scurve_coverage}
+\end{figure}
+
+\textbf{Types of prior information.}
+Depending on the application, the prior information may be exact or inexact.
+While the first case greatly simplifies of the manifold learning problem, the 
+second must be treated with some more care, or the semi-supervision will 
+actually be harmful rather than beneficial.
+Besides their location, the reliability of prior points therefore seems crucial 
+to the embedding, which is why the second part of the sensitivity analysis in 
+chapter \ref{experiment} will assess the robustness of SSLLE to varying levels 
+of label noise.
+\\
+
+\textbf{Algorithmic impact.}
+Prior knowledge enters only in the second phase of the LLE algorithm.
+First, the reconstruction weights are computed as usual (see equation 
+\ref{eq_obj_lle_recon}).
+The eigenvalue problem of minimizing embedding cost, by contrast, has a 
+different nature: now, the matrices $\E$ and $\tilde{\Y}$ are partitioned into 
+parts corresponding to known and unknown points, respectively\footnote{
+Without loss of generality, the prior points are assumed to be the first $m$ 
+ones.
+}.
+This leads to a system of linear equations whose solution depends on whether 
+prior information is exact.
+If it is exact, the minimization problem collapses to optimizing over the 
+unknown coordinates, denoted by $\Ytil_2$ \citep{yangetal2006}:
+
+\begin{equation}
+  \min_{\Ytil_2}
+  \begin{bmatrix} \Ytil_1 & \Ytil_2 \end{bmatrix}
+  \begin{bmatrix} \E_{11} & \E_{12} \\ \E_{21} & \E_{22} \end{bmatrix}
+  \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix}
+  \label{eq_sslle_exact} \quad
+  \Leftrightarrow \quad \Ytil_2^T = \E_{22}^{-1} \E_{12} \Ytil_1^T.
+\end{equation}
+
+Equation \ref{eq_sslle_exact} reflects the importance of prior points noted 
+above: as errors exist only in $\E_{12} = \E_{21}$ and $\E_{22}$, the condition 
+number $\kappa(\E_{22})$ of $\E_{22}$ multiplied by the relative errors in the 
+off-diagonal blocks acts as an upper bound on the relative embedding error.
+For a sufficiently large number of observations, it can be shown that 
+$\kappa(\E_{22})$ is minimal if the prior points are maximally scattered 
+across the manifold surface, which is intuitively plausible 
+\citep{yangetal2006}.
+\\
+
+For inexact prior information, the problem is slightly more complicated.
+The label noise commands the introduction of a regularizing term that penalizes 
+deviations of the assumed coordinates $\hat{\Ytil}_1$ from the true ones.
+The associated regularization parameter $\beta \in \R$ encodes the level of 
+confidence in the prior points \citep{yangetal2006}:
+
+\begin{equation}
+  \begin{split}
+    \min_{\Ytil_1, \Ytil_2}
+    \begin{bmatrix} \Ytil_1 & \Ytil_2 \end{bmatrix}
+    &\begin{bmatrix} \E_{11} & \E_{12} \\ \E_{21} & \E_{22} \end{bmatrix}
+    \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} +
+    \beta \frobnorm{\Ytil_1^T - \hat{\Ytil}_1^T} \quad \Leftrightarrow \\
+    &\begin{bmatrix} \E_{11} + \beta \I & \E_{12} \\ 
+    \E_{21} & \E_{22} \end{bmatrix}
+    \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} =
+    \begin{bmatrix} \hat{\Ytil}_1^T \\ \bm{0} \end{bmatrix}.
+  \end{split}
+\end{equation}
 
 % ------------------------------------------------------------------------------
 

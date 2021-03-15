@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 09:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,7 +459,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+aer on input line 90
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 91
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aer.fd
@@ -477,20 +477,20 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -530,9 +530,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package csquotes Info: Making character " active on input line 90.
+Package csquotes Info: Making character " active on input line 91.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 90.
+LaTeX Info: Redefining \selectfont on input line 91.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -586,20 +586,20 @@ e
 <figures/sigillum.png, id=2, 2946.00626pt x 2991.175pt>
 File: figures/sigillum.png Graphic file (type png)
 <use figures/sigillum.png>
-Package pdftex.def Info: figures/sigillum.png  used on input line 117.
+Package pdftex.def Info: figures/sigillum.png  used on input line 118.
 (pdftex.def)             Requested size: 199.16624pt x 202.19228pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124
+LaTeX Font Info:    Trying to load font information for U+msa on input line 125
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124
+LaTeX Font Info:    Trying to load font information for U+msb on input line 125
 .
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 12
-4.
+5.
 
 (c:/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -611,7 +611,7 @@ lum.png
 pdfTeX warning: pdflatex.exe (file ./figures/sigillum.png): large interlaced PN
 G might cause out of memory (use non-interlaced PNG to fix this)
 >] (./chapters/0_abstract.Rnw) [1] (./main.toc
-Overfull \hbox (3.95448pt too wide) detected at line 29
+Overfull \hbox (3.95448pt too wide) detected at line 30
  []\T1/aer/m/n/12 VIII
  []
 
@@ -620,12 +620,12 @@ Overfull \hbox (3.95448pt too wide) detected at line 29
 \openout4 = `main.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 156--161
+Underfull \hbox (badness 10000) in paragraph at lines 157--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--192
 
  []
 
@@ -795,8 +795,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 415--427
 
  []
 
-[9]) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw)
-(./chapters/7_conclusion.Rnw) [10] (./chapters/99_appendix.Rnw
+[9]
+<figures/s_curve_pp_random.pdf, id=125, 343.2825pt x 305.22029pt>
+File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_random.pdf>
+Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 477.
+
+(pdftex.def)             Requested size: 87.13808pt x 115.31233pt.
+<figures/s_curve_undone_pp_random_long.pdf, id=127, 229.81859pt x 455.78279pt>
+File: figures/s_curve_undone_pp_random_long.pdf Graphic file (type pdf)
+<use figures/s_curve_undone_pp_random_long.pdf>
+Package pdftex.def Info: figures/s_curve_undone_pp_random_long.pdf  used on inp
+ut line 483.
+(pdftex.def)             Requested size: 69.7094pt x 132.16267pt.
+<figures/s_curve_pp_poor.pdf, id=129, 343.2825pt x 305.22029pt>
+File: figures/s_curve_pp_poor.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_poor.pdf>
+Package pdftex.def Info: figures/s_curve_pp_poor.pdf  used on input line 524.
+(pdftex.def)             Requested size: 112.03195pt x 157.55698pt.
+File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_random.pdf>
+Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 528.
+
+(pdftex.def)             Requested size: 112.03195pt x 157.55698pt.
+<figures/s_curve_pp_maxmin.pdf, id=132, 343.2825pt x 305.22029pt>
+File: figures/s_curve_pp_maxmin.pdf Graphic file (type pdf)
+<use figures/s_curve_pp_maxmin.pdf>
+Package pdftex.def Info: figures/s_curve_pp_maxmin.pdf  used on input line 532.
+
+(pdftex.def)             Requested size: 112.03195pt x 157.55698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--552
+
+ []
+
+[10 <./figures/s_curve_pp_random.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_random.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+> <./figures/s_curve_undone_pp_random_long.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_undone_pp_random_long.pdf)
+: PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type 
+<array>); ignored.
+> <./figures/s_curve_pp_poor.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_poor.pdf): PDF inclusio
+n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
+red.
+> <./figures/s_curve_pp_maxmin.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_maxmin.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 577--586
+
+ []
+
+) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [11])
+(./chapters/7_conclusion.Rnw) [12] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -833,13 +892,7 @@ m/m/it/12 c[]; j \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; :::; d$ \T1/aer/m/n/12 h
 av-ing a suf-fi-cient num-ber of con-tin-u-ous deriva-tives). Component-
  []
 
-[6] [7]
-<figures/eigenanalysis.png, id=137, 742.775pt x 218.8175pt>
-File: figures/eigenanalysis.png Graphic file (type png)
-<use figures/eigenanalysis.png>
-Package pdftex.def Info: figures/eigenanalysis.png  used on input line 303.
-(pdftex.def)             Requested size: 398.34009pt x 117.35167pt.
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 316--327
 
  []
@@ -849,26 +902,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 328--340
 
  []
 
-[8 <./figures/eigenanalysis.png>]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 383--386
 
  []
 
-) [9] [10] (./main.bbl [11] [12]) [13]
-Overfull \hbox (4.23676pt too wide) in paragraph at lines 306--315
+) [8] [9] (./main.bbl [10] [11]) [12]
+Overfull \hbox (4.23676pt too wide) in paragraph at lines 307--316
 []\T1/aer/m/n/12 I hereby de-clare that the re-port sub-mit-ted is my own un-ai
 ded work. All di-rect or in-di-rect sources 
  []
 
-[14] (./main.aux) ) 
+[13] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10779 strings out of 479485
- 160009 string characters out of 5875915
- 472432 words of memory out of 5000000
- 27471 multiletter control sequences out of 15000+600000
+ 10802 strings out of 479485
+ 160860 string characters out of 5875915
+ 472454 words of memory out of 5000000
+ 27491 multiletter control sequences out of 15000+600000
  592651 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,11n,76p,369b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,20n,76p,369b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texliv
@@ -893,10 +946,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist
 pe1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rs
 fs/rsfs10.pfb>
-Output written on main.pdf (25 pages, 1170650 bytes).
+Output written on main.pdf (26 pages, 1681737 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
+ 273 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
