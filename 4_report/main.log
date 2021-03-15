@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 11:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -850,12 +850,32 @@ pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_maxmin.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 577--586
+Underfull \hbox (badness 10000) in paragraph at lines 578--587
 
  []
 
-) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [11])
-(./chapters/7_conclusion.Rnw) [12] (./chapters/99_appendix.Rnw
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--622
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--639
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 640--660
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--686
+
+ []
+
+) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [12])
+(./chapters/7_conclusion.Rnw) [13] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -915,10 +935,10 @@ ded work. All di-rect or in-di-rect sources
 
 [13] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10802 strings out of 479485
- 160860 string characters out of 5875915
- 472454 words of memory out of 5000000
- 27491 multiletter control sequences out of 15000+600000
+ 10818 strings out of 479485
+ 161214 string characters out of 5875915
+ 474683 words of memory out of 5000000
+ 27507 multiletter control sequences out of 15000+600000
  592651 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,20n,76p,369b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -946,10 +966,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist
 pe1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rs
 fs/rsfs10.pfb>
-Output written on main.pdf (26 pages, 1681737 bytes).
+Output written on main.pdf (27 pages, 1688617 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 276 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -444,13 +444,13 @@ that has acted as a limiting factor on the practical application of HLLE
 
 \begin{minipage}[b]{0.6\textwidth}
   \textbf{Idea.}
-  All of the above methods operate in a fully unsupervised manner, relying 
+  All of the above methods operate in an unsupervised manner, relying 
   solely on the $D$-dimensional coordinates of the observation space.
   The endeavor of dimensionality reduction will thus sometimes fail to produce 
   a meaningful embedding.
-  \citet{yangetal2006} propose to anchor the low-dimensional representation at a 
-  number $m \in \N$ of prior points whose coordinates in $\Rd$ are already 
-  known.
+  \citet{yangetal2006} propose to anchor the low-dimensional representation in 
+  LLE at a number $m \in \N$ of prior points whose coordinates in $\Rd$ are 
+  already known.
   Figure \ref{fig_scurve_undone_pp} hints at how such prior knowledge, 
   illustrated by points in black, might help to improve the embedding.
   What \citet{yangetal2006} dub semi-supervised LLE is actually somewhat 
@@ -513,10 +513,10 @@ The practical experiments in chapter \ref{experiment} will assume a
 setting where prior information can be inquired from the pool of initially
 unlabeled observations.
 A straightforward approach would be to select the prior points in a way that is 
-most informative to the SSLLE learning algorithm.
+most informative to the learning algorithm.
 As this is, of course, not always possible, the sensitivity analysis will 
 examine the impact of such optimal selection versus scenarios of poor landmark 
-choice and random sampling:
+choice and sampling uniformly at random:
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.25\textwidth}
@@ -534,16 +534,16 @@ choice and random sampling:
   \caption[S-curve with poor, random and optimal landmark coverage]{
     \raggedright
     S-curve with poor (\textit{left}), random (\textit{middle}), and optimal 
-    (\textit{right}) coverage (again, 12 prior points).
+    (\textit{right}) coverage by 12 prior points.
     \textit{Source:} own representation.}
     \label{fig_scurve_coverage}
 \end{figure}
 
 \textbf{Types of prior information.}
 Depending on the application, the prior information may be exact or inexact.
-While the first case greatly simplifies of the manifold learning problem, the 
-second must be treated with some more care, or the semi-supervision will 
-actually be harmful rather than beneficial.
+While the first case greatly simplifies the manifold learning problem, the 
+latter must be treated with some more care, or the semi-supervision will 
+actually be harmful.
 Besides their location, the reliability of prior points therefore seems crucial 
 to the embedding, which is why the second part of the sensitivity analysis in 
 chapter \ref{experiment} will assess the robustness of SSLLE to varying levels 
@@ -555,27 +555,28 @@ Prior knowledge enters only in the second phase of the LLE algorithm.
 First, the reconstruction weights are computed as usual (see equation 
 \ref{eq_obj_lle_recon}).
 The eigenvalue problem of minimizing embedding cost, by contrast, has a 
-different nature: now, the matrices $\E$ and $\tilde{\Y}$ are partitioned into 
+different nature: the matrices $\E$ and $\tilde{\Y}$ are partitioned into 
 parts corresponding to known and unknown points, respectively\footnote{
 Without loss of generality, the prior points are assumed to be the first $m$ 
 ones.
 }.
-This leads to a system of linear equations whose solution depends on whether 
-prior information is exact.
+This leads to a system of linear equations whose solution depends on the purity 
+of prior information.
 If it is exact, the minimization problem collapses to optimizing over the 
-unknown coordinates, denoted by $\Ytil_2$ \citep{yangetal2006}:
+unknown coordinates, denoted by $\Ytil_2 \in \R^{m \times d}$ 
+\citep{yangetal2006}:
 
 \begin{equation}
   \min_{\Ytil_2}
   \begin{bmatrix} \Ytil_1 & \Ytil_2 \end{bmatrix}
   \begin{bmatrix} \E_{11} & \E_{12} \\ \E_{21} & \E_{22} \end{bmatrix}
-  \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix}
-  \label{eq_sslle_exact} \quad
+  \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} \quad
   \Leftrightarrow \quad \Ytil_2^T = \E_{22}^{-1} \E_{12} \Ytil_1^T.
+  \label{eq_sslle_exact}
 \end{equation}
 
 Equation \ref{eq_sslle_exact} reflects the importance of prior points noted 
-above: as errors exist only in $\E_{12} = \E_{21}$ and $\E_{22}$, the condition 
+before: as errors exist only in $\E_{12} = \E_{21}$ and $\E_{22}$, the condition 
 number $\kappa(\E_{22})$ of $\E_{22}$ multiplied by the relative errors in the 
 off-diagonal blocks acts as an upper bound on the relative embedding error.
 For a sufficiently large number of observations, it can be shown that 
@@ -586,7 +587,8 @@ across the manifold surface, which is intuitively plausible
 
 For inexact prior information, the problem is slightly more complicated.
 The label noise commands the introduction of a regularizing term that penalizes 
-deviations of the assumed coordinates $\hat{\Ytil}_1$ from the true ones.
+deviations of the assumed coordinates (denoted by the hat symbol) from the true 
+ones.
 The associated regularization parameter $\beta \in \R$ encodes the level of 
 confidence in the prior points \citep{yangetal2006}:
 
@@ -602,9 +604,100 @@ confidence in the prior points \citep{yangetal2006}:
     \begin{bmatrix} \Ytil_1^T \\ \Ytil_2^T \end{bmatrix} =
     \begin{bmatrix} \hat{\Ytil}_1^T \\ \bm{0} \end{bmatrix}.
   \end{split}
+  \label{eq_sslle_inexact}
 \end{equation}
+
+Clearly, for the exact case, $\hat{\Ytil}_1^T = \Ytil_1^T$ and equation 
+\ref{eq_sslle_inexact} reduces to equation \ref{eq_sslle_exact}.
 
 % ------------------------------------------------------------------------------
 
 \subsection{Particular Challenges}
 \label{challenges}
+
+Before subjecting SSLLE to varying scenarios of critical parameters in the 
+sensitivity analysis, this chapter concludes with a summary of the main 
+challenges in practical application.
+\\
+
+\textbf{Amount of and quality of prior knowledge.}
+As hinted above, the location of prior points must be assumed to have vital 
+impact on the quality of embedding coordinates, and so should their number.
+Both factors will be varied and and examined in the practical experiments.
+Likewise, the reliability of prior information ought to be a critical factor in 
+SSLLE.
+While the case of exact knowledge is purely beneficial, inexact knowledge will 
+provide less reliable guidance and might even prove harmful.
+Chapter \ref{experiment} studies the impact of label contamination simulated by 
+a Gaussian noise variable.
+The confidence parameter $\beta$ might also be expected to determine embedding 
+quality.
+However, it emerges in the practical implementation that results are 
+surprisingly stable for varying levels of $\beta$, which is why the effort has 
+instead been dedicated to address the amount and quality of prior knowledge.
+\\
+
+\textbf{Choice of intrinsic dimensionality.} 
+Until now, it has been assumed that the intrinsic dimension $d$ of the data is 
+a known parameter.
+This is obviously not always the case.
+Some methods offer the advantage of estimating $d$ in a built-in fashion. 
+PCA, for instance, typically shows an indicative gap in its eigenvalue spectrum 
+\citep{sauletal2006}.
+For LLE, LEM and HLLE, no such tell-tale gap exists\footnote{
+While \citet{shasaul2005} have drawn a mathematical relation between the 
+respective eigenspectra in LLE and LEM and intrinsic dimensionality, they 
+immediately discarded this finding for practical applications due to large 
+computational overhead and lack of reliability in finite-sample situations.
+There have been various other proposals to tackle the problem of dimensionality 
+estimation (for an extensive discussion, see for example 
+\citet{disswissel2017}).
+}.
+However, as the focus of this report lies on a semi-supervised method of 
+manifold learning, it is mainly concerned with situations where prior knowledge 
+of coordinates, and of $d$ in particular, is actually available.
+\\
+
+\textbf{Choice of neighborhood size.} 
+Choosing the size of neighborhoods for the graph approximation, on the other 
+hand, does pose a challenge.
+It is a standard hyperparameter optimization problem in which a trade-off 
+between locality and overall approximation must be balanced.
+If neighborhoods are too small, the model will not be able to learn the global 
+manifold structure; with overly large neighborhoods, it will forgo the 
+advantages of locality and non-linearity \citep{deridderduin2002}.
+A tuning step for $k$ has been directly integrated in the SSLLE implementation.
+This procedure builds upon a proposal by \citet{kouroptevaetal2001}.
+However, rather than following the authors in evaluating embedding performance 
+by residual variance, an alternative criterion, suggested by 
+\citet{kraemeretal2019} and explained in chapter \ref{eval}, is used.
+The key idea is to select $k$ at minimum computational expense, most of which is 
+caused by embedding cost minimization.
+First, the less costly reconstruction weight computation is carried out for a 
+range of candidate values.
+For the most promising of these, distinguished as local minima of the resulting reconstruction error distribution\footnote{
+While weight reconstruction for a fixed $k$ is a convex optimization problem, 
+finding the optimal value for $k$ is not.
+} (i.e., whenever the error is lower for a certain $k$ 
+than for the immediate successor and predecessor values), the actual embeddings 
+are calculated and evaluated to select the optimal parameter value
+\citep{kouroptevaetal2001}.
+\\
+
+\textbf{Robustness of eigendecomposition.}
+Lastly, the inversion of the Gram matrix required for reconstruction error 
+minimization in (SS)LLE frequently suffers from singularity (in particular, for 
+$D < k$). 
+This problem has been noted by \citet{roweissaul2000} without offering a 
+specific remedy.
+The implementation uses a small additive constant $\gamma > 0$ to strengthen the 
+main diagonal, as is standard practice in numerical optimization 
+\citep{ghojoghetal2020}.
+$\gamma$ is computed as the sum over the eigenvalues of the local Gram matrix, 
+multiplied by a tolerance parameter set to 0.01, following a proposal by
+\citet{dissgrilli2007}.
+In fact, the embedding is rather sensitive to regularization 
+\citep{deridderduin2002}.
+The focus of this report lies on the challenges posed by the 
+semi-supervised extension, so the issue is not specifically addressed, but it 
+would be certainly worthwhile to dedicate some more research to this.

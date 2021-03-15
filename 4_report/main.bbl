@@ -92,6 +92,11 @@ Ghojogh, B., Karray, F. \harvardand\ Crowley, M.  \harvardyearleft
   2019\harvardyearright .
 \newblock Eigenvalue and generalized eigenvalue problems: Tutorial.
 
+\harvarditem{Grilli}{2007}{dissgrilli2007}
+Grilli, E.  \harvardyearleft 2007\harvardyearright .
+\newblock {\em Automated Local Linear Embedding with an Application to
+  Microarray Data}, PhD thesis, Università di Bologna.
+
 \harvarditem[Ham et~al.]{Ham, Lee, Mika \harvardand\
   Schölkopf}{2003}{hametal2003}
 Ham, J., Lee, D.~D., Mika, S. \harvardand\ Schölkopf, B.  \harvardyearleft
@@ -104,6 +109,21 @@ He, X., Cai, D., Yan, S. \harvardand\ Zhang, H.-J.  \harvardyearleft
   2005\harvardyearright .
 \newblock Neighborhood preserving embedding, {\em Proceedings of the Tenth IEEE
   International Conference on Computer Vision}.
+
+\harvarditem[Kouropteva et~al.]{Kouropteva, Okun \harvardand\
+  Pietikäinen}{2001}{kouroptevaetal2001}
+Kouropteva, O., Okun, O. \harvardand\ Pietikäinen, M.  \harvardyearleft
+  2001\harvardyearright .
+\newblock Selection of the optimal parameter value for the locally linear
+  embedding algorithm, {\em Proceedings of the 1st International Conference on
+  Fuzzy Systems and Knowledge Discovery}.
+
+\harvarditem[Kraemer et~al.]{Kraemer, Reichstein \harvardand\
+  Mahecha}{2019}{kraemeretal2019}
+Kraemer, G., Reichstein, M. \harvardand\ Mahecha, M.~D.  \harvardyearleft
+  2019\harvardyearright .
+\newblock dimred and coranking -— unifying dimensionality reduction in r,
+  {\em Technical report}.
 
 \harvarditem[Leist et~al.]{Leist, Playne \harvardand\
   Hawick}{2009}{leistetal2009}
@@ -169,6 +189,12 @@ Schölkopf, B., Smola, A. \harvardand\ Müller, K.-R.  \harvardyearleft
 \newblock Nonlinear component analysis as a kernel eigenvalue problem, {\em
   Neural Computation} {\bf 10}:~1299--1319.
 
+\harvarditem{Sha \harvardand\ Saul}{2005}{shasaul2005}
+Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft 2005\harvardyearright .
+\newblock Analysis and extension of spectral methods for nonlinear
+  dimensionality reduction, {\em Proceedings of the 22nd International
+  Conference on Machine Learning}.
+
 \harvarditem{Sudderth}{2002}{sudderth2002}
 Sudderth, E.~B.  \harvardyearleft 2002\harvardyearright .
 \newblock Nonlinear manifold learning part ii 6.454 summary.
@@ -209,6 +235,11 @@ Weinberger, K.~Q., Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft
   2004\harvardyearright .
 \newblock Learning a kernel matrix for nonlinear dimensionality reduction, {\em
   Proceedings of the 21rd International Conference on Machine Learning}.
+
+\harvarditem{Wissel}{2017}{disswissel2017}
+Wissel, D.~R.  \harvardyearleft 2017\harvardyearright .
+\newblock {\em Intrinsic Dimension Estimation using Simplex Volumes}, PhD
+  thesis, Rheinische Friedrich-Wilhelms-Universität Bonn.
 
 \harvarditem{Wu \harvardand\ Wu}{2018}{wuwu2018}
 Wu, H.-T. \harvardand\ Wu, N.  \harvardyearleft 2018\harvardyearright .

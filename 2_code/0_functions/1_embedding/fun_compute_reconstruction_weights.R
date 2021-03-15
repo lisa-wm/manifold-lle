@@ -50,18 +50,8 @@ compute_reconstruction_weights <- function(data,
           gram <- tcrossprod(data_nn)
           
           # Apply regularization
-          # TODO find out about this delta and regu
           
           if (regularization & k > p) {
-            
-            # roweis saul themselves mention regu, but no details
-            # this is taken from grilli diss
-            # this is now concept from ghojogh (l2 penalization) with
-            # penalization 
-            # param from grilli
-            # lle pkg does similar thing but sum diagonal is not equal to 
-            # eigenvalues, gram is not diagonal
-            # delta is arbitrary, seems to work
             
             eigenvalues_gram <- eigen(gram)$values
             gamma <- 1e-2 * sum(eigenvalues_gram)
