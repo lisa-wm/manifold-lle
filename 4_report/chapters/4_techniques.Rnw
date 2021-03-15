@@ -298,6 +298,145 @@ $\mathcal{L}$.
 \subsubsection{Hessian Locally Linear Embedding (HLLE)}
 \label{hlle}
 
+Lastly, HLLE \citep{donohogrimes2003} pursues an approach toward LGML that 
+straddles the two former techniques: it borrows heavily from the idea behind 
+LEM (in fact, it was proposed under the title \textit{Hessian eigenmaps}) 
+but is akin to LLE in an algorithmic sense\footnote{
+HLLE is also closely related to another technique beyond the scope of this 
+report, namely \textit{local tangent space alignment (LTSA)} (see, for example, 
+\citet{tingjordan2018}).
+} \citep{dissross2008}.
+As opposed to LLE, HLLE is built upon a rigid theoretical foundation.
+It makes the assumptions of local isometry and homeomorphicity to an open, 
+connected subset of $\Rd$, which is a relatively weak demand 
+\citep{donohogrimes2003}.
+With this, HLLE provides veritable convergence guarantees for a wide range of 
+cases, albeit only for the continuum limit \citep{cayton2005}.
+\\
+
+\textbf{Idea.}
+HLLE considers the same twice-differentiable mapping functions 
+$f: \mani \rightarrow \R$ as LEM.
+Recall that LEM defines the gradient of $f$ with respect to local tangent 
+spaces $T_{\pv}(\mani)$ at $\pv \in \mani$ as a notion of smoothness.
+Similarly, HLLE computes the Hessian to measure curviness of $f$ 
+\citep{donohogrimes2003}.
+One advantage of this modification is that, while the Laplacian equals zero 
+for any harmonic\footnote{
+An example is indeed given by the coordinate functions; however, other functions 
+that are clearly non-linear have the harmonic property (see, for example,
+\citet{axleretal2001}).
+} function on $\mani$, the Hessian vanishes if and only if $f$ is 
+linear \citep{dissross2008}.
+\\
+
+\textbf{Continuous justification.}
+Consider $\pv \in \mani$ and its $k$-neighborhood $\mathcal{N}_k(\pv)$, each of 
+whose members has a unique closest point on $T_{\pv}(\mani)$ via the smooth 
+mapping $f$.
+Identifying $f(\pv)$ with $\bm{0} \in \Rd$ yields a system of local 
+coordinates on $T_{\pv}(\mani)$ that depends on this particular choice of the 
+origin.
+For a neighbor $\pv^{\prime}$ of $\pv$, let these local coordinates be denoted 
+by $\x^{\text{loc, }\pv^{\prime}}$.
+Then, the Hessian $\Hes_f^{\text{loc}}(\pv)$ of $f$ at $\pv$ in tangent 
+coordinates may be expressed as the ordinary Hessian of a function 
+$g: U \rightarrow \R$ with $f(\pv^{\prime}) = g(\x^{\text{loc, }\pv^{\prime}})$, 
+$U$ being a 
+neighborhood of zero in $\Rd$ \citep{donohogrimes2003}:
+
+\begin{equation}
+  (\Hes_f^{\text{loc}}(\pv))_{i,j} = \frac{\partial^2 
+  g(\x^{\text{loc, }\pv^{\prime}})}
+  {\partial x_i^{\text{loc, }\pv^{\prime}} 
+  \partial x_j^{\text{loc, }\pv^{\prime}}} 
+  \bigg\rvert_{\x^{\text{loc, }\pv^{\prime}} = 0}.
+  \label{eq-hessian-local}
+\end{equation}
+
+From these point-wise tangent Hessians it is now possible to construct a 
+quadratic functional $\mathscr{H}(f)$ on the entire manifold, analogous to the 
+Laplace-Beltrami operator in LEM.
+The crucial property of $\mathscr{H}(f)$ is given by the fact that, if $\mani$ 
+is truly locally homeomorphic to an open, connected subset of $\Rd$, 
+$\mathscr{H}(f)$ has a $(d + 1)$-dimensional null space of linear functions.
+After discarding the bottom constant function corresponding to a zero 
+eigenvalue, the subsequent $d$ eigenfunctions span the desired 
+low-dimensional embedding space \citep{donohogrimes2003}.
+First, however, the dependency on the respective local coordinate systems must 
+be removed by taking the Frobenius norm of the tangent Hessians\footnote{
+For any alternative coordinate system, $\Hes^{\prime}$ as obtained by orthogonal 
+transformation of $\Hes$ with a suitable matrix $\bm{B}$, it must hold that 
+$\frobnorm{\Hes^{\prime}} = \frobnorm{ \bm{B} \Hes \bm{B}^T} = 
+\text{\textit{trace}} (\bm{B} \Hes^T \bm{B}^T \bm{B} \Hes \bm{B}^T) = 
+\text{\textit{trace}} (\Hes^T \Hes) = \frobnorm{\Hes}$, due to the permutation 
+invariance of the trace operator \citep{dissross2008}.
+}.
+Then, $\mathscr{H}(f)$ as a measure for overall curviness of the mapping is 
+given by \citep{donohogrimes2003}:
+
+\begin{equation}
+  \mathscr{H}(f) = \int_{\mani} \frobnorm{\Hes_f^{\text{loc}}(\pv)} d\pv.
+  \label{eq-hfunctional}
+\end{equation}
+
+\textbf{Finite approximation.}
+In analogy to LEM, the functional defined on $\mani$ is approximated in an 
+empirical manner; yet, the computations are somewhat more involved.
+LEM incorporates neighborhood information during weight computation.
+LLE and HLLE take a more explicit look at locally linear patches on the manifold 
+surface and attempt to map these to the low-dimensional space 
+\citep{cayton2005}.
+As before, the first step is neighborhood construction.
+Let $\bm{N}_i \in \R^{D \times k}$ again denote the matrix of feature vectors of
+$\x_i$'s neighbors, this time centered with respect to the mean over all 
+members.
+From these neighborhood matrices the local tangent coordinates are 
+estimated by means of $N$ singular value decompositions 
+$\bm{N}_i = \bm{U_i}\bm{D_i}\bm{V_i}^T$ \citep{dissross2008}.
+In effect, this amounts to finding the basis of $T_{\x_i}(\mani)$ by performing 
+PCA on the local covariance matrix at $\x_i$ and retaining the $d$ principal 
+eigenvectors.
+Now a matrix $\bm{Z_i}$, whose columns contain all cross products of $\bm{U}_i$ 
+up to order $d$, is constructed and coerced into orthonormal form.
+Extracting the transpose of the last $\frac{d(d + 1)}{2}$ columns of $\bm{Z_i}$ 
+yields the local Hessian approximator $\Hes_i$ as the least-squares estimate of 
+a local quadratic polynomial regression in the neighborhood of $\x_i$ (\citet{vandermaatenetal2009}, \citet{tingjordan2018}).
+The empirical Hessian functional $\mathcal{H}$ is obtained as a 
+quadratic form of the local Hessian approximators \citep{donohogrimes2003}:
+
+\begin{equation}
+  \mathcal{H} = \sum_i \sum_j \mathcal{H}_{ij}, \quad 
+  \mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
+  (\Hes_{\ell})_{m,j}.
+  \label{eq_hfunctional_emp}
+\end{equation}
+
+Eventually, eigenanalysis of $\mathcal{H}$ yields the approximate null space 
+spanned by the $d$ bottom eigenvectors after discarding the constant one.
+The final step consists of finding a basis for the null space.
+For this, take $\bm{Q} \in \R^{N \times d}$ containing the $d$
+non-constant eigenvectors and find a second matrix $\bm{R}$ such that the
+columns of $\bm{Q}\bm{R}$ restricted to a fixed local neighborhood are
+orthonormal.
+The embedding coordinates are then given by $\bm{Q}^T\bm{R}^T$
+\citep{yezhi2015}.
+As an alternative, \citet{dissross2008} proposes to replace the last step
+by simply scaling $\bm{Q}$ with $\sqrt{N}$.
+\\
+
+Tracing the steps only roughly sketched above, it becomes clear that the 
+theoretical guarantees of HLLE come at the expense of rather complex 
+computations\footnote{
+For a more in-depth analysis see, for example, \citet{tingjordan2018}.
+}.
+At the same time, its implementation employs numerous approximations 
+calling the merit of theoretical convergence into question.
+It is perhaps this approximate yet computationally challenging design, along 
+with the fact that the other methods are more easily accessible by intuition, 
+that has acted as a limiting factor on the practical application of HLLE 
+(\citet{cayton2005}, \citet{yezhi2015}).
+
 % ------------------------------------------------------------------------------
 
 \subsection{Semi-Supervised Locally Linear Embedding (SSLLE)}
