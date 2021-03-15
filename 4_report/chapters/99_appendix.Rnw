@@ -243,50 +243,6 @@ $\mani$ that connect $\pv$ and $\qv$ \citep{mafu2011}:
 % ------------------------------------------------------------------------------
 
 \newpage
-\subsection{Formal Definition of $k$- and $\epsilon$-Neighborhoods}
-\label{neighborhoods}
-
-A neighborhood of $\x \in \X$ is a subset of $\X$ containing another, open 
-subset of $\X$ of which $\x$ is an element.
-Members of the neighborhood are called neighbors of $\x$.
-In metric spaces neighborhoods are defined via distances and therefore 
-translate to open balls around each point \citep{waldmann2014}.
-This distance-based construction locally applies to manifolds as a direct 
-consequence of their local isometry to the Euclidean observation space 
-\citep{mafu2011}.
-There are two principal ways to build a neighborhood around $\x \in \X$, 
-both of which usually employ the squared Euclidean norm\footnote{
-In principle, alternative metrics are applicable, for instance such 
-that measure angles \citep{belkinniyogi2004}.
-} $\| \cdot \|^2$.
-Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
-constructor that assigns a set of neighbors to $\x$.
-The first possibility is to restrict the size of the neighborhood to the 
-$k \in \N$ points\footnote{
-In presence of ties in pairwise distances $k$ may vary across the data, but with 
-zero probability in continuous feature spaces.
-} with the smallest distance to $\x$, such that
-$\ell = k$ and 
-
-\begin{equation}
-  \mathcal{N}_k(\x) = \{\x_j \in \X: \| \x - \x_j \|^2 \leq d_{(k)}\},
-  \label{eq-kneighborhood}
-\end{equation}
-
-with $d_{(k)} \in \R$ being the $k$-th instance of ordered pairwise distances 
-between $\x$ and all other points.
-Alternatively, the neighborhood may be constructed by collecting all points that
-have a distance of less than $\epsilon \in \R^+$ to $\x$, yielding 
-
-\begin{equation}
-  \mathcal{N}_{\epsilon} (\x) = \{\x_j \in \X: \| \x - \x_j \|^2 < \epsilon\}
-  \label{eq-epsneighborhood}
-\end{equation}
-
-and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
-
-% ------------------------------------------------------------------------------
-
 \subsection{Formal Definition of Eigenanalysis and Generalized Eigenvalue 
 Problems}
 \label{eigenanalysis}
@@ -349,24 +305,148 @@ and translated to the first form by means of a Lagrangian multiplier \citep{ghoj
 % ------------------------------------------------------------------------------
 
 \newpage
-\subsection{Optimal Choice of $k$ the SSLLE Implementation}
+\subsection{Formal Definition of $k$- and $\epsilon$-Neighborhoods}
+\label{neighborhoods}
+
+A neighborhood of $\x \in \X$ is a subset of $\X$ containing another, open 
+subset of $\X$ of which $\x$ is an element.
+Members of the neighborhood are called neighbors of $\x$.
+In metric spaces neighborhoods are defined via distances and therefore 
+translate to open balls around each point \citep{waldmann2014}.
+This distance-based construction locally applies to manifolds as a direct 
+consequence of their local isometry to the Euclidean observation space 
+\citep{mafu2011}.
+There are two principal ways to build a neighborhood around $\x \in \X$, 
+both of which usually employ the squared Euclidean norm\footnote{
+In principle, alternative metrics are applicable, for instance such 
+that measure angles \citep{belkinniyogi2004}.
+} $\| \cdot \|^2$.
+Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
+constructor that assigns a set of neighbors to $\x$.
+The first possibility is to restrict the size of the neighborhood to the 
+$k \in \N$ points\footnote{
+In presence of ties in pairwise distances $k$ may vary across the data, but with 
+zero probability in continuous feature spaces.
+} with the smallest distance to $\x$, such that
+$\ell = k$ and 
+
+\begin{equation}
+  \mathcal{N}_k(\x) = \{\x_j \in \X: \| \x - \x_j \|^2 \leq d_{(k)}\},
+  \label{eq-kneighborhood}
+\end{equation}
+
+with $d_{(k)} \in \R$ being the $k$-th instance of ordered pairwise distances 
+between $\x$ and all other points.
+Alternatively, the neighborhood may be constructed by collecting all points that
+have a distance of less than $\epsilon \in \R^+$ to $\x$, yielding 
+
+\begin{equation}
+  \mathcal{N}_{\epsilon} (\x) = \{\x_j \in \X: \| \x - \x_j \|^2 < \epsilon\}
+  \label{eq-epsneighborhood}
+\end{equation}
+
+and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
+
+% ------------------------------------------------------------------------------
+
+% \newpage
+\subsection{Optimal Choice of $k$ in SSLLE Implementation}
 \label{choice_k}
 
-This procedure builds upon a proposal by \citet{kouroptevaetal2001}.
-However, rather than following the authors in evaluating embedding performance 
-by residual variance, an alternative criterion, suggested by 
-\citet{kraemeretal2019} and explained in chapter \ref{eval}, is used.
-The key idea is to select $k$ at minimum computational expense, most of which is 
+The tuning procedure for choosing the optimal neighborhood size in the SSLLE 
+implementation builds upon a proposal by \citet{kouroptevaetal2001}.
+% However, rather than following the authors in evaluating embedding performance 
+% by residual variance, an alternative criterion, suggested by 
+% \citet{kraemeretal2019} and explained in chapter \ref{eval}, is used.
+Its key idea is to select $k$ at minimum computational expense, most of which is 
 caused by embedding cost minimization.
 First, the less costly reconstruction weight computation is carried out for a 
 range of candidate values.
-For the most promising of these, distinguished as local minima of the resulting reconstruction error distribution\footnote{
+The maximum number $k_{\text{max}} \in \N$ to try must still be specified as a 
+hyperparameter, but with arbitrary resources, there is no limit besides the 
+practical $k_{\text{max}} \leq N - 1$.
+This yields an empirical distribution of reconstruction errors over the given 
+range of $1, 2, \dots, k_{\text{max}}$.
+The most promising candidates for $k$ emerge as the local minima\footnote{
 While weight reconstruction for a fixed $k$ is a convex optimization problem, 
-finding the optimal value for $k$ is not.
-} (i.e., whenever the error is lower for a certain $k$ 
-than for the immediate successor and predecessor values), the actual embeddings 
-are calculated and evaluated to select the optimal parameter value
-\citep{kouroptevaetal2001}.
+finding the minimum error for a range of $k$ values is not.
+} of the distribution, i.e., whenever the error is lower for a certain $k$ 
+than for the immediate successor and predecessor values.
+For the selected subset, the actual (expensive) embeddings are calculated and 
+evaluated\footnote{
+Again, this is a non-convex, blackbox problem.
+} \citep{kouroptevaetal2001}.
+
+However, in contrast to what \citet{kouroptevaetal2001} proposed, embeddings are 
+not evaluated on residual variance.
+The area under the $R_{NX}$ curve \citep{kraemeretal2019}, which is considered 
+a more reliable measure, is used instead.
+Details on $R_{NX}$ and the corresponding AUC may be found in section 
+\ref{auc_rnx}.
+
+% ------------------------------------------------------------------------------
+
+\newpage
+\subsection{Area under the $R_{NX}$ Curve}
+\label{auc_rnx}
+
+\begin{itemize}
+  \item Area under the $R_{NX}$ curve
+  \item Based on co-ranking matrix
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Co-ranking matrix:} comparing distance ranks in observation \& embedding 
+spaces
+
+\begin{itemize}
+  \item Rank distance matrices $(r)_{ij}^{\text{obs}}, (r)_{ij}^{\text{emb}} 
+  \in \R^{N \times N}$
+  \item Co-ranking matrix $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ with 
+  $q_{\ell m} = 
+  \big \rvert \{ (i, j): 
+  r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} \big \rvert$ 
+  \item Interpretation:
+  \begin{itemize}
+    \item All non-zero entries on diagonal $\Rightarrow$ optimal 
+    embedding
+    \item Most non-zero entries on upper triangle $\Rightarrow$ close 
+    points torn apart
+    \item Most non-zero entries on lower triangle $\Rightarrow$ faraway 
+    points collapsed
+  \end{itemize}
+\end{itemize}
+
+\textbf{Co-ranking-based metrics:}
+
+\begin{itemize}
+  \item Number of points remaining in $k$-neighborhood after projection: 
+  $Q_{NX}(k) = \dfrac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
+  q_{\ell m}$
+  \item 
+  % Adjustment for random embeddings and normalization. \\ 
+  $R_{NX}(k) = \dfrac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}$
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{minipage}[b]{0.6\textwidth}
+  \textbf{AUC measure:} % Parameter-free
+  \begin{itemize}
+    \item $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
+    \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
+    \item Interpretation:
+    \begin{itemize}
+      \item $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
+      \item $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
+    \end{itemize}
+\end{itemize}
+\end{minipage}%
+\begin{minipage}[b]{0.4\textwidth}
+  % \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+  %   width = \textwidth]{figures/rnx_curve}
+\end{minipage}
 
 % ------------------------------------------------------------------------------
 

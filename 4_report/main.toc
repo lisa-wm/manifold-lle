@@ -25,8 +25,9 @@
 \contentsline {section}{\numberline {7}Conclusion}{12}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {subsection}{\numberline {A.1}Formal Definition of Topological Concepts}{V}{}%
-\contentsline {subsection}{\numberline {A.2}Formal Definition of $k$- and $\epsilon $-Neighborhoods}{VII}{}%
-\contentsline {subsection}{\numberline {A.3}Formal Definition of Eigenanalysis and Generalized Eigenvalue Problems}{VII}{}%
-\contentsline {subsection}{\numberline {A.4}Optimal Choice of $k$ the SSLLE Implementation}{VIII}{}%
-\contentsline {subsection}{\numberline {A.5}Generation of Synthetic Manifolds}{IX}{}%
-\contentsline {section}{\numberline {B}Electronic Appendix}{X}{}%
+\contentsline {subsection}{\numberline {A.2}Formal Definition of Eigenanalysis and Generalized Eigenvalue Problems}{VII}{}%
+\contentsline {subsection}{\numberline {A.3}Formal Definition of $k$- and $\epsilon $-Neighborhoods}{VIII}{}%
+\contentsline {subsection}{\numberline {A.4}Optimal Choice of $k$ in SSLLE Implementation}{VIII}{}%
+\contentsline {subsection}{\numberline {A.5}Area under the $R_{NX}$ Curve}{IX}{}%
+\contentsline {subsection}{\numberline {A.6}Generation of Synthetic Manifolds}{X}{}%
+\contentsline {section}{\numberline {B}Electronic Appendix}{XI}{}%

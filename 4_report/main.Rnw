@@ -171,8 +171,9 @@ Munich, April 2\textsuperscript{nd}, 2021
 % \end{tabularx}
 
 \begin{tabular}{rl}
+  AUC & area under the curve \\
   HLLE & Hessian locally linear embedding \\
-  kPCA & kernel principal component analysis \\
+  KPCA & kernel principal component analysis \\
   LEM & Laplacian eigenmaps \\
   LGML & local graph-based manifold learning \\
   LLE & locally linear embedding \\
