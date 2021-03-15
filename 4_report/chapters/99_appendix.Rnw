@@ -287,31 +287,9 @@ and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
 
 % ------------------------------------------------------------------------------
 
-% \newpage
 \subsection{Formal Definition of Eigenanalysis and Generalized Eigenvalue 
 Problems}
 \label{eigenanalysis}
-
-% Eigenanalysis yields the fundamental information stored in a matrix $\bm{A}$: 
-% its principal eigenvectors span a subspace into which the data may be 
-% projected under minimal loss of information (with respect to quadratic loss).
-% Figure \ref{fig_eigen} depicts the idea of eigenanalysis in a schematic way.
-% 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-%       width = 0.8\textwidth]{figures/eigenanalysis}
-%     \caption[]{
-%     \raggedright
-%     Conceptual idea of eigenanalysis. 
-%     Eigenvectors of a matrix (\textit{left}) point in the direction of greatest 
-%     variability (\textit{middle}), the degree of which is measured by the 
-%     associated eigenvalues depicted as rhombi. Retaining the thus determined 
-%     principal $d$ eigenvectors allows to span a linear subspace of reduced 
-%     dimensionality (\textit{right}).
-%     \textit{Source:} own representation.}
-%     \label{fig_eigen}
-%   \end{figure}
 
 \textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
 decomposition of a square matrix into pairs of \textit{eigenvectors} and 
@@ -367,6 +345,28 @@ The generalized eigenvalue problem may be stated equivalently as
 \end{equation}
 
 and translated to the first form by means of a Lagrangian multiplier \citep{ghojoghetal2019}.
+
+% ------------------------------------------------------------------------------
+
+\newpage
+\subsection{Optimal Choice of $k$ the SSLLE Implementation}
+\label{choice_k}
+
+This procedure builds upon a proposal by \citet{kouroptevaetal2001}.
+However, rather than following the authors in evaluating embedding performance 
+by residual variance, an alternative criterion, suggested by 
+\citet{kraemeretal2019} and explained in chapter \ref{eval}, is used.
+The key idea is to select $k$ at minimum computational expense, most of which is 
+caused by embedding cost minimization.
+First, the less costly reconstruction weight computation is carried out for a 
+range of candidate values.
+For the most promising of these, distinguished as local minima of the resulting reconstruction error distribution\footnote{
+While weight reconstruction for a fixed $k$ is a convex optimization problem, 
+finding the optimal value for $k$ is not.
+} (i.e., whenever the error is lower for a certain $k$ 
+than for the immediate successor and predecessor values), the actual embeddings 
+are calculated and evaluated to select the optimal parameter value
+\citep{kouroptevaetal2001}.
 
 % ------------------------------------------------------------------------------
 

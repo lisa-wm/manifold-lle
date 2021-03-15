@@ -19,7 +19,7 @@ smooth, compact manifolds, and operationalized by means of the
 This idea is best understood recalling that the similarity of outputs for
 similar inputs is essentially a notion of smoothness and can thus be controlled
 by a size constraint on the gradient of the mapping function.
-% \\
+\\
 
 \begin{minipage}[b]{0.7\textwidth}
   \textbf{Continuous justification.}
@@ -75,26 +75,26 @@ natural candidates for a functional basis \citep{levy2006}.
 The optimal embedding map is then given by the $d$ principal eigenfunctions of
 $\mathcal{L}$ after removing the bottom one which would map $\mani$ to a
 single point \citep{belkinniyogi2003}.
-\\
+% \\
 
+\newpage
 \textbf{Finite approximation.}
 Now the same reasoning can be applied to the neighborhood graph approximation of
 $\mani$.
 Mapping nearby inputs to nearby is achieved by assigning edge weights\footnote{
 These weights stem from the heat kernel intimately related to the 
 Laplace-Beltrami operator and ensure positive semi-definiteness of the resulting
-graph Laplacian. 
-As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
-equal to 1 for connected nodes and 0 otherwise.
+graph Laplacian \citep{belkinniyogi2003}. 
+% As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
+% equal to 1 for connected nodes and 0 otherwise.
 } $w_{ij} = \exp(\frac{1}{t} \twonorm{\x_i - \x_j}), t \in \R$, if 
 $\x_i, \x_j$ are are connected, and zero otherwise.
 Clearly, edges between closer points receive larger weights.
 The \textit{adjacency matrix} $\D = (d)_{ij} \in \R^{N \times N}$ takes the row
 sums of the \textit{weight matrix} $\W = (w)_{ij} \in \R^{N \times N}$ on its 
-diagonals.
-Penalizing output disparities more severely for pairs of nearby points, i.e.,
-pairs with a large weight coefficient, the smoothness requirement may be stated
-as follows:
+diagonal.
+Penalizing output disparities more severely for pairs of nearby points, the 
+smoothness requirement may be stated as follows:
 
 \begin{equation*}
   \begin{split}
@@ -278,8 +278,7 @@ $\tilde{\Y} = \Y^T$ \citep{cayton2005}, yielding:
   \label{eq_obj_lle_emb_2}
 \end{equation}
 
-Again, the solution is found by eigenanalysis of the matrix encoding the 
-intrinsic manifold structures.
+Again, the solution is found by eigenanalysis.
 Note that the first constraint carries a factor $1/N$ as originally 
 proposed.
 In fact, any such quadratic form, provided its right hand side is of full rank, 
@@ -300,18 +299,15 @@ $\mathcal{L}$.
 
 Lastly, HLLE \citep{donohogrimes2003} pursues an approach toward LGML that 
 straddles the two former techniques: it borrows heavily from the idea behind 
-LEM (in fact, it was proposed under the title \textit{Hessian eigenmaps}) 
-but is akin to LLE in an algorithmic sense\footnote{
+LEM but is more akin to LLE in an algorithmic sense\footnote{
 HLLE is also closely related to another technique beyond the scope of this 
 report, namely \textit{local tangent space alignment (LTSA)} (see, for example, 
 \citet{tingjordan2018}).
 } \citep{dissross2008}.
 As opposed to LLE, HLLE is built upon a rigid theoretical foundation.
-It makes the assumptions of local isometry and homeomorphicity to an open, 
-connected subset of $\Rd$, which is a relatively weak demand 
-\citep{donohogrimes2003}.
-With this, HLLE provides veritable convergence guarantees for a wide range of 
-cases, albeit only for the continuum limit \citep{cayton2005}.
+It makes the relatively weak assumptions of local isometry and homeomorphicity 
+to an open, connected subset of $\Rd$, providing veritable convergence 
+guarantees, albeit only for the continuous limit \citep{donohogrimes2003}.
 \\
 
 \textbf{Idea.}
@@ -494,50 +490,46 @@ that has acted as a limiting factor on the practical application of HLLE
 
 \vspace{0.3cm}
 
-\textbf{Prior point location.}
-Obviously, semi-supervision commands the availability of prior 
-information\footnote{
-It is easy to conceive practical applications where prior
-knowledge is indeed at hand or may be obtained at little cost.
-For instance, consider the image classification task stated as an
-introductory example.
-While the learning algorithm must regard all of the numerous dimensions
-spanned by (high-resolution) image data on pixel level, a human annotator may
-quickly spot the typically much fewer latent sources causing variability, such
-as rotation or zooming.
-Other applications like, say, textual analysis might not reveal this
-information at first sight, but can benefit from pre-labeled data made
-available by the advance of open-source research.
-}.
-The practical experiments in chapter \ref{experiment} will assume a
-setting where prior information can be inquired from the pool of initially
-unlabeled observations.
-A straightforward approach would be to select the prior points in a way that is 
-most informative to the learning algorithm.
-As this is, of course, not always possible, the sensitivity analysis will 
-examine the impact of such optimal selection versus scenarios of poor landmark 
-choice and sampling uniformly at random:
-
-\begin{figure}[H]
-  \begin{subfigure}[b]{0.25\textwidth}
-    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
-      width = 0.9\textwidth]{figures/s_curve_pp_poor}
+\begin{minipage}[b]{0.6\textwidth}
+  \textbf{Prior point location.}
+  Obviously, semi-supervision commands the availability of prior 
+  information.
+  The practical experiments in chapter \ref{experiment} will assume a
+  setting where prior information can be inquired from the pool of initially
+  unlabeled observations.
+  A straightforward approach would be to select the prior points in a way that is 
+  most informative to the learning algorithm.
+  As this is, of course, not always possible, the sensitivity analysis will 
+  examine the impact of such optimal selection versus scenarios of poor landmark 
+  choice and sampling uniformly at random:
+\end{minipage}%
+\begin{minipage}[b]{0.05\textwidth}
+  \phantom{xxx}
+\end{minipage}%
+\begin{minipage}[b]{0.35\textwidth}
+  \begin{figure}[H]
+    \begin{subfigure}[b]{0.32\textwidth}
+      \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+        width = \textwidth]{figures/s_curve_pp_poor}
+    \end{subfigure}%
+    \begin{subfigure}[b]{0.32\textwidth}
+      \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+        width = \textwidth]{figures/s_curve_pp_random}
   \end{subfigure}%
-  \begin{subfigure}[b]{0.25\textwidth}
-    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
-      width = 0.9\textwidth]{figures/s_curve_pp_random}
-\end{subfigure}%
-  \begin{subfigure}[b]{0.25\textwidth}
-    \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
-      width = 0.9\textwidth]{figures/s_curve_pp_maxmin}
-  \end{subfigure}
-  \caption[S-curve with poor, random and optimal landmark coverage]{
-    \raggedright
-    S-curve with poor (\textit{left}), random (\textit{middle}), and optimal 
-    (\textit{right}) coverage by 12 prior points.
-    \textit{Source:} own representation.}
-    \label{fig_scurve_coverage}
-\end{figure}
+    \begin{subfigure}[b]{0.32\textwidth}
+      \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+        width = \textwidth]{figures/s_curve_pp_maxmin}
+    \end{subfigure}
+    \caption[S-curve with poor, random and optimal landmark coverage]{
+      \raggedright
+      S-curve with poor (\textit{left}), random (\textit{middle}), and optimal 
+      (\textit{right}) coverage by 12 prior points.
+      \textit{Source:} own representation.}
+      \label{fig_scurve_coverage}
+  \end{figure}
+\end{minipage}
+
+\vspace{0.3cm}
 
 \textbf{Types of prior information.}
 Depending on the application, the prior information may be exact or inexact.
@@ -615,21 +607,17 @@ Clearly, for the exact case, $\hat{\Ytil}_1^T = \Ytil_1^T$ and equation
 \subsection{Particular Challenges}
 \label{challenges}
 
-Before subjecting SSLLE to varying scenarios of critical parameters in the 
-sensitivity analysis, this chapter concludes with a summary of the main 
-challenges in practical application.
-\\
+% Before subjecting SSLLE to varying scenarios of critical parameters in the 
+% sensitivity analysis, this chapter concludes with a summary of the main 
+% challenges in practical application.
+% \\
 
 \textbf{Amount of and quality of prior knowledge.}
 As hinted above, the location of prior points must be assumed to have vital 
 impact on the quality of embedding coordinates, and so should their number.
-Both factors will be varied and and examined in the practical experiments.
-Likewise, the reliability of prior information ought to be a critical factor in 
-SSLLE.
-While the case of exact knowledge is purely beneficial, inexact knowledge will 
+Likewise, the reliability of prior information ought to be a critical factor: 
+while the case of exact knowledge is purely beneficial, inexact knowledge will 
 provide less reliable guidance and might even prove harmful.
-Chapter \ref{experiment} studies the impact of label contamination simulated by 
-a Gaussian noise variable.
 The confidence parameter $\beta$ might also be expected to determine embedding 
 quality.
 However, it emerges in the practical implementation that results are 
@@ -644,9 +632,9 @@ This is obviously not always the case.
 Some methods offer the advantage of estimating $d$ in a built-in fashion. 
 PCA, for instance, typically shows an indicative gap in its eigenvalue spectrum 
 \citep{sauletal2006}.
-For LLE, LEM and HLLE, no such tell-tale gap exists\footnote{
+For the methods covered here, no such tell-tale gap exists\footnote{
 While \citet{shasaul2005} have drawn a mathematical relation between the 
-respective eigenspectra in LLE and LEM and intrinsic dimensionality, they 
+eigenspectra in LLE and LEM and intrinsic dimensionality, they 
 immediately discarded this finding for practical applications due to large 
 computational overhead and lack of reliability in finite-sample situations.
 There have been various other proposals to tackle the problem of dimensionality 
@@ -664,30 +652,15 @@ hand, does pose a challenge.
 It is a standard hyperparameter optimization problem in which a trade-off 
 between locality and overall approximation must be balanced.
 If neighborhoods are too small, the model will not be able to learn the global 
-manifold structure; with overly large neighborhoods, it will forgo the 
+manifold structure; with overly large neighborhoods, it will forgo all 
 advantages of locality and non-linearity \citep{deridderduin2002}.
 A tuning step for $k$ has been directly integrated in the SSLLE implementation.
-This procedure builds upon a proposal by \citet{kouroptevaetal2001}.
-However, rather than following the authors in evaluating embedding performance 
-by residual variance, an alternative criterion, suggested by 
-\citet{kraemeretal2019} and explained in chapter \ref{eval}, is used.
-The key idea is to select $k$ at minimum computational expense, most of which is 
-caused by embedding cost minimization.
-First, the less costly reconstruction weight computation is carried out for a 
-range of candidate values.
-For the most promising of these, distinguished as local minima of the resulting reconstruction error distribution\footnote{
-While weight reconstruction for a fixed $k$ is a convex optimization problem, 
-finding the optimal value for $k$ is not.
-} (i.e., whenever the error is lower for a certain $k$ 
-than for the immediate successor and predecessor values), the actual embeddings 
-are calculated and evaluated to select the optimal parameter value
-\citep{kouroptevaetal2001}.
+For a detailed description, please refer to section \ref{choice_k}.
 \\
 
 \textbf{Robustness of eigendecomposition.}
 Lastly, the inversion of the Gram matrix required for reconstruction error 
-minimization in (SS)LLE frequently suffers from singularity (in particular, for 
-$D < k$). 
+minimization in (SS)LLE frequently suffers from singularity.
 This problem has been noted by \citet{roweissaul2000} without offering a 
 specific remedy.
 The implementation uses a small additive constant $\gamma > 0$ to strengthen the 
@@ -697,7 +670,5 @@ $\gamma$ is computed as the sum over the eigenvalues of the local Gram matrix,
 multiplied by a tolerance parameter set to 0.01, following a proposal by
 \citet{dissgrilli2007}.
 In fact, the embedding is rather sensitive to regularization 
-\citep{deridderduin2002}.
-The focus of this report lies on the challenges posed by the 
-semi-supervised extension, so the issue is not specifically addressed, but it 
-would be certainly worthwhile to dedicate some more research to this.
+\citep{deridderduin2002}; so, even though it is beyond the scope of this report 
+to specifically address the issue in detail, it would be certainly worthwhile.

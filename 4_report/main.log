@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -689,18 +689,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--16
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/models_overview.png, id=49, 808.01875pt x 479.7925pt>
-File: figures/models_overview.png Graphic file (type png)
-<use figures/models_overview.png>
-Package pdftex.def Info: figures/models_overview.png  used on input line 35.
-(pdftex.def)             Requested size: 497.92322pt x 295.66728pt.
- [3 <./figures/models_overview.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 71--91
+<figures/models_overview_new.png, id=49, 809.0225pt x 257.96375pt>
+File: figures/models_overview_new.png Graphic file (type png)
+<use figures/models_overview_new.png>
+Package pdftex.def Info: figures/models_overview_new.png  used on input line 35
+.
+(pdftex.def)             Requested size: 497.92322pt x 158.77074pt.
+ [3 <./figures/models_overview_new.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 72--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--120
+Underfull \hbox (badness 10000) in paragraph at lines 93--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--152
 
  []
 
@@ -715,14 +721,17 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 153--189
 [][] [] [] 
  []
 
-[4]
-<figures/kpca_lgml_algo.png, id=62, 903.375pt x 310.15875pt>
-File: figures/kpca_lgml_algo.png Graphic file (type png)
-<use figures/kpca_lgml_algo.png>
-Package pdftex.def Info: figures/kpca_lgml_algo.png  used on input line 211.
-(pdftex.def)             Requested size: 398.34009pt x 136.76369pt.
-) (./chapters/4_techniques.Rnw
-<figures/sphere_tangent.pdf, id=64, 343.2825pt x 305.22029pt>
+[4 <./figures/s_curve_connected.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/s_curve_connected.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>]) (./chapters/4_techniques.Rnw
+Underfull \hbox (badness 10000) in paragraph at lines 9--23
+
+ []
+
+<figures/sphere_tangent.pdf, id=67, 343.2825pt x 305.22029pt>
 File: figures/sphere_tangent.pdf Graphic file (type pdf)
 <use figures/sphere_tangent.pdf>
 Package pdftex.def Info: figures/sphere_tangent.pdf  used on input line 52.
@@ -732,45 +741,29 @@ Overfull \hbox (5.23216pt too wide) in paragraph at lines 24--60
 [][] [] [] 
  []
 
-[5 <./figures/s_curve_connected.pdf
-
-pdfTeX warning: pdflatex.exe (file ./figures/s_curve_connected.pdf): PDF inclus
-ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
-nored.
-> <./figures/kpca_lgml_algo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 63--79
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--148
-
- []
-
-[6 <./figures/sphere_tangent.pdf
+[5 <./figures/sphere_tangent.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/sphere_tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
 >]
-<figures/reconstruction_3d.pdf, id=87, 229.81859pt x 192.72pt>
+Underfull \hbox (badness 10000) in paragraph at lines 139--148
+
+ []
+
+<figures/reconstruction_3d.pdf, id=80, 229.81859pt x 192.72pt>
 File: figures/reconstruction_3d.pdf Graphic file (type pdf)
 <use figures/reconstruction_3d.pdf>
 Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 177.
 
 (pdftex.def)             Requested size: 165.56181pt x 95.05605pt.
-<figures/reconstruction_2d.pdf, id=89, 229.81859pt x 192.72pt>
+<figures/reconstruction_2d.pdf, id=82, 229.81859pt x 192.72pt>
 File: figures/reconstruction_2d.pdf Graphic file (type pdf)
 <use figures/reconstruction_2d.pdf>
 Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 183.
 
 (pdftex.def)             Requested size: 130.7071pt x 88.82588pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--250
-
- []
-
-[7 <./figures/reconstruction_3d.pdf
+[6 <./figures/reconstruction_3d.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_3d.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
@@ -781,55 +774,54 @@ pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_2d.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 301--316
+Underfull \hbox (badness 10000) in paragraph at lines 243--250
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 300--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--332
+Underfull \hbox (badness 10000) in paragraph at lines 313--328
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 415--427
+Underfull \hbox (badness 10000) in paragraph at lines 411--423
 
  []
 
-[9]
-<figures/s_curve_pp_random.pdf, id=125, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_random.pdf, id=118, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_random.pdf>
-Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 477.
+Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 473.
 
 (pdftex.def)             Requested size: 87.13808pt x 115.31233pt.
-<figures/s_curve_undone_pp_random_long.pdf, id=127, 229.81859pt x 455.78279pt>
+<figures/s_curve_undone_pp_random_long.pdf, id=120, 229.81859pt x 455.78279pt>
 File: figures/s_curve_undone_pp_random_long.pdf Graphic file (type pdf)
 <use figures/s_curve_undone_pp_random_long.pdf>
 Package pdftex.def Info: figures/s_curve_undone_pp_random_long.pdf  used on inp
-ut line 483.
+ut line 479.
 (pdftex.def)             Requested size: 69.7094pt x 132.16267pt.
-<figures/s_curve_pp_poor.pdf, id=129, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_poor.pdf, id=122, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_poor.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_poor.pdf>
-Package pdftex.def Info: figures/s_curve_pp_poor.pdf  used on input line 524.
-(pdftex.def)             Requested size: 112.03195pt x 157.55698pt.
+Package pdftex.def Info: figures/s_curve_pp_poor.pdf  used on input line 513.
+(pdftex.def)             Requested size: 55.76964pt x 78.4304pt.
 File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_random.pdf>
-Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 528.
+Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 517.
 
-(pdftex.def)             Requested size: 112.03195pt x 157.55698pt.
-<figures/s_curve_pp_maxmin.pdf, id=132, 343.2825pt x 305.22029pt>
+(pdftex.def)             Requested size: 55.76964pt x 78.4304pt.
+<figures/s_curve_pp_maxmin.pdf, id=125, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_maxmin.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_maxmin.pdf>
-Package pdftex.def Info: figures/s_curve_pp_maxmin.pdf  used on input line 532.
+Package pdftex.def Info: figures/s_curve_pp_maxmin.pdf  used on input line 521.
 
-(pdftex.def)             Requested size: 112.03195pt x 157.55698pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 542--552
-
- []
-
-[10 <./figures/s_curve_pp_random.pdf
+(pdftex.def)             Requested size: 55.76964pt x 78.4304pt.
+[9 <./figures/s_curve_pp_random.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_random.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
@@ -839,7 +831,22 @@ nored.
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve_undone_pp_random_long.pdf)
 : PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type 
 <array>); ignored.
-> <./figures/s_curve_pp_poor.pdf
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 534--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--579
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--627
+
+ []
+
+[10 <./figures/s_curve_pp_poor.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_poor.pdf): PDF inclusio
 n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
@@ -850,32 +857,17 @@ pdfTeX warning: pdflatex.exe (file ./figures/s_curve_pp_maxmin.pdf): PDF inclus
 ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
 nored.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 578--587
+Underfull \hbox (badness 10000) in paragraph at lines 628--648
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--622
+Underfull \hbox (badness 10000) in paragraph at lines 649--660
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 623--639
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 640--660
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 661--686
-
- []
-
-) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [12])
-(./chapters/7_conclusion.Rnw) [13] (./chapters/99_appendix.Rnw
+) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [11])
+(./chapters/7_conclusion.Rnw) [12] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -913,32 +905,32 @@ av-ing a suf-fi-cient num-ber of con-tin-u-ous deriva-tives). Component-
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 316--327
+Underfull \hbox (badness 10000) in paragraph at lines 294--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--340
+Underfull \hbox (badness 10000) in paragraph at lines 306--318
 
  []
 
-[7]
+[7] [8]
 Underfull \hbox (badness 10000) in paragraph at lines 383--386
 
  []
 
-) [8] [9] (./main.bbl [10] [11]) [12]
+) [9] [10] (./main.bbl [11] [12]) [13]
 Overfull \hbox (4.23676pt too wide) in paragraph at lines 307--316
 []\T1/aer/m/n/12 I hereby de-clare that the re-port sub-mit-ted is my own un-ai
 ded work. All di-rect or in-di-rect sources 
  []
 
-[13] (./main.aux) ) 
+[14] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10818 strings out of 479485
- 161214 string characters out of 5875915
- 474683 words of memory out of 5000000
- 27507 multiletter control sequences out of 15000+600000
+ 10810 strings out of 479485
+ 161021 string characters out of 5875915
+ 475683 words of memory out of 5000000
+ 27500 multiletter control sequences out of 15000+600000
  592651 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,20n,76p,369b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -966,10 +958,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist
 pe1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rs
 fs/rsfs10.pfb>
-Output written on main.pdf (27 pages, 1688617 bytes).
+Output written on main.pdf (27 pages, 1634887 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
+ 272 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
