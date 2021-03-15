@@ -300,7 +300,10 @@ Munich, April 2\textsuperscript{nd}, 2021
 \section{Electronic Appendix}
 \label{el_app}
 
-Data, code and figures are provided in electronic form.
+The entire code base, including the SSLLE implementation as well as the code 
+used to conduct the practical analyses and generate all supporting figures, may 
+be found in the public repository 
+\texttt{https://github.com/lisa-wm/manifold-lle}.
 
 \newpage
     

@@ -600,7 +600,7 @@ confidence in the prior points \citep{yangetal2006}:
 \end{equation}
 
 Clearly, for the exact case, $\hat{\Ytil}_1^T = \Ytil_1^T$ and equation 
-\ref{eq_sslle_inexact} reduces to equation \ref{eq_sslle_exact}.
+\ref{eq_sslle_inexact} again reduces to equation \ref{eq_sslle_exact}.
 
 % ------------------------------------------------------------------------------
 
@@ -655,7 +655,7 @@ If neighborhoods are too small, the model will not be able to learn the global
 manifold structure; with overly large neighborhoods, it will forgo all 
 advantages of locality and non-linearity \citep{deridderduin2002}.
 A tuning step for $k$ has been directly integrated in the SSLLE implementation.
-For a detailed description, please refer to section \ref{choice_k}.
+For details, please refer to section \ref{choice_k}.
 \\
 
 \textbf{Robustness of eigendecomposition.}

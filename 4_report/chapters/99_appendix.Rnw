@@ -390,63 +390,74 @@ Details on $R_{NX}$ and the corresponding AUC may be found in section
 \subsection{Area under the $R_{NX}$ Curve}
 \label{auc_rnx}
 
-\begin{itemize}
-  \item Area under the $R_{NX}$ curve
-  \item Based on co-ranking matrix
-\end{itemize}
+The area under the $R_{NX}$ curve, $\text{AUC}(R_{NX})$, has been chosen as 
+evaluation criterion to assess embedding quality.
+It is based on the \textit{co-ranking matrix} of high-dimensional and 
+low-dimensional coordinates and measures the degree of neighborhood preservation 
+during the embedding \citep{kraemeretal2019}.
+\\
 
-\vspace{0.3cm}
+\textbf{Co-ranking matrix.}
+The co-ranking matrix $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ compares 
+neighborhood relations in observation and embedding space.
+Consider the rank distances matrices $(r)_{ij}^{\text{obs}}, 
+(r)_{ij}^{\text{emb}} \in \R^{N \times N}$, stating for the element in the $i$-th 
+row and $j$-th column that the $j$-th observation ranks $(r)_{ij}$ 
+among the nearest neighbors of the $i$-th observation in the respective space 
+\citep{lueksetal2011}. 
+Any suitable distance metric is admissible; here, squared Euclidean distances 
+are used.
+The co-ranking matrix then counts for each pair of ranks $(\ell, m)$, $\ell, m 
+\in \setN$, for how many pairs of observations $(i,j)$, $i, j \in \setN$, the 
+rank in the embedding space distance matrix equals $\ell$ and the rank in the 
+observation space distance matrix equals $m$:
 
-\textbf{Co-ranking matrix:} comparing distance ranks in observation \& embedding 
-spaces
+\begin{equation}
+  q_{\ell m} = \big \rvert \{ (i, j): 
+  r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} \big \rvert.
+  \label{eq_coranking}
+\end{equation}
 
-\begin{itemize}
-  \item Rank distance matrices $(r)_{ij}^{\text{obs}}, (r)_{ij}^{\text{emb}} 
-  \in \R^{N \times N}$
-  \item Co-ranking matrix $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ with 
-  $q_{\ell m} = 
-  \big \rvert \{ (i, j): 
-  r_{ij}^{\text{emb}} = \ell \land r_{ij}^{\text{obs}} = m \} \big \rvert$ 
-  \item Interpretation:
-  \begin{itemize}
-    \item All non-zero entries on diagonal $\Rightarrow$ optimal 
-    embedding
-    \item Most non-zero entries on upper triangle $\Rightarrow$ close 
-    points torn apart
-    \item Most non-zero entries on lower triangle $\Rightarrow$ faraway 
-    points collapsed
-  \end{itemize}
-\end{itemize}
+Clearly, an ideal embedding would preserve all ranks and only have positive 
+entries on the diagonal, i.e., where $\ell = m$.
+If, by contrast, most non-zero entries are located on the upper triangle, the 
+embedding has torn apart points that lie close in the observation space, 
+and, vice versa, if it is mostly the lower triangle containing non-zero entries, 
+faraway points have been collapsed together \citep{lueksetal2011}.
+\\
 
-\textbf{Co-ranking-based metrics:}
+\textbf{Co-ranking-based metrics.}
+Based on $\bm{Q}$, various metrics may be derived.
+The $Q_{NX}$ criterion counts the (normalized) number of points that remain in 
+the $k$-neighborhoods they form part of in $\RD$, depending on the choice of 
+neighborhood size:
 
-\begin{itemize}
-  \item Number of points remaining in $k$-neighborhood after projection: 
-  $Q_{NX}(k) = \dfrac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k 
-  q_{\ell m}$
-  \item 
-  % Adjustment for random embeddings and normalization. \\ 
-  $R_{NX}(k) = \dfrac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}$
-\end{itemize}
+\begin{equation}
+  Q_{NX}(k) = \dfrac{1}{kN} \sum_{\ell = 1}^k \sum_{m = 1}^k q_{\ell m}.
+  \label{eq_qnx}
+\end{equation}
 
-\vspace{0.3cm}
+Adjusting for random embeddings and again normalizing to a zero-one range leads
+to the $R_{NX}$ criterion \citep{kraemeretal2019}:
 
-\begin{minipage}[b]{0.6\textwidth}
-  \textbf{AUC measure:} % Parameter-free
-  \begin{itemize}
-    \item $\text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
-    \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1]$
-    \item Interpretation:
-    \begin{itemize}
-      \item $\text{AUC}(R_{NX}) = 0$ $\Rightarrow$ random embedding
-      \item $\text{AUC}(R_{NX}) = 1$ $\Rightarrow$ optimal embedding
-    \end{itemize}
-\end{itemize}
-\end{minipage}%
-\begin{minipage}[b]{0.4\textwidth}
-  % \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-  %   width = \textwidth]{figures/rnx_curve}
-\end{minipage}
+\begin{equation}
+  R_{NX}(k) = \dfrac{(N - 1) Q_{NX}(k) - k}{N - 1 - k}.
+  \label{eq_rnx}
+\end{equation}
+
+\textbf{Area under the $R_{NX}$ curve.}
+Plotting $R_{NX}$ versus the number $k$ of neighbors yields the sought-for 
+$R_{NX}$ curve, the area under which serves as a parameter-free measure of 
+embedding quality \citep{kraemeretal2019}:
+
+\begin{equation}
+  \text{AUC}(R_{NX}) = \dfrac{\sum_{k = 1}^{N - 2} R_{NX}(k)}{
+  \sum_{k = 1}^{N - 2} 1 / k} \in [0, 1].
+  \label{eq_aucrnx}
+\end{equation}
+
+As is common with AUC metrics, the maximum value of 1 corresponds to the optimal 
+value, whereas 0 marks an entirely random embedding \citep{kraemeretal2019}.
 
 % ------------------------------------------------------------------------------
 
