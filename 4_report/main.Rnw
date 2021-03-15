@@ -203,14 +203,34 @@ Munich, April 2\textsuperscript{nd}, 2021
 % \end{tabularx}
 
 \begin{tabular}{rl}
+  $\I = \mathit{diag}(1) \in \R^{s \times s}$ & identity matrix with $s^2$ 
+  entries, $s \in \N$ \\
+  $\bm{0} = (0, 0, \dots, 0)^T \in \R^s$ & $s$-dimensional null vector, 
+  $s \in \N$ \\
+  $\bm{1} = (1, 1, \dots, 1)^T \in \R^s$ & $s$-dimensional one vector, 
+  $s \in \N$ \\
   $N \in \N$ & number of observed data points \\
   $D \in \N$ & number of observed dimensions \\
   $d \in \N$ & number of intrinsic dimensions\\
+  $k \in \N$ & number of neighbors \\
+  $m \in \N$ & number of prior points \\
   $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
   $\X = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N) \in (\RD)^N$ & observed
   coordinates \\
   $\Y = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N) \in (\Rd)^N$ & embedding
-  coordinates
+  coordinates \\
+  $T_{\pv}(\mani)$ & local tangent space at $\pv \in \mani$ \\
+  $\mathcal{L}(f)$ & Laplace-Beltrami operator in LEM \\
+  $\Lap\in \R^{N \times N}$ & graph Laplacian in LEM \\
+  % $\bm{N}_i \in \R^{D \times k}$ & matrix of feature vectors 
+  % (possibly centered) belonging to $k$ nearest neighbors of $\x_i \in \X$, 
+  % $i \in \N$ \\
+  % $\bm{G}_i \in \R^{k \times k}$ & local Gram matrix of $\x_i \in \X$, 
+  % $i \in \N$ \\
+  $\mathscr{H}(f)$ & Hessian functional in HLLE \\
+  $\mathcal{H} \in \R^{N \times N}$ & empirical Hessian approximator in HLLE \\
+  $\beta > 0$ & confidence parameter in SSLLE \\
+  $\gamma > 0$ & regularization parameter in SSLLE implementation
 \end{tabular}
 
 \newpage

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,7 +654,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
  []
 
 [1]
-<figures/s_curve.pdf, id=37, 343.2825pt x 305.22029pt>
+<figures/s_curve.pdf, id=41, 343.2825pt x 305.22029pt>
 File: figures/s_curve.pdf Graphic file (type pdf)
 <use figures/s_curve.pdf>
 Package pdftex.def Info: figures/s_curve.pdf  used on input line 32.
@@ -689,7 +689,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--16
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/models_overview_new.png, id=49, 809.0225pt x 257.96375pt>
+<figures/models_overview_new.png, id=53, 809.0225pt x 257.96375pt>
 File: figures/models_overview_new.png Graphic file (type png)
 <use figures/models_overview_new.png>
 Package pdftex.def Info: figures/models_overview_new.png  used on input line 35
@@ -710,7 +710,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--152
 
  []
 
-<figures/s_curve_connected.pdf, id=56, 681.50606pt x 606.34526pt>
+<figures/s_curve_connected.pdf, id=60, 681.50606pt x 606.34526pt>
 File: figures/s_curve_connected.pdf Graphic file (type pdf)
 <use figures/s_curve_connected.pdf>
 Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 181.
@@ -731,7 +731,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--23
 
  []
 
-<figures/sphere_tangent.pdf, id=67, 343.2825pt x 305.22029pt>
+<figures/sphere_tangent.pdf, id=71, 343.2825pt x 305.22029pt>
 File: figures/sphere_tangent.pdf Graphic file (type pdf)
 <use figures/sphere_tangent.pdf>
 Package pdftex.def Info: figures/sphere_tangent.pdf  used on input line 52.
@@ -751,13 +751,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--148
 
  []
 
-<figures/reconstruction_3d.pdf, id=80, 229.81859pt x 192.72pt>
+<figures/reconstruction_3d.pdf, id=82, 229.81859pt x 192.72pt>
 File: figures/reconstruction_3d.pdf Graphic file (type pdf)
 <use figures/reconstruction_3d.pdf>
 Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 177.
 
 (pdftex.def)             Requested size: 165.56181pt x 95.05605pt.
-<figures/reconstruction_2d.pdf, id=82, 229.81859pt x 192.72pt>
+<figures/reconstruction_2d.pdf, id=84, 229.81859pt x 192.72pt>
 File: figures/reconstruction_2d.pdf Graphic file (type pdf)
 <use figures/reconstruction_2d.pdf>
 Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 183.
@@ -920,18 +920,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 383--386
  []
 
 ) [9] [10] (./main.bbl [11] [12]) [13]
-Overfull \hbox (4.23676pt too wide) in paragraph at lines 307--316
+Overfull \hbox (4.23676pt too wide) in paragraph at lines 327--336
 []\T1/aer/m/n/12 I hereby de-clare that the re-port sub-mit-ted is my own un-ai
 ded work. All di-rect or in-di-rect sources 
  []
 
 [14] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10810 strings out of 479485
- 161021 string characters out of 5875915
+ 10819 strings out of 479485
+ 161134 string characters out of 5875915
  475683 words of memory out of 5000000
- 27500 multiletter control sequences out of 15000+600000
- 592651 words of font info for 143 fonts, out of 8000000 for 9000
+ 27507 multiletter control sequences out of 15000+600000
+ 594397 words of font info for 148 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,20n,76p,369b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -958,7 +958,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist
 pe1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rs
 fs/rsfs10.pfb>
-Output written on main.pdf (27 pages, 1634887 bytes).
+Output written on main.pdf (27 pages, 1635868 bytes).
 PDF statistics:
  272 PDF objects out of 1000 (max. 8388607)
  174 compressed objects within 2 object streams

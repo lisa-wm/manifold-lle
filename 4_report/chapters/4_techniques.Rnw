@@ -225,7 +225,7 @@ Here, $\bm{N}_i \in \R^{D \times k}$ denotes the matrix of feature vectors of
 $\x_i$'s neighbors and $\bm{w}_i = \sum_j w_{ij} \in \R^k$.
 
 Equation \ref{eq_obj_lle_recon} can be re-arranged by use of the sum-one
-constraint and simplified by introduction of the gram, or local covariance,
+constraint and simplified by introduction of the Gram, or local covariance,
 matrix $\G_i$ \citep{saulroweis2001}:
 
 \begin{equation}
@@ -581,7 +581,7 @@ For inexact prior information, the problem is slightly more complicated.
 The label noise commands the introduction of a regularizing term that penalizes 
 deviations of the assumed coordinates (denoted by the hat symbol) from the true 
 ones.
-The associated regularization parameter $\beta \in \R$ encodes the level of 
+The associated regularization parameter $\beta > 0$ encodes the level of 
 confidence in the prior points \citep{yangetal2006}:
 
 \begin{equation}
