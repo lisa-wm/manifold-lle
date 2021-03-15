@@ -16,6 +16,12 @@ Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2004\harvardyearright .
 \newblock Semi-supervised learning on riemannian manifolds, {\em Machine
   Learning} {\bf 56}:~209--239.
 
+\harvarditem{Belkin \harvardand\ Niyogi}{2008}{belkinniyogi2008}
+Belkin, M. \harvardand\ Niyogi, P.  \harvardyearleft 2008\harvardyearright .
+\newblock Towards a theoretical foundation for laplacian-based manifold
+  methods, {\em Journal of Computer and System Sciences} {\bf
+  74}(8):~1289--1308.
+
 \harvarditem[Bengio et~al.]{Bengio, Delalleau, Roux, Paiement, Vincent
   \harvardand\ Ouimet}{2004}{bengioetal2004}
 Bengio, Y., Delalleau, O., Roux, N.~L., Paiement, J.-F., Vincent, P.
@@ -89,9 +95,20 @@ Leist, A., Playne, D.~P. \harvardand\ Hawick, K.~A.  \harvardyearleft
   applications, {\em Concurrency and Computation. Practice and Experience} {\bf
   21}(18):~2400--2437.
 
+\harvarditem{Levy}{2006}{levy2006}
+Levy, B.  \harvardyearleft 2006\harvardyearright .
+\newblock Laplace-beltrami eigenfunctions towards an algorithm that
+  “understands” geometry, {\em Proceedings of the IEEE International
+  Conference on Shape Modeling and Applications}.
+
 \harvarditem{Ma \harvardand\ Fu}{2011}{mafu2011}
 Ma, Y. \harvardand\ Fu, Y.  \harvardyearleft 2011\harvardyearright .
 \newblock {\em Manifold Learning. Theory and Applications}, CRC Press.
+
+\harvarditem{Marsden}{2013}{marsden2013}
+Marsden, A.  \harvardyearleft 2013\harvardyearright .
+\newblock Eigenvalues of the laplacian and their relationship to the
+  connectedness of a graph.
 
 \harvarditem{McCleary}{2006}{mccleary2006}
 McCleary, J.  \harvardyearleft 2006\harvardyearright .

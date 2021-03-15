@@ -1,4 +1,4 @@
-\subsection{Basic Concepts in Topology}
+\subsection{Formal Definition of Topological Concepts}
 \label{topology}
 
 This section contains definitions of the main geometric concepts considered 
@@ -243,7 +243,7 @@ $\mani$ that connect $\pv$ and $\qv$ \citep{mafu2011}:
 % ------------------------------------------------------------------------------
 
 \newpage
-\subsection{Neighborhood Definitions}
+\subsection{Formal Definition of $k$- and $\epsilon$-Neighborhoods}
 \label{neighborhoods}
 
 A neighborhood of $\x \in \X$ is a subset of $\X$ containing another, open 
@@ -276,10 +276,10 @@ $\ell = k$ and
 with $d_{(k)} \in \R$ being the $k$-th instance of ordered pairwise distances 
 between $\x$ and all other points.
 Alternatively, the neighborhood may be constructed by collecting all points that
-have a maximum distance of $\epsilon \in \R$ to $\x$, yielding 
+have a distance of less than $\epsilon \in \R^+$ to $\x$, yielding 
 
 \begin{equation}
-  \mathcal{N}_{\epsilon} (\x) = \{\x_j \in \X: \| \x - \x_j \|^2 \leq \epsilon\}
+  \mathcal{N}_{\epsilon} (\x) = \{\x_j \in \X: \| \x - \x_j \|^2 < \epsilon\}
   \label{eq-epsneighborhood}
 \end{equation}
 
@@ -288,7 +288,8 @@ and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
 % ------------------------------------------------------------------------------
 
 \newpage
-\subsection{Eigenanalysis}
+\subsection{Formal Definition of Eigenanalysis and Generalized Eigenvalue 
+Problems}
 \label{eigenanalysis}
 
 Eigenanalysis yields the fundamental information stored in a matrix $\bm{A}$: 
@@ -299,7 +300,7 @@ Figure \ref{fig_eigen} depicts the idea of eigenanalysis in a schematic way.
 \begin{figure}[H]
     \centering
     \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-      width = \textwidth]{figures/eigenanalysis}
+      width = 0.8\textwidth]{figures/eigenanalysis}
     \caption[]{
     \raggedright
     Conceptual idea of eigenanalysis. 
@@ -318,14 +319,16 @@ decomposition of a square matrix into pairs of \textit{eigenvectors} and
 Let $\bm{A} \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a 
 scalar value. 
 $\lambda$ is said to be an eigenvalue to $\bm{A}$ if there exists 
-$\bm{v} \in \R^N \setminus \{0\}$ such that $\bm{A} \bm{v} = \lambda \bm{v}$.
+$\bm{v} \in \R^N \setminus \{\bm{0}\}$ such that 
+$\bm{A} \bm{v} = \lambda \bm{v}$.
 Then, $\bm{v}$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
 their tuple is also called an \textit{eigenpair}.
 \\
 
 \textbf{Null spaces.} A closely related notion is that of the 
-\textit{null space}, consisting of the vectors that map $\bm{A}$ to 0 upon 
-multiplication from the right: $\{\bm{v} \in \R^N: \bm{A} \bm{v} = 0\}$.
+\textit{null space}, consisting of the vectors that map $\bm{A}$ to $\bm{0}$ 
+upon multiplication from the right: 
+$\{\bm{v} \in \R^N: \bm{A} \bm{v} = \bm{0}\}$.
 It can be easily seen that the null space consists of those eigenvectors of 
 $\bm{A}$ that are associated with an eigenvalue of zero, and the zero vector 
 itself. 
@@ -348,11 +351,13 @@ It is given by
   \label{eq_gevproblem}
 \end{equation}
 
-where $\bm{V} = [\bm{v}_1, \bm{v}_2, ..., \bm{v}_N] \in \R^{N \times N}$ 
-is the matrix of eigenvectors of $A$ and 
-$\bm{\Lambda} = \text{\textit{diag}}[\lambda_1, \lambda_2, ..., \lambda_N]^T 
-\in \R^{N \times N}$ is the diagonal matrix of the associated eigenvalues 
-(ordered from smallest to largest).
+where $\bm{V} = \begin{bmatrix} \bm{v}_1 & \bm{v}_2 & \dots & \bm{v}_N 
+\end{bmatrix} \in \R^{N \times N}$
+is the matrix of eigenvectors of $\bm{A}$, and \\ 
+$\bm{\Lambda} = \text{\textit{diag}}(\lambda_1, \lambda_2, \dots, \lambda_N) 
+\in \R^{N \times N}$ 
+is the diagonal matrix of the associated eigenvalues with \\
+$\lambda_1 \leq \lambda_2 \leq \dots \leq \lambda_N$.
 The generalized eigenvalue problem may be stated equivalently as 
 
 \begin{equation}
@@ -362,6 +367,12 @@ The generalized eigenvalue problem may be stated equivalently as
 \end{equation}
 
 and translated to the first form by means of a Lagrangian multiplier \citep{ghojoghetal2019}.
+
+% ------------------------------------------------------------------------------
+
+% \newpage
+% \subsection{Generation of Synthetic Manifolds}
+% \label{synthetic_data}
 
 % ------------------------------------------------------------------------------
 

@@ -148,7 +148,7 @@ The choice of $k$ therefore has a rather strong impact on performance
 \citep{sudderth2002}.
 Chapter \ref{experiment} will discuss how the trade-off between global and local 
 structure preservation is addressed in practice.
-\\
+% \\
 
 \begin{minipage}[b]{0.7\textwidth}
   \textbf{Graph construction.}
@@ -163,7 +163,7 @@ structure preservation is addressed in practice.
   therefore lead to directed graphs.
   Conversely, the $\epsilon$-distance boundary holds in both directions and 
   produces undirected graphs \citep{heetal2005}.
-  Figure \ref{fig-neighbor-graph} shows how a neighborhood graph may be used to 
+  Figure \ref{fig_neighbor_graph} shows how a neighborhood graph may be used to 
   approximate the S-curve manifold.
   It was built using $k$-neighborhoods with $k = 3$.
   Note that neighborhood construction solely relies on the observed data, not
@@ -177,13 +177,13 @@ structure preservation is addressed in practice.
 \begin{minipage}[b]{0.25\textwidth}
   \begin{figure}[H]
     \centering
-    \includegraphics[trim = 250 170 200 140, clip, % left bottom right top
-      width = 0.8\textwidth]{figures/s_curve_connected}
+    \includegraphics[trim = 250 170 200 160, clip, % left bottom right top
+      width = 0.75\textwidth]{figures/s_curve_connected}
     \caption[S-curve neighborhood graph]{
     \raggedright
     $k$-neighborhood graph for 300 points sampled from the S-curve with $k = 3$.
     \textit{Source:} own representation.}
-    \label{fig-neighbor-graph}
+    \label{fig_neighbor_graph}
   \end{figure}
 \end{minipage}
 
