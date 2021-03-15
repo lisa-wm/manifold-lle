@@ -42,6 +42,12 @@ Brown, R.  \harvardyearleft 2006\harvardyearright .
 \newblock {\em Topology and Groupoids. A Geometric Account of General Topology,
   Homotopy Types and the Fundamental Groupoid}, 2 edn, Createspace.
 
+\harvarditem{Burges}{2010}{burges2010}
+Burges, C.~J.  \harvardyearleft 2010\harvardyearright .
+\newblock Geometric methods for feature extraction and dimensional reduction -
+  a guided tour, {\em in} O.~Maimon \harvardand\ L.~Rokach (eds), {\em Data
+  Mining and Knowledge Discovery Methods}, Springer US, pp.~53--82.
+
 \harvarditem{Börm \harvardand\ Mehl}{2012}{boermmehl2012}
 Börm, S. \harvardand\ Mehl, C.  \harvardyearleft 2012\harvardyearright .
 \newblock {\em Numerical Methods for Eigenvalue Problems}, De Gruyter.
@@ -67,6 +73,12 @@ Donoho, D.~L. \harvardand\ Grimes, C.  \harvardyearleft 2003\harvardyearright .
 Doshi-Velez, F. \harvardand\ Kim, B.  \harvardyearleft 2017\harvardyearright .
 \newblock Towards a rigorous science of interpretable machine learning, {\em
   arXiv: Machine Learning} .
+
+\harvarditem[Ghojogh et~al.]{Ghojogh, Ghodsi, Karray \harvardand\
+  Crowley}{2020}{ghojoghetal2020}
+Ghojogh, B., Ghodsi, A., Karray, F. \harvardand\ Crowley, M.  \harvardyearleft
+  2020\harvardyearright .
+\newblock Locally linear embedding and its variants: Tutorial and survey.
 
 \harvarditem[Ghojogh et~al.]{Ghojogh, Karray \harvardand\
   Crowley}{2019}{ghojoghetal2019}
@@ -125,6 +137,12 @@ Roweis, S.~T. \harvardand\ Saul, L.~K.  \harvardyearleft 2000\harvardyearright
 \newblock Nonlinear dimensionality reduction by locally linear embedding, {\em
   Science} {\bf 290}(5500):~2323--2326.
 
+\harvarditem{Saul \harvardand\ Roweis}{2001}{saulroweis2001}
+Saul, L.~K. \harvardand\ Roweis, S.~T.  \harvardyearleft 2001\harvardyearright
+  .
+\newblock An introduction to locally linear embedding, {\em Journal of Machine
+  Learning Research} {\bf 7}.
+
 \harvarditem[Saul et~al.]{Saul, Weinberger, Sha, Ham \harvardand\
   Lee}{2006}{sauletal2006}
 Saul, L.~K., Weinberger, K.~Q., Sha, F., Ham, J. \harvardand\ Lee, D.~D.
@@ -175,6 +193,12 @@ Weinberger, K.~Q., Sha, F. \harvardand\ Saul, L.~K.  \harvardyearleft
   2004\harvardyearright .
 \newblock Learning a kernel matrix for nonlinear dimensionality reduction, {\em
   Proceedings of the 21rd International Conference on Machine Learning}.
+
+\harvarditem{Wu \harvardand\ Wu}{2018}{wuwu2018}
+Wu, H.-T. \harvardand\ Wu, N.  \harvardyearleft 2018\harvardyearright .
+\newblock Think globally, fit locally under the manifold setup: Asymptotic
+  analysis of locally linear embedding, {\em Ann. Stat} {\bf
+  246}(6B):~3805--3837.
 
 \harvarditem[Yang et~al.]{Yang, Fu, Zha \harvardand\
   Barlow}{2006}{yangetal2006}

@@ -199,7 +199,8 @@ sphere_data <- make_unit_sphere(n_points = 3000L)
 plotly::orca(
   plot_manifold(
     data = sphere_data[, .(x_1, x_2, x_3)], 
-    intrinsic_coords = sphere_data[, .(t)]) %>% 
+    intrinsic_coords = sphere_data[, .(t)],
+    point_size = 20L) %>% 
     add_trace(
       z = matrix(rep(1L, 100L), ncol = 10L),
       x = seq(-1L, 1L, length.out = 10L),
@@ -297,7 +298,7 @@ neighborhood_graph_2d <- plotly::plot_ly(
 plotly::orca(
   neighborhood_graph_2d,
   "4_report/figures/reconstruction_2d.pdf",
-  height = 300,
+  height = 250,
   width = 300)
 
 # ------------------------------------------------------------------------------
@@ -360,7 +361,7 @@ neighborhood_graph_3d <- plotly::plot_ly(
 plotly::orca(
   neighborhood_graph_3d, 
   "4_report/figures/reconstruction_3d.pdf",
-  height = 300,
+  height = 250,
   width = 300)
 
 # RNX CURVE --------------------------------------------------------------------

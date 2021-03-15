@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 08:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  15 MAR 2021 09:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -742,13 +742,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--79
 
  []
 
-) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [6 <./figures/sphe
-re_tangent.pdf
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--148
+
+ []
+
+[6 <./figures/sphere_tangent.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/sphere_tangent.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
->]) (./chapters/7_conclusion.Rnw) [7] (./chapters/99_appendix.Rnw
+>]
+<figures/reconstruction_3d.pdf, id=87, 229.81859pt x 192.72pt>
+File: figures/reconstruction_3d.pdf Graphic file (type pdf)
+<use figures/reconstruction_3d.pdf>
+Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 177.
+
+(pdftex.def)             Requested size: 165.56181pt x 95.05605pt.
+<figures/reconstruction_2d.pdf, id=89, 229.81859pt x 192.72pt>
+File: figures/reconstruction_2d.pdf Graphic file (type pdf)
+<use figures/reconstruction_2d.pdf>
+Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 183.
+
+(pdftex.def)             Requested size: 130.7071pt x 88.82588pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--250
+
+ []
+
+[7 <./figures/reconstruction_3d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_3d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+> <./figures/reconstruction_2d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/reconstruction_2d.pdf): PDF inclus
+ion: invalid other resource which is no dict (key 'ProcSets', type <array>); ig
+nored.
+>]) (./chapters/5_experiment.Rnw) (./chapters/6_discussion.Rnw [8])
+(./chapters/7_conclusion.Rnw) [9] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -786,7 +819,7 @@ av-ing a suf-fi-cient num-ber of con-tin-u-ous deriva-tives). Component-
  []
 
 [6] [7]
-<figures/eigenanalysis.png, id=101, 742.775pt x 218.8175pt>
+<figures/eigenanalysis.png, id=130, 742.775pt x 218.8175pt>
 File: figures/eigenanalysis.png Graphic file (type png)
 <use figures/eigenanalysis.png>
 Package pdftex.def Info: figures/eigenanalysis.png  used on input line 303.
@@ -814,35 +847,37 @@ ded work. All di-rect or in-di-rect sources
 
 [13] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10714 strings out of 479485
- 158665 string characters out of 5875915
- 473046 words of memory out of 5000000
- 27411 multiletter control sequences out of 15000+600000
+ 10758 strings out of 479485
+ 159663 string characters out of 5875915
+ 472248 words of memory out of 5000000
+ 27453 multiletter control sequences out of 15000+600000
  586936 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,12n,76p,369b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,12n,76p,369b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mb10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cmextra/cmmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb>
-Output written on main.pdf (21 pages, 1069567 bytes).
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/c
+mmib8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2020/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (23 pages, 1129928 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 223 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
