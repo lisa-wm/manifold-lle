@@ -47,7 +47,7 @@ instance, points in the red upper part of figure \ref{fig_scurve} would be
 considered deceptively close to the cyan mid area), it seems reasonable to 
 constrain distances to the manifold surface.
 Put simply, \textit{geodesic distance} between two points on $\mani$ is the 
-length of the shortest curve (\textit{geodesic}) on $\mani$.
+length of the shortest curve (\textit{geodesic}) between them lying on $\mani$.
 Intuitively, geodesic distance can be identified with Euclidean distance in
 Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
 
@@ -58,8 +58,8 @@ Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
 
 The manifold learning situation might be summarized as follows: data are 
 observed in $\RD$ but assumed to be really samples from a $d$-manifold $\mani$ 
-embedded in $\RD$, meaning they can be interpreted in $\Rd$ if a faithful 
-translation between $\mani$ and $\Rd$ is found\footnote{
+embedded in $\RD$, meaning they can be treated as $d$-dimensional, provided a 
+faithful translation between $\mani$ and $\Rd$ is found\footnote{
 It is actually a simplification to assume all data to lie \textit{on} $\mani$, 
 but the more general case of data lying \textit{near} $\mani$ is rarely 
 considered explicitly.
@@ -89,8 +89,8 @@ The map $\psi$ itself is not always explicitly retrieved.
 \\
 
 Note that, while $D$ is given a priori, the intrinsic dimensionality $d$ is 
-often unknown in real-life applications.
-$\Y$ must therefore be expected to differ from the true coordinates and, in 
+often unknown.
+$\Y$ must therefore be expected to differ from the true coordinates, and, in 
 particular, to even have incorrect dimension \citep{sauletal2006}.
 Notwithstanding this potential gap, solutions of the subsequently presented 
 methods will be denoted by $\Y \in (\Rd)^N$ to avoid overloading

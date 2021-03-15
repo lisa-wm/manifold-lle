@@ -27,7 +27,7 @@ is reasonable to suppose the true sources of variability are few.
 More formally, the data are assumed to lie on a $d$-dimensional 
 \textit{manifold}, i.e., the $d$-dimensional generalization of
 a curved surface, embedded in the $D$-dimensional observation space with 
-$d \ll D$ \citep{cayton2005}.
+$D \gg d$ \citep{cayton2005}.
 A crucial property of $d$-manifolds is their local topological equivalence to 
 $\Rd$ \citep{mafu2011}.
 It is precisely this locally Euclidean behavior that allows manifold coordinates 
@@ -40,28 +40,28 @@ the intrinsic manifold structure \citep{mafu2011}.
 Various approaches have been proposed to retrieve points' intrinsic coordinates.
 A taxonomy may be found in \citet{vandermaatenetal2009}. 
 Many can be subsumed under the framework of \textit{kernel principal component 
-analysis (kPCA)}, characterizing the data by a specific matrix representation 
+analysis (KPCA)}, characterizing the data by a specific matrix representation 
 whose principal eigenvectors are used to span a $d$-dimensional embedding space
 \citep{hametal2003}.
 As manifolds may exhibit complicated surfaces, methods that find non-linear 
 representations are often more successful \citep{vandermaatenetal2009}.
 LGML techniques achieve this by approximating the manifold with weighted 
 neighborhood graphs.
-They pay particular heed to local environments and are thus able retrieve 
+They pay particular heed to local environments and are thus able to retrieve 
 highly non-linear structures \citep{belkinniyogi2003}.
 \textit{Locally linear embedding (LLE)} is one of the earliest such techniques 
 \citep{roweissaul2000}.
 It is based on a rather heuristical notion of preserving local neighborhood 
 relations.
-\textit{Laplacian eigenmaps (LEM)} was proposed somewhat later on a more rigid 
+\textit{Laplacian eigenmaps (LEM)} was ceveloped somewhat later on a more rigid 
 theoretical foundation that is also extendable to LLE 
 \citep{belkinniyogi2003}.
 Both ideas are straddled by \textit{Hessian LLE (HLLE)}, a conceptual variant of 
 LEM algorithmically akin to LLE \citep{donohogrimes2003}.
-The fully unsupervised functionality of these methods offers a drawback: they 
-may fail to find an embedding that has an actual reflection in the 
+Yet, the fully unsupervised functionality of these methods offers a drawback: 
+they may fail to find an embedding that has an actual reflection in the 
 real-life setting.
-Therefore, \citet{yangetal2006} incorporate prior information in 
+Therefore, \citet{yangetal2006} propose to incorporate prior information in 
 \textit{semi-supervised LLE (SSLLE)} to produce more meaningful 
 embeddings\footnote{
 Note that this is rather different from general semi-supervised 
@@ -76,14 +76,14 @@ e.g., by \citet{zhangchau2009}, that build upon a fully supervised LLE
 \textbf{Outline.}
 Indeed, their results indicate considerable success of SSLLE.
 It is the aim of this work to (1) reproduce these results, creating
-an open-source implementation, and (2) to assess its performance under different 
-parameter settings. 
+an open-source implementation, and (2) to assess its 
+performance under varying parameter settings. 
 The remainder of the report is organized as follows: first, the problem of 
 manifold learning is formalized. 
 The subsequent chapters sketch the idea of LGML 
 and lay out the above named unsupervised techniques and SSLLE in more detail.
-Afterwards, the results of the conducted experiments are presented, before the 
-report concludes with a brief discussion.
+Afterwards, the results of the conducted experiments are presented.
+The report concludes with a brief discussion.
 
 % The remainder of the report is organized as follows: after formalizing the 
 % problem of manifold learning (chapter \ref{math}), chapter \ref{lgml} explains 

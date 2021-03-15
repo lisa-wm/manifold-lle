@@ -261,9 +261,9 @@ that measure angles \citep{belkinniyogi2004}.
 } $\| \cdot \|^2$.
 Let $\mathcal{N}: \X \rightarrow \X^{\ell}, \x \mapsto \mathcal{N} (\x)$ be a 
 constructor that assigns a set of neighbors to $\x$.
-The first possibility is to restrict the size of the neighborhood to the $k$ 
-points\footnote{
-In presence of ties in pairwise distances k may vary across the data, but with 
+The first possibility is to restrict the size of the neighborhood to the 
+$k \in \N$ points\footnote{
+In presence of ties in pairwise distances $k$ may vary across the data, but with 
 zero probability in continuous feature spaces.
 } with the smallest distance to $\x$, such that
 $\ell = k$ and 
