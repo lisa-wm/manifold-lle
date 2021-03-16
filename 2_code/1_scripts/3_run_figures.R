@@ -449,6 +449,7 @@ ggplot2::ggsave(
 # ------------------------------------------------------------------------------
 
 height_qual <- 450L
+height_qual_report <- 600L
 height_key_landmarks <- 220L
 height_key_noise <- 200L
 width_all <- 1000L
@@ -466,6 +467,12 @@ invisible(lapply(
       width = width_all)
     
     plotly::orca(
+      sensitivity_plots_emb[[i]]$emb_plots_landmarks, 
+      sprintf("4_report/figures/sensitivity_landmarks_qual_%s.pdf", i),
+      height = height_qual_report,
+      width = width_all)
+    
+    plotly::orca(
       sensitivity_plots_key[[i]]$plot_coverage, 
       sprintf("3_presentation/figures/sensitivity_landmarks_key_%s.pdf", i),
       height = height_key_landmarks,
@@ -475,6 +482,12 @@ invisible(lapply(
       sensitivity_plots_emb[[i]]$emb_plots_noise, 
       sprintf("3_presentation/figures/sensitivity_noise_qual_%s.pdf", i),
       height = height_qual,
+      width = width_all)
+    
+    plotly::orca(
+      sensitivity_plots_emb[[i]]$emb_plots_noise, 
+      sprintf("4_report/figures/sensitivity_noise_qual_%s.pdf", i),
+      height = height_qual_report,
       width = width_all)
     
     plotly::orca(

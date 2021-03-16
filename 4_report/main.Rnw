@@ -47,6 +47,7 @@ bindingoffset = 0mm]{geometry}
 \usepackage{amsthm}
 \usepackage{mathrsfs}
 \usepackage{graphicx}
+\usepackage{rotating}
 \usepackage{float}
 \usepackage[export]{adjustbox}
 \usepackage[table]{xcolor}
@@ -160,6 +161,8 @@ Munich, April 2\textsuperscript{nd}, 2021
 
 \tableofcontents
 \newpage
+\listoffigures
+\newpage
 
 \Large
 \noindent
@@ -190,7 +193,7 @@ Munich, April 2\textsuperscript{nd}, 2021
   SSLLE & semi-supervised locally linear embedding
 \end{tabular}
 
-\vspace{3cm}
+\vspace{1cm}
 
 \Large
 \noindent
@@ -244,11 +247,6 @@ Munich, April 2\textsuperscript{nd}, 2021
 \end{tabular}
 
 \newpage
-
-\listoffigures
-\newpage
-% \listoftables
-% \newpage
 
 % CHAPTERS ---------------------------------------------------------------------
 

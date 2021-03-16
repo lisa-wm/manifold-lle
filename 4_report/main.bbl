@@ -118,6 +118,12 @@ Kouropteva, O., Okun, O. \harvardand\ Pietikäinen, M.  \harvardyearleft
   embedding algorithm, {\em Proceedings of the 1st International Conference on
   Fuzzy Systems and Knowledge Discovery}.
 
+\harvarditem{Kraemer}{2019}{pkgdimred}
+Kraemer, G.  \harvardyearleft 2019\harvardyearright .
+\newblock {\em dimRed: A Framework for Dimensionality Reduction}.
+\newblock R package version 0.2.3.
+\newline\harvardurl{https://CRAN.R-project.org/package=dimRed}
+
 \harvarditem[Kraemer et~al.]{Kraemer, Reichstein \harvardand\
   Mahecha}{2019}{kraemeretal2019}
 Kraemer, G., Reichstein, M. \harvardand\ Mahecha, M.~D.  \harvardyearleft
@@ -163,6 +169,11 @@ McCleary, J.  \harvardyearleft 2006\harvardyearright .
 \harvarditem{Mukherjee}{2015}{mukherjee2015}
 Mukherjee, A.  \harvardyearleft 2015\harvardyearright .
 \newblock {\em Differential Topology}, 2 edn, Springer.
+
+\harvarditem{{R Core Team}}{2020}{rsoftware}
+{R Core Team}  \harvardyearleft 2020\harvardyearright .
+\newblock {\em R: A Language and Environment for Statistical Computing}, R
+  Foundation for Statistical Computing, Vienna, Austria.
 
 \harvarditem{Ross}{2008}{dissross2008}
 Ross, I.  \harvardyearleft 2008\harvardyearright .

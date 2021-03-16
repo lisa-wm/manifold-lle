@@ -124,13 +124,176 @@ manifolds.
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{Sensitivity Toward Location of Prior Points}
+\subsubsection{Sensitivity Toward Prior Point Location}
 \label{landmarks}
+
+\begin{minipage}[b]{0.4\textwidth}
+  \textbf{Key variation.}
+  Recall that scenarios in the first sensitivity analysis vary in the method of
+  landmark coverage and the number of selected prior points.
+  Figure \ref{fig_key_landmark} depicts this variation for the maximum case of 
+  twelve landmarks, marking the selected points in the true embedding (which is 
+  the same for both data sets, see section \ref{synthetic_data}).
+  While poor and random coverage are identical for examples, optimal 
+  coverage is not as it adapts prior point selection to the intrinsic manifold 
+  structure.
+\end{minipage}%
+\begin{minipage}[b]{0.05\textwidth}
+  \phantom{xxx}
+\end{minipage}%
+\begin{minipage}[b]{0.55\textwidth}
+  \begin{figure}[H]
+    \begin{subfigure}[c]{\textwidth}
+      \centering
+      \includegraphics[trim = 50 20 20 20, clip, % left bottom right top
+      width = \textwidth]{figures/sensitivity_landmarks_key_swiss_roll}
+      \caption{
+      \raggedright
+      Swiss roll data}
+    \end{subfigure}
+    \begin{subfigure}[c]{\textwidth}
+      \centering
+      \includegraphics[trim = 50 20 20 0, clip, % left bottom right top
+      width = \textwidth]{figures/sensitivity_landmarks_key_incomplete_tire}
+      \caption{
+      \raggedright
+      Incomplete tire data}
+    \end{subfigure}
+    \caption[Key variation in sensitivity analysis I]{
+    \raggedright
+    Poor (\textit{left}), random (\textit{middle}), and optimal 
+    (\textit{right}) coverage for both data sets. \textit{Source:} own 
+    representation.
+    }
+    \label{fig_key_landmark}
+  \end{figure}
+\end{minipage}
+
+\vspace{0.3cm}
+
+An important thing to note here is that the points do not appear to actually
+cover the surface well: they mostly cluster on the fringes of the embedding.
+This artifact must probably be attributed to the estimation of geodesic 
+distance for which the implementation relies the \texttt{dimRed} 
+package \citep{pkgdimred}.
+\\
+
+\textbf{Quantitative results.}
+Performance across scenarios reflects this observation.
+Figure \ref{fig_auc_landmarks} illustrates how performance, as measured by 
+$\text{AUC}(R_{NX})$, varies across the scenarios for both data sets.
+Clearly, random selection performs best, which is not really surprising 
+considering how it also achieves better coverage than the other two methods 
+(figure \ref{fig_key_landmark}).
+As expected, more landmarks tend to improve the embedding, but this effect 
+saturates rather quickly -- apparently, a few known coordinates already provide 
+sufficient guidance.
+
+\begin{figure}[H]
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+  width = \textwidth]{figures/sensitivity_landmarks_auc}
+  \caption[Quantitative results for sensitivity analysis I]{
+  \raggedright
+  Quantitative results for method of landmark coverage versus number of prior 
+  points. 
+  $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of
+  1 in both figures for better visibility of differences.
+  Original scales: Swiss roll -- $\text{AUC}(R_{NX}) \in [0.2655, 0.4086]$,
+  incomplete tire -- $\text{AUC}(R_{NX}) \in [0.2772, 0.6231]$.
+  \textit{Source:} own representation.
+  }
+  \label{fig_auc_landmarks}
+\end{figure}
+
+\newpage
+
+\textbf{Qualitative results.}
+As mentioned before, quantitative evaluation of manifold learning tasks is a 
+difficult endeavor, so figures \ref{fig_emb_landmarks_swiss} and 
+\ref{fig_emb_landmarks_tire} allow to cross-check the results with the actual 
+embeddings (a full-page version of both may be found in section 
+\ref{qual_results}.
+Indeed, visual analysis suggests that optimal coverage does not perform so badly
+after all and might be considered superior to the randomly selected prior 
+points, particularly so for the Swiss roll data.
+The picture is somewhat more balanced for the incomplete tire.
+Poor coverage fails entirely in both cases, no matter the number of landmarks.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[trim = 40 0 0 0, clip, width = 0.9\textwidth]
+  {figures/sensitivity_landmarks_qual_swiss_roll}
+  \caption[Qualitative results for Swiss roll data in sensitivity analysis I]
+  {\raggedright
+  Qualitative results Swiss roll data, evaluating method of landmark coverage 
+  versus number of prior points.
+  \textit{Source:} own representation.}
+  \label{fig_emb_landmarks_swiss}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[trim = 40 0 0 20, clip, width = 0.9\textwidth]
+  {figures/sensitivity_landmarks_qual_incomplete_tire}
+  \caption[Qualitative results for incomplete tire data in sensitivity analysis 
+  I]
+  {\raggedright
+  Qualitative results for incomplete tire data, evaluating method of landmark 
+  coverage versus number of prior points.
+  \textit{Source:} own representation.}
+  \label{fig_emb_landmarks_tire}
+\end{figure}
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{Sensitivity Toward Level of Label Noise}
+\subsubsection{Sensitivity Toward Label Noise}
 \label{noise}
+
+\begin{minipage}[b]{0.4\textwidth}
+  \textbf{Key variation.}
+  Recall that scenarios in the first sensitivity analysis vary in the method of
+  landmark coverage and the number of selected prior points.
+  Figure \ref{fig_key_landmark} depicts this variation for the maximum case of 
+  twelve landmarks, marking the selected points in the true embedding (which is 
+  the same for both data sets, see section \ref{synthetic_data}).
+  While poor and random coverage are identical for examples, optimal 
+  coverage is not as it adapts prior point selection to the intrinsic manifold 
+  structure.
+\end{minipage}%
+\begin{minipage}[b]{0.05\textwidth}
+  \phantom{xxx}
+\end{minipage}%
+\begin{minipage}[b]{0.55\textwidth}
+  \begin{figure}[H]
+    \begin{subfigure}[c]{\textwidth}
+      \centering
+      \includegraphics[trim = 50 20 0 20, clip, % left bottom right top
+      width = \textwidth]{figures/sensitivity_noise_key_swiss_roll}
+      \caption{
+      \raggedright
+      Swiss roll data}
+    \end{subfigure}
+    \begin{subfigure}[c]{\textwidth}
+      \centering
+      \includegraphics[trim = 50 20 0 0, clip, % left bottom right top
+      width = \textwidth]{figures/sensitivity_noise_key_incomplete_tire}
+      \caption{
+      \raggedright
+      Incomplete tire data}
+    \end{subfigure}
+    \caption[Key variation in sensitivity analysis II]{
+    \raggedright
+    Varying levels of noise exemplified in one prior point location.
+    Semi-axes of ellipsoids indicate standard deviation in the respective 
+    direction.
+    \textit{Source:} own 
+    representation.
+    }
+    \label{fig_key_noise}
+  \end{figure}
+\end{minipage}
+
+\vspace{0.3cm}
 
 % ------------------------------------------------------------------------------
 

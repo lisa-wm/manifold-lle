@@ -76,8 +76,8 @@ e.g., by \citet{zhangchau2009}, that build upon a fully supervised LLE
 \textbf{Outline.}
 Indeed, their results indicate considerable success of SSLLE.
 It is the aim of this work to (1) reproduce these results, creating
-an open-source implementation, and (2) to assess its 
-performance under varying parameter settings. 
+an open-source \texttt{R} \citep{rsoftware} implementation, and (2) to assess 
+its performance under varying parameter settings. 
 The remainder of the report is organized as follows: first, the problem of 
 manifold learning is formalized. 
 The subsequent chapters sketch the idea of LGML 

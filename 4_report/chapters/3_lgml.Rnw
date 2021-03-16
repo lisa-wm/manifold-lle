@@ -177,8 +177,8 @@ practice.
 \begin{minipage}[b]{0.25\textwidth}
   \begin{figure}[H]
     \centering
-    \includegraphics[trim = 250 170 200 160, clip, % left bottom right top
-      width = 0.75\textwidth]{figures/s_curve_connected}
+    \includegraphics[trim = 250 170 200 180, clip, % left bottom right top
+      width = 0.8\textwidth]{figures/s_curve_connected}
     \caption[S-curve neighborhood graph]{
     \raggedright
     $k$-neighborhood graph for 300 points sampled from the S-curve with $k = 3$.

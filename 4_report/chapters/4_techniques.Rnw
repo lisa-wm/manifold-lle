@@ -488,20 +488,30 @@ that has acted as a limiting factor on the practical application of HLLE
   \end{figure}
 \end{minipage}
 
-\vspace{0.3cm}
+% \vspace{0.3cm}
+
+\textbf{Prior point location.}
+Obviously, semi-supervision commands the availability of prior 
+information.
+The experiments in chapter \ref{experiment} will assume a
+setting where prior information can be inquired from the pool of initially
+unlabeled observations.
+A straightforward approach would be to select the prior points in a way that 
+is most informative to the learning algorithm.
+
+\vspace{0.2cm}
 
 \begin{minipage}[b]{0.6\textwidth}
-  \textbf{Prior point location.}
-  Obviously, semi-supervision commands the availability of prior 
-  information.
-  The practical experiments in chapter \ref{experiment} will assume a
-  setting where prior information can be inquired from the pool of initially
-  unlabeled observations.
-  A straightforward approach would be to select the prior points in a way that is 
-  most informative to the learning algorithm.
-  As this is, of course, not always possible, the sensitivity analysis will 
-  examine the impact of such optimal selection versus scenarios of poor landmark 
-  choice and sampling uniformly at random:
+  \citet{yangetal2006} found this to be the case for points that are 
+  scattered maximally across the manifold surface.
+  Such optimal coverage is achieved by sequential selection of landmarks, in 
+  each step choosing the point whose minimum distance to all previously selected 
+  ones is maximal.
+  Crucially, the underlying metric is geodesic distance here.
+  The sensitivity analysis will examine the impact of optimal coverage 
+  versus scenarios of poor landmark choice, understood as all points being 
+  clustered in one location, and sampling uniformly at random, as depicted in 
+  figure \ref{fig_scurve_coverage}.
 \end{minipage}%
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -509,15 +519,15 @@ that has acted as a limiting factor on the practical application of HLLE
 \begin{minipage}[b]{0.35\textwidth}
   \begin{figure}[H]
     \begin{subfigure}[b]{0.32\textwidth}
-      \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      \includegraphics[trim = 80 20 60 20, clip, % left bottom right top
         width = \textwidth]{figures/s_curve_pp_poor}
     \end{subfigure}%
     \begin{subfigure}[b]{0.32\textwidth}
-      \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      \includegraphics[trim = 80 20 60 20, clip, % left bottom right top
         width = \textwidth]{figures/s_curve_pp_random}
   \end{subfigure}%
     \begin{subfigure}[b]{0.32\textwidth}
-      \includegraphics[trim = 80 20 60 0, clip, % left bottom right top
+      \includegraphics[trim = 80 20 60 20, clip, % left bottom right top
         width = \textwidth]{figures/s_curve_pp_maxmin}
     \end{subfigure}
     \caption[S-curve with poor, random and optimal landmark coverage]{
