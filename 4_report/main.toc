@@ -16,11 +16,11 @@
 \contentsline {subsection}{\numberline {5.1}Experimental Design}{11}{}%
 \contentsline {subsubsection}{\numberline {5.1.1}Sensitivity Analysis}{11}{}%
 \contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{12}{}%
-\contentsline {subsection}{\numberline {5.2}Results}{12}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Sensitivity Toward Location of Prior Points}{12}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Sensitivity Toward Level of Label Noise}{12}{}%
-\contentsline {subsection}{\numberline {5.3}Concluding Comparison}{12}{}%
-\contentsline {section}{\numberline {6}Discussion}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Results}{13}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Sensitivity Toward Location of Prior Points}{13}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Sensitivity Toward Level of Label Noise}{13}{}%
+\contentsline {subsection}{\numberline {5.3}Concluding Comparison}{13}{}%
+\contentsline {section}{\numberline {6}Discussion}{13}{}%
 \contentsline {section}{\numberline {7}Conclusion}{13}{}%
 \contentsline {section}{\numberline {A}Appendix}{V}{}%
 \contentsline {subsection}{\numberline {A.1}Formal Definition of Topological Concepts}{V}{}%

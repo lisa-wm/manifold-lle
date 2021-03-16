@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 MAR 2021 07:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 MAR 2021 07:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,12 +877,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--16
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 64--67
+Underfull \hbox (badness 10000) in paragraph at lines 61--76
 
  []
 
-) (./chapters/6_discussion.Rnw) (./chapters/7_conclusion.Rnw) [12] [13]
-(./chapters/99_appendix.Rnw
+<figures/swiss_roll.pdf, id=155, 343.2825pt x 305.22029pt>
+File: figures/swiss_roll.pdf Graphic file (type pdf)
+<use figures/swiss_roll.pdf>
+Package pdftex.def Info: figures/swiss_roll.pdf  used on input line 99.
+(pdftex.def)             Requested size: 74.68924pt x 78.94629pt.
+<figures/incomplete_tire.pdf, id=157, 455.78279pt x 305.22029pt>
+File: figures/incomplete_tire.pdf Graphic file (type pdf)
+<use figures/incomplete_tire.pdf>
+Package pdftex.def Info: figures/incomplete_tire.pdf  used on input line 104.
+(pdftex.def)             Requested size: 124.4808pt x 64.35706pt.
+<figures/world_3d.pdf, id=159, 606.34526pt x 606.34526pt>
+File: figures/world_3d.pdf Graphic file (type pdf)
+<use figures/world_3d.pdf>
+Package pdftex.def Info: figures/world_3d.pdf  used on input line 109.
+(pdftex.def)             Requested size: 112.03195pt x 107.58673pt.
+) (./chapters/6_discussion.Rnw [12 <./figures/swiss_roll.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/swiss_roll.pdf): PDF inclusion: in
+valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+> <./figures/incomplete_tire.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/incomplete_tire.pdf): PDF inclusio
+n: invalid other resource which is no dict (key 'ProcSets', type <array>); igno
+red.
+> <./figures/world_3d.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/world_3d.pdf): PDF inclusion: inva
+lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]) (./chapters/7_conclusion.Rnw) [13] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -958,10 +985,10 @@ ded work. All di-rect or in-di-rect sources
 
 [15] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 10853 strings out of 479485
- 161653 string characters out of 5875915
- 475787 words of memory out of 5000000
- 27535 multiletter control sequences out of 15000+600000
+ 10875 strings out of 479485
+ 162251 string characters out of 5875915
+ 475796 words of memory out of 5000000
+ 27554 multiletter control sequences out of 15000+600000
  595245 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,20n,76p,369b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -990,10 +1017,10 @@ pe1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rsfs/rsfs10
 .pfb>
-Output written on main.pdf (29 pages, 1653179 bytes).
+Output written on main.pdf (29 pages, 2320567 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
+ 303 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

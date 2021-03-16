@@ -21,11 +21,7 @@ landmarks, reflecting the hypothesis of optimal landmark choice dominating
 random and poor selection.
 A higher number of prior points is generally expected to be beneficial.
 This gives rise to the following axes of variation, out of whose cartesian 
-product 18 different scenarios\footnote{
-Beyond twelve landmarks, no substantial change in the results occurs.
-The results in chapter \ref{results} also reflect the saturating effect of 
-employing more prior points.
-} emerge, always assuming exact prior information:
+product 18 different scenarios emerge, always assuming exact prior information:
 \begin{tight_enumerate}
   \item Landmark coverage $\in \{ \text{poor}, \text{ random}, 
   \text{ maximum}\}$.
@@ -48,7 +44,8 @@ and $s_i$ denotes empirical standard deviation in dimension $i$.
 Variation is steered via noise level $\alpha$.
 With the supposition of more landmarks being able to compensate for noise to 
 some extent, this yields another 24 scenarios\footnote{
-Again, varying noise beyond the range examined here does not reveal any further 
+Varying any of the parameters beyond the ranges examined here does not reveal 
+any further
 insights.
 }:
 \begin{tight_enumerate}
@@ -61,15 +58,64 @@ insights.
 \subsubsection{Evaluation Framework}
 \label{eval}
 
-\textbf{Swiss roll.}
-foo
+\textbf{Performance evaluation.}
+Embedding quality is evaluated on the area under the $R_{NX}$ curve, 
+$\text{AUC}(R_{NX})$, as proposed by \citet{kraemeretal2019}.
+This metric assesses the extent to which neighborhood relations are preserved. 
+The $R_{NX}$ curve results from a normalized count of points that, for all 
+possible $k$, remain in the $k$-neighborhoods they form part of in the 
+observation space \citep{kraemeretal2019}.
+For a more detailed derivation, please refer to section \ref{auc_rnx} of the 
+appendix.
+Unsupervised learning tasks are notoriously hard to evaluate and manifold 
+learning is no exception.
+Although $\text{AUC}(R_{NX})$ is considered reasonably reliable, all results 
+will therefore be also inspected visually, which is possible here thanks to the 
+low dimensionality of the evaluation data.
 \\
 
-\textbf{Incomplete tire.}
-foo
+\textbf{Data.}
+Experiments are mainly conducted on two synthetic data sets with 1,000 samples 
+each.
+The \textit{Swiss roll} data is a widely used two-manifold resulting from 
+rolling a rectangular patch of data up to a spiral-like shape and embedding it 
+in $\R^3$.
+A somewhat more complex shape results from bending that same rectangular patch 
+to form an \textit{incomplete tire}, basically a hollow torus with a strip and 
+a chunk cut out from the tube in longitudinal and cross-section, respectively.
+Both manifolds are depicted in figure \ref{fig_swiss_tire_world}.
+A third example, the so-called \textit{world data} consisting of 2,527 
+observations, is employed for the concluding comparison of SSLLE, LLE and HLLE 
+in chapter \ref{comparison}.
+It represents a simplified model of the Earth with five continents (omitting the 
+poles).
+Section \ref{synthetic_data} documents the precise construction of all three
+manifolds.
 
-\textbf{World data.}
-foo
+\begin{figure}[H]
+  \begin{subfigure}[c]{0.25\textwidth}
+    \centering
+    \includegraphics[trim = 70 30 60 40, clip, % left bottom right top
+    width = 0.6\textwidth]{figures/swiss_roll}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.25\textwidth}
+    \centering
+    \includegraphics[trim = 40 50 0 40, clip, % left bottom right top
+    width = \textwidth]{figures/incomplete_tire}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.25\textwidth}
+    \centering
+    \includegraphics[trim = 50 100 50 20, clip, % left bottom right top
+    width = 0.9\textwidth]{figures/world_3d}
+  \end{subfigure}
+  \caption[Synthetic data for experimental studies]{
+  \raggedright
+  Synthetic data for experimental studies, including the Swiss roll 
+  (\textit{left}), incomplete tire (\textit{middle}), and world data sets.
+  For construction details, see section \ref{synthetic_data} of the appendix.
+  \textit{Source:} own representation.}
+  \label{fig_swiss_tire_world}
+\end{figure}
 
 % ------------------------------------------------------------------------------
 
