@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 MAR 2021 11:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  16 MAR 2021 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,7 +585,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 LaTeX Font Info:    Trying to load font information for T1+aer on input line 10
-1.
+2.
 
 (c:/texlive/2020/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
@@ -602,22 +602,22 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -659,9 +659,9 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package csquotes Info: Making character " active on input line 101.
+Package csquotes Info: Making character " active on input line 102.
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 101.
+LaTeX Info: Redefining \selectfont on input line 102.
 
 (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -694,7 +694,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count317
-Package hyperref Info: Link coloring ON on input line 101.
+Package hyperref Info: Link coloring ON on input line 102.
 
 (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -704,34 +704,34 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count318
 )
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+LaTeX Info: Redefining \ref on input line 102.
+LaTeX Info: Redefining \pageref on input line 102.
+LaTeX Info: Redefining \nameref on input line 102.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  (./main-concordance.tex)
-<figures/sigillum.png, id=133, 2946.00626pt x 2991.175pt>
+<figures/sigillum.png, id=137, 2946.00626pt x 2991.175pt>
 File: figures/sigillum.png Graphic file (type png)
 <use figures/sigillum.png>
-Package pdftex.def Info: figures/sigillum.png  used on input line 128.
+Package pdftex.def Info: figures/sigillum.png  used on input line 129.
 (pdftex.def)             Requested size: 199.16624pt x 202.19228pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 135
+LaTeX Font Info:    Trying to load font information for U+msa on input line 136
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 135
+LaTeX Font Info:    Trying to load font information for U+msb on input line 136
 .
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
-5.
+6.
 
 (c:/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -761,12 +761,12 @@ Overfull \hbox (3.95448pt too wide) detected at line 29
 \openout6 = `main.lof'.
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 169--174
+Underfull \hbox (badness 10000) in paragraph at lines 170--175
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--205
+Underfull \hbox (badness 10000) in paragraph at lines 201--206
 
  []
 
@@ -800,7 +800,7 @@ been already used, duplicate ignored
                    \relax 
 l.9 
      [1]
-<figures/s_curve.pdf, id=299, 343.2825pt x 305.22029pt>
+<figures/s_curve.pdf, id=304, 343.2825pt x 305.22029pt>
 File: figures/s_curve.pdf Graphic file (type pdf)
 <use figures/s_curve.pdf>
 Package pdftex.def Info: figures/s_curve.pdf  used on input line 32.
@@ -835,7 +835,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--16
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/models_overview_new.png, id=335, 809.0225pt x 257.96375pt>
+<figures/models_overview_new.png, id=340, 809.0225pt x 257.96375pt>
 File: figures/models_overview_new.png Graphic file (type png)
 <use figures/models_overview_new.png>
 Package pdftex.def Info: figures/models_overview_new.png  used on input line 35
@@ -856,7 +856,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--152
 
  []
 
-<figures/s_curve_connected.pdf, id=393, 681.50606pt x 606.34526pt>
+<figures/s_curve_connected.pdf, id=398, 681.50606pt x 606.34526pt>
 File: figures/s_curve_connected.pdf Graphic file (type pdf)
 <use figures/s_curve_connected.pdf>
 Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 181.
@@ -877,7 +877,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--23
 
  []
 
-<figures/sphere_tangent.pdf, id=427, 343.2825pt x 305.22029pt>
+<figures/sphere_tangent.pdf, id=432, 343.2825pt x 305.22029pt>
 File: figures/sphere_tangent.pdf Graphic file (type pdf)
 <use figures/sphere_tangent.pdf>
 Package pdftex.def Info: figures/sphere_tangent.pdf  used on input line 52.
@@ -897,13 +897,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--148
 
  []
 
-<figures/reconstruction_3d.pdf, id=468, 229.81859pt x 192.72pt>
+<figures/reconstruction_3d.pdf, id=473, 229.81859pt x 192.72pt>
 File: figures/reconstruction_3d.pdf Graphic file (type pdf)
 <use figures/reconstruction_3d.pdf>
 Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 177.
 
 (pdftex.def)             Requested size: 165.56181pt x 95.05605pt.
-<figures/reconstruction_2d.pdf, id=470, 229.81859pt x 192.72pt>
+<figures/reconstruction_2d.pdf, id=475, 229.81859pt x 192.72pt>
 File: figures/reconstruction_2d.pdf Graphic file (type pdf)
 <use figures/reconstruction_2d.pdf>
 Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 183.
@@ -939,13 +939,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--423
 
  []
 
-<figures/s_curve_pp_random.pdf, id=606, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_random.pdf, id=611, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_random.pdf>
 Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 473.
 
 (pdftex.def)             Requested size: 87.13808pt x 115.31233pt.
-<figures/s_curve_undone_pp_random_long.pdf, id=608, 229.81859pt x 455.78279pt>
+<figures/s_curve_undone_pp_random_long.pdf, id=613, 229.81859pt x 455.78279pt>
 File: figures/s_curve_undone_pp_random_long.pdf Graphic file (type pdf)
 <use figures/s_curve_undone_pp_random_long.pdf>
 Package pdftex.def Info: figures/s_curve_undone_pp_random_long.pdf  used on inp
@@ -962,7 +962,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/s_curve_undone_pp_random_long.pdf)
 : PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type 
 <array>); ignored.
 >]
-<figures/s_curve_pp_poor.pdf, id=630, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_poor.pdf, id=635, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_poor.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_poor.pdf>
 Package pdftex.def Info: figures/s_curve_pp_poor.pdf  used on input line 523.
@@ -972,7 +972,7 @@ File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 527.
 
 (pdftex.def)             Requested size: 55.76964pt x 72.90868pt.
-<figures/s_curve_pp_maxmin.pdf, id=633, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_maxmin.pdf, id=638, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_maxmin.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_maxmin.pdf>
 Package pdftex.def Info: figures/s_curve_pp_maxmin.pdf  used on input line 531.
@@ -1023,29 +1023,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--76
 
  []
 
-<figures/swiss_roll.pdf, id=701, 343.2825pt x 305.22029pt>
+<figures/swiss_roll.pdf, id=706, 343.2825pt x 305.22029pt>
 File: figures/swiss_roll.pdf Graphic file (type pdf)
 <use figures/swiss_roll.pdf>
 Package pdftex.def Info: figures/swiss_roll.pdf  used on input line 99.
 (pdftex.def)             Requested size: 74.68924pt x 82.46944pt.
-<figures/incomplete_tire.pdf, id=703, 455.78279pt x 305.22029pt>
+<figures/incomplete_tire.pdf, id=708, 455.78279pt x 305.22029pt>
 File: figures/incomplete_tire.pdf Graphic file (type pdf)
 <use figures/incomplete_tire.pdf>
 Package pdftex.def Info: figures/incomplete_tire.pdf  used on input line 104.
 (pdftex.def)             Requested size: 124.4808pt x 64.35706pt.
-<figures/world_3d.pdf, id=705, 606.34526pt x 606.34526pt>
+<figures/world_3d.pdf, id=710, 606.34526pt x 606.34526pt>
 File: figures/world_3d.pdf Graphic file (type pdf)
 <use figures/world_3d.pdf>
 Package pdftex.def Info: figures/world_3d.pdf  used on input line 109.
 (pdftex.def)             Requested size: 112.03195pt x 107.58673pt.
-<figures/sensitivity_landmarks_key_swiss_roll.pdf, id=711, 756.90776pt x 169.59
+<figures/sensitivity_landmarks_key_swiss_roll.pdf, id=716, 756.90776pt x 169.59
 36pt>
 File: figures/sensitivity_landmarks_key_swiss_roll.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_key_swiss_roll.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss_roll.pdf  used
  on input line 149.
 (pdftex.def)             Requested size: 273.85928pt x 51.62636pt.
-<figures/sensitivity_landmarks_key_incomplete_tire.pdf, id=713, 756.90776pt x 1
+<figures/sensitivity_landmarks_key_incomplete_tire.pdf, id=718, 756.90776pt x 1
 69.5936pt>
 File: figures/sensitivity_landmarks_key_incomplete_tire.pdf Graphic file (type 
 pdf)
@@ -1071,7 +1071,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--180
 
  []
 
-<figures/sensitivity_landmarks_auc.pdf, id=744, 1156.32pt x 433.62pt>
+<figures/sensitivity_landmarks_auc.pdf, id=749, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
@@ -1088,11 +1088,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_incomple
 te_tire.pdf): PDF inclusion: invalid other resource which is no dict (key 'Proc
 Sets', type <array>); ignored.
 > <./figures/sensitivity_landmarks_auc.pdf>]
-
-LaTeX Warning: Reference `qual_results' on page 14 undefined on input line 215.
-
-
-<figures/sensitivity_landmarks_qual_swiss_roll.pdf, id=770, 756.90776pt x 455.7
+<figures/sensitivity_landmarks_qual_swiss_roll.pdf, id=776, 756.90776pt x 455.7
 8279pt>
 File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
 
@@ -1100,7 +1096,7 @@ File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss_roll.pdf  use
 d on input line 225.
 (pdftex.def)             Requested size: 448.12785pt x 284.9609pt.
-<figures/sensitivity_landmarks_qual_incomplete_tire.pdf, id=772, 756.90776pt x 
+<figures/sensitivity_landmarks_qual_incomplete_tire.pdf, id=778, 756.90776pt x 
 455.78279pt>
 File: figures/sensitivity_landmarks_qual_incomplete_tire.pdf Graphic file (type
  pdf)
@@ -1108,22 +1104,22 @@ File: figures/sensitivity_landmarks_qual_incomplete_tire.pdf Graphic file (type
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_incomplete_tire.pdf
   used on input line 237.
 (pdftex.def)             Requested size: 448.12785pt x 272.40974pt.
-<figures/sensitivity_noise_key_swiss_roll.pdf, id=776, 756.90776pt x 154.6578pt
+<figures/sensitivity_noise_key_swiss_roll.pdf, id=782, 756.90776pt x 154.6578pt
 >
 File: figures/sensitivity_noise_key_swiss_roll.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_key_swiss_roll.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_swiss_roll.pdf  used on 
 input line 271.
-(pdftex.def)             Requested size: 273.85928pt x 45.66946pt.
-<figures/sensitivity_noise_key_incomplete_tire.pdf, id=778, 756.90776pt x 154.6
+(pdftex.def)             Requested size: 273.85928pt x 44.37302pt.
+<figures/sensitivity_noise_key_incomplete_tire.pdf, id=784, 756.90776pt x 154.6
 578pt>
 File: figures/sensitivity_noise_key_incomplete_tire.pdf Graphic file (type pdf)
 
 <use figures/sensitivity_noise_key_incomplete_tire.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_incomplete_tire.pdf  use
 d on input line 279.
-(pdftex.def)             Requested size: 273.85928pt x 53.67607pt.
-[14 <./figures/sensitivity_landmarks_qual_swiss_roll.pdf
+(pdftex.def)             Requested size: 273.85928pt x 52.15231pt.
+ [14 <./figures/sensitivity_landmarks_qual_swiss_roll.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_qual_swiss_r
 oll.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets
@@ -1243,26 +1239,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 469--472
 
  []
 
-) [10] [11] (./main.bbl [12] [13]) [14]
-Overfull \hbox (4.23676pt too wide) in paragraph at lines 338--347
+[10]
+File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
+
+<use figures/sensitivity_landmarks_qual_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss_roll.pdf  use
+d on input line 530.
+(pdftex.def)             Requested size: 746.88483pt x 449.75893pt.
+File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
+
+<use figures/sensitivity_landmarks_qual_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss_roll.pdf  use
+d on input line 543.
+(pdftex.def)             Requested size: 746.88483pt x 449.75893pt.
+<figures/sensitivity_noise_qual_swiss_roll.pdf, id=987, 756.90776pt x 455.78279
+pt>
+File: figures/sensitivity_noise_qual_swiss_roll.pdf Graphic file (type pdf)
+<use figures/sensitivity_noise_qual_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_noise_qual_swiss_roll.pdf  used on
+ input line 556.
+(pdftex.def)             Requested size: 746.88483pt x 449.75893pt.
+ [11]
+File: figures/sensitivity_noise_qual_swiss_roll.pdf Graphic file (type pdf)
+<use figures/sensitivity_noise_qual_swiss_roll.pdf>
+Package pdftex.def Info: figures/sensitivity_noise_qual_swiss_roll.pdf  used on
+ input line 569.
+(pdftex.def)             Requested size: 746.88483pt x 449.75893pt.
+ [12]) [13 <./figures/sensitivity_noise_qual_swiss_roll.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_swiss_roll.
+pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', t
+ype <array>); ignored.
+>] [14] [15] (./main.bbl [16] [17]) [18]
+Overfull \hbox (4.23676pt too wide) in paragraph at lines 339--348
 []\T1/aer/m/n/12 I hereby de-clare that the re-port sub-mit-ted is my own un-ai
 ded work. All di-rect or in-di-rect sources 
  []
 
-[15] (./main.aux)
+[19] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 62E89C02333EC0DA7379CDDCE2D834B6;2373.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 8DD6198BAF918C855CEFB3930DC57607;2481.
  ) 
 Here is how much of TeX's memory you used:
- 14418 strings out of 479485
- 219356 string characters out of 5875915
- 560704 words of memory out of 5000000
- 30834 multiletter control sequences out of 15000+600000
- 595245 words of font info for 151 fonts, out of 8000000 for 9000
+ 14429 strings out of 479485
+ 219777 string characters out of 5875915
+ 560793 words of memory out of 5000000
+ 30839 multiletter control sequences out of 15000+600000
+ 590953 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,20n,72p,369b,602s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/texl
@@ -1289,10 +1312,10 @@ ic/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (31 pages, 3926770 bytes).
+Output written on main.pdf (35 pages, 4675920 bytes).
 PDF statistics:
- 1129 PDF objects out of 1200 (max. 8388607)
- 970 compressed objects within 10 object streams
- 188 named destinations out of 1000 (max. 500000)
- 492 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1165 PDF objects out of 1200 (max. 8388607)
+ 999 compressed objects within 10 object streams
+ 197 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 

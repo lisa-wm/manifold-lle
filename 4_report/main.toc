@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {5.1}Experimental Design}{11}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Sensitivity Analysis}{11}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{12}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Results}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Results of the Sensitivity Analysis}{13}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}Sensitivity Toward Prior Point Location}{13}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Sensitivity Toward Label Noise}{15}{subsubsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.3}Concluding Comparison}{15}{subsection.5.3}%
@@ -29,4 +29,5 @@
 \contentsline {subsection}{\numberline {A.4}Optimal Choice of $k$ in SSLLE Implementation}{VIII}{subsection.A.4}%
 \contentsline {subsection}{\numberline {A.5}Area under the $R_{NX}$ Curve}{IX}{subsection.A.5}%
 \contentsline {subsection}{\numberline {A.6}Generation of Synthetic Manifolds}{X}{subsection.A.6}%
-\contentsline {section}{\numberline {B}Electronic Appendix}{XI}{appendix.B}%
+\contentsline {subsection}{\numberline {A.7}Qualitative Embedding Results}{X}{subsection.A.7}%
+\contentsline {section}{\numberline {B}Electronic Appendix}{XV}{appendix.B}%

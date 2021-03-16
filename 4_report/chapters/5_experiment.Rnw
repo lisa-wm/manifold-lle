@@ -119,7 +119,7 @@ manifolds.
 
 % ------------------------------------------------------------------------------
 
-\subsection{Results}
+\subsection{Results of the Sensitivity Analysis}
 \label{results}
 
 % ------------------------------------------------------------------------------
@@ -214,7 +214,7 @@ difficult endeavor, so figures \ref{fig_emb_landmarks_swiss} and
 embeddings (a full-page version of both may be found in section 
 \ref{qual_results}.
 Indeed, visual analysis suggests that optimal coverage does not perform so badly
-after all and might be considered superior to the randomly selected prior 
+after all and might even be considered superior to the randomly selected prior 
 points, particularly so for the Swiss roll data.
 The picture is somewhat more balanced for the incomplete tire.
 Poor coverage fails entirely in both cases, no matter the number of landmarks.
@@ -225,8 +225,8 @@ Poor coverage fails entirely in both cases, no matter the number of landmarks.
   {figures/sensitivity_landmarks_qual_swiss_roll}
   \caption[Qualitative results for Swiss roll data in sensitivity analysis I]
   {\raggedright
-  Qualitative results Swiss roll data, evaluating method of landmark coverage 
-  versus number of prior points.
+  Qualitative results for Swiss roll data, evaluating method of landmark 
+  coverage versus number of prior points.
   \textit{Source:} own representation.}
   \label{fig_emb_landmarks_swiss}
 \end{figure}

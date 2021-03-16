@@ -515,42 +515,62 @@ The original code to synthesize them may be found
 
 % ------------------------------------------------------------------------------
 
-% \newpage
-% \subsection{Qualitative Embedding Results}
-% \label{qual_results}
-% 
-% \begin{sidewaysfigure}
-%   \includegraphics[width = \textwidth]
-%   {figures/sensitivity_landmarks_qual_swiss_roll}
-%   \caption[]
-%   {\raggedright
-%   Qualitative results for method of landmark coverage versus number of prior 
-%   points -- Swiss roll data.}
-% \end{sidewaysfigure}
-% 
-% \begin{sidewaysfigure}
-%   \includegraphics[width = \textwidth]
-%   {figures/sensitivity_landmarks_qual_incomplete_tire}
-%   \caption[]
-%   {\raggedright
-%   Qualitative results for method of landmark coverage versus number of prior 
-%   points -- incomplete_tire data.}
-% \end{sidewaysfigure}
-% 
-% \begin{sidewaysfigure}
-%   \includegraphics[width = \textwidth]
-%   {figures/sensitivity_noise_qual_swiss_roll}
-%   \caption[]
-%   {\raggedright
-%   Qualitative results for noise level versus number of prior points -- Swiss 
-%   roll data.}
-% \end{sidewaysfigure}
-% 
-% \begin{sidewaysfigure}
-%   \includegraphics[width = \textwidth]
-%   {figures/sensitivity_noise_qual_incomplete_tire}
-%   \caption[]
-%   {\raggedright
-%   Qualitative results for noise level versus number of prior 
-%   points -- incomplete_tire data.}
-% \end{sidewaysfigure}
+\subsection{Qualitative Embedding Results}
+\label{qual_results}
+
+The following figures are full-size versions of those shown in chapter 
+\ref{results}.
+
+\newpage
+
+\begin{turn}{90}
+  \begin{minipage}{1.5\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width = \textwidth]
+      {figures/sensitivity_landmarks_qual_swiss_roll}
+      \caption[]
+      {Qualitative results for Swiss roll data, evaluating method of landmark 
+      coverage versus number of prior points.
+      \textit{Source:} own representation.}
+    \end{figure}
+  \end{minipage}
+\end{turn}
+
+\begin{turn}{90}
+  \begin{minipage}{1.5\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width = \textwidth]
+      {figures/sensitivity_landmarks_qual_swiss_roll}
+      \caption[]
+      {Qualitative results for incomplete tire data, evaluating method of landmark 
+      coverage versus number of prior points.
+      \textit{Source:} own representation.}
+    \end{figure}
+  \end{minipage}
+\end{turn}
+
+\begin{turn}{90}
+  \begin{minipage}{1.5\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width = \textwidth]
+      {figures/sensitivity_noise_qual_swiss_roll}
+      \caption[]
+      {Qualitative results for Swiss roll data, evaluating noise level versus 
+      number of prior points.
+      \textit{Source:} own representation.}
+    \end{figure}
+  \end{minipage}
+\end{turn}
+
+\begin{turn}{90}
+  \begin{minipage}{1.5\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width = \textwidth]
+      {figures/sensitivity_noise_qual_swiss_roll}
+      \caption[]
+      {Qualitative results for incomplete tire data, evaluating noise level 
+      versus number of prior points.
+      \textit{Source:} own representation.}
+    \end{figure}
+  \end{minipage}
+\end{turn}
