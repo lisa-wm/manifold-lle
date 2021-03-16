@@ -626,8 +626,8 @@ instead been dedicated to address the amount and quality of prior knowledge.
 \\
 
 \textbf{Choice of intrinsic dimensionality.} 
-Until now, it has been assumed that the intrinsic dimension $d$ of the data is 
-a known parameter.
+Until now, the intrinsic dimension $d$ of the data has been treated as a known 
+parameter.
 This is obviously not always the case.
 Some methods offer the advantage of estimating $d$ in a built-in fashion. 
 PCA, for instance, typically shows an indicative gap in its eigenvalue spectrum 
@@ -671,4 +671,4 @@ multiplied by a tolerance parameter set to 0.01, following a proposal by
 \citet{dissgrilli2007}.
 In fact, the embedding is rather sensitive to regularization 
 \citep{deridderduin2002}; so, even though it is beyond the scope of this report 
-to specifically address the issue in detail, it would be certainly worthwhile.
+to address the issue in detail, it would be certainly worthwhile.

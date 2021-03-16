@@ -6,17 +6,70 @@
 \subsubsection{Sensitivity Analysis}
 \label{sensitivity}
 
-Foo
+After discussing the underlying theory and potential challenges, SSLLE shall 
+now be put to work.
+Two separate sensitivity analyses study how variation in the amount and quality 
+of prior information affects embedding quality.
+The following chapters will lay out the scenarios and evaluation framework and 
+then discuss the experiments' results.
+\\
+
+\textbf{Sensitivity analysis I: landmark coverage versus number of prior 
+points.}
+The first experiment pits the quality of landmark coverage against the number of 
+landmarks, reflecting the hypothesis of optimal landmark choice dominating 
+random and poor selection.
+A higher number of prior points is generally expected to be beneficial.
+This gives rise to the following axes of variation, out of whose cartesian 
+product 18 different scenarios\footnote{
+Beyond twelve landmarks, no substantial change in the results occurs.
+The results in chapter \ref{results} also reflect the saturating effect of 
+employing more prior points.
+} emerge, always assuming exact prior information:
+\begin{tight_enumerate}
+  \item Landmark coverage $\in \{ \text{poor}, \text{ random}, 
+  \text{ maximum}\}$.
+  \item Number of landmark points $\in \{2, 4, 6, 8, 10, 12\}$.
+\end{tight_enumerate}
+
+\textbf{Sensitivity analysis II: label noise versus number of prior 
+points.}
+In the second experiment, the case of inexact prior information shall be 
+examined more closely by allowing a varying amount of label noise.
+Coverage is kept at its optimal configuration.
+In order to simulate inexact prior information, prior points' true coordinates 
+are corrupted by Gaussian noise, such that $\tilde{\pv} = \pv + \bm{\epsilon}$ 
+for $\pv \in \Y$.
+$\bm{\epsilon} = (\epsilon_1, \epsilon_2, \dots, \epsilon_d)^T$ is a zero-mean 
+noise variable with uncorrelated components.
+Noise scales with the inherent variability of each dimension, such that 
+$\epsilon_i \sim N(0, (\alpha \cdot s_i)^2)$, where $i \in \{1, 2, \dots, d \}$ 
+and $s_i$ denotes empirical standard deviation in dimension $i$.
+Variation is steered via noise level $\alpha$.
+With the supposition of more landmarks being able to compensate for noise to 
+some extent, this yields another 24 scenarios\footnote{
+Again, varying noise beyond the range examined here does not reveal any further 
+insights.
+}:
+\begin{tight_enumerate}
+  \item Noise level $\alpha \in \{0.1, 0.5, 1.0, 3.0\}$. 
+  \item Number of landmark points $\in \{2, 4, 6, 8, 10, 12\}$.
+\end{tight_enumerate}
 
 % ------------------------------------------------------------------------------
 
 \subsubsection{Evaluation Framework}
 \label{eval}
 
-% ------------------------------------------------------------------------------
+\textbf{Swiss roll.}
+foo
+\\
 
-\subsubsection{Data}
-\label{data}
+\textbf{Incomplete tire.}
+foo
+
+\textbf{World data.}
+foo
 
 % ------------------------------------------------------------------------------
 
@@ -25,12 +78,12 @@ Foo
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{Location of Prior Points}
+\subsubsection{Sensitivity Toward Location of Prior Points}
 \label{landmarks}
 
 % ------------------------------------------------------------------------------
 
-\subsubsection{Level of Label Noise}
+\subsubsection{Sensitivity Toward Level of Label Noise}
 \label{noise}
 
 % ------------------------------------------------------------------------------
