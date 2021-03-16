@@ -1,32 +1,32 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{}%
-\contentsline {section}{\numberline {2}Manifold Learning Problem}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Manifolds}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{2}{}%
-\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning (LGML)}{3}{}%
-\contentsline {subsection}{\numberline {3.1}Overview}{3}{}%
-\contentsline {subsection}{\numberline {3.2}Concept of LGML}{4}{}%
-\contentsline {section}{\numberline {4}LGML Techniques}{5}{}%
-\contentsline {subsection}{\numberline {4.1}Unsupervised Techniques}{5}{}%
-\contentsline {subsubsection}{\numberline {4.1.1}Laplacian Eigenmaps (LEM)}{5}{}%
-\contentsline {subsubsection}{\numberline {4.1.2}Locally Linear Embedding (LLE)}{6}{}%
-\contentsline {subsubsection}{\numberline {4.1.3}Hessian Locally Linear Embedding (HLLE)}{8}{}%
-\contentsline {subsection}{\numberline {4.2}Semi-Supervised Locally Linear Embedding (SSLLE)}{9}{}%
-\contentsline {subsection}{\numberline {4.3}Particular Challenges}{11}{}%
-\contentsline {section}{\numberline {5}Experimental Results}{11}{}%
-\contentsline {subsection}{\numberline {5.1}Experimental Design}{11}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Sensitivity Analysis}{11}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{12}{}%
-\contentsline {subsection}{\numberline {5.2}Results}{13}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Sensitivity Toward Location of Prior Points}{13}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Sensitivity Toward Level of Label Noise}{13}{}%
-\contentsline {subsection}{\numberline {5.3}Concluding Comparison}{13}{}%
-\contentsline {section}{\numberline {6}Discussion}{13}{}%
-\contentsline {section}{\numberline {7}Conclusion}{13}{}%
-\contentsline {section}{\numberline {A}Appendix}{V}{}%
-\contentsline {subsection}{\numberline {A.1}Formal Definition of Topological Concepts}{V}{}%
-\contentsline {subsection}{\numberline {A.2}Formal Definition of Eigenanalysis and Generalized Eigenvalue Problems}{VII}{}%
-\contentsline {subsection}{\numberline {A.3}Formal Definition of $k$- and $\epsilon $-Neighborhoods}{VIII}{}%
-\contentsline {subsection}{\numberline {A.4}Optimal Choice of $k$ in SSLLE Implementation}{VIII}{}%
-\contentsline {subsection}{\numberline {A.5}Area under the $R_{NX}$ Curve}{IX}{}%
-\contentsline {subsection}{\numberline {A.6}Generation of Synthetic Manifolds}{X}{}%
-\contentsline {section}{\numberline {B}Electronic Appendix}{XI}{}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Manifold Learning Problem}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Manifolds}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Formal Goal of Manifold Learning}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Local Graph-Based Manifold Learning (LGML)}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Overview}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Concept of LGML}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}LGML Techniques}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Unsupervised Techniques}{5}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Laplacian Eigenmaps (LEM)}{5}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Locally Linear Embedding (LLE)}{6}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Hessian Locally Linear Embedding (HLLE)}{8}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Semi-Supervised Locally Linear Embedding (SSLLE)}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Particular Challenges}{11}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Experimental Results}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Experimental Design}{11}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Sensitivity Analysis}{11}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Evaluation Framework}{12}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Results}{13}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Sensitivity Toward Location of Prior Points}{13}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Sensitivity Toward Level of Label Noise}{13}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Concluding Comparison}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Discussion}{13}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{13}{section.7}%
+\contentsline {section}{\numberline {A}Appendix}{V}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Formal Definition of Topological Concepts}{V}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Formal Definition of Eigenanalysis and Generalized Eigenvalue Problems}{VII}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Formal Definition of $k$- and $\epsilon $-Neighborhoods}{VIII}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Optimal Choice of $k$ in SSLLE Implementation}{VIII}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.5}Area under the $R_{NX}$ Curve}{IX}{subsection.A.5}%
+\contentsline {subsection}{\numberline {A.6}Generation of Synthetic Manifolds}{X}{subsection.A.6}%
+\contentsline {section}{\numberline {B}Electronic Appendix}{XI}{appendix.B}%

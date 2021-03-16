@@ -461,12 +461,6 @@ value, whereas 0 marks an entirely random embedding \citep{kraemeretal2019}.
 
 % ------------------------------------------------------------------------------
 
-% \newpage
-% \subsection{Generation of Synthetic Manifolds}
-% \label{synthetic_data}
-
-% ------------------------------------------------------------------------------
-
 \newpage
 \subsection{Generation of Synthetic Manifolds}
 \label{synthetic_data}
@@ -475,13 +469,48 @@ This section documents how the synthetic manifolds considered in the report may
 be generated.
 \\
 
-\textbf{S-curve.}
+\textbf{S-curve.} 
+Construct S-curve as:
+\begin{tight_enumerate}
+  \item Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ $\mathit{ iid}$ with 
+  $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_2 \rvert = N$.
+  \item Compute $\bm{t} = 3 \pi (\bm{u}_1 - 0.5)$ and $\bm{s} = 2 \bm{u}_2$.
+  \item $\X_{\text{scurve}} = 
+    \begin{bmatrix} \x_1 & \x_2 & \x_3 \end{bmatrix} =
+    \begin{bmatrix} \sin{\bm{t}} & \bm{s} & \mathit{sgn}(\bm{t}) 
+    (\cos{\bm{t}} - 1) \end{bmatrix}$. 
+\end{tight_enumerate}
 
 \textbf{Swiss roll.}
+Construct Swiss roll as:
+\begin{tight_enumerate}
+  \item Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ $\mathit{ iid}$ with 
+  $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_2 \rvert = N$.
+  \item Compute $\bm{t} = 1.5 \pi (1 + 2\bm{u}_1)$ and $\bm{s} = 21 \bm{u}_2$.
+  \item $\X_{\text{swiss}} = 
+    \begin{bmatrix} \x_1 & \x_2 & \x_3 \end{bmatrix} =
+    \begin{bmatrix} \bm{t} \cos{\bm{t}} & \bm{s} & 
+    \bm{t} \sin{\bm{t}} \end{bmatrix}$. 
+\end{tight_enumerate}
 
 \textbf{Incomplete tire.}
+Construct incomplete tire as:
+\begin{tight_enumerate}
+  \item Sample $\bm{u}_1, \bm{u}_2 \sim U(0, 1)$ $\mathit{ iid}$ with 
+  $\rvert \bm{u}_1 \rvert = \rvert \bm{u}_2 \rvert = N$.
+  \item Compute $\bm{t} = \frac{5 \pi}{3} \bm{u}_1$ and 
+  $\bm{s} = \frac{5 \pi}{3} \bm{u}_2$.
+  \item $\X_{\text{tire}} =
+  \begin{bmatrix} \x_1 & \x_2 & \x_3 \end{bmatrix} = 
+  \begin{bmatrix} (3 + \cos{\bm{s}})
+  \cos{\bm{t}} & (3 + \cos{\bm{s}}) \sin{\bm{t}} & \sin{\bm{s}} \end{bmatrix}$.
+\end{tight_enumerate}
 
 \textbf{World data.}
+The world data are available in the public repository referenced in the 
+Electronic Appendix as a CSV file.
+The original code to synthesize them may be found 
+\href{https://github.com/NikolayOskolkov}{\underline{here}}.
 
 % \subsection{Eigenanalysis}
 % \label{eigenanalysis}

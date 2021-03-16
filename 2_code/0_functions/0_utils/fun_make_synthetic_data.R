@@ -124,12 +124,10 @@ make_world_data_3d <- function(file) {
   dt <- data.table::fread(file)
   
   dt[
-    , x_3 := -1.5 * x_3
+    , x_3 := -1.5 * x_3 # without scaling, globe looks oblong
     ][, `:=` (t = y, y = NULL)]
   
   dt
-  
-  # FIXME find proper scale for third dimension
 
 }
 
