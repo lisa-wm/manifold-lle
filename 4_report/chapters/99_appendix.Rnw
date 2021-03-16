@@ -540,10 +540,10 @@ The following figures are full-size versions of those shown in chapter
   \begin{minipage}{1.5\textwidth}
     \begin{figure}[H]
       \includegraphics[width = \textwidth]
-      {figures/sensitivity_landmarks_qual_swiss_roll}
+      {figures/sensitivity_landmarks_qual_incomplete_tire}
       \caption[]
-      {Qualitative results for incomplete tire data, evaluating method of landmark 
-      coverage versus number of prior points.
+      {Qualitative results for incomplete tire data, evaluating method of 
+      landmark coverage versus number of prior points.
       \textit{Source:} own representation.}
     \end{figure}
   \end{minipage}
@@ -566,7 +566,7 @@ The following figures are full-size versions of those shown in chapter
   \begin{minipage}{1.5\textwidth}
     \begin{figure}[H]
       \includegraphics[width = \textwidth]
-      {figures/sensitivity_noise_qual_swiss_roll}
+      {figures/sensitivity_noise_qual_incomplete_tire}
       \caption[]
       {Qualitative results for incomplete tire data, evaluating noise level 
       versus number of prior points.

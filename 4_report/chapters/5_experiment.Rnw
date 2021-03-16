@@ -182,6 +182,8 @@ package \citep{pkgdimred}.
 Performance across scenarios reflects this observation.
 Figure \ref{fig_auc_landmarks} illustrates how performance, as measured by 
 $\text{AUC}(R_{NX})$, varies across the scenarios for both data sets.
+Colorization ranges from red for worst-case performance to green for an optimal 
+embedding.
 Clearly, random selection performs best, which is not really surprising 
 considering how it also achieves better coverage than the other two methods 
 (figure \ref{fig_key_landmark}).
@@ -251,14 +253,15 @@ Poor coverage fails entirely in both cases, no matter the number of landmarks.
 
 \begin{minipage}[b]{0.4\textwidth}
   \textbf{Key variation.}
-  Recall that scenarios in the first sensitivity analysis vary in the method of
-  landmark coverage and the number of selected prior points.
-  Figure \ref{fig_key_landmark} depicts this variation for the maximum case of 
-  twelve landmarks, marking the selected points in the true embedding (which is 
-  the same for both data sets, see section \ref{synthetic_data}).
-  While poor and random coverage are identical for examples, optimal 
-  coverage is not as it adapts prior point selection to the intrinsic manifold 
-  structure.
+  The key variation in the second part of the analysis occurs at the level of 
+  label noise in order to simulate inexact prior information.
+  Note that the noise level $\alpha$, multiplied by the empirical standard 
+  deviation in the respective dimension, steers only the potential amount of 
+  noise. 
+  The actual perturbation is stochastic.
+  Its Gaussian nature signifies that realizations can be expected to fall within 
+  a range of two standard deviations around the zero mean with a probability of 
+  approximately 95 percent.
 \end{minipage}%
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -267,7 +270,7 @@ Poor coverage fails entirely in both cases, no matter the number of landmarks.
   \begin{figure}[H]
     \begin{subfigure}[c]{\textwidth}
       \centering
-      \includegraphics[trim = 50 20 0 20, clip, % left bottom right top
+      \includegraphics[trim = 50 20 0 10, clip, % left bottom right top
       width = \textwidth]{figures/sensitivity_noise_key_swiss_roll}
       \caption{
       \raggedright
@@ -283,8 +286,8 @@ Poor coverage fails entirely in both cases, no matter the number of landmarks.
     \end{subfigure}
     \caption[Key variation in sensitivity analysis II]{
     \raggedright
-    Varying levels of noise exemplified in one prior point location.
-    Semi-axes of ellipsoids indicate standard deviation in the respective 
+    Varying levels of noise exemplified at one prior point location.
+    Semi-axes of ellipsoids indicate one standard deviation in the respective 
     direction.
     \textit{Source:} own 
     representation.
@@ -295,7 +298,148 @@ Poor coverage fails entirely in both cases, no matter the number of landmarks.
 
 \vspace{0.3cm}
 
+Figure \ref{fig_key_noise} illustrates the potential impact this entails.
+Over the range of candidate values for $\alpha$, the gray ellipsoid represents, 
+for one point, the area within which its perturbed counterpart might end up if 
+it is displaced by at most one standard deviation in each direction.
+It becomes immediately clear how large $\alpha$ values hold a substantial risk 
+of modifying prior points beyond recognition.
+\\
+
+\textbf{Quantitative results.}
+The resulting $\text{AUC}(R_{NX})$ in figure \ref{fig_auc_noise} corroborates 
+this observation.
+Embedding quality deteriorates with increasing label noise, and a higher number 
+of landmarks can only compensate for so much.
+In fact, the stochasticity of perturbation means that adding more landmarks 
+might even be harmful in this scenario, which is reflected by the non-monotonic 
+behavior of $\text{AUC}(R_{NX})$ along the axis of prior point quantity.
+This phenomenon should vanish if the actual noise level were kept constant 
+across the number of landmarks.
+In general, the simulated noise appears to have affected the Swiss roll 
+embedding more severely. 
+
+\begin{figure}[H]
+  \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
+  width = \textwidth]{figures/sensitivity_noise_auc}
+  \caption[Quantitative results for sensitivity analysis II]{
+  \raggedright
+  Quantitative results for method of landmark coverage versus number of prior 
+  points. 
+  $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of
+  1 in both figures for better visibility of differences.
+  Original scales: Swiss roll -- $\text{AUC}(R_{NX}) \in [0.2720, 0.4167]$,
+  incomplete tire -- $\text{AUC}(R_{NX}) \in [0.3171, 0.6172]$.
+  \textit{Source:} own representation.
+  }
+  \label{fig_auc_noise}
+\end{figure}
+
+\newpage
+
+\textbf{Qualitative results.}
+Again, the actual embeddings are depicted below to support the evaluation.
+The minimum amount of two landmarks is insufficient in any case.
+Above that, SSLLE embeds the incomplete tire fairly well for low levels of 
+noise, while at least six prior points seem necessary to find an embedding of 
+the Swiss roll that actually resembles the true one.
+Even $\alpha = 1.0$ is apparently tolerable in some configurations, but beyond 
+that, dimensionality reduction starts to fail altogether.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[trim = 40 0 0 0, clip, width = 0.9\textwidth]
+  {figures/sensitivity_noise_qual_swiss_roll}
+  \caption[Qualitative results for Swiss roll data in sensitivity analysis II]
+  {\raggedright
+  Qualitative results for Swiss roll data, evaluating method of landmark 
+  coverage versus number of prior points.
+  \textit{Source:} own representation.}
+  \label{fig_emb_noise_swiss}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[trim = 40 0 0 20, clip, width = 0.9\textwidth]
+  {figures/sensitivity_noise_qual_incomplete_tire}
+  \caption[Qualitative results for incomplete tire data in sensitivity analysis 
+  II]
+  {\raggedright
+  Qualitative results for incomplete tire data, evaluating method of landmark 
+  coverage versus number of prior points.
+  \textit{Source:} own representation.}
+  \label{fig_emb_noise_tire}
+\end{figure}
+
 % ------------------------------------------------------------------------------
 
 \subsection{Concluding Comparison}
 \label{comparison}
+
+In the end, the experiments shall be concluded with a brief comparison between 
+SSLLE and its algorithmic relatives, standard LLE and HLLE.
+Implementation of the latter two is again based on the \texttt{dimRed} package, 
+where the sole parameter required to specify is neighborhood size.
+For a fair comparison, the same $k$ as deemed optimal by SSLLE has been used.
+SSLLE takes the best-case configuration of maximum coverage and twelve 
+landmarks.
+
+Comparison on both data sets (figure \ref{fig_comp_swiss_tire}) show SSLLE is a 
+strong contender against the other two methods.
+LLE does not find a meaningful embedding in either case, while HLLE 
+performs impressively on the Swiss roll data but fails to fully undo the 
+incomplete tire transformation.
+
+\begin{figure}[H]
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[trim = 60 0 20 0, clip, width = 0.9\textwidth]
+    {figures/comparison_swiss_roll}
+    \caption[]{Swiss roll data}
+    \label{fig_comp_swiss}
+  \end{subfigure}
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[trim = 60 0 20 0, clip, width = 0.9\textwidth]
+    {figures/comparison_incomplete_tire}
+    \caption[]{Incomplete data}
+  \end{subfigure}
+  \caption[Comparison of LLE, HLLE and SSLLE on Swiss roll and incomplete tire 
+  data]
+  {\raggedright
+  Embeddings found by LLE (\textit{left}), HLLE (\textit{middle}), and SSLLE 
+  (\textit{right}).
+  \textit{Source:} own representation.}
+  \label{fig_comp_swiss_tire}
+\end{figure}
+
+The somewhat more complicated world data manifold (figure \ref{fig_comp_world}), 
+which contains multiple disconnected components, discriminates between 
+successful and failed embeddings in an even more striking manner. 
+
+\begin{minipage}[b]{0.45\textwidth}
+  LLE and HLLE fail utterly and collapse the entire manifold onto a few points 
+  each.
+  SSLLE, by contrast, produces an embedding that resembles the actual map of the 
+  Earth fairly closely (the slightly colored background shall make the embedding 
+  borders more easily visible).
+  Note that 25 landmarks have been used this time to achieve a comparable share 
+  of prior points with respect to total observations.
+\end{minipage}%
+\begin{minipage}[b]{0.05\textwidth}
+  \phantom{xxx}
+\end{minipage}%
+\begin{minipage}[b]{0.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[trim = 20 0 0 0, clip, width = \textwidth]
+    {figures/comparison_world}
+    \caption[Comparison of LLE, HLLE and SSLLE on world data]
+    {\raggedright
+    Embedding for the world data set found by LLE (\textit{left}), 
+    HLLE (\textit{middle}), and SSLLE 
+    (\textit{right}).
+    \textit{Source:} own representation.}
+    \label{fig_comp_world}
+  \end{figure}
+\end{minipage}
