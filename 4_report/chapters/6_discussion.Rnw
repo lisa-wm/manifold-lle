@@ -1,38 +1,73 @@
 The experiments have shown that SSLLE performs well for synthesized examples 
 and under favorable conditions.
 Real-world applications, where data become truly high-dimensional and cannot be 
-expected to lie on simple and well-behaved manifolds, will also face some 
-substantial drawbacks.
-The following synopsis discusses the major strengths and drawbacks, many of 
-which hold equally true for the other LGML algorithms.
+expected to lie on simple and well-behaved manifolds, will pose more of a 
+challenge.
+The following synopsis briefly discusses the major strengths and drawbacks based 
+on insights from \citet{vandermaatenetal2009} and \citet{sauletal2006} as well 
+as the empirical findings from chapter \ref{experiment}.
 \\
 
-\textbf{Strengths}
-\begin{itemize}
-  \item[] \textbf{Theoretical simplicity.} foo
-  \item[] \textbf{Hyperparameter sparsity.} foo
-  \item[] \textbf{Computational efficiency.} foo
-  \item[] \textbf{Positive impact of semi-supervision.} foo
-\end{itemize}
+\textbf{Strengths.}
+Simplicity is arguably one of the biggest strengths the LGML methods have to 
+offer: their theoretical foundation is fairly accessible and they are 
+straightforward to implement.
+LGML succeeds in decomposing the learning task into a series of tractable 
+computations.
+The essential steps comprise procedures with highly efficient 
+solutions already available, such as nearest-neighbor search and eigenvalue 
+decomposition.
+On a similar note, most learners take only few hyperparameters that need to be 
+set in advance and require a limited amount of tuning, which is 
+particularly advantageous considering the difficulty of performance evaluation.
+For the specific case of semi-supervision the experiments have shown that a 
+minor algorithmic modification may have substantial impact.
+A relatively small amount of prior points suffices to improve embedding quality 
+and seems to simplify more complex manifold learning tasks to a remarkable 
+degree. 
+\\
 
-\textbf{Drawbacks}
-\begin{itemize}
-  \item[] \textbf{Dependence on graph approximation.} foo
-  \item[] \textbf{No indication of intrinsic dimensionality.} agnostic
-  \item[] \textbf{Fundamental weakness in optimization problem.} foo
-  \item[] \textbf{Weak preservation of geometric properties.} foo
-  \item[] \textbf{Dependence on prior information.} foo
-\end{itemize}
+\textbf{Drawbacks.}
+On the other hand, the core functionality of LGML methods turns out to be 
+their weakest spot.
+The vital dependence on the neighborhood graph means that the embedding will 
+fail if the graph is a poor approximator of the manifold structure.
+This may occur due to a variety of reasons.
+Most importantly, if the manifold is not well sampled, a graph approximation 
+based on the $D$-dimensional observations risks to draw false conclusions about 
+geometric properties.
+Neighborhood size, if chosen badly, can have a similarly detrimental impact.
+Also note the paradox of solving the problem of high dimensionality using 
+the very techniques that are vulnerable to the curse of dimensionality: 
+nearest-neighbor search itself becomes increasingly hard in 
+high-dimensional spaces.
+The next problem arises from the low, intrinsic data dimensionality --
+all techniques but SSLLE are agnostic to the true value of $d$.
+Even if the graph approximation is successful and $d$ is known, the subsequent 
+optimization problem has a fundamental weakness.
+It includes a degenerate solution that may be avoided by discarding 
+the bottom eigenvector.
+Yet, a tendency remains to collapse the manifold onto a small number of 
+points that just abide by the optimization constraints.
+Figures \ref{fig_comp_swiss_tire} and \ref{fig_comp_world} provide visual 
+evidence of this behavior.
+Another issue related to the eigenvalue problem is the fact that 
+eigenspectra tend to become extremely tight in higher dimensions, meaning an 
+implementation with limited numerical precision might actually fail to tell the 
+bottom ones apart.
+Lastly, geometric properties of the input data are not always well-preserved. 
+While HLLE at least achieves local isometry in the continuous case, the other 
+methods do not come with such convergence guarantees and do not inherently 
+retain distances or angles.
+As the experiments have shown, SSLLE can alleviate this concern and help finding 
+better embeddings.
+However, if prior points are not exact or inconveniently located, the additional
+information might even be harmful and distort the resulting embedding.
+\\
 
-Theoretical convergence? (e.g., ISOMAP has this)
-
-Potential shortcoming: what if manifold is not well-sampled? Not a problem with
-synthetic data, but IRL. But probably problematic with all manifold approaches
-
-This is directly related to the COD -- local methods require dense sampling 
-\citep{vandermaatenetal2009}
-
-Also: generalization to new points (w/o recomputing everything)
-neighborhood-preserving propositions --> fundamental problem: except for prior
-points, it is deterministic (as opposed to generative approaches, such as 
-autoencoders)
+Summing up the above, it may appear that SSLLE's weaknesses outweigh its 
+strengths.
+There are certainly a lot of pitfalls to avoid.
+Still, if the manifold assumption is justified and a sufficient amount of data 
+is available, SSLLE and the other methods stand a good chance of finding a 
+meaningful low-dimensional embedding.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  17 MAR 2021 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  17 MAR 2021 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1205,7 +1205,17 @@ Overfull \hbox (2.61607pt too wide) in paragraph at lines 431--253
  []
 
 (./chapters/6_discussion.Rnw
-Underfull \hbox (badness 10000) in paragraph at lines 1--9
+Underfull \hbox (badness 10000) in paragraph at lines 1--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--67
 
  []
 
@@ -1224,7 +1234,12 @@ ray>); ignored.
 pdfTeX warning: pdflatex.exe (file ./figures/comparison_world.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->]) (./chapters/7_conclusion.Rnw) [18] (./chapters/99_appendix.Rnw
+>]) (./chapters/7_conclusion.Rnw
+Underfull \hbox (badness 10000) in paragraph at lines 1--7
+
+ []
+
+) [18] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -1390,10 +1405,10 @@ ic/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (38 pages, 5703930 bytes).
+Output written on main.pdf (38 pages, 5707423 bytes).
 PDF statistics:
- 1240 PDF objects out of 1440 (max. 8388607)
- 1052 compressed objects within 11 object streams
+ 1250 PDF objects out of 1440 (max. 8388607)
+ 1062 compressed objects within 11 object streams
  205 named destinations out of 1000 (max. 500000)
  566 words of extra memory for PDF output out of 10000 (max. 10000000)
 
