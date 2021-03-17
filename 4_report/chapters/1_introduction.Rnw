@@ -47,17 +47,17 @@ As manifolds may exhibit complicated surfaces, methods that find non-linear
 representations are often more successful \citep{vandermaatenetal2009}.
 LGML techniques achieve this by approximating the manifold with weighted 
 neighborhood graphs.
-They pay particular heed to local environments and are thus able to retrieve 
+They pay particular heed to local environments and are thus able to capture 
 highly non-linear structures \citep{belkinniyogi2003}.
 \textit{Locally linear embedding (LLE)} is one of the earliest such techniques 
 \citep{roweissaul2000}.
 It is based on a rather heuristical notion of preserving local neighborhood 
 relations.
-\textit{Laplacian eigenmaps (LEM)} was ceveloped somewhat later on a more rigid 
+\textit{Laplacian eigenmaps (LEM)} was developed somewhat later on a sound
 theoretical foundation that is also extendable to LLE 
 \citep{belkinniyogi2003}.
-Both ideas are straddled by \textit{Hessian LLE (HLLE)}, a conceptual variant of 
-LEM algorithmically akin to LLE \citep{donohogrimes2003}.
+Both ideas are incorporated in \textit{Hessian LLE (HLLE)}, a conceptual variant 
+of LEM algorithmically akin to LLE \citep{donohogrimes2003}.
 Yet, the fully unsupervised functionality of these methods offers a drawback: 
 they may fail to find an embedding that has an actual reflection in the 
 real-life setting.

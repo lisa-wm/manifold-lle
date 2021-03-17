@@ -515,7 +515,7 @@ The original code to synthesize them may be found
 
 % ------------------------------------------------------------------------------
 
-\subsection{Qualitative Embedding Results}
+\subsection{Qualitative Embedding Results of Sensitivity Analysis}
 \label{qual_results}
 
 The following figures are full-size versions of those shown in chapter 

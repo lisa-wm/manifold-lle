@@ -43,42 +43,44 @@ networks and is not discussed here \citep{vandermaatenetal2009}.
 \end{figure}
 
 \textbf{Intuition.}
-As indicated in figure \ref{fig_models_overview}, LGML may be viewed in the 
+As indicated by figure \ref{fig_models_overview}, LGML may be viewed in the 
 light of \textit{kernel principal component analysis (KPCA)}. %see \ref{KPCA}).
-KPCA was actually proposed earlier and later shown to link the other 
+KPCA was actually proposed earlier and only later shown to link the other 
 concepts by a unified idea (\citet{hametal2003}.
 It provides a useful general intuition to manifold learning and subsumes the 
-other methods in a way beneficial to the important task of out-of-sample 
+other methods in a way that is beneficial to the important task of out-of-sample 
 extension \citep{bengioetal2004}.
 KPCA builds upon two fundamental concepts in machine learning: it 
 performs \textit{principal component analysis (PCA)} on data transformed by the
 \textit{kernel trick}.
-First, features of interest are extracted from the data by kernelization and 
-coerced to a matrix representation. 
-These are taken to capture the intrinsic data structure and may therefore be 
-understood as an approximation to the latent manifold properties.
+First, features of interest are extracted from the data by kernelization, 
+exploiting the fact that dot products of arbitrary feature maps, whose 
+computation might be prohibitively expensive, may be stated equivalently by 
+application of a kernel function.
+The kernelized data then form a matrix representation taken to capture the 
+intrinsic data structure and therefore understood as an approximation to the 
+latent manifold properties.
 Second, PCA finds the principal axes along which these intrinsic properties 
 vary.
 To this end, eigenanalysis is performed on the representation matrix, yielding 
 the desired reduction in dimensionality through preserving the most relevant 
 latent dimensions \citep{schoelkopfetal1998}.
+In theory KPCA is able to capture arbitrary data structures.
 
 % ------------------------------------------------------------------------------
 
 \newpage
-\subsection{Concept of LGML}
+\subsection{Concept}
 \label{lgml_concept}
 
 If KPCA sounds like a powerful concept, the crux of course lies in finding an 
 appropriate kernel function.
-The nature of the feature map applied to the input data determines the kind of 
-mapping that may be learned.
 Methods using linear kernels, such as standard PCA, suffer from the confinement 
 to linear embedding spaces \citep{vandermaatenetal2009}.
 If $\X$ lies on a non-linear manifold, as must be generally assumed, 
 kernelization is best performed with non-linear feature maps 
 \citep{schoelkopfetal1998}.
-Conceivably, there is no obvious way to arrive at such a mapping.
+There is no obvious way to arrive at such a mapping.
 \textit{Graph-based} models therefore approach the problem from an alternative 
 angle.
 In fact, they do not perform kernelization explicitly\footnote{
@@ -86,23 +88,22 @@ Explicit kernels may still be derived for all methods but as their illustrative
 ability is rather limited, this is not covered here.
 For the kernel perspective see for example \citet{bengioetal2004} and 
 \citet{weinbergeretal2004}.
-} 
-, but build on a different intuition. 
+}, but build on a different intuition. 
 \\
 
 \textbf{Idea.} 
 All LGML methods fundamentally rely on graph approximations of the 
 manifold surface.
 These graphs are discretized models of the manifold and as such, in principle, 
-able to capture arbitrary structures.
-Distances may be then measured along the approximated manifold surface rather 
+able to reflect any structure exhibited by the data.
+Distances may then be measured along the approximated manifold surface rather 
 than in the ambient Euclidean space, effectively enabling non-linearity 
 \citep{sauletal2006}.
-Besides non-linearity, a second desideratum in manifold learning is the ability 
-to handle (possibly non-convex) manifolds with complicated surfaces.
-Non-convexity means $\mani$ is not isometric to a convex subset of Euclidean 
-space \citep{donohogrimes2003}. 
-Intuitively, such behavior requires careful tracing of the manifold surface to 
+A second desideratum in manifold learning is the ability to handle manifolds 
+having locally varying properties possibly at odds with their global structure.
+Such behavior often also entails non-convexity, meaning $\mani$ is not isometric 
+to a convex subset of Euclidean  space \citep{donohogrimes2003}. 
+Intuitively, this requires careful tracing of the manifold surface to 
 avoid coarse mappings of the global structure at the expense of local 
 congruence.
 LGML methods therefore focus on local properties
@@ -126,8 +127,8 @@ Graph approximations are constructed from neighborhood relations in the
 observation space.
 Neighborhoods are typically taken to be $k$-neighborhoods, i.e., based on a 
 fixed number $k \in \N$ of neighbors.
-In principle, it is equally possible to restrict neighborhoods to a maximum 
-distance of $\epsilon \in \R^+$ to the centroid.
+It is equally possible to restrict neighborhoods to a maximum 
+distance of $\epsilon > 0$ to the centroid.
 However, $k$-neighborhoods are often more easily specified due to the inherent 
 scale invariance of $k$, and have attracted rather more attention in general research\footnote{
 However, \citet{tenenbaumdesilvalangford2000} note that, when local 
@@ -135,27 +136,27 @@ dimensionality is not constant across the observed data,
 $\epsilon$-neighborhoods might provide more reliable results.
 } \citep{heetal2005}. 
 For a formal definition of $k$- and $\epsilon$-neighborhoods, see section
-\ref{neighborhoods}.
+\ref{neighborhoods} of the appendix.
 Both notions usually rely on Euclidean distance.
 In the end, any vicinity condition is admissible so long as it serves to 
 faithfully characterize the manifold surface in a computationally affordable 
 manner \citep{roweissaul2000}.
-For the remainder of this report, neighborhoods will be taken to be
+For the remainder of this report, neighborhoods will be understood as
 $k$-neighborhoods.
-The crucial parameter for LGML is, in fact, neighborhood size.
-It reflects beliefs about the topological structure of $\mani$: smaller 
+More important in LGML is neighborhood size.
+It encodes beliefs about the topological structure of $\mani$: smaller 
 neighborhoods correspond to a higher degree of non-linearity, emphasizing local 
 properties more strongly, and vice versa \citep{sudderth2002}.
-Chapter \ref{experiment} will discuss how the trade-off is addressed in 
+Chapter \ref{challenges} will discuss how the trade-off is addressed in 
 practice.
 \\
 
 \begin{minipage}[b]{0.7\textwidth}
   \textbf{Graph construction.}
-  $\mani$ may be approximated by a \textit{neighborhood graph} 
+  $\mani$ may then be approximated by a \textit{neighborhood graph} 
   $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, always assuming it is 
   sampled well by $\X$. 
-  Inputs $\x \in \X$ form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
+  Observations form vertices $\mathcal{V}$ and edges $\mathcal{E}$ 
   indicate neighborhood relations \citep{belkinniyogi2001}.
   Each vertex is connected to its $k$ nearest neighbors (or all points 
   within $\epsilon$-radius).
@@ -193,25 +194,15 @@ practice.
 Eventually, spectral manifold learning boils down to eigenanalysis 
 of a matrix derived from the graph approximation.
 This matrix representation is obtained by application of some graph functional.
-Precisely how the functional is constructed defines the core of each LGML method 
+Precisely how the functional is constructed defines the core of each LGML 
+method.
+A common trait of all LGML methods is the sparsity of their respective matrix as 
+a direct consequence of local emphasis, speeding up the eigendecomposition
 \citep{sauletal2006}.
-The $d$ principal (top or bottom) eigenvectors -- as determined by the 
+The resulting $d$ principal (top or bottom) eigenvectors -- as determined by the 
 associated eigenvalues -- span a subspace into which the data may be projected 
 under minimal loss of information, preserving as much variability as possible 
 along the axes of intrinsic structure (for a formal definition of eigenanalysis 
 and generalized eigenvalue problems, see section \ref{eigenanalysis}).
 The nature of different graph functionals and resulting matrix representations 
 across methods will be discussed in the subsequent chapters.
-% Figure \ref{fig_kpca_lgml_algo} concludes the overview on LGML with a summary 
-% of the fundamental concept.
-
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
-%     width = 0.8\textwidth]{figures/kpca_lgml_algo}
-%   \caption[LGML concept]{
-%   \raggedright
-%   Concept of LGML in the KPCA framework.
-%   \textit{Source:} own representation.}
-%   \label{fig_kpca_lgml_algo}
-% \end{figure}

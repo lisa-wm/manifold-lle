@@ -17,11 +17,11 @@ then discuss the experiments' results.
 \textbf{Sensitivity analysis I: landmark coverage versus number of prior 
 points.}
 The first experiment pits the quality of landmark coverage against the number of 
-landmarks, reflecting the hypothesis of optimal landmark choice dominating 
+landmarks, reflecting the presumption of optimal landmark choice dominating 
 random and poor selection.
 A higher number of prior points is generally expected to be beneficial.
 This gives rise to the following axes of variation, out of whose cartesian 
-product 18 different scenarios emerge, always assuming exact prior information:
+product 18 different scenarios emerge (always assuming exact prior information):
 \begin{tight_enumerate}
   \item Landmark coverage $\in \{ \text{poor}, \text{ random}, 
   \text{ maximum}\}$.
@@ -41,7 +41,7 @@ noise variable with uncorrelated components.
 Noise scales with the inherent variability of each dimension, such that 
 $\epsilon_i \sim N(0, (\alpha \cdot s_i)^2)$, where $i \in \{1, 2, \dots, d \}$ 
 and $s_i$ denotes empirical standard deviation in dimension $i$.
-Variation is steered via noise level $\alpha$.
+Variation is steered via the noise level $\alpha$.
 With the supposition of more landmarks being able to compensate for noise to 
 some extent, this yields another 24 scenarios\footnote{
 Varying any of the parameters beyond the ranges examined here does not reveal 
@@ -59,10 +59,10 @@ insights.
 \label{eval}
 
 \textbf{Performance evaluation.}
-Embedding quality is evaluated on the area under the $R_{NX}$ curve, 
+Embedding quality is evaluated on the \textit{area under the $R_{NX}$ curve}, 
 $\text{AUC}(R_{NX})$, as proposed by \citet{kraemeretal2019}.
-This metric assesses the extent to which neighborhood relations are preserved. 
-The $R_{NX}$ curve results from a normalized count of points that, for all 
+This metric assesses the degree to which neighborhood relations are preserved. 
+The $R_{NX}$ curve results from a normalized count of points which, for all 
 possible $k$, remain in the $k$-neighborhoods they form part of in the 
 observation space \citep{kraemeretal2019}.
 For a more detailed derivation, please refer to section \ref{auc_rnx} of the 
@@ -70,25 +70,26 @@ appendix.
 Unsupervised learning tasks are notoriously hard to evaluate and manifold 
 learning is no exception.
 Although $\text{AUC}(R_{NX})$ is considered reasonably reliable, all results 
-will therefore be also inspected visually, which is possible here thanks to the 
+will therefore also be inspected visually, which is possible here thanks to the 
 low dimensionality of the evaluation data.
 \\
 
 \textbf{Data.}
 Experiments are mainly conducted on two synthetic data sets with 1,000 samples 
 each.
-The \textit{Swiss roll} data is a widely used two-manifold resulting from 
+The \textit{Swiss roll} data is a widely used 2-manifold resulting from 
 rolling a rectangular patch of data up to a spiral-like shape and embedding it 
 in $\R^3$.
-A somewhat more complex shape results from bending that same rectangular patch 
-to form an \textit{incomplete tire}, basically a hollow torus with a strip and 
-a chunk cut out from the tube in longitudinal and cross-section, respectively.
+A somewhat more complex structure results from bending that same rectangular 
+patch to form an \textit{incomplete tire}, basically a hollow torus with a strip 
+and a chunk cut out from the tube in longitudinal and cross-section, 
+respectively.
 Both manifolds are depicted in figure \ref{fig_swiss_tire_world}.
 A third example, the so-called \textit{world data} consisting of 2,527 
-observations, is employed for the concluding comparison of SSLLE, LLE and HLLE 
+observations, is employed for the concluding comparison 
 in chapter \ref{comparison}.
-It represents a simplified model of the Earth with five continents (omitting the 
-poles).
+It represents a simplified model of the Earth with five continents (merging 
+Europe and Asia and omitting the poles).
 Section \ref{synthetic_data} documents the precise construction of all three
 manifolds.
 
@@ -111,7 +112,8 @@ manifolds.
   \caption[Synthetic data for experimental studies]{
   \raggedright
   Synthetic data for experimental studies, including the Swiss roll 
-  (\textit{left}), incomplete tire (\textit{middle}), and world data sets.
+  (\textit{left}), incomplete tire (\textit{middle}), and world 
+  (\textit{right}) data sets.
   For construction details, see section \ref{synthetic_data} of the appendix.
   \textit{Source:} own representation.}
   \label{fig_swiss_tire_world}
@@ -119,7 +121,7 @@ manifolds.
 
 % ------------------------------------------------------------------------------
 
-\subsection{Results of the Sensitivity Analysis}
+\subsection{Results}
 \label{results}
 
 % ------------------------------------------------------------------------------
@@ -134,7 +136,7 @@ manifolds.
   Figure \ref{fig_key_landmark} depicts this variation for the maximum case of 
   twelve landmarks, marking the selected points in the true embedding (which is 
   the same for both data sets, see section \ref{synthetic_data}).
-  While poor and random coverage are identical for examples, optimal 
+  While poor and random coverage are identical for either example, optimal 
   coverage is not as it adapts prior point selection to the intrinsic manifold 
   structure.
 \end{minipage}%
@@ -171,15 +173,21 @@ manifolds.
 
 \vspace{0.3cm}
 
-An important thing to note here is that the points do not appear to actually
-cover the surface well: they mostly cluster on the fringes of the embedding.
+An important thing to note here is that the optimally selected points do not 
+appear to actually cover the surface well: they mostly cluster on the fringes 
+of the embedding.
 This artifact must probably be attributed to the estimation of geodesic 
-distance for which the implementation relies the \texttt{dimRed} 
+distance, for which the implementation relies the \texttt{dimRed} 
 package \citep{pkgdimred}.
+When geodesic distances are imprecise, the maximum coverage approach loses much 
+of its appeal.
+As the underlying computation is also rather expensive, it is definitely worth 
+considering to instead dedicate the budget to sampling a larger number of points 
+at random.
 \\
 
 \textbf{Quantitative results.}
-Performance across scenarios reflects this observation.
+Performance evaluation reflects this observation.
 Figure \ref{fig_auc_landmarks} illustrates how performance, as measured by 
 $\text{AUC}(R_{NX})$, varies across the scenarios for both data sets.
 Colorization ranges from red for worst-case performance to green for an optimal 
@@ -214,11 +222,13 @@ As mentioned before, quantitative evaluation of manifold learning tasks is a
 difficult endeavor, so figures \ref{fig_emb_landmarks_swiss} and 
 \ref{fig_emb_landmarks_tire} allow to cross-check the results with the actual 
 embeddings (a full-page version of both may be found in section 
-\ref{qual_results}.
+\ref{qual_results}).
 Indeed, visual analysis suggests that optimal coverage does not perform so badly
 after all and might even be considered superior to the randomly selected prior 
-points, particularly so for the Swiss roll data.
-The picture is somewhat more balanced for the incomplete tire.
+points, particularly so for the Swiss roll data (figure 
+\ref{fig_emb_landmarks_swiss}).
+The picture is somewhat more balanced for the incomplete tire (figure 
+\ref{fig_emb_landmarks_tire}).
 Poor coverage fails entirely in both cases, no matter the number of landmarks.
 
 \begin{figure}[H]
@@ -254,7 +264,7 @@ Poor coverage fails entirely in both cases, no matter the number of landmarks.
 \begin{minipage}[b]{0.4\textwidth}
   \textbf{Key variation.}
   The key variation in the second part of the analysis occurs at the level of 
-  label noise in order to simulate inexact prior information.
+  label noise used to simulate inexact prior information.
   Note that the noise level $\alpha$, multiplied by the empirical standard 
   deviation in the respective dimension, steers only the potential amount of 
   noise. 
@@ -324,8 +334,7 @@ embedding more severely.
   width = \textwidth]{figures/sensitivity_noise_auc}
   \caption[Quantitative results for sensitivity analysis II]{
   \raggedright
-  Quantitative results for method of landmark coverage versus number of prior 
-  points. 
+  Quantitative results for noise level versus number of prior points. 
   $\text{AUC}(R_{NX})$ has been scaled to take on a minimum of 0 and maximum of
   1 in both figures for better visibility of differences.
   Original scales: Swiss roll -- $\text{AUC}(R_{NX}) \in [0.2720, 0.4167]$,
@@ -340,9 +349,10 @@ embedding more severely.
 \textbf{Qualitative results.}
 Again, the actual embeddings are depicted below to support the evaluation.
 The minimum amount of two landmarks is insufficient in any case.
-Above that, SSLLE embeds the incomplete tire fairly well for low levels of 
-noise, while at least six prior points seem necessary to find an embedding of 
-the Swiss roll that actually resembles the true one.
+Above that, SSLLE embeds the incomplete tire (figure \ref{fig_emb_noise_tire}) 
+fairly well for low levels of noise, while at least six prior points seem 
+necessary to find an embedding of the Swiss roll that actually resembles the 
+true one (figure \ref{fig_emb_noise_swiss}).
 Even $\alpha = 1.0$ is apparently tolerable in some configurations, but beyond 
 that, dimensionality reduction starts to fail altogether.
 
@@ -352,8 +362,8 @@ that, dimensionality reduction starts to fail altogether.
   {figures/sensitivity_noise_qual_swiss_roll}
   \caption[Qualitative results for Swiss roll data in sensitivity analysis II]
   {\raggedright
-  Qualitative results for Swiss roll data, evaluating method of landmark 
-  coverage versus number of prior points.
+  Qualitative results for Swiss roll data, evaluating noise level versus number 
+  of prior points.
   \textit{Source:} own representation.}
   \label{fig_emb_noise_swiss}
 \end{figure}
@@ -365,8 +375,8 @@ that, dimensionality reduction starts to fail altogether.
   \caption[Qualitative results for incomplete tire data in sensitivity analysis 
   II]
   {\raggedright
-  Qualitative results for incomplete tire data, evaluating method of landmark 
-  coverage versus number of prior points.
+  Qualitative results for incomplete tire data, evaluating noise level versus 
+  number of prior points.
   \textit{Source:} own representation.}
   \label{fig_emb_noise_tire}
 \end{figure}
@@ -384,31 +394,32 @@ For a fair comparison, the same $k$ as deemed optimal by SSLLE has been used.
 SSLLE takes the best-case configuration of maximum coverage and twelve 
 landmarks.
 
-Comparison on both data sets (figure \ref{fig_comp_swiss_tire}) show SSLLE is a 
+Comparison on both the Swiss roll and the incomplete tire 
+(figure \ref{fig_comp_swiss_tire}) shows that SSLLE is a 
 strong contender against the other two methods.
 LLE does not find a meaningful embedding in either case, while HLLE 
-performs impressively on the Swiss roll data but fails to fully undo the 
-incomplete tire transformation.
+performs impressively on the Swiss roll data but fails to fully undo the bending 
+of the incomplete tire transformation.
 
 \begin{figure}[H]
   \begin{subfigure}{0.5\textwidth}
-    \centering
-    \includegraphics[trim = 60 0 20 0, clip, width = 0.9\textwidth]
+    % \centering
+    \includegraphics[trim = 60 20 20 20, clip, width = 0.85\textwidth]
     {figures/comparison_swiss_roll}
     \caption[]{Swiss roll data}
     \label{fig_comp_swiss}
   \end{subfigure}
   \begin{subfigure}{0.5\textwidth}
-    \centering
-    \includegraphics[trim = 60 0 20 0, clip, width = 0.9\textwidth]
+    % \centering
+    \includegraphics[trim = 60 20 20 20, clip, width = 0.85\textwidth]
     {figures/comparison_incomplete_tire}
     \caption[]{Incomplete data}
   \end{subfigure}
   \caption[Comparison of LLE, HLLE and SSLLE on Swiss roll and incomplete tire 
   data]
   {\raggedright
-  Embeddings found by LLE (\textit{left}), HLLE (\textit{middle}), and SSLLE 
-  (\textit{right}).
+  Embeddings found by LLE (\textit{respective left}), HLLE 
+  (\textit{respective middle}), and SSLLE (\textit{respective right}).
   \textit{Source:} own representation.}
   \label{fig_comp_swiss_tire}
 \end{figure}

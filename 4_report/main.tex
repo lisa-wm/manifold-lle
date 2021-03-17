@@ -37,6 +37,7 @@ bindingoffset = 0mm]{geometry}
 \usepackage{url}
 \usepackage[font = footnotesize]{caption}
 \usepackage{subcaption}
+\captionsetup[subfigure]{justification=justified,singlelinecheck=false}
 \usepackage{csquotes} \MakeOuterQuote{"}
 \usepackage{ragged2e}
 \usepackage{array}
@@ -114,7 +115,7 @@ Seminar Report
       
 \rule{\textwidth}{1.5pt}
 \Large 
-\textbf{Semi-Supervised Locally Linear Embedding: Application \& Sensitivity 
+\textbf{Semi-Supervised Locally Linear Embedding: \\ Application \& Sensitivity 
 Analysis of Critical Parameters}
 \rule{\textwidth}{1.5pt}
    
@@ -173,17 +174,6 @@ Munich, April 2\textsuperscript{nd}, 2021
 \noindent
 \normalsize
 
-% \begin{tabularx}{\textwidth}{ 
-%   >{\raggedleft\arraybackslash}X 
-%   >{\raggedright\arraybackslash}X}
-%   HLLE & Hessian locally linear embedding \\
-%   LEM & Laplacian eigenmaps \\
-%   LGML & local graph-based manifold learning \\
-%   LLE & locally linear embedding \\
-%   PCA & principal component analysis \\
-%   SSLLE & semi-supervised locally linear embedding
-% \end{tabularx}
-
 \begin{tabular}{rl}
   AUC & area under the curve \\
   HLLE & Hessian locally linear embedding \\
@@ -204,19 +194,6 @@ Munich, April 2\textsuperscript{nd}, 2021
 \noindent
 \normalsize
 
-% \begin{tabularx}{\textwidth}{ 
-%   >{\raggedleft\arraybackslash}X 
-%   >{\raggedright\arraybackslash}X}
-%   $N \in \N$ & number of observed data points \\
-%   $D \in \N$ & number of observed dimensions \\
-%   $d \in \N$ & number of intrinsic dimensions\\
-%   $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
-%   $\X = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N) \in (\RD)^N$ & observed
-%   coordinates \\
-%   $\Y = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N) \in (\Rd)^N$ & embedding
-%   coordinates
-% \end{tabularx}
-
 \begin{tabular}{rl}
   $\I = \mathit{diag}(1) \in \R^{s \times s}$ & identity matrix with $s^2$ 
   entries, $s \in \N$ \\
@@ -230,18 +207,14 @@ Munich, April 2\textsuperscript{nd}, 2021
   $k \in \N$ & number of neighbors \\
   $m \in \N$ & number of prior points \\
   $\mani \subset \RD$ & $d$-manifold embedded in $\RD$ \\
-  $\X = (\bm{x}_1, \bm{x}_2, ..., \bm{x}_N) \in (\RD)^N$ & observed
-  coordinates \\
-  $\Y = (\bm{y}_1, \bm{y}_2, ..., \bm{y}_N) \in (\Rd)^N$ & embedding
-  coordinates \\
+  $\X = \begin{bmatrix} \x_1 & \x_2 & ... & \x_N \end{bmatrix}^T 
+  \in \R^{N \times D}$ & observed coordinates \\
+  $\Y = \begin{bmatrix} \y_1 & \y_2 & ... & \y_N \end{bmatrix}^T 
+  \in \R^{N \times d}$ & embedding coordinates \\
   $T_{\pv}(\mani)$ & local tangent space at $\pv \in \mani$ \\
+  $f: \mani \rightarrow \R$ & mapping function \\
   $\mathcal{L}(f)$ & Laplace-Beltrami operator in LEM \\
   $\Lap\in \R^{N \times N}$ & graph Laplacian in LEM \\
-  % $\bm{N}_i \in \R^{D \times k}$ & matrix of feature vectors 
-  % (possibly centered) belonging to $k$ nearest neighbors of $\x_i \in \X$, 
-  % $i \in \N$ \\
-  % $\bm{G}_i \in \R^{k \times k}$ & local Gram matrix of $\x_i \in \X$, 
-  % $i \in \N$ \\
   $\mathscr{H}(f)$ & Hessian functional in HLLE \\
   $\mathcal{H} \in \R^{N \times N}$ & empirical Hessian approximator in HLLE \\
   $\beta > 0$ & confidence parameter in SSLLE \\

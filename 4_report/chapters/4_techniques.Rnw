@@ -6,24 +6,25 @@
 \subsubsection{Laplacian Eigenmaps (LEM)}
 \label{lem}
 
+\textbf{Idea.}
 The reason for LEM to appear in this report alongside the LLE family is its 
 underlying theory both providing a foundation for LLE \citep{belkinniyogi2003} 
-and closely relating to the theoretical concepts in HLLE 
+and lending many ideas to the theoretical concept in HLLE 
 \citep{donohogrimes2003}.
 LEM is centered around the preservation of locality, i.e., mapping nearby
 inputs to nearby outputs.
-Locality is enforced via the \textit{Laplace-Beltrami operator} defined on
-smooth, compact manifolds, and operationalized by means of the 
-\textit{graph Laplacian} acting as a discrete approximator 
-\citep{belkinniyogi2003}.
 This idea is best understood recalling that the similarity of outputs for
 similar inputs is essentially a notion of smoothness and can thus be controlled
 by a size constraint on the gradient of the mapping function.
+Locality is enforced via the \textit{Laplace-Beltrami operator} defined on
+smooth, compact manifolds, and operationalized by the \textit{graph Laplacian} 
+acting as a discrete approximator 
+\citep{belkinniyogi2003}.
 \\
 
 \begin{minipage}[b]{0.7\textwidth}
   \textbf{Continuous justification.}
-  Consider the twice differentiable function $f: \mani \rightarrow \R$ mapping
+  Consider the twice-differentiable function $f: \mani \rightarrow \R$ mapping
   $\pv, \qv$ to $f(\pv)$ and $f(\qv)$, respectively.
   On $\mani$ these points are connected by a length-parametrized curve $c(t)$.
   Denote the geodesic distance between $\pv$ and $\qv$ by $\ell$, such that
@@ -61,37 +62,39 @@ by a size constraint on the gradient of the mapping function.
 \vspace{0.5cm}
 
 It can be shown that
-$|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$, where
-$o$ marks a term of vanishing size \citep{belkinniyogi2008}.
+$|f(\pv) - f(\qv)| \leq \| \nabla f(\pv) \| \cdot \| \pv - \qv\| + o$, where 
+$\| \cdot \|$ is a suitable norm and $o$ marks a term of vanishing size
+\citep{belkinniyogi2008}.
 $\| \nabla f \|$ thus controls how far apart points are mapped on the real line.
-Consequently, the goal is to find a mapping that, on average, preserves
-locality by minimizing $\int_{\mani}\| \nabla f \|^2$.
+The goal of finding a mapping that, on average, preserves
+locality is then met by minimizing $\int_{\mani}\| \nabla f \|^2$.
 This is just equivalent to minimizing $\int_{\mani} \mathcal{L}(f)f$ with the
 Laplace-Beltrami operator $\mathcal{L}$ \citep{belkinniyogi2003}.
 For $\mathcal{L} f = \lambda f$, $f$ is an eigenfunction of $\mathcal{L}$ with 
 $\lambda \in \R$ as its associated eigenvalue.
-These eigenfunctions are orthogonal and have real eigenvalues, making them 
+All of the eigenfunctions are orthogonal and have real eigenvalues, making them 
 natural candidates for a functional basis \citep{levy2006}.
 The optimal embedding map is then given by the $d$ principal eigenfunctions of
-$\mathcal{L}$ after removing the bottom one which would map $\mani$ to a
+$\mathcal{L}$, after removing the bottom one which would map $\mani$ to a
 single point \citep{belkinniyogi2003}.
 % \\
 
 \newpage
 \textbf{Finite approximation.}
-Now the same reasoning can be applied to the neighborhood graph approximation of
+Now the same reasoning can be applied to the graph approximation of
 $\mani$.
-Mapping nearby inputs to nearby is achieved by assigning edge weights\footnote{
+Mapping nearby inputs to nearby is outputs achieved by assigning edge 
+weights\footnote{
 These weights stem from the heat kernel intimately related to the 
 Laplace-Beltrami operator and ensure positive semi-definiteness of the resulting
 graph Laplacian \citep{belkinniyogi2003}. 
 % As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
 % equal to 1 for connected nodes and 0 otherwise.
 } $w_{ij} = \exp(\frac{1}{t} \twonorm{\x_i - \x_j}), t \in \R$, if 
-$\x_i, \x_j$ are are connected, and zero otherwise.
+$\x_i, \x_j \in \X$ are connected, and zero otherwise.
 Clearly, edges between closer points receive larger weights.
-The \textit{adjacency matrix} $\D = (d)_{ij} \in \R^{N \times N}$ takes the row
-sums of the \textit{weight matrix} $\W = (w)_{ij} \in \R^{N \times N}$ on its 
+The \textit{adjacency matrix} $\D = [d]_{ij} \in \R^{N \times N}$ takes the row
+sums of the \textit{weight matrix} $\W = [w]_{ij} \in \R^{N \times N}$ on its 
 diagonal.
 Penalizing output disparities more severely for pairs of nearby points, the 
 smoothness requirement may be stated as follows:
@@ -102,8 +105,8 @@ smoothness requirement may be stated as follows:
     &= \min_{\Y} \sum_{i, j} \y_i^T \y_i w_{ij} + \y_j^T \y_j
     w_{ij} -
     2 \y_i^T \y_j w_{ij} \\
-    &= \min_{\Y} \sum_i \y_i^T \y_i d_{ii} + \sum_j \y_j^T \y_j
-    d_{jj} - 2 \sum_{i, j} \y_i^T \y_j w_{ij}.
+    &= \min_{\Y} 2 \sum_i \y_i^T \y_i d_{ii} - 2 \sum_{i, j} \y_i^T \y_j w_{ij} 
+    = \min_{\Y} \sum_i \y_i^T \y_i d_{ii} - \sum_{i, j} \y_i^T \y_j w_{ij}.
   \end{split}
 \end{equation*}
 
@@ -111,8 +114,8 @@ Now, define the \textit{graph Laplacian} as
 $\Lap = \D - \W \in \R^{N \times N}$, thereby coercing
 all information about the graph structure into a single matrix
 representation.
-With $\Lap$ the above can be rewritten as generalized eigenvalue problem, 
-adhering to the LGML algorithmic concept:
+With $\Lap$ the above can be rewritten as a generalized eigenvalue problem in
+the LGML conceptual spirit:
 
 \begin{equation}
   \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
@@ -159,7 +162,7 @@ parameter required in the case of $D < k$ \citep{wuwu2018}.
   are invariant to rotation, rescaling and translation of the neighborhood, and 
   thus topological properties that equally hold in the low-dimensional embedding 
   space. 
-  In other words, the same weights that serve to reconstruct $\x_i$ in $\RD$ 
+  In other words, the same weights that reconstruct $\x_i$ in $\RD$ 
   should do so in $\Rd$ \citep{roweissaul2000}.
   Obviously, this belief is only justified if $\mani$ is indeed locally linear 
   and the graph edges run along the manifold surface rather than 
@@ -194,14 +197,14 @@ parameter required in the case of $D < k$ \citep{wuwu2018}.
 
 Algorithmically, LLE performs two subsequent steps \citep{roweissaul2000}:
 \begin{tight_enumerate}
-  \item Compute the reconstruction weights in $\RD$ minimizing reconstruction
+  \item Compute the reconstruction weights in $\RD$, minimizing reconstruction
   loss.
-  \item Compute the embedding coordinates in $\Rd$ minimizing embedding loss.
+  \item Compute the embedding coordinates in $\Rd$, minimizing embedding loss.
 \end{tight_enumerate}
 
 \textbf{Reconstruction loss minimization.}
 Reconstruction errors are measured by a quadratic loss function.
-Optimization of the objective is subject to a sum-one constraint for the weights
+Optimization is subject to a sum-one constraint for the weights
 of each point.
 A second constraint, zero weights for non-neighboring points, is implicitly
 enforced during construction of the neighborhood graph, where edges are only
@@ -240,17 +243,18 @@ matrix $\G_i$ \citep{saulroweis2001}:
   \label{eq_obj_lle_recon_2}
 \end{equation}
 
-By standard use of a Lagrange multiplier, the solution for the above constrained optimization problem collapses to 
+By standard use of a Lagrangian multiplier, the solution for the above 
+constrained optimization problem collapses to 
 $\bm{w}_i = \frac{\G_i^{-1}\bm{1}}{\bm{1}^T \G_i^{-1}\bm{1}}.$
 Solving the reconstruction problem therefore requires $N$ matrix inversions, 
-which may prove problematic if the gram matrices do not achieve full rank.
+which may prove problematic if the Gram matrices do not achieve full rank.
 In the case of $D < k$, $\G_i$ is indeed singular and must be robustified by 
 adding a small numerical constant to its diagonal \citep{ghojoghetal2020}.
 \\
 
 \textbf{Embedding loss minimization.}
 The second optimization problem minimizes the embedding cost arising from 
-mapping neighborhood geometries into the $d$-dimensional subspace.
+mapping local neighborhood patches into the $d$-dimensional subspace.
 Keeping the weight coefficients fixed, the aim is to find the embedding 
 coordinates that best preserve the vicinity structures and adhere to the 
 constraints of summing to zero (i.e., being centered around the origin) as well 
@@ -260,9 +264,8 @@ as having unit covariance \citep{roweissaul2000}:
   \begin{split}
     \min_{\Y} \Phi(\Y) = &\min_{\Y} \sum_i \twonorm{\y_i - \sum_j w_{ij} \y_j}, 
     \\
-    & \text{s.t. } \frac{1}{N} \sum_i \y_i \y_i^T = \I \quad \text{and}
-    \quad \sum_i \y_i = \bm{0} \quad \forall i \in \setN.
-    % & \phantom{\text{s.t. }} \sum_i \y_i = \bm{0} \quad \forall i \in \setN. 
+    & \text{s.t. } \sum_i \y_i = \bm{0} \quad \text{and} \quad 
+    \frac{1}{N} \sum_i \y_i \y_i^T = \I \quad \forall i \in \setN.
   \end{split}
   \label{eq_obj_lle_emb}
 \end{equation}
@@ -288,9 +291,9 @@ The additional sum-zero condition is implicitly met by discarding the constant
 eigenvector \citep{ghojoghetal2020}.
 As mentioned before, the close resemblance to the optimization problem in LEM 
 (equation \ref{eq-obj-lem}) is not coincidental.
-\citet{belkinniyogi2003} show that LLE approximates the eigenfunctions of the 
-iterated form $\frac{1}{2} \mathcal{L}^2$, which are identical to those of 
-$\mathcal{L}$.
+\citet{belkinniyogi2003} show that equation \ref{eq_obj_lle_emb_2} approximates 
+the eigenfunctions of the iterated form $\frac{1}{2} \mathcal{L}^2$, which are 
+identical to those of $\mathcal{L}$.
 
 % ------------------------------------------------------------------------------
 
@@ -304,9 +307,9 @@ HLLE is also closely related to another technique beyond the scope of this
 report, namely \textit{local tangent space alignment (LTSA)} (see, for example, 
 \citet{tingjordan2018}).
 } \citep{dissross2008}.
-As opposed to LLE, HLLE is built upon a rigid theoretical foundation.
-It makes the relatively weak assumptions of local isometry and homeomorphicity 
-to an open, connected subset of $\Rd$, providing veritable convergence 
+As opposed to LLE, HLLE is built upon a rigorous theoretical foundation.
+From the relatively weak assumptions of local isometry and homeomorphicity 
+to an open, connected subset of $\Rd$, it provides veritable convergence 
 guarantees, albeit only for the continuous limit \citep{donohogrimes2003}.
 \\
 
@@ -327,14 +330,14 @@ linear \citep{dissross2008}.
 \\
 
 \textbf{Continuous justification.}
-Consider $\pv \in \mani$ and its $k$-neighborhood $\mathcal{N}_k(\pv)$, each of 
-whose members has a unique closest point on $T_{\pv}(\mani)$ via the smooth 
-mapping $f$.
+Consider $\pv \in \mani$ and its $k$-neighborhood $\mathcal{N}_k(\pv) \subset 
+\mani$, each of whose members has a unique closest point on $T_{\pv}(\mani)$ 
+via the smooth mapping $f$.
 Identifying $f(\pv)$ with $\bm{0} \in \Rd$ yields a system of local 
 coordinates on $T_{\pv}(\mani)$ that depends on this particular choice of the 
 origin.
-For a neighbor $\pv^{\prime}$ of $\pv$, let these local coordinates be denoted 
-by $\x^{\text{loc, }\pv^{\prime}}$.
+For $\pv^{\prime} \in \mathcal{N}_k(\pv)$, let these local coordinates be 
+denoted by $\x^{\text{loc, }\pv^{\prime}}$.
 Then, the Hessian $\Hes_f^{\text{loc}}(\pv)$ of $f$ at $\pv$ in tangent 
 coordinates may be expressed as the ordinary Hessian of a function 
 $g: U \rightarrow \R$ with $f(\pv^{\prime}) = g(\x^{\text{loc, }\pv^{\prime}})$, 
@@ -342,16 +345,17 @@ $U$ being a
 neighborhood of zero in $\Rd$ \citep{donohogrimes2003}:
 
 \begin{equation}
-  (\Hes_f^{\text{loc}}(\pv))_{i,j} = \frac{\partial^2 
+  [\Hes_f^{\text{loc}}(\pv)]_{i,j} = \frac{\partial^2 
   g(\x^{\text{loc, }\pv^{\prime}})}
   {\partial x_i^{\text{loc, }\pv^{\prime}} 
   \partial x_j^{\text{loc, }\pv^{\prime}}} 
-  \bigg\rvert_{\x^{\text{loc, }\pv^{\prime}} = 0}.
+  \bigg\rvert_{\x^{\text{loc, }\pv^{\prime}} = 0} \quad 
+  i, j \in \{ 1, 2, \dots, d \}.
   \label{eq-hessian-local}
 \end{equation}
 
 From these point-wise tangent Hessians it is now possible to construct a 
-quadratic functional $\mathscr{H}(f)$ on the entire manifold, analogous to the 
+quadratic functional $\mathscr{H}(f)$ over the entire manifold, analogous to the 
 Laplace-Beltrami operator in LEM.
 The crucial property of $\mathscr{H}(f)$ is given by the fact that, if $\mani$ 
 is truly locally homeomorphic to an open, connected subset of $\Rd$, 
@@ -397,31 +401,32 @@ Now a matrix $\bm{Z_i}$, whose columns contain all cross products of $\bm{U}_i$
 up to order $d$, is constructed and coerced into orthonormal form.
 Extracting the transpose of the last $\frac{d(d + 1)}{2}$ columns of $\bm{Z_i}$ 
 yields the local Hessian approximator $\Hes_i$ as the least-squares estimate of 
-a local quadratic polynomial regression in the neighborhood of $\x_i$ (\citet{vandermaatenetal2009}, \citet{tingjordan2018}).
+a local quadratic regression in the neighborhood of $\x_i$ 
+(\citet{vandermaatenetal2009}, \citet{tingjordan2018}).
 The empirical Hessian functional $\mathcal{H}$ is obtained as a 
 quadratic form of the local Hessian approximators \citep{donohogrimes2003}:
 
 \begin{equation}
-  \mathcal{H} = \sum_i \sum_j \mathcal{H}_{ij}, \quad 
-  \mathcal{H}_{ij} = \sum_{\ell} \sum_m (\Hes_{\ell})_{m,i}
-  (\Hes_{\ell})_{m,j}.
+  \mathcal{H} = \sum_{i,j} \mathcal{H}_{ij}, \quad 
+  \mathcal{H}_{ij} = \sum_{\ell, m} (\Hes_{\ell})_{m,i}
+  (\Hes_{\ell})_{m,j}, \quad i, j \in \setN.
   \label{eq_hfunctional_emp}
 \end{equation}
 
 Eventually, eigenanalysis of $\mathcal{H}$ yields the approximate null space 
 spanned by the $d$ bottom eigenvectors after discarding the constant one.
 The final step consists of finding a basis for the null space.
-For this, take $\bm{Q} \in \R^{N \times d}$ containing the $d$
-non-constant eigenvectors and find a second matrix $\bm{R}$ such that the
-columns of $\bm{Q}\bm{R}$ restricted to a fixed local neighborhood are
-orthonormal.
+For this, take $\bm{Q}$ containing the $d$
+non-constant eigenvectors and find a second matrix $\bm{R}$ 
+such that the columns of $\bm{Q}\bm{R}$ restricted to a fixed local neighborhood 
+are orthonormal.
 The embedding coordinates are then given by $\bm{Q}^T\bm{R}^T$
 \citep{yezhi2015}.
 As an alternative, \citet{dissross2008} proposes to replace the last step
 by simply scaling $\bm{Q}$ with $\sqrt{N}$.
 \\
 
-Tracing the steps only roughly sketched above, it becomes clear that the 
+Tracing the steps only roughly sketched above suggests that the 
 theoretical guarantees of HLLE come at the expense of rather complex 
 computations\footnote{
 For a more in-depth analysis see, for example, \citet{tingjordan2018}.
@@ -502,12 +507,12 @@ is most informative to the learning algorithm.
 \vspace{0.2cm}
 
 \begin{minipage}[b]{0.6\textwidth}
-  \citet{yangetal2006} found this to be the case for points that are 
+  \citet{yangetal2006} find this to be the case for points that are 
   scattered maximally across the manifold surface.
   Such optimal coverage is achieved by sequential selection of landmarks, in 
   each step choosing the point whose minimum distance to all previously selected 
   ones is maximal.
-  Crucially, the underlying metric is geodesic distance here.
+  Crucially, this computation relies on geodesic distance.
   The sensitivity analysis will examine the impact of optimal coverage 
   versus scenarios of poor landmark choice, understood as all points being 
   clustered in one location, and sampling uniformly at random, as depicted in 
@@ -546,10 +551,10 @@ Depending on the application, the prior information may be exact or inexact.
 While the first case greatly simplifies the manifold learning problem, the 
 latter must be treated with some more care, or the semi-supervision will 
 actually be harmful.
-Besides their location, the reliability of prior points therefore seems crucial 
+Besides their location, the reliability of prior points therefore seems vital 
 to the embedding, which is why the second part of the sensitivity analysis in 
-chapter \ref{experiment} will assess the robustness of SSLLE to varying levels 
-of label noise.
+chapter \ref{experiment} will assess the robustness of SSLLE against varying 
+levels of label noise.
 \\
 
 \textbf{Algorithmic impact.}
@@ -579,16 +584,15 @@ unknown coordinates, denoted by $\Ytil_2 \in \R^{m \times d}$
 
 Equation \ref{eq_sslle_exact} reflects the importance of prior points noted 
 before: as errors exist only in $\E_{12} = \E_{21}$ and $\E_{22}$, the condition 
-number $\kappa(\E_{22})$ of $\E_{22}$ multiplied by the relative errors in the 
-off-diagonal blocks acts as an upper bound on the relative embedding error.
+number $\kappa(\E_{22})$ of $\E_{22}$, multiplied by the relative errors in the 
+off-diagonal blocks, acts as an upper bound on the relative embedding error.
 For a sufficiently large number of observations, it can be shown that 
 $\kappa(\E_{22})$ is minimal if the prior points are maximally scattered 
-across the manifold surface, which is intuitively plausible 
-\citep{yangetal2006}.
+across the manifold surface \citep{yangetal2006}.
 \\
 
 For inexact prior information, the problem is slightly more complicated.
-The label noise commands the introduction of a regularizing term that penalizes 
+The label noise requires the introduction of a regularizing term that penalizes 
 deviations of the assumed coordinates (denoted by the hat symbol) from the true 
 ones.
 The associated regularization parameter $\beta > 0$ encodes the level of 
@@ -622,12 +626,14 @@ Clearly, for the exact case, $\hat{\Ytil}_1^T = \Ytil_1^T$ and equation
 % challenges in practical application.
 % \\
 
-\textbf{Amount of and quality of prior knowledge.}
+\textbf{Amount and quality of prior knowledge.}
 As hinted above, the location of prior points must be assumed to have vital 
-impact on the quality of embedding coordinates, and so should their number.
+impact on the quality of the embedding, and so should their number.
 Likewise, the reliability of prior information ought to be a critical factor: 
-while the case of exact knowledge is purely beneficial, inexact knowledge will 
-provide less reliable guidance and might even prove harmful.
+while the case of exact knowledge is purely beneficial, inexact coordinates will 
+provide less reliable guidance and cause harm in the worst case.
+These aspects become even more decisive in a setting where the acquisition of 
+prior knowledge is beyond the practitioner's control.
 The confidence parameter $\beta$ might also be expected to determine embedding 
 quality.
 However, it emerges in the practical implementation that results are 
@@ -673,11 +679,11 @@ Lastly, the inversion of the Gram matrix required for reconstruction error
 minimization in (SS)LLE frequently suffers from singularity.
 This problem has been noted by \citet{roweissaul2000} without offering a 
 specific remedy.
-The implementation uses a small additive constant $\gamma > 0$ to strengthen the 
-main diagonal, as is standard practice in numerical optimization 
+The proposed implementation uses a small additive constant $\gamma > 0$ to 
+strengthen the main diagonal, as is standard practice in numerical optimization 
 \citep{ghojoghetal2020}.
 $\gamma$ is computed as the sum over the eigenvalues of the local Gram matrix, 
-multiplied by a tolerance parameter set to 0.01, following a proposal by
+multiplied by a small tolerance parameter, following a proposal by
 \citet{dissgrilli2007}.
 In fact, the embedding is rather sensitive to regularization 
 \citep{deridderduin2002}; so, even though it is beyond the scope of this report 

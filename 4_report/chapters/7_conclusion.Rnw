@@ -1,4 +1,4 @@
-Lorem ipsum
+idea of this form of semi-supervision might valuable in other settings too
 
 % IDEA neighborhoods in high-dim space
 % cover difficulty of finding neighborhoods in high-dim space

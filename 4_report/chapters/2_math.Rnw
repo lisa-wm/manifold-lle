@@ -3,8 +3,8 @@
 
 Before diving into the core concepts, some basic notation shall be fixed.
 A thorough introduction to manifold theory is beyond the scope, but section 
-\ref{topology} of the appendix provides some fundamental definitions for to make 
-clear how these are understood in the remainder of this report.
+\ref{topology} of the appendix provides some fundamental definitions to make 
+clear how these are understood for the remainder of this report.
 \\
 
 \begin{minipage}[b]{0.7\textwidth}
@@ -17,10 +17,11 @@ clear how these are understood in the remainder of this report.
   Consider, for instance, the \textit{S-curve} manifold (figure 
   \ref{fig_scurve}), embedded in $\R^3$, that will serve as a running example 
   throughout the report.
-  Clearly, the S-curve as a whole is far from linear, but it locally 
+  Clearly, the S-curve as a whole is far from linear, but it is locally 
   homeomorphic to $\R^2$ and thus intrinsically two-dimensional.
   In fact, it is generated from a planar patch of two-dimensional points by 
-  some trigonometric transformations.
+  some trigonometric transformations (see appendix section 
+  \ref{synthetic_data}).
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -49,7 +50,7 @@ constrain distances to the manifold surface.
 Put simply, \textit{geodesic distance} between two points on $\mani$ is the 
 length of the shortest curve (\textit{geodesic}) between them lying on $\mani$.
 Intuitively, geodesic distance can be identified with Euclidean distance in
-Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
+Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
 
 % ------------------------------------------------------------------------------
 
@@ -57,19 +58,20 @@ Euclidean spaces where shortest curves are just straight lines \citep{mafu2011}.
 \label{formal_goal}
 
 The manifold learning situation might be summarized as follows: data are 
-observed in $\RD$ but assumed to be really samples from a $d$-manifold $\mani$ 
-embedded in $\RD$, meaning they can be treated as $d$-dimensional, provided a 
-faithful translation between $\mani$ and $\Rd$ is found\footnote{
+observed in $\RD$ but assumed to be really samples\footnote{
 It is actually a simplification to assume all data to lie \textit{on} $\mani$, 
 but the more general case of data lying \textit{near} $\mani$ is rarely 
 considered explicitly.
-}.
+} from a $d$-manifold $\mani$ 
+embedded in $\RD$, meaning they can be represented in $d$ dimensions, provided a 
+faithful translation between $\mani$ and $\Rd$ is found.
 The challenge is thus to unravel the manifold in a maximally 
 structure-preserving way \citep{sauletal2006}.
 This goal may be formalized as follows, inspired by \citet{cayton2005} and \citet{sauletal2006}:
 \\
 
-\textbf{Given.} Data $\X = (\x_1, \x_2, ..., \x_N)$, with 
+\textbf{Given.} Data $\X = \begin{bmatrix} \x_1 & \x_2 & ... & \x_N 
+\end{bmatrix}^T $, with 
 $\x_i \in \RD$ $\forall i \in \setN$ and $N, D \in \N$. 
 
 The true data-generating process is taken to have dimensionality 
@@ -82,7 +84,8 @@ assumed to be sampled well by $\X$.
 \\
 
 \textbf{Goal.} Find the $d$-dimensional representation of the data, 
-i.e., compute \\$\Y = (\y_1, \y_2, ..., \y_N)$, where 
+i.e., compute \\$\Y = \begin{bmatrix} \y_1 & \y_2 & ... & \y_N 
+\end{bmatrix}^T$, with 
 $\y_i = \psi(\x_i) \in \R^d$ $\forall i \in \setN$.
 
 The map $\psi$ itself is not always explicitly retrieved.
@@ -93,5 +96,5 @@ often unknown.
 $\Y$ must therefore be expected to differ from the true coordinates, and, in 
 particular, to even have incorrect dimension \citep{sauletal2006}.
 Notwithstanding this potential gap, solutions of the subsequently presented 
-methods will be denoted by $\Y \in (\Rd)^N$ to avoid overloading
+methods will be denoted by $\Y \in \R^{N \times d}$ to avoid overloading
 notation.

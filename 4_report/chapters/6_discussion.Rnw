@@ -1,14 +1,30 @@
-Pros and Cons
+The experiments have shown that SSLLE performs well for synthesized examples 
+and under favorable conditions.
+Real-world applications, where data become truly high-dimensional and cannot be 
+expected to lie on simple and well-behaved manifolds, will also face some 
+substantial drawbacks.
+The following synopsis discusses the major strengths and drawbacks, many of 
+which hold equally true for the other LGML algorithms.
+\\
 
-Various extensions
+\textbf{Strengths}
+\begin{itemize}
+  \item[] \textbf{Theoretical simplicity.} foo
+  \item[] \textbf{Hyperparameter sparsity.} foo
+  \item[] \textbf{Computational efficiency.} foo
+  \item[] \textbf{Positive impact of semi-supervision.} foo
+\end{itemize}
 
-
-See \citep{vandermaatenetal2009} for extensive discussion of manifold learning
+\textbf{Drawbacks}
+\begin{itemize}
+  \item[] \textbf{Dependence on graph approximation.} foo
+  \item[] \textbf{No indication of intrinsic dimensionality.} agnostic
+  \item[] \textbf{Fundamental weakness in optimization problem.} foo
+  \item[] \textbf{Weak preservation of geometric properties.} foo
+  \item[] \textbf{Dependence on prior information.} foo
+\end{itemize}
 
 Theoretical convergence? (e.g., ISOMAP has this)
-
-Determination of d: actually requires to know d, right? Must be automatically
-known if prior points are known
 
 Potential shortcoming: what if manifold is not well-sampled? Not a problem with
 synthetic data, but IRL. But probably problematic with all manifold approaches
