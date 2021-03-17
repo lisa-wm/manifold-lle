@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  17 MAR 2021 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.11.26)  17 MAR 2021 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -800,7 +800,7 @@ been already used, duplicate ignored
                    \relax 
 l.9 
      [1]
-<figures/s_curve.pdf, id=316, 343.2825pt x 305.22029pt>
+<figures/s_curve.pdf, id=319, 343.2825pt x 305.22029pt>
 File: figures/s_curve.pdf Graphic file (type pdf)
 <use figures/s_curve.pdf>
 Package pdftex.def Info: figures/s_curve.pdf  used on input line 33.
@@ -835,7 +835,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--16
 pdfTeX warning: pdflatex.exe (file ./figures/s_curve.pdf): PDF inclusion: inval
 id other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/models_overview_new.png, id=352, 809.0225pt x 257.96375pt>
+<figures/models_overview_new.png, id=355, 809.0225pt x 257.96375pt>
 File: figures/models_overview_new.png Graphic file (type png)
 <use figures/models_overview_new.png>
 Package pdftex.def Info: figures/models_overview_new.png  used on input line 35
@@ -856,7 +856,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--153
 
  []
 
-<figures/s_curve_connected.pdf, id=410, 681.50606pt x 606.34526pt>
+<figures/s_curve_connected.pdf, id=413, 681.50606pt x 606.34526pt>
 File: figures/s_curve_connected.pdf Graphic file (type pdf)
 <use figures/s_curve_connected.pdf>
 Package pdftex.def Info: figures/s_curve_connected.pdf  used on input line 182.
@@ -877,7 +877,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--24
 
  []
 
-<figures/sphere_tangent.pdf, id=446, 343.2825pt x 305.22029pt>
+<figures/sphere_tangent.pdf, id=449, 343.2825pt x 305.22029pt>
 File: figures/sphere_tangent.pdf Graphic file (type pdf)
 <use figures/sphere_tangent.pdf>
 Package pdftex.def Info: figures/sphere_tangent.pdf  used on input line 53.
@@ -897,13 +897,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--151
 
  []
 
-<figures/reconstruction_3d.pdf, id=486, 229.81859pt x 192.72pt>
+<figures/reconstruction_3d.pdf, id=489, 229.81859pt x 192.72pt>
 File: figures/reconstruction_3d.pdf Graphic file (type pdf)
 <use figures/reconstruction_3d.pdf>
 Package pdftex.def Info: figures/reconstruction_3d.pdf  used on input line 180.
 
 (pdftex.def)             Requested size: 165.56181pt x 95.05605pt.
-<figures/reconstruction_2d.pdf, id=488, 229.81859pt x 192.72pt>
+<figures/reconstruction_2d.pdf, id=491, 229.81859pt x 192.72pt>
 File: figures/reconstruction_2d.pdf Graphic file (type pdf)
 <use figures/reconstruction_2d.pdf>
 Package pdftex.def Info: figures/reconstruction_2d.pdf  used on input line 186.
@@ -939,13 +939,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--428
 
  []
 
-<figures/s_curve_pp_random.pdf, id=625, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_random.pdf, id=628, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_random.pdf>
 Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 478.
 
 (pdftex.def)             Requested size: 87.13808pt x 115.31233pt.
-<figures/s_curve_undone_pp_random_long.pdf, id=627, 229.81859pt x 455.78279pt>
+<figures/s_curve_undone_pp_random_long.pdf, id=630, 229.81859pt x 455.78279pt>
 File: figures/s_curve_undone_pp_random_long.pdf Graphic file (type pdf)
 <use figures/s_curve_undone_pp_random_long.pdf>
 Package pdftex.def Info: figures/s_curve_undone_pp_random_long.pdf  used on inp
@@ -962,7 +962,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/s_curve_undone_pp_random_long.pdf)
 : PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type 
 <array>); ignored.
 >]
-<figures/s_curve_pp_poor.pdf, id=648, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_poor.pdf, id=651, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_poor.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_poor.pdf>
 Package pdftex.def Info: figures/s_curve_pp_poor.pdf  used on input line 528.
@@ -972,7 +972,7 @@ File: figures/s_curve_pp_random.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/s_curve_pp_random.pdf  used on input line 532.
 
 (pdftex.def)             Requested size: 55.76964pt x 72.90868pt.
-<figures/s_curve_pp_maxmin.pdf, id=651, 343.2825pt x 305.22029pt>
+<figures/s_curve_pp_maxmin.pdf, id=654, 343.2825pt x 305.22029pt>
 File: figures/s_curve_pp_maxmin.pdf Graphic file (type pdf)
 <use figures/s_curve_pp_maxmin.pdf>
 Package pdftex.def Info: figures/s_curve_pp_maxmin.pdf  used on input line 536.
@@ -1023,29 +1023,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--76
 
  []
 
-<figures/swiss_roll.pdf, id=719, 343.2825pt x 305.22029pt>
+<figures/swiss_roll.pdf, id=722, 343.2825pt x 305.22029pt>
 File: figures/swiss_roll.pdf Graphic file (type pdf)
 <use figures/swiss_roll.pdf>
 Package pdftex.def Info: figures/swiss_roll.pdf  used on input line 100.
 (pdftex.def)             Requested size: 74.68924pt x 82.46944pt.
-<figures/incomplete_tire.pdf, id=721, 455.78279pt x 305.22029pt>
+<figures/incomplete_tire.pdf, id=724, 455.78279pt x 305.22029pt>
 File: figures/incomplete_tire.pdf Graphic file (type pdf)
 <use figures/incomplete_tire.pdf>
 Package pdftex.def Info: figures/incomplete_tire.pdf  used on input line 105.
 (pdftex.def)             Requested size: 124.4808pt x 64.35706pt.
-<figures/world_3d.pdf, id=723, 606.34526pt x 606.34526pt>
+<figures/world_3d.pdf, id=726, 606.34526pt x 606.34526pt>
 File: figures/world_3d.pdf Graphic file (type pdf)
 <use figures/world_3d.pdf>
 Package pdftex.def Info: figures/world_3d.pdf  used on input line 110.
 (pdftex.def)             Requested size: 112.03195pt x 107.58673pt.
-<figures/sensitivity_landmarks_key_swiss_roll.pdf, id=729, 756.90776pt x 169.59
+<figures/sensitivity_landmarks_key_swiss_roll.pdf, id=732, 756.90776pt x 169.59
 36pt>
 File: figures/sensitivity_landmarks_key_swiss_roll.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_key_swiss_roll.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_key_swiss_roll.pdf  used
  on input line 151.
 (pdftex.def)             Requested size: 273.85928pt x 51.62636pt.
-<figures/sensitivity_landmarks_key_incomplete_tire.pdf, id=731, 756.90776pt x 1
+<figures/sensitivity_landmarks_key_incomplete_tire.pdf, id=734, 756.90776pt x 1
 69.5936pt>
 File: figures/sensitivity_landmarks_key_incomplete_tire.pdf Graphic file (type 
 pdf)
@@ -1071,7 +1071,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--188
 
  []
 
-<figures/sensitivity_landmarks_auc.pdf, id=762, 1156.32pt x 433.62pt>
+<figures/sensitivity_landmarks_auc.pdf, id=765, 1156.32pt x 433.62pt>
 File: figures/sensitivity_landmarks_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_landmarks_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_landmarks_auc.pdf  used on input l
@@ -1088,7 +1088,7 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_landmarks_key_incomple
 te_tire.pdf): PDF inclusion: invalid other resource which is no dict (key 'Proc
 Sets', type <array>); ignored.
 > <./figures/sensitivity_landmarks_auc.pdf>]
-<figures/sensitivity_landmarks_qual_swiss_roll.pdf, id=791, 756.90776pt x 455.7
+<figures/sensitivity_landmarks_qual_swiss_roll.pdf, id=794, 756.90776pt x 455.7
 8279pt>
 File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
 
@@ -1096,7 +1096,7 @@ File: figures/sensitivity_landmarks_qual_swiss_roll.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_swiss_roll.pdf  use
 d on input line 237.
 (pdftex.def)             Requested size: 448.12785pt x 284.9609pt.
-<figures/sensitivity_landmarks_qual_incomplete_tire.pdf, id=793, 756.90776pt x 
+<figures/sensitivity_landmarks_qual_incomplete_tire.pdf, id=796, 756.90776pt x 
 455.78279pt>
 File: figures/sensitivity_landmarks_qual_incomplete_tire.pdf Graphic file (type
  pdf)
@@ -1104,14 +1104,14 @@ File: figures/sensitivity_landmarks_qual_incomplete_tire.pdf Graphic file (type
 Package pdftex.def Info: figures/sensitivity_landmarks_qual_incomplete_tire.pdf
   used on input line 249.
 (pdftex.def)             Requested size: 448.12785pt x 272.40974pt.
-<figures/sensitivity_noise_key_swiss_roll.pdf, id=795, 756.90776pt x 154.6578pt
+<figures/sensitivity_noise_key_swiss_roll.pdf, id=798, 756.90776pt x 154.6578pt
 >
 File: figures/sensitivity_noise_key_swiss_roll.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_key_swiss_roll.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_key_swiss_roll.pdf  used on 
 input line 284.
 (pdftex.def)             Requested size: 273.85928pt x 48.26266pt.
-<figures/sensitivity_noise_key_incomplete_tire.pdf, id=797, 756.90776pt x 154.6
+<figures/sensitivity_noise_key_incomplete_tire.pdf, id=800, 756.90776pt x 154.6
 578pt>
 File: figures/sensitivity_noise_key_incomplete_tire.pdf Graphic file (type pdf)
 
@@ -1134,7 +1134,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 311--318
 
  []
 
-<figures/sensitivity_noise_auc.pdf, id=822, 1156.32pt x 433.62pt>
+<figures/sensitivity_noise_auc.pdf, id=825, 1156.32pt x 433.62pt>
 File: figures/sensitivity_noise_auc.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_auc.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_auc.pdf  used on input line 
@@ -1151,14 +1151,14 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_key_incomplete_t
 ire.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets
 ', type <array>); ignored.
 > <./figures/sensitivity_noise_auc.pdf>]
-<figures/sensitivity_noise_qual_swiss_roll.pdf, id=860, 756.90776pt x 455.78279
+<figures/sensitivity_noise_qual_swiss_roll.pdf, id=863, 756.90776pt x 455.78279
 pt>
 File: figures/sensitivity_noise_qual_swiss_roll.pdf Graphic file (type pdf)
 <use figures/sensitivity_noise_qual_swiss_roll.pdf>
 Package pdftex.def Info: figures/sensitivity_noise_qual_swiss_roll.pdf  used on
  input line 362.
 (pdftex.def)             Requested size: 448.12785pt x 284.9609pt.
-<figures/sensitivity_noise_qual_incomplete_tire.pdf, id=862, 756.90776pt x 455.
+<figures/sensitivity_noise_qual_incomplete_tire.pdf, id=865, 756.90776pt x 455.
 78279pt>
 File: figures/sensitivity_noise_qual_incomplete_tire.pdf Graphic file (type pdf
 )
@@ -1177,13 +1177,13 @@ pdfTeX warning: pdflatex.exe (file ./figures/sensitivity_noise_qual_incomplete_
 tire.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSet
 s', type <array>); ignored.
 >]
-<figures/comparison_swiss_roll.pdf, id=885, 756.90776pt x 154.6578pt>
+<figures/comparison_swiss_roll.pdf, id=888, 756.90776pt x 154.6578pt>
 File: figures/comparison_swiss_roll.pdf Graphic file (type pdf)
 <use figures/comparison_swiss_roll.pdf>
 Package pdftex.def Info: figures/comparison_swiss_roll.pdf  used on input line 
 408.
 (pdftex.def)             Requested size: 211.61888pt x 35.81326pt.
-<figures/comparison_incomplete_tire.pdf, id=887, 756.90776pt x 154.6578pt>
+<figures/comparison_incomplete_tire.pdf, id=890, 756.90776pt x 154.6578pt>
 File: figures/comparison_incomplete_tire.pdf Graphic file (type pdf)
 <use figures/comparison_incomplete_tire.pdf>
 Package pdftex.def Info: figures/comparison_incomplete_tire.pdf  used on input 
@@ -1194,7 +1194,7 @@ Overfull \hbox (2.61609pt too wide) in paragraph at lines 405--423
 []$[]$ $[]$ 
  []
 
-<figures/comparison_world.pdf, id=890, 756.90776pt x 268.12169pt>
+<figures/comparison_world.pdf, id=893, 756.90776pt x 268.12169pt>
 File: figures/comparison_world.pdf Graphic file (type pdf)
 <use figures/comparison_world.pdf>
 Package pdftex.def Info: figures/comparison_world.pdf  used on input line 447.
@@ -1234,12 +1234,7 @@ ray>); ignored.
 pdfTeX warning: pdflatex.exe (file ./figures/comparison_world.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
->]) (./chapters/7_conclusion.Rnw
-Underfull \hbox (badness 10000) in paragraph at lines 1--7
-
- []
-
-) [18] (./chapters/99_appendix.Rnw
+>]) (./chapters/7_conclusion.Rnw) [18] (./chapters/99_appendix.Rnw
 Underfull \hbox (badness 10000) in paragraph at lines 4--10
 
  []
@@ -1405,10 +1400,10 @@ ic/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (38 pages, 5707423 bytes).
+Output written on main.pdf (38 pages, 5708745 bytes).
 PDF statistics:
- 1250 PDF objects out of 1440 (max. 8388607)
- 1062 compressed objects within 11 object streams
+ 1253 PDF objects out of 1440 (max. 8388607)
+ 1065 compressed objects within 11 object streams
  205 named destinations out of 1000 (max. 500000)
  566 words of extra memory for PDF output out of 10000 (max. 10000000)
 

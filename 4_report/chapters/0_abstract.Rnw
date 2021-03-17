@@ -1,1 +1,14 @@
-foo
+A steady growth of applications that employ high-dimensional data 
+has made a strong case for reducing this dimensionality to a level that is 
+manageable in terms of algorithm performance and interpretability of results.
+The manifold assumption plays a crucial role in this context and has given rise 
+to a plethora of methods to retrieve the true, low-dimensional 
+structure of data observed in high-dimensional spaces.
+A particular group approaches this problem by graph approximation of 
+the underlying manifold and subsequent eigenanalysis of a matrix representation 
+thereof.
+\citet{yangetal2006} introduced the idea of facilitating the inherently 
+unsupervised task by incorporation of prior information.
+This report studies their proposal of semi-supervised locally linear embedding 
+(SSLLE) in the context of graph-based manifold learning and how its empirical
+performance holds up under varying parameter settings.
