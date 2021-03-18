@@ -4,7 +4,7 @@
 
 ### Code base
 
-This repository contains an open-source implementation of Semi-Supervised Locally Linear Embedding (SSLLE) by [Yang et al., 2006](https://dl.acm.org/doi/abs/10.1145/1143844.1143978). 
+This repository contains an open-source implementation of Semi-Supervised Locally Linear Embedding (SSLLE) by [Yang et al. (2006)](https://dl.acm.org/doi/abs/10.1145/1143844.1143978). 
 The code base for SSLLE is stored in ``1_sslle_implementation``.
 In order to compute an SSLLE embedding, simply use the ``perform_sslle`` 
 function defined in ``fun_perform_sslle.R``.
