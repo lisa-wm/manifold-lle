@@ -8,7 +8,7 @@ data_labeled <- list(
   incomplete_tire = make_incomplete_tire(n_points = 1000L), 
   swiss_roll = make_swiss_roll(n_points = 1000L))
 
-save_rdata_files(data_labeled, folder = "2_code/2_data")
+save_rdata_files(data_labeled, folder = "0_seminar/1_code/2_data")
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
@@ -114,7 +114,7 @@ sensitivity_landmarks_dt <- lapply(
 
 names(sensitivity_landmarks_dt) <- names(data_labeled)
 
-save_rdata_files(sensitivity_landmarks_dt, folder = "2_code/2_data")
+save_rdata_files(sensitivity_landmarks_dt, folder = "0_seminar/1_code/2_data")
 
 # SENSITIVITY ANALYSIS II: NOISE LEVEL & NUMBER OF PRIOR POINTS ----------------
 
@@ -208,4 +208,4 @@ sensitivity_noise_dt <- lapply(
 
 names(sensitivity_noise_dt) <- names(data_labeled)
 
-save_rdata_files(sensitivity_noise_dt, folder = "2_code/2_data")
+save_rdata_files(sensitivity_noise_dt, folder = "0_seminar/1_code/2_data")

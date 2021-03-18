@@ -4,9 +4,9 @@
 
 # DATA -------------------------------------------------------------------------
 
-load_rdata_files(sensitivity_landmarks_dt, folder = "2_code/2_data")
-load_rdata_files(sensitivity_noise_dt, folder = "2_code/2_data")
-load_rdata_files(data_labeled, folder = "2_code/2_data")
+load_rdata_files(sensitivity_landmarks_dt, folder = "0_seminar/1_code/2_data")
+load_rdata_files(sensitivity_noise_dt, folder = "0_seminar/1_code/2_data")
+load_rdata_files(data_labeled, folder = "0_seminar/1_code/2_data")
 
 # VISUALIZATION: AUC_LNK_RNX ---------------------------------------------------
 
@@ -84,7 +84,7 @@ sensitivity_plots_auc <- lapply(
 
 names(sensitivity_plots_auc) <- names(sensitivity_landmarks_dt)
 
-save_rdata_files(sensitivity_plots_auc, folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_auc, folder = "0_seminar/1_code/2_data")
 
 # VISUALIZATION: LOW-DIMENSIONAL EMBEDDING -------------------------------------
 
@@ -167,7 +167,7 @@ sensitivity_plots_emb <- lapply(
 
 names(sensitivity_plots_emb) <- names(data_labeled)
 
-save_rdata_files(sensitivity_plots_emb, folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_emb, folder = "0_seminar/1_code/2_data")
 
 # VISUALIZATION: KEY VARIATION -------------------------------------------------
 
@@ -273,17 +273,17 @@ sensitivity_plots_key <- lapply(
 
 names(sensitivity_plots_key) <- names(data_labeled)
 
-save_rdata_files(sensitivity_plots_key, folder = "2_code/2_data")
+save_rdata_files(sensitivity_plots_key, folder = "0_seminar/1_code/2_data")
 
 # COMPARISON: LLE & HLLE -------------------------------------------------------
 
-load_rdata_files(data_labeled, folder = "2_code/2_data")
-load_rdata_files(sensitivity_landmarks_dt, folder = "2_code/2_data")
+load_rdata_files(data_labeled, folder = "0_seminar/1_code/2_data")
+load_rdata_files(sensitivity_landmarks_dt, folder = "0_seminar/1_code/2_data")
 
 # Add world data set
 
 data_labeled$world_data <-
-  make_world_data_3d(here("2_code/2_data", "rawdata_world_3d.csv"))
+  make_world_data_3d(here("0_seminar/1_code/2_data", "rawdata_world_3d.csv"))
 
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
@@ -291,7 +291,9 @@ true_embeddings <- list(
   incomplete_tire = data_labeled$incomplete_tire[, .(t, s)],
   swiss_roll = data_labeled$swiss_roll[, .(t, s = x_2)],
   world_data = make_world_data_2d(
-    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
+    here(
+      "0_seminar/1_code/2_data", 
+      "rawdata_world_2d.csv"))[, .(t = x_1, s = x_2)])
 
 # Perform SSLLE for world data
 
@@ -325,7 +327,7 @@ colors <- list(
   incomplete_tire = data_labeled$incomplete_tire[, .(t)],
   swiss_roll = data_labeled$swiss_roll[, .(t)],
   world_data = make_world_data_2d(
-    here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t)])
+    here("0_seminar/1_code/2_data", "rawdata_world_2d.csv"))[, .(t)])
 
 # Compute embeddings and plot
 
@@ -339,7 +341,9 @@ comp_lle <- lapply(
       this_color <- data_opt[[i]]$true_embedding[[1]][, .(t)]
     } else {
       this_color <- make_world_data_2d(
-        here("2_code/2_data", "rawdata_world_2d.csv"))[new_order_world][, .(t)]}
+        here(
+          "0_seminar/1_code/2_data", 
+          "rawdata_world_2d.csv"))[new_order_world][, .(t)]}
     
     plot_sslle <- plot_manifold(
       data = data_opt[[i]]$embedding_result[[1]]$Y,
@@ -391,4 +395,4 @@ comp_lle <- lapply(
 
 names(comp_lle) <- names(data_labeled)
 
-save_rdata_files(comp_lle, folder = "2_code/2_data")
+save_rdata_files(comp_lle, folder = "0_seminar/1_code/2_data")
