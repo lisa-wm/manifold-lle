@@ -303,7 +303,7 @@ landmarks_world_ind <- find_landmarks(
   n_neighbors = 100L,
   method = "maxmin")
 
-landmarks_world <- true_embedding_world_data[landmarks_world_ind]
+landmarks_world <- true_embeddings$world_data[landmarks_world_ind]
 
 new_order_world <- c(
   landmarks_world_ind,
@@ -321,7 +321,7 @@ data_opt$world_data <- data.table::data.table(
     k_max = k_max,
     prior_points = landmarks_world,
     verbose = TRUE)),
-  true_embedding = list(true_embedding_world_data[new_order_world]))
+  true_embedding = list(true_embeddings$world_data[new_order_world]))
 
 colors <- list(
   incomplete_tire = data_labeled$incomplete_tire[, .(t)],

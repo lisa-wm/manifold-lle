@@ -383,7 +383,7 @@ plotly::orca(
 
 # RNX CURVE --------------------------------------------------------------------
 
-load_rdata_files(data_labeled, folder = "2_code/2_data")
+load_rdata_files(data_labeled, folder = "0_seminar/1_code/2_data")
 data_unlabeled <- lapply(data_labeled, function(i) {i[, .(x_1, x_2, x_3)]})
 
 embeddings <- lapply(data_unlabeled, function(i) dimRed::embed(i, "PCA"))
@@ -422,9 +422,9 @@ ggplot2::ggsave(
 
 # SENSITIVITY ANALYSIS ---------------------------------------------------------
 
-load_rdata_files(sensitivity_plots_auc, "2_code/2_data")
-load_rdata_files(sensitivity_plots_emb, "2_code/2_data")
-load_rdata_files(sensitivity_plots_key, "2_code/2_data")
+load_rdata_files(sensitivity_plots_auc, "0_seminar/1_code/2_data")
+load_rdata_files(sensitivity_plots_emb, "0_seminar/1_code/2_data")
+load_rdata_files(sensitivity_plots_key, "0_seminar/1_code/2_data")
 
 # ------------------------------------------------------------------------------
 
@@ -510,7 +510,7 @@ invisible(lapply(
 
 # COMPARISON - SWISS ROLL & INCOMPLETE TIRE ------------------------------------
 
-load_rdata_files(comp_lle, folder = "2_code/2_data")
+load_rdata_files(comp_lle, folder = "0_seminar/1_code/2_data")
 
 invisible(lapply(
   
@@ -530,9 +530,13 @@ invisible(lapply(
 plotly::orca(
   plot_manifold(
     data = make_world_data_3d(
-      here("2_code/2_data", "rawdata_world_3d.csv"))[, .(x_1, x_2, x_3)],
+      here(
+        "0_seminar/1_code/2_data", 
+        "rawdata_world_3d.csv"))[, .(x_1, x_2, x_3)],
     intrinsic_coords = make_world_data_3d(
-      here("2_code/2_data", "rawdata_world_3d.csv"))[, .(t = t)],
+      here(
+        "0_seminar/1_code/2_data", 
+        "rawdata_world_3d.csv"))[, .(t = t)],
     camera_eye = list(
       x = 0.4, 
       y = -1.8, 
@@ -544,15 +548,15 @@ plotly::orca(
 plotly::orca(
   plot_manifold(
     data = make_world_data_2d(
-      here("2_code/2_data", "rawdata_world_2d.csv"))[, .(x_1, x_2)],
+      here("0_seminar/1_code/2_data", "rawdata_world_2d.csv"))[, .(x_1, x_2)],
     intrinsic_coords = make_world_data_2d(
-      here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = t)],
+      here("0_seminar/1_code/2_data", "rawdata_world_2d.csv"))[, .(t = t)],
     point_size = 5L),
   "0_seminar/2_presentation/figures/world_2d.pdf",
   height = 350L,
   width = 800L)
 
-load_rdata_files(comp_lle, folder = "2_code/2_data")
+load_rdata_files(comp_lle, folder = "0_seminar/1_code/2_data")
 
 plotly::orca(
   plotly::subplot(

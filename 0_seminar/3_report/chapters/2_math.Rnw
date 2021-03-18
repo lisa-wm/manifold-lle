@@ -1,4 +1,4 @@
-\subsection{Manifold Assumption}
+\subsection{Manifolds}
 \label{manifolds}
 
 Before diving into the core concepts, some basic notation shall be fixed.

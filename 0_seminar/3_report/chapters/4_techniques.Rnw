@@ -210,7 +210,7 @@ enforced during construction of the neighborhood graph, where edges are only
 drawn to vertices belonging to $\x_i$'s neighborhood \citep{ghojoghetal2020}.
 The resulting optimization problem is convex and has a unique
 closed-form solution\footnote{
-Note that the weight matrix $\W$ is different from the one computed in LEM.
+Note that the weight matrix $\W$ will be different from the one computed in LEM.
 } \citep{roweissaul2000}:
 
 \begin{equation}
@@ -409,7 +409,7 @@ quadratic form of the local Hessian approximators \citep{donohogrimes2003}:
 
 \begin{equation}
   \mathcal{H} = \sum_{i,j} \sum_{\ell, m} (\Hes_{\ell})_{m,i}
-  (\Hes_{\ell})_{m,j}, \quad i, j \in \setN.
+  (\Hes_{\ell})_{m,j}.
   \label{eq_hfunctional_emp}
 \end{equation}
 
