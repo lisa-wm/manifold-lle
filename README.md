@@ -39,4 +39,4 @@ scripts as well as the raw input data needed to build the *world data set*.
 ``1_sslle_implementation``.
 
 ... reproduce all analyses and figures of the seminar report/presentation, 
-execute all scripts in ``0_seminar/1_code/1_scripts``in the given order.
+execute all scripts in ``0_seminar/1_code/1_scripts`` in the given order.
