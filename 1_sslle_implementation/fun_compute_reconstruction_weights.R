@@ -2,6 +2,8 @@
 # LLE IMPLEMENTATION: WEIGHT COMPUTATION
 # ------------------------------------------------------------------------------
 
+# Purpose: compute reconstruction weights in SSLLE implementation
+
 compute_reconstruction_weights <- function(data,
                                            k_max,
                                            regularization,

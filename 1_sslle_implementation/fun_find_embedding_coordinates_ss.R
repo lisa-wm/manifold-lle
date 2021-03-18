@@ -2,7 +2,7 @@
 # FINDING EMBEDDING COORDINATES SEMI-SUPERVISEDLY
 # ------------------------------------------------------------------------------
 
-# Purpose: find embedding coordinates (semi-supervised case)
+# Purpose: compute embedding coordinates in SSLLE implementation
 
 find_embedding_coordinates_ss <- function(reconstruction_weights, 
                                           prior_points,

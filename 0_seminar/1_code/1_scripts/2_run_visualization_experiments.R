@@ -2,6 +2,8 @@
 # VISUALIZATION OF RESULTS
 # ------------------------------------------------------------------------------
 
+# Purpose: visualize results of sensitivity analysis
+
 # DATA -------------------------------------------------------------------------
 
 load_rdata_files(sensitivity_landmarks_dt, folder = "0_seminar/1_code/2_data")

@@ -2,7 +2,7 @@
 # VISUALIZATION
 # ------------------------------------------------------------------------------
 
-# Create plots used for report and presentation
+# Purpose: create plots used for report and presentation
 
 # S-CURVE ----------------------------------------------------------------------
 

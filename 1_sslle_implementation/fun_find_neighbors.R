@@ -2,7 +2,7 @@
 # FIND NEAREST NEIGHBORS
 # ------------------------------------------------------------------------------
 
-# Purpose: find nearest neighbors to construct neighborhood graph
+# Purpose: find k nearest neighbors to construct neighborhood graph
 
 find_neighbors <- function(data, neighborhood_size) {
   

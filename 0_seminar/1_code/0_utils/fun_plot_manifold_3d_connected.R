@@ -2,7 +2,7 @@
 # 3D MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
-# FIXME Avoid large jump in the end
+# Purpose: visualize 3D neighborhood graph
 
 plot_manifold_3d_connected <- function(data, intrinsic_coords, k = 3L) {
   

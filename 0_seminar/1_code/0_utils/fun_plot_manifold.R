@@ -2,6 +2,8 @@
 # MANIFOLD VISUALIZATION
 # ------------------------------------------------------------------------------
 
+# Purpose: visualize manifolds in 1D, 2D or 3D
+
 plot_manifold <- function(data,
                           intrinsic_coords,
                           n_colors = 10, 

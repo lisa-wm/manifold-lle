@@ -2,7 +2,7 @@
 # PERFORMING SSLLE
 # ------------------------------------------------------------------------------
 
-# Purpose: perform sslle
+# Purpose: embed data with SSLLE
 
 perform_sslle <- function(data,
                           k_max,

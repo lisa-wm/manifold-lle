@@ -2,6 +2,8 @@
 # SSLLE IMPLEMENTATION: INPUT CHECKS
 # ------------------------------------------------------------------------------
 
+# Purpose: perform input checks for SSLLE computation
+
 check_inputs <- function(data,
                          k_max,
                          prior_points,

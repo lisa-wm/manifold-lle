@@ -2,7 +2,7 @@
 # FINDING LANDMARKS
 # ------------------------------------------------------------------------------
 
-# Purpose: find landmarks to use as prior points in sslle
+# Purpose: find landmarks to use as prior points in SSLLE
 
 find_landmarks <- function(data,
                            n_landmarks, 
