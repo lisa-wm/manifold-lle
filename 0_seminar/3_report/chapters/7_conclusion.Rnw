@@ -1,11 +1,12 @@
-The report has presented the technique of semi-supervised locally linear 
+The report has presented semi-supervised locally linear 
 embedding in the broader context of local graph-based manifold learning and 
 examined its performance in a variety of experimental settings.
-An open-source implementation of SSLLE in \texttt{R} has emerged as a side 
+An open-source \texttt{R} implementation of SSLLE has emerged as a side 
 product of this work.
+\\
 
 The resulting insights beg further research questions.
-One issue the report has omitted is computational complexity.
+One issue the report has omitted is, for instance, computational complexity.
 A thorough benchmark study would surely contribute to a more in-depth assessment 
 of which technique is preferable under which conditions.
 Beyond that, two aspects seem particularly appealing.
@@ -14,17 +15,15 @@ data, but it is not immediately clear how they generalize to new
 observations without computing the entire embedding anew.
 \citet{bengioetal2003} proposed out-of-sample extensions for LGML models using 
 kernels, which was also a reason for placing LGML in the framework of KPCA.
-However, with more modern techniques in mind, it would certainly be 
+With this and perhaps some more modern techniques in mind, it would be 
 interesting to study a generative version of SSLLE.
 In turn, the key idea of SSLLE might be a valuable extension to other 
 learners.
-Conceivably, some applications offer the opportunity to obtain prior information 
-at low cost.
+Conceivably, some applications offer the opportunity to gain prior knowledge.
 The notion of semi-supervision \citet{yangetal2006} have introduced for SSLLE 
-could be similarly supportive in other unsupervised algorithms that are of yet 
-not able to incorporate labeled instances.
-
-All in all, there is undoubtedly no lack of research opportunities in the field 
+could be similarly supportive in other unsupervised algorithms that are not yet 
+able to draw on the information of labeled instances.
+All in all, there is certainly no lack of research opportunities in the field 
 of manifold learning, and the developments of recent years suggest 
 dimensionality reduction and representation learning might remain hot topics 
 for the foreseeable future.

@@ -10,7 +10,8 @@ as the empirical findings from chapter \ref{experiment}.
 
 \textbf{Strengths.}
 Simplicity is arguably one of the biggest strengths the LGML methods have to 
-offer: their theoretical foundation is fairly accessible and they are 
+offer.
+Their theoretical foundation is fairly accessible and they are 
 straightforward to implement.
 LGML succeeds in decomposing the learning task into a series of tractable 
 computations.
@@ -41,7 +42,7 @@ Also note the paradox of solving the problem of high dimensionality using
 the very techniques that are vulnerable to the curse of dimensionality: 
 nearest-neighbor search itself becomes increasingly hard in 
 high-dimensional spaces.
-The next problem arises from the low, intrinsic data dimensionality --
+The next problem arises from the intrinsic data dimensionality --
 all techniques but SSLLE are agnostic to the true value of $d$.
 Even if the graph approximation is successful and $d$ is known, the subsequent 
 optimization problem has a fundamental weakness.

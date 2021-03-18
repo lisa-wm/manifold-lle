@@ -1,4 +1,4 @@
-\subsection{Manifolds}
+\subsection{Manifold Assumption}
 \label{manifolds}
 
 Before diving into the core concepts, some basic notation shall be fixed.
@@ -8,12 +8,13 @@ clear how these are understood for the remainder of this report.
 \\
 
 \begin{minipage}[b]{0.7\textwidth}
-  \textbf{Manifolds.} A $d$-dimensional \textit{manifold} $\mani \subset \RD$ 
-  is a topological space with some additional properties.
+  \textbf{Manifolds.} A $d$-dimensional \hyperref[topology]{\textit{manifold}} 
+  $\mani \subset \RD$ is a \hyperref[topology]{topological space} with some 
+  additional properties.
   $\mani$ is most easily imagined as the $d$-dimensional generalization of a 
-  curved surface that behaves locally Euclidean, i.e., is locally homeomorphic 
-  to an open subset of $\Rd$ (\citet{mafu2011}; please refer to the appendix for 
-  a more rigorous derivation).
+  curved surface that behaves \hyperref[topology]{locally Euclidean}, i.e., is 
+  locally homeomorphic to an open subset of $\Rd$ (\citet{mafu2011}; please 
+  refer to the appendix for a more rigorous derivation).
   Consider, for instance, the \textit{S-curve} manifold (figure 
   \ref{fig_scurve}), embedded in $\R^3$, that will serve as a running example 
   throughout the report.
@@ -47,8 +48,9 @@ Rather than measuring "shortcuts" between points across $\RD$ (where, for
 instance, points in the red upper part of figure \ref{fig_scurve} would be 
 considered deceptively close to the cyan mid area), it seems reasonable to 
 constrain distances to the manifold surface.
-Put simply, \textit{geodesic distance} between two points on $\mani$ is the 
-length of the shortest curve (\textit{geodesic}) between them lying on $\mani$.
+Put simply, \hyperref[topology]{\textit{geodesic distance}} between two points 
+on $\mani$ is the length of the shortest curve (\textit{geodesic}) between them 
+lying on $\mani$.
 Intuitively, geodesic distance can be identified with Euclidean distance in
 Euclidean spaces where shortest curves are but straight lines \citep{mafu2011}.
 
@@ -75,9 +77,10 @@ This goal may be formalized as follows, inspired by \citet{cayton2005} and \cite
 $\x_i \in \RD$ $\forall i \in \setN$ and $N, D \in \N$. 
 
 The true data-generating process is taken to have dimensionality 
-$\N \ni d \ll D$, such that $\X$ is in fact a sample from a smooth, 
-connected $d$-manifold with $\X \sim \mani \subset \RD$.
-$\mani$ may be described by a single coordinate chart 
+$\N \ni d \ll D$, such that $\X$ is in fact a sample from a 
+\hyperref[topology]{smooth}, \hyperref[topology]{connected} $d$-manifold with 
+$\X \sim \mani \subset \RD$.
+$\mani$ may be described by a single \hyperref[topology]{coordinate chart} 
 $\psi: \mani \rightarrow \Rd$.
 For manifold learning methods to yield satisfying results, $\mani$ is always 
 assumed to be sampled well by $\X$.

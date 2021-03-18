@@ -8,7 +8,11 @@ A particular group approaches this problem by graph approximation of
 the underlying manifold and subsequent eigenanalysis of a matrix representation 
 thereof.
 \citet{yangetal2006} introduced the idea of facilitating the inherently 
-unsupervised task by incorporation of prior information.
+unsupervised task by incorporation of prior information in the form of 
+pre-specified embedding coordinates.
 This report studies their proposal of semi-supervised locally linear embedding 
 (SSLLE) in the context of graph-based manifold learning and how its empirical
 performance holds up under varying parameter settings.
+The experimental results show that a relatively small number of prior points 
+suffices to improve embedding quality, if the points provide adequate 
+coverage of the manifold, and that even some noise in the labels is tolerable.

@@ -41,7 +41,7 @@ acting as a discrete approximator
   $\int_0^{\ell} \langle \nabla f(c(t)), c^{\prime}(t) \rangle dt$.
   In other words, the geodesic connecting $\pv$ and $\qv$ is projected
   onto $T_{\pv}(\mani)$, and the length of this projection depends on the
-  gradient of $f$ and the curve velocity.
+  gradient of $f$ and the curve \hyperref[topology]velocity.
 \end{minipage}
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -88,8 +88,6 @@ weights\footnote{
 These weights stem from the heat kernel intimately related to the 
 Laplace-Beltrami operator and ensure positive semi-definiteness of the resulting
 graph Laplacian \citep{belkinniyogi2003}. 
-% As an alternative, \citet{belkinniyogi2003} propose a simpler kernel that is 
-% equal to 1 for connected nodes and 0 otherwise.
 } $w_{ij} = \exp(\frac{1}{t} \twonorm{\x_i - \x_j}), t \in \R$, if 
 $\x_i, \x_j \in \X$ are connected, and zero otherwise.
 Clearly, edges between closer points receive larger weights.
@@ -114,8 +112,9 @@ Now, define the \textit{graph Laplacian} as
 $\Lap = \D - \W \in \R^{N \times N}$, thereby coercing
 all information about the graph structure into a single matrix
 representation.
-With $\Lap$ the above can be rewritten as a generalized eigenvalue problem in
-the LGML conceptual spirit:
+With $\Lap$ the above can be rewritten as a 
+\hyperref[eigenanalysis]{generalized eigenvalue} problem in the LGML conceptual 
+spirit:
 
 \begin{equation}
   \min_{\Y} \text{\textit{trace}}(\Y^T \Lap \Y), \quad \text{s.t. } 
@@ -160,8 +159,8 @@ parameter required in the case of $D < k$ \citep{wuwu2018}.
   graph around $\x_i$. 
   These (generalized) barycentric coordinates now bear a crucial property: they 
   are invariant to rotation, rescaling and translation of the neighborhood, and 
-  thus topological properties that equally hold in the low-dimensional embedding 
-  space. 
+  thus \hyperref[topology]{topological properties} that equally hold in the 
+  low-dimensional embedding space. 
   In other words, the same weights that reconstruct $\x_i$ in $\RD$ 
   should do so in $\Rd$ \citep{roweissaul2000}.
   Obviously, this belief is only justified if $\mani$ is indeed locally linear 
@@ -336,20 +335,21 @@ via the smooth mapping $f$.
 Identifying $f(\pv)$ with $\bm{0} \in \Rd$ yields a system of local 
 coordinates on $T_{\pv}(\mani)$ that depends on this particular choice of the 
 origin.
-For $\pv^{\prime} \in \mathcal{N}_k(\pv)$, let these local coordinates be 
-denoted by $\x^{\text{loc, }\pv^{\prime}}$.
+For $\mathcal{N}_k(\pv)$, let these local coordinates be denoted by 
+$\x^{\text{loc, }\pv}$.
 Then, the Hessian $\Hes_f^{\text{loc}}(\pv)$ of $f$ at $\pv$ in tangent 
 coordinates may be expressed as the ordinary Hessian of a function 
-$g: U \rightarrow \R$ with $f(\pv^{\prime}) = g(\x^{\text{loc, }\pv^{\prime}})$, 
-$U$ being a 
-neighborhood of zero in $\Rd$ \citep{donohogrimes2003}:
+$g: U \rightarrow \R$ with 
+$f(\pv^{\prime}) = g(\x^{\text{loc, }\pv}_{\pv^{\prime}})$ 
+for $\pv^{\prime} \in \mathcal{N}_k(\pv)$ and $U$ a neighborhood of 
+$\bm{0} \in \Rd$ \citep{donohogrimes2003}:
 
 \begin{equation}
   [\Hes_f^{\text{loc}}(\pv)]_{i,j} = \frac{\partial^2 
-  g(\x^{\text{loc, }\pv^{\prime}})}
-  {\partial x_i^{\text{loc, }\pv^{\prime}} 
-  \partial x_j^{\text{loc, }\pv^{\prime}}} 
-  \bigg\rvert_{\x^{\text{loc, }\pv^{\prime}} = 0} \quad 
+  g(\x^{\text{loc, }\pv}_{\pv^{\prime}})}
+  {\partial x_{\pv^{\prime}, i}^{\text{loc, }\pv} 
+   \partial x_{\pv^{\prime}, j}^{\text{loc, }\pv}} 
+  \Bigg\rvert_{\x^{\text{loc, }\pv}_{\pv^{\prime}} = 0} \quad 
   i, j \in \{ 1, 2, \dots, d \}.
   \label{eq-hessian-local}
 \end{equation}
@@ -359,7 +359,8 @@ quadratic functional $\mathscr{H}(f)$ over the entire manifold, analogous to the
 Laplace-Beltrami operator in LEM.
 The crucial property of $\mathscr{H}(f)$ is given by the fact that, if $\mani$ 
 is truly locally homeomorphic to an open, connected subset of $\Rd$, 
-$\mathscr{H}(f)$ has a $(d + 1)$-dimensional null space of linear functions.
+$\mathscr{H}(f)$ has a $(d + 1)$-dimensional 
+\hyperref[eigenanalysis]{null space} of linear functions.
 After discarding the bottom constant function corresponding to a zero 
 eigenvalue, the subsequent $d$ eigenfunctions span the desired 
 low-dimensional embedding space \citep{donohogrimes2003}.
@@ -407,8 +408,7 @@ The empirical Hessian functional $\mathcal{H}$ is obtained as a
 quadratic form of the local Hessian approximators \citep{donohogrimes2003}:
 
 \begin{equation}
-  \mathcal{H} = \sum_{i,j} \mathcal{H}_{ij}, \quad 
-  \mathcal{H}_{ij} = \sum_{\ell, m} (\Hes_{\ell})_{m,i}
+  \mathcal{H} = \sum_{i,j} \sum_{\ell, m} (\Hes_{\ell})_{m,i}
   (\Hes_{\ell})_{m,j}, \quad i, j \in \setN.
   \label{eq_hfunctional_emp}
 \end{equation}
@@ -459,12 +459,6 @@ that has acted as a limiting factor on the practical application of HLLE
   Rather than supporting a supervised learning task by information extracted 
   from the pool of unlabeled data, an inherently unsupervised problem is 
   alleviated by specifying part of the solution upfront.
-  % Arguably, SSLLE might therefore be viewed in the context of active 
-  % learning, where the model is allowed to query labels in a sequential 
-  % manner that seeks to maximize utility at minimal expense \footnote{
-  % For an extensive overview on active learning see, for example, 
-  % \citet{settles2009}.
-  % }.
 \end{minipage}%
 \begin{minipage}[b]{0.05\textwidth}
   \phantom{xxx}
@@ -485,7 +479,7 @@ that has acted as a limiting factor on the practical application of HLLE
    \end{subfigure}
     \caption[S-curve with prior points]{
     \raggedright
-    S-curve with 12 randomly sampled prior points.
+    S-curve with twelve randomly sampled prior points.
     \textit{Left:} prior point locations in three-dimensional observation space.
     \textit{Right:} locations in true $\R^2$ embedding.
     \textit{Source:} own representation.}
@@ -538,7 +532,7 @@ is most informative to the learning algorithm.
     \caption[S-curve with poor, random and optimal landmark coverage]{
       \raggedright
       S-curve with poor (\textit{left}), random (\textit{middle}), and optimal 
-      (\textit{right}) coverage by 12 prior points.
+      (\textit{right}) coverage by twelve prior points.
       \textit{Source:} own representation.}
       \label{fig_scurve_coverage}
   \end{figure}
@@ -584,8 +578,9 @@ unknown coordinates, denoted by $\Ytil_2 \in \R^{m \times d}$
 
 Equation \ref{eq_sslle_exact} reflects the importance of prior points noted 
 before: as errors exist only in $\E_{12} = \E_{21}$ and $\E_{22}$, the condition 
-number $\kappa(\E_{22})$ of $\E_{22}$, multiplied by the relative errors in the 
-off-diagonal blocks, acts as an upper bound on the relative embedding error.
+number $\kappa(\E_{22}) \geq 1$ of $\E_{22}$, multiplied by the relative errors 
+in the off-diagonal blocks, acts as an upper bound on the relative embedding 
+error.
 For a sufficiently large number of observations, it can be shown that 
 $\kappa(\E_{22})$ is minimal if the prior points are maximally scattered 
 across the manifold surface \citep{yangetal2006}.
@@ -621,11 +616,6 @@ Clearly, for the exact case, $\hat{\Ytil}_1^T = \Ytil_1^T$ and equation
 \subsection{Particular Challenges}
 \label{challenges}
 
-% Before subjecting SSLLE to varying scenarios of critical parameters in the 
-% sensitivity analysis, this chapter concludes with a summary of the main 
-% challenges in practical application.
-% \\
-
 \textbf{Amount and quality of prior knowledge.}
 As hinted above, the location of prior points must be assumed to have vital 
 impact on the quality of the embedding, and so should their number.
@@ -649,8 +639,8 @@ Some methods offer the advantage of estimating $d$ in a built-in fashion.
 PCA, for instance, typically shows an indicative gap in its eigenvalue spectrum 
 \citep{sauletal2006}.
 For the methods covered here, no such tell-tale gap exists\footnote{
-While \citet{shasaul2005} have drawn a mathematical relation between the 
-eigenspectra in LLE and LEM and intrinsic dimensionality, they 
+\citet{shasaul2005} have actually drawn a mathematical relation between the 
+eigenspectra in LLE and LEM and intrinsic dimensionality, but they 
 immediately discarded this finding for practical applications due to large 
 computational overhead and lack of reliability in finite-sample situations.
 There have been various other proposals to tackle the problem of dimensionality 
@@ -687,4 +677,4 @@ multiplied by a small tolerance parameter, following a proposal by
 \citet{dissgrilli2007}.
 In fact, the embedding is rather sensitive to regularization 
 \citep{deridderduin2002}; so, even though it is beyond the scope of this report 
-to address the issue in detail, it would be certainly worthwhile.
+to address the issue in detail, it would certainly be worthwhile.

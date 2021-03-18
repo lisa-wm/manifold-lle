@@ -33,7 +33,7 @@ networks and is not discussed here \citep{vandermaatenetal2009}.
   \centering
   \includegraphics[trim = 0 0 0 0, clip, % left bottom right top
     width = \textwidth]{figures/models_overview_new}
-  \caption[Overview on selected methods of manifold learning]{
+  \caption[Taxonomy of manifold learning methods]{
   \raggedright
   Overview on selected methods of manifold learning. 
   \textit{Source:} own representation, inspired by a similar example in 
@@ -46,7 +46,7 @@ networks and is not discussed here \citep{vandermaatenetal2009}.
 As indicated by figure \ref{fig_models_overview}, LGML may be viewed in the 
 light of \textit{kernel principal component analysis (KPCA)}. %see \ref{KPCA}).
 KPCA was actually proposed earlier and only later shown to link the other 
-concepts by a unified idea (\citet{hametal2003}.
+concepts by a unified idea \citep{hametal2003}.
 It provides a useful general intuition to manifold learning and subsumes the 
 other methods in a way that is beneficial to the important task of out-of-sample 
 extension \citep{bengioetal2004}.
@@ -62,9 +62,9 @@ intrinsic data structure and therefore understood as an approximation to the
 latent manifold properties.
 Second, PCA finds the principal axes along which these intrinsic properties 
 vary.
-To this end, eigenanalysis is performed on the representation matrix, yielding 
-the desired reduction in dimensionality through preserving the most relevant 
-latent dimensions \citep{schoelkopfetal1998}.
+To this end, \hyperref[eigenanalysis]{eigenanalysis} is performed on the 
+representation matrix, yielding the desired reduction in dimensionality through 
+preserving the most relevant latent dimensions \citep{schoelkopfetal1998}.
 In theory KPCA is able to capture arbitrary data structures.
 
 % ------------------------------------------------------------------------------
@@ -123,8 +123,8 @@ LGML methods therefore focus on local properties
 \\
 
 \textbf{Local neighborhoods.} 
-Graph approximations are constructed from neighborhood relations in the 
-observation space.
+Graph approximations are constructed from \hyperref[neighborhoods]{neighborhood} 
+relations in the observation space.
 Neighborhoods are typically taken to be $k$-neighborhoods, i.e., based on a 
 fixed number $k \in \N$ of neighbors.
 It is equally possible to restrict neighborhoods to a maximum 

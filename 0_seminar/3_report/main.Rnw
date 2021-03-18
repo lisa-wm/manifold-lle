@@ -68,12 +68,10 @@ bindingoffset = 0mm]{geometry}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks = true,
-  linkcolor = black,
-  filecolor = black,
-  urlcolor = black,
-  citecolor = black,
-  bookmarks = true
-}
+  linkcolor = .,
+  urlcolor = .,
+  citecolor = .,
+  bookmarks = true}
 
 \newenvironment{tight_enumerate}{
 \begin{enumerate}
@@ -152,15 +150,6 @@ Munich, March 18\textsuperscript{th}, 2021
 \input{chapters/0_abstract.Rnw}
 \newpage
 
-% \Large
-% \noindent
-% \textbf{Extended Abstract}
-% \vspace{0.5cm} \\
-% \noindent
-% \normalsize
-% \input{chapters/extended_abstract.Rnw}
-% \newpage
-
 \tableofcontents
 \newpage
 \listoffigures
@@ -196,7 +185,7 @@ Munich, March 18\textsuperscript{th}, 2021
 \begin{tabular}{rl}
   $\I = \mathit{diag}(1) \in \R^{s \times s}$ & identity matrix with $s^2$ 
   entries, $s \in \N$ \\
-  $\bm{0} = (0, 0, \dots, 0)^T \in \R^s$ & $s$-dimensional null vector, 
+  $\bm{0} = (0, 0, \dots, 0)^T \in \R^s$ & $s$-dimensional zero vector, 
   $s \in \N$ \\
   $\bm{1} = (1, 1, \dots, 1)^T \in \R^s$ & $s$-dimensional one vector, 
   $s \in \N$ \\
@@ -242,10 +231,6 @@ Munich, March 18\textsuperscript{th}, 2021
 \label{techniques}
 \input{chapters/4_techniques.Rnw}
 
-% \section{Semi-Supervised Locally Linear Embedding (SSLLE)}
-% \label{sslle}
-% \input{chapters/sslle.Rnw}
-
 \section{Experimental Results}
 \label{experiment}
 \input{chapters/5_experiment.Rnw}
@@ -265,9 +250,6 @@ Munich, March 18\textsuperscript{th}, 2021
 % ------------------------------------------------------------------------------
     
 \pagenumbering{Roman}
-
-% FIXME make page numbering dynamic (picking up from list of tables page)
-% \getpagerefnumber{listoftables} does not work
 
 \setcounter{page}{5}
 

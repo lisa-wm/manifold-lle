@@ -12,7 +12,8 @@ presented much more in detail (and mathematical rigor) in, for example,
 set $T$ equipped with a \textit{topology} $\topo$. 
 A topology is a general way of describing relations between elements in $T$.
 Consider a function $\topo: T \rightarrow 2^T, t \mapsto \topo(t)$, which 
-assigns to $t \in T$ a set of subsets of $T$ called \textit{neighborhoods}.
+assigns to $t \in T$ a set of subsets of $T$ called \textit{neighborhoods} 
+($2^T$ denoting the power set of $T$).
 For $\topo$ to be a topology\footnote{
 Alternative definitions employ open subsets of $T$, see for example 
 \citet{waldmann2014}.
@@ -33,7 +34,7 @@ Note that, in this general definition, neighborhoods are based on an abstract
 notion of "nearness". 
 Learning the structure of a topological space effectively boils down to learning 
 neighborhood relations.
-In Euclidean topological space these are directly based on distance: 
+In Euclidean topological spaces these are directly based on distance: 
 neighborhoods around $t$ are constructed by $\epsilon$-balls containing all 
 elements within a Euclidean distance of $\epsilon$ from $t$. 
 The resulting topology is also called the \textit{metric topology} 
@@ -80,7 +81,7 @@ topological spaces, with some additional properties.
 For a topological space $\mani$ to be a $d$-dimensional manifold\footnote{
 $\mani$ is again a shorthand, omitting the explicit notation of the 
 corresponding topology. 
-} (also: $d$-manifold) it must meet 
+} (also: \\$d$-manifold) it must meet 
 the following conditions \citep{waldmann2014}:
 
 \begin{tight_enumerate}
@@ -105,7 +106,7 @@ The associated \textit{embedding} is but a map $f: \mani \rightarrow \RD$
 whose restriction to $\mani$ is a homeomorphism \citep{brown2006}, or, more 
 specifically, the canonical inclusion map identifying points on the manifold 
 as particular points of $\RD$ \citep{waldmann2014}.
-It can be shown that $K = 2d + 1$ is sufficient to create an embedding 
+It can be shown that $D = 2d + 1$ is sufficient to create an embedding 
 \citep{mafu2011}.
 \\
 
@@ -129,18 +130,18 @@ A curve $c$ in $\mani$ is a smooth mapping from an open interval $\Lambda
 \subset \R$ into $\mani$.
 $c$ is parametrized by a point $\lambda \in \Lambda$, such that
 
-\begin{equation}
+\begin{equation*}
   c(\lambda) = (c_1(\lambda), ..., c_d(\lambda))^T
-\end{equation} 
+\end{equation*} 
 
 is a curve in $\Rd$ (all 
 $c_j, j = 1, ..., d$ having a sufficient number of continuous derivatives).
 Component-wise differentiation with respect to $\lambda$ yields
 \textit{velocity} in $\lambda$: 
 
-\begin{equation}
+\begin{equation*}
   c^{\prime}(\lambda) = (c_1^{\prime}(\lambda), ..., c_d^{\prime}(\lambda))^T.
-\end{equation} 
+\end{equation*} 
 
 The \textit{speed} of $c$ is given by $\| c^{\prime}(\lambda) \|^2_2$, where
 $\| \cdot \|^2$ denotes the square norm.
@@ -148,98 +149,12 @@ Distance along this curve is measured by the arc-length
 $$L(c) = \int_{\pv}^{\qv} \twonorm{c^{\prime}(\lambda)}  d\lambda.$$
 Eventually, geodesic distance can be derived as the length of the shortest such
 curve, out of the set $\mathcal{C}(\pv, \qv)$ of differentiable curves in 
-$\mani$ that connect $\pv$ and $\qv$ \citep{mafu2011}:
+$\mani$ that connect $\pv$ and $\qv$ with $\pv, \qv \in \mani$ \citep{mafu2011}:
 
 \begin{equation}
   d^{\mani}(\pv, \qv) = \inf_{c \in \mathcal{C}(\pv, \qv)} L(c).
   \label{eq-geodesic}
 \end{equation}
-
-% ------------------------------------------------------------------------------
-
-% \newpage
-% \subsection{Kernel PCA}
-% \label{kpca}
-% 
-% In this section, the concept of kPCA \citep{schoelkopfetal1998} is laid out in
-% some more detail.
-% \\
-% 
-% \textbf{Kernelization.} By kernelization, mapping the data to a
-% space $\mathcal{F}$ of arbitrarily high dimension, features may be obtained
-% that relate to the input in a non-trivial way.
-% Crucially, the feature map $\phi: \RD \rightarrow \mathcal{F}$ need not be
-% computed explicitly, which might prove prohibitively expensive.
-% Kernelization instead solely relies on inner products $\langle \phi(\x_i),
-% \phi(\x_j) \rangle$ of the transformed inputs.
-% Employing Mercer's theorem of functional analysis, these inner products may
-% be interpreted as performed by a continuous kernel
-% $\kappa(\x_i, \x_j)$ in some space with Hilbert property.
-% Appropriate choice of $\kappa$ then allows for the data to be represented by a
-% matrix $\K \in \R^{N \times N}, \K_{ij} = \kappa(\x_i, \x_j)$.
-% This matrix is the numerical data representation derived with respect to their
-% latent properties. \citep{schoelkopfetal1998}.
-% Precisely how it is computed depends on the choice of the kernel function
-% $\kappa$ and gives rise to different techniques \citep{hametal2003}.
-% \\
-% 
-% \textbf{PCA.} PCA is a quite powerful technique by itself.
-% It finds the directions of maximum variance through eigenanalysis of the
-% empirical covariance matrix, yielding the most important axes of inter-feature
-% relations that coincide with the principal eigenvectors of the covariance
-% matrix.
-% The data are projected into the linear subspace spanned by these $d$
-% eigenvectors, thereby mapping the observations to a coordinate system given
-% by the linear feature combinations that represent the strongest
-% (co)variability.
-% Note that for this transformation to actually rotate the coordinate system
-% about the origin, the data must be mean-centered beforehand.
-% PCA thus performs an orthogonal input transformation that allows for
-% dimensionality reduction at minimal information loss \citep{cayton2005}.
-% In kernel PCA, this eigenanalysis is implicitly performed in the feature space
-% $\mathcal{F}$.
-% Algorithmically, it boils down to diagonalizing the kernel matrix $\K$
-% \citep{schoelkopfetal1998}.
-% \\
-% 
-% Figure \ref{fig-spirals} visualizes the idea of kernel PCA.
-% The original data (\textit{left}) are observed in two dimensions but clearly
-% intrinsically one-dimensional, where the non-linear manifold feature is
-% expressed by coloring.
-% The kernel trick creates a feature map, visualized here as a projection of
-% the intrinsic feature to a third coordinate axis (\textit{middle}).
-% Coercing the data to this dimension as the sole axis of variation yields the
-% desired one-dimensional representation (\textit{right}).
-% 
-% \begin{figure}[H]
-%  \centering
-%  \begin{subfigure}[c]{0.29\textwidth}
-%    \centering
-%    \includegraphics[%trim = 50 0 0 0, clip, % left bottom right top
-%    width = \textwidth]{figures/spirals_2d}
-%  \end{subfigure}
-%  \hfill
-%  \begin{subfigure}[c]{0.4\textwidth}
-%    \centering
-%    \includegraphics[%trim = 250 50 100 50, clip, % left bottom right top
-%    width = \textwidth]{figures/spirals_3d}
-%  \end{subfigure}
-%  \begin{subfigure}[c]{0.29\textwidth}
-%    \centering
-%    \includegraphics[%trim = 0 0 0 300, clip, % left bottom right top
-%    width = \textwidth]{figures/spirals_1d}
-%  \end{subfigure}
-%   \caption[Schematic idea of kernel PCA]{Schematic idea of kernel PCA: from data
-%   observed in two dimensions, but clearly of intrinsic dimensionality one
-%   (\textit{left}), create a mapping to a higher-dimensional feature space
-%   (\textit{middle}), reduction of which to its principal axes yields the desired
-%   one-dimensional representation (\textit{right}).
-%   \textit{Source:} own representation, using a subset of \texttt{mlbench}'s
-%   noise-free \texttt{spirals} data. Note that this is but a schematic depiction
-%   where the mid and right representation have not been created by an actual
-%   implementation of kernel PCA.}
-%   \label{fig-spirals}
-% \end{figure}
 
 % ------------------------------------------------------------------------------
 
@@ -251,10 +166,10 @@ Problems}
 \textbf{Eigenvectors and eigenvalues.} Formally, eigenanalysis is the 
 decomposition of a square matrix into pairs of \textit{eigenvectors} and 
 \textit{eigenvalues}.
-Let $\bm{A} \in \R^{N \times N}$ be a square matrix and $\lambda \in \R$ a 
-scalar value. 
+Let $\bm{A} \in \R^{s \times s}$, $s \in \N$, be a such square matrix and 
+$\lambda \in \R$ a scalar value. 
 $\lambda$ is said to be an eigenvalue to $\bm{A}$ if there exists 
-$\bm{v} \in \R^N \setminus \{\bm{0}\}$ such that 
+$\bm{v} \in \R^s \setminus \{\bm{0}\}$ such that 
 $\bm{A} \bm{v} = \lambda \bm{v}$.
 Then, $\bm{v}$ is the eigenvector corresponding to the eigenvalue $\lambda$, and 
 their tuple is also called an \textit{eigenpair}.
@@ -263,20 +178,20 @@ their tuple is also called an \textit{eigenpair}.
 \textbf{Null spaces.} A closely related notion is that of the 
 \textit{null space}, consisting of the vectors that map $\bm{A}$ to $\bm{0}$ 
 upon multiplication from the right: 
-$\{\bm{v} \in \R^N: \bm{A} \bm{v} = \bm{0}\}$.
+$\{\bm{v} \in \R^s: \bm{A} \bm{v} = \bm{0}\}$.
 It can be easily seen that the null space consists of those eigenvectors of 
 $\bm{A}$ that are associated with an eigenvalue of zero, and the zero vector 
 itself. 
 For a specific eigenvalue $\lambda$ of $\bm{A}$, the null space of 
 $\lambda \I - \bm{A}$ 
-(with $\I$ the $N$-dimensional identity matrix) constitutes the 
+(with $\I$ the $s$-dimensional identity matrix) constitutes the 
 \textit{eigenspace} of $\bm{A}$ \citep{boermmehl2012}.
 \\
 
 \textbf{Generalized eigenvalue problems.} Eigendecomposition of a matrix 
 $\bm{A}$ can be framed as the solution of a generalized eigenvalue problem.
 Generalized eigenvalue problems are posed subject to a constraint on a second, 
-also symmetric matrix $\bm{B} \in \R^{N \times N}$.
+also symmetric matrix $\bm{B} \in \R^{s \times s}$.
 As the standard eigenvalue problem results immediately from 
 $\bm{B} = \I$, the generalized form subsumes both cases.
 It is given by 
@@ -286,13 +201,13 @@ It is given by
   \label{eq_gevproblem}
 \end{equation}
 
-where $\bm{V} = \begin{bmatrix} \bm{v}_1 & \bm{v}_2 & \dots & \bm{v}_N 
-\end{bmatrix} \in \R^{N \times N}$
+where $\bm{V} = \begin{bmatrix} \bm{v}_1 & \bm{v}_2 & \dots & \bm{v}_s 
+\end{bmatrix} \in \R^{s \times s}$
 is the matrix of eigenvectors of $\bm{A}$, and \\ 
-$\bm{\Lambda} = \text{\textit{diag}}(\lambda_1, \lambda_2, \dots, \lambda_N) 
-\in \R^{N \times N}$ 
+$\bm{\Lambda} = \text{\textit{diag}}(\lambda_1, \lambda_2, \dots, \lambda_s) 
+\in \R^{s \times s}$ 
 is the diagonal matrix of the associated eigenvalues with \\
-$\lambda_1 \leq \lambda_2 \leq \dots \leq \lambda_N$.
+$\lambda_1 \leq \lambda_2 \leq \dots \leq \lambda_s$.
 The generalized eigenvalue problem may be stated equivalently as 
 
 \begin{equation}
@@ -337,9 +252,9 @@ $\ell = k$ and
 \end{equation}
 
 with $d_{(k)} \in \R$ being the $k$-th instance of ordered pairwise distances 
-between $\x$ and all other points.
+(in ascending order) between $\x$ and all other points.
 Alternatively, the neighborhood may be constructed by collecting all points that
-have a distance of less than $\epsilon \in \R^+$ to $\x$, yielding 
+have a distance of less than $\epsilon > 0$ to $\x$, yielding 
 
 \begin{equation}
   \mathcal{N}_{\epsilon} (\x) = \{\x_j \in \X: \| \x - \x_j \|^2 < \epsilon\}
@@ -356,9 +271,6 @@ and $\ell = |\mathcal{N}_{\epsilon} (\x)|$ \citep{heetal2005}.
 
 The tuning procedure for choosing the optimal neighborhood size in the SSLLE 
 implementation builds upon a proposal by \citet{kouroptevaetal2001}.
-% However, rather than following the authors in evaluating embedding performance 
-% by residual variance, an alternative criterion, suggested by 
-% \citet{kraemeretal2019} and explained in chapter \ref{eval}, is used.
 Its key idea is to select $k$ at minimum computational expense, most of which is 
 caused by embedding cost minimization.
 First, the less costly reconstruction weight computation is carried out for a 
@@ -447,7 +359,7 @@ to the $R_{NX}$ criterion \citep{kraemeretal2019}:
 \end{equation}
 
 \textbf{Area under the $R_{NX}$ curve.}
-Plotting $R_{NX}$ versus the number $k$ of neighbors yields the sought-for 
+Plotting $R_{NX}$ vs the number $k$ of neighbors yields the sought-for 
 $R_{NX}$ curve, the area under which serves as a parameter-free measure of 
 embedding quality \citep{kraemeretal2019}:
 
@@ -530,7 +442,7 @@ The following figures are full-page versions of those shown in chapter
       {figures/sensitivity_landmarks_qual_swiss_roll}
       \caption[]
       {Qualitative results for Swiss roll data, evaluating method of landmark 
-      coverage versus number of prior points.
+      coverage vs number of prior points.
       \textit{Source:} own representation.}
     \end{figure}
   \end{minipage}
@@ -543,7 +455,7 @@ The following figures are full-page versions of those shown in chapter
       {figures/sensitivity_landmarks_qual_incomplete_tire}
       \caption[]
       {Qualitative results for incomplete tire data, evaluating method of 
-      landmark coverage versus number of prior points.
+      landmark coverage vs number of prior points.
       \textit{Source:} own representation.}
     \end{figure}
   \end{minipage}
@@ -555,7 +467,7 @@ The following figures are full-page versions of those shown in chapter
       \includegraphics[width = \textwidth]
       {figures/sensitivity_noise_qual_swiss_roll}
       \caption[]
-      {Qualitative results for Swiss roll data, evaluating noise level versus 
+      {Qualitative results for Swiss roll data, evaluating noise level vs 
       number of prior points.
       \textit{Source:} own representation.}
     \end{figure}
@@ -569,7 +481,7 @@ The following figures are full-page versions of those shown in chapter
       {figures/sensitivity_noise_qual_incomplete_tire}
       \caption[]
       {Qualitative results for incomplete tire data, evaluating noise level 
-      versus number of prior points.
+      vs number of prior points.
       \textit{Source:} own representation.}
     \end{figure}
   \end{minipage}
