@@ -60,7 +60,7 @@ invisible(set_up_packages(packages_required))
 # Find and source all files containing functions
 
 files_required <- list.files(
-  here("2_code"), 
+  here(), 
   pattern = "^fun_.*\\.R$", 
   recursive = TRUE,
   full.names = TRUE)
