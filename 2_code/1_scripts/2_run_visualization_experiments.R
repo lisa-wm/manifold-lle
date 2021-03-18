@@ -59,7 +59,7 @@ sensitivity_plots_auc <- lapply(
       legend_title = expression(AUC(R[NX]) ~ " (scaled)"),
       x_lab = "coverage")
     
-    auc_plot_noise <- plot_quant_res(
+    auc_plot_noise <- mk_theme(
       base_plot = sensitivity_noise_dt[[i]][
         , .(noise_level, n_landmarks, auc_lnk_rnx)
         ][, auc_scaled := scale_zero_one(auc_lnk_rnx)] %>%
