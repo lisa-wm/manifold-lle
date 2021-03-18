@@ -4,9 +4,6 @@
 
 # Purpose: install, if necessary, and load packages, source required files
 
-# In:  -
-# Out: -
-
 # INSTALL AND LOAD PACKAGES ----------------------------------------------------
 
 packages_required <-  c(
