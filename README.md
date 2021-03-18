@@ -4,10 +4,11 @@
 
 ### Code base
 
+This repository contains an open-source implementation of Semi-Supervised Locally Linear Embedding (SSLLE) by [Yang et al. (2006)](https://dl.acm.org/doi/abs/10.1145/1143844.1143978). 
 The code base for SSLLE is stored in ``1_sslle_implementation``.
 In order to compute an SSLLE embedding, simply use the ``perform_sslle`` 
 function defined in ``fun_perform_sslle.R``.
-The easiest way to set up all required packages and source file is by simply 
+The easiest way to set up all required packages and source files is by simply 
 running ``0_run_setup.R`` first.
 
 ***
@@ -33,10 +34,10 @@ scripts as well as the raw input data needed to build the *world data set*.
 
 ***
 
-### So, n order to...
+### So, in order to...
 
 ... compute an SSLLE embedding, simply use ``perform_sslle`` from 
 ``1_sslle_implementation``.
 
 ... reproduce all analyses and figures of the seminar report/presentation, 
-execute all scripts in ``0_seminar/1_code/1_scripts``in the given order.
+execute all scripts in ``0_seminar/1_code/1_scripts`` in the given order.
