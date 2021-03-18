@@ -401,9 +401,9 @@ during the embedding \citep{kraemeretal2019}.
 \textbf{Co-ranking matrix.}
 The co-ranking matrix $\bm{Q} = (q)_{\ell m} \in \R^{N \times N}$ compares 
 neighborhood relations in observation and embedding space.
-Consider the rank distances matrices $(r)_{ij}^{\text{obs}}, 
-(r)_{ij}^{\text{emb}} \in \R^{N \times N}$, stating for the element in the $i$-th 
-row and $j$-th column that the $j$-th observation ranks $(r)_{ij}$ 
+Consider the rank distance matrices $(r)_{ij}^{\text{obs}}, 
+(r)_{ij}^{\text{emb}} \in \R^{N \times N}$, stating for the element in the 
+$i$-th row and $j$-th column that the $j$-th observation ranks $r_{ij}$ 
 among the nearest neighbors of the $i$-th observation in the respective space 
 \citep{lueksetal2011}. 
 Any suitable distance metric is admissible; here, squared Euclidean distances 
@@ -518,7 +518,7 @@ The original code to synthesize them may be found
 \subsection{Qualitative Embedding Results of Sensitivity Analysis}
 \label{qual_results}
 
-The following figures are full-size versions of those shown in chapter 
+The following figures are full-page versions of those shown in chapter 
 \ref{results}.
 
 \newpage
