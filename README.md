@@ -8,7 +8,7 @@ This repository contains an open-source implementation of Semi-Supervised Locall
 The code base for SSLLE is stored in ``1_sslle_implementation``.
 In order to compute an SSLLE embedding, simply use the ``perform_sslle`` 
 function defined in ``fun_perform_sslle.R``.
-The easiest way to set up all required packages and source file is by simply 
+The easiest way to set up all required packages and source files is by simply 
 running ``0_run_setup.R`` first.
 
 ***
