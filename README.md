@@ -33,7 +33,7 @@ scripts as well as the raw input data needed to build the *world data set*.
 
 ***
 
-### So, n order to...
+### So, in order to...
 
 ... compute an SSLLE embedding, simply use ``perform_sslle`` from 
 ``1_sslle_implementation``.
