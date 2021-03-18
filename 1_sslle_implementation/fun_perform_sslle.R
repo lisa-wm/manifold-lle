@@ -48,8 +48,11 @@ perform_sslle <- function(data,
   }
  
   embedding <- lapply(
+    
     reconstruction$candidates_k,
+    
     function(i) {
+      
       find_embedding_coordinates_ss(
         reconstruction_weights = reconstruction$search_k$weight_matrices[[i]], 
         prior_points = prior_points,
@@ -59,8 +62,11 @@ perform_sslle <- function(data,
   # COMPUTE RESIDUAL VARIANCES -------------------------------------------------
 
   residual_variances <- lapply(
+    
     seq_along(reconstruction$candidates_k),
+    
     function(i) {
+      
       1 - cor(
         c(as.matrix(dist(data))),
         c(as.matrix(dist(embedding[[i]]$embedding_coordinates))))})
@@ -68,8 +74,11 @@ perform_sslle <- function(data,
   # COMPUTE AUC_LNK_RNX --------------------------------------------------------
   
   auc_lnk_rnx <- lapply(
+    
     seq_along(reconstruction$candidates_k),
+    
     function(i) {
+      
       compute_auc_lnk_rnx(
         data,
         embedding[[i]]$embedding_coordinates)})

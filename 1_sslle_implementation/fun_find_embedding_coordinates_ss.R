@@ -85,13 +85,6 @@ find_embedding_coordinates_ss <- function(reconstruction_weights,
       
     }
     
-    embedding_coordinates <- solve(
-      embedding_matrix_penalized,
-      as.matrix(rbind(
-        confidence_param * prior_points,
-        matrix(0L, nrow = n - m, ncol = d),
-        use.names = FALSE)))
-    
     embedding_coordinates <- data.table::as.data.table(embedding_coordinates)
     data.table::setnames(embedding_coordinates, sprintf("y_%d", seq_len(d)))
     

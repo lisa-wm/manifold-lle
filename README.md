@@ -4,13 +4,22 @@
 
 ### Code base
 
-The code base is stored in ``2_code``.
+The code base for SSLLE is stored in ``1_sslle_implementation``.
+In order to compute an SSLLE embedding, simply use the ``perform_sslle`` 
+function defined in ``fun_perform_sslle.R``.
+The easiest way to set up all required packages and source file is by simply 
+running ``0_run_setup.R`` first.
 
-``0_functions`` contains source files required to run the scripts, sorted into 
-general utility functions (``0_utils``) and functions for the SSLLE embedding 
-(``1_embedding``).
-The actual SSLLE function is defined in ``fun_perform_sslle.R`` and sources some 
-of the other utilities.
+***
+
+### Seminar
+
+All additional code concerning analyses and visualization is stored under 
+``0_seminar/1_code``.
+
+``0_utils`` contains source files (general utility functions and functions 
+for visualization purposes) required to run the scripts besides the core SSLLE
+implementation.
 
 ``1_scripts`` contains code required to produce the sensitivity analysis 
 (``1_run_sensitivity_analysis.R``) and corresponding visualization 
@@ -20,14 +29,14 @@ Prior to running these files, ``0_run_setup.R`` must be executed to set up
 all packages and source the required function files.
 
 Lastly, ``2_data`` contains several temporary data files produced by the above 
-scripts.
+scripts as well as the raw input data needed to build the *world data set*.
 
 ***
 
-### In order to...
+### So, n order to...
 
-... compute an SSLLE embedding, simply use the ``perform_sslle`` function 
-defined in ``fun_perform_sslle.R``
+... compute an SSLLE embedding, simply use ``perform_sslle`` from 
+``1_sslle_implementation``.
 
 ... reproduce all analyses and figures of the seminar report/presentation, 
-execute all scripts in ``1_scripts`` in the given order.
+execute all scripts in ``0_seminar/1_code/1_scripts``in the given order.

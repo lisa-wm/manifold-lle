@@ -96,8 +96,11 @@ compute_reconstruction_weights <- function(data,
   reconstruction_errors <- unlist(do.call(rbind, error_per_size)[, 3L])
   
   is_local_minimum <- sapply(
+    
     seq_along(neighborhood_sizes),
+    
     function(i) {
+      
       is_local_minimum <- ifelse(
         i == 1L,
         reconstruction_errors[i] < reconstruction_errors[i + 1L],

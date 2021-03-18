@@ -10,7 +10,7 @@ plotly::orca(
   plot_manifold(
     data = make_s_curve(n_points = 1000L)[, .(x_1, x_2, x_3)],
     intrinsic_coords = make_s_curve(n_points = 1000L)[, .(t)]), 
-  "4_report/figures/s_curve.pdf",
+  "0_seminar/3_report/figures/s_curve.pdf",
   height = 400,
   width = 450)
 
@@ -20,7 +20,7 @@ plotly::orca(
   plot_manifold(
     data = make_s_curve(n_points = 1000L)[, .(x_1, x_2, x_3)],
     intrinsic_coords = make_s_curve(n_points = 1000L)[, .(t)]), 
-  "3_presentation/figures/s_curve.pdf",
+  "0_seminar/2_presentation/figures/s_curve.pdf",
   height = 400,
   width = 450)
 
@@ -28,7 +28,7 @@ plotly::orca(
   plot_manifold(
     data = make_s_curve(n_points = 1000L)[, .(t, x_2)],
     intrinsic_coords = make_s_curve(n_points = 1000L)[, .(t)]), 
-  "3_presentation/figures/s_curve_undone.pdf",
+  "0_seminar/2_presentation/figures/s_curve_undone.pdf",
   height = 400,
   width = 1000)
 
@@ -84,7 +84,7 @@ invisible(lapply(
   function(i) {
     plotly::orca(
       get(i), 
-      paste0("3_presentation/figures/", i, ".pdf"),
+      paste0("0_seminar/2_presentation/figures/", i, ".pdf"),
       height = 400,
       width = 450)
   }))
@@ -102,7 +102,7 @@ plotly::orca(
       marker = list(color = "black", size = 20L)
     ) %>%
     hide_guides(), 
-  "3_presentation/figures/s_curve_undone_pp_random.pdf",
+  "0_seminar/2_presentation/figures/s_curve_undone_pp_random.pdf",
   height = 400,
   width = 1000)
 
@@ -119,7 +119,7 @@ plotly::orca(
       marker = list(color = "black", size = 20L)
     ) %>%
     hide_guides(), 
-  "3_presentation/figures/s_curve_undone_pp_random_long.pdf",
+  "0_seminar/2_presentation/figures/s_curve_undone_pp_random_long.pdf",
   height = 600,
   width = 300)
 
@@ -133,7 +133,7 @@ plotly::orca(
       x = 0.75, 
       y = -1.5, 
       z = 0.25)), 
-  "3_presentation/figures/swiss_roll.pdf",
+  "0_seminar/2_presentation/figures/swiss_roll.pdf",
   height = 400,
   width = 450)
 
@@ -147,7 +147,7 @@ plotly::orca(
       x = 1.25, 
       y = 0, 
       z = 0.75)), 
-  "3_presentation/figures/incomplete_tire.pdf",
+  "0_seminar/2_presentation/figures/incomplete_tire.pdf",
   height = 400,
   width = 600)
 
@@ -158,7 +158,7 @@ plotly::orca(
     data = make_s_curve(n_points = 300L)[, .(x_1, x_2, x_3)],
     intrinsic_coords = make_s_curve(n_points = 300L)[, .(t)],
     k = 3L), 
-  "4_report/figures/s_curve_connected.pdf",
+  "0_seminar/3_report/figures/s_curve_connected.pdf",
   height = 800,
   width = 900)
 
@@ -182,7 +182,7 @@ plotly::orca(
     data = spirals_data[, .(t)],
     intrinsic_coords = spirals_data[, .(t)],
     n_colors = nrow(spirals_data)), 
-  "4_report/figures/spirals_1d.pdf",
+  "0_seminar/3_report/figures/spirals_1d.pdf",
   height = 50,
   width = 400)
 
@@ -191,7 +191,7 @@ plotly::orca(
     data = spirals_data[, .(x, y)],
     intrinsic_coords = spirals_data[, .(t)],
     n_colors = nrow(spirals_data)), 
-  "4_report/figures/spirals_2d.pdf",
+  "0_seminar/3_report/figures/spirals_2d.pdf",
   height = 300,
   width = 300)
 
@@ -205,7 +205,7 @@ plotly::orca(
       x = 1, 
       y = -1.2, 
       z = 0.5)), 
-  "4_report/figures/spirals_3d.pdf",
+  "0_seminar/3_report/figures/spirals_3d.pdf",
   height = 800,
   width = 1200)
 
@@ -231,7 +231,7 @@ plotly::orca(
         x = 2, 
         y = -1.25, 
         z = -0.5)))), 
-  "4_report/figures/sphere_tangent.pdf",
+  "0_seminar/3_report/figures/sphere_tangent.pdf",
   height = 400,
   width = 450)
 
@@ -314,7 +314,7 @@ neighborhood_graph_2d <- plotly::plot_ly(
 
 plotly::orca(
   neighborhood_graph_2d,
-  "4_report/figures/reconstruction_2d.pdf",
+  "0_seminar/3_report/figures/reconstruction_2d.pdf",
   height = 250,
   width = 300)
 
@@ -377,7 +377,7 @@ neighborhood_graph_3d <- plotly::plot_ly(
 
 plotly::orca(
   neighborhood_graph_3d, 
-  "4_report/figures/reconstruction_3d.pdf",
+  "0_seminar/3_report/figures/reconstruction_3d.pdf",
   height = 250,
   width = 300)
 
@@ -416,7 +416,7 @@ rnx_curve_ <- ggplot2::ggplot(
   ggtitle("Exemplary embedding with PCA")
 
 ggplot2::ggsave(
-  here("3_presentation/figures", "rnx_curve.pdf"),
+  here("0_seminar/2_presentation/figures", "rnx_curve.pdf"),
   width = 8L, 
   height = 4L)
 
@@ -429,7 +429,7 @@ load_rdata_files(sensitivity_plots_key, "2_code/2_data")
 # ------------------------------------------------------------------------------
 
 ggplot2::ggsave(
-  here("3_presentation/figures", "sensitivity_landmarks_auc.pdf"),
+  here("0_seminar/2_presentation/figures", "sensitivity_landmarks_auc.pdf"),
   gridExtra::grid.arrange(
     sensitivity_plots_auc$swiss_roll$auc_plot_landmarks,
     sensitivity_plots_auc$incomplete_tire$auc_plot_landmarks, 
@@ -438,7 +438,7 @@ ggplot2::ggsave(
   height = 6)
 
 ggplot2::ggsave(
-  here("3_presentation/figures", "sensitivity_noise_auc.pdf"),
+  here("0_seminar/2_presentation/figures", "sensitivity_noise_auc.pdf"),
   gridExtra::grid.arrange(
     sensitivity_plots_auc$swiss_roll$auc_plot_noise,
     sensitivity_plots_auc$incomplete_tire$auc_plot_noise, 
@@ -462,43 +462,53 @@ invisible(lapply(
     
     plotly::orca(
       sensitivity_plots_emb[[i]]$emb_plots_landmarks, 
-      sprintf("3_presentation/figures/sensitivity_landmarks_qual_%s.pdf", i),
+      sprintf(
+        "0_seminar/2_presentation/figures/sensitivity_landmarks_qual_%s.pdf", 
+        i),
       height = height_qual,
       width = width_all)
     
     plotly::orca(
       sensitivity_plots_emb[[i]]$emb_plots_landmarks, 
-      sprintf("4_report/figures/sensitivity_landmarks_qual_%s.pdf", i),
+      sprintf(
+        "0_seminar/3_report/figures/sensitivity_landmarks_qual_%s.pdf", 
+        i),
       height = height_qual_report,
       width = width_all)
     
     plotly::orca(
       sensitivity_plots_key[[i]]$plot_coverage, 
-      sprintf("3_presentation/figures/sensitivity_landmarks_key_%s.pdf", i),
+      sprintf(
+        "0_seminar/2_presentation/figures/sensitivity_landmarks_key_%s.pdf", 
+        i),
       height = height_key_landmarks,
       width = width_all)
     
     plotly::orca(
       sensitivity_plots_emb[[i]]$emb_plots_noise, 
-      sprintf("3_presentation/figures/sensitivity_noise_qual_%s.pdf", i),
+      sprintf(
+        "0_seminar/2_presentation/figures/sensitivity_noise_qual_%s.pdf", 
+        i),
       height = height_qual,
       width = width_all)
     
     plotly::orca(
       sensitivity_plots_emb[[i]]$emb_plots_noise, 
-      sprintf("4_report/figures/sensitivity_noise_qual_%s.pdf", i),
+      sprintf("0_seminar/3_report/figures/sensitivity_noise_qual_%s.pdf", i),
       height = height_qual_report,
       width = width_all)
     
     plotly::orca(
       sensitivity_plots_key[[i]]$plot_noise, 
-      sprintf("3_presentation/figures/sensitivity_noise_key_%s.pdf", i),
+      sprintf(
+        "0_seminar/2_presentation/figures/sensitivity_noise_key_%s.pdf", 
+        i),
       height = height_key_noise,
       width = width_all)
    
   }))
 
-# COMPARISON - LLE & HLLE ------------------------------------------------------
+# COMPARISON - SWISS ROLL & INCOMPLETE TIRE ------------------------------------
 
 load_rdata_files(comp_lle, folder = "2_code/2_data")
 
@@ -510,7 +520,7 @@ invisible(lapply(
     plotly::orca(
       plotly::subplot(comp_lle[[i]], nrows = 1L) %>% 
         hide_guides(),
-      sprintf("3_presentation/figures/comparison_%s.pdf", i),
+      sprintf("0_seminar/2_presentation/figures/comparison_%s.pdf", i),
       height = 200L,
       width = 1000L)
   }))
@@ -527,7 +537,7 @@ plotly::orca(
       x = 0.4, 
       y = -1.8, 
       z = -0.1)),
-  "3_presentation/figures/world_3d.pdf",
+  "0_seminar/2_presentation/figures/world_3d.pdf",
   height = 800L,
   width = 800L)
 
@@ -538,7 +548,7 @@ plotly::orca(
     intrinsic_coords = make_world_data_2d(
       here("2_code/2_data", "rawdata_world_2d.csv"))[, .(t = t)],
     point_size = 5L),
-  "3_presentation/figures/world_2d.pdf",
+  "0_seminar/2_presentation/figures/world_2d.pdf",
   height = 350L,
   width = 800L)
 
@@ -551,6 +561,6 @@ plotly::orca(
     widths = c(1/6, 1/6, 2/3)) %>% 
     hide_guides() %>%
     layout(plot_bgcolor = "rgb(235, 235, 235)"),
-  "3_presentation/figures/comparison_world.pdf",
+  "0_seminar/2_presentation/figures/comparison_world.pdf",
   height = 350L,
   width = 1000L)

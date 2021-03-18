@@ -19,7 +19,6 @@ packages_required <-  c(
   "kknn", # k-nearest neighbor search
   "MASS", # matrix computation
   "parallel", # parallel computing
-  "plotly", # 3d plots
   "tidyverse" # data wrangling
 
 )
@@ -58,7 +57,7 @@ invisible(set_up_packages(packages_required))
 # Find and source all files containing functions
 
 files_required <- list.files(
-  here(), 
+  here("1_sslle_implementation"), 
   pattern = "^fun_.*\\.R$", 
   recursive = TRUE,
   full.names = TRUE)
