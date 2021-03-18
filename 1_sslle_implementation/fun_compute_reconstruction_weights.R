@@ -11,8 +11,6 @@ compute_reconstruction_weights <- function(data,
   
   # COMPUTE RECONSTRUCTION WEIGHTS ---------------------------------------------
   
-  # TODO read up on regularization methods for inverting gram matrix
-  
   if (verbose) cat("computing reconstruction weights...\n")
   
   error_per_size <- lapply(

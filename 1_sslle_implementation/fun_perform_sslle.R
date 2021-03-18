@@ -12,9 +12,7 @@ perform_sslle <- function(data,
                           regularization = TRUE,
                           regularization_param = 1e-4,
                           verbose = TRUE) {
-  
-  # TODO adjust input checks
-  
+
   # CHECK INPUTS ---------------------------------------------------------------
   
   # Check data
